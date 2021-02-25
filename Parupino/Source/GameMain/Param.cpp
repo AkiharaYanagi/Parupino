@@ -38,6 +38,9 @@ namespace GAME
 	}
 
 	Param::Param ( const Param & rhs )
+		: m_demo ( F ), m_battleStart ( F )
+		, m_training ( F ), m_mutchMode ( MODE_PLAYER_PLAYER )
+		, m_charaName1p ( CHARA_TEST ), m_charaName2p ( CHARA_TEST )
 	{
 		m_demo = rhs.m_demo;
 		m_battleStart = rhs.m_battleStart;

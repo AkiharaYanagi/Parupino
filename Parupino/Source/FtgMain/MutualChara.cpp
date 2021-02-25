@@ -15,6 +15,8 @@
 namespace GAME
 {
 	MutualChara::MutualChara ()
+		: m_startTimer ( 0 ), m_startTime ( 0 ), m_endTimer ( 0 ), m_endTime ( 0 )
+		, m_tmrHitstop ( 0 )
 	{
 		//ƒLƒƒƒ‰
 		m_exeChara1 = make_shared < ExeChara > ( PLAYER_ID_1 );

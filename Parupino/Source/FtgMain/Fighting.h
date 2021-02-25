@@ -53,6 +53,7 @@ namespace GAME
 		P_GameScene Transit ();
 
 	private:
+		void MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName );
 		void SetGrpDemo ( P_GrpDemo pGrp );
 		void StartGrpDemo ( P_GrpDemo pGrp, UINT time );
 

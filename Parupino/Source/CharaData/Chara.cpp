@@ -16,6 +16,7 @@ namespace GAME
 {
 
 	Chara::Chara ()
+		: m_bsAction ()
 	{
 		Make ();
 	}

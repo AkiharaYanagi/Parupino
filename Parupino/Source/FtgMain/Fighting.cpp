@@ -41,6 +41,7 @@ namespace GAME
 		GRPLST_INSERT ( m_gauge_frame );
 
 		//デモ
+#if 0
 		m_demo_GetReady = make_shared < GrpDemo > ();
 		m_demo_GetReady->AddTexture ( _T ( "Demo_GetReady.png" ) );
 		SetGrpDemo ( m_demo_GetReady );
@@ -73,7 +74,15 @@ namespace GAME
 		SetGrpDemo ( m_demo_ORFLOAT );
 		m_demo_ORFLOAT->SetPos ( VEC2 ( 128, 550 ) );
 		GRPLST_INSERT ( m_demo_ORFLOAT );
-
+#endif // 0
+		MakeGrpDemo ( m_demo_GetReady,	_T ( "Demo_GetReady.png" ) );
+		MakeGrpDemo ( m_demo_Attack,	_T ( "Demo_Attack.png" ) );
+		MakeGrpDemo ( m_demo_Down,		_T ( "Demo_Down.png" ) );
+		MakeGrpDemo ( m_demo_Winner,	_T ( "Demo_Winner.png" ) );
+		MakeGrpDemo ( m_demo_SONIA,		_T ( "CH_SONIA.png" ) );
+		m_demo_SONIA->SetPos ( VEC2 ( 128, 550 ) );
+		MakeGrpDemo ( m_demo_ORFLOAT,	_T ( "CH_ORFLOAT.png" ) );
+		m_demo_ORFLOAT->SetPos ( VEC2 ( 128, 550 ) );
 
 		//ポーズ
 		m_pause = make_shared < GrpAcv > ();
@@ -236,6 +245,14 @@ namespace GAME
 	//=============================================================
 	//	内部関数
 	//=============================================================
+
+	void Fighting::MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName )
+	{
+		pGrp = make_shared < GrpDemo > ();
+		pGrp->AddTexture ( _T ( "CH_ORFLOAT.png" ) );
+		SetGrpDemo ( pGrp );
+		GRPLST_INSERT ( pGrp );
+	}
 
 	void Fighting::SetGrpDemo ( P_GrpDemo pGrp )
 	{

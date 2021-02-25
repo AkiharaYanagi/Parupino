@@ -16,8 +16,8 @@ namespace GAME
 {
 
 	Branch::Branch ()
-	:	  m_indexCommand ( 0 )
-		, m_indexSequence ( 0 )
+	:	  m_indexCommand ( 0 ), m_indexSequence ( 0 )
+		, m_indexFrame ( 0 )
 	{
 	}
 

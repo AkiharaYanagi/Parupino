@@ -26,6 +26,8 @@ namespace GAME
 		VEC2	m_vel;
 		VEC2	m_G;
 		float	m_angle;
+	public:
+		PrmEfSpark () : m_angle ( 0 ) {}
 	};
 
 	//火花エフェクトクラス

@@ -96,7 +96,8 @@ namespace GAME
 			if ( ! tifStrm ) { throw; }
 			if ( tifStrm.fail () ) { throw; }
 
-			int* iBuf = new int[ CPU_ACT_NUM * 3 ];
+			int* iBuf = nullptr;
+			iBuf = new int[CPU_ACT_NUM * 3];
 			UINT index = 0;
 
 			//ÉtÉ@ÉCÉãññîˆÇ‹Ç≈ì«çû

@@ -158,7 +158,7 @@ namespace GAME
 
 	MUTCH_MODE Title::MENU_to_MODE ( TITLE_MENU tm, PLAYER_ID id )
 	{
-		MUTCH_MODE ret;
+		MUTCH_MODE ret = MODE_PLAYER_PLAYER;
 		switch ( m_menuPos )
 		{
 		case TTLM_TRAINING: ret = MODE_PLAYER_CPU; break;
