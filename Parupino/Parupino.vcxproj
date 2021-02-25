@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{22DC3A4C-68DE-4882-93CF-90A341A1B1C4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Parupino</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GameLib.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GameLib.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GameLib.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="GameLib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\CharaData\Action.h" />
+    <ClInclude Include="Source\CharaData\Behavior.h" />
+    <ClInclude Include="Source\CharaData\Branch.h" />
+    <ClInclude Include="Source\CharaData\Chara.h" />
+    <ClInclude Include="Source\CharaData\Command.h" />
+    <ClInclude Include="Source\CharaData\Effect.h" />
+    <ClInclude Include="Source\CharaData\EffectGenerate.h" />
+    <ClInclude Include="Source\CharaData\IO\IOCharaDefine.h" />
+    <ClInclude Include="Source\CharaData\IO\LoadChara.h" />
+    <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h" />
+    <ClInclude Include="Source\CharaData\Script.h" />
+    <ClInclude Include="Source\CharaData\Sequence.h" />
+    <ClInclude Include="Source\CharaSele\CharaSele.h" />
+    <ClInclude Include="Source\CharaSele\CharaSeleConst.h" />
+    <ClInclude Include="Source\ExeChara\CharaRect.h" />
+    <ClInclude Include="Source\ExeChara\Disp\DispChara.h" />
+    <ClInclude Include="Source\ExeChara\Disp\DispRect.h" />
+    <ClInclude Include="Source\ExeChara\Effect\DispEffect.h" />
+    <ClInclude Include="Source\ExeChara\Effect\ExeEffect.h" />
+    <ClInclude Include="Source\ExeChara\Effect\OperateEffect.h" />
+    <ClInclude Include="Source\ExeChara\ExeChara.h" />
+    <ClInclude Include="Source\ExeChara\Input\CharaInput.h" />
+    <ClInclude Include="Source\ExeChara\Input\CPUInput.h" />
+    <ClInclude Include="Source\ExeChara\Input\PlayerInput.h" />
+    <ClInclude Include="Source\FtgMain\EfClang.h" />
+    <ClInclude Include="Source\FtgMain\EfSpark.h" />
+    <ClInclude Include="Source\FtgMain\Fighting.h" />
+    <ClInclude Include="Source\FtgMain\FtgConst.h" />
+    <ClInclude Include="Source\FtgMain\G_Ftg.h" />
+    <ClInclude Include="Source\FtgMain\MutualChara.h" />
+    <ClInclude Include="Source\GameMain\GameConst.h" />
+    <ClInclude Include="Source\GameMain\GameMain.h" />
+    <ClInclude Include="Source\GameMain\GameSettingFile.h" />
+    <ClInclude Include="Source\GameMain\Param.h" />
+    <ClInclude Include="Source\GameMain\resource.h" />
+    <ClInclude Include="Source\GameMain\Scene.h" />
+    <ClInclude Include="Source\GameMain\SceneCommon.h" />
+    <ClInclude Include="Source\GameMain\StdAfx.h" />
+    <ClInclude Include="Source\GameMain\WinMain.h" />
+    <ClInclude Include="Source\Title\Title.h" />
+    <ClInclude Include="Source\Title\TitleConst.h" />
+    <ClInclude Include="Source\Title\TitleEf.h" />
+    <ClInclude Include="Source\Training\Training.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\CharaData\Action.cpp" />
+    <ClCompile Include="Source\CharaData\Behavior.cpp" />
+    <ClCompile Include="Source\CharaData\Branch.cpp" />
+    <ClCompile Include="Source\CharaData\Chara.cpp" />
+    <ClCompile Include="Source\CharaData\Command.cpp" />
+    <ClCompile Include="Source\CharaData\Effect.cpp" />
+    <ClCompile Include="Source\CharaData\EffectGenerate.cpp" />
+    <ClCompile Include="Source\CharaData\IO\LoadChara.cpp" />
+    <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp" />
+    <ClCompile Include="Source\CharaData\Script.cpp" />
+    <ClCompile Include="Source\CharaData\Sequence.cpp" />
+    <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
+    <ClCompile Include="Source\ExeChara\CharaRect.cpp" />
+    <ClCompile Include="Source\ExeChara\Disp\DispChara.cpp" />
+    <ClCompile Include="Source\ExeChara\Disp\DispRect.cpp" />
+    <ClCompile Include="Source\ExeChara\Effect\DispEffect.cpp" />
+    <ClCompile Include="Source\ExeChara\Effect\ExeEffect.cpp" />
+    <ClCompile Include="Source\ExeChara\Effect\OperateEffect.cpp" />
+    <ClCompile Include="Source\ExeChara\ExeChara.cpp" />
+    <ClCompile Include="Source\ExeChara\Input\CharaInput.cpp" />
+    <ClCompile Include="Source\ExeChara\Input\CPUInput.cpp" />
+    <ClCompile Include="Source\ExeChara\Input\PlayerInput.cpp" />
+    <ClCompile Include="Source\FtgMain\EfClang.cpp" />
+    <ClCompile Include="Source\FtgMain\EfSpark.cpp" />
+    <ClCompile Include="Source\FtgMain\Fighting.cpp" />
+    <ClCompile Include="Source\FtgMain\G_Ftg.cpp" />
+    <ClCompile Include="Source\FtgMain\MutualChara.cpp" />
+    <ClCompile Include="Source\GameMain\GameSettingFile.cpp" />
+    <ClCompile Include="Source\GameMain\Param.cpp" />
+    <ClCompile Include="Source\GameMain\Scene.cpp" />
+    <ClCompile Include="Source\GameMain\StdAfx.cpp" />
+    <ClCompile Include="Source\GameMain\WinMain.cpp" />
+    <ClCompile Include="Source\Title\Title.cpp" />
+    <ClCompile Include="Source\Title\TitleEf.cpp" />
+    <ClCompile Include="Source\Training\Training.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FF89271-4D8E-443F-9347-86AC80DE4212}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ScriptEditor</RootNamespace>
+    <AssemblyName>ScriptEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ScriptEditor.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC\Microsoft.DirectX\1.0.2902.0__31bf3856ad364e35\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC\Microsoft.DirectX.DirectInput\1.0.2902.0__31bf3856ad364e35\Microsoft.DirectX.DirectInput.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Chara\CharaData\Action.cs" />
+    <Compile Include="Source\Chara\CharaData\Branch.cs" />
+    <Compile Include="Source\Chara\CharaData\Chara.cs" />
+    <Compile Include="Source\Chara\CharaData\Command.cs" />
+    <Compile Include="Source\Chara\CharaData\Compend.cs" />
+    <Compile Include="Source\Chara\CharaData\Effect.cs" />
+    <Compile Include="Source\Chara\CharaData\EffectGenerate.cs" />
+    <Compile Include="Source\Chara\CharaData\ImageList.cs" />
+    <Compile Include="Source\Chara\CharaData\ImageData.cs" />
+    <Compile Include="Source\Chara\CharaData\Script.cs" />
+    <Compile Include="Source\Chara\CharaData\Sequence.cs" />
+    <Compile Include="Source\Chara\DispChara\DispAction.cs" />
+    <Compile Include="Source\Chara\DispChara\DispChara.cs" />
+    <Compile Include="Source\Chara\DispChara\DispCompend.cs" />
+    <Compile Include="Source\Chara\DispChara\DispEffect.cs" />
+    <Compile Include="Source\Chara\DispChara\DispEffectGenerate.cs" />
+    <Compile Include="Source\Chara\DispChara\DispRects.cs" />
+    <Compile Include="Source\Chara\DispChara\DispScript.cs" />
+    <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
+    <Compile Include="Source\Chara\EditChara\EditAction.cs" />
+    <Compile Include="Source\Chara\EditChara\EditBehavior.cs" />
+    <Compile Include="Source\Chara\EditChara\EditChara.cs" />
+    <Compile Include="Source\Chara\EditChara\EditChara_Command.cs" />
+    <Compile Include="Source\Chara\EditChara\EditCompend.cs" />
+    <Compile Include="Source\Chara\EditChara\EditEffect.cs" />
+    <Compile Include="Source\Chara\EditChara\EditGarnish.cs" />
+    <Compile Include="Source\Chara\EditChara\EditScript.cs" />
+    <Compile Include="Source\Chara\EditChara\EditScript_Group.cs" />
+    <Compile Include="Source\Chara\EditChara\EditSequence.cs" />
+    <Compile Include="Source\Chara\EditChara\SelectedScript.cs" />
+    <Compile Include="Source\Chara\GameKey.cs" />
+    <Compile Include="Source\Chara\GameKeyCommand.cs" />
+    <Compile Include="Source\Chara\IOChara\DocToChara.cs" />
+    <Compile Include="Source\Chara\IOChara\Document.cs" />
+    <Compile Include="Source\Chara\IOChara\IOChara.cs" />
+    <Compile Include="Source\Chara\IOChara\LoadChara.cs" />
+    <Compile Include="Source\Chara\IOChara\LoadTextChara.cs" />
+    <Compile Include="Source\Chara\IOChara\MakeSourceTestCharaData.cs" />
+    <Compile Include="Source\Chara\IOChara\MakeTestCharaData.cs" />
+    <Compile Include="Source\Chara\IOChara\MakeTestCharaDataCore.cs" />
+    <Compile Include="Source\Chara\IOChara\SaveChara.cs" />
+    <Compile Include="Source\Chara\IOChara\TestChara.cs" />
+    <Compile Include="Source\Command\Ctrl_Command.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Command\Ctrl_Command.designer.cs">
+      <DependentUpon>Ctrl_Command.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Command\DispCommand.cs" />
+    <Compile Include="Source\Command\EditCommand.cs" />
+    <Compile Include="Source\Command\ListCommand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Command\ListCommand.designer.cs">
+      <DependentUpon>ListCommand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Command\Pb_Command.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Command\Pb_Command.designer.cs">
+      <DependentUpon>Pb_Command.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Command\SelectKey.cs" />
+    <Compile Include="Source\Control\CB_ActionList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Control\CB_SequenceList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Compend\Ctrl_Compend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Compend\Ctrl_Compend.Designer.cs">
+      <DependentUpon>Ctrl_Compend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Control\Compend\PaintImage.cs" />
+    <Compile Include="Source\Control\ControlsEfGnrt.cs" />
+    <Compile Include="Source\Control\Compend\Ctrl_Image.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Compend\Ctrl_Image.Designer.cs">
+      <DependentUpon>Ctrl_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Control\Compend\RB_Tool.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Ctrl_ListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Ctrl_ListBox.Designer.cs">
+      <DependentUpon>Ctrl_ListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Control\Ctrl_Test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Ctrl_Test.Designer.cs">
+      <DependentUpon>Ctrl_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Control\Sqc\Btn_Seq.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Sqc\Btn_Seq.Designer.cs">
+      <DependentUpon>Btn_Seq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Control\Sqc\DefineColor.cs" />
+    <Compile Include="Source\Control\Sqc\SqcBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Sqc\SqcBoard.designer.cs">
+      <DependentUpon>SqcBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Control\TBN_Command.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Control\TB_Number.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Compend\ToolImg.cs" />
+    <Compile Include="Source\FormMain\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain_Func.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain_Init.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain_Tab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\Settings.cs" />
+    <Compile Include="Source\FormMain\STS_TXT.cs" />
+    <Compile Include="Source\FormSub\FormAction\FormAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormAction\FormAction.Designer.cs">
+      <DependentUpon>FormAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormBranch\FormBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormBranch\FormBranch.Designer.cs">
+      <DependentUpon>FormBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.Designer.cs">
+      <DependentUpon>FormEfGnrt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormRect\Ctrl_ListRect0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormRect\Ctrl_ListRect0.Designer.cs">
+      <DependentUpon>Ctrl_ListRect0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormImage\Form_Image.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormImage\Form_Image.designer.cs">
+      <DependentUpon>Form_Image.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormRect\FormRect1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormRect\FormRect1.Designer.cs">
+      <DependentUpon>FormRect1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormScript\Ctrl_Script.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormScript\Ctrl_Script.Designer.cs">
+      <DependentUpon>Ctrl_Script.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormScript\FormScript.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormScript\FormScript.Designer.cs">
+      <DependentUpon>FormScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\KeyInput\DxInput.cs" />
+    <Compile Include="Source\KeyInput\Joystick.cs" />
+    <Compile Include="Source\KeyInput\Keyboard.cs" />
+    <Compile Include="Source\KeyInput\KeyConfig.cs" />
+    <Compile Include="Source\KeyInput\KeyInput.cs" />
+    <Compile Include="Source\KeyInput\Name.cs" />
+    <Compile Include="Source\Utility\BindingDictionary.cs" />
+    <Compile Include="Source\Utility\EnumExtensions.cs" />
+    <Compile Include="Source\Utility\PointUtility.cs" />
+    <Compile Include="Source\Utility\RefClass.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Command\Ctrl_Command.resx">
+      <DependentUpon>Ctrl_Command.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Command\ListCommand.resx">
+      <DependentUpon>ListCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Command\Pb_Command.resx">
+      <DependentUpon>Pb_Command.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Compend\Ctrl_Compend.resx">
+      <DependentUpon>Ctrl_Compend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Compend\Ctrl_Image.resx">
+      <DependentUpon>Ctrl_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Ctrl_ListBox.resx">
+      <DependentUpon>Ctrl_ListBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Ctrl_Test.resx">
+      <DependentUpon>Ctrl_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Sqc\SqcBoard.resx">
+      <DependentUpon>SqcBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormMain\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormAction\FormAction.resx">
+      <DependentUpon>FormAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormBranch\FormBranch.resx">
+      <DependentUpon>FormBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.resx">
+      <DependentUpon>FormEfGnrt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormImage\Form_Image.resx">
+      <DependentUpon>Form_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormRect\Ctrl_ListRect0.resx">
+      <DependentUpon>Ctrl_ListRect0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormRect\FormRect1.resx">
+      <DependentUpon>FormRect1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormScript\Ctrl_Script.resx">
+      <DependentUpon>Ctrl_Script.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormScript\FormScript.resx">
+      <DependentUpon>FormScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ResourceCommand\blank.png" />
+    <None Include="Resources\ResourceCommand\command_H.png" />
+    <None Include="Resources\ResourceCommand\command_L.png" />
+    <None Include="Resources\ResourceCommand\command_M.png" />
+    <None Include="Resources\ResourceCommand\command_S.png" />
+    <None Include="Resources\ResourceCommand\wild.png" />
+    <None Include="Resources\tool_ORect.ico" />
+    <Content Include="Document\Charaデータ構造.txt" />
+    <None Include="Resources\tool_ARect.png" />
+    <None Include="Resources\tool_CRect.png" />
+    <None Include="Resources\tool_efhand.png" />
+    <None Include="Resources\tool_hand.png" />
+    <None Include="Resources\tool_HRect.png" />
+    <None Include="Resources\tool_ORect.png" />
+    <Content Include="Resources\ResourceCommand\arrow.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_01.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_02.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_03.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_04.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_06.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_07.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_08.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_09.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_2E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_4E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_6E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_8E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_H.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_L.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_M.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_S.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_01.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_02.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_03.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_04.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_06.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_07.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_08.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_09.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_2E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_4E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_6E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_8E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_H.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_L.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_M.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_S.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_01.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_02.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_03.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_04.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_06.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_07.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_08.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_09.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_2E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_4E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_6E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_8E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_H.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_L.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_M.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_S.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_01.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_02.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_03.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_04.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_06.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_07.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_08.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_09.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_2E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_4E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_6E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_8E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_H.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_L.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_M.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_S.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_01.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_02.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_03.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_04.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_06.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_07.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_08.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_09.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_2E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_4E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_6E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_8E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_H.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_L.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_M.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_S.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_01.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_02.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_03.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_04.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_06.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_07.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_08.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_09.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_2E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_4E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_6E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_8E.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_H.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_L.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_M.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_S.png" />
+    <Content Include="Resources\ResourceCommand\CMD_Key\WILD.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_Is.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_Nis.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_Off.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_On.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_PUSH.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_Rele.png" />
+    <Content Include="Resources\ResourceCommand\Cmd_Key_Wild.png" />
+    <Content Include="Resources\ResourceCommand\cursor.png" />
+    <Content Include="Resources\ResourceCommand\KeyTurnL.png" />
+    <Content Include="Resources\ResourceCommand\KeyTurnR.png" />
+    <Content Include="Resources\ResourceCommand\Off.png" />
+    <Content Include="Resources\ResourceCommand\_.png" />
+    <Content Include="ScriptEditor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\FormSub\FormTest\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

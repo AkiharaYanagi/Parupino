@@ -1,0 +1,276 @@
+//=================================================================================================
+//
+//	Fighting ソースファイル
+//
+//=================================================================================================
+
+//-------------------------------------------------------------------------------------------------
+// ヘッダファイルのインクルード
+//-------------------------------------------------------------------------------------------------
+#include "Fighting.h"
+#include "../Title/Title.h"
+
+//-------------------------------------------------------------------------------------------------
+// 定義
+//-------------------------------------------------------------------------------------------------
+namespace GAME
+{
+	Fighting::Fighting ()
+	{
+		//格闘部分共通パラメータシングルトン生成
+		G_Ftg::Create ();
+
+		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
+		AddpTask ( GRPLST_NEW () );
+
+		//背景
+		m_bg = make_shared < GrpAcv > ();
+		m_bg->AddTexture ( _T ( "ftgmain_bg.png" ) );
+		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
+		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
+		GRPLST_INSERT ( m_bg );
+
+		//キャラ相互処理
+		m_mutualChara = make_shared < MutualChara > ();
+		AddpTask ( m_mutualChara );
+
+		//ゲージ枠
+		m_gauge_frame = make_shared < GrpAcv > ();
+		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
+		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
+		GRPLST_INSERT ( m_gauge_frame );
+
+		//デモ
+		m_demo_GetReady = make_shared < GrpDemo > ();
+		m_demo_GetReady->AddTexture ( _T ( "Demo_GetReady.png" ) );
+		SetGrpDemo ( m_demo_GetReady );
+		GRPLST_INSERT ( m_demo_GetReady );
+
+		m_demo_Attack = make_shared < GrpDemo > ();
+		m_demo_Attack->AddTexture ( _T ( "Demo_Attack.png" ) );
+		SetGrpDemo ( m_demo_Attack );
+		GRPLST_INSERT ( m_demo_Attack );
+
+		m_demo_Down = make_shared < GrpDemo > ();
+		m_demo_Down->AddTexture ( _T ( "Demo_Down.png" ) );
+		SetGrpDemo ( m_demo_Down );
+		GRPLST_INSERT ( m_demo_Down );
+
+		m_demo_Winner = make_shared < GrpDemo > ();
+		m_demo_Winner->AddTexture ( _T ( "Demo_Winner.png" ) );
+		SetGrpDemo ( m_demo_Winner );
+		m_demo_Winner->SetPos ( VEC2 ( 128, 250 ) );
+		GRPLST_INSERT ( m_demo_Winner );
+
+		m_demo_SONIA = make_shared < GrpDemo > ();
+		m_demo_SONIA->AddTexture ( _T ( "CH_SONIA.png" ) );
+		SetGrpDemo ( m_demo_SONIA );
+		m_demo_SONIA->SetPos ( VEC2 ( 128, 550 ) );
+		GRPLST_INSERT ( m_demo_SONIA );
+
+		m_demo_ORFLOAT = make_shared < GrpDemo > ();
+		m_demo_ORFLOAT->AddTexture ( _T ( "CH_ORFLOAT.png" ) );
+		SetGrpDemo ( m_demo_ORFLOAT );
+		m_demo_ORFLOAT->SetPos ( VEC2 ( 128, 550 ) );
+		GRPLST_INSERT ( m_demo_ORFLOAT );
+
+
+		//ポーズ
+		m_pause = make_shared < GrpAcv > ();
+		m_pause->AddTexture ( _T ( "Pause.png" ) );
+		m_pause->SetPos ( (1280-512)*0.5, 480.f );
+		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
+		GRPLST_INSERT ( m_pause );
+		m_pause->SetValid ( false );
+
+		//グラフィックリストをタスクベクタの最後にする
+		//他処理がすべて終わってからグラフィックのMove()を行う
+		End ( GrpLst::Inst ()->GetpTaskList () );
+	}
+
+	Fighting::~Fighting ()
+	{
+	}
+
+	void Fighting::ParamInit ()
+	{
+		m_mutualChara->ParamInit ( GetpParam () );
+	}
+
+	void Fighting::Init ()
+	{
+		SOUND->Stop ( BGM_Main );
+		SOUND->PlayLoop ( BGM_Main );
+		m_pause->SetValid ( false );
+
+		//Debug用　開始デモをスキップ切替
+#define DEMO_ON 0
+#if DEMO_ON
+		G_FTG_STATE_SET ( FS_GETREADY );
+		m_demo_GetReady->SetWait ( 90 );
+		m_demo_GetReady->Init ();
+		Scene::Init ();
+		m_mutualChara->SetReady ();
+		m_mutualChara->Wait ( true );
+#else
+		G_FTG_STATE_SET ( FS_GAME_MAIN );
+		Scene::Init ();
+		m_mutualChara->SetMain ();
+#endif // 0
+	}
+
+	void Fighting::Move ()
+	{
+		Pause ();
+
+		//デモ分岐
+		switch ( G_FTG_STATE () )
+		{
+		case FS_GETREADY:
+			if ( ! m_demo_GetReady->GetValid () )
+			{
+				m_demo_Attack->SetFadeOut ( 60 );
+				m_demo_Attack->SetWait ( 60 );
+				m_demo_Attack->Init ();
+				m_mutualChara->Wait ( false );
+				m_mutualChara->SetMain ();
+				G_FTG_STATE_SET ( FS_GAME_MAIN );
+			}
+		break;
+	
+		case FS_ATTACK:
+		break;
+
+		case FS_GAME_MAIN:
+			// 格闘終了判定
+			if ( m_mutualChara->CheckDown () )
+			{
+				StartGrpDemo ( m_demo_Down, 120 );
+				m_mutualChara->Stop ( true );
+				m_mutualChara->SetEndWait ();
+				G_FTG_STATE_SET ( FS_DOWN_DISP );
+			}
+		break;
+
+		case FS_DOWN_DISP:
+			if ( ! m_demo_Down->GetValid () )
+			{
+				m_mutualChara->Stop ( false );
+				m_mutualChara->CheckWinner ();
+
+				//@info 終了時に挙動が不安定なため飛ばす
+//				G_FTG_STATE_SET ( FS_DOWN_WAIT );
+				StartGrpDemo ( m_demo_Winner, 180 );
+				G_FTG_STATE_SET ( FS_POST_DEMO_START );
+			}
+		break;
+
+		case FS_DOWN_WAIT:
+			if ( m_mutualChara->CheckDownEnd () )
+			{
+//				m_mutualChara->EndAct ();
+				G_FTG_STATE_SET ( FS_POST_DEMO_START );
+			}
+		break;
+
+		case FS_POST_DEMO_START:
+			if ( m_mutualChara->CheckWinEnd () )
+			{
+				StartGrpDemo ( m_demo_Winner, 180 );
+#if 0
+				switch ( m_mutualChara->GetWinnerName () )
+				{
+				case CHARA_SONIA: StartGrpDemo ( m_demo_SONIA, 180 ); break;
+				case CHARA_ORFLOAT: StartGrpDemo ( m_demo_ORFLOAT, 180 ); break;
+				default: break;
+				}
+#endif // 0
+				G_FTG_STATE_SET ( FS_WINNER );
+				m_mutualChara->ForcedEnd ();
+			}
+		break;
+
+		case FS_WINNER:
+			if ( ! m_demo_Winner->GetValid () )
+			{
+				G_FTG_STATE_SET ( FS_END );
+			}
+			break;
+
+		case FS_END:
+			break;
+
+		default: break;
+		}
+
+		//両者処理
+		m_mutualChara->Conduct ();
+
+		//背景位置補正
+		m_bg->SetPos ( G_BASE_POS ().x, (float)BG_POS_Y );
+
+		Scene::Move ();
+	}
+
+	P_GameScene Fighting::Transit ()
+	{
+		//ESCで戻る
+		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
+		{
+			SOUND->Stop ( BGM_Main );
+			return make_shared < Title > ();
+		}
+
+		//終了時
+		if ( FS_END == G_FTG_STATE () )
+		{
+			SOUND->Stop ( BGM_Main );
+			return make_shared < Title > ();
+		}
+
+		//通常時
+		return shared_from_this ();
+	}
+	
+
+	//=============================================================
+	//	内部関数
+	//=============================================================
+
+	void Fighting::SetGrpDemo ( P_GrpDemo pGrp )
+	{
+		pGrp->SetPos ( VEC2 ( 128, 400 ) );
+		pGrp->SetScalingCenter ( VEC2 ( 512, 128 ) );
+		pGrp->SetStartScaling ( VEC2 ( 1.3f, 1.3f ) );
+		pGrp->SetSecondVel ( VEC2 ( -0.001f, -0.001f ) );
+		pGrp->SetZ ( Z_SYS );
+		pGrp->SetValid ( false );
+	}
+
+	void Fighting::StartGrpDemo ( P_GrpDemo pGrp, UINT time )
+	{
+		pGrp->SetWait ( time );
+		pGrp->Init ();
+	}
+
+	void Fighting::Pause ()
+	{
+		//F1でポーズ切替
+		if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
+		{
+			if ( m_pause->GetValid () )	//On->Off
+			{
+				m_pause->SetValid ( false );
+				m_mutualChara->Stop ( false );
+			}
+			else	//Off->On
+			{
+				m_pause->SetValid ( true );
+				m_mutualChara->Stop ( true );
+			}
+		}
+	}
+
+
+}	//namespace GAME
+
