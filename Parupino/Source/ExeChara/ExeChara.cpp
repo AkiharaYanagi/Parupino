@@ -28,7 +28,7 @@ namespace GAME
 		, m_bDispRect ( true )
 //		, m_lurch ( 0 ), m_lurchTimer ( 0 )
 	{
-		//ポインタ生成
+		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
 		m_charaRect = make_shared < CharaRect > ();		//枠
 
@@ -85,7 +85,6 @@ namespace GAME
 		{
 		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
 #if 0
-
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
 		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;
 #endif // 0

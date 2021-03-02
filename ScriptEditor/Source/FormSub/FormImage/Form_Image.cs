@@ -9,19 +9,19 @@ namespace ScriptEditor
 	//-------------------------------------------------------------
 	//	イメージ選択フォーム
 	//-------------------------------------------------------------
-	public partial class FormImage : Form
+	//このフォームは１タスク１フォームなのでシングルトンで実装する
+	//静的で単一な実体化	//static
+	//継承禁止	//sealed
+	//プライベートコンストラクタ
+	//---------------------------------------------------------------------
+	public sealed partial class FormImage : Form
 	{
-		//イメージリスト参照
-		public BindingList<ImageData> L_ImageData { get; set; }
+		//---------------------------------------------------------------------
+		//シングルトン実体
+		public static FormImage Inst { get; } = new FormImage ();
 
-		//選択中イメージのインデックス
-		public int GetImageIndex () { return Lb_Image.SelectedIndex; }
-
-		//グループ編集用
-		public ScriptParam < int > ScriptSetter { get; set; } = null;
-
-		//コンストラクタ
-		public FormImage ( BindingList<ImageData> listImageData )
+		//プライベートコンストラクタ
+		private FormImage ()
 		{
 			//フォーム開始位置
 			this.StartPosition = FormStartPosition.Manual;
@@ -29,13 +29,34 @@ namespace ScriptEditor
 
 			InitializeComponent ();
 
-			//内部参照
-			L_ImageData = listImageData;
-
-			//リストボックスに反映
 			Lb_Image.DisplayMember = "Name";
 			Lb_Image.ValueMember = "Image";
-			Lb_Image.DataSource = listImageData;
+		}
+
+		//閉じたときに破棄しない
+		protected override void OnFormClosing ( FormClosingEventArgs e )
+		{
+			e.Cancel = true;
+			this.Hide ();
+		}
+		//---------------------------------------------------------------------
+
+		//イメージリスト参照
+		private BindingList<ImageData> L_ImageData { get; set; }
+
+		//選択中イメージのインデックス
+		public int GetImageIndex () { return Lb_Image.SelectedIndex; }
+
+		//グループ編集用
+		public ScriptParam < int > ScriptSetter { get; set; } = null;
+
+		//対象を設定
+		public void SetTarget ( BindingList<ImageData> bl_ImgDt )
+		{
+			L_ImageData = bl_ImgDt;
+
+			//リストボックスに反映
+			Lb_Image.DataSource = L_ImageData;
 		}
 
 		//リストボックス変更時

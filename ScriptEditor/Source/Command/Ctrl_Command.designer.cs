@@ -89,9 +89,9 @@
 			// Btn_Del
 			// 
 			this.Btn_Del.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.Btn_Del.Location = new System.Drawing.Point(21, 320);
+			this.Btn_Del.Location = new System.Drawing.Point(94, 347);
 			this.Btn_Del.Name = "Btn_Del";
-			this.Btn_Del.Size = new System.Drawing.Size(71, 33);
+			this.Btn_Del.Size = new System.Drawing.Size(71, 24);
 			this.Btn_Del.TabIndex = 13;
 			this.Btn_Del.Text = "キー削除";
 			this.Btn_Del.UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@
 			// 
 			// Btn_Add
 			// 
-			this.Btn_Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.Btn_Add.Location = new System.Drawing.Point(98, 321);
+			this.Btn_Add.BackColor = System.Drawing.Color.LightSkyBlue;
+			this.Btn_Add.Location = new System.Drawing.Point(24, 309);
 			this.Btn_Add.Name = "Btn_Add";
-			this.Btn_Add.Size = new System.Drawing.Size(76, 32);
+			this.Btn_Add.Size = new System.Drawing.Size(141, 32);
 			this.Btn_Add.TabIndex = 12;
 			this.Btn_Add.Text = "キー追加";
 			this.Btn_Add.UseVisualStyleBackColor = false;
@@ -220,7 +220,7 @@
 			// CHK_Not
 			// 
 			this.CHK_Not.AutoSize = true;
-			this.CHK_Not.Location = new System.Drawing.Point(126, 385);
+			this.CHK_Not.Location = new System.Drawing.Point(117, 391);
 			this.CHK_Not.Name = "CHK_Not";
 			this.CHK_Not.Size = new System.Drawing.Size(48, 16);
 			this.CHK_Not.TabIndex = 23;

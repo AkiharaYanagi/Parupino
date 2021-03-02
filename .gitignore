@@ -2,6 +2,7 @@
 
 !testChara.dat
 *.dat
+*.xml
 
 old/
 *.psd

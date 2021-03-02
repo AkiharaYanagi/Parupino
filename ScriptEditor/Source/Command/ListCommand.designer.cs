@@ -45,10 +45,10 @@
 			// 
 			// Btn_Add
 			// 
-			this.Btn_Add.BackColor = System.Drawing.Color.SkyBlue;
+			this.Btn_Add.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.Btn_Add.Location = new System.Drawing.Point(21, 390);
 			this.Btn_Add.Name = "Btn_Add";
-			this.Btn_Add.Size = new System.Drawing.Size(124, 26);
+			this.Btn_Add.Size = new System.Drawing.Size(124, 30);
 			this.Btn_Add.TabIndex = 1;
 			this.Btn_Add.Text = "コマンド追加";
 			this.Btn_Add.UseVisualStyleBackColor = false;
@@ -57,9 +57,9 @@
 			// Btn_Del
 			// 
 			this.Btn_Del.BackColor = System.Drawing.Color.Pink;
-			this.Btn_Del.Location = new System.Drawing.Point(54, 422);
+			this.Btn_Del.Location = new System.Drawing.Point(63, 426);
 			this.Btn_Del.Name = "Btn_Del";
-			this.Btn_Del.Size = new System.Drawing.Size(91, 26);
+			this.Btn_Del.Size = new System.Drawing.Size(82, 23);
 			this.Btn_Del.TabIndex = 2;
 			this.Btn_Del.Text = "コマンド削除";
 			this.Btn_Del.UseVisualStyleBackColor = false;

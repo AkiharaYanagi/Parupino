@@ -44,7 +44,6 @@ namespace ScriptEditor
 		//位置　(参照型：テキストボックスで数値を指定するためintの参照型が必要)
 		//--------------------------------------------------------------------
 
-		//@todo イメージを名前で指定する(IDによる指定先のずれを防止)
 		//キャラ内のイメージリストにおけるインデックス
 		public int ImgIndex { get; set; } = 0;
 		public string ImgName { get; set; } = "ImgName";

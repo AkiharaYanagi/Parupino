@@ -112,6 +112,11 @@ namespace ScriptEditor
 			cpd_Behavior.SetCtrl ( eb );	//ビヘイビア(:コンペンド)初期化
 			cpd_Behavior.SetBehavior ();
 
+			//@todo 初期化時null
+
+			//フォーム：イメージの初期化
+			FormImage.Inst.SetTarget ( eb.Compend.ListImage.GetBindingList () );
+
 			//フォーム：アクションの初期化
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
 

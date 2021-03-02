@@ -8,7 +8,7 @@ namespace ScriptEditor
 	public partial class Ctrl_Compend : UserControl
 	{
 		//キャラの参照 (固有リストを参照する)
-		Chara Chara = null;
+		private Chara Chara = null;
 
 		//アクションもしくはエフェクトの編集と表示を参照する
 		//外部でビヘイビアとガーニッシュのいずれかを指定してSet()する
@@ -167,16 +167,16 @@ namespace ScriptEditor
 			//選択用別フォーム
 			ImageList blImgList = ( BoolAction ) ? Chara.behavior.ListImage : Chara.garnish.ListImage;
 			BindingList < ImageData > blImg = blImgList.GetBindingList ();
-			FormImage formImage = new FormImage ( blImg );
+//			FormImage formImage = new FormImage ( blImg );
 
 			//フォームを開く
-			if ( formImage.ShowDialog ( this ) == DialogResult.OK )
+			if ( FormImage.Inst.ShowDialog ( this ) == DialogResult.OK )
 			{
 				//フォームをOKで閉じる
 
 				//イメージの設定
 				Script scp = EditCompend.SelectedScript;
-				scp.ImgIndex = formImage.GetImageIndex();
+				scp.ImgIndex = FormImage.Inst.GetImageIndex();
 
 				//スクリプト変更後に他スクリプトにコピーするかチェックする
 //				CheckSetOtherScript ();
@@ -189,7 +189,7 @@ namespace ScriptEditor
 				DispChara.Inst.Disp ();
 			}
 
-			formImage.Dispose ();
+//			formImage.Dispose ();
 		}
 
 		//-------------------------------------------------------------------------
