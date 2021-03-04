@@ -125,7 +125,7 @@ namespace ScriptEditor
 		}
 
 		//-------------------------------------------------------------------------
-		//シークエンスボタン
+		//[アクション/エフェクト] (シークエンス) ボタン
 		private void Btn_Sqc_Click ( object sender, System.EventArgs e )
 		{
 			SwitchFormAction ();
@@ -156,18 +156,19 @@ namespace ScriptEditor
 
 		private void SwitchFormScript ()
 		{
-			FormScript f = FormScript.Inst;
-			f.Visible = ! f.Visible;
+			FormScript.Inst.Visible = ! FormScript.Inst.Visible;
 		}
 
 		//-------------------------------------------------------------------------
 		//イメージ
 		private void Btn_Image_Click ( object sender, System.EventArgs e )
 		{
+#if false
 			//選択用別フォーム
 			ImageList blImgList = ( BoolAction ) ? Chara.behavior.ListImage : Chara.garnish.ListImage;
 			BindingList < ImageData > blImg = blImgList.GetBindingList ();
-//			FormImage formImage = new FormImage ( blImg );
+			//			FormImage formImage = new FormImage ( blImg );
+
 
 			//フォームを開く
 			if ( FormImage.Inst.ShowDialog ( this ) == DialogResult.OK )
@@ -183,13 +184,14 @@ namespace ScriptEditor
 //				editChara.EditAction.CheckSetOtherScript ();
 				EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
 
-
 				//表示の更新
 				Tb_ImageName.Text = scp.ImgIndex.ToString();
 				DispChara.Inst.Disp ();
 			}
 
 //			formImage.Dispose ();
+#endif
+			FormImage.Inst.Visible = ! FormImage.Inst.Visible;
 		}
 
 		//-------------------------------------------------------------------------

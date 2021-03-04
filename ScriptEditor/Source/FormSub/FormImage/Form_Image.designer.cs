@@ -61,6 +61,7 @@
 			this.btn_ArchiveOK.TabIndex = 3;
 			this.btn_ArchiveOK.Text = "OK";
 			this.btn_ArchiveOK.UseVisualStyleBackColor = true;
+			this.btn_ArchiveOK.Click += new System.EventHandler(this.Btn_ArchiveOK_Click);
 			// 
 			// pbArchiveImage
 			// 
@@ -109,7 +110,7 @@
 			this.btn_Cancel.TabIndex = 6;
 			this.btn_Cancel.Text = "Cancel";
 			this.btn_Cancel.UseVisualStyleBackColor = true;
-			this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+			this.btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
 			// 
 			// openFileDialog1
 			// 
@@ -128,6 +129,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "FormImage";
 			this.Text = "Form_ImagePreview";
+			this.VisibleChanged += new System.EventHandler(this.FormImage_VisibleChanged);
 			((System.ComponentModel.ISupportInitialize)(this.pbArchiveImage)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();

@@ -33,7 +33,7 @@ namespace ScriptEditor
 			InitializeComponent ();
 
 			//サブフォーム初期化
-			InitSubForm ();
+			LoadSubForm ();
 
 			//ステータスバーテキストを登録
 			STS_TXT.Tssl = 	toolStripStatusLabel1;

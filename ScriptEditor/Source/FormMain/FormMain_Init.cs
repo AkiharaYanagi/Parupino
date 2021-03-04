@@ -20,14 +20,17 @@ namespace ScriptEditor
 			this.StartPosition = FormStartPosition.Manual;
 			Point ptStart = Cursor.Position;
 			ptStart.X += start_X;
+			if ( ptStart.X < 0 ) { ptStart.X = 0; }
 			ptStart.Y += start_Y;
+			if ( ptStart.Y < 0 ) { ptStart.Y = 0; }
 			this.Location = ptStart;
 		}
 
 		//--------------------------------------------------------------------------
 		//サブフォーム関連
-		private void InitSubForm ()
+		private void LoadSubForm ()
 		{
+			FormImage.Inst.FormMain = this;
 			FormAction.Inst.FormMain = this;
 			FormScript.Inst.FormMain = this;
 			FormRect.Inst.FormMain = this;
@@ -83,7 +86,7 @@ namespace ScriptEditor
 				SetFormText ( edittingFilename );
 
 				//@todo ImageNameが"0"になる問題を修正
-
+		
 				//テストデータからキャラ作成ソースファイルを作成
 				MakeTestCharaData mtcd = new MakeTestCharaData ( chara );
 
@@ -112,10 +115,8 @@ namespace ScriptEditor
 			cpd_Behavior.SetCtrl ( eb );	//ビヘイビア(:コンペンド)初期化
 			cpd_Behavior.SetBehavior ();
 
-			//@todo 初期化時null
-
 			//フォーム：イメージの初期化
-			FormImage.Inst.SetTarget ( eb.Compend.ListImage.GetBindingList () );
+//			FormImage.Inst.SetTarget ( eb.Compend.ListImage.GetBindingList () );
 
 			//フォーム：アクションの初期化
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );

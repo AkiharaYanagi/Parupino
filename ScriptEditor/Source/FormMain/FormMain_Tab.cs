@@ -58,6 +58,9 @@ namespace ScriptEditor
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			Assosiate ( eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
+
+			//イメージフォームにビヘイビアを設定
+			FormImage.Inst.SetTarget ( eb.Compend.ListImage.GetBindingList () );
 		}
 
 		//[アクション]タブ離去時
@@ -71,6 +74,9 @@ namespace ScriptEditor
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			Assosiate ( eg.SelectedScript );
 			eg.SelectScript ( 0, 0 );
+
+			//イメージフォームにガーニッシュを設定
+			FormImage.Inst.SetTarget ( eg.Compend.ListImage.GetBindingList () );
 		}
 
 		public void tabEffect_Deselected ()

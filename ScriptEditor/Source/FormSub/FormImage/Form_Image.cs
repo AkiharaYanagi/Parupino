@@ -41,6 +41,12 @@ namespace ScriptEditor
 		}
 		//---------------------------------------------------------------------
 
+		//編集参照
+		EditCompend EditCompend { get; set; } = null;
+
+		//親フォーム参照
+		public FormMain FormMain { get; set; } = null;
+
 		//イメージリスト参照
 		private BindingList<ImageData> L_ImageData { get; set; }
 
@@ -69,12 +75,21 @@ namespace ScriptEditor
 		}
 
 		//キャンセル
-		private void btn_Cancel_Click ( object sender, EventArgs e )
+		private void Btn_Cancel_Click ( object sender, EventArgs e )
 		{
 			this.Close ();			//何もせずに終了
 		}
 
-		//OKはShowDialog()で開いた後、DialogResultから指定する
+		//OK
+		private void Btn_ArchiveOK_Click ( object sender, EventArgs e )
+		{
+			//選択中スクリプトにイメージの設定
+			Script scp = EditCompend.SelectedScript;
+			scp.ImgIndex = GetImageIndex();
+			
+			//グループにも変更を反映
+			EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
+		}
 
 		private void 読込ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
@@ -120,5 +135,13 @@ namespace ScriptEditor
 			pbArchiveImage.Image = null;
 		}
 
+		private void FormImage_VisibleChanged ( object sender, EventArgs e )
+		{
+			//フォーム位置を親フォームの右端にする
+			int x = FormMain.Location.X + FormMain.Width;
+			int y = FormMain.Location.Y;
+			this.Location = new Point ( x, y );
+
+		}
 	}
 }
