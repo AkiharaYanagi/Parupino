@@ -162,17 +162,20 @@
     <ClInclude Include="Source\GameMain\GameConst.h">
       <Filter>GameMain</Filter>
     </ClInclude>
-    <ClInclude Include="Source\FtgMain\EfClang.h">
-      <Filter>FtgMain\Ef</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\FtgMain\EfSpark.h">
-      <Filter>FtgMain\Ef</Filter>
-    </ClInclude>
     <ClInclude Include="Source\ExeChara\CharaRect.h">
       <Filter>ExeChara\Rect</Filter>
     </ClInclude>
     <ClInclude Include="Source\ExeChara\Disp\DispRect.h">
       <Filter>ExeChara\Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\Ef\EfClang.h">
+      <Filter>FtgMain\Ef</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\Ef\EfParticle.h">
+      <Filter>FtgMain\Ef</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\Ef\EfSpark.h">
+      <Filter>FtgMain\Ef</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -269,17 +272,20 @@
     <ClCompile Include="Source\GameMain\WinMain.cpp">
       <Filter>GameMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\FtgMain\EfClang.cpp">
-      <Filter>FtgMain\Ef</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FtgMain\EfSpark.cpp">
-      <Filter>FtgMain\Ef</Filter>
-    </ClCompile>
     <ClCompile Include="Source\ExeChara\CharaRect.cpp">
       <Filter>ExeChara\Rect</Filter>
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispRect.cpp">
       <Filter>ExeChara\Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Ef\EfClang.cpp">
+      <Filter>FtgMain\Ef</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Ef\EfParticle.cpp">
+      <Filter>FtgMain\Ef</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Ef\EfSpark.cpp">
+      <Filter>FtgMain\Ef</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

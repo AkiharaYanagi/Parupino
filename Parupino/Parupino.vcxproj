@@ -179,8 +179,9 @@
     <ClInclude Include="Source\ExeChara\Input\CharaInput.h" />
     <ClInclude Include="Source\ExeChara\Input\CPUInput.h" />
     <ClInclude Include="Source\ExeChara\Input\PlayerInput.h" />
-    <ClInclude Include="Source\FtgMain\EfClang.h" />
-    <ClInclude Include="Source\FtgMain\EfSpark.h" />
+    <ClInclude Include="Source\FtgMain\Ef\EfClang.h" />
+    <ClInclude Include="Source\FtgMain\Ef\EfParticle.h" />
+    <ClInclude Include="Source\FtgMain\Ef\EfSpark.h" />
     <ClInclude Include="Source\FtgMain\Fighting.h" />
     <ClInclude Include="Source\FtgMain\FtgConst.h" />
     <ClInclude Include="Source\FtgMain\G_Ftg.h" />
@@ -222,8 +223,9 @@
     <ClCompile Include="Source\ExeChara\Input\CharaInput.cpp" />
     <ClCompile Include="Source\ExeChara\Input\CPUInput.cpp" />
     <ClCompile Include="Source\ExeChara\Input\PlayerInput.cpp" />
-    <ClCompile Include="Source\FtgMain\EfClang.cpp" />
-    <ClCompile Include="Source\FtgMain\EfSpark.cpp" />
+    <ClCompile Include="Source\FtgMain\Ef\EfClang.cpp" />
+    <ClCompile Include="Source\FtgMain\Ef\EfParticle.cpp" />
+    <ClCompile Include="Source\FtgMain\Ef\EfSpark.cpp" />
     <ClCompile Include="Source\FtgMain\Fighting.cpp" />
     <ClCompile Include="Source\FtgMain\G_Ftg.cpp" />
     <ClCompile Include="Source\FtgMain\MutualChara.cpp" />
