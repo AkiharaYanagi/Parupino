@@ -31,7 +31,7 @@ namespace GAME
 		PrmEfParticle () : m_angle ( 0 ) {}
 	};
 
-	//火花エフェクトクラス
+	//粒子エフェクトクラス
 	class EfParticle : public GrpEf
 	{
 		enum NUM
@@ -45,6 +45,15 @@ namespace GAME
 		EfParticle ( const EfParticle & rhs ) = delete;
 		~EfParticle ();
 
+		//上限
+		//1回30個　→　全300個程度
+
+		//発生(追加)
+
+		//時間による解放
+
+		//回収による解放
+		
 		void Move ();
 		void On ( VEC2 center );
 	};
