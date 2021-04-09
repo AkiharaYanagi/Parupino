@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ScriptEditor
 {
@@ -74,6 +75,12 @@ namespace ScriptEditor
 			int i = BL_t.IndexOf ( t );
 			BL_t.Insert ( i, t );
 			DCT_t.Add ( name, t );
+		}
+
+		public int Length ()
+		{
+			Debug.Assert ( BL_t.Count == DCT_t.Count );
+			return BL_t.Count;
 		}
 	}
 }

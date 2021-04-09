@@ -88,6 +88,22 @@ namespace ScriptEditor
 			if ( sequence < 0 || ls.Count <= sequence ) { return; }
 			SelectedSequence = ls [ sequence ];
 
+			//スクリプトは０を選択
+			L_Scp lscp = SelectedSequence.ListScript;
+			if ( lscp.Count <= 0 ) { return; }
+			SelectFrame ( 0 );
+		}
+
+		//名前からシークエンス選択
+		public void SelectSequence ( string name )
+		{
+			//アクション名以外のとき何もしない
+			Sequence sq = Compend.Bldct_sqc.Get ( name );
+			if ( null == sq ) { return; }
+
+			SelectedSequence = sq;
+
+			//スクリプトは０を選択
 			L_Scp lscp = SelectedSequence.ListScript;
 			if ( lscp.Count <= 0 ) { return; }
 			SelectFrame ( 0 );

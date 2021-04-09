@@ -109,13 +109,16 @@ namespace ScriptEditor
 				ReadScriptList ( effect, elemEf.Elements );
 
 				//エフェクトに設定
-				chara.garnish.Bldct_sqc.GetBindingList().Add ( effect );
+//				chara.garnish.Bldct_sqc.GetBindingList().Add ( effect );
+				chara.garnish.Bldct_sqc.Add ( effect.Name, effect );
 			}
 
 			//読込時　エフェクトの数が０のときダミーを作成
 			if ( 0 == chara.garnish.Bldct_sqc.GetBindingList().Count )
 			{
-				chara.garnish.Bldct_sqc.GetBindingList().Add ( new Effect () );
+//				chara.garnish.Bldct_sqc.GetBindingList().Add ( new Effect () );
+				Effect effect = new Effect ();
+				chara.garnish.Bldct_sqc.Add ( effect.Name, effect );
 			}
 
 

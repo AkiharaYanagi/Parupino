@@ -28,6 +28,7 @@ namespace ScriptEditor
 		public void SetCtrl ( EditCompend ec )
 		{
 			EditCompend = ec;
+			sequenceTree1.SetCtrl ( ec );
 			sqcBoard1.SetCtrl ( ec );
 			Ctrl_Img.SetCtrl ( ec );
 		}
@@ -53,10 +54,12 @@ namespace ScriptEditor
 			if ( BoolAction )
 			{
 				Ctrl_Img.SetCharaData ( ch.behavior.ListImage, ch.garnish.Bldct_sqc.GetBindingList(), ch.garnish.ListImage );
+				sequenceTree1.Set ( ch.behavior.Bldct_sqc );
 			}
 			else
 			{
 				Ctrl_Img.SetCharaData ( ch.garnish.ListImage, ch.garnish.Bldct_sqc.GetBindingList(), ch.garnish.ListImage );
+				sequenceTree1.Set ( ch.garnish.Bldct_sqc );
 			}
 
 			FormAction.Inst.SetCharaData ( ch );
@@ -122,6 +125,12 @@ namespace ScriptEditor
 			{
 				blsqc.ResetItem ( i );	
 			}
+		}
+
+		//アクションカテゴリの更新
+		public void UpdateActionCategory ( Sequence sq )
+		{
+			sequenceTree1.UpdateCategory ( sq );
 		}
 
 		//-------------------------------------------------------------------------

@@ -175,6 +175,7 @@ namespace ScriptEditor
 
 			//タブの選択
 			tabAction_Selected ();
+			FormAction.Inst.Show ();
 			FormScript.Inst.Show ();
 			FormEfGnrt.Inst.Show ();
 			FormRect.Inst.Show ();
