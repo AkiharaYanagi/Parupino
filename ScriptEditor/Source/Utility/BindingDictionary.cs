@@ -10,7 +10,6 @@ namespace ScriptEditor
 	//=============================================================
 	public interface IName
 	{
-//		string GetName ();
 		string Name { get; set; }
 	}
 
