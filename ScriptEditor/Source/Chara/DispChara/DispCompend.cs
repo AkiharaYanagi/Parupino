@@ -53,6 +53,13 @@
 			DispSequence.Disp ( EditCompend.SelectedSequence );		//シークエンス
 			DispScript.Disp ( EditCompend.SelectedScript );	//スクリプト
 		}
+
+		//アクションカテゴリの変更
+		public void UpdateActionCategory ()
+		{
+			CtrlCmpd.UpdateActionCategory ( EditCompend.SelectedSequence );
+			CtrlCmpd.Invalidate ();
+		}
 	}
 
 	//==================================================================================

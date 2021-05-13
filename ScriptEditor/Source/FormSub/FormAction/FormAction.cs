@@ -13,7 +13,7 @@ namespace ScriptEditor
 	//---------------------------------------------------------------------
 	//	アクションの詳細を設定するフォーム
 	//---------------------------------------------------------------------
-	//このフォームは１タスク１フォームなのでシングルトンで実装する
+	//このフォームは１プロセス１フォームなのでシングルトンで実装する
 	//・静的で単一な実体化	//static
 	//・継承禁止	//sealed
 	//・プライベートコンストラクタ
@@ -114,6 +114,7 @@ namespace ScriptEditor
 		{
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
 //			DispCompend.UpdateData ();
+			DispCompend.UpdateActionCategory ();
 		}
 
 		private void CB_Posture_SelectedIndexChanged ( object sender, EventArgs e )

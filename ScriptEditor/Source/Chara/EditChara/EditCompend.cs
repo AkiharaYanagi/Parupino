@@ -88,6 +88,22 @@ namespace ScriptEditor
 			if ( sequence < 0 || ls.Count <= sequence ) { return; }
 			SelectedSequence = ls [ sequence ];
 
+			//スクリプトは０を選択
+			L_Scp lscp = SelectedSequence.ListScript;
+			if ( lscp.Count <= 0 ) { return; }
+			SelectFrame ( 0 );
+		}
+
+		//名前からシークエンス選択
+		public void SelectSequence ( string name )
+		{
+			//アクション名以外のとき何もしない
+			Sequence sq = Compend.Bldct_sqc.Get ( name );
+			if ( null == sq ) { return; }
+
+			SelectedSequence = sq;
+
+			//スクリプトは０を選択
 			L_Scp lscp = SelectedSequence.ListScript;
 			if ( lscp.Count <= 0 ) { return; }
 			SelectFrame ( 0 );
@@ -112,7 +128,7 @@ namespace ScriptEditor
 		//末尾にシークエンス追加
 		public void AddSequence ( Sequence s )
 		{
-			Compend.Bldct_sqc.Add ( s.Name, s );
+			Compend.Bldct_sqc.Add ( s );
 		}
 
 		public virtual void Add ()
@@ -120,7 +136,7 @@ namespace ScriptEditor
 		}
 		public void Add ( Sequence s )
 		{
-			Compend.Bldct_sqc.Add ( s.Name, s );
+			Compend.Bldct_sqc.Add ( s );
 		}
 
 		//選択している後にシークエンス挿入

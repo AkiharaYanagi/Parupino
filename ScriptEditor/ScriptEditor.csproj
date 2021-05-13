@@ -36,6 +36,9 @@
     <ApplicationIcon>ScriptEditor.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BindingDictionary">
+      <HintPath>..\..\BindingDictionary\bin\Debug\BindingDictionary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC\Microsoft.DirectX\1.0.2902.0__31bf3856ad364e35\Microsoft.DirectX.dll</HintPath>
@@ -157,11 +160,8 @@
     <Compile Include="Source\Control\Ctrl_ListBox.Designer.cs">
       <DependentUpon>Ctrl_ListBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Control\Ctrl_Test.cs">
+    <Compile Include="Source\Control\SequenceTree.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Ctrl_Test.Designer.cs">
-      <DependentUpon>Ctrl_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Control\Sqc\Btn_Seq.cs">
       <SubType>Component</SubType>
@@ -257,7 +257,6 @@
     <Compile Include="Source\KeyInput\KeyConfig.cs" />
     <Compile Include="Source\KeyInput\KeyInput.cs" />
     <Compile Include="Source\KeyInput\Name.cs" />
-    <Compile Include="Source\Utility\BindingDictionary.cs" />
     <Compile Include="Source\Utility\EnumExtensions.cs" />
     <Compile Include="Source\Utility\PointUtility.cs" />
     <Compile Include="Source\Utility\RefClass.cs" />
@@ -284,8 +283,8 @@
     <EmbeddedResource Include="Source\Control\Ctrl_ListBox.resx">
       <DependentUpon>Ctrl_ListBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Ctrl_Test.resx">
-      <DependentUpon>Ctrl_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Source\Control\SequenceTree.resx">
+      <DependentUpon>SequenceTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Control\Sqc\SqcBoard.resx">
       <DependentUpon>SqcBoard.cs</DependentUpon>
