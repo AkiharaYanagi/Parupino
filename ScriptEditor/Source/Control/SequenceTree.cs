@@ -44,22 +44,23 @@ namespace ScriptEditor
 			EditCompend = ec;
 		}
 
-		public void Set ( BindingDictionary < Sequence > bd_sq )
+		public void SetCharaData ( BindingDictionary < Sequence > bd_sq )
 		{
 			if ( null == bd_sq ) { return; }
 			treeView1.Nodes.Clear ();
 
-			if ( 0 >= bd_sq.Length() ) { return; }
+			if ( 0 >= bd_sq.Count() ) { return; }
 
-			TreeNode[] root;
+			BindingList < Sequence > bl = bd_sq.GetBindingList();
 
 			//アクションのときアクションカテゴリで分類
-			BindingList < Sequence > bl = bd_sq.GetBindingList();
 			if ( bl[0] is Action ) 
 			{
 				//アクションカテゴリで初期化
 				string[] names = Enum.GetNames ( typeof ( ActionCategory ) );
-				root = new TreeNode [ names.Length ];
+				//木の根
+				TreeNode[] root = new TreeNode [ names.Length ];
+
 				int i = 0;
 				foreach ( string name in names )
 				{
@@ -72,41 +73,59 @@ namespace ScriptEditor
 				{
 					string ctg_name = Enum.GetName ( typeof ( ActionCategory ), a.Category );
 					int nodeIndex = 0;
+
+					//カテゴリからサーチ
 					foreach ( TreeNode n in root )
 					{
-						if ( ctg_name == n.Name )
+						if ( ctg_name == n.Text )
 						{
-							nodeIndex = n.Index;
+//							nodeIndex = n.Index;
+							break;
 						}
+						++ nodeIndex;
 					}
+
+					//追加
 					root [ nodeIndex ].Nodes.Add ( a.Name );
 				}
 				treeView1.Nodes.AddRange ( root );
-			}
 
+				//先頭を選択
+				treeView1.SelectedNode = root[0].Nodes[0];
+				EditCompend.SelectSequence ( root[0].Nodes[0].Text );
+			}
+			//アクションではない(エフェクト)のとき
 			else
 			{
-				TreeNode [] nodes = new TreeNode [ bl.Count ];
+				//名前で直接分類する
+				TreeNode [] root = new TreeNode [ bl.Count ];
 			
 				int index = 0;
 				foreach ( Sequence s in bl )
 				{
-					nodes [ index ] = new TreeNode ( s.Name );
+					root [ index ] = new TreeNode ( s.Name );
 					++ index;
 				}
 
-				treeView1.Nodes.AddRange ( nodes );
+				treeView1.Nodes.AddRange ( root );
 
+
+				//先頭を選択
+				treeView1.SelectedNode = root[0];
+				EditCompend.SelectSequence ( root[0].Text );
 			}
 		}
 
+		//更新
 		public void UpdateCategory ( Sequence sq )
 		{
-			if ( sq is Action )
+			//アクションのときカテゴリの更新
+			if ( sq is Action a )
 			{
-				Action a = (Action)sq;
+				//対象のアクションは１つだがすべてを走査しておく
+
 				string ctg_name = Enum.GetName ( typeof ( ActionCategory ), a.Category );
-				
+
 				//すべてのノードから対象を削除
 				foreach ( TreeNode nodes in treeView1.Nodes )
 				{
@@ -137,7 +156,7 @@ namespace ScriptEditor
 		{
 			string name = treeView1.SelectedNode.Text;
 
-			//アクション名以外のとき何もしない
+			//アクション名以外(カテゴリ名など)の選択のとき何もしない
 			EditCompend.SelectSequence ( name );
 
 			DispChara.Inst.Disp ();

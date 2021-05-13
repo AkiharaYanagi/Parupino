@@ -54,32 +54,39 @@ namespace ScriptEditor
 			if ( BoolAction )
 			{
 				Ctrl_Img.SetCharaData ( ch.behavior.ListImage, ch.garnish.Bldct_sqc.GetBindingList(), ch.garnish.ListImage );
-				sequenceTree1.Set ( ch.behavior.Bldct_sqc );
+				sequenceTree1.SetCharaData ( ch.behavior.Bldct_sqc );
 			}
 			else
 			{
 				Ctrl_Img.SetCharaData ( ch.garnish.ListImage, ch.garnish.Bldct_sqc.GetBindingList(), ch.garnish.ListImage );
-				sequenceTree1.Set ( ch.garnish.Bldct_sqc );
+				sequenceTree1.SetCharaData ( ch.garnish.Bldct_sqc );
 			}
 
 			FormAction.Inst.SetCharaData ( ch );
-			Lb_SqcName.DataSource = EditCompend.Compend.Bldct_sqc.GetBindingList();
+
+//			Lb_SqcName.DataSource = EditCompend.Compend.Bldct_sqc.GetBindingList();
+
 			Set ();
 		}
 
+#if false
 		//リストボックスによるシークエンスの選択
 		private void Lb_SqcName_SelectedIndexChanged ( object sender, System.EventArgs e )
 		{
+
 			EditCompend.SelectSequence ( Lb_SqcName.SelectedIndex );
 
 			Set ();
 
 			DispChara.Inst.Disp ();
 		}
+#endif
 
 		public void Set ()
 		{
-			Sequence sqc = (Sequence)Lb_SqcName.SelectedItem;
+			//選択
+//			Sequence sqc = (Sequence)Lb_SqcName.SelectedItem;
+			Sequence sqc = EditCompend.SelectedSequence;
 			sqcBoard1.Set ( sqc );
 
 			Script scp = EditCompend.SelectedScript;

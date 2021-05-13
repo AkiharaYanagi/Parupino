@@ -36,6 +36,9 @@
     <ApplicationIcon>ScriptEditor.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BindingDictionary">
+      <HintPath>..\..\BindingDictionary\bin\Debug\BindingDictionary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC\Microsoft.DirectX\1.0.2902.0__31bf3856ad364e35\Microsoft.DirectX.dll</HintPath>
@@ -254,7 +257,6 @@
     <Compile Include="Source\KeyInput\KeyConfig.cs" />
     <Compile Include="Source\KeyInput\KeyInput.cs" />
     <Compile Include="Source\KeyInput\Name.cs" />
-    <Compile Include="Source\Utility\BindingDictionary.cs" />
     <Compile Include="Source\Utility\EnumExtensions.cs" />
     <Compile Include="Source\Utility\PointUtility.cs" />
     <Compile Include="Source\Utility\RefClass.cs" />

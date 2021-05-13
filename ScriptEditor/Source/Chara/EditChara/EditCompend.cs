@@ -128,7 +128,7 @@ namespace ScriptEditor
 		//末尾にシークエンス追加
 		public void AddSequence ( Sequence s )
 		{
-			Compend.Bldct_sqc.Add ( s.Name, s );
+			Compend.Bldct_sqc.Add ( s );
 		}
 
 		public virtual void Add ()
@@ -136,7 +136,7 @@ namespace ScriptEditor
 		}
 		public void Add ( Sequence s )
 		{
-			Compend.Bldct_sqc.Add ( s.Name, s );
+			Compend.Bldct_sqc.Add ( s );
 		}
 
 		//選択している後にシークエンス挿入

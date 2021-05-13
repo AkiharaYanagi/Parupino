@@ -60,7 +60,7 @@ namespace ScriptEditor
 				Name = name
 			};
 
-			BD_t.Add ( name, t );
+			BD_t.Add ( t );
 			BD_t.GetBindingList ().ResetBindings ();
 
 			//更新

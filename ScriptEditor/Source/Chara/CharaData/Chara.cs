@@ -47,8 +47,8 @@ namespace ScriptEditor
 			// 引数(名前)付きコンストラクタはScriptも生成される
 			//（空）コンストラクタはScriptを生成しない
 			// コピー等で必要なClear()のあとは手動で追加する
-			behavior.Bldct_sqc.Add ( "testAction0", new Action ( "testAction0" ) );
-			garnish.Bldct_sqc.Add ( "testEffect0", new Effect ( "testEffect0" ) );
+			behavior.Bldct_sqc.Add ( new Action ( "testAction0" ) );
+			garnish.Bldct_sqc.Add ( new Effect ( "testEffect0" ) );
 			ListCommand.Add ( new Command ( "testCommand0" ) );
 
 #if false

@@ -81,7 +81,7 @@ namespace ScriptEditor
 
 				//アクションに設定
 //				chara.behavior.ListSequence.Add ( action );
-				chara.behavior.Bldct_sqc.Add ( action.Name, action );
+				chara.behavior.Bldct_sqc.Add ( action );
 			}
 
 			//一度アクションリストを作成してから指定し直す
@@ -110,7 +110,7 @@ namespace ScriptEditor
 
 				//エフェクトに設定
 //				chara.garnish.Bldct_sqc.GetBindingList().Add ( effect );
-				chara.garnish.Bldct_sqc.Add ( effect.Name, effect );
+				chara.garnish.Bldct_sqc.Add ( effect );
 			}
 
 			//読込時　エフェクトの数が０のときダミーを作成
@@ -118,7 +118,7 @@ namespace ScriptEditor
 			{
 //				chara.garnish.Bldct_sqc.GetBindingList().Add ( new Effect () );
 				Effect effect = new Effect ();
-				chara.garnish.Bldct_sqc.Add ( effect.Name, effect );
+				chara.garnish.Bldct_sqc.Add ( effect );
 			}
 
 
