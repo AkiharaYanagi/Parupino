@@ -70,7 +70,8 @@ namespace ScriptEditor
 				Chara testCharaData = new Chara ();
 
 				//テストオブジェクトによる機能のテスト
-				TestChara testChara = new TestChara ( testCharaData );
+				TestChara testChara = new TestChara ();
+				testChara.Test ( testCharaData );
 
 				//既存のとき書出しない
 				if ( ! File.Exists ( edittingFilename ) )
@@ -88,7 +89,7 @@ namespace ScriptEditor
 				//@todo ImageNameが"0"になる問題を修正
 		
 				//テストデータからキャラ作成ソースファイルを作成
-				MakeTestCharaData mtcd = new MakeTestCharaData ( chara );
+//				MakeTestCharaData mtcd = new MakeTestCharaData ( chara );
 
 				//キャラデータの適用
 				SetCharaData ( chara );
@@ -109,7 +110,7 @@ namespace ScriptEditor
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
 
-			eb.SetCtrl ( cpd_Behavior );		//編集
+//			eb.SetCtrl ( cpd_Behavior );		//編集
 			db.SetCtrl ( eb, cpd_Behavior );    //表示
 
 			cpd_Behavior.SetCtrl ( eb );	//ビヘイビア(:コンペンド)初期化
@@ -135,7 +136,7 @@ namespace ScriptEditor
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
 
-			eg.SetCtrl ( cpd_Garnish );		//編集
+//			eg.SetCtrl ( cpd_Garnish );		//編集
 			dg.SetCtrl ( eg, cpd_Garnish );	//表示
 
 			cpd_Garnish.SetCtrl ( eg );	//ビヘイビア(:コンペンド)初期化
@@ -152,7 +153,9 @@ namespace ScriptEditor
 		private void TabCommand_Load ()
 		{
 			listCommand1.SetData ( chara.ListCommand, ctrl_Command1 );
-			ctrl_Command1.Set ( listCommand1.GetSelected () );
+			Command c = listCommand1.GetSelected ();
+			if ( null == c ) { return; }
+			ctrl_Command1.Set ( c );
 		}
 
 		//タブ_キャラの初期化

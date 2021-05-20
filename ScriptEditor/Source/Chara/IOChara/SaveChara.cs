@@ -332,7 +332,7 @@ namespace ScriptEditor
 					strmWriter.Write ( " CommandName=\"" + chara.ListCommand[ branch.IndexCommand ] + "\"" );
 					strmWriter.Write ( " Action=\"" + branch.IndexAction + "\"" );
 					strmWriter.Write ( " ActionName=\"" + chara.behavior.Bldct_sqc.GetBindingList()[ branch.IndexAction ] + "\"" );
-					strmWriter.Write ( " Frame=\"" + branch.Frame.i + "\"" );
+					strmWriter.Write ( " Frame=\"" + branch.Frame + "\"" );
 					strmWriter.Write ( "></Branch>\n" );
 				}
 				strmWriter.Write ( "\t\t\t</BranchList>\n" );

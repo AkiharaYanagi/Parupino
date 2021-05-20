@@ -18,8 +18,9 @@
 		//遷移先　アクションの参照
 		public Action Transit { get; set; } = null;
 
-		//フレーム指定
-		public RefInt Frame { get; set; } = new RefInt ();
+		//遷移先　フレーム指定
+//		public RefInt Frame { get; set; } = new RefInt ();
+		public int Frame { get; set; } = 0;
 
 		//コンストラクタ
 		public Branch ()

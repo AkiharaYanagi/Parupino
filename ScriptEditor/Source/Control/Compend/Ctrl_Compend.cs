@@ -46,7 +46,7 @@ namespace ScriptEditor
 			Btn_Sqc.Enabled = false;
 		}
 
-		//キャラの設定
+		//読込時キャラデータの設定
 		public void SetCharaData ( Chara ch )
 		{
 			Chara = ch;

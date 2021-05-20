@@ -2,8 +2,8 @@
 
 namespace ScriptEditor
 {
-	using BL_Sqc = BindingList < Sequence >;
 	using BL_DCT_Sqc = BindingDictionary < Sequence >;
+	using BL_Sqc = BindingList < Sequence >;
 
 	//================================================================
 	//	<コンペンド> 		【一覧】シークエンスの継承であるアクションやエフェクトのリストを扱う
@@ -14,7 +14,6 @@ namespace ScriptEditor
 	{
 		//---------------------------------------------------------------------
 		//シークエンスリスト	
-//		public BL_Sqc ListSequence = new BL_Sqc ();
 		public BL_DCT_Sqc Bldct_sqc = new BL_DCT_Sqc ();
 
 		//イメージリスト
@@ -29,10 +28,8 @@ namespace ScriptEditor
 			{
 				seq.Clear ();
 			}
-//			ListSequence.Clear ();
 			Bldct_sqc.Clear ();
 
-			Bldct_sqc.Clear ();
 			ListImage.Clear ();
 		}
 

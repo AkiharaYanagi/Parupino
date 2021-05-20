@@ -2,6 +2,7 @@
 {
 	using GKC_ST = GameKeyCommand.GameKeyCommandState;
 
+	//選択されているコマンド中のキー
 	public class SelectKey
 	{
 		//未選択状態

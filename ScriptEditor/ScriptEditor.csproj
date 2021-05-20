@@ -36,8 +36,8 @@
     <ApplicationIcon>ScriptEditor.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BindingDictionary">
-      <HintPath>..\..\BindingDictionary\bin\Debug\BindingDictionary.dll</HintPath>
+    <Reference Include="Chara">
+      <HintPath>..\..\ScriptEditorUtility\Chara\bin\Debug\Chara.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
@@ -48,6 +48,9 @@
       <HintPath>C:\Windows\assembly\GAC\Microsoft.DirectX.DirectInput\1.0.2902.0__31bf3856ad364e35\Microsoft.DirectX.DirectInput.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualC" />
+    <Reference Include="ScriptEditorUtility">
+      <HintPath>..\..\ScriptEditorUtility\ScriptEditorUtility\bin\Debug\ScriptEditorUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,17 +71,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Source\Chara\CharaData\Action.cs" />
-    <Compile Include="Source\Chara\CharaData\Branch.cs" />
-    <Compile Include="Source\Chara\CharaData\Chara.cs" />
-    <Compile Include="Source\Chara\CharaData\Command.cs" />
-    <Compile Include="Source\Chara\CharaData\Compend.cs" />
-    <Compile Include="Source\Chara\CharaData\Effect.cs" />
-    <Compile Include="Source\Chara\CharaData\EffectGenerate.cs" />
-    <Compile Include="Source\Chara\CharaData\ImageList.cs" />
-    <Compile Include="Source\Chara\CharaData\ImageData.cs" />
-    <Compile Include="Source\Chara\CharaData\Script.cs" />
-    <Compile Include="Source\Chara\CharaData\Sequence.cs" />
     <Compile Include="Source\Chara\DispChara\DispAction.cs" />
     <Compile Include="Source\Chara\DispChara\DispChara.cs" />
     <Compile Include="Source\Chara\DispChara\DispCompend.cs" />
@@ -87,29 +79,6 @@
     <Compile Include="Source\Chara\DispChara\DispRects.cs" />
     <Compile Include="Source\Chara\DispChara\DispScript.cs" />
     <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
-    <Compile Include="Source\Chara\EditChara\EditAction.cs" />
-    <Compile Include="Source\Chara\EditChara\EditBehavior.cs" />
-    <Compile Include="Source\Chara\EditChara\EditChara.cs" />
-    <Compile Include="Source\Chara\EditChara\EditChara_Command.cs" />
-    <Compile Include="Source\Chara\EditChara\EditCompend.cs" />
-    <Compile Include="Source\Chara\EditChara\EditEffect.cs" />
-    <Compile Include="Source\Chara\EditChara\EditGarnish.cs" />
-    <Compile Include="Source\Chara\EditChara\EditScript.cs" />
-    <Compile Include="Source\Chara\EditChara\EditScript_Group.cs" />
-    <Compile Include="Source\Chara\EditChara\EditSequence.cs" />
-    <Compile Include="Source\Chara\EditChara\SelectedScript.cs" />
-    <Compile Include="Source\Chara\GameKey.cs" />
-    <Compile Include="Source\Chara\GameKeyCommand.cs" />
-    <Compile Include="Source\Chara\IOChara\DocToChara.cs" />
-    <Compile Include="Source\Chara\IOChara\Document.cs" />
-    <Compile Include="Source\Chara\IOChara\IOChara.cs" />
-    <Compile Include="Source\Chara\IOChara\LoadChara.cs" />
-    <Compile Include="Source\Chara\IOChara\LoadTextChara.cs" />
-    <Compile Include="Source\Chara\IOChara\MakeSourceTestCharaData.cs" />
-    <Compile Include="Source\Chara\IOChara\MakeTestCharaData.cs" />
-    <Compile Include="Source\Chara\IOChara\MakeTestCharaDataCore.cs" />
-    <Compile Include="Source\Chara\IOChara\SaveChara.cs" />
-    <Compile Include="Source\Chara\IOChara\TestChara.cs" />
     <Compile Include="Source\Command\Ctrl_Command.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -169,7 +138,6 @@
     <Compile Include="Source\Control\Sqc\Btn_Seq.Designer.cs">
       <DependentUpon>Btn_Seq.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Control\Sqc\DefineColor.cs" />
     <Compile Include="Source\Control\Sqc\SqcBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,9 +145,6 @@
       <DependentUpon>SqcBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Control\TBN_Command.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Control\TB_Number.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Control\Compend\ToolImg.cs" />
@@ -201,8 +166,6 @@
     <Compile Include="Source\FormMain\FormMain_Tab.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormMain\Settings.cs" />
-    <Compile Include="Source\FormMain\STS_TXT.cs" />
     <Compile Include="Source\FormSub\FormAction\FormAction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,15 +214,6 @@
     <Compile Include="Source\FormSub\FormScript\FormScript.Designer.cs">
       <DependentUpon>FormScript.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\KeyInput\DxInput.cs" />
-    <Compile Include="Source\KeyInput\Joystick.cs" />
-    <Compile Include="Source\KeyInput\Keyboard.cs" />
-    <Compile Include="Source\KeyInput\KeyConfig.cs" />
-    <Compile Include="Source\KeyInput\KeyInput.cs" />
-    <Compile Include="Source\KeyInput\Name.cs" />
-    <Compile Include="Source\Utility\EnumExtensions.cs" />
-    <Compile Include="Source\Utility\PointUtility.cs" />
-    <Compile Include="Source\Utility\RefClass.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

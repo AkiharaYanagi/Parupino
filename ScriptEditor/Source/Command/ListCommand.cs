@@ -31,6 +31,9 @@ namespace ScriptEditor
 		//選択中のデータを取得
 		public Command GetSelected ()
 		{
+			int i = Lb_LCmd.SelectedIndex;
+			if ( i < 0 || commands.Count < i ) { return null; }
+
 			return commands[ Lb_LCmd.SelectedIndex ];
 		}
 

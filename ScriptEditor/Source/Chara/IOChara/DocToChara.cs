@@ -282,7 +282,7 @@ namespace ScriptEditor
 
 					//Frame
 					int iFrame = ( int ) ELEMENT_BRANCH.ELBR_FRAME;
-					branch.Frame.i = int.Parse ( elemBranch.Attributes[ iFrame ].Value );
+					branch.Frame = int.Parse ( elemBranch.Attributes[ iFrame ].Value );
 
 					//スクリプトに登録
 					//(Command,Actionの参照は最後に登録する)
