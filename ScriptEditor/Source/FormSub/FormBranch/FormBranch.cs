@@ -52,7 +52,7 @@ namespace ScriptEditor
 		{
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			Cb_Command.DataSource = ch.ListCommand;
-			Cb_Action.DataSource = ch.behavior.Bldct_sqc.GetBindingList();
+			Cb_Action.DataSource = ch.behavior.BD_Sequence.GetBindingList();
 		}
 
 		//関連付け

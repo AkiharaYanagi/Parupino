@@ -52,8 +52,7 @@ namespace ScriptEditor
 
 			//エフェクトの取得
 			int indexEf = efGnrt.Id;
-//			BindingList<Sequence> listEf = editChara.Chara.garnish.ListSequence;
-			BindingList<Sequence> listEf = editChara.Chara.garnish.Bldct_sqc.GetBindingList ();
+			BindingList<Sequence> listEf = editChara.Chara.garnish.BD_Sequence.GetBindingList ();
 			Debug.Assert ( indexEf < listEf.Count );
 			Effect ef = ( Effect ) listEf[ indexEf ];
 

@@ -3,23 +3,24 @@ using System.Windows.Forms;
 using System.ComponentModel;
 namespace ScriptEditor
 {
+	using BD_SQC = BindingDictionary < Sequence >;
 	using BL_Sqc = BindingList < Sequence >;
+	using BD_IMGD = BindingDictionary < ImageData >;
 
 	public sealed class PaintImage 
 	{
 		//-----------------------------------------------------------
 		//キャラデータの参照
-		public ImageList ListImage { get; set; } = null;		//イメージリストの参照
+		public BD_IMGD ListImage { get; set; } = null;		//イメージリストの参照
 		public BL_Sqc ListEf { get; set; } = null;			//Efリストの参照
-		public ImageList ListEfImage { get; set; } = null;	//Efイメージリストの参照
+		public BD_IMGD ListEfImage { get; set; } = null;	//Efイメージリストの参照
 
 		//イメージ表示基準位置 ( X, Y )
 		public Point PtPbImageBase { get; set; } = new Point ( 250, 480 );
 
 		//-----------------------------------------------------
 		//内部使用
-		public PictureBox PB_Image = null;
-	
+		private PictureBox PB_Image = null;
 		private readonly DispRects dispRects = new DispRects ();
 
 		//-----------------------------------------------------
@@ -30,7 +31,7 @@ namespace ScriptEditor
 		}
 
 		//キャラ読込時
-		public void SetCharaData ( ImageList mainImg, BL_Sqc lsEf, ImageList efImg )
+		public void SetCharaData ( BD_IMGD mainImg, BL_Sqc lsEf, BD_IMGD efImg )
 		{
 			//データ参照
 			ListImage = mainImg;
@@ -45,7 +46,6 @@ namespace ScriptEditor
 			Bitmap bmp = new Bitmap ( PB_Image.Width, PB_Image.Height );
 			Graphics g = Graphics.FromImage ( bmp );
 
-//		private readonly Pen PenWhite = new Pen ( Color.White, 4 );
 			using ( Pen PenWhite = new Pen ( Color.White, 4 ) )
 			{
 
@@ -55,7 +55,6 @@ namespace ScriptEditor
 
 			}
 			
-
 			//----------------------------------------
 			//イメージID
 			//			ImageData imgdt = ListImage[ script.ImgIndex ];
@@ -89,8 +88,6 @@ namespace ScriptEditor
 
 				//描画
 				g.DrawImage ( efImg, efPt.X, efPt.Y, efImg.Width, efImg.Height );
-#if false
-#endif
 			}
 
 			//枠

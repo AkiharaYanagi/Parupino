@@ -292,7 +292,6 @@
 			// sequenceTree1
 			// 
 			this.sequenceTree1.AutoScroll = true;
-			this.sequenceTree1.EditCompend = null;
 			this.sequenceTree1.Location = new System.Drawing.Point(0, 0);
 			this.sequenceTree1.Name = "sequenceTree1";
 			this.sequenceTree1.Size = new System.Drawing.Size(132, 378);

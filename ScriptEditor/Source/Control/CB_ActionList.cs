@@ -17,7 +17,7 @@ namespace ScriptEditor
 		public void SetCharaData ( Compend cmpd )
 		{
 			//選択用に値をコピー
-			this.DataSource = new BL_Sqc ( cmpd.Bldct_sqc.GetBindingList() );
+			this.DataSource = new BL_Sqc ( cmpd.BD_Sequence.GetBindingList() );
 		}
 
 		//関連付け

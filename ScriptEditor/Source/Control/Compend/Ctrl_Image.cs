@@ -6,6 +6,7 @@ namespace ScriptEditor
 {
 	using BL_ImgDt = BindingList < ImageData >;
 	using BL_Sqc = BindingList < Sequence >;
+	using BD_IMGD = BindingDictionary < ImageData >;
 
 	//-------------------------------------------------------------------------
 	//スクリプトにおけるイメージとそれを編集するツール群をまとめるコントロール
@@ -72,7 +73,7 @@ namespace ScriptEditor
 		}
 
 		//キャラデータ読込時
-		public void SetCharaData ( ImageList mainImg, BL_Sqc lsEf, ImageList efImg )
+		public void SetCharaData ( BD_IMGD mainImg, BL_Sqc lsEf, BD_IMGD efImg )
 		{
 			paintImage.SetCharaData ( mainImg, lsEf, efImg );
 		}

@@ -4,9 +4,8 @@ using System.ComponentModel;
 
 namespace ScriptEditor
 {
-	using BL_ImgDt = BindingList < ImageData >;
+	using BD_IMGD = BindingDictionary < ImageData >;
 	using BL_Sqc = BindingList < Sequence >;
-//	using D_LRRct = DispListRefRect;
 
 	//==================================================================================
 	//	FormMainからコントロールを設定し、Scriptを受けて関連付けと表示をする
@@ -15,12 +14,12 @@ namespace ScriptEditor
 	{
 		//-----------------------------------------------------------
 		//キャラデータの参照
-//		public BL_ImgDt ListImage { get; set; } = null;		//イメージリストの参照
+///		public BD_IMGD ListImage { get; set; } = null;		//イメージリストの参照
 		public BL_Sqc ListEf { get; set; } = null;			//Efリストの参照
-//		public BL_ImgDt ListEfImage { get; set; } = null;	//Efイメージリストの参照
+//		public BD_IMGD ListEfImage { get; set; } = null;	//Efイメージリストの参照
 
-		public ImageList ImageList { get; set; } = null;		//イメージリストの参照
-		public ImageList EfImageList { get; set; } = null;	//Efイメージリストの参照
+		public BD_IMGD ImageList { get; set; } = null;		//イメージリストの参照
+		public BD_IMGD EfImageList { get; set; } = null;	//Efイメージリストの参照
 
 		//-----------------------------------------------------------
 		//コントロールの参照
@@ -145,10 +144,9 @@ namespace ScriptEditor
 		public void SetCharaData ( Chara chara )
 		{
 			//データ参照
-			ImageList = chara.behavior.ListImage;
-//			ListEf = chara.garnish.ListSequence;
-			ListEf = chara.garnish.Bldct_sqc.GetBindingList ();
-			EfImageList = chara.garnish.ListImage;
+			ImageList = chara.behavior.BD_Image;
+			ListEf = chara.garnish.BD_Sequence.GetBindingList ();
+			EfImageList = chara.garnish.BD_Image;
 		}
 
 		//更新

@@ -2,6 +2,7 @@
 {
 	//==================================================================================
 	//	Compendを受けて表示する
+	//		Behavior, Garcnishに派生する
 	//==================================================================================
 	public class DispCompend
 	{
@@ -57,7 +58,6 @@
 		//アクションカテゴリの変更
 		public void UpdateActionCategory ()
 		{
-			CtrlCmpd.UpdateActionCategory ( EditCompend.SelectedSequence );
 			CtrlCmpd.Invalidate ();
 		}
 	}
@@ -77,8 +77,6 @@
 
 		public override void SetCtrl ( EditCompend ec, Ctrl_Compend cc )
 		{
-//			FrameTable = cc.frameTable01;
-//			FrameTable.Set ( ec, this, "アクション", cc.splitContainer1.Panel1 );
 			DispAction.SetCtrl ( cc );
 			base.SetCtrl ( ec, cc );
 		}
@@ -103,8 +101,6 @@
 
 		public override void SetCtrl ( EditCompend ec, Ctrl_Compend cc )
 		{
-//			FrameTable = cc.frameTable01;
-//			FrameTable.Set ( ec, this, "エフェクト", cc.splitContainer1.Panel1 );
 			DispEffect.Load ( cc );
 			base.SetCtrl ( ec, cc );
 		}

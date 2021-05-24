@@ -77,7 +77,7 @@ namespace ScriptEditor
 		//キャラデータ
 		public void SetCharaData ( Chara ch )
 		{
-			CBSL_Next.SetCharaData ( ch.behavior.Bldct_sqc.GetBindingList() );
+			CBSL_Next.SetCharaData ( ch.behavior.BD_Sequence.GetBindingList() );
 		}
 
 		//関連付け
@@ -113,14 +113,13 @@ namespace ScriptEditor
 		private void CB_Category_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
-//			DispCompend.UpdateData ();
-			DispCompend.UpdateActionCategory ();
+			DispCompend.UpdateData ();
 		}
 
 		private void CB_Posture_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			action.Posture = (ActionPosture)CB_Posture.SelectedItem;
-//			DispCompend.UpdateData ();
+			DispCompend.UpdateData ();
 		}
 	}
 }

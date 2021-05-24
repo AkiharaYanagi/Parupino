@@ -5,11 +5,16 @@ using System.Windows.Forms;
 
 namespace ScriptEditor
 {
+	//シークエンスの一覧をツリー状に表示し、選択を１つ返す
+	//テキストのみ
 	public class SequenceTree : UserControl
 	{
 		private TreeView treeView1;
-		public EditCompend EditCompend { get; set; } = null;
 
+		//シークエンスの選択デリゲート
+		public System.Action < string > SelectSequence { get; set; } = null;
+
+		
 		public SequenceTree ()
 		{
 			InitializeComponent ();
@@ -39,19 +44,15 @@ namespace ScriptEditor
 
 		}
 
-		public void SetCtrl ( EditCompend ec )
-		{
-			EditCompend = ec;
-		}
 
 		public void SetCharaData ( BindingDictionary < Sequence > bd_sq )
 		{
 			if ( null == bd_sq ) { return; }
-			treeView1.Nodes.Clear ();
-
 			if ( 0 >= bd_sq.Count() ) { return; }
 
 			BindingList < Sequence > bl = bd_sq.GetBindingList();
+
+			treeView1.Nodes.Clear ();
 
 			//アクションのときアクションカテゴリで分類
 			if ( bl[0] is Action ) 
@@ -92,7 +93,8 @@ namespace ScriptEditor
 
 				//先頭を選択
 				treeView1.SelectedNode = root[0].Nodes[0];
-				EditCompend.SelectSequence ( root[0].Nodes[0].Text );
+				//EditCompend.SelectSequence ( root[0].Nodes[0].Text );
+				SelectSequence ( root[0].Nodes[0].Text );
 			}
 			//アクションではない(エフェクト)のとき
 			else
@@ -112,7 +114,9 @@ namespace ScriptEditor
 
 				//先頭を選択
 				treeView1.SelectedNode = root[0];
-				EditCompend.SelectSequence ( root[0].Text );
+
+				//設定デリゲートが存在したら実行
+				SelectSequence?.Invoke ( root [ 0 ].Text );
 			}
 		}
 
@@ -157,7 +161,16 @@ namespace ScriptEditor
 			string name = treeView1.SelectedNode.Text;
 
 			//アクション名以外(カテゴリ名など)の選択のとき何もしない
-			EditCompend.SelectSequence ( name );
+			bool b = false;
+			string[] names = Enum.GetNames( typeof ( ActionCategory ) );
+			foreach ( string s in names )
+			{
+				if ( s == name ) { b = true; break; }
+			}
+			if ( b ) { return; }
+
+			//名前で選択
+			SelectSequence?.Invoke ( name );
 
 			DispChara.Inst.Disp ();
 		}

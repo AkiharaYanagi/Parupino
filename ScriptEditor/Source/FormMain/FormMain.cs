@@ -16,9 +16,7 @@ namespace ScriptEditor
 		//==================================================================================
 		//	メンバ変数
 		//==================================================================================
-		//編集対象キャラクタ
-		private Chara chara = new Chara ();
-
+		private Chara chara = new Chara ();		//編集対象キャラクタ
 		private string edittingFilename = "chara.dat";	//編集中のファイル名
 		private Settings settings = new Settings();		//スクリプトエディタ自身の設定ファイル
 

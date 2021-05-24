@@ -5,16 +5,16 @@ namespace ScriptEditor
 {
 	using BL_Sqc = BindingList < Sequence >;
 
+	//==================================================================================
+	//	Compendを扱うコントロールの集合
+	//		アクションもしくはエフェクトの編集と表示を参照する
+	//		外部からSetCtrl()でビヘイビアとガーニッシュのいずれかを指定する
+	//==================================================================================
 	public partial class Ctrl_Compend : UserControl
 	{
-		//キャラの参照 (固有リストを参照する)
-		private Chara Chara = null;
-
-		//アクションもしくはエフェクトの編集と表示を参照する
-		//外部でビヘイビアとガーニッシュのいずれかを指定してSet()する
 		public EditCompend EditCompend { get; set; } = null;
 
-		//アクションのときのみ
+		//アクションのときtrue, エフェクトのときfalse
 		public bool BoolAction { get; set; } = false;
 
 		//-------------------------------------------------------------------------
@@ -28,7 +28,6 @@ namespace ScriptEditor
 		public void SetCtrl ( EditCompend ec )
 		{
 			EditCompend = ec;
-			sequenceTree1.SetCtrl ( ec );
 			sqcBoard1.SetCtrl ( ec );
 			Ctrl_Img.SetCtrl ( ec );
 		}
@@ -37,6 +36,7 @@ namespace ScriptEditor
 		{
 			BoolAction = true;
 			Btn_Sqc.Text = "アクション";
+			Btn_Sqc.Enabled = true;
 		}
 
 		public void SetGarnish ()
@@ -49,43 +49,30 @@ namespace ScriptEditor
 		//読込時キャラデータの設定
 		public void SetCharaData ( Chara ch )
 		{
-			Chara = ch;
-
+			Behavior b = ch.behavior;
+			Garnish g = ch.garnish;
 			if ( BoolAction )
 			{
-				Ctrl_Img.SetCharaData ( ch.behavior.ListImage, ch.garnish.Bldct_sqc.GetBindingList(), ch.garnish.ListImage );
-				sequenceTree1.SetCharaData ( ch.behavior.Bldct_sqc );
+				Ctrl_Img.SetCharaData ( b.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
+				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
+				sequenceTree1.SetCharaData ( b.BD_Sequence );
 			}
 			else
 			{
-				Ctrl_Img.SetCharaData ( ch.garnish.ListImage, ch.garnish.Bldct_sqc.GetBindingList(), ch.garnish.ListImage );
-				sequenceTree1.SetCharaData ( ch.garnish.Bldct_sqc );
+				Ctrl_Img.SetCharaData ( g.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
+				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
+				sequenceTree1.SetCharaData ( g.BD_Sequence );
 			}
 
 			FormAction.Inst.SetCharaData ( ch );
 
-//			Lb_SqcName.DataSource = EditCompend.Compend.Bldct_sqc.GetBindingList();
-
-			Set ();
+			SelectTarget ();
 		}
 
-#if false
-		//リストボックスによるシークエンスの選択
-		private void Lb_SqcName_SelectedIndexChanged ( object sender, System.EventArgs e )
-		{
 
-			EditCompend.SelectSequence ( Lb_SqcName.SelectedIndex );
-
-			Set ();
-
-			DispChara.Inst.Disp ();
-		}
-#endif
-
-		public void Set ()
+		public void SelectTarget ()
 		{
 			//選択
-//			Sequence sqc = (Sequence)Lb_SqcName.SelectedItem;
 			Sequence sqc = EditCompend.SelectedSequence;
 			sqcBoard1.Set ( sqc );
 
@@ -127,16 +114,13 @@ namespace ScriptEditor
 		//更新
 		public void UpdateData ()
 		{
-			BL_Sqc blsqc = EditCompend.Compend.Bldct_sqc.GetBindingList();
+			BL_Sqc blsqc = EditCompend.Compend.BD_Sequence.GetBindingList();
 			for ( int i = 0; i < blsqc.Count; ++ i )
 			{
 				blsqc.ResetItem ( i );	
 			}
-		}
 
-		//アクションカテゴリの更新
-		public void UpdateActionCategory ( Sequence sq )
-		{
+			Sequence sq = EditCompend.SelectedSequence;
 			sequenceTree1.UpdateCategory ( sq );
 		}
 

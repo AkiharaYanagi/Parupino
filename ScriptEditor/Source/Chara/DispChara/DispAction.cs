@@ -49,8 +49,7 @@ namespace ScriptEditor
 		public override void SetCharaData ( Chara ch )
 		{
 			// [アクション] 次アクションリスト
-//			CbNext.DataSource = ch.behavior.ListSequence;
-			CbNext.DataSource = ch.behavior.Bldct_sqc.GetBindingList();
+			CbNext.DataSource = ch.behavior.BD_Sequence.GetBindingList();
 
 			//１以上のときは先頭を選択、0のときは飛ばす
 			if ( CbNext.Items.Count > 0 ) { CbNext.SelectedIndex = 0; }

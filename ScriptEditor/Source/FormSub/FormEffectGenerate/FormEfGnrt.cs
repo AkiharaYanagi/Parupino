@@ -48,7 +48,7 @@ namespace ScriptEditor
 		//キャラデータの設定
 		public void SetCharaData ( Chara ch )
 		{
-			cB_SequenceList1.DataSource = ch.garnish.Bldct_sqc.GetBindingList();
+			cB_SequenceList1.DataSource = ch.garnish.BD_Sequence.GetBindingList();
 		}
 
 		//関連付け

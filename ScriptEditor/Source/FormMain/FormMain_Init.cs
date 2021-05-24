@@ -170,9 +170,6 @@ namespace ScriptEditor
 		//==================================================================================
 		private void Init ()
 		{
-			EditBehavior eb = EditChara.Inst.EditBehavior;
-			EditGarnish eg = EditChara.Inst.EditGarnish;
-
 			//キャラデータの適用
 			SetCharaData ( chara );
 
