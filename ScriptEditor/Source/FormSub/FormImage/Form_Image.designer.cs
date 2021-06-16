@@ -36,6 +36,8 @@
 			this.全削除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btn_Cancel = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.フォルダ読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
 			((System.ComponentModel.ISupportInitialize)(this.pbArchiveImage)).BeginInit();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -80,7 +82,8 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.読込ToolStripMenuItem,
-            this.全削除ToolStripMenuItem});
+            this.全削除ToolStripMenuItem,
+            this.フォルダ読込ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(743, 24);
@@ -116,6 +119,13 @@
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
+			// フォルダ読込ToolStripMenuItem
+			// 
+			this.フォルダ読込ToolStripMenuItem.Name = "フォルダ読込ToolStripMenuItem";
+			this.フォルダ読込ToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+			this.フォルダ読込ToolStripMenuItem.Text = "フォルダ読込";
+			this.フォルダ読込ToolStripMenuItem.Click += new System.EventHandler(this.フォルダ読込ToolStripMenuItem_Click);
+			// 
 			// FormImage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -148,5 +158,7 @@
 		private System.Windows.Forms.ToolStripMenuItem 全削除ToolStripMenuItem;
 		private System.Windows.Forms.Button btn_Cancel;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private System.Windows.Forms.ToolStripMenuItem フォルダ読込ToolStripMenuItem;
+		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
 	}
 }

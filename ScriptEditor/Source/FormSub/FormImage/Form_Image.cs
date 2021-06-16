@@ -42,19 +42,20 @@ namespace ScriptEditor
 		//---------------------------------------------------------------------
 
 		//編集参照
-		EditCompend EditCompend { get; set; } = null;
+		public EditCompend EditCompend { get; set; } = null;
+
+		//[out] グループ編集用
+		public ScriptParam < int > ScriptSetter { get; set; } = null;
 
 		//親フォーム参照
 		public FormMain FormMain { get; set; } = null;
 
-		//イメージリスト参照
+		//[in] イメージリスト参照
 		private BindingList<ImageData> L_ImageData { get; set; }
 
+		//---------------------------------------------------------------------
 		//選択中イメージのインデックス
 		public int GetImageIndex () { return Lb_Image.SelectedIndex; }
-
-		//グループ編集用
-		public ScriptParam < int > ScriptSetter { get; set; } = null;
 
 		//対象を設定
 		public void SetTarget ( BindingList<ImageData> bl_ImgDt )
@@ -99,24 +100,7 @@ namespace ScriptEditor
 
 			if ( openFileDialog1.ShowDialog () == DialogResult.OK )
 			{
-				foreach ( string filename in openFileDialog1.FileNames )
-				{
-					ImageData imageData = null;	//参照
-					try
-					{
-						//画像からImageData型を作成
-						imageData = new ImageData ( Path.GetFileName ( filename ), Image.FromFile ( filename ) );
-						L_ImageData.Add ( imageData );			//内部データに保存
-						pbArchiveImage.Image = imageData.Img;			//プレビューにImageを表示
-						Lb_Image.SelectedIndex = Lb_Image.Items.Count - 1;		//末尾を選択
-					}
-					catch ( System.OutOfMemoryException ex )
-					{
-						//ファイル形式が有効でないとき
-						MessageBox.Show ( "ファイル形式が無効です。\n" + ex.Message );
-						return;
-					}
-				}
+				LoadFiles ( openFileDialog1.FileNames );
 			}
 		}
 
@@ -142,6 +126,38 @@ namespace ScriptEditor
 			int y = FormMain.Location.Y;
 			this.Location = new Point ( x, y );
 
+		}
+
+		private void フォルダ読込ToolStripMenuItem_Click ( object sender, EventArgs e )
+		{
+			folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory ();
+			if ( folderBrowserDialog1.ShowDialog ( this ) == DialogResult.OK )
+			{
+				string[] files = Directory.GetFiles ( folderBrowserDialog1.SelectedPath );
+				LoadFiles ( files );
+			}
+		}
+
+		private void LoadFiles ( string[] files )
+		{
+			foreach ( string filename in files )
+			{
+				ImageData imageData = null;	//参照
+				try
+				{
+					//画像からImageData型を作成
+					imageData = new ImageData ( Path.GetFileName ( filename ), Image.FromFile ( filename ) );
+					L_ImageData.Add ( imageData );			//内部データに保存
+					pbArchiveImage.Image = imageData.Img;			//プレビューにImageを表示
+					Lb_Image.SelectedIndex = Lb_Image.Items.Count - 1;		//末尾を選択
+				}
+				catch ( System.OutOfMemoryException ex )
+				{
+					//ファイル形式が有効でないとき
+					MessageBox.Show ( "ファイル形式が無効です。\n" + ex.Message );
+					return;
+				}
+			}
 		}
 	}
 }
