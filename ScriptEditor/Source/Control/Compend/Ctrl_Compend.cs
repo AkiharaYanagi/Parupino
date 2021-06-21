@@ -22,6 +22,8 @@ namespace ScriptEditor
 		public Ctrl_Compend ()
 		{
 			InitializeComponent ();
+
+			sequenceTree1.CtrlCompend = this;
 		}
 
 		//初期化
@@ -76,13 +78,13 @@ namespace ScriptEditor
 			Sequence sqc = EditCompend.SelectedSequence;
 			sqcBoard1.Set ( sqc );
 
-			Script scp = EditCompend.SelectedScript;
-			Assosiate ( scp );
+			Assosiate ();
 		}
 
 		//関連付け
-		public void Assosiate ( Script scp )
+		public void Assosiate ()
 		{
+			Script scp = EditCompend.SelectedScript;
 			EditScript es = EditCompend.EditScript;
 
 			//シークエンス
@@ -163,43 +165,15 @@ namespace ScriptEditor
 		//イメージ
 		private void Btn_Image_Click ( object sender, System.EventArgs e )
 		{
-#if false
-			//選択用別フォーム
-			ImageList blImgList = ( BoolAction ) ? Chara.behavior.ListImage : Chara.garnish.ListImage;
-			BindingList < ImageData > blImg = blImgList.GetBindingList ();
-			//			FormImage formImage = new FormImage ( blImg );
-
-
-			//フォームを開く
-			if ( FormImage.Inst.ShowDialog ( this ) == DialogResult.OK )
-			{
-				//フォームをOKで閉じる
-
-				//イメージの設定
-				Script scp = EditCompend.SelectedScript;
-				scp.ImgIndex = FormImage.Inst.GetImageIndex();
-
-				//スクリプト変更後に他スクリプトにコピーするかチェックする
-//				CheckSetOtherScript ();
-//				editChara.EditAction.CheckSetOtherScript ();
-				EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
-
-				//表示の更新
-				Tb_ImageName.Text = scp.ImgIndex.ToString();
-				DispChara.Inst.Disp ();
-			}
-
-//			formImage.Dispose ();
-#endif
-			FormImage.Inst.Visible = ! FormImage.Inst.Visible;
+//			FormImage.Inst.Visible = ! FormImage.Inst.Visible;
+			FormImage.Inst.VisFlip ();
 		}
 
 		//-------------------------------------------------------------------------
 		//判定枠
 		private void Btn_Rect_Click ( object sender, System.EventArgs e )
 		{
-			FormRect f = FormRect.Inst;
-			f.Visible = ! f.Visible;
+			FormRect.Inst.Visible = ! FormRect.Inst.Visible;
 		}
 
 		//-------------------------------------------------------------------------

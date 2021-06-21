@@ -14,6 +14,9 @@ namespace ScriptEditor
 		//シークエンスの選択デリゲート
 		public System.Action < string > SelectSequence { get; set; } = null;
 
+		//親Ctrl
+		public Ctrl_Compend CtrlCompend { get; set; } = null;
+
 		
 		public SequenceTree ()
 		{
@@ -123,6 +126,8 @@ namespace ScriptEditor
 		//更新
 		public void UpdateCategory ( Sequence sq )
 		{
+			//@todo ツリー選択時に再構築に問題がある
+
 			//アクションのときカテゴリの更新
 			if ( sq is Action a )
 			{
@@ -158,6 +163,7 @@ namespace ScriptEditor
 		//ツリー選択時
 		private void treeView1_AfterSelect ( object sender, TreeViewEventArgs e )
 		{
+
 			string name = treeView1.SelectedNode.Text;
 
 			//アクション名以外(カテゴリ名など)の選択のとき何もしない
@@ -171,6 +177,9 @@ namespace ScriptEditor
 
 			//名前で選択
 			SelectSequence?.Invoke ( name );
+
+			//関連付け
+			CtrlCompend.Assosiate ();
 
 			DispChara.Inst.Disp ();
 		}

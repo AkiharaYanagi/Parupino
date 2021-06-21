@@ -10,21 +10,6 @@ namespace ScriptEditor
 		//==================================================================================
 		//	初期化関連
 		//==================================================================================
-		//フォーム位置初期化
-		private const int start_X = -600;	//フォーム位置補正定数
-		private const int start_Y = -10;	//フォーム位置補正定数
-
-		private void InitPosition ()
-		{
-			//フォーム開始位置をマウス位置にする
-			this.StartPosition = FormStartPosition.Manual;
-			Point ptStart = Cursor.Position;
-			ptStart.X += start_X;
-			if ( ptStart.X < 0 ) { ptStart.X = 0; }
-			ptStart.Y += start_Y;
-			if ( ptStart.Y < 0 ) { ptStart.Y = 0; }
-			this.Location = ptStart;
-		}
 
 		//--------------------------------------------------------------------------
 		//サブフォーム関連

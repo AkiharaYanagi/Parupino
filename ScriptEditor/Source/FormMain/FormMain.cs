@@ -26,7 +26,7 @@ namespace ScriptEditor
 		public FormMain ()
 		{
 			//フォーム開始位置をマウス位置にする
-			InitPosition ();
+			FormUtility.InitPosition ( this );
 
 			//コンポーネントの初期化
 			InitializeComponent ();

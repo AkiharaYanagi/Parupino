@@ -26,6 +26,7 @@ namespace ScriptEditor
 			//フォーム開始位置
 			this.StartPosition = FormStartPosition.Manual;
 			this.Location = Cursor.Position;
+			this.ShowInTaskbar = false;	//タスクバーに非表示
 
 			InitializeComponent ();
 
@@ -38,6 +39,12 @@ namespace ScriptEditor
 		{
 			e.Cancel = true;
 			this.Hide ();
+		}
+
+		//表示反転
+		public void VisFlip ()
+		{
+			this.Visible = ! this.Visible;
 		}
 		//---------------------------------------------------------------------
 

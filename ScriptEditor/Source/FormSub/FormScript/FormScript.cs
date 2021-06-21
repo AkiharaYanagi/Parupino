@@ -15,7 +15,7 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormScript ()
 		{
-			//フォーム開始位置をマウス位置にする
+			//フォーム開始位置
 			this.StartPosition = FormStartPosition.Manual;
 			this.ShowInTaskbar = false;	//タスクバーに非表示
 
