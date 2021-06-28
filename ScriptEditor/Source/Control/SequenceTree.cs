@@ -35,6 +35,7 @@ namespace ScriptEditor
 			this.treeView1.Name = "treeView1";
 			this.treeView1.Size = new System.Drawing.Size(129, 266);
 			this.treeView1.TabIndex = 0;
+			this.treeView1.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
 			// 
 			// SequenceTree
@@ -126,7 +127,7 @@ namespace ScriptEditor
 		//更新
 		public void UpdateCategory ( Sequence sq )
 		{
-			//@todo ツリー選択時に再構築に問題がある
+			//@todo ツリー選択時の再構築で順番が変わってしまう
 
 			//アクションのときカテゴリの更新
 			if ( sq is Action a )
@@ -160,20 +161,25 @@ namespace ScriptEditor
 			}
 		}
 
-		//ツリー選択時
+		//ツリー選択後
 		private void treeView1_AfterSelect ( object sender, TreeViewEventArgs e )
 		{
+		}
 
+		//ツリー選択前
+		private void treeView1_BeforeSelect ( object sender, TreeViewCancelEventArgs e )
+		{
+			if ( treeView1.SelectedNode is null ) { return; }
+
+			//選択名
 			string name = treeView1.SelectedNode.Text;
 
 			//アクション名以外(カテゴリ名など)の選択のとき何もしない
-			bool b = false;
 			string[] names = Enum.GetNames( typeof ( ActionCategory ) );
 			foreach ( string s in names )
 			{
-				if ( s == name ) { b = true; break; }
+				if ( s == name ) { return; }
 			}
-			if ( b ) { return; }
 
 			//名前で選択
 			SelectSequence?.Invoke ( name );
@@ -181,6 +187,7 @@ namespace ScriptEditor
 			//関連付け
 			CtrlCompend.Assosiate ();
 
+			//表示の更新
 			DispChara.Inst.Disp ();
 		}
 	}

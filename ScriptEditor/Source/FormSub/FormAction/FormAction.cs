@@ -4,6 +4,10 @@ using System.Windows.Forms;
 
 namespace ScriptEditor
 {
+	//@todo 結びつきの強さからSequenceTreeを直接参照する
+	//		Compendを介しない
+
+
 	//---------------------------------------------------------------------
 	//@info Show(this);によりメインフォームにより隠れないようにしたが、
 	// サブフォームが開いているとメインフォームが閉じない問題
