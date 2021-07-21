@@ -122,8 +122,7 @@ namespace ScriptEditor
 				blsqc.ResetItem ( i );	
 			}
 
-			Sequence sq = EditCompend.SelectedSequence;
-			sequenceTree1.UpdateCategory ( sq );
+			sequenceTree1.UpdateCategory ( blsqc );
 		}
 
 		//-------------------------------------------------------------------------
@@ -190,6 +189,12 @@ namespace ScriptEditor
 		{
 			FormBranch f = FormBranch.Inst;
 			f.Visible = ! f.Visible;
+		}
+
+		//----
+		public SequenceTree GetSequenceTree ()
+		{
+			return sequenceTree1;
 		}
 	}
 }
