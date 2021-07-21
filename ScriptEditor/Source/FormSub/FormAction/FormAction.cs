@@ -67,6 +67,9 @@ namespace ScriptEditor
 		//親フォーム参照
 		public FormMain FormMain { get; set; } = null;
 
+		//シークエンスツリー
+		public SequenceTree SequenceTree { get; set; } = null;
+
 		//初期設定
 		public void SetCtrl ( EditAction ea, DispAction da, DispCompend dc )
 		{
@@ -76,6 +79,8 @@ namespace ScriptEditor
 
 			da.SetCtrl ( TB_Name, CBSL_Next, CB_Category, CB_Posture, TBN_Balance );
 			CBSL_Next.SetDisp ( dc );
+
+			SequenceTree = dc.CtrlCmpd.GetSequenceTree ();
 		}
 
 		//キャラデータ
@@ -111,19 +116,24 @@ namespace ScriptEditor
 		private void TB_Name_TextChanged ( object sender, System.EventArgs e )
 		{
 			action.Name = TB_Name.Text;
-			DispCompend.UpdateData ();
+//			DispCompend.UpdateData ();
 		}
 
+		//カテゴリの変更
 		private void CB_Category_SelectedIndexChanged ( object sender, EventArgs e )
 		{
+			//シークエンスツリーの再構築が必要
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
-			DispCompend.UpdateData ();
+//			DispCompend.UpdateData ();
+			//ツリー再構築
+			SequenceTree.Remake ();
 		}
 
+		//体勢
 		private void CB_Posture_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			action.Posture = (ActionPosture)CB_Posture.SelectedItem;
-			DispCompend.UpdateData ();
+//			DispCompend.UpdateData ();
 		}
 	}
 }
