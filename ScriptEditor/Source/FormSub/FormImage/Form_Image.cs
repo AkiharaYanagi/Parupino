@@ -4,6 +4,9 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
+using ScriptEditorUtility;
+
+
 namespace ScriptEditor
 {
 	//-------------------------------------------------------------
@@ -58,19 +61,32 @@ namespace ScriptEditor
 		public FormMain FormMain { get; set; } = null;
 
 		//[in] イメージリスト参照
-		private BindingList<ImageData> L_ImageData { get; set; }
+//		private BindingList<ImageData> L_ImageData { get; set; }
+		private BindingDictionary < ImageData > BD_ImageData { get; set; }
 
 		//---------------------------------------------------------------------
 		//選択中イメージのインデックス
 		public int GetImageIndex () { return Lb_Image.SelectedIndex; }
+		//選択中イメージの名前
+		public string GetImageName () { return ( (ImageData)Lb_Image.SelectedItem ).Name; }
 
 		//対象を設定
+#if false
 		public void SetTarget ( BindingList<ImageData> bl_ImgDt )
 		{
 			L_ImageData = bl_ImgDt;
 
 			//リストボックスに反映
 			Lb_Image.DataSource = L_ImageData;
+		}
+#endif
+
+		public void Set ( BindingDictionary < ImageData > bd_imgDt )
+		{
+			BD_ImageData = bd_imgDt;
+
+			//リストボックスに反映
+			Lb_Image.DataSource = BD_ImageData.GetBindingList ();
 		}
 
 		//リストボックス変更時
@@ -93,10 +109,13 @@ namespace ScriptEditor
 		{
 			//選択中スクリプトにイメージの設定
 			Script scp = EditCompend.SelectedScript;
-			scp.ImgIndex = GetImageIndex();
+			scp.ImgIndex = GetImageIndex ();
+			scp.ImgName = GetImageName ();
 			
 			//グループにも変更を反映
 			EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
+
+			this.Hide ();
 		}
 
 		private void 読込ToolStripMenuItem_Click ( object sender, EventArgs e )
@@ -120,7 +139,8 @@ namespace ScriptEditor
 			if ( Lb_Image.SelectedItem == null ) { return; }
 
 			//全イメージを削除
-			L_ImageData.Clear ();
+			//L_ImageData.Clear ();
+			BD_ImageData.Clear ();
 
 			//表示をクリア
 			pbArchiveImage.Image = null;
@@ -137,12 +157,26 @@ namespace ScriptEditor
 
 		private void フォルダ読込ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
+			OpenFolder_CodePack opf = new OpenFolder_CodePack ();
+			string crDir = Directory.GetCurrentDirectory ();
+			string upDir = crDir.Substring ( 0, crDir.LastIndexOf ( @"\" ) + 1 );
+			opf.SetInitDir ( crDir );
+			opf.SetDefaultFilename ( "out" );
+
+			if ( opf.OpenFolder () )
+			{
+				string[] files = Directory.GetFiles ( opf.GetPath () );
+				LoadFiles ( files );
+			}
+#if false
+
 			folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory ();
 			if ( folderBrowserDialog1.ShowDialog ( this ) == DialogResult.OK )
 			{
 				string[] files = Directory.GetFiles ( folderBrowserDialog1.SelectedPath );
 				LoadFiles ( files );
 			}
+#endif
 		}
 
 		private void LoadFiles ( string[] files )
@@ -154,7 +188,10 @@ namespace ScriptEditor
 				{
 					//画像からImageData型を作成
 					imageData = new ImageData ( Path.GetFileName ( filename ), Image.FromFile ( filename ) );
-					L_ImageData.Add ( imageData );			//内部データに保存
+
+					//L_ImageData.Add ( imageData );			//内部データに保存
+					BD_ImageData.Add ( imageData );
+					
 					pbArchiveImage.Image = imageData.Img;			//プレビューにImageを表示
 					Lb_Image.SelectedIndex = Lb_Image.Items.Count - 1;		//末尾を選択
 				}

@@ -160,11 +160,13 @@ namespace ScriptEditor
 
 			//タブの選択
 			tabAction_Selected ();
+
+			//サブフォームの初期表示
 			FormAction.Inst.Show ();
 			FormScript.Inst.Show ();
-			FormEfGnrt.Inst.Show ();
-			FormRect.Inst.Show ();
-			FormBranch.Inst.Show ();
+//			FormEfGnrt.Inst.Show ();
+//			FormRect.Inst.Show ();
+//			FormBranch.Inst.Show ();
 		}
 	}
 }

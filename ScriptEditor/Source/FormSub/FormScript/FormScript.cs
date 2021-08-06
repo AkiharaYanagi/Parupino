@@ -51,7 +51,7 @@ namespace ScriptEditor
 		{
 			//フォーム位置を親フォームの右端にする
 			int x = FormMain.Location.X + FormMain.Width;
-			int y = FormMain.Location.Y + 200;
+			int y = FormMain.Location.Y + 230;
 			this.Location = new Point ( x, y );
 		}
 		

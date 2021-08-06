@@ -60,7 +60,8 @@ namespace ScriptEditor
 			eb.SelectScript ( 0, 0 );
 
 			//イメージフォームにビヘイビアを設定
-			FormImage.Inst.SetTarget ( eb.Compend.BD_Image.GetBindingList () );
+//			FormImage.Inst.SetTarget ( eb.Compend.BD_Image.GetBindingList () );
+			FormImage.Inst.Set ( eb.Compend.BD_Image );
 			FormImage.Inst.EditCompend = eb;
 		}
 
@@ -77,7 +78,8 @@ namespace ScriptEditor
 			eg.SelectScript ( 0, 0 );
 
 			//イメージフォームにガーニッシュを設定
-			FormImage.Inst.SetTarget ( eg.Compend.BD_Image.GetBindingList () );
+			//FormImage.Inst.SetTarget ( eg.Compend.BD_Image.GetBindingList () );
+			FormImage.Inst.Set ( eg.Compend.BD_Image );
 			FormImage.Inst.EditCompend = eg;
 		}
 
