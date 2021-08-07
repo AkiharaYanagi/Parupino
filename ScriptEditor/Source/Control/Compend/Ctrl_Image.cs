@@ -84,10 +84,7 @@ namespace ScriptEditor
 		//描画
 		protected override void OnPaint ( PaintEventArgs e )
 		{
-			if ( null == EditCompend ) { return; }
-
-			Script sc = EditCompend.SelectedScript;
-			paintImage.Paint ( sc );
+			paintImage.Paint ( EditCompend?.SelectedScript );
 			base.OnPaint ( e );
 		}
 

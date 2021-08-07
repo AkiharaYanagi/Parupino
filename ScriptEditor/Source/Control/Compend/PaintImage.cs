@@ -42,6 +42,8 @@ namespace ScriptEditor
 		//内容表示
 		public void Paint ( Script script )
 		{
+			if ( script is null ) { return; }
+
 			//描画対象
 			Bitmap bmp = new Bitmap ( PB_Image.Width, PB_Image.Height );
 			Graphics g = Graphics.FromImage ( bmp );
@@ -57,7 +59,7 @@ namespace ScriptEditor
 			
 			//----------------------------------------
 			//イメージID
-			//			ImageData imgdt = ListImage[ script.ImgIndex ];
+			//ImageData imgdt = ListImage[ script.ImgIndex ];
 			ImageData imgdt = ListImage.Get ( script.ImgName );
 			if ( null == imgdt ) { return; }
 			Image img = imgdt.Img;

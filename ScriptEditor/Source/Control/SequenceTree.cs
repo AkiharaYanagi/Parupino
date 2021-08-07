@@ -6,8 +6,9 @@ using System.Linq;
 
 namespace ScriptEditor
 {
-	//シークエンスの一覧をツリー状に表示し、選択を１つ返す
-	//テキストのみ
+	//------------------------------------------------------------------
+	//	シークエンスの一覧をツリー状に表示し、テキストとして選択を１つ返す
+	//------------------------------------------------------------------
 	public class SequenceTree : UserControl
 	{
 		//ツリー表示
@@ -16,8 +17,10 @@ namespace ScriptEditor
 		//対象シークエンス
 		public BindingDictionary < Sequence > BD_sq { get; set; } = null;
 
+
 		//シークエンスの選択デリゲート
-		public System.Action < string > SelectSequence { get; set; } = null;
+		//public System.Action < string > SelectSequence { get; set; } = null;
+		public EditCompend EditCompend { get; set; } = null;
 
 		//親Ctrl
 		public Ctrl_Compend CtrlCompend { get; set; } = null;
@@ -53,6 +56,12 @@ namespace ScriptEditor
 			this.ResumeLayout(false);
 		}
 
+		//環境設定
+		public void SetCtrl ( EditCompend ec )
+		{
+			EditCompend = ec;
+		}
+
 		//データ設定
 		public void SetCharaData ( BindingDictionary < Sequence > bd_sq )
 		{
@@ -66,12 +75,15 @@ namespace ScriptEditor
 			//アクションのときのみアクションカテゴリで分類
 			if ( bl[0] is Action ) 
 			{
+				//ツリー構築
 				ClassficatinByCategory ( bl );
 
 				//----------------------------------------------
 				//先頭を選択
 				treeView1.SelectedNode = treeView1.Nodes[0].Nodes[0];
-				SelectSequence?.Invoke ( treeView1.Nodes[0].Nodes[0].Text );
+				//SelectSequence?.Invoke ( treeView1.Nodes[0].Nodes[0].Text );
+				string seq_name = treeView1.SelectedNode.Text;
+				EditCompend.SelectSequence ( seq_name );
 			}
 			//アクションではない(エフェクト)のとき
 			else
@@ -95,7 +107,8 @@ namespace ScriptEditor
 				treeView1.SelectedNode = root[0];
 
 				//設定デリゲートが存在したら実行
-				SelectSequence?.Invoke ( root [ 0 ].Text );
+//				SelectSequence?.Invoke ( root [ 0 ].Text );
+				EditCompend.SelectSequence ( root [ 0 ].Text );
 			}
 		}
 
@@ -148,7 +161,8 @@ namespace ScriptEditor
 			string name = treeView1.SelectedNode.Text;
 
 			//名前で選択
-			SelectSequence?.Invoke ( name );
+			//SelectSequence?.Invoke ( name );
+			EditCompend.SelectSequence ( name );
 
 			//関連付け
 			CtrlCompend.Assosiate ();

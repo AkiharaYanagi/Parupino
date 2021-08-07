@@ -32,6 +32,7 @@ namespace ScriptEditor
 			EditCompend = ec;
 			sqcBoard1.SetCtrl ( ec );
 			Ctrl_Img.SetCtrl ( ec );
+			sequenceTree1.SetCtrl ( ec );
 		}
 
 		public void SetBehavior ()
@@ -56,13 +57,13 @@ namespace ScriptEditor
 			if ( BoolAction )
 			{
 				Ctrl_Img.SetCharaData ( b.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
-				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
+//				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
 				sequenceTree1.SetCharaData ( b.BD_Sequence );
 			}
 			else
 			{
 				Ctrl_Img.SetCharaData ( g.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
-				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
+//				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
 				sequenceTree1.SetCharaData ( g.BD_Sequence );
 			}
 
