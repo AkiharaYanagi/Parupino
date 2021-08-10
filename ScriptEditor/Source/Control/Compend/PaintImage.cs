@@ -50,20 +50,32 @@ namespace ScriptEditor
 
 			using ( Pen PenWhite = new Pen ( Color.White, 4 ) )
 			{
-
 			//基準線
 			g.DrawLine ( PenWhite, new Point ( PtPbImageBase.X, 0 ), new Point ( PtPbImageBase.X, PB_Image.Height ) );
 			g.DrawLine ( PenWhite, new Point ( 0, PtPbImageBase.Y ), new Point ( PB_Image.Width, PtPbImageBase.Y ) );
-
-			}
+			}	//using
 			
 			//----------------------------------------
 			//イメージID
-			//ImageData imgdt = ListImage[ script.ImgIndex ];
+			//名前で検索
 			ImageData imgdt = ListImage.Get ( script.ImgName );
-			if ( null == imgdt ) { return; }
-			Image img = imgdt.Img;
-			if ( null == img ) { return; }
+			Image img = null;
+			if ( imgdt is null ) 
+			{
+				using ( Font font = new Font ( "メイリオ", 20 ) )
+				{
+				Bitmap bmp_nl = new Bitmap ( 256, 256 );
+				Graphics g_nl = Graphics.FromImage ( bmp_nl );
+				g_nl.DrawString ( "\"" + script.ImgName + "\"", font, Brushes.Orange, 64, 128 );
+				g_nl.DrawString ( "is not exist.", font, Brushes.Orange, 64, 160 );
+				img = bmp_nl;
+				g_nl.Dispose ();
+				}	//using
+			}
+			else
+			{
+				img = imgdt.Img;
+			}
 			int x = PtPbImageBase.X + script.Pos.X;
 			int y = PtPbImageBase.Y + script.Pos.Y;
 			g.DrawImage ( img, x, y, img.Width, img.Height );

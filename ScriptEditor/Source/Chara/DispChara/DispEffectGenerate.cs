@@ -6,7 +6,7 @@ namespace ScriptEditor
 {
 	public class DispEffectGenerate
 	{
-		EditChara editChara;
+//		EditChara editChara;
 
 		//エフェクトジェネレートフォームのコントロールのまとめ
 		ControlsEfGnrt ctrlEfGnrt { get; set; }
@@ -14,7 +14,7 @@ namespace ScriptEditor
 		//初期化
 		public void Load ( EditChara ec, ControlsEfGnrt ceg )
 		{
-			editChara = ec;
+//			editChara = ec;
 			ctrlEfGnrt = ceg;
 		}
 
@@ -52,7 +52,8 @@ namespace ScriptEditor
 
 			//エフェクトの取得
 			int indexEf = efGnrt.Id;
-			BindingList<Sequence> listEf = editChara.Chara.garnish.BD_Sequence.GetBindingList ();
+//			BindingList<Sequence> listEf = editChara.Chara.garnish.BD_Sequence.GetBindingList ();
+			BindingList<Sequence> listEf = EditChara.Inst.Chara.garnish.BD_Sequence.GetBindingList ();
 			Debug.Assert ( indexEf < listEf.Count );
 			Effect ef = ( Effect ) listEf[ indexEf ];
 

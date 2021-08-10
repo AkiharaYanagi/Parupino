@@ -17,9 +17,7 @@ namespace ScriptEditor
 		//対象シークエンス
 		public BindingDictionary < Sequence > BD_sq { get; set; } = null;
 
-
-		//シークエンスの選択デリゲート
-		//public System.Action < string > SelectSequence { get; set; } = null;
+		//編集の参照
 		public EditCompend EditCompend { get; set; } = null;
 
 		//親Ctrl
@@ -65,51 +63,37 @@ namespace ScriptEditor
 		//データ設定
 		public void SetCharaData ( BindingDictionary < Sequence > bd_sq )
 		{
-			if ( null == bd_sq ) { return; }
+			if ( bd_sq is null ) { return; }
 			BD_sq = bd_sq;
 			BindingList < Sequence > bl = bd_sq.GetBindingList();
 
 			if ( 0 >= bd_sq.Count() ) { return; }
 
+#if false
 
 			//アクションのときのみアクションカテゴリで分類
 			if ( bl[0] is Action ) 
 			{
-				//ツリー構築
+				//カテゴリでツリー構築
 				ClassficatinByCategory ( bl );
 
-				//----------------------------------------------
 				//先頭を選択
 				treeView1.SelectedNode = treeView1.Nodes[0].Nodes[0];
-				//SelectSequence?.Invoke ( treeView1.Nodes[0].Nodes[0].Text );
 				string seq_name = treeView1.SelectedNode.Text;
 				EditCompend.SelectSequence ( seq_name );
 			}
 			//アクションではない(エフェクト)のとき
 			else
 			{
-				treeView1.Nodes.Clear ();
-
-				//名前で直接分類する
-				TreeNode [] root = new TreeNode [ bl.Count ];
-			
-				int index = 0;
-				foreach ( Sequence s in bl )
-				{
-					root [ index ] = new TreeNode ( s.Name );
-					++ index;
-				}
-
-				treeView1.Nodes.AddRange ( root );
-
+				//名前でツリー構築
+				ClassficatinByName ( bl );
 
 				//先頭を選択
-				treeView1.SelectedNode = root[0];
-
-				//設定デリゲートが存在したら実行
-//				SelectSequence?.Invoke ( root [ 0 ].Text );
-				EditCompend.SelectSequence ( root [ 0 ].Text );
+				treeView1.SelectedNode = treeView1.Nodes[0];
+				string seq_name = treeView1.SelectedNode.Text;
+				EditCompend.SelectSequence ( seq_name );
 			}
+#endif
 		}
 
 		//更新
@@ -117,6 +101,9 @@ namespace ScriptEditor
 		{
 			//@todo ツリー選択時の再構築で順番が変わってしまう
 			//->コンペンドの選択イベントでUpdateが呼ばれる
+
+			//アクションフォームにおいて、アクション選択時にカテゴリが異なると
+			//フォーム上のカテゴリが表示変更されるのでイベントが発生→再構築
 
 			//全開放->対象コンペンドからツリーを再構築して順番を保持する
 
@@ -127,6 +114,10 @@ namespace ScriptEditor
 			if ( bl[0] is Action a )
 			{
 				ClassficatinByCategory ( bl );
+			}
+			else
+			{
+				ClassficatinByName ( bl );
 			}
 		}
 
@@ -141,6 +132,11 @@ namespace ScriptEditor
 		//ツリー選択後
 		private void treeView1_AfterSelect ( object sender, TreeViewEventArgs e )
 		{
+			string name = treeView1.SelectedNode.Text;
+			EditCompend.SelectSequence ( name );
+			CtrlCompend.Assosiate ();
+#if false
+
 			if ( treeView1.SelectedNode is null ) { return; }
 
 			//アクションのときのみ
@@ -177,12 +173,13 @@ namespace ScriptEditor
 //			slctNd.Expand ();
 			tmpNd?.Expand ();
 
+#endif
 		}
 
 		//ツリー選択前
 		private void treeView1_BeforeSelect ( object sender, TreeViewCancelEventArgs e )
 		{
-			ReExpand ();	
+//			ReExpand ();	
 		}
 
 		//選択済みノードを一時保存して再展開
@@ -205,6 +202,24 @@ namespace ScriptEditor
 			}
 		}
 
+		//-----------------------------------------------------------------------------
+		//名前でツリーを再構築
+		private void ClassficatinByName ( BindingList < Sequence > bl )
+		{
+			treeView1.Nodes.Clear ();
+
+			//名前で直接分類する
+			TreeNode [] root = new TreeNode [ bl.Count ];
+			
+			int index = 0;
+			foreach ( Sequence s in bl )
+			{
+				root [ index ] = new TreeNode ( s.Name );
+				++ index;
+			}
+
+			treeView1.Nodes.AddRange ( root );
+		}
 
 		//カテゴリでツリーを再構築
 		private void ClassficatinByCategory ( BindingList < Sequence > bl )

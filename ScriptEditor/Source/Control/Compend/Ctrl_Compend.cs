@@ -57,13 +57,11 @@ namespace ScriptEditor
 			if ( BoolAction )
 			{
 				Ctrl_Img.SetCharaData ( b.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
-//				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
 				sequenceTree1.SetCharaData ( b.BD_Sequence );
 			}
 			else
 			{
 				Ctrl_Img.SetCharaData ( g.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
-//				sequenceTree1.SelectSequence = EditCompend.SelectSequence;
 				sequenceTree1.SetCharaData ( g.BD_Sequence );
 			}
 
@@ -88,6 +86,7 @@ namespace ScriptEditor
 			Script scp = EditCompend.SelectedScript;
 			EditScript es = EditCompend.EditScript;
 
+			//--------------------------------------------------------
 			//シークエンス
 			//アクションとエフェクトで分岐
 			if ( BoolAction )
@@ -95,10 +94,9 @@ namespace ScriptEditor
 				FormAction.Inst.Assosiate ( ( Action ) EditCompend.SelectedSequence );
 			}
 
+			//--------------------------------------------------------
 			//スクリプト
 			//イメージ
-			//@todo 対象がイメージリストに存在しないときエラー表示(色変更？)
-			//		指定は可能
 			Tb_ImageName.Text = scp.ImgName;
 			
 			//位置
@@ -112,6 +110,7 @@ namespace ScriptEditor
 			FormRect.Inst.Assosiate ( scp );
 			FormEfGnrt.Inst.Assosiate ( scp );
 			FormBranch.Inst.Assosiate ( scp );
+			//--------------------------------------------------------
 		}
 
 		//更新
@@ -165,7 +164,6 @@ namespace ScriptEditor
 		//イメージ
 		private void Btn_Image_Click ( object sender, System.EventArgs e )
 		{
-//			FormImage.Inst.Visible = ! FormImage.Inst.Visible;
 			FormImage.Inst.VisFlip ();
 		}
 
@@ -180,16 +178,14 @@ namespace ScriptEditor
 		//Ef生成
 		private void Btn_EfGnrt_Click ( object sender, System.EventArgs e )
 		{
-			FormEfGnrt f = FormEfGnrt.Inst;
-			f.Visible = ! f.Visible;
+			FormEfGnrt.Inst.Visible = ! FormEfGnrt.Inst.Visible;
 		}
 
 		//-------------------------------------------------------------------------
 		//Ef生成
 		private void Btn_Branch_Click ( object sender, System.EventArgs e )
 		{
-			FormBranch f = FormBranch.Inst;
-			f.Visible = ! f.Visible;
+			FormBranch.Inst.Visible = ! FormBranch.Inst.Visible;
 		}
 
 		//----

@@ -126,7 +126,7 @@ namespace ScriptEditor
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
 //			DispCompend.UpdateData ();
 			//ツリー再構築
-			SequenceTree.Remake ();
+//			SequenceTree.Remake ();
 		}
 
 		//体勢

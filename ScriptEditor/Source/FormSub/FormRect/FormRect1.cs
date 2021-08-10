@@ -19,7 +19,7 @@ namespace ScriptEditor
 			InitializeComponent ();
 
 			ctrl_ListCRect.SetName ( "接触枠" );
-			ctrl_ListHRect.SetName ( "当り枠枠" );
+			ctrl_ListHRect.SetName ( "当り枠" );
 			ctrl_ListARect.SetName ( "攻撃枠" );
 			ctrl_ListORect.SetName ( "相殺枠" );
 		}

@@ -62,8 +62,8 @@ namespace ScriptEditor
 		private void pictureBox1_Paint ( object sender, PaintEventArgs e )
 		{
 			//オブジェクトが設定されていないときデフォルトの表示
-			if ( null == Sqc ) { pictureBox1_Paint_Default ( sender, e ); return; }
-			if ( null == Sqc.ListScript ) { pictureBox1_Paint_Default ( sender, e ); return;}
+			if ( Sqc is null ) { pictureBox1_Paint_Default ( sender, e ); return; }
+			if ( Sqc.ListScript is null ) { pictureBox1_Paint_Default ( sender, e ); return;}
 
 			//---------------------------------------------------------
 			//共通基準値
@@ -173,7 +173,8 @@ namespace ScriptEditor
 
 			//---------------------------------------------------------
 			//選択位置表示
-			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, H, W, H );	//フレーム選択
+//			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, H, W, H );	//フレーム選択
+			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, 0, W, TH );	//フレーム選択
 		}
 
 		//オブジェクトが設定されていない状態でのIDE表示
