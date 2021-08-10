@@ -119,9 +119,22 @@ namespace ScriptEditor
 //			DispCompend.UpdateData ();
 		}
 
+
+		//-----------------------------------------------------------
 		//カテゴリの変更
+
+		//インデックスが変更されたとき
 		private void CB_Category_SelectedIndexChanged ( object sender, EventArgs e )
 		{
+			//@info ◆外部から選択アクションが変更されたときもイベントが発生する
+
+		}
+
+		//ドロップダウンリストから変更されて閉じたとき
+		private void CB_Category_SelectionChangeCommitted ( object sender, EventArgs e )
+		{
+			//@info ◆現フォームからのみイベントが発生する
+
 			//シークエンスツリーの再構築が必要
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
 //			DispCompend.UpdateData ();
@@ -129,11 +142,13 @@ namespace ScriptEditor
 //			SequenceTree.Remake ();
 		}
 
+		//-----------------------------------------------------------
 		//体勢
 		private void CB_Posture_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			action.Posture = (ActionPosture)CB_Posture.SelectedItem;
 //			DispCompend.UpdateData ();
 		}
+
 	}
 }

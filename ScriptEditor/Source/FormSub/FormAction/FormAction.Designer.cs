@@ -101,6 +101,7 @@
 			this.CB_Category.Size = new System.Drawing.Size(220, 20);
 			this.CB_Category.TabIndex = 8;
 			this.CB_Category.SelectedIndexChanged += new System.EventHandler(this.CB_Category_SelectedIndexChanged);
+			this.CB_Category.SelectionChangeCommitted += new System.EventHandler(this.CB_Category_SelectionChangeCommitted);
 			// 
 			// CB_Posture
 			// 
@@ -123,10 +124,14 @@
 			// 
 			// TBN_Balance
 			// 
+			this.TBN_Balance.GetFunc = null;
+			this.TBN_Balance.GroupSetter = null;
 			this.TBN_Balance.Location = new System.Drawing.Point(69, 157);
 			this.TBN_Balance.Name = "TBN_Balance";
+			this.TBN_Balance.SetFunc = null;
 			this.TBN_Balance.Size = new System.Drawing.Size(100, 19);
 			this.TBN_Balance.TabIndex = 11;
+			this.TBN_Balance.Text = "0";
 			// 
 			// FormAction
 			// 
