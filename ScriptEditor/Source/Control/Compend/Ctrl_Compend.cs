@@ -123,7 +123,7 @@ namespace ScriptEditor
 				blsqc.ResetItem ( i );	
 			}
 
-			sequenceTree1.UpdateCategory ( blsqc );
+//			sequenceTree1.UpdateCategory ( blsqc );
 		}
 
 		//-------------------------------------------------------------------------
