@@ -51,18 +51,18 @@ namespace ScriptEditor
 		}
 		//---------------------------------------------------------------------
 
-		//編集参照
-		public EditCompend EditCompend { get; set; } = null;
+		//[in] イメージリスト参照
+		private BindingDictionary < ImageData > BD_ImageData { get; set; }
 
 		//[out] グループ編集用
 		public ScriptParam < int > ScriptSetter { get; set; } = null;
 
+		//編集参照
+		public EditCompend EditCompend { get; set; } = null;
+		public DispCompend DispCompend { get; set; } = null;
+
 		//親フォーム参照
 		public FormMain FormMain { get; set; } = null;
-
-		//[in] イメージリスト参照
-//		private BindingList<ImageData> L_ImageData { get; set; }
-		private BindingDictionary < ImageData > BD_ImageData { get; set; }
 
 		//---------------------------------------------------------------------
 		//選択中イメージのインデックス
@@ -70,17 +70,14 @@ namespace ScriptEditor
 		//選択中イメージの名前
 		public string GetImageName () { return ( (ImageData)Lb_Image.SelectedItem ).Name; }
 
-		//対象を設定
-#if false
-		public void SetTarget ( BindingList<ImageData> bl_ImgDt )
+		//環境を設定
+		public void SetCtrl ( EditCompend ec, DispCompend dc )
 		{
-			L_ImageData = bl_ImgDt;
-
-			//リストボックスに反映
-			Lb_Image.DataSource = L_ImageData;
+			EditCompend = ec;
+			DispCompend = dc;
 		}
-#endif
 
+		//対象を設定
 		public void Set ( BindingDictionary < ImageData > bd_imgDt )
 		{
 			BD_ImageData = bd_imgDt;
@@ -115,6 +112,7 @@ namespace ScriptEditor
 			//グループにも変更を反映
 			EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
 
+			DispCompend.Disp ();
 			this.Hide ();
 		}
 
@@ -127,6 +125,7 @@ namespace ScriptEditor
 			if ( openFileDialog1.ShowDialog () == DialogResult.OK )
 			{
 				LoadFiles ( openFileDialog1.FileNames );
+				DispCompend.Disp ();
 			}
 		}
 
@@ -168,15 +167,6 @@ namespace ScriptEditor
 				string[] files = Directory.GetFiles ( opf.GetPath () );
 				LoadFiles ( files );
 			}
-#if false
-
-			folderBrowserDialog1.SelectedPath = Directory.GetCurrentDirectory ();
-			if ( folderBrowserDialog1.ShowDialog ( this ) == DialogResult.OK )
-			{
-				string[] files = Directory.GetFiles ( folderBrowserDialog1.SelectedPath );
-				LoadFiles ( files );
-			}
-#endif
 		}
 
 		private void LoadFiles ( string[] files )

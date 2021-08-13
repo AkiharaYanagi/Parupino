@@ -34,21 +34,22 @@ namespace ScriptEditor
 			EditScript = es;
 		}
 
-		//更新
-		public void UpdateData ( Script scp )
+		//更新(対象に変更があったとき)
+		public void UpdateData ()
 		{
-			tB_Frame.Text = scp.Frame.ToString ();
-			cB_ClcSt.SelectedItem = scp.CalcState;
+			tB_Frame.Text = script.Frame.ToString ();
+			cB_ClcSt.SelectedItem = script.CalcState;
+			Tb_Img.Text = script.ImgName;
 
-			tBN_PosX.Update ();
-			tBN_PosY.Update ();
-			tBN_VelX.Update ();
-			tBN_VelY.Update ();
-			tBN_AccX.Update ();
-			tBN_AccY.Update ();
+			tBN_PosX.UpdateData ();
+			tBN_PosY.UpdateData ();
+			tBN_VelX.UpdateData ();
+			tBN_VelY.UpdateData ();
+			tBN_AccX.UpdateData ();
+			tBN_AccY.UpdateData ();
 		}
 
-		//関連付け
+		//関連付け(対象が変更になったとき)
 		public void Assosiate ( Script scp )
 		{
 			script = scp;
@@ -56,6 +57,7 @@ namespace ScriptEditor
 			//スクリプトから表示を設定
 			tB_Frame.Text = scp.Frame.ToString ();
 			cB_ClcSt.SelectedItem = scp.CalcState;
+			Tb_Img.Text = script.ImgName;
 
 			//ラムダ式で単体設定デリゲートを指定
 			tBN_PosX.Assosiate ( i => scp.SetPosX ( i ), ()=> scp.Pos.X );

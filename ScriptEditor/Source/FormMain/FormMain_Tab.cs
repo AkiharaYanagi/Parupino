@@ -60,7 +60,6 @@ namespace ScriptEditor
 			eb.SelectScript ( 0, 0 );
 
 			//イメージフォームにビヘイビアを設定
-//			FormImage.Inst.SetTarget ( eb.Compend.BD_Image.GetBindingList () );
 			FormImage.Inst.Set ( eb.Compend.BD_Image );
 			FormImage.Inst.EditCompend = eb;
 		}

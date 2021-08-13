@@ -95,14 +95,13 @@ namespace ScriptEditor
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
 
-//			eb.SetCtrl ( cpd_Behavior );		//編集
 			db.SetCtrl ( eb, cpd_Behavior );    //表示
 
-			cpd_Behavior.SetCtrl ( eb );	//ビヘイビア(:コンペンド)初期化
+			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
 			cpd_Behavior.SetBehavior ();
 
 			//フォーム：イメージの初期化
-//			FormImage.Inst.SetTarget ( eb.Compend.ListImage.GetBindingList () );
+			FormImage.Inst.SetCtrl ( eb, db );
 
 			//フォーム：アクションの初期化
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
@@ -121,10 +120,9 @@ namespace ScriptEditor
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
 
-//			eg.SetCtrl ( cpd_Garnish );		//編集
 			dg.SetCtrl ( eg, cpd_Garnish );	//表示
 
-			cpd_Garnish.SetCtrl ( eg );	//ビヘイビア(:コンペンド)初期化
+			cpd_Garnish.SetEnviron ( eg, dg );	//ビヘイビア(:コンペンド)初期化
 			cpd_Garnish.SetGarnish ();
 	
 			//フォーム：スクリプトの初期化

@@ -34,17 +34,12 @@
 			this.sqcBoard1 = new ScriptEditor.SqcBoard();
 			this.Btn_Sqc = new System.Windows.Forms.Button();
 			this.Btn_Scp = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.Ctrl_Img = new ScriptEditor.Ctrl_Image();
 			this.Btn_Branch = new System.Windows.Forms.Button();
-			this.Tb_ImageName = new System.Windows.Forms.TextBox();
 			this.Btn_EfGnrt = new System.Windows.Forms.Button();
 			this.Btn_Rect = new System.Windows.Forms.Button();
 			this.Btn_Image = new System.Windows.Forms.Button();
-			this.Tbn_Y = new ScriptEditor.TB_Number();
-			this.Tbn_X = new ScriptEditor.TB_Number();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.シークエンスToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.スクリプトToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,6 +72,7 @@
 			this.sqcBoard1.AutoScroll = true;
 			this.sqcBoard1.BackColor = System.Drawing.SystemColors.Control;
 			this.sqcBoard1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sqcBoard1.DispCompend = null;
 			this.sqcBoard1.EditCompend = null;
 			this.sqcBoard1.Location = new System.Drawing.Point(0, 0);
 			this.sqcBoard1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -86,7 +82,7 @@
 			// 
 			// Btn_Sqc
 			// 
-			this.Btn_Sqc.Location = new System.Drawing.Point(3, 3);
+			this.Btn_Sqc.Location = new System.Drawing.Point(1, 3);
 			this.Btn_Sqc.Name = "Btn_Sqc";
 			this.Btn_Sqc.Size = new System.Drawing.Size(111, 29);
 			this.Btn_Sqc.TabIndex = 3;
@@ -96,31 +92,13 @@
 			// 
 			// Btn_Scp
 			// 
-			this.Btn_Scp.Location = new System.Drawing.Point(3, 38);
+			this.Btn_Scp.Location = new System.Drawing.Point(1, 38);
 			this.Btn_Scp.Name = "Btn_Scp";
 			this.Btn_Scp.Size = new System.Drawing.Size(113, 29);
 			this.Btn_Scp.TabIndex = 3;
 			this.Btn_Scp.Text = "スクリプト";
 			this.Btn_Scp.UseVisualStyleBackColor = true;
 			this.Btn_Scp.Click += new System.EventHandler(this.Btn_Scp_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 151);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(11, 12);
-			this.label1.TabIndex = 5;
-			this.label1.Text = "x";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(6, 176);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(11, 12);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "y";
 			// 
 			// splitContainer1
 			// 
@@ -137,15 +115,10 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Branch);
-			this.splitContainer1.Panel2.Controls.Add(this.Tb_ImageName);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_EfGnrt);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Rect);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Image);
-			this.splitContainer1.Panel2.Controls.Add(this.Tbn_Y);
-			this.splitContainer1.Panel2.Controls.Add(this.Tbn_X);
-			this.splitContainer1.Panel2.Controls.Add(this.label2);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Sqc);
-			this.splitContainer1.Panel2.Controls.Add(this.label1);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Scp);
 			this.splitContainer1.Size = new System.Drawing.Size(612, 342);
 			this.splitContainer1.SplitterDistance = 488;
@@ -156,6 +129,7 @@
 			this.Ctrl_Img.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.Ctrl_Img.DispCompend = null;
 			this.Ctrl_Img.EditCompend = null;
 			this.Ctrl_Img.Location = new System.Drawing.Point(0, 0);
 			this.Ctrl_Img.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -168,7 +142,7 @@
 			// 
 			// Btn_Branch
 			// 
-			this.Btn_Branch.Location = new System.Drawing.Point(1, 285);
+			this.Btn_Branch.Location = new System.Drawing.Point(1, 178);
 			this.Btn_Branch.Name = "Btn_Branch";
 			this.Btn_Branch.Size = new System.Drawing.Size(113, 30);
 			this.Btn_Branch.TabIndex = 10;
@@ -176,16 +150,9 @@
 			this.Btn_Branch.UseVisualStyleBackColor = true;
 			this.Btn_Branch.Click += new System.EventHandler(this.Btn_Branch_Click);
 			// 
-			// Tb_ImageName
-			// 
-			this.Tb_ImageName.Location = new System.Drawing.Point(3, 108);
-			this.Tb_ImageName.Name = "Tb_ImageName";
-			this.Tb_ImageName.Size = new System.Drawing.Size(111, 19);
-			this.Tb_ImageName.TabIndex = 9;
-			// 
 			// Btn_EfGnrt
 			// 
-			this.Btn_EfGnrt.Location = new System.Drawing.Point(1, 250);
+			this.Btn_EfGnrt.Location = new System.Drawing.Point(1, 143);
 			this.Btn_EfGnrt.Name = "Btn_EfGnrt";
 			this.Btn_EfGnrt.Size = new System.Drawing.Size(113, 29);
 			this.Btn_EfGnrt.TabIndex = 7;
@@ -195,7 +162,7 @@
 			// 
 			// Btn_Rect
 			// 
-			this.Btn_Rect.Location = new System.Drawing.Point(1, 215);
+			this.Btn_Rect.Location = new System.Drawing.Point(1, 108);
 			this.Btn_Rect.Name = "Btn_Rect";
 			this.Btn_Rect.Size = new System.Drawing.Size(113, 29);
 			this.Btn_Rect.TabIndex = 7;
@@ -205,35 +172,13 @@
 			// 
 			// Btn_Image
 			// 
-			this.Btn_Image.Location = new System.Drawing.Point(3, 73);
+			this.Btn_Image.Location = new System.Drawing.Point(1, 73);
 			this.Btn_Image.Name = "Btn_Image";
 			this.Btn_Image.Size = new System.Drawing.Size(113, 29);
 			this.Btn_Image.TabIndex = 7;
 			this.Btn_Image.Text = "イメージ";
 			this.Btn_Image.UseVisualStyleBackColor = true;
 			this.Btn_Image.Click += new System.EventHandler(this.Btn_Image_Click);
-			// 
-			// Tbn_Y
-			// 
-			this.Tbn_Y.GetFunc = null;
-			this.Tbn_Y.GroupSetter = null;
-			this.Tbn_Y.Location = new System.Drawing.Point(23, 173);
-			this.Tbn_Y.Name = "Tbn_Y";
-			this.Tbn_Y.SetFunc = null;
-			this.Tbn_Y.Size = new System.Drawing.Size(78, 19);
-			this.Tbn_Y.TabIndex = 6;
-			this.Tbn_Y.Text = "0";
-			// 
-			// Tbn_X
-			// 
-			this.Tbn_X.GetFunc = null;
-			this.Tbn_X.GroupSetter = null;
-			this.Tbn_X.Location = new System.Drawing.Point(23, 148);
-			this.Tbn_X.Name = "Tbn_X";
-			this.Tbn_X.SetFunc = null;
-			this.Tbn_X.Size = new System.Drawing.Size(78, 19);
-			this.Tbn_X.TabIndex = 6;
-			this.Tbn_X.Text = "0";
 			// 
 			// contextMenuStrip1
 			// 
@@ -291,10 +236,16 @@
 			// 
 			// sequenceTree1
 			// 
+			this.sequenceTree1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.sequenceTree1.AutoScroll = true;
+			this.sequenceTree1.BD_sq = null;
+			this.sequenceTree1.CtrlCompend = null;
+			this.sequenceTree1.DispCompend = null;
+			this.sequenceTree1.EditCompend = null;
 			this.sequenceTree1.Location = new System.Drawing.Point(0, 0);
 			this.sequenceTree1.Name = "sequenceTree1";
-			this.sequenceTree1.Size = new System.Drawing.Size(132, 378);
+			this.sequenceTree1.Size = new System.Drawing.Size(132, 508);
 			this.sequenceTree1.TabIndex = 9;
 			// 
 			// Ctrl_Compend
@@ -310,7 +261,6 @@
 			this.panel1.ResumeLayout(false);
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
-			this.splitContainer1.Panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.contextMenuStrip1.ResumeLayout(false);
@@ -328,11 +278,7 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button Btn_Sqc;
 		private System.Windows.Forms.Button Btn_Scp;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.SplitContainer splitContainer1;
-		private TB_Number Tbn_Y;
-		private TB_Number Tbn_X;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem シークエンスToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem スクリプトToolStripMenuItem;
@@ -341,7 +287,6 @@
 		private System.Windows.Forms.ToolStripMenuItem スクリプトPToolStripMenuItem;
 		private System.Windows.Forms.Button Btn_Image;
 		private System.Windows.Forms.Button Btn_Rect;
-		private System.Windows.Forms.TextBox Tb_ImageName;
 		private System.Windows.Forms.Button Btn_EfGnrt;
 		private System.Windows.Forms.Button Btn_Branch;
 		private SequenceTree sequenceTree1;

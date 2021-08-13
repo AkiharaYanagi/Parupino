@@ -27,12 +27,12 @@ namespace ScriptEditor
 		}
 
 		//初期化
-		public void SetCtrl ( EditCompend ec )
+		public void SetEnviron ( EditCompend ec, DispCompend dc )
 		{
 			EditCompend = ec;
-			sqcBoard1.SetCtrl ( ec );
-			Ctrl_Img.SetCtrl ( ec );
-			sequenceTree1.SetCtrl ( ec );
+			sqcBoard1.SetEnviron ( ec, dc );
+			Ctrl_Img.SetEnviron ( ec, dc );
+			sequenceTree1.SetCtrl ( ec, dc );
 		}
 
 		public void SetBehavior ()
@@ -96,20 +96,10 @@ namespace ScriptEditor
 
 			//--------------------------------------------------------
 			//スクリプト
-			//イメージ
-			Tb_ImageName.Text = scp.ImgName;
-			
-			//位置
-			Tbn_X.Assosiate ( i=> scp.SetPosX ( i ), ()=> scp.Pos.X );
-			Tbn_Y.Assosiate ( i=> scp.SetPosY ( i ), ()=> scp.Pos.Y );
-
-			//詳細
-			//Ef生成
-			//枠
-			FormScript.Inst.Assosiate ( scp );
-			FormRect.Inst.Assosiate ( scp );
-			FormEfGnrt.Inst.Assosiate ( scp );
-			FormBranch.Inst.Assosiate ( scp );
+			FormScript.Inst.Assosiate ( scp );	//各値
+			FormRect.Inst.Assosiate ( scp );	//枠
+			FormEfGnrt.Inst.Assosiate ( scp );	//Ef生成
+			FormBranch.Inst.Assosiate ( scp );	//ブランチ
 			//--------------------------------------------------------
 		}
 

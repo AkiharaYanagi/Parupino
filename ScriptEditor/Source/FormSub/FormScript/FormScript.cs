@@ -60,9 +60,9 @@ namespace ScriptEditor
 			ctrl_Script1.Assosiate ( scp );
 		}
 
-		public void UpdateData ( Script scp )
+		public void UpdateData ()
 		{
-			ctrl_Script1.UpdateData ( scp );
+			ctrl_Script1.UpdateData ();
 		}
 	}
 }

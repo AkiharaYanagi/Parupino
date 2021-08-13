@@ -15,6 +15,7 @@ namespace ScriptEditor
 	{
 		//アクションもしくはエフェクトの編集と表示を参照する
 		public EditCompend EditCompend { get; set; } = null;
+		public DispCompend DispCompend { get; set; } = null;
 
 		//描画
 		public PaintImage paintImage = new PaintImage ();
@@ -47,9 +48,10 @@ namespace ScriptEditor
 			SelectingTool = Tlimg_Main;
 		}
 
-		public void SetCtrl ( EditCompend ec )
+		public void SetEnviron ( EditCompend ec, DispCompend dc )
 		{
 			EditCompend = ec;
+			DispCompend = dc;
 
 			paintImage.SetCtrl ( PB_Image );
 			Point ptimgbs = paintImage.PtPbImageBase;
@@ -77,9 +79,6 @@ namespace ScriptEditor
 		{
 			paintImage.SetCharaData ( mainImg, lsEf, efImg );
 		}
-
-		//イメージの設定
-//		public void SetImg ( Image img ) => PB_Image.Image = img;
 
 		//描画
 		protected override void OnPaint ( PaintEventArgs e )
@@ -152,6 +151,9 @@ namespace ScriptEditor
 			Script sc = EditCompend.SelectedScript;
 			paintImage.Paint ( sc );
 			FormRect.Inst.UpdateData ();
+//			DispChara.Inst.Disp ();
+//			DispCompend.Disp ();
+			FormScript.Inst.UpdateData ();
 		}
 
 		//イベント・マウスボタン離上

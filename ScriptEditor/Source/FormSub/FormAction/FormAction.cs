@@ -137,9 +137,9 @@ namespace ScriptEditor
 
 			//シークエンスツリーの再構築が必要
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
-//			DispCompend.UpdateData ();
 			//ツリー再構築
-//			SequenceTree.Remake ();
+			SequenceTree.Remake ();
+			DispCompend.UpdateData ();
 		}
 
 		//-----------------------------------------------------------

@@ -17,8 +17,9 @@ namespace ScriptEditor
 		//対象シークエンス
 		public BindingDictionary < Sequence > BD_sq { get; set; } = null;
 
-		//編集の参照
+		//編集と表示の参照
 		public EditCompend EditCompend { get; set; } = null;
+		public DispCompend DispCompend { get; set; } = null;
 
 		//親Ctrl
 		public Ctrl_Compend CtrlCompend { get; set; } = null;
@@ -57,9 +58,10 @@ namespace ScriptEditor
 		}
 
 		//環境設定
-		public void SetCtrl ( EditCompend ec )
+		public void SetCtrl ( EditCompend ec, DispCompend dc )
 		{
 			EditCompend = ec;
+			DispCompend = dc;
 		}
 
 		//データ設定
@@ -71,7 +73,6 @@ namespace ScriptEditor
 
 			if ( 0 >= bd_sq.Count() ) { return; }
 
-#if false
 
 			//アクションのときのみアクションカテゴリで分類
 			if ( bl[0] is Action ) 
@@ -95,6 +96,7 @@ namespace ScriptEditor
 				string seq_name = treeView1.SelectedNode.Text;
 				EditCompend.SelectSequence ( seq_name );
 			}
+#if false
 #endif
 		}
 
@@ -137,6 +139,8 @@ namespace ScriptEditor
 			string name = treeView1.SelectedNode.Text;
 			EditCompend.SelectSequence ( name );
 			CtrlCompend.Assosiate ();
+
+			DispCompend.Disp ();
 #if false
 
 			if ( treeView1.SelectedNode is null ) { return; }

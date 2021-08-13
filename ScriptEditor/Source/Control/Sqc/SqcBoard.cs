@@ -9,6 +9,9 @@ namespace ScriptEditor
 		//アクションもしくはエフェクトの編集と表示を参照する
 		//外部でビヘイビアとガーニッシュのいずれかを指定してSet()する
 		public EditCompend EditCompend { get; set; } = null;
+		public DispCompend DispCompend { get; set; } = null;
+
+		public Ctrl_Script Ctrl_Script { get; set; } = null;
 
 		//参照
 		public Sequence Sqc = null;
@@ -41,10 +44,11 @@ namespace ScriptEditor
 			InitializeComponent ();
 		}
 
-		//コントロールの設定
-		public void SetCtrl ( EditCompend ec )
+		//環境設定
+		public void SetEnviron ( EditCompend ec, DispCompend dc )
 		{
 			EditCompend = ec;
+			DispCompend = dc;
 		}
 
 		public void Set ( Sequence sqc )
@@ -264,8 +268,10 @@ namespace ScriptEditor
 			return new Point ( pos_x, pos_y );
 		}
 
+		//マウスダウンで選択
 		private void pictureBox1_MouseDown ( object sender, MouseEventArgs e )
 		{
+			//位置から対象を選択
 			Point pos = GetCell ();
 			EditCompend.SelectFrame ( pos.X );
 
@@ -273,7 +279,9 @@ namespace ScriptEditor
 			EditCompend.SelectedSpanEnd = pos.X;
 			bDrag = true;
 
-			pictureBox1.Invalidate ();
+			//更新
+			DispCompend.Disp ();
+			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
 		}
 
 		private void pictureBox1_MouseMove ( object sender, MouseEventArgs e )
