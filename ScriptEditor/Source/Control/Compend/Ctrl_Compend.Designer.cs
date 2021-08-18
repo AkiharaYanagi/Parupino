@@ -47,6 +47,7 @@
 			this.シークエンスToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.スクリプトPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sequenceTree1 = new ScriptEditor.SequenceTree();
+			this.Btn_Preview = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -72,6 +73,7 @@
 			this.sqcBoard1.AutoScroll = true;
 			this.sqcBoard1.BackColor = System.Drawing.SystemColors.Control;
 			this.sqcBoard1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.sqcBoard1.Ctrl_Script = null;
 			this.sqcBoard1.DispCompend = null;
 			this.sqcBoard1.EditCompend = null;
 			this.sqcBoard1.Location = new System.Drawing.Point(0, 0);
@@ -114,6 +116,7 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_Preview);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Branch);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_EfGnrt);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Rect);
@@ -248,6 +251,16 @@
 			this.sequenceTree1.Size = new System.Drawing.Size(132, 508);
 			this.sequenceTree1.TabIndex = 9;
 			// 
+			// Btn_Preview
+			// 
+			this.Btn_Preview.Location = new System.Drawing.Point(3, 290);
+			this.Btn_Preview.Name = "Btn_Preview";
+			this.Btn_Preview.Size = new System.Drawing.Size(57, 52);
+			this.Btn_Preview.TabIndex = 11;
+			this.Btn_Preview.Text = "プレビュー";
+			this.Btn_Preview.UseVisualStyleBackColor = true;
+			this.Btn_Preview.Click += new System.EventHandler(this.Btn_Preview_Click);
+			// 
 			// Ctrl_Compend
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -290,5 +303,6 @@
 		private System.Windows.Forms.Button Btn_EfGnrt;
 		private System.Windows.Forms.Button Btn_Branch;
 		private SequenceTree sequenceTree1;
+		private System.Windows.Forms.Button Btn_Preview;
 	}
 }

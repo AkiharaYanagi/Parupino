@@ -100,19 +100,12 @@ namespace ScriptEditor
 			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
 			cpd_Behavior.SetBehavior ();
 
-			//フォーム：イメージの初期化
-			FormImage.Inst.SetCtrl ( eb, db );
-
-			//フォーム：アクションの初期化
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
-
-			//フォーム：スクリプトの初期化
-			FormScript.Inst.SetCtrl ( eb.EditScript, db.DispScript );
-
-			//フォーム：レクトの初期化
-			FormRect.Inst.SetCtrl ( eb.EditScript );
+			FormImage.Inst.SetEnviron ( this, eb, db );			//フォーム：イメージ
+			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
+			FormScript.Inst.SetCtrl ( eb.EditScript, db.DispScript );	//フォーム：スクリプト
+			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
+			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
 		}
-
 		//タブ_エフェクトの初期化
 		private void TabEffect_Load ()
 		{

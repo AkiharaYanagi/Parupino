@@ -75,7 +75,7 @@ namespace ScriptEditor
 		{
 			//選択
 			Sequence sqc = EditCompend.SelectedSequence;
-			sqcBoard1.Set ( sqc );
+			sqcBoard1.SetData ( sqc );
 
 			Assosiate ();
 		}
@@ -83,19 +83,22 @@ namespace ScriptEditor
 		//関連付け
 		public void Assosiate ()
 		{
-			Script scp = EditCompend.SelectedScript;
 			EditScript es = EditCompend.EditScript;
 
 			//--------------------------------------------------------
 			//シークエンス
+			Sequence sqc = EditCompend.SelectedSequence;
+			sqcBoard1.Assosiate ( sqc );
+
 			//アクションとエフェクトで分岐
 			if ( BoolAction )
 			{
-				FormAction.Inst.Assosiate ( ( Action ) EditCompend.SelectedSequence );
+				FormAction.Inst.Assosiate ( ( Action ) sqc );
 			}
 
 			//--------------------------------------------------------
 			//スクリプト
+			Script scp = EditCompend.SelectedScript;
 			FormScript.Inst.Assosiate ( scp );	//各値
 			FormRect.Inst.Assosiate ( scp );	//枠
 			FormEfGnrt.Inst.Assosiate ( scp );	//Ef生成
@@ -182,6 +185,13 @@ namespace ScriptEditor
 		public SequenceTree GetSequenceTree ()
 		{
 			return sequenceTree1;
+		}
+
+		//-------------------------------------------------------------------------
+		//プレビュー
+		private void Btn_Preview_Click ( object sender, System.EventArgs e )
+		{
+			FormPreview.Inst.Visible = ! FormPreview.Inst.Visible;
 		}
 	}
 }

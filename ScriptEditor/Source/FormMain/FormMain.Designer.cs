@@ -40,15 +40,15 @@
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabAction = new System.Windows.Forms.TabPage();
+			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
 			this.tabEffect = new System.Windows.Forms.TabPage();
+			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
 			this.tabCommand = new System.Windows.Forms.TabPage();
+			this.listCommand1 = new ScriptEditor.ListCommand();
+			this.ctrl_Command1 = new ScriptEditor.Ctrl_Command();
 			this.tabChara = new System.Windows.Forms.TabPage();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
-			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
-			this.listCommand1 = new ScriptEditor.ListCommand();
-			this.ctrl_Command1 = new ScriptEditor.Ctrl_Command();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
@@ -165,41 +165,6 @@
 			this.tabAction.Text = "アクション";
 			this.tabAction.UseVisualStyleBackColor = true;
 			// 
-			// tabEffect
-			// 
-			this.tabEffect.Controls.Add(this.cpd_Garnish);
-			this.tabEffect.Location = new System.Drawing.Point(4, 22);
-			this.tabEffect.Name = "tabEffect";
-			this.tabEffect.Padding = new System.Windows.Forms.Padding(3);
-			this.tabEffect.Size = new System.Drawing.Size(976, 686);
-			this.tabEffect.TabIndex = 1;
-			this.tabEffect.Text = "エフェクト";
-			this.tabEffect.UseVisualStyleBackColor = true;
-			// 
-			// tabCommand
-			// 
-			this.tabCommand.Controls.Add(this.listCommand1);
-			this.tabCommand.Controls.Add(this.ctrl_Command1);
-			this.tabCommand.Location = new System.Drawing.Point(4, 22);
-			this.tabCommand.Name = "tabCommand";
-			this.tabCommand.Size = new System.Drawing.Size(976, 686);
-			this.tabCommand.TabIndex = 2;
-			this.tabCommand.Text = "コマンド";
-			this.tabCommand.UseVisualStyleBackColor = true;
-			// 
-			// tabChara
-			// 
-			this.tabChara.Location = new System.Drawing.Point(4, 22);
-			this.tabChara.Name = "tabChara";
-			this.tabChara.Size = new System.Drawing.Size(976, 686);
-			this.tabChara.TabIndex = 3;
-			this.tabChara.Text = "キャラ";
-			this.tabChara.UseVisualStyleBackColor = true;
-			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
 			// cpd_Behavior
 			// 
 			this.cpd_Behavior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -212,6 +177,17 @@
 			this.cpd_Behavior.Size = new System.Drawing.Size(977, 712);
 			this.cpd_Behavior.TabIndex = 0;
 			// 
+			// tabEffect
+			// 
+			this.tabEffect.Controls.Add(this.cpd_Garnish);
+			this.tabEffect.Location = new System.Drawing.Point(4, 22);
+			this.tabEffect.Name = "tabEffect";
+			this.tabEffect.Padding = new System.Windows.Forms.Padding(3);
+			this.tabEffect.Size = new System.Drawing.Size(976, 686);
+			this.tabEffect.TabIndex = 1;
+			this.tabEffect.Text = "エフェクト";
+			this.tabEffect.UseVisualStyleBackColor = true;
+			// 
 			// cpd_Garnish
 			// 
 			this.cpd_Garnish.BoolAction = false;
@@ -220,6 +196,17 @@
 			this.cpd_Garnish.Name = "cpd_Garnish";
 			this.cpd_Garnish.Size = new System.Drawing.Size(977, 711);
 			this.cpd_Garnish.TabIndex = 0;
+			// 
+			// tabCommand
+			// 
+			this.tabCommand.Controls.Add(this.listCommand1);
+			this.tabCommand.Controls.Add(this.ctrl_Command1);
+			this.tabCommand.Location = new System.Drawing.Point(4, 22);
+			this.tabCommand.Name = "tabCommand";
+			this.tabCommand.Size = new System.Drawing.Size(976, 686);
+			this.tabCommand.TabIndex = 2;
+			this.tabCommand.Text = "コマンド";
+			this.tabCommand.UseVisualStyleBackColor = true;
 			// 
 			// listCommand1
 			// 
@@ -234,6 +221,19 @@
 			this.ctrl_Command1.Name = "ctrl_Command1";
 			this.ctrl_Command1.Size = new System.Drawing.Size(688, 462);
 			this.ctrl_Command1.TabIndex = 0;
+			// 
+			// tabChara
+			// 
+			this.tabChara.Location = new System.Drawing.Point(4, 22);
+			this.tabChara.Name = "tabChara";
+			this.tabChara.Size = new System.Drawing.Size(976, 686);
+			this.tabChara.TabIndex = 3;
+			this.tabChara.Text = "キャラ";
+			this.tabChara.UseVisualStyleBackColor = true;
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
 			// FormMain
 			// 

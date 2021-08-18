@@ -71,8 +71,9 @@ namespace ScriptEditor
 		public string GetImageName () { return ( (ImageData)Lb_Image.SelectedItem ).Name; }
 
 		//環境を設定
-		public void SetCtrl ( EditCompend ec, DispCompend dc )
+		public void SetEnviron ( FormMain fm, EditCompend ec, DispCompend dc )
 		{
+			FormMain = fm;
 			EditCompend = ec;
 			DispCompend = dc;
 		}
@@ -176,8 +177,11 @@ namespace ScriptEditor
 				ImageData imageData = null;	//参照
 				try
 				{
+					string f = Path.GetFileName ( filename );
+					string fn = f.Substring ( 4 );	//先頭のインデックス("ddd_")を除く
+
 					//画像からImageData型を作成
-					imageData = new ImageData ( Path.GetFileName ( filename ), Image.FromFile ( filename ) );
+					imageData = new ImageData ( fn, Image.FromFile ( filename ) );
 
 					//L_ImageData.Add ( imageData );			//内部データに保存
 					BD_ImageData.Add ( imageData );

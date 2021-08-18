@@ -138,16 +138,10 @@
     <Compile Include="Source\Control\Compend\SequenceTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Control\Sqc\Btn_Seq.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Sqc\Btn_Seq.Designer.cs">
-      <DependentUpon>Btn_Seq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Control\Sqc\SqcBoard.cs">
+    <Compile Include="Source\Control\Compend\SqcBoard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Control\Sqc\SqcBoard.designer.cs">
+    <Compile Include="Source\Control\Compend\SqcBoard.designer.cs">
       <DependentUpon>SqcBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Control\TBN_Command.cs">
@@ -190,6 +184,14 @@
     <Compile Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.Designer.cs">
       <DependentUpon>FormEfGnrt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\FormSub\FormPreview\FormPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormPreview\FormPreview.Designer.cs">
+      <DependentUpon>FormPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Source\FormSub\FormPreview\FrameControl.cs" />
+    <Compile Include="Source\FormSub\FormPreview\GameMain.cs" />
     <Compile Include="Source\FormSub\FormRect\Ctrl_ListRect0.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,7 +248,7 @@
     <EmbeddedResource Include="Source\Control\Compend\SequenceTree.resx">
       <DependentUpon>SequenceTree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Sqc\SqcBoard.resx">
+    <EmbeddedResource Include="Source\Control\Compend\SqcBoard.resx">
       <DependentUpon>SqcBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
@@ -263,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormImage\Form_Image.resx">
       <DependentUpon>Form_Image.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormPreview\FormPreview.resx">
+      <DependentUpon>FormPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormRect\Ctrl_ListRect0.resx">
       <DependentUpon>Ctrl_ListRect0.cs</DependentUpon>
@@ -417,8 +422,6 @@
     <Content Include="Resources\ResourceCommand\_.png" />
     <Content Include="ScriptEditor.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\FormSub\FormTest\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

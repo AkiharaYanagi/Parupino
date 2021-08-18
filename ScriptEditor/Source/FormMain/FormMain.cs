@@ -2,9 +2,9 @@
 
 namespace ScriptEditor
 {
-	//@todo アクション指定に名前から検索する機能を付ける
+
 	//@todo ブランチにセットを作り、名前から検索する機能を付ける
-	//@todo アクションリストをツリー表示
+
 
 	//#################################################################################
 	//##
@@ -34,10 +34,6 @@ namespace ScriptEditor
 			//サブフォーム初期化
 			LoadSubForm ();
 
-			//ステータスバーテキストを登録
-			STS_TXT.Tssl = 	toolStripStatusLabel1;
-			STS_TXT.Trace ( "Init." );
-
 			//タブ初期化
 			TabAction_Load ();
 			TabEffect_Load ();
@@ -49,6 +45,10 @@ namespace ScriptEditor
 
 			//開始
 			Init ();
+
+			//ステータスバーテキストを登録
+			STS_TXT.Tssl = 	toolStripStatusLabel1;
+			STS_TXT.Trace ( "Init." );
 
 			//表示
 			Disp ();
@@ -64,6 +64,5 @@ namespace ScriptEditor
 			FormAction.Inst.Owner = null;
 			FormScript.Inst.Owner = null;
 		}
-
 	}
 }

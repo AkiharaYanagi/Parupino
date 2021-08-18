@@ -51,9 +51,17 @@ namespace ScriptEditor
 			DispCompend = dc;
 		}
 
-		public void Set ( Sequence sqc )
+		//データ設定
+		public void SetData ( Sequence sqc )
 		{
 			Sqc = sqc;
+		}
+
+		//関連付け
+		public void Assosiate ( Sequence sqc )
+		{
+			Sqc = sqc;
+			Invalidate ();
 		}
 
 		//-----------------------------------------------------------------------------
