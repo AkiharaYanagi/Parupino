@@ -83,10 +83,12 @@ namespace ScriptEditor
 			List<Script> ls = Sqc.ListScript;
 
 			//大きさ
-			int minWidth = 1000;
-			int scWidth = 100+BX + ( ls.Count + 2 ) * W;
-			this.Width = ( minWidth < scWidth ) ? scWidth: minWidth;
-			this.Height = 80 + BY + ( 2 * H );
+//			int minWidth = 1000;
+//			int scWidth = 100+BX + ( ls.Count + 2 ) * W;
+//			this.Width = ( minWidth < scWidth ) ? scWidth: minWidth;
+			this.Height = 130 + BY + ( 2 * H );
+
+			pictureBox1.Width = 3000;
 
 			//大きさの一時保存
 			int TW = this.Width;
@@ -113,36 +115,32 @@ namespace ScriptEditor
 			g.FillRectangle ( BRUSH_0, rectSpan );
 
 			//---------------------------------------------------------
-			//グループ表示
+			//スクリプト内容
 			int count = 0;
 			foreach ( Script s in Sqc.ListScript )
 			{
-				Rectangle r = new Rectangle ( BX + (W * count ++), 0, W, H );
-				g.FillRectangle ( new SolidBrush ( DefineColor.Get ( s.Group ) ), r );
-			}
-
-			//スクリプト内容
-			int count0 = 0;
-			foreach ( Script s in Sqc.ListScript )
-			{
 				Color c_0 =  Color.FromArgb ( 0xff, 0xff, 0xff );
+
+				//グループ表示
+				Rectangle r = new Rectangle ( BX + (W * count), 0, W, H );
+				g.FillRectangle ( new SolidBrush ( DefineColor.Get ( s.Group ) ), r );
 				
 				//攻撃枠
-				Rectangle r_a = new Rectangle ( BX + (W * count0), W * 2, W, H );
+				Rectangle r_a = new Rectangle ( BX + (W * count), W * 2, W, H );
 				Color c_a = ( 0 < s.ListARect.Count ) ? Color.FromArgb ( 0xff, 0xe0, 0xe0 ) : c_0;
 				g.FillRectangle ( new SolidBrush ( c_a ), r_a );
 				
 				//相殺枠
-				Rectangle r_o = new Rectangle ( BX + (W * count0), W * 3, W, H );
+				Rectangle r_o = new Rectangle ( BX + (W * count), W * 3, W, H );
 				Color c_o = ( 0 < s.ListORect.Count ) ? Color.FromArgb ( 0xff, 0xff, 0xe0 ) : c_0;
 				g.FillRectangle ( new SolidBrush ( c_o ), r_o );
 				
 				//EfGnrt
-				Rectangle r_eg = new Rectangle ( BX + (W * count0), W * 4, W, H );
+				Rectangle r_eg = new Rectangle ( BX + (W * count), W * 4, W, H );
 				Color c_eg = ( 0 < s.ListGenerateEf.Count ) ? Color.FromArgb ( 0xc0, 0xff, 0xff ) : c_0;
 				g.FillRectangle ( new SolidBrush ( c_eg ), r_eg );
 
-				++ count0;
+				++ count;
 			}
 
 
@@ -185,13 +183,14 @@ namespace ScriptEditor
 
 			//---------------------------------------------------------
 			//選択位置表示
-//			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, H, W, H );	//フレーム選択
 			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, 0, W, TH );	//フレーム選択
 		}
 
 		//オブジェクトが設定されていない状態でのIDE表示
 		private void pictureBox1_Paint_Default ( object sender, PaintEventArgs e )
 		{
+#if false
+
 			Graphics g = e.Graphics;
 
 			//枡個数
@@ -255,6 +254,7 @@ namespace ScriptEditor
 			//---------------------------------------------------------
 			//選択位置表示
 			g.DrawRectangle ( Pens.Firebrick, BX + W, H, W, H );	//フレーム選択
+#endif
 		}
 
 		//----------------------------------------------------------------------------------
@@ -364,6 +364,5 @@ namespace ScriptEditor
 			EditScript es = ec.EditScript;
 			es.PasteGroup ( ec.SelectedScript );
 		}
-
 	}
 }

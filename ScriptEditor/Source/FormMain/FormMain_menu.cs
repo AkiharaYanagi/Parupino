@@ -26,6 +26,8 @@ namespace ScriptEditor
 
 			//編集中ファイル名更新(非保存表示を消去)
 			this.Text = edittingFilename + " - " + formText;
+
+			STS_TXT.Trace ( "上書保存" );
 		}
 
 		private void 別名保存ToolStripMenuItem_Click ( object sender, EventArgs e )
@@ -50,11 +52,13 @@ namespace ScriptEditor
 				settings.LastDirectory = Path.GetDirectoryName ( saveFileDialog1.FileName );
 				settings.Save ();
 			}
+			STS_TXT.Trace ( "別名保存" );
 		}
 
 		private void 基準保存TToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
 			SaveChara saveChara = new SaveChara ( "testChara.dat", chara );
+			STS_TXT.Trace ( "基準保存" );
 		}
 
 		private void 読込ToolStripMenuItem_Click ( object sender, EventArgs e )
@@ -71,6 +75,7 @@ namespace ScriptEditor
 			//ファイル名更新
 			edittingFilename = Path.GetFileName ( openFileDialog1.FileName );
 
+			STS_TXT.Trace ( "読込" );
 		}
 
 		//キャラロード時に更新

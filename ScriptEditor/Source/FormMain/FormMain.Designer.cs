@@ -170,6 +170,7 @@
 			this.cpd_Behavior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.cpd_Behavior.AutoScroll = true;
 			this.cpd_Behavior.BoolAction = false;
 			this.cpd_Behavior.EditCompend = null;
 			this.cpd_Behavior.Location = new System.Drawing.Point(0, 0);

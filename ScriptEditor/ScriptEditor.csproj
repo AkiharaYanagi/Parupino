@@ -148,6 +148,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Control\Compend\ToolImg.cs" />
+    <Compile Include="Source\Control\testAutoScroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\testAutoScroll.Designer.cs">
+      <DependentUpon>testAutoScroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\FormMain\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Control\Compend\SqcBoard.resx">
       <DependentUpon>SqcBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\testAutoScroll.resx">
+      <DependentUpon>testAutoScroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

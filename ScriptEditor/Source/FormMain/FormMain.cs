@@ -46,10 +46,6 @@ namespace ScriptEditor
 			//開始
 			Init ();
 
-			//ステータスバーテキストを登録
-			STS_TXT.Tssl = 	toolStripStatusLabel1;
-			STS_TXT.Trace ( "Init." );
-
 			//表示
 			Disp ();
 		}
