@@ -38,6 +38,7 @@ namespace ScriptEditor
 			TabAction_Load ();
 			TabEffect_Load ();
 			TabCommand_Load ();
+			TabBranch_Load ();
 			TabChara_Load ();
 
 			//キャラデータのテスト

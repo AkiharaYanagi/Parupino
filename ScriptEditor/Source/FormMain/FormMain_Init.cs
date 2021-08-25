@@ -134,6 +134,12 @@ namespace ScriptEditor
 			ctrl_Command1.Set ( c );
 		}
 
+		//タブ_ブランチの初期化
+		private void TabBranch_Load ()
+		{
+
+		}
+
 		//タブ_キャラの初期化
 		private void TabChara_Load ()
 		{

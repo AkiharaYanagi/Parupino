@@ -46,6 +46,7 @@
 			this.tabCommand = new System.Windows.Forms.TabPage();
 			this.listCommand1 = new ScriptEditor.ListCommand();
 			this.ctrl_Command1 = new ScriptEditor.Ctrl_Command();
+			this.tabBranch = new System.Windows.Forms.TabPage();
 			this.tabChara = new System.Windows.Forms.TabPage();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -55,6 +56,7 @@
 			this.tabAction.SuspendLayout();
 			this.tabEffect.SuspendLayout();
 			this.tabCommand.SuspendLayout();
+			this.tabBranch.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -144,6 +146,7 @@
 			this.tabControl1.Controls.Add(this.tabAction);
 			this.tabControl1.Controls.Add(this.tabEffect);
 			this.tabControl1.Controls.Add(this.tabCommand);
+			this.tabControl1.Controls.Add(this.tabBranch);
 			this.tabControl1.Controls.Add(this.tabChara);
 			this.tabControl1.Location = new System.Drawing.Point(0, 24);
 			this.tabControl1.Name = "tabControl1";
@@ -223,6 +226,15 @@
 			this.ctrl_Command1.Size = new System.Drawing.Size(688, 462);
 			this.ctrl_Command1.TabIndex = 0;
 			// 
+			// tabBranch
+			// 
+			this.tabBranch.Location = new System.Drawing.Point(4, 22);
+			this.tabBranch.Name = "tabBranch";
+			this.tabBranch.Size = new System.Drawing.Size(976, 686);
+			this.tabBranch.TabIndex = 4;
+			this.tabBranch.Text = "ブランチ";
+			this.tabBranch.UseVisualStyleBackColor = true;
+			// 
 			// tabChara
 			// 
 			this.tabChara.Location = new System.Drawing.Point(4, 22);
@@ -258,6 +270,7 @@
 			this.tabAction.ResumeLayout(false);
 			this.tabEffect.ResumeLayout(false);
 			this.tabCommand.ResumeLayout(false);
+			this.tabBranch.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -285,6 +298,7 @@
 		private System.Windows.Forms.ToolStripMenuItem テキストから読込ToolStripMenuItem;
 		private ListCommand listCommand1;
 		private Ctrl_Command ctrl_Command1;
+		private System.Windows.Forms.TabPage tabBranch;
 	}
 }
 
