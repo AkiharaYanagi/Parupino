@@ -4,17 +4,17 @@ using System.ComponentModel;
 
 namespace ScriptEditor
 {
+	using BL_EFGN = BindingList < EffectGenerate >;
+
+
 	public class DispEffectGenerate
 	{
-//		EditChara editChara;
-
 		//エフェクトジェネレートフォームのコントロールのまとめ
 		ControlsEfGnrt ctrlEfGnrt { get; set; }
 
 		//初期化
 		public void Load ( EditChara ec, ControlsEfGnrt ceg )
 		{
-//			editChara = ec;
 			ctrlEfGnrt = ceg;
 		}
 
@@ -27,10 +27,12 @@ namespace ScriptEditor
 			if ( null == ctrlEfGnrt ) { return; }
 			
 			//作業用
+			Chara ch = EditChara.Inst.Chara;
 			ControlsEfGnrt c = ctrlEfGnrt;
+			BL_EFGN bl_efgn = script.BD_EfGnrt.GetBindingList ();
 
 			//Ef生成が存在しないとき
-			if ( script.ListGenerateEf.Count == 0 )
+			if ( bl_efgn.Count == 0 )
 			{
 				c.Off ();
 				return;
@@ -41,7 +43,7 @@ namespace ScriptEditor
 
 			//リストボックスの更新
 			ListBox lb = c.lb_EfGnrt;
-			lb.DataSource = script.ListGenerateEf;
+			lb.DataSource = bl_efgn;
 			lb.DisplayMember = "name";
 
 			//リストボックスの選択
@@ -51,23 +53,25 @@ namespace ScriptEditor
 			EffectGenerate efGnrt = ( EffectGenerate ) lb.SelectedValue;
 
 			//エフェクトの取得
+#if false
 			int indexEf = efGnrt.Id;
-//			BindingList<Sequence> listEf = editChara.Chara.garnish.BD_Sequence.GetBindingList ();
-			BindingList<Sequence> listEf = EditChara.Inst.Chara.garnish.BD_Sequence.GetBindingList ();
+			BindingList<Sequence> listEf = ch.garnish.BD_Sequence.GetBindingList ();
 			Debug.Assert ( indexEf < listEf.Count );
 			Effect ef = ( Effect ) listEf[ indexEf ];
+#endif
+			Effect ef = (Effect)ch.garnish.BD_Sequence.Get ( efGnrt.EfName );
 
 			//コンボボックスの更新
-			c.cb_garnish.SelectedIndex = indexEf;
+//			c.cb_garnish.SelectedIndex = indexEf;
 //			c.cb_garnish.refInt = efGnrt.id;
 
 			//名前の取得
 			efGnrt.Name = ef.Name;
 
 			//バインディングリストの内容更新
-			for ( int i = 0; i < script.ListGenerateEf.Count; ++i )
+			for ( int i = 0; i < bl_efgn.Count; ++i )
 			{
-				script.ListGenerateEf.ResetItem ( i );
+				bl_efgn.ResetItem ( i );
 			}
 
 			//X,Y,Z

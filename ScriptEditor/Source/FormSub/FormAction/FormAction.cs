@@ -94,12 +94,12 @@ namespace ScriptEditor
 		{
 			action = act;
 			TB_Name.Text = act.Name;
-			CBSL_Next.SelectedItem = act.NextAction;
+//			CBSL_Next.SelectedItem = act.NextAction;
 			CB_Category.SelectedItem = act.Category;
 			CB_Posture.SelectedItem = act.Posture;
 
 			//各コントロールに設定用のデリゲートを渡す
-			CBSL_Next.Associate ( a => act.NextAction = (Action)a );
+//			CBSL_Next.Associate ( a => act.NextAction = (Action)a );
 			TBN_Balance.Assosiate ( i => act._Balance = i, ()=> act._Balance );
 		}
 

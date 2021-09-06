@@ -67,7 +67,7 @@ namespace ScriptEditor
 		public void Disp ( Action action )
 		{
 			//次アクション
-			CbNext.SelectedIndex = action.NextIndex;
+//			CbNext.SelectedIndex = action.NextIndex;
 
 			//バランス
 			TbaBalance.Text = action._Balance.ToString();

@@ -9,7 +9,7 @@ namespace ScriptEditor
 	public class TBN_Command : TextBox
 	{
 		//関連付けられる数値
-		public RefInt refInt { get; set; }
+//		public RefInt refInt { get; set; }
 
 		//全てのスクリプトに適用するための操作用
 		public EditCommand editCommand { get; set; }
@@ -57,6 +57,7 @@ namespace ScriptEditor
 		//キーボード入力時
 		protected override void OnKeyDown ( KeyEventArgs e )
 		{
+#if false
 			//テキストが空のとき何もしない
 			if ( this.Text.Length == 0 ) { return; }
 
@@ -87,6 +88,7 @@ namespace ScriptEditor
 				//画面の更新
 //				dispCommand.Disp ( e );
 			}
+#endif
 
 			base.OnKeyDown ( e );
 		}
@@ -100,6 +102,7 @@ namespace ScriptEditor
 			Invalidate ();
 		}
 
+#if false
 		public void Update ( RefInt ri )
 		{
 			this.refInt = ri;
@@ -110,6 +113,7 @@ namespace ScriptEditor
 		{
 			this.Text = this.refInt.i.ToString ();
 		}
+#endif
 
 		private void InitializeComponent ()
 		{

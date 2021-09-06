@@ -3,8 +3,9 @@ using System.Windows.Forms;
 using System.ComponentModel;
 namespace ScriptEditor
 {
-	using BD_SQC = BindingDictionary < Sequence >;
 	using BL_Sqc = BindingList < Sequence >;
+	using BD_Sqc = BindingDictionary < Sequence >;
+	using BL_EFGN = BindingList < EffectGenerate >;
 	using BD_IMGD = BindingDictionary < ImageData >;
 
 	public sealed class PaintImage 
@@ -12,6 +13,7 @@ namespace ScriptEditor
 		//-----------------------------------------------------------
 		//キャラデータの参照
 		public BD_IMGD ListImage { get; set; } = null;		//イメージリストの参照
+		public BD_Sqc BD_Ef { get; set; } = null;			//Efリストの参照
 		public BL_Sqc ListEf { get; set; } = null;			//Efリストの参照
 		public BD_IMGD ListEfImage { get; set; } = null;	//Efイメージリストの参照
 
@@ -31,12 +33,13 @@ namespace ScriptEditor
 		}
 
 		//キャラ読込時
-		public void SetCharaData ( BD_IMGD mainImg, BL_Sqc lsEf, BD_IMGD efImg )
+		public void SetCharaData ( BD_IMGD bd_mainImg, BD_Sqc bd_ef, BD_IMGD bd_efImg )
 		{
 			//データ参照
-			ListImage = mainImg;
-			ListEf = lsEf;
-			ListEfImage = efImg;
+			ListImage = bd_mainImg;
+//			ListEf = lsEf;
+			BD_Ef = bd_ef;
+			ListEfImage = bd_efImg;
 		}
 
 		//内容表示
@@ -56,38 +59,30 @@ namespace ScriptEditor
 			}	//using
 			
 			//----------------------------------------
-			//イメージID
-			//名前で検索
-			ImageData imgdt = ListImage.Get ( script.ImgName );
+			//イメージ
 			Image img = null;
-			if ( imgdt is null ) 
-			{
-				using ( Font font = new Font ( "メイリオ", 20 ) )
-				{
-				Bitmap bmp_nl = new Bitmap ( 256, 256 );
-				Graphics g_nl = Graphics.FromImage ( bmp_nl );
-				g_nl.DrawString ( "\"" + script.ImgName + "\"", font, Brushes.Orange, 64, 128 );
-				g_nl.DrawString ( "is not exist.", font, Brushes.Orange, 64, 160 );
-				img = bmp_nl;
-				g_nl.Dispose ();
-				}	//using
-			}
-			else
-			{
-				img = imgdt.Img;
-			}
+			ImageData imgdt = ListImage.Get ( script.ImgName );
+			if ( imgdt is null ) { img = MakeDammy ( script ); }
+			else { img = imgdt.Img; }
+
 			int x = PtPbImageBase.X + script.Pos.X;
 			int y = PtPbImageBase.Y + script.Pos.Y;
 			g.DrawImage ( img, x, y, img.Width, img.Height );
 
-			//エフェクトID
-			foreach ( EffectGenerate efGnrt in script.ListGenerateEf )
+			//----------------------------------------
+			//エフェクト
+			BL_EFGN bl_efgn = script.BD_EfGnrt.GetBindingList ();
+			foreach ( EffectGenerate efGnrt in bl_efgn )
 			{
 				//対象エフェクトとイメージを取得
+#if false
 				int efID = efGnrt.Id;
 				if ( ListEf.Count <= efID ) { return; }
 				Effect ef = ( Effect ) ListEf[ efID ];
 				if ( null == ef ) { continue; }
+				Script efSc = ef.ListScript[ 0 ];
+#endif
+				Effect ef = (Effect)BD_Ef.Get ( efGnrt.EfName );
 				Script efSc = ef.ListScript[ 0 ];
 
 				//エフェクトのスクリプトからイメージを取得
@@ -113,5 +108,20 @@ namespace ScriptEditor
 			PB_Image.Invalidate ();
 		}
 
+		//ダミー生成
+		private Image MakeDammy ( Script script )
+		{
+			Image img = null;
+			using ( Font font = new Font ( "メイリオ", 20 ) )
+			{
+			Bitmap bmp_nl = new Bitmap ( 256, 256 );
+			Graphics g_nl = Graphics.FromImage ( bmp_nl );
+			g_nl.DrawString ( "\"" + script.ImgName + "\"", font, Brushes.Orange, 64, 128 );
+			g_nl.DrawString ( "is not exist.", font, Brushes.Orange, 64, 160 );
+			img = bmp_nl;
+			g_nl.Dispose ();
+			}	//using
+			return img;
+		}
 	}
 }

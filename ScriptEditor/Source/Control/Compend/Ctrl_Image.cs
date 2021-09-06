@@ -4,8 +4,7 @@ using System.ComponentModel;
 
 namespace ScriptEditor
 {
-	using BL_ImgDt = BindingList < ImageData >;
-	using BL_Sqc = BindingList < Sequence >;
+	using BD_Sqc = BindingDictionary < Sequence >;
 	using BD_IMGD = BindingDictionary < ImageData >;
 
 	//-------------------------------------------------------------------------
@@ -75,9 +74,9 @@ namespace ScriptEditor
 		}
 
 		//キャラデータ読込時
-		public void SetCharaData ( BD_IMGD mainImg, BL_Sqc lsEf, BD_IMGD efImg )
+		public void SetCharaData ( BD_IMGD bd_mainImg, BD_Sqc bd_sqc, BD_IMGD bd_efImg )
 		{
-			paintImage.SetCharaData ( mainImg, lsEf, efImg );
+			paintImage.SetCharaData ( bd_mainImg, bd_sqc, bd_efImg );
 		}
 
 		//描画

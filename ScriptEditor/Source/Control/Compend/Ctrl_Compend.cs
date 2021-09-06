@@ -56,12 +56,12 @@ namespace ScriptEditor
 			Garnish g = ch.garnish;
 			if ( BoolAction )
 			{
-				Ctrl_Img.SetCharaData ( b.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
+				Ctrl_Img.SetCharaData ( b.BD_Image, g.BD_Sequence, g.BD_Image );
 				sequenceTree1.SetCharaData ( b.BD_Sequence );
 			}
 			else
 			{
-				Ctrl_Img.SetCharaData ( g.BD_Image, g.BD_Sequence.GetBindingList(), g.BD_Image );
+				Ctrl_Img.SetCharaData ( g.BD_Image, g.BD_Sequence, g.BD_Image );
 				sequenceTree1.SetCharaData ( g.BD_Sequence );
 			}
 
@@ -102,7 +102,7 @@ namespace ScriptEditor
 			FormScript.Inst.Assosiate ( scp );	//各値
 			FormRect.Inst.Assosiate ( scp );	//枠
 			FormEfGnrt.Inst.Assosiate ( scp );	//Ef生成
-			FormBranch.Inst.Assosiate ( scp );	//ブランチ
+			FormBranch0.Inst.Assosiate ( scp );	//ブランチ
 			//--------------------------------------------------------
 		}
 
@@ -178,7 +178,7 @@ namespace ScriptEditor
 		//Ef生成
 		private void Btn_Branch_Click ( object sender, System.EventArgs e )
 		{
-			FormBranch.Inst.Visible = ! FormBranch.Inst.Visible;
+			FormBranch0.Inst.VisFlip ();
 		}
 
 		//----

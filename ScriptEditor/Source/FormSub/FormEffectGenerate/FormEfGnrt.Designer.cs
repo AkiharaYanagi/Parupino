@@ -152,7 +152,6 @@
 			this.tbN_Command1.editCommand = null;
 			this.tbN_Command1.Location = new System.Drawing.Point(453, 58);
 			this.tbN_Command1.Name = "tbN_Command1";
-			this.tbN_Command1.refInt = null;
 			this.tbN_Command1.SetFunc = null;
 			this.tbN_Command1.Size = new System.Drawing.Size(100, 19);
 			this.tbN_Command1.TabIndex = 9;

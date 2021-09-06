@@ -137,7 +137,7 @@ namespace ScriptEditor
 				
 				//EfGnrt
 				Rectangle r_eg = new Rectangle ( BX + (W * count), W * 4, W, H );
-				Color c_eg = ( 0 < s.ListGenerateEf.Count ) ? Color.FromArgb ( 0xc0, 0xff, 0xff ) : c_0;
+				Color c_eg = ( 0 < s.BD_EfGnrt.Count () ) ? Color.FromArgb ( 0xc0, 0xff, 0xff ) : c_0;
 				g.FillRectangle ( new SolidBrush ( c_eg ), r_eg );
 
 				++ count;

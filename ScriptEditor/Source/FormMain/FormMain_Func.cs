@@ -19,7 +19,7 @@ namespace ScriptEditor
 			cpd_Garnish.SetCharaData ( ch );
 
 			// [ブランチフォーム]
-			FormBranch.Inst.SetCharaData ( chara );
+			FormBranch0.Inst.SetCharaData ( chara );
 
 			// [エフェクトジェネレートフォーム]
 			FormEfGnrt.Inst.SetCharaData ( chara );
@@ -39,7 +39,7 @@ namespace ScriptEditor
 			FormRect.Inst.Assosiate ( scp );
 			FormScript.Inst.Assosiate ( scp );
 			FormEfGnrt.Inst.Assosiate ( scp );
-			FormBranch.Inst.Assosiate ( scp );
+			FormBranch0.Inst.Assosiate ( scp );
 			Disp ();
 		}
 

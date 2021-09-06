@@ -4,9 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
-using ScriptEditorUtility;
-
-
 namespace ScriptEditor
 {
 	//-------------------------------------------------------------
@@ -107,11 +104,11 @@ namespace ScriptEditor
 		{
 			//選択中スクリプトにイメージの設定
 			Script scp = EditCompend.SelectedScript;
-			scp.ImgIndex = GetImageIndex ();
+//			scp.ImgIndex = GetImageIndex ();
 			scp.ImgName = GetImageName ();
 			
 			//グループにも変更を反映
-			EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
+//			EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
 
 			DispCompend.Disp ();
 			this.Hide ();

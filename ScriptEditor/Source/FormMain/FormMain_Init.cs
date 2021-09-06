@@ -20,7 +20,7 @@ namespace ScriptEditor
 			FormScript.Inst.FormMain = this;
 			FormRect.Inst.FormMain = this;
 			FormEfGnrt.Inst.FormMain = this;
-			FormBranch.Inst.FormMain = this;
+			FormBranch0.Inst.FormMain = this;
 		}
 
 		//--------------------------------------------------------------------------
@@ -128,7 +128,7 @@ namespace ScriptEditor
 		//タブ_コマンドの初期化
 		private void TabCommand_Load ()
 		{
-			listCommand1.SetData ( chara.ListCommand, ctrl_Command1 );
+			listCommand1.SetData ( chara.BD_Command.GetBindingList (), ctrl_Command1 );
 			Command c = listCommand1.GetSelected ();
 			if ( null == c ) { return; }
 			ctrl_Command1.Set ( c );

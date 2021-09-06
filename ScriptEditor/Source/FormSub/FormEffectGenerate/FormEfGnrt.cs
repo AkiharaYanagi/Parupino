@@ -55,18 +55,22 @@ namespace ScriptEditor
 		public void Assosiate ( Script script )
 		{
 			Scp = script;
-			listBox1.DataSource = script.ListGenerateEf;
+			listBox1.DataSource = script.BD_EfGnrt.GetBindingList ();
 			UpdateData ();
 		}
 
 		//更新
 		public void UpdateData ()
 		{
+#if false
 			int i = 0;
-			foreach ( EffectGenerate efGnrt in Scp.ListGenerateEf )
+			foreach ( EffectGenerate efGnrt in Scp.BD_EfGnrt.GetBindingList () )
 			{
-				Scp.ListGenerateEf.ResetItem ( i ++ );
+				Scp.BD_EfGnrt.GetBindingList ().ResetItem ( i ++ );
 			}
+#endif
+			Scp.BD_EfGnrt.ResetItems ();
+			
 			if ( 0 < listBox1.Items.Count )
 			{
 				listBox1.SelectedIndex = 0;
@@ -137,11 +141,11 @@ namespace ScriptEditor
 			Effect ef = (Effect)cB_SequenceList1.SelectedItem;
 			EffectGenerate efGnrt = new EffectGenerate ();
 			efGnrt.Name = ef.Name;
-			efGnrt.Id = cB_SequenceList1.SelectedIndex;
+//			efGnrt.Id = cB_SequenceList1.SelectedIndex;
 			efGnrt.Gnrt = Cb_Gnrt.Checked;
 			efGnrt.Loop = Cb_Loop.Checked;
 			efGnrt.Sync = Cb_Sync.Checked;
-			Scp.ListGenerateEf.Add ( efGnrt );
+			Scp.BD_EfGnrt.Add ( efGnrt );
 			UpdateData ();
 		}
 
@@ -151,8 +155,8 @@ namespace ScriptEditor
 			if ( null == listBox1.SelectedItem ) { return; }
 			
 			EffectGenerate efGnrt = (EffectGenerate)listBox1.SelectedItem;
-			Scp.ListGenerateEf.Remove ( efGnrt );
-			Scp.ListGenerateEf.ResetBindings ();
+			Scp.BD_EfGnrt.Remove ( efGnrt );
+			Scp.BD_EfGnrt.ResetBindings ();
 		}
 
 		//チェックボックス
