@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using System.ComponentModel;
+
 namespace ScriptEditor
 {
 	using BL_Sqc = BindingList < Sequence >;
@@ -83,6 +84,7 @@ namespace ScriptEditor
 				Script efSc = ef.ListScript[ 0 ];
 #endif
 				Effect ef = (Effect)BD_Ef.Get ( efGnrt.EfName );
+				if ( ef is null ) { continue; }
 				Script efSc = ef.ListScript[ 0 ];
 
 				//エフェクトのスクリプトからイメージを取得

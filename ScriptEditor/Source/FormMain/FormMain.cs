@@ -2,10 +2,6 @@
 
 namespace ScriptEditor
 {
-
-	//@todo ブランチにセットを作り、名前から検索する機能を付ける
-
-
 	//#################################################################################
 	//##
 	//##	メインフォーム
@@ -35,11 +31,7 @@ namespace ScriptEditor
 			LoadSubForm ();
 
 			//タブ初期化
-			TabAction_Load ();
-			TabEffect_Load ();
-			TabCommand_Load ();
-			TabBranch_Load ();
-			TabChara_Load ();
+			LoadTab ();
 
 			//キャラデータのテスト
 			TestCharaData ();

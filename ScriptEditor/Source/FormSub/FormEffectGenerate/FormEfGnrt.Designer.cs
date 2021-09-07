@@ -229,7 +229,6 @@
 			this.Controls.Add(this.listBox1);
 			this.Name = "FormEfGnrt";
 			this.Text = "EfGnrtcs";
-			this.VisibleChanged += new System.EventHandler(this.FormEfGnrt_VisibleChanged);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

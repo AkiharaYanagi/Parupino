@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Drawing;
 using System.IO;
 
 namespace ScriptEditor
@@ -21,23 +20,7 @@ namespace ScriptEditor
 			FormRect.Inst.FormMain = this;
 			FormEfGnrt.Inst.FormMain = this;
 			FormBranch0.Inst.FormMain = this;
-		}
-
-		//--------------------------------------------------------------------------
-		//タイトルバー
-		private string formText = "ScriptEditor";		//フォームテキスト(タイトル)
-
-		private void InitFormText ()
-		{
-			this.Text = formText;
-		}
-		private void SetFormText ( string fileName )
-		{
-			this.Text = fileName + " - " + formText;
-		}
-		private void NoSaveFormText ( string fileName )
-		{
-			this.Text = fileName + "*" + " - " + formText;
+			FormRoute.Inst.FormMain = this;
 		}
 
 		//==================================================================================
@@ -86,8 +69,20 @@ namespace ScriptEditor
 		}
 
 		//==================================================================================
-		//	各タブの初期化
+		//	タブ初期化関連
 		//==================================================================================
+
+		//--------------------------------------------------------------------------
+		//各タブの初期化
+		private void LoadTab ()
+		{
+			TabAction_Load ();
+			TabEffect_Load ();
+			TabCommand_Load ();
+			TabBranch_Load ();
+			TabChara_Load ();
+		}
+
 		//タブ_アクションの初期化
 		private void TabAction_Load ()
 		{

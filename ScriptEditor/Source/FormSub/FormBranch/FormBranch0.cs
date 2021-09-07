@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace ScriptEditor
 {
-	public partial class FormBranch0 :Form
+	//=================================================
+	//	フォーム・ブランチ
+	//=================================================
+	public sealed partial class FormBranch0 :EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -12,32 +14,18 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormBranch0 ()
 		{
-			this.StartPosition = FormStartPosition.Manual;
-			this.ShowInTaskbar = false;	//タスクバーに非表示
-
+			this.InitPt = new System.Drawing.Point ( 0, 200 );
 			InitializeComponent ();
 		}
 
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			e.Cancel = true;
-			this.Hide ();
-		}
-		//表示反転
-		public void VisFlip ()
-		{
-			this.Visible = ! this.Visible;
-		}
 		//---------------------------------------------------------------------
 
-		//親フォーム参照
-		public FormMain FormMain { get; set; } = null;
+		//---------------------------------------------------------------------
 
 		//データ設定
 		public void SetCharaData ( Chara ch )
 		{
-
+			ctrl_Branch1.SetCharaData ( ch );
 		}
 
 		//関連付け

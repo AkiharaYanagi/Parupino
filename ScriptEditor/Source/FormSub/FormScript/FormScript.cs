@@ -1,12 +1,11 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
 
 namespace ScriptEditor
 {
 	//---------------------------------------------------------------------
 	//	スクリプトの詳細を設定するフォーム
 	//---------------------------------------------------------------------
-	public sealed partial class FormScript : Form
+	public sealed partial class FormScript : EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -15,23 +14,10 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormScript ()
 		{
-			//フォーム開始位置
-			this.StartPosition = FormStartPosition.Manual;
-			this.ShowInTaskbar = false;	//タスクバーに非表示
-
+			InitPt = new System.Drawing.Point ( 0, 230 );
 			InitializeComponent ();
 		}
-			
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			e.Cancel = true;
-			this.Hide ();
-		}
 		//---------------------------------------------------------------------
-
-		//親フォーム参照
-		public FormMain FormMain { get; set; } = null;
 
 		//編集と表示
 		public EditScript EditScript { get; set; } = null;
@@ -46,15 +32,7 @@ namespace ScriptEditor
 			ctrl_Script1.SetCtrl ( es );
 			ds.SetCtrlScript ( ctrl_Script1 );
 		}
-
-		private void FormScript_VisibleChanged ( object sender, System.EventArgs e )
-		{
-			//フォーム位置を親フォームの右端にする
-			int x = FormMain.Location.X + FormMain.Width;
-			int y = FormMain.Location.Y + 230;
-			this.Location = new Point ( x, y );
-		}
-		
+	
 		public void Assosiate ( Script scp )
 		{
 			ctrl_Script1.Assosiate ( scp );

@@ -150,7 +150,6 @@
 			this.Controls.Add(this.lbl_Name);
 			this.Name = "FormAction";
 			this.Text = "Action";
-			this.VisibleChanged += new System.EventHandler(this.FormAction_VisibleChanged);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

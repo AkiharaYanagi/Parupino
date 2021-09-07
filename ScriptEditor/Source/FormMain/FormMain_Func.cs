@@ -24,9 +24,12 @@ namespace ScriptEditor
 			// [エフェクトジェネレートフォーム]
 			FormEfGnrt.Inst.SetCharaData ( chara );
 
-			//タブ ブランチ
+			//フォーム ブランチ
+			FormBranch0.Inst.SetCharaData ( chara );
 
-
+			//フォーム ルート
+			FormRoute.Inst.SetCharaData ( chara );
+			
 			// [メインフォーム] キャラ内容表示
 			UpdateData ();
 		}

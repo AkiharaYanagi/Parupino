@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace ScriptEditor
 {
@@ -8,21 +6,7 @@ namespace ScriptEditor
 	//		Compendを介しない
 
 
-	//---------------------------------------------------------------------
-	//@info Show(this);によりメインフォームにより隠れないようにしたが、
-	// サブフォームが開いているとメインフォームが閉じない問題
-	// -> 常時存在するシングルトンとしてvisibleを切替で解決
-	//---------------------------------------------------------------------
-
-	//---------------------------------------------------------------------
-	//	アクションの詳細を設定するフォーム
-	//---------------------------------------------------------------------
-	//このフォームは１プロセス１フォームなのでシングルトンで実装する
-	//・静的で単一な実体化	//static
-	//・継承禁止	//sealed
-	//・プライベートコンストラクタ
-	//---------------------------------------------------------------------
-	public sealed partial class FormAction : Form
+	public sealed partial class FormAction : EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -31,9 +15,6 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormAction ()
 		{
-			this.StartPosition = FormStartPosition.Manual;
-			this.ShowInTaskbar = false;	//タスクバーに非表示
-
 			InitializeComponent ();
 
 			//アクション属性
@@ -48,12 +29,6 @@ namespace ScriptEditor
 			}
 		}
 
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			e.Cancel = true;
-			this.Hide ();
-		}
 		//---------------------------------------------------------------------
 
 		//編集と表示
@@ -64,9 +39,6 @@ namespace ScriptEditor
 		//編集中アクション
 		private Action action = null;
 		
-		//親フォーム参照
-		public FormMain FormMain { get; set; } = null;
-
 		//シークエンスツリー
 		public SequenceTree SequenceTree { get; set; } = null;
 
@@ -103,16 +75,8 @@ namespace ScriptEditor
 			TBN_Balance.Assosiate ( i => act._Balance = i, ()=> act._Balance );
 		}
 
-		//表示
-		private void FormAction_VisibleChanged ( object sender, EventArgs e )
-		{
-			//フォーム位置を親フォームの右端にする
-			int x = FormMain.Location.X + FormMain.Width;
-			int y = FormMain.Location.Y;
-			this.Location = new Point ( x, y );
-		}
-
-		//名前の変更
+		//-----------------------------------------------------------
+		//アクション：名前の変更
 		private void TB_Name_TextChanged ( object sender, System.EventArgs e )
 		{
 			action.Name = TB_Name.Text;

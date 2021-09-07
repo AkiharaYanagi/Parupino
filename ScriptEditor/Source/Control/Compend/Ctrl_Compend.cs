@@ -175,13 +175,20 @@ namespace ScriptEditor
 		}
 
 		//-------------------------------------------------------------------------
-		//Ef生成
+		//ブランチ
 		private void Btn_Branch_Click ( object sender, System.EventArgs e )
 		{
 			FormBranch0.Inst.VisFlip ();
 		}
 
-		//----
+		//-------------------------------------------------------------------------
+		//ルート
+		private void Btn_Route_Click ( object sender, System.EventArgs e )
+		{
+			FormRoute.Inst.VisFlip ();
+		}
+		//-------------------------------------------------------------------------
+
 		public SequenceTree GetSequenceTree ()
 		{
 			return sequenceTree1;
@@ -193,5 +200,6 @@ namespace ScriptEditor
 		{
 			FormPreview.Inst.Visible = ! FormPreview.Inst.Visible;
 		}
+
 	}
 }

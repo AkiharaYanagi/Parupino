@@ -1,9 +1,8 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace ScriptEditor
 {
-	public sealed partial class FormEfGnrt : Form
+	public sealed partial class FormEfGnrt : EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -12,29 +11,12 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormEfGnrt ()
 		{
-			this.ShowInTaskbar = false;	//タスクバーに非表示
 			InitializeComponent ();
+
 			cB_SequenceList1.DisplayMember = "Name";
 			listBox1.DisplayMember = "Name";
 		}
 			
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			e.Cancel = true;
-			this.Hide ();
-		}
-			
-		//親フォーム参照
-		public FormMain FormMain { get; set; } = null;
-
-		//フォーム位置を親フォームの右端にする
-		private void FormEfGnrt_VisibleChanged ( object sender, System.EventArgs e )
-		{
-			int x = FormMain.Location.X + FormMain.Width;
-			int y = FormMain.Location.Y + 600;
-			this.Location = new Point ( x, y );
-		}
 		//---------------------------------------------------------------------
 		
 		//対象

@@ -47,7 +47,6 @@
 			this.Controls.Add(this.ctrl_Script1);
 			this.Name = "FormScript";
 			this.Text = "Script";
-			this.VisibleChanged += new System.EventHandler(this.FormScript_VisibleChanged);
 			this.ResumeLayout(false);
 
 		}
