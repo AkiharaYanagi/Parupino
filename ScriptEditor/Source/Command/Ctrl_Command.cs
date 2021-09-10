@@ -88,18 +88,16 @@ namespace ScriptEditor
 			pb_Command1.Invalidate ();
 		}
 
-		//レバー選択(↑)
+		//レバー選択(←)
 		private void Btn_KeyUp_Click ( object sender, EventArgs e )
 		{
-			//EdtCmd.UpKey ();
 			EdtCmd.LvrSelect_L ();
 			pb_Command1.Invalidate ();
 		}
 
-		//レバー選択(↓)
+		//レバー選択(→)
 		private void Btn_KeyDown_Click ( object sender, EventArgs e )
 		{
-			//EdtCmd.DownKey ();
 			EdtCmd.LvrSelect_R ();
 			pb_Command1.Invalidate ();
 		}

@@ -112,7 +112,7 @@ namespace ScriptEditor
 			{
 				//レバー
 				GKC_ST gkcstL = gc.GetLvrSt ();
-				int indexLvr = gc.IdLvr;
+				int indexLvr = (int)gc.GetLever ();
 				g.DrawImage ( AryImgLvr [ indexLvr, (int)gkcstL ], CW + CW * iFrame, RH, CW, RH );
 
 				//ボタン

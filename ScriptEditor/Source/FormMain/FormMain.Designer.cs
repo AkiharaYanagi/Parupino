@@ -44,19 +44,17 @@
 			this.tabEffect = new System.Windows.Forms.TabPage();
 			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
 			this.tabCommand = new System.Windows.Forms.TabPage();
-			this.listCommand1 = new ScriptEditor.ListCommand();
-			this.ctrl_Command1 = new ScriptEditor.Ctrl_Command();
 			this.tabBranch = new System.Windows.Forms.TabPage();
 			this.tabChara = new System.Windows.Forms.TabPage();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.ctrl_CmdList1 = new ScriptEditor.Ctrl_CmdList();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabAction.SuspendLayout();
 			this.tabEffect.SuspendLayout();
 			this.tabCommand.SuspendLayout();
-			this.tabBranch.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -203,28 +201,13 @@
 			// 
 			// tabCommand
 			// 
-			this.tabCommand.Controls.Add(this.listCommand1);
-			this.tabCommand.Controls.Add(this.ctrl_Command1);
+			this.tabCommand.Controls.Add(this.ctrl_CmdList1);
 			this.tabCommand.Location = new System.Drawing.Point(4, 22);
 			this.tabCommand.Name = "tabCommand";
 			this.tabCommand.Size = new System.Drawing.Size(976, 686);
 			this.tabCommand.TabIndex = 2;
 			this.tabCommand.Text = "コマンド";
 			this.tabCommand.UseVisualStyleBackColor = true;
-			// 
-			// listCommand1
-			// 
-			this.listCommand1.Location = new System.Drawing.Point(8, 3);
-			this.listCommand1.Name = "listCommand1";
-			this.listCommand1.Size = new System.Drawing.Size(179, 489);
-			this.listCommand1.TabIndex = 1;
-			// 
-			// ctrl_Command1
-			// 
-			this.ctrl_Command1.Location = new System.Drawing.Point(181, 3);
-			this.ctrl_Command1.Name = "ctrl_Command1";
-			this.ctrl_Command1.Size = new System.Drawing.Size(688, 462);
-			this.ctrl_Command1.TabIndex = 0;
 			// 
 			// tabBranch
 			// 
@@ -248,6 +231,13 @@
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
+			// ctrl_CmdList1
+			// 
+			this.ctrl_CmdList1.Location = new System.Drawing.Point(0, 0);
+			this.ctrl_CmdList1.Name = "ctrl_CmdList1";
+			this.ctrl_CmdList1.Size = new System.Drawing.Size(880, 573);
+			this.ctrl_CmdList1.TabIndex = 0;
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -270,7 +260,6 @@
 			this.tabAction.ResumeLayout(false);
 			this.tabEffect.ResumeLayout(false);
 			this.tabCommand.ResumeLayout(false);
-			this.tabBranch.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -296,9 +285,8 @@
 		private Ctrl_Compend cpd_Behavior;
 		private Ctrl_Compend cpd_Garnish;
 		private System.Windows.Forms.ToolStripMenuItem テキストから読込ToolStripMenuItem;
-		private ListCommand listCommand1;
-		private Ctrl_Command ctrl_Command1;
 		private System.Windows.Forms.TabPage tabBranch;
+		private Ctrl_CmdList ctrl_CmdList1;
 	}
 }
 

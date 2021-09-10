@@ -88,6 +88,12 @@
     <Compile Include="Source\Chara\DispChara\DispRects.cs" />
     <Compile Include="Source\Chara\DispChara\DispScript.cs" />
     <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
+    <Compile Include="Source\Command\Ctrl_CmdList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Command\Ctrl_CmdList.Designer.cs">
+      <DependentUpon>Ctrl_CmdList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\Command\Ctrl_Command.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -247,6 +253,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Command\Ctrl_CmdList.resx">
+      <DependentUpon>Ctrl_CmdList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Command\Ctrl_Command.resx">
       <DependentUpon>Ctrl_Command.cs</DependentUpon>

@@ -41,6 +41,10 @@ namespace ScriptEditor
 				TestChara testChara = new TestChara ();
 				testChara.Test ( testCharaData );
 
+#if true
+				//書出
+				SaveChara saveChara = new SaveChara ( edittingFilename, testCharaData );
+#else
 				//既存のとき書出しない
 				if ( ! File.Exists ( edittingFilename ) )
 				{
@@ -48,6 +52,7 @@ namespace ScriptEditor
 					SaveChara saveChara = new SaveChara ( edittingFilename, testCharaData );
 				}
 
+#endif
 				//読込
 				LoadChara loadChara = new LoadChara ( edittingFilename, chara );
 
@@ -123,10 +128,12 @@ namespace ScriptEditor
 		//タブ_コマンドの初期化
 		private void TabCommand_Load ()
 		{
+#if false
 			listCommand1.SetData ( chara.BD_Command.GetBindingList (), ctrl_Command1 );
 			Command c = listCommand1.GetSelected ();
 			if ( null == c ) { return; }
 			ctrl_Command1.Set ( c );
+#endif
 		}
 
 		//タブ_ブランチの初期化
