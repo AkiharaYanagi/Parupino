@@ -224,17 +224,7 @@ namespace ScriptEditor
 		//マウスダウンで選択
 		private void pictureBox1_MouseDown ( object sender, MouseEventArgs e )
 		{
-			//位置から対象を選択
-			Point pos = GetCell ();
-			EditCompend.SelectFrame ( pos.X );
-
-			EditCompend.SelectedSpanStart = pos.X;
-			EditCompend.SelectedSpanEnd = pos.X;
-			bDrag = true;
-
-			//更新
-			DispCompend.Disp ();
-			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
+			SelectFromPos ();
 		}
 
 		private void pictureBox1_MouseMove ( object sender, MouseEventArgs e )
@@ -261,25 +251,30 @@ namespace ScriptEditor
 		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
 		{
 			EditCompend.InsertScript ();
-			pictureBox1.Invalidate ();
+			DispCompend.Disp ();
 		}
 
 		//削除
 		private void Btn_ScpDel_Click ( object sender, System.EventArgs e )
 		{
 			EditCompend.RemScript ();
-			pictureBox1.Invalidate ();
+			ReSelect ();
+			DispCompend.Disp ();
 		}
 
 		//複数挿入
 		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
 		{
+			EditCompend.MultiInsert ();
+			DispCompend.Disp ();
 		}
 
 		//複数削除
 		private void Btn_MulDel_Click ( object sender, System.EventArgs e )
 		{
-
+			EditCompend.MultiRem ();
+			ReSelect ();
+			DispCompend.Disp ();
 		}
 
 
@@ -338,5 +333,57 @@ namespace ScriptEditor
 			EditScript es = ec.EditScript;
 			es.PasteGroup ( ec.SelectedScript );
 		}
+
+
+		//----------------------------------------------------------------------------------
+		//	選択
+		//----------------------------------------------------------------------------------
+
+		//再選択
+		private void ReSelect ()
+		{
+			int i = EditCompend.SelectedScriptIndex;
+			if ( i >= Sqc.ListScript.Count ) { i = Sqc.ListScript.Count - 1; }
+
+			EditCompend.SelectFrame ( i );
+			EditCompend.SelectedSpanStart = i;
+			EditCompend.SelectedSpanEnd = i;
+			DispCompend.Disp ();
+			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
+		}
+
+		//位置から対象を選択
+		private void SelectFromPos ()
+		{
+			Point pos = GetCell ();
+			EditCompend.SelectFrame ( pos.X );
+			EditCompend.SelectedSpanStart = pos.X;
+			EditCompend.SelectedSpanEnd = pos.X;
+			bDrag = true;
+
+			//更新
+			DispCompend.Disp ();
+			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
+		}
+
+		//１つ後ろを選択
+		private void SelectBack ()
+		{
+			if ( Sqc is null ) { return; }
+			if ( Sqc.ListScript is null ) { return; }
+			if ( Sqc.ListScript.Count < 2 ) { return; }
+
+			int i = EditCompend.SelectedScriptIndex;
+			if ( EditCompend.SelectedScriptIndex < 2 ) { return; }
+
+			EditCompend.SelectFrame ( i - 1 );
+			EditCompend.SelectedSpanStart = i - 1;
+			EditCompend.SelectedSpanEnd = i - 1;
+
+			//更新
+			DispCompend.Disp ();
+			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
+		}
+
 	}
 }
