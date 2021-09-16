@@ -25,6 +25,7 @@ namespace ScriptEditor
 		{
 			this.StartPosition = FormStartPosition.Manual;	//位置を手動にする
 			this.ShowInTaskbar = false;	//タスクバーに非表示
+
 			//イベント追加
 			this.VisibleChanged += new EventHandler ( EditForm_VisibleChanged );
 		}

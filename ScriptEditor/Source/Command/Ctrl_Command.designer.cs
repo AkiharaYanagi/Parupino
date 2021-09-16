@@ -30,14 +30,11 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			ScriptEditor.DispCommand dispCommand1 = new ScriptEditor.DispCommand();
-			ScriptEditor.Command command1 = new ScriptEditor.Command();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ctrl_Command));
 			ScriptEditor.SelectKey selectKey1 = new ScriptEditor.SelectKey();
-			ScriptEditor.Command command2 = new ScriptEditor.Command();
 			ScriptEditor.SelectKey selectKey2 = new ScriptEditor.SelectKey();
-			ScriptEditor.Command command3 = new ScriptEditor.Command();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lbl_LimitTime = new System.Windows.Forms.Label();
-			this.TB_Name = new System.Windows.Forms.TextBox();
 			this.Btn_Del = new System.Windows.Forms.Button();
 			this.Btn_Add = new System.Windows.Forms.Button();
 			this.RB_ON = new System.Windows.Forms.RadioButton();
@@ -62,7 +59,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(359, 29);
+			this.label1.Location = new System.Drawing.Point(105, 407);
 			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(20, 12);
@@ -72,24 +69,17 @@
 			// lbl_LimitTime
 			// 
 			this.lbl_LimitTime.AutoSize = true;
-			this.lbl_LimitTime.Location = new System.Drawing.Point(243, 29);
+			this.lbl_LimitTime.Location = new System.Drawing.Point(2, 407);
 			this.lbl_LimitTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_LimitTime.Name = "lbl_LimitTime";
 			this.lbl_LimitTime.Size = new System.Drawing.Size(53, 12);
 			this.lbl_LimitTime.TabIndex = 11;
 			this.lbl_LimitTime.Text = "受付時間";
 			// 
-			// TB_Name
-			// 
-			this.TB_Name.Location = new System.Drawing.Point(24, 26);
-			this.TB_Name.Name = "TB_Name";
-			this.TB_Name.Size = new System.Drawing.Size(199, 19);
-			this.TB_Name.TabIndex = 8;
-			// 
 			// Btn_Del
 			// 
 			this.Btn_Del.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.Btn_Del.Location = new System.Drawing.Point(94, 347);
+			this.Btn_Del.Location = new System.Drawing.Point(54, 353);
 			this.Btn_Del.Name = "Btn_Del";
 			this.Btn_Del.Size = new System.Drawing.Size(71, 24);
 			this.Btn_Del.TabIndex = 13;
@@ -100,9 +90,9 @@
 			// Btn_Add
 			// 
 			this.Btn_Add.BackColor = System.Drawing.Color.LightSkyBlue;
-			this.Btn_Add.Location = new System.Drawing.Point(24, 309);
+			this.Btn_Add.Location = new System.Drawing.Point(0, 315);
 			this.Btn_Add.Name = "Btn_Add";
-			this.Btn_Add.Size = new System.Drawing.Size(141, 32);
+			this.Btn_Add.Size = new System.Drawing.Size(125, 32);
 			this.Btn_Add.TabIndex = 12;
 			this.Btn_Add.Text = "キー追加";
 			this.Btn_Add.UseVisualStyleBackColor = false;
@@ -190,7 +180,7 @@
 			// 
 			this.groupBox1.Controls.Add(this.Btn_KeyDown);
 			this.groupBox1.Controls.Add(this.Btn_KeyUp);
-			this.groupBox1.Location = new System.Drawing.Point(198, 309);
+			this.groupBox1.Location = new System.Drawing.Point(140, 315);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(80, 118);
 			this.groupBox1.TabIndex = 22;
@@ -220,7 +210,7 @@
 			// CHK_Not
 			// 
 			this.CHK_Not.AutoSize = true;
-			this.CHK_Not.Location = new System.Drawing.Point(117, 391);
+			this.CHK_Not.Location = new System.Drawing.Point(77, 429);
 			this.CHK_Not.Name = "CHK_Not";
 			this.CHK_Not.Size = new System.Drawing.Size(48, 16);
 			this.CHK_Not.TabIndex = 23;
@@ -267,7 +257,7 @@
 			this.groupBox2.Controls.Add(this.RB_WILD);
 			this.groupBox2.Controls.Add(this.RB_RELE);
 			this.groupBox2.Controls.Add(this.RB_PUSH);
-			this.groupBox2.Location = new System.Drawing.Point(284, 309);
+			this.groupBox2.Location = new System.Drawing.Point(226, 315);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(353, 118);
 			this.groupBox2.TabIndex = 24;
@@ -278,7 +268,7 @@
 			// 
 			this.TBN_LimitTime.GetFunc = null;
 			this.TBN_LimitTime.GroupSetter = null;
-			this.TBN_LimitTime.Location = new System.Drawing.Point(314, 26);
+			this.TBN_LimitTime.Location = new System.Drawing.Point(60, 404);
 			this.TBN_LimitTime.Name = "TBN_LimitTime";
 			this.TBN_LimitTime.SetFunc = null;
 			this.TBN_LimitTime.Size = new System.Drawing.Size(40, 19);
@@ -287,36 +277,30 @@
 			// 
 			// pb_Command1
 			// 
-			this.pb_Command1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.pb_Command1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			command1.LimitTime = 0;
-			command1.Name = "blank";
-			dispCommand1.Cmd = command1;
-			command2.LimitTime = 0;
-			command2.Name = "blank";
-			selectKey1.Cmd = command2;
+			this.pb_Command1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			dispCommand1.Cmd = ((ScriptEditor.Command)(resources.GetObject("dispCommand1.Cmd")));
+			selectKey1.Cmd = ((ScriptEditor.Command)(resources.GetObject("selectKey1.Cmd")));
 			selectKey1.Frame = 0;
 			selectKey1.Kind = ScriptEditor.SelectKey.KeyKind.ARROW;
 			selectKey1.Selecting = true;
 			dispCommand1.SlctKey = selectKey1;
 			this.pb_Command1.DspCmd = dispCommand1;
-			this.pb_Command1.Location = new System.Drawing.Point(24, 61);
+			this.pb_Command1.Location = new System.Drawing.Point(3, 3);
 			this.pb_Command1.Name = "pb_Command1";
-			this.pb_Command1.Size = new System.Drawing.Size(566, 242);
-			command3.LimitTime = 0;
-			command3.Name = "blank";
-			selectKey2.Cmd = command3;
+			this.pb_Command1.Size = new System.Drawing.Size(571, 306);
+			selectKey2.Cmd = ((ScriptEditor.Command)(resources.GetObject("selectKey2.Cmd")));
 			selectKey2.Frame = 0;
 			selectKey2.Kind = ScriptEditor.SelectKey.KeyKind.ARROW;
 			selectKey2.Selecting = true;
 			this.pb_Command1.SlctKey = selectKey2;
-			this.pb_Command1.TabIndex = 0;
+			this.pb_Command1.TabIndex = 25;
 			this.pb_Command1.TabStop = false;
 			// 
 			// Ctrl_Command
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.pb_Command1);
 			this.Controls.Add(this.CHK_Not);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.TBN_LimitTime);
@@ -324,11 +308,9 @@
 			this.Controls.Add(this.Btn_Add);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lbl_LimitTime);
-			this.Controls.Add(this.TB_Name);
-			this.Controls.Add(this.pb_Command1);
 			this.Controls.Add(this.groupBox2);
 			this.Name = "Ctrl_Command";
-			this.Size = new System.Drawing.Size(688, 462);
+			this.Size = new System.Drawing.Size(599, 456);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
@@ -340,10 +322,8 @@
 
 		#endregion
 
-		private Pb_Command pb_Command1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lbl_LimitTime;
-		private System.Windows.Forms.TextBox TB_Name;
 		private System.Windows.Forms.Button Btn_Del;
 		private System.Windows.Forms.Button Btn_Add;
 		private System.Windows.Forms.RadioButton RB_ON;
@@ -359,5 +339,6 @@
 		private System.Windows.Forms.RadioButton RB_IS;
 		private System.Windows.Forms.RadioButton RB_NIS;
 		private System.Windows.Forms.GroupBox groupBox2;
+		private Pb_Command pb_Command1;
 	}
 }

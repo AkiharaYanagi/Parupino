@@ -33,7 +33,7 @@
 			// 
 			// ctrl_Command1
 			// 
-			this.ctrl_Command1.Location = new System.Drawing.Point(206, 3);
+			this.ctrl_Command1.Location = new System.Drawing.Point(231, 19);
 			this.ctrl_Command1.Name = "ctrl_Command1";
 			this.ctrl_Command1.Size = new System.Drawing.Size(688, 462);
 			this.ctrl_Command1.TabIndex = 0;

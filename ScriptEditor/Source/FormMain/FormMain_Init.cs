@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
+
 
 namespace ScriptEditor
 {
@@ -41,6 +43,24 @@ namespace ScriptEditor
 				TestChara testChara = new TestChara ();
 				testChara.Test ( testCharaData );
 
+				//イメージファイル読込のテスト
+#if true
+				testCharaData.behavior.BD_Image.Clear ();
+				string tsetImageDir = "TestImage";
+				string[] files = Directory.GetFiles ( tsetImageDir );
+				foreach ( string filename in files )
+				{
+					string f = Path.GetFileName ( filename );
+					string fn = f.Substring ( 4 );	//先頭のインデックス("ddd_")を除く
+
+					//画像からImageData型を作成
+					ImageData imageData = new ImageData ( fn, Image.FromFile ( filename ) );
+
+					//追加
+					testCharaData.behavior.BD_Image.Add ( imageData );
+				}
+#endif
+
 #if true
 				//書出
 				SaveChara saveChara = new SaveChara ( edittingFilename, testCharaData );
@@ -58,8 +78,6 @@ namespace ScriptEditor
 
 				//フォームテキストの更新
 				SetFormText ( edittingFilename );
-
-				//@todo ImageNameが"0"になる問題を修正
 		
 				//テストデータからキャラ作成ソースファイルを作成
 //				MakeTestCharaData mtcd = new MakeTestCharaData ( chara );
@@ -145,8 +163,6 @@ namespace ScriptEditor
 		//タブ_キャラの初期化
 		private void TabChara_Load ()
 		{
-			Ctrl_ListBox < Sequence > ctrl_testlistbox = new Ctrl_ListBox < Sequence > ();
-			this.tabChara.Controls.Add ( ctrl_testlistbox );
 		}
 
 		//==================================================================================
@@ -164,9 +180,11 @@ namespace ScriptEditor
 			//タブの選択
 			tabAction_Selected ();
 
+			tabControl1.SelectedIndex = ( int ) TAB_NAME.TAB_ACTION;
+
 			//サブフォームの初期表示
-			FormAction.Inst.Show ();
-			FormScript.Inst.Show ();
+//			FormAction.Inst.Show ();
+//			FormScript.Inst.Show ();
 //			FormEfGnrt.Inst.Show ();
 //			FormRect.Inst.Show ();
 //			FormBranch.Inst.Show ();

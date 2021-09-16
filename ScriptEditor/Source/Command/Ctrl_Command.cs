@@ -10,18 +10,10 @@ namespace ScriptEditor
 
 	public partial class Ctrl_Command : UserControl
 	{
-		//対象データ
-		private Command Cmd = new Command ();
-
-		//選択
-		private SelectKey SlctKey = new SelectKey ();
-
-		//編集
-		private EditCommand EdtCmd = new EditCommand ();
-
-		//表示
-		private DispCommand DspCmd = new DispCommand ();
-
+		private Command Cmd = new Command ();		//対象データ
+		private SelectKey SlctKey = new SelectKey ();		//選択
+		private EditCommand EdtCmd = new EditCommand ();		//編集
+		private DispCommand DspCmd = new DispCommand ();		//表示
 
 		//コンストラクタ
 		public Ctrl_Command ()
@@ -54,8 +46,6 @@ namespace ScriptEditor
 			EdtCmd.SlctKey = SlctKey;
 
 			
-			TB_Name.Text = cmd.Name;
-
 			TBN_LimitTime.Text = cmd.LimitTime.ToString();
 			TBN_LimitTime.SetFunc = i=> cmd.LimitTime = i;
 			TBN_LimitTime.GetFunc = ()=> cmd.LimitTime;

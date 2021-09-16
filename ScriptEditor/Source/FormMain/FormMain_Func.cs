@@ -18,10 +18,17 @@ namespace ScriptEditor
 			cpd_Behavior.SetCharaData ( ch );
 			cpd_Garnish.SetCharaData ( ch );
 
+			//----------------------------------------------
 			//コマンド
-//			ctrl_Command1.Set ( ch.BD_Command );
 			ctrl_CmdList1.SetCharaData ( ch );
 
+			//ブランチ
+			ctrl_Branch1.SetCharaData ( ch );
+
+			//ルート
+			ctrl_Route1.SetCharaData ( ch );
+
+			//----------------------------------------------
 			// [ブランチフォーム]
 			FormBranch0.Inst.SetCharaData ( ch );
 
@@ -34,6 +41,7 @@ namespace ScriptEditor
 			//フォーム ルート
 			FormRoute.Inst.SetCharaData ( ch );
 			
+			//----------------------------------------------
 			// [メインフォーム] キャラ内容表示
 			UpdateData ();
 		}

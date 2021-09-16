@@ -13,7 +13,7 @@ namespace ScriptEditor
 
 		public Ctrl_Script Ctrl_Script { get; set; } = null;
 
-		//参照
+		//編集対象シークエンスの参照
 		public Sequence Sqc = null;
 
 		//グループ数
@@ -26,19 +26,10 @@ namespace ScriptEditor
 		private const int BX = 100;	//基準X
 		private const int BY = 20;	//基準Y
 
-		//内部使用リソース (解放はDispose()で行う)
-		private Pen PEN_BAR = new Pen ( Color.FromArgb ( 0x80, 0x80, 0xff ), 1 );
-		private Pen PEN_BASE_BAR = new Pen ( Color.FromArgb ( 0xa0, 0xa0, 0xa0 ), 1 );
-		private Pen PEN_SELECTED = new Pen ( Color.FromArgb ( 0x00, 0x00, 0xff ), 1.1f );
-		private SolidBrush BRUSH_0 = new SolidBrush ( Color.FromArgb ( 0xff, 0xd0, 0xff, 0xd0 ) );
-		private StringFormat STR_FMT = new StringFormat ();	//文字列の体裁
 
 		//-----------------------------------------------------------------------------
 		public SqcBoard ()
 		{
-			STR_FMT.Alignment = StringAlignment.Center;	//文字列の中央揃え(水平)
-			STR_FMT.LineAlignment = StringAlignment.Center;	//文字列の中央揃え(垂直)
-
 			this.BackColor = SystemColors.Control;
 
 			InitializeComponent ();
@@ -71,6 +62,7 @@ namespace ScriptEditor
 			pictureBox1.Invalidate ();
 		}
 
+
 		private void pictureBox1_Paint ( object sender, PaintEventArgs e )
 		{
 			//オブジェクトが設定されていないときデフォルトの表示
@@ -82,17 +74,33 @@ namespace ScriptEditor
 			Graphics g = e.Graphics;
 			List<Script> ls = Sqc.ListScript;
 
+			//内部使用リソース
+			using ( Pen PEN_BAR = new Pen ( Color.FromArgb ( 0x80, 0x80, 0xff ), 1 ) )
+			using ( Pen PEN_BASE_BAR = new Pen ( Color.FromArgb ( 0xa0, 0xa0, 0xa0 ), 1 ) )
+			using ( Pen PEN_SELECTED = new Pen ( Color.FromArgb ( 0x00, 0x00, 0xff ), 1.1f ) )
+			using ( SolidBrush BRUSH_0 = new SolidBrush ( Color.FromArgb ( 0xff, 0xd0, 0xff, 0xd0 ) ) )
+			using ( StringFormat STR_FMT = new StringFormat () )
+			{
+
+			//文字列フォーマット
+			STR_FMT.Alignment = StringAlignment.Center;	//文字列の中央揃え(水平)
+			STR_FMT.LineAlignment = StringAlignment.Center;	//文字列の中央揃え(垂直)
+
 			//大きさ
 //			int minWidth = 1000;
-//			int scWidth = 100+BX + ( ls.Count + 2 ) * W;
+			int scWidth = 100+BX + ( ls.Count + 2 ) * W;
 //			this.Width = ( minWidth < scWidth ) ? scWidth: minWidth;
 			this.Height = 130 + BY + ( 2 * H );
 
-			pictureBox1.Width = 3000;
+			pictureBox1.Width = scWidth + 100;
 
 			//大きさの一時保存
 			int TW = this.Width;
 			int TH = this.Height;
+			int PW = pictureBox1.Width;
+
+			//個数
+			int N = Sqc.ListScript.Count;
 
 			//選択
 			int selectedScript = EditCompend.SelectedScriptIndex;
@@ -101,7 +109,7 @@ namespace ScriptEditor
 
 			//---------------------------------------------------------
 			//フレーム表示部分の背景(存在しない部分を一括描画)
-			g.FillRectangle ( Brushes.LightGray, BX, 0, TW - BX, TH );
+			g.FillRectangle ( Brushes.LightGray, BX, 0, PW - BX, TH );
 
 			//---------------------------------------------------------
 			//キャラデータの表示
@@ -146,7 +154,7 @@ namespace ScriptEditor
 
 			//---------------------------------------------------------
 			//フレーム数
-			for ( int i = 0; i < TW / W; ++i )
+			for ( int i = 0; i < N + 5; ++i )
 			{
 				Rectangle r = new Rectangle ( BX + i * W, H, W, H );
 				g.DrawString ( i.ToString (), this.Font, Brushes.Gray, r, STR_FMT );
@@ -166,7 +174,8 @@ namespace ScriptEditor
 
 			//---------------------------------------------------------
 			//基準線
-			for ( int i = 0; i < TW / W; ++ i )	//縦線
+			g.DrawLine ( PEN_BASE_BAR, 0, 0, 0, (2+3) * H );
+			for ( int i = 0; i < N + 5; ++ i )	//縦線
 			{
 				int bx0 = ( BX + W ) + W * i;
 				g.DrawLine ( PEN_BASE_BAR, bx0, H, bx0, (2+3) * H );
@@ -174,87 +183,23 @@ namespace ScriptEditor
 			for ( int i = 0; i < 3; ++ i )	//横線
 			{
 				int by0 = BY + H * (i + 2);
-				g.DrawLine ( PEN_BASE_BAR, 0, by0, TW, by0 );
+				g.DrawLine ( PEN_BASE_BAR, 0, by0, PW, by0 );
 			}
 			g.DrawLine ( PEN_BAR, BX, 0, BX, TH );
-			g.DrawLine ( PEN_BAR, 0, BY, TW, BY );
-			g.DrawLine ( PEN_BAR, 0, 0, TW, 0 );
-			g.DrawLine ( PEN_BAR, 0, BY + H, TW, BY + H );
+			g.DrawLine ( PEN_BAR, 0, BY, PW, BY );
+			g.DrawLine ( PEN_BAR, 0, 0, PW, 0 );
+			g.DrawLine ( PEN_BAR, 0, BY + H, PW, BY + H );
 
 			//---------------------------------------------------------
 			//選択位置表示
 			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, 0, W, TH );	//フレーム選択
+			
+			}	//using
 		}
 
 		//オブジェクトが設定されていない状態でのIDE表示
 		private void pictureBox1_Paint_Default ( object sender, PaintEventArgs e )
 		{
-#if false
-
-			Graphics g = e.Graphics;
-
-			//枡個数
-			int NW = 20; int NH = 2;
-
-			//コントロールの大きさ
-			this.Width = BX + ( NW ) * W;
-			this.Height = 80 + BY + ( NH ) * H;
-
-			//一時保存
-			int TW = this.Width;
-			int TH = this.Height;
-
-			//フレーム表示部分の背景(存在しない部分を一括描画)
-			g.FillRectangle ( Brushes.LightGray, BX, BY + H, TW - BX, TH - BY );
-
-			//---------------------------------------------------------
-			//選択スパン表示
-			int wSpan = W;
-			int xSpan = BX + W;
-			Rectangle rectSpan = new Rectangle ( xSpan, BY, wSpan, H );
-			g.FillRectangle ( BRUSH_0, rectSpan );
-
-			//---------------------------------------------------------
-			//グループ表示
-
-			//---------------------------------------------------------
-			//フレーム数
-			for ( int i = 0; i < TW / W; ++i )
-			{
-				Rectangle r = new Rectangle ( BX + i * W, H, W, H );
-				g.DrawString ( i.ToString (), this.Font, Brushes.Gray, r, STR_FMT );
-			}
-			
-			Rectangle rs0 = new Rectangle ( 0, 0, BX, H );
-			g.DrawString ( "Group", Font, Brushes.Gray, rs0, STR_FMT );
-			Rectangle rs1 = new Rectangle ( 0, H, BX, H );
-			g.DrawString ( "Frame", Font, Brushes.Gray, rs1, STR_FMT );
-			Rectangle rs2 = new Rectangle ( 0, H * 2, BX, H );
-			g.DrawString ( "ARect", Font, Brushes.LightCoral, rs2, STR_FMT );
-			Rectangle rs3 = new Rectangle ( 0, H * 3, BX, H );
-			g.DrawString ( "ORect", Font, Brushes.Goldenrod, rs3, STR_FMT );
-
-			//---------------------------------------------------------
-			//基準線
-			for ( int i = 0; i < TW / W; ++i )	//縦線
-			{
-				int bx0 = ( BX + W ) + W * i;
-				g.DrawLine ( PEN_BASE_BAR, bx0, H, bx0, (NH+2) * H );
-			}
-			for ( int i = 0; i < NH; ++i )	//横線
-			{
-				int by0 = BY + H * (i+2);
-				g.DrawLine ( PEN_BASE_BAR, 0, by0, TW, by0 );
-			}
-			g.DrawLine ( PEN_BAR, BX, 0, BX, TH );
-			g.DrawLine ( PEN_BAR, 0, BY, TW, BY );
-			g.DrawLine ( PEN_BAR, 0, 0, TW, 0 );
-			g.DrawLine ( PEN_BAR, 0, BY + H, TW, BY + H );
-
-			//---------------------------------------------------------
-			//選択位置表示
-			g.DrawRectangle ( Pens.Firebrick, BX + W, H, W, H );	//フレーム選択
-#endif
 		}
 
 		//----------------------------------------------------------------------------------
@@ -266,7 +211,7 @@ namespace ScriptEditor
 		private Point GetCell () 
 		{
 			//マウス位置をコントロールのクライアント位置に直す
-			Point pt = this.PointToClient ( Cursor.Position );
+			Point pt = pictureBox1.PointToClient ( Cursor.Position );
 			if ( pt.X < BX || pt.Y < BY ) { return new Point ( 0, 0 ); }
 
 			//升目に合わせる
@@ -308,6 +253,35 @@ namespace ScriptEditor
 			bDrag = false;
 			pictureBox1.Invalidate ();
 		}
+
+		//----------------------------------------------------------------------------------
+		//	スクリプト配列
+		//----------------------------------------------------------------------------------
+		//挿入
+		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
+		{
+			EditCompend.InsertScript ();
+			pictureBox1.Invalidate ();
+		}
+
+		//削除
+		private void Btn_ScpDel_Click ( object sender, System.EventArgs e )
+		{
+			EditCompend.RemScript ();
+			pictureBox1.Invalidate ();
+		}
+
+		//複数挿入
+		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
+		{
+		}
+
+		//複数削除
+		private void Btn_MulDel_Click ( object sender, System.EventArgs e )
+		{
+
+		}
+
 
 		//----------------------------------------------------------------------------------
 		//	グループ

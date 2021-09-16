@@ -9,12 +9,7 @@ namespace ScriptEditor
 	//-------------------------------------------------------------
 	//	イメージ選択フォーム
 	//-------------------------------------------------------------
-	//このフォームは１タスク１フォームなのでシングルトンで実装する
-	//静的で単一な実体化	//static
-	//継承禁止	//sealed
-	//プライベートコンストラクタ
-	//---------------------------------------------------------------------
-	public sealed partial class FormImage : Form
+	public sealed partial class FormImage : EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -23,28 +18,12 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormImage ()
 		{
-			//フォーム開始位置
-			this.StartPosition = FormStartPosition.Manual;
 			this.Location = Cursor.Position;
-			this.ShowInTaskbar = false;	//タスクバーに非表示
 
 			InitializeComponent ();
 
 			Lb_Image.DisplayMember = "Name";
 			Lb_Image.ValueMember = "Image";
-		}
-
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			e.Cancel = true;
-			this.Hide ();
-		}
-
-		//表示反転
-		public void VisFlip ()
-		{
-			this.Visible = ! this.Visible;
 		}
 		//---------------------------------------------------------------------
 
@@ -57,9 +36,6 @@ namespace ScriptEditor
 		//編集参照
 		public EditCompend EditCompend { get; set; } = null;
 		public DispCompend DispCompend { get; set; } = null;
-
-		//親フォーム参照
-		public FormMain FormMain { get; set; } = null;
 
 		//---------------------------------------------------------------------
 		//選択中イメージのインデックス

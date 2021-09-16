@@ -29,12 +29,12 @@
 		private void InitializeComponent ()
 		{
 			this.components = new System.ComponentModel.Container();
-			ScriptEditor.ToolImg_Main toolImg_Main3 = new ScriptEditor.ToolImg_Main();
+			ScriptEditor.ToolImg_Main toolImg_Main1 = new ScriptEditor.ToolImg_Main();
 			this.Btn_Sqc = new System.Windows.Forms.Button();
 			this.Btn_Scp = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.Ctrl_Img = new ScriptEditor.Ctrl_Image();
 			this.Btn_Preview = new System.Windows.Forms.Button();
-			this.Btn_Branch = new System.Windows.Forms.Button();
 			this.Btn_EfGnrt = new System.Windows.Forms.Button();
 			this.Btn_Rect = new System.Windows.Forms.Button();
 			this.Btn_Image = new System.Windows.Forms.Button();
@@ -44,10 +44,8 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.シークエンスToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.スクリプトPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.Btn_Route = new System.Windows.Forms.Button();
 			this.sqcBoard1 = new ScriptEditor.SqcBoard();
 			this.sequenceTree1 = new ScriptEditor.SequenceTree();
-			this.Ctrl_Img = new ScriptEditor.Ctrl_Image();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -81,7 +79,7 @@
 			this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.splitContainer1.Location = new System.Drawing.Point(140, 183);
+			this.splitContainer1.Location = new System.Drawing.Point(140, 204);
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
@@ -91,16 +89,30 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Preview);
-			this.splitContainer1.Panel2.Controls.Add(this.Btn_Route);
-			this.splitContainer1.Panel2.Controls.Add(this.Btn_Branch);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_EfGnrt);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Rect);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Image);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Sqc);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Scp);
-			this.splitContainer1.Size = new System.Drawing.Size(639, 383);
+			this.splitContainer1.Size = new System.Drawing.Size(639, 362);
 			this.splitContainer1.SplitterDistance = 483;
 			this.splitContainer1.TabIndex = 6;
+			// 
+			// Ctrl_Img
+			// 
+			this.Ctrl_Img.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.Ctrl_Img.DispCompend = null;
+			this.Ctrl_Img.EditCompend = null;
+			this.Ctrl_Img.Location = new System.Drawing.Point(0, 0);
+			this.Ctrl_Img.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+			this.Ctrl_Img.Name = "Ctrl_Img";
+			toolImg_Main1.EditCompend = null;
+			toolImg_Main1.RbTl = null;
+			this.Ctrl_Img.SelectingTool = toolImg_Main1;
+			this.Ctrl_Img.Size = new System.Drawing.Size(482, 358);
+			this.Ctrl_Img.TabIndex = 0;
 			// 
 			// Btn_Preview
 			// 
@@ -111,16 +123,6 @@
 			this.Btn_Preview.Text = "プレビュー";
 			this.Btn_Preview.UseVisualStyleBackColor = true;
 			this.Btn_Preview.Click += new System.EventHandler(this.Btn_Preview_Click);
-			// 
-			// Btn_Branch
-			// 
-			this.Btn_Branch.Location = new System.Drawing.Point(1, 178);
-			this.Btn_Branch.Name = "Btn_Branch";
-			this.Btn_Branch.Size = new System.Drawing.Size(113, 30);
-			this.Btn_Branch.TabIndex = 10;
-			this.Btn_Branch.Text = "ブランチ";
-			this.Btn_Branch.UseVisualStyleBackColor = true;
-			this.Btn_Branch.Click += new System.EventHandler(this.Btn_Branch_Click);
 			// 
 			// Btn_EfGnrt
 			// 
@@ -206,16 +208,6 @@
 			this.スクリプトPToolStripMenuItem.Text = "スクリプト(&P)";
 			this.スクリプトPToolStripMenuItem.Click += new System.EventHandler(this.スクリプトPToolStripMenuItem_Click);
 			// 
-			// Btn_Route
-			// 
-			this.Btn_Route.Location = new System.Drawing.Point(1, 214);
-			this.Btn_Route.Name = "Btn_Route";
-			this.Btn_Route.Size = new System.Drawing.Size(113, 30);
-			this.Btn_Route.TabIndex = 10;
-			this.Btn_Route.Text = "ルート";
-			this.Btn_Route.UseVisualStyleBackColor = true;
-			this.Btn_Route.Click += new System.EventHandler(this.Btn_Route_Click);
-			// 
 			// sqcBoard1
 			// 
 			this.sqcBoard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -228,7 +220,7 @@
 			this.sqcBoard1.EditCompend = null;
 			this.sqcBoard1.Location = new System.Drawing.Point(140, 0);
 			this.sqcBoard1.Name = "sqcBoard1";
-			this.sqcBoard1.Size = new System.Drawing.Size(621, 176);
+			this.sqcBoard1.Size = new System.Drawing.Size(621, 181);
 			this.sqcBoard1.TabIndex = 10;
 			// 
 			// sequenceTree1
@@ -244,22 +236,6 @@
 			this.sequenceTree1.Name = "sequenceTree1";
 			this.sequenceTree1.Size = new System.Drawing.Size(132, 554);
 			this.sequenceTree1.TabIndex = 9;
-			// 
-			// Ctrl_Img
-			// 
-			this.Ctrl_Img.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.Ctrl_Img.DispCompend = null;
-			this.Ctrl_Img.EditCompend = null;
-			this.Ctrl_Img.Location = new System.Drawing.Point(0, 0);
-			this.Ctrl_Img.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-			this.Ctrl_Img.Name = "Ctrl_Img";
-			toolImg_Main3.EditCompend = null;
-			toolImg_Main3.RbTl = null;
-			this.Ctrl_Img.SelectingTool = toolImg_Main3;
-			this.Ctrl_Img.Size = new System.Drawing.Size(482, 393);
-			this.Ctrl_Img.TabIndex = 0;
 			// 
 			// Ctrl_Compend
 			// 
@@ -295,11 +271,9 @@
 		private System.Windows.Forms.Button Btn_Image;
 		private System.Windows.Forms.Button Btn_Rect;
 		private System.Windows.Forms.Button Btn_EfGnrt;
-		private System.Windows.Forms.Button Btn_Branch;
 		private SequenceTree sequenceTree1;
 		private System.Windows.Forms.Button Btn_Preview;
 		public Ctrl_Image Ctrl_Img;
 		public SqcBoard sqcBoard1;
-		private System.Windows.Forms.Button Btn_Route;
 	}
 }

@@ -83,166 +83,6 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_01 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_02 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_03 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_04 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_04", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_06 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_06", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_07 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_07", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_08 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_08", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_09 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_09", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_2E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_2E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_4E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_4E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_6E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_6E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_8E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_8E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_H {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_H", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_L {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_L", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_M {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_M", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Is_S {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Is_S", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
         internal static System.Drawing.Bitmap Cmd_Key_Is {
             get {
                 object obj = ResourceManager.GetObject("Cmd_Key_Is", resourceCulture);
@@ -313,9 +153,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_01 {
+        internal static System.Drawing.Bitmap CmdAr_Is {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_01", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_Is", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +163,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_02 {
+        internal static System.Drawing.Bitmap CmdAr_Nis {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_02", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_Nis", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +173,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_03 {
+        internal static System.Drawing.Bitmap CmdAr_OFF {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_03", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_OFF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +183,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_04 {
+        internal static System.Drawing.Bitmap CmdAr_On {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_04", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_On", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +193,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_06 {
+        internal static System.Drawing.Bitmap CmdAr_Push {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_06", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_Push", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +203,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_07 {
+        internal static System.Drawing.Bitmap CmdAr_Rele {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_07", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_Rele", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +213,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_08 {
+        internal static System.Drawing.Bitmap CmdAr_Wild {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_08", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdAr_Wild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +223,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_09 {
+        internal static System.Drawing.Bitmap CmdIs_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_09", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdIs_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +233,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_2E {
+        internal static System.Drawing.Bitmap CmdIs_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_2E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdIs_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +243,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_4E {
+        internal static System.Drawing.Bitmap CmdIs_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_4E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdIs_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +253,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_6E {
+        internal static System.Drawing.Bitmap CmdIs_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_6E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdIs_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +263,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_8E {
+        internal static System.Drawing.Bitmap CmdNis_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_8E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdNis_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +273,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_H {
+        internal static System.Drawing.Bitmap CmdNis_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_H", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdNis_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +283,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_L {
+        internal static System.Drawing.Bitmap CmdNis_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_L", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdNis_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +293,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_M {
+        internal static System.Drawing.Bitmap CmdNis_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_M", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdNis_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +303,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Nis_S {
+        internal static System.Drawing.Bitmap CmdOff_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Nis_S", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOff_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -473,9 +313,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_01 {
+        internal static System.Drawing.Bitmap CmdOff_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_01", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOff_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,9 +323,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_02 {
+        internal static System.Drawing.Bitmap CmdOff_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_02", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOff_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,9 +333,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_03 {
+        internal static System.Drawing.Bitmap CmdOff_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_03", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOff_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,9 +343,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_04 {
+        internal static System.Drawing.Bitmap CmdOn_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_04", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOn_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,9 +353,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_06 {
+        internal static System.Drawing.Bitmap CmdOn_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_06", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOn_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,9 +363,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_07 {
+        internal static System.Drawing.Bitmap CmdOn_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_07", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOn_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,9 +373,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_08 {
+        internal static System.Drawing.Bitmap CmdOn_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_08", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdOn_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,9 +383,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_09 {
+        internal static System.Drawing.Bitmap CmdPush_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_09", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdPush_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,9 +393,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_2E {
+        internal static System.Drawing.Bitmap CmdPush_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_2E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdPush_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,9 +403,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_4E {
+        internal static System.Drawing.Bitmap CmdPush_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_4E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdPush_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,9 +413,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_6E {
+        internal static System.Drawing.Bitmap CmdPush_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_6E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdPush_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,9 +423,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_8E {
+        internal static System.Drawing.Bitmap CmdRele_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_8E", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdRele_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,9 +433,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_H {
+        internal static System.Drawing.Bitmap CmdRele_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_H", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdRele_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,9 +443,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_L {
+        internal static System.Drawing.Bitmap CmdRele_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_L", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdRele_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -613,9 +453,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_M {
+        internal static System.Drawing.Bitmap CmdRele_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_M", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdRele_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -623,9 +463,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_Off_S {
+        internal static System.Drawing.Bitmap CmdWd_H {
             get {
-                object obj = ResourceManager.GetObject("CMD_Off_S", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdWd_H", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -633,9 +473,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_01 {
+        internal static System.Drawing.Bitmap CmdWd_L {
             get {
-                object obj = ResourceManager.GetObject("CMD_On_01", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdWd_L", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -643,9 +483,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_02 {
+        internal static System.Drawing.Bitmap CmdWd_Ma {
             get {
-                object obj = ResourceManager.GetObject("CMD_On_02", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdWd_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -653,459 +493,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_03 {
+        internal static System.Drawing.Bitmap CmdWd_Mb {
             get {
-                object obj = ResourceManager.GetObject("CMD_On_03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_04 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_04", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_06 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_06", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_07 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_07", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_08 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_08", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_09 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_09", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_2E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_2E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_4E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_4E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_6E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_6E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_8E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_8E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_H {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_H", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_L {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_L", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_M {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_M", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_On_S {
-            get {
-                object obj = ResourceManager.GetObject("CMD_On_S", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_01 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_02 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_03 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_04 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_04", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_06 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_06", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_07 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_07", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_08 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_08", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_09 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_09", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_2E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_2E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_4E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_4E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_6E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_6E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_8E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_8E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_H {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_H", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_L {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_L", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_M {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_M", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Push_S {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Push_S", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_01 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_02 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_03 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_04 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_04", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_06 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_06", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_07 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_07", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_08 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_08", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_09 {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_09", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_2E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_2E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_4E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_4E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_6E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_6E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_8E {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_8E", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_H {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_H", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_L {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_L", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_M {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_M", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap CMD_Rele_S {
-            get {
-                object obj = ResourceManager.GetObject("CMD_Rele_S", resourceCulture);
+                object obj = ResourceManager.GetObject("CmdWd_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1133,9 +523,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap command_M {
+        internal static System.Drawing.Bitmap command_Ma {
             get {
-                object obj = ResourceManager.GetObject("command_M", resourceCulture);
+                object obj = ResourceManager.GetObject("command_Ma", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1143,9 +533,9 @@ namespace ScriptEditor.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap command_S {
+        internal static System.Drawing.Bitmap command_Mb {
             get {
-                object obj = ResourceManager.GetObject("command_S", resourceCulture);
+                object obj = ResourceManager.GetObject("command_Mb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1176,6 +566,16 @@ namespace ScriptEditor.Properties {
         internal static System.Drawing.Bitmap KeyTurnR {
             get {
                 object obj = ResourceManager.GetObject("KeyTurnR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap LvrCur {
+            get {
+                object obj = ResourceManager.GetObject("LvrCur", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -15,7 +15,8 @@ namespace ScriptEditor
 			TAB_ACTION,     // 0 : "アクション"
 			TAB_EFFECT,     // 1 : "エフェクト"
 			TAB_COMMAND,    // 2 : "コマンド" 
-			TAB_CHARA,      // 3 : "キャラ"
+			TAB_BRANCH,		// 3 : "ブランチ" 
+			TAB_ROUTE,      // 4 : "ルート"
 		}
 
 		//タブ変更時
@@ -27,7 +28,8 @@ namespace ScriptEditor
 				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Selected (); break;
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Selected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Selected (); break;
-				case ( int ) TAB_NAME.TAB_CHARA: tabChara_Selected (); break;
+				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
+				case ( int ) TAB_NAME.TAB_ROUTE: tabChara_Selected (); break;
 				default: Debug.Assert ( false, "タブの選択失敗" ); break;
 			}
 		}
@@ -41,7 +43,8 @@ namespace ScriptEditor
 				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Deselected (); break;
-				case ( int ) TAB_NAME.TAB_CHARA: tabChara_Deselected (); break;
+				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
+				case ( int ) TAB_NAME.TAB_ROUTE: tabChara_Selected (); break;
 				default: Debug.Assert ( false, "タブの離去失敗" ); break;
 			}
 		}
@@ -67,6 +70,11 @@ namespace ScriptEditor
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
+			FormImage.Inst.Hide ();
+			FormAction.Inst.Hide ();
+			FormScript.Inst.Hide ();
+			FormRect.Inst.Hide ();
+			FormEfGnrt.Inst.Hide ();
 		}
 
 		public void tabEffect_Selected ()

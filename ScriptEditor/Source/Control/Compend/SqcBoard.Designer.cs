@@ -16,13 +16,6 @@
 			if ( disposing && ( components != null ) )
 			{
 				components.Dispose ();
-
-				//内部定数
-				PEN_BAR.Dispose ();
-				PEN_BASE_BAR.Dispose ();
-				PEN_SELECTED.Dispose ();
-				BRUSH_0.Dispose ();
-				STR_FMT.Dispose ();
 			}
 			base.Dispose ( disposing );
 		}
@@ -115,6 +108,7 @@
 			this.Btn_MulDel.TabIndex = 8;
 			this.Btn_MulDel.Text = "複数削除";
 			this.Btn_MulDel.UseVisualStyleBackColor = true;
+			this.Btn_MulDel.Click += new System.EventHandler(this.Btn_MulDel_Click);
 			// 
 			// Btn_ScpDel
 			// 
@@ -124,6 +118,7 @@
 			this.Btn_ScpDel.TabIndex = 8;
 			this.Btn_ScpDel.Text = "削除";
 			this.Btn_ScpDel.UseVisualStyleBackColor = true;
+			this.Btn_ScpDel.Click += new System.EventHandler(this.Btn_ScpDel_Click);
 			// 
 			// Btn_MulAdd
 			// 
@@ -133,6 +128,7 @@
 			this.Btn_MulAdd.TabIndex = 8;
 			this.Btn_MulAdd.Text = "複数追加";
 			this.Btn_MulAdd.UseVisualStyleBackColor = true;
+			this.Btn_MulAdd.Click += new System.EventHandler(this.Btn_MulAdd_Click);
 			// 
 			// Btn_ScpAdd
 			// 
@@ -142,6 +138,7 @@
 			this.Btn_ScpAdd.TabIndex = 8;
 			this.Btn_ScpAdd.Text = "追加";
 			this.Btn_ScpAdd.UseVisualStyleBackColor = true;
+			this.Btn_ScpAdd.Click += new System.EventHandler(this.Btn_ScpAdd_Click);
 			// 
 			// panel1
 			// 

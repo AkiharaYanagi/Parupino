@@ -148,314 +148,11 @@
   <data name="KeyTurnR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\resourcecommand\keyturnr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CMD_Is_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_2E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_4E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_4E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_6E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_6E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_8E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_8E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Is_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_IS\CMD_Is_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_2E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_4E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_4E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_6E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_6E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_8E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_8E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Nis_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_NIS\CMD_Nis_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_2E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_4E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_4E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_6E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_6E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_8E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_8E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Off_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Off\CMD_Off_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_2E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_4E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_4E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_6E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_6E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_8E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_8E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_On_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_ON\CMD_On_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_2E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_4E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_4E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_6E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_6E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_8E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_8E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Push_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Push\CMD_Push_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_06" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_07" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_08" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_09" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_2E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_2E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_4E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_4E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_6E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_6E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_8E" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_8E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CMD_Rele_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\CMD_Key\CMD_Rele\CMD_Rele_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="command_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ResourceCommand\command_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="command_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ResourceCommand\command_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="command_M" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\command_M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="command_S" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\command_S.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wild" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\wild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Cmd_Key_Is" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResourceCommand\Cmd_Key_Is.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cmd_Key_Nis" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ResourceCommand\Cmd_Key_Nis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -472,10 +169,133 @@
   <data name="Cmd_Key_Rele" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ResourceCommand\Cmd_Key_Rele.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CmdAr_Is" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_Is.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdAr_Nis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_Nis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdAr_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_OFF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdAr_On" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdAr_Push" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_Push.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdAr_Rele" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_Rele.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdAr_Wild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdAr_Wild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdIs_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdIs_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdIs_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdIs_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdIs_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdIs_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdIs_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdIs_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdNis_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdNis_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdNis_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdNis_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdNis_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdNis_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdNis_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdNis_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOff_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOff_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOff_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOff_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOff_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOff_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOff_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOff_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOn_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOn_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOn_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOn_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOn_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOn_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdOn_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdOn_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdPush_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdPush_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdPush_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdPush_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdPush_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdPush_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdPush_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdPush_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdRele_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdRele_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdRele_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdRele_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdRele_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdRele_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdRele_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdRele_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdWd_H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdWd_H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdWd_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdWd_L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdWd_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdWd_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CmdWd_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\CMD_Key\CmdWd_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cmd_Key_Is" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\Cmd_Key_Is.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cmd_Key_Wild" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ResourceCommand\Cmd_Key_Wild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="command_Ma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\command_Ma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="command_Mb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\command_Mb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ResourceCommand\Off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\wild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LvrCur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ResourceCommand\LvrCur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -2,9 +2,12 @@
 
 namespace ScriptEditor
 {
+	//-------------------------------------------------------------
+	//	アクション設定フォーム
+	//-------------------------------------------------------------
+
 	//@todo 結びつきの強さからSequenceTreeを直接参照する
 	//		Compendを介しない
-
 
 	public sealed partial class FormAction : EditorForm
 	{
