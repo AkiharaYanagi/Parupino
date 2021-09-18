@@ -295,7 +295,7 @@ namespace GAME
 		{
 			P_Branch pBranch = make_shared < Branch > ();	//代入用に新規作成
 			_ElemToBranch ( pe, pBranch );
-			pScript->AddpBranch ( pBranch );			//スクリプトに追加
+//			pScript->AddpBranch ( pBranch );			//スクリプトに追加
 		}
 	}
 
@@ -559,6 +559,7 @@ namespace GAME
 	//ブランチ (アクションとコマンドの読込後、indexから実効オブジェクトのポインタを取得して設定する)
 	void LoadCharaUtl::_LoadBranch ( Chara & chara )
 	{
+#if 0
 		PVP_Action pvpAction = chara.GetpvpAction ();
 		for ( P_Action pAc : * pvpAction )
 		{
@@ -573,6 +574,7 @@ namespace GAME
 				}
 			}
 		}
+#endif // 0
 	}
 
 	//基本状態アクションID

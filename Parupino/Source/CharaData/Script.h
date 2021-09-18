@@ -10,7 +10,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
-#include "Branch.h"
+#include "Route.h"
 #include "EffectGenerate.h"
 
 //-------------------------------------------------------------------------------------------------
@@ -20,14 +20,13 @@ namespace GAME
 {
 	//================================================================
 	//	◆スクリプト		キャラにおけるアクションの１フレームの値
-	//		┃
 	//		┣フレーム数
 	//		┣イメージID
 	//		┣画像表示位置
 	//		┣速度
 	//		┣加速度
-	//	new	┣計算状態(持続/代入/加算)
-	//		┣[]ブランチ
+	//		┣計算状態(持続/代入/加算)
+	//		┣[]ルート
 	//		┣[]接触枠
 	//		┣[]攻撃枠
 	//		┣[]当り枠
@@ -62,8 +61,8 @@ namespace GAME
 		PV_RECT	m_pvHRect;		//当り枠リスト
 		PV_RECT	m_pvORect;		//相殺枠リスト
 
-		PVP_Branch	m_pvpBranch;		//ブランチリスト
-		PVP_EfGnrt	m_pvpEfGnrt;		//Efジェネレートリスト
+		PVP_Route	m_pvpRoute;		//ルートリスト
+		PVP_EfGnrt	m_pvpEfGnrt;	//Efジェネレートリスト
 
 		int		m_power;		//攻撃値
 
@@ -99,11 +98,13 @@ namespace GAME
 		void SetCalcState ( CLC_ST clcSt ) { m_CalcState = clcSt; }
 		CLC_ST GetCalcState () const { return m_CalcState; }
 
+#if 0
 		//ブランチリスト
 		PVP_Branch GetpvpBranch () const { return m_pvpBranch; }
 
 		//ブランチリストに追加
 		void AddpBranch ( P_Branch pBranch ) { m_pvpBranch->push_back ( pBranch ); }
+#endif // 0
 
 		//EfGnrtリスト
 		PVP_EfGnrt GetpvpEfGnrt () const { return m_pvpEfGnrt; }

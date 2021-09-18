@@ -515,8 +515,11 @@ namespace GAME
 #endif // 0
 
 		// コマンドによる分岐
+#if 0
 		PVP_Branch pvpBranch = m_pScript->GetpvpBranch ();
 		UINT transitID = m_pCharaInput->GetTransitID ( pvpBranch, m_dirRight );
+#endif // 0
+		UINT transitID = 0;
 
 		//コマンドが完成していたら
 		if ( NO_COMPLETE != transitID )

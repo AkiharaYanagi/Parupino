@@ -177,6 +177,12 @@
     <ClInclude Include="Source\FtgMain\Ef\EfSpark.h">
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CharaData\Compend.h">
+      <Filter>CharaData</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CharaData\Route.h">
+      <Filter>CharaData</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -286,6 +292,12 @@
     </ClCompile>
     <ClCompile Include="Source\FtgMain\Ef\EfSpark.cpp">
       <Filter>FtgMain\Ef</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\Route.cpp">
+      <Filter>CharaData</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\Compend.cpp">
+      <Filter>CharaData</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

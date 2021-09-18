@@ -1,10 +1,9 @@
 //=================================================================================================
-//	Behavior ヘッダファイル
+//	Route ヘッダファイル
 //=================================================================================================
 #pragma once
 #include "Game.h"
-#include "Sequence.h"
-#include "Compend.h"
+#include "Branch.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -12,20 +11,23 @@
 namespace GAME
 {
 	//================================================================
-	//	イメージリストとシークエンスリスト
+	//	ルート
+	//		ブランチの集合
 	//================================================================
-	class Behavior : public Compend
+	
+	class Route
 	{
-		PVP_TxBs	m_pvpTxBs;		//イメージ配列
-		PVP_Sqc		m_seq;			//シークエンス配列
+		PVP_Branch	m_pvpBranch;
 
 	public:
-		Behavior ();
-		Behavior ( const Behavior & rhs ) = delete;
-		~Behavior ();
-	};
+		Route ();
+		Route ( const Route & rhs ) = delete;
+		~Route ();
+};
 
-	using P_Behavior = shared_ptr < Behavior >;
+	using P_Route = shared_ptr < Route >;
+	using VP_Route = vector < P_Route >;
+	using PVP_Route = shared_ptr < VP_Route >;
 
 
 }	//namespace GAME

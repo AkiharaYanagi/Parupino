@@ -1,10 +1,11 @@
 //=================================================================================================
-//	Behavior ヘッダファイル
+//	Compend ヘッダファイル
 //=================================================================================================
 #pragma once
+
 #include "Game.h"
+#include "../GameMain/GameConst.h"
 #include "Sequence.h"
-#include "Compend.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -12,20 +13,20 @@
 namespace GAME
 {
 	//================================================================
-	//	イメージリストとシークエンスリスト
-	//================================================================
-	class Behavior : public Compend
+	//	コンペンド
+	//		┣[]イメージ
+	//		┣[]シークエンス
+	//================================================================	
+	class Compend
 	{
-		PVP_TxBs	m_pvpTxBs;		//イメージ配列
-		PVP_Sqc		m_seq;			//シークエンス配列
 
 	public:
-		Behavior ();
-		Behavior ( const Behavior & rhs ) = delete;
-		~Behavior ();
+		Compend ();
+		Compend ( const Compend & rhs ) = delete;
+		~Compend ();
+
 	};
 
-	using P_Behavior = shared_ptr < Behavior >;
 
 
 }	//namespace GAME
