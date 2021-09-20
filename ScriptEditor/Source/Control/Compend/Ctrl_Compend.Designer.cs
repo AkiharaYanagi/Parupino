@@ -35,6 +35,7 @@
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.Ctrl_Img = new ScriptEditor.Ctrl_Image();
 			this.Btn_Preview = new System.Windows.Forms.Button();
+			this.Btn_Route = new System.Windows.Forms.Button();
 			this.Btn_EfGnrt = new System.Windows.Forms.Button();
 			this.Btn_Rect = new System.Windows.Forms.Button();
 			this.Btn_Image = new System.Windows.Forms.Button();
@@ -89,6 +90,7 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Preview);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_Route);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_EfGnrt);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Rect);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Image);
@@ -124,11 +126,21 @@
 			this.Btn_Preview.UseVisualStyleBackColor = true;
 			this.Btn_Preview.Click += new System.EventHandler(this.Btn_Preview_Click);
 			// 
+			// Btn_Route
+			// 
+			this.Btn_Route.Location = new System.Drawing.Point(21, 178);
+			this.Btn_Route.Name = "Btn_Route";
+			this.Btn_Route.Size = new System.Drawing.Size(91, 29);
+			this.Btn_Route.TabIndex = 7;
+			this.Btn_Route.Text = "ルート";
+			this.Btn_Route.UseVisualStyleBackColor = true;
+			this.Btn_Route.Click += new System.EventHandler(this.Btn_Route_Click);
+			// 
 			// Btn_EfGnrt
 			// 
 			this.Btn_EfGnrt.Location = new System.Drawing.Point(21, 143);
 			this.Btn_EfGnrt.Name = "Btn_EfGnrt";
-			this.Btn_EfGnrt.Size = new System.Drawing.Size(113, 29);
+			this.Btn_EfGnrt.Size = new System.Drawing.Size(91, 29);
 			this.Btn_EfGnrt.TabIndex = 7;
 			this.Btn_EfGnrt.Text = "Ef生成";
 			this.Btn_EfGnrt.UseVisualStyleBackColor = true;
@@ -138,7 +150,7 @@
 			// 
 			this.Btn_Rect.Location = new System.Drawing.Point(21, 108);
 			this.Btn_Rect.Name = "Btn_Rect";
-			this.Btn_Rect.Size = new System.Drawing.Size(113, 29);
+			this.Btn_Rect.Size = new System.Drawing.Size(91, 29);
 			this.Btn_Rect.TabIndex = 7;
 			this.Btn_Rect.Text = "判定枠";
 			this.Btn_Rect.UseVisualStyleBackColor = true;
@@ -148,7 +160,7 @@
 			// 
 			this.Btn_Image.Location = new System.Drawing.Point(21, 73);
 			this.Btn_Image.Name = "Btn_Image";
-			this.Btn_Image.Size = new System.Drawing.Size(113, 29);
+			this.Btn_Image.Size = new System.Drawing.Size(91, 29);
 			this.Btn_Image.TabIndex = 7;
 			this.Btn_Image.Text = "イメージ";
 			this.Btn_Image.UseVisualStyleBackColor = true;
@@ -275,5 +287,6 @@
 		private System.Windows.Forms.Button Btn_Preview;
 		public Ctrl_Image Ctrl_Img;
 		public SqcBoard sqcBoard1;
+		private System.Windows.Forms.Button Btn_Route;
 	}
 }

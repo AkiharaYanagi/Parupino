@@ -16,6 +16,7 @@ namespace ScriptEditor
 		{
 			InitPt = new System.Drawing.Point ( 0, 230 );
 			InitializeComponent ();
+			LoadObject ();
 		}
 		//---------------------------------------------------------------------
 

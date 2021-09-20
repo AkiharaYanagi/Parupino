@@ -29,14 +29,8 @@ namespace ScriptEditor
 			ctrl_Route1.SetCharaData ( ch );
 
 			//----------------------------------------------
-			// [ブランチフォーム]
-			FormBranch0.Inst.SetCharaData ( ch );
-
 			// [エフェクトジェネレートフォーム]
 			FormEfGnrt.Inst.SetCharaData ( ch );
-
-			//フォーム ブランチ
-			FormBranch0.Inst.SetCharaData ( ch );
 
 			//フォーム ルート
 			FormRoute.Inst.SetCharaData ( ch );
@@ -54,7 +48,6 @@ namespace ScriptEditor
 			FormRect.Inst.Assosiate ( scp );
 			FormScript.Inst.Assosiate ( scp );
 			FormEfGnrt.Inst.Assosiate ( scp );
-			FormBranch0.Inst.Assosiate ( scp );
 			Disp ();
 		}
 

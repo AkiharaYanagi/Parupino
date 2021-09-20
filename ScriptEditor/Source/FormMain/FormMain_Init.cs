@@ -21,7 +21,6 @@ namespace ScriptEditor
 			FormScript.Inst.FormMain = this;
 			FormRect.Inst.FormMain = this;
 			FormEfGnrt.Inst.FormMain = this;
-			FormBranch0.Inst.FormMain = this;
 			FormRoute.Inst.FormMain = this;
 		}
 

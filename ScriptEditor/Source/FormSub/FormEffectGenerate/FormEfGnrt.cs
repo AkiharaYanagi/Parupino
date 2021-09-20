@@ -12,6 +12,7 @@ namespace ScriptEditor
 		private FormEfGnrt ()
 		{
 			InitializeComponent ();
+			LoadObject ();
 
 			cB_SequenceList1.DisplayMember = "Name";
 			listBox1.DisplayMember = "Name";

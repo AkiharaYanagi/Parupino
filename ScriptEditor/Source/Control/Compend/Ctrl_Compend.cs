@@ -102,7 +102,7 @@ namespace ScriptEditor
 			FormScript.Inst.Assosiate ( scp );	//各値
 			FormRect.Inst.Assosiate ( scp );	//枠
 			FormEfGnrt.Inst.Assosiate ( scp );	//Ef生成
-			FormBranch0.Inst.Assosiate ( scp );	//ブランチ
+			FormRoute.Inst.Assosiate ( scp );	//ルート
 			//--------------------------------------------------------
 		}
 
@@ -175,13 +175,6 @@ namespace ScriptEditor
 		}
 
 		//-------------------------------------------------------------------------
-		//ブランチ
-		private void Btn_Branch_Click ( object sender, System.EventArgs e )
-		{
-			FormBranch0.Inst.VisFlip ();
-		}
-
-		//-------------------------------------------------------------------------
 		//ルート
 		private void Btn_Route_Click ( object sender, System.EventArgs e )
 		{
@@ -200,6 +193,5 @@ namespace ScriptEditor
 		{
 			FormPreview.Inst.Visible = ! FormPreview.Inst.Visible;
 		}
-
 	}
 }

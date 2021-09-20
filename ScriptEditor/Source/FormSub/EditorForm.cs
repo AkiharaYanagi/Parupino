@@ -25,9 +25,6 @@ namespace ScriptEditor
 		{
 			this.StartPosition = FormStartPosition.Manual;	//位置を手動にする
 			this.ShowInTaskbar = false;	//タスクバーに非表示
-
-			//イベント追加
-			this.VisibleChanged += new EventHandler ( EditForm_VisibleChanged );
 		}
 
 		//閉じたときに破棄しない
@@ -35,6 +32,13 @@ namespace ScriptEditor
 		{
 			e.Cancel = true;
 			this.Hide ();
+		}
+
+		//オブジェクト実体化後の初期化
+		//IDEのデザイナ表示でオブジェクトの参照がない状態なのでコンストラクタ後に呼び出す
+		protected void LoadObject ()
+		{
+			this.VisibleChanged += new EventHandler ( EditForm_VisibleChanged );
 		}
 
 		//表示反転
@@ -48,7 +52,7 @@ namespace ScriptEditor
 		public Point InitPt { get; set; } = new Point ( 0, 0 );
 
 		//表示
-		private void EditForm_VisibleChanged ( object sender, EventArgs e )
+		public void EditForm_VisibleChanged ( object sender, EventArgs e )
 		{
 			//フォーム位置を親フォームの右端にする
 			int x = InitPt.X + FormMain.Location.X + FormMain.Width;

@@ -193,16 +193,10 @@
     <Compile Include="Source\FormSub\FormAction\FormAction.Designer.cs">
       <DependentUpon>FormAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\FormSub\FormBranch\FormBranch0.cs">
+    <Compile Include="Source\FormSub\FormRoute\FormRoute.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormSub\FormBranch\FormBranch0.Designer.cs">
-      <DependentUpon>FormBranch0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\FormSub\FormBranch\FormRoute.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\FormSub\FormBranch\FormRoute.Designer.cs">
+    <Compile Include="Source\FormSub\FormRoute\FormRoute.Designer.cs">
       <DependentUpon>FormRoute.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.cs">
@@ -290,10 +284,7 @@
     <EmbeddedResource Include="Source\FormSub\FormAction\FormAction.resx">
       <DependentUpon>FormAction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\FormSub\FormBranch\FormBranch0.resx">
-      <DependentUpon>FormBranch0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\FormSub\FormBranch\FormRoute.resx">
+    <EmbeddedResource Include="Source\FormSub\FormRoute\FormRoute.resx">
       <DependentUpon>FormRoute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.resx">

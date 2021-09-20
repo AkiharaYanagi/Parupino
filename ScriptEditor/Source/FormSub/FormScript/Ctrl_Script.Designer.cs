@@ -28,16 +28,12 @@
 		/// </summary>
 		private void InitializeComponent ()
 		{
-			this.btn_branch = new System.Windows.Forms.Button();
-			this.btn_Rect = new System.Windows.Forms.Button();
 			this.cB_ClcSt = new System.Windows.Forms.ComboBox();
 			this.tB_Frame = new System.Windows.Forms.TextBox();
 			this.lbl_clc = new System.Windows.Forms.Label();
 			this.lbl_VelX = new System.Windows.Forms.Label();
 			this.lbl_Frame = new System.Windows.Forms.Label();
 			this.lbl_AP = new System.Windows.Forms.Label();
-			this.lbl_Branch = new System.Windows.Forms.Label();
-			this.lbl_Rect = new System.Windows.Forms.Label();
 			this.lbl_PosX = new System.Windows.Forms.Label();
 			this.lbl_PosY = new System.Windows.Forms.Label();
 			this.lbl_VelY = new System.Windows.Forms.Label();
@@ -53,28 +49,6 @@
 			this.Lbl_Img = new System.Windows.Forms.Label();
 			this.Tb_Img = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
-			// 
-			// btn_branch
-			// 
-			this.btn_branch.Location = new System.Drawing.Point(102, 226);
-			this.btn_branch.Margin = new System.Windows.Forms.Padding(2);
-			this.btn_branch.Name = "btn_branch";
-			this.btn_branch.Size = new System.Drawing.Size(55, 23);
-			this.btn_branch.TabIndex = 16;
-			this.btn_branch.Text = "Branch";
-			this.btn_branch.UseVisualStyleBackColor = true;
-			this.btn_branch.Click += new System.EventHandler(this.btn_branch_Click);
-			// 
-			// btn_Rect
-			// 
-			this.btn_Rect.Location = new System.Drawing.Point(102, 177);
-			this.btn_Rect.Margin = new System.Windows.Forms.Padding(2);
-			this.btn_Rect.Name = "btn_Rect";
-			this.btn_Rect.Size = new System.Drawing.Size(45, 25);
-			this.btn_Rect.TabIndex = 17;
-			this.btn_Rect.Text = "Rect";
-			this.btn_Rect.UseVisualStyleBackColor = true;
-			this.btn_Rect.Click += new System.EventHandler(this.btn_Rect_Click);
 			// 
 			// cB_ClcSt
 			// 
@@ -131,32 +105,12 @@
 			// lbl_AP
 			// 
 			this.lbl_AP.AutoSize = true;
-			this.lbl_AP.Location = new System.Drawing.Point(20, 273);
+			this.lbl_AP.Location = new System.Drawing.Point(187, 102);
 			this.lbl_AP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_AP.Name = "lbl_AP";
 			this.lbl_AP.Size = new System.Drawing.Size(70, 12);
 			this.lbl_AP.TabIndex = 10;
 			this.lbl_AP.Text = "AttackPower";
-			// 
-			// lbl_Branch
-			// 
-			this.lbl_Branch.AutoSize = true;
-			this.lbl_Branch.Location = new System.Drawing.Point(20, 231);
-			this.lbl_Branch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_Branch.Name = "lbl_Branch";
-			this.lbl_Branch.Size = new System.Drawing.Size(41, 12);
-			this.lbl_Branch.TabIndex = 12;
-			this.lbl_Branch.Text = "Branch";
-			// 
-			// lbl_Rect
-			// 
-			this.lbl_Rect.AutoSize = true;
-			this.lbl_Rect.Location = new System.Drawing.Point(20, 183);
-			this.lbl_Rect.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_Rect.Name = "lbl_Rect";
-			this.lbl_Rect.Size = new System.Drawing.Size(29, 12);
-			this.lbl_Rect.TabIndex = 13;
-			this.lbl_Rect.Text = "Rect";
 			// 
 			// lbl_PosX
 			// 
@@ -278,7 +232,7 @@
 			// 
 			this.tBN_Power.GetFunc = null;
 			this.tBN_Power.GroupSetter = null;
-			this.tBN_Power.Location = new System.Drawing.Point(102, 270);
+			this.tBN_Power.Location = new System.Drawing.Point(269, 99);
 			this.tBN_Power.Margin = new System.Windows.Forms.Padding(2);
 			this.tBN_Power.Name = "tBN_Power";
 			this.tBN_Power.SetFunc = null;
@@ -316,8 +270,6 @@
 			this.Controls.Add(this.tBN_PosY);
 			this.Controls.Add(this.tBN_PosX);
 			this.Controls.Add(this.tBN_Power);
-			this.Controls.Add(this.btn_branch);
-			this.Controls.Add(this.btn_Rect);
 			this.Controls.Add(this.cB_ClcSt);
 			this.Controls.Add(this.tB_Frame);
 			this.Controls.Add(this.lbl_clc);
@@ -329,11 +281,9 @@
 			this.Controls.Add(this.lbl_VelX);
 			this.Controls.Add(this.lbl_Frame);
 			this.Controls.Add(this.lbl_AP);
-			this.Controls.Add(this.lbl_Branch);
-			this.Controls.Add(this.lbl_Rect);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Ctrl_Script";
-			this.Size = new System.Drawing.Size(345, 348);
+			this.Size = new System.Drawing.Size(368, 171);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -342,16 +292,12 @@
 		#endregion
 
 		public TB_Number tBN_Power;
-		public System.Windows.Forms.Button btn_branch;
-		public System.Windows.Forms.Button btn_Rect;
 		public System.Windows.Forms.ComboBox cB_ClcSt;
 		public System.Windows.Forms.TextBox tB_Frame;
 		private System.Windows.Forms.Label lbl_clc;
 		private System.Windows.Forms.Label lbl_VelX;
 		private System.Windows.Forms.Label lbl_Frame;
 		private System.Windows.Forms.Label lbl_AP;
-		private System.Windows.Forms.Label lbl_Branch;
-		private System.Windows.Forms.Label lbl_Rect;
 		private System.Windows.Forms.Label lbl_PosX;
 		private System.Windows.Forms.Label lbl_PosY;
 		private System.Windows.Forms.Label lbl_VelY;

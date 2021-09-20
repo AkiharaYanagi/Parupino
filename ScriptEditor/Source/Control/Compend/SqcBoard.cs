@@ -348,8 +348,9 @@ namespace ScriptEditor
 			EditCompend.SelectFrame ( i );
 			EditCompend.SelectedSpanStart = i;
 			EditCompend.SelectedSpanEnd = i;
+
+			Assosiate ();
 			DispCompend.Disp ();
-			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
 		}
 
 		//位置から対象を選択
@@ -362,8 +363,8 @@ namespace ScriptEditor
 			bDrag = true;
 
 			//更新
+			Assosiate ();
 			DispCompend.Disp ();
-			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
 		}
 
 		//１つ後ろを選択
@@ -381,9 +382,15 @@ namespace ScriptEditor
 			EditCompend.SelectedSpanEnd = i - 1;
 
 			//更新
+			Assosiate ();
 			DispCompend.Disp ();
-			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );	//各値
 		}
 
+		//関連付け
+		private void Assosiate ()
+		{
+			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );
+			FormRoute.Inst.Assosiate ( EditCompend.SelectedScript );
+		}
 	}
 }

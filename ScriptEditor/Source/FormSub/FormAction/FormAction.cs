@@ -19,6 +19,7 @@ namespace ScriptEditor
 		private FormAction ()
 		{
 			InitializeComponent ();
+			LoadObject ();
 
 			//アクション属性
 			foreach ( ActionCategory ac in Enum.GetValues ( typeof ( ActionCategory ) ) )
