@@ -52,7 +52,9 @@ namespace GAME
 		PVP_TxBs		m_pvpTxEf;		//EFイメージ テクスチャ配列
 		PVP_Effect		m_pvpEf;		//エフェクト配列
 
-		VP_Command		m_vpCommand;		//コマンド配列
+		VP_Command		m_vpCommand;	//コマンド配列
+		VP_Branch		m_vpBranch;		//ブランチ配列
+		VP_Route		m_vpRoute;		//ルート配列
 
 		UINT	m_bsAction [ BASIC_ACTION_NUM ];		//基本アクション
 
@@ -64,6 +66,8 @@ namespace GAME
 		void Make ();
 		void Rele ();
 		void Reset ();
+
+		void Clear ();
 
 		//-----------------------------------------------------------------
 		//メインイメージ テクスチャ配列ポインタ
@@ -130,6 +134,19 @@ namespace GAME
 		//コマンドを取得
 		P_Command GetpCommand ( UINT indexCommand ) const { return m_vpCommand[indexCommand]; }
 
+
+		//ブランチ配列に追加
+		void AddpBranch ( P_Branch pBranch ) { m_vpBranch.push_back ( pBranch ); }
+
+		//ブランチを取得
+		P_Branch GetpBranch ( UINT indexBranch ) const { return m_vpBranch[indexBranch]; }
+
+
+		//ルート配列に追加
+		void AddpRoute ( P_Route pRoute ) { m_vpRoute.push_back ( pRoute ); }
+
+		//ルートを取得
+		P_Route GetpRoute ( UINT indexRoute ) const { return m_vpRoute[indexRoute]; }
 	};
 
 	using P_Chara = shared_ptr < Chara >;

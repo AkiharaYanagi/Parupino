@@ -47,6 +47,15 @@ namespace GAME
 		Make ();
 	}
 
+	void Chara::Clear ()
+	{
+//		m_vpCommand.clear ();
+//		m_vpBranch.clear ();
+//		m_vpRoute.clear ();
+		//’è”‚Ì‚İ
+		//Ä“Ç‚ÍChara‚²‚Æ
+	}
+
 	UINT Chara::GetActionID ( tstring name ) const
 	{
 		UINT index = 0;

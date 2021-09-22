@@ -165,6 +165,7 @@
     <ClInclude Include="Source\CharaData\EffectGenerate.h" />
     <ClInclude Include="Source\CharaData\IO\IOCharaDefine.h" />
     <ClInclude Include="Source\CharaData\IO\LoadChara.h" />
+    <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h" />
     <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h" />
     <ClInclude Include="Source\CharaData\Route.h" />
     <ClInclude Include="Source\CharaData\Script.h" />
@@ -212,6 +213,7 @@
     <ClCompile Include="Source\CharaData\Effect.cpp" />
     <ClCompile Include="Source\CharaData\EffectGenerate.cpp" />
     <ClCompile Include="Source\CharaData\IO\LoadChara.cpp" />
+    <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp" />
     <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp" />
     <ClCompile Include="Source\CharaData\Route.cpp" />
     <ClCompile Include="Source\CharaData\Script.cpp" />

@@ -45,7 +45,7 @@ namespace ScriptEditor
 				//イメージファイル読込のテスト
 #if true
 				testCharaData.behavior.BD_Image.Clear ();
-				string tsetImageDir = "TestImage";
+				string tsetImageDir = "out";
 				string[] files = Directory.GetFiles ( tsetImageDir );
 				foreach ( string filename in files )
 				{

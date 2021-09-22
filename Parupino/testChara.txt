@@ -1,0 +1,6354 @@
+﻿<Chara>
+<ver>110</ver>
+
+<ImageList Num="62">
+	<Image Name="Stand_00.png"></Image>
+	<Image Name="Stand_01.png"></Image>
+	<Image Name="Stand_02.png"></Image>
+	<Image Name="FrontMove_00.png"></Image>
+	<Image Name="FrontMove_01.png"></Image>
+	<Image Name="FrontMove_02.png"></Image>
+	<Image Name="BackMove_00.png"></Image>
+	<Image Name="BackMove_01.png"></Image>
+	<Image Name="BackMove_02.png"></Image>
+	<Image Name="FrontDash_00.png"></Image>
+	<Image Name="FrontDash_01.png"></Image>
+	<Image Name="FrontDash_02.png"></Image>
+	<Image Name="FrontDash_03.png"></Image>
+	<Image Name="BackDash_00.png"></Image>
+	<Image Name="FrontJump_00.png"></Image>
+	<Image Name="VarticalJump_00.png"></Image>
+	<Image Name="BackJump_00.png"></Image>
+	<Image Name="Part_5L_00.png"></Image>
+	<Image Name="Part_4L_00.png"></Image>
+	<Image Name="Part_8L_00.png"></Image>
+	<Image Name="Part_2L_00.png"></Image>
+	<Image Name="Part_6L_00.png"></Image>
+	<Image Name="Part_5Ma_00.png"></Image>
+	<Image Name="Part_4Ma_00.png"></Image>
+	<Image Name="Part_8Ma_00.png"></Image>
+	<Image Name="Part_2Ma_00.png"></Image>
+	<Image Name="Part_6Ma_00.png"></Image>
+	<Image Name="Part_5Mb_00.png"></Image>
+	<Image Name="Part_4Mb_00.png"></Image>
+	<Image Name="Part_8Mb_00.png"></Image>
+	<Image Name="Part_2Mb_00.png"></Image>
+	<Image Name="Part_6Mb_00.png"></Image>
+	<Image Name="Part_5H_00.png"></Image>
+	<Image Name="Part_5H_01.png"></Image>
+	<Image Name="Part_5H_02.png"></Image>
+	<Image Name="Part_5H_03.png"></Image>
+	<Image Name="Part_5H_04.png"></Image>
+	<Image Name="Part_4H_00.png"></Image>
+	<Image Name="Part_8H_00.png"></Image>
+	<Image Name="Part_8H_01.png"></Image>
+	<Image Name="Part_8H_02.png"></Image>
+	<Image Name="Part_8H_03.png"></Image>
+	<Image Name="Part_2H_00.png"></Image>
+	<Image Name="Part_6H_00.png"></Image>
+	<Image Name="Part_6H_01.png"></Image>
+	<Image Name="Part_6H_02.png"></Image>
+	<Image Name="Part_6H_03.png"></Image>
+	<Image Name="AirFrontDash_00.png"></Image>
+	<Image Name="AirBackDash_00.png"></Image>
+	<Image Name="StarMassStrike_00.png"></Image>
+	<Image Name="StarMassStrike_01.png"></Image>
+	<Image Name="StarMassStrike_02.png"></Image>
+	<Image Name="StarMassStrike_03.png"></Image>
+	<Image Name="StarMassStrike_04.png"></Image>
+	<Image Name="StarMassStrike_05.png"></Image>
+	<Image Name="StarMassStrike_06.png"></Image>
+	<Image Name="MotionDrive_00.png"></Image>
+	<Image Name="MotionDrive_01.png"></Image>
+	<Image Name="MotionDrive_02.png"></Image>
+	<Image Name="MotionDrive_03.png"></Image>
+	<Image Name="MotionDrive_04.png"></Image>
+	<Image Name="MotionDrive_05.png"></Image>
+</ImageList>
+<EfImageList Num="1">
+	<EfImage Name="dummy.png"></EfImage>
+</EfImageList>
+<ActionList Num="68">
+	<Action Name="Stand" NextName="Next" Category="0" Posture="0" Balance="0">
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="1">
+				<EfGenerate Name="Effect0" EfName="testEffect0" EfGnrt_PtX="-20" EfGnrt_PtY="-50" EfGnrt_PtZ="50" Gnrt="False" Loop="False" Sync="False"></EfGenerate>
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="FrontMove" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="BackMove" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="VerticalJump" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="FrontJump" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="BackJump" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Drop" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="VerticalJump(D)" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="FrontJump(D)" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="BackJump(D)" NextName="Next" Category="1" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="FrontDash" NextName="Next" Category="2" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="FrontDashDuration" NextName="Next" Category="2" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="BackDash" NextName="Next" Category="2" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="BackDashDuration" NextName="Next" Category="2" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_5L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_5Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_5Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_5H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_6L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_6Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_6Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_6H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_4L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_4Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_4Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_4H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_2L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_2Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_2Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_2H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_8L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_8Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_8Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_8H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_JL" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_JMa" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_JMb" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Attack_JH" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP0_L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP0_M" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP0_H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP1_L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP1_M" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP1_H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP2_L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP2_M" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="SP2_H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="OD0_L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="OD0_M" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="OD0_H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="OD1_L" NextName="Next" Category="3" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="OD1_M" NextName="Next" Category="4" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="OD1_H" NextName="Next" Category="5" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Guard" NextName="Next" Category="12" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Poised" NextName="Next" Category="6" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Clang" NextName="Next" Category="7" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Avoid" NextName="Next" Category="8" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Dotty" NextName="Next" Category="9" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Damaged_L" NextName="Next" Category="10" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Damaged_M" NextName="Next" Category="10" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Damaged_H" NextName="Next" Category="10" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Down" NextName="Next" Category="10" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="DownRecover" NextName="Next" Category="10" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Lose" NextName="Next" Category="13" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="LoseDuration" NextName="Next" Category="13" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Win" NextName="Next" Category="13" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="WinDuration" NextName="Next" Category="13" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="Start" NextName="Next" Category="13" Posture="0" Balance="0">
+		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+</ActionList>
+<EffectList Num="2">
+	<Effect Name="testEffect0">
+		<Script group="0" Image Name="dummy.png" X="-120" Y="-220" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="0" Image Name="dummy.png" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Effect>
+	<Effect Name="testEffect1">
+		<Script group="0" Image Name="dummy.png" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Effect>
+</EffectList>
+<CommandList Num="13">
+	<Command Name="L" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="Ma" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_PUSH" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="Mb" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_PUSH" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="H" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
+	</Command>
+	<Command Name="6" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="4" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="6離" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_NIS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="4離" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_NIS" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="6.6" Limit="6">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_PUSH" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="4.4" Limit="6">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_PUSH" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="8" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_IS" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="9" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_IS" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="7" Limit="1">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_IS" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+</CommandList>
+<BranchList Num="13">
+	<Branch Name="L → 立L" NameCommand="L" NameAction="Attack_5L" Frame="0">
+	</Branch>
+	<Branch Name="Ma → 立Ma" NameCommand="Ma" NameAction="Attack_5Ma" Frame="0">
+	</Branch>
+	<Branch Name="Mb → 立Mb" NameCommand="Mb" NameAction="Attack_5Mb" Frame="0">
+	</Branch>
+	<Branch Name="H → 立H" NameCommand="H" NameAction="Attack_5H" Frame="0">
+	</Branch>
+	<Branch Name="6 → FrontMove" NameCommand="6" NameAction="FrontMove" Frame="0">
+	</Branch>
+	<Branch Name="4 → BackMove" NameCommand="4" NameAction="BackMove" Frame="0">
+	</Branch>
+	<Branch Name="6離 → FrontDuration" NameCommand="6離" NameAction="Stand" Frame="0">
+	</Branch>
+	<Branch Name="4離 → BackDuration" NameCommand="4離" NameAction="Stand" Frame="0">
+	</Branch>
+	<Branch Name="6.6 → FrontDash" NameCommand="6.6" NameAction="FrontDash" Frame="0">
+	</Branch>
+	<Branch Name="4.4 → BackDash" NameCommand="4.4" NameAction="BackDash" Frame="0">
+	</Branch>
+	<Branch Name="8 → VerticalJump" NameCommand="8" NameAction="VerticalJump" Frame="0">
+	</Branch>
+	<Branch Name="9 → FrontJump" NameCommand="9" NameAction="FrontJump" Frame="0">
+	</Branch>
+	<Branch Name="7 → BackJump" NameCommand="7" NameAction="BackJump" Frame="0">
+	</Branch>
+</BranchList>
+<RouteList Num="2">
+	<Route Name="地上通常技" Summary="立ち状態で移行する技全般">
+		<BranchNameList Num="4">
+			<BranchName Name="L → 立L"></BranchName>
+			<BranchName Name="Ma → 立Ma"></BranchName>
+			<BranchName Name="Mb → 立Mb"></BranchName>
+			<BranchName Name="H → 立H"></BranchName>
+		</BranchNameList>
+	</Route>
+	<Route Name="地上移動" Summary="立ち状態から出る移動全般">
+		<BranchNameList Num="5">
+			<BranchName Name="6 → FrontMove"></BranchName>
+			<BranchName Name="4 → BackMove"></BranchName>
+			<BranchName Name="8 → VerticalJump"></BranchName>
+			<BranchName Name="9 → FrontJump"></BranchName>
+			<BranchName Name="7 → BackJump"></BranchName>
+		</BranchNameList>
+	</Route>
+</RouteList>
+</Chara>

@@ -34,10 +34,18 @@ namespace GAME
 		EL_EF_IMAGE_LIST	,
 		EL_ACTION			,
 		EL_EFFECT			,
-		EL_COMMAND			,
+		EL_COMMAND,
+		EL_BRANCH,
+		EL_ROUTE,
 	};
 
 	//-------------------------------------------
+	//名前のみの共通アトリビュート
+	enum ATTR_NAME
+	{
+		ATTR_NAME_0 = 0,
+	};
+
 	//アクション下のアトリビュート
 	enum ATTR_ACTION
 	{
@@ -67,7 +75,7 @@ namespace GAME
 	//スクリプト下のエレメント
 	enum
 	{
-		ELEM_SCRIPT_BRANCH, 
+		ELEM_SCRIPT_ROUTE, 
 		ELEM_SCRIPT_EFGNRT, 
 		ELEM_SCRIPT_CRECT, 
 		ELEM_SCRIPT_ARECT, 
@@ -94,9 +102,7 @@ namespace GAME
 	//ブランチのアトリビュート列挙
 	enum
 	{
-		ATTR_BRANCH_COMMAND_INDEX, 
 		ATTR_BRANCH_COMMAND_NAME, 
-		ATTR_BRANCH_ACTION_INDEX, 
 		ATTR_BRANCH_ACTION_NAME,
 		ATTR_BRANCH_FRAME_INDEX,
 	};

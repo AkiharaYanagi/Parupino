@@ -17,12 +17,16 @@ namespace GAME
 	
 	class Route
 	{
-		PVP_Branch	m_pvpBranch;
+		vector < UINT >		m_vIdBranch;
 
 	public:
 		Route ();
 		Route ( const Route & rhs ) = delete;
 		~Route ();
+
+		void Clear ();
+
+		void AddBranchID ( UINT branchId );
 };
 
 	using P_Route = shared_ptr < Route >;

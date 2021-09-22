@@ -1,14 +1,9 @@
 //=================================================================================================
 //
 // LoadCharaUtl ヘッダファイル
-//	LoadCharaで用いるUtility関数群
 //
 //=================================================================================================
 #pragma once
-
-//-------------------------------------------------------------------------------------------------
-// ヘッダファイルのインクルード
-//-------------------------------------------------------------------------------------------------
 #include "IOCharaDefine.h"
 
 //-------------------------------------------------------------------------------------------------
@@ -16,42 +11,26 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	//------------------------------------------------------------
+	//	LoadCharaで用いるUtility関数群
+	//------------------------------------------------------------
 	class LoadCharaUtl
 	{
+	public:
+		LoadCharaUtl () = default;
+		LoadCharaUtl ( const LoadCharaUtl & rhs ) = delete;
+		~LoadCharaUtl () = default;
+
+
 		//------------------------------------------------------------
 		//エレメントポインタからindex番目のアトリビュートのValueをUINTに直して返す
 		UINT _ElemToUINT ( const P_Element pElem, UINT indexAttr );
 
-		//エレメントポインタからアクションを読み込む
-		void _ElemToActionArray ( const P_Element pElem, Chara & chara );	//配列
-		void _ElemToAction ( const P_Element pElem, const P_Action & pAction );
+		//名前の保存
+		void ElemToNameArray ( const P_Element pElem, vector < tstring > & vec );
 
-		//エレメントポインタからスクリプトを読み込む
-		void _ElemToScript ( const P_Element pElem, const P_Script pScript, UINT frame );
-
-		//エレメントポインタからコマンドを読み込む
-		void _ElemToCommandArray ( const P_Element pElem, Chara & chara );	//配列
-		void _ElemToCommand ( const P_Element pElem, const P_Command & pCommand );
-
-		//エレメントポインタからゲームキーコマンドを読み込む
-		void _ElemToGameKeyCmd ( const P_Element pElem, _GameKeyCommand & gameKeyCmd );
-		_GameKeyCommand::GAME_KEY_STATE StrToKeyState ( tstring str );
-
-		//基本状態アクションID
-		void _ElemToBasicActionID ( const P_Element pElem, Chara & chara );
-
-		//エレメントポインタからエフェクトを読み込む
-		void _ElemToEffectArray ( const P_Element pElem, Chara & chara );	//配列
-		void _ElemToEffect ( const P_Element pElem, const P_Effect & pEffect );
-
-
-		//エレメントポインタからブランチを読み込む
-		void _ElemToBranchArray ( const P_Element pElem, const P_Script & pScript );	//配列
-		void _ElemToBranch ( const P_Element pElem, const P_Branch & pBranch );
-
-		//エレメントポインタからEFジェネレートを読み込む
-		void _ElemToEfGnrtArray ( const P_Element pElem, const P_Script & pScript );	//配列
-		void _ElemToEfGnrt ( const P_Element pElem, const P_EfGnrt & pEfGnrt );
+		//名前からインデックスを取得
+		UINT IndexOf ( const V_STR& vstr, tstring name ) const;
 
 		//------------------------------------------------------------
 		//アトリビュート変換
@@ -68,45 +47,6 @@ namespace GAME
 		CLC_ST _AttrToCLC_ST ( const P_Attribute pAttr );
 		ACTION_POSTURE _AttrToACTION_POSTURE ( const P_Attribute pAttr );
 
-		//------------------------------------------------------------
-		//枠読込
-#if 0
-		//引数：エレメントポインタ, スクリプトポインタ, 枠を設定するScript内の関数ポインタ
-		void _LoadRect ( const P_Element pElem, P_Script pScript, void(Script::* const pFuncAddRect)( RECT ) );
-#endif // 0
-		//関数型を定義
-		//	クラスScriptにおけるRectを設定する関数：戻値void, 引数RECT
-		using FP_SetRect = std::function < void ( RECT ) >;
-
-		//引数：エレメントポインタ, スクリプトポインタ, 枠を設定するScript内の関数ポインタ
-		void _LoadRect ( const P_Element pElem, P_Script pSrcipt, FP_SetRect fp_SetRect );
-		//引数：エレメントポインタ, 枠を設定するScript内の関数ポインタ
-		void _LoadRect ( const P_Element pElem, FP_SetRect fp_SetRect );
-
-		//枠の読込
-		void _LoadRectAll ( const PVP_Element pvpElem, const P_Script & pScript );
-
-		//------------------------------------------------------------
-		//ブランチ (アクションとコマンドの読込後、indexから実効オブジェクトのポインタを取得して設定する)
-		void _LoadBranch ( Chara & chara );
-
-		//----------------------------------
-		//データ読込　一時変数
-		UINT	m_nMainImage;		//メインイメージリストの個数
-		UINT	m_nEfImage;		//Efイメージリストの個数
-
-		//イメージアーカイブ読込
-		void _LoadImage ( ifstream* pIfstrm, PVP_TxBs pvpTexture, UINT numImage );
-
-		//コマンド文字列
-
-	public:
-		LoadCharaUtl () = default;
-		LoadCharaUtl ( const LoadCharaUtl & rhs ) = delete;
-		~LoadCharaUtl () = default;
-
-		//Documentからキャラに変換する
-		void _DocumentToChara ( const Document & document, Chara & chara );
 	};
 
 

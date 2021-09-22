@@ -183,6 +183,9 @@
     <ClInclude Include="Source\CharaData\Route.h">
       <Filter>CharaData</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h">
+      <Filter>CharaData\IO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -298,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharaData\Compend.cpp">
       <Filter>CharaData</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp">
+      <Filter>CharaData\IO</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

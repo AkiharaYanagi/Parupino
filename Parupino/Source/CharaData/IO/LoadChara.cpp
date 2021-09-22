@@ -3,10 +3,6 @@
 // LoadChara ソースファイル
 //
 //=================================================================================================
-
-//-------------------------------------------------------------------------------------------------
-// ヘッダファイルのインクルード
-//-------------------------------------------------------------------------------------------------
 #include "LoadChara.h"
 #include "../../CharaData/Branch.h"	//ActionとCommandを扱うためChara.hとは独立
 
@@ -63,7 +59,6 @@ namespace GAME
 		//		バイナリファイルなのでchar型で扱う
 		//------------------------------------------
 
-
 		//---------------------------------------------------------------------
 		//ファイルストリーム開始
 		ifstream ifstrm ( filename.c_str(), ios::binary );
@@ -92,47 +87,20 @@ namespace GAME
 		delete[] scriptBuf;
 
 		//キャラデータに変換
-		m_utl._DocumentToChara ( document, chara );
+		m_func._DocumentToChara ( document, chara );
 
 		//---------------------------------------------------------------------
 		//グラフィックアーカイブの読込	(スクリプトの続きからEOFまで)
 
 		//メインイメージ
-		_LoadImage ( ifstrm, chara.GetpvpMainTexture() );
+		m_func._LoadImage ( ifstrm, chara.GetpvpMainTexture() );
 
 		//Efイメージ
-		_LoadImage ( ifstrm, chara.GetpvpEfTexture() );
+		m_func._LoadImage ( ifstrm, chara.GetpvpEfTexture() );
 
 		//---------------------------------------------------------------------
 		//ファイルストリーム終了
 		ifstrm.close ();
-	}
-
-	//------------------------------------------------------------
-	//イメージアーカイブ読込
-	void LoadChara::_LoadImage ( ifstream & ifstrm, PVP_TxBs pvpTexture )
-	{
-		//イメージの個数でループ
-		UINT size = pvpTexture->size ();
-		for ( UINT i = 0; i < size; ++ i )
-		{
-			//イメージの個別サイズを読込
-			UINT imageSize = 0;
-			ifstrm.read ( (char*)&imageSize, sizeof ( UINT ) );
-
-			//一時領域の確保から、イメージ本体の読込
-			char* imageBuf = new char [ imageSize ];
-			ifstrm.read ( imageBuf, imageSize );
-
-			//メモリ上のデータからゲームテクスチャに変換
-			P_TxMem pGameTexture = make_shared < TxMem > ( (LPCVOID)imageBuf, imageSize );
-
-			//一時領域は解放する
-			delete[] imageBuf;
-
-			//キャラ内部のテクスチャリストに加える
-			(*pvpTexture) [ i ] = pGameTexture;
-		}
 	}
 
 

@@ -9,6 +9,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "IOCharaDefine.h"
+#include "LoadCharaFunc.h"
 #include "LoadCharaUtl.h"
 
 //-------------------------------------------------------------------------------------------------
@@ -25,10 +26,8 @@ namespace GAME
 		void _Load ( const tstring & filename,  Chara & chara );
 
 		//内部使用関数群
+		LoadCharaFunc	m_func;
 		LoadCharaUtl	m_utl;
-
-		//イメージアーカイブ読込
-		void _LoadImage ( ifstream &  ifstrm, PVP_TxBs pvpTexture );
 
 	public:
 		LoadChara ( const tstring & filename,  Chara & chara );
