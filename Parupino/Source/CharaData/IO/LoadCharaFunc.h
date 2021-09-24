@@ -38,52 +38,35 @@ namespace GAME
 		vector < tstring > m_vEfImageName;
 
 		//------------------------------------------------------------
-		//エレメントポインタからアクションを読み込む
+		//アクション
 		V_STR	m_vActionName;
-//		void _ElemToActionArray ( const P_Element pElem, Chara & ch );	//配列
-//		void _ElemToAction ( const P_Element pElem, const P_Action & pAction );
 		void _ElemToActionC ( const P_Element pElem, Chara & ch );
 
-		//エレメントポインタからスクリプトを読み込む
+		//エレメントポインタからエフェクトを読み込む
+		V_STR	m_vEffectName;
+		void _ElemToEffect ( const P_Element pElem, Chara & ch );
+
+		//スクリプト
 		void _ElemToScript ( const P_Element pElem, const P_Script pScript, UINT frame );
 
-
-		//エレメントポインタからコマンドを読み込む
+		//コマンド
 		V_STR	m_vCommandName;
-//		void _ElemToCommandArray ( const P_Element pElem, Chara & ch );	//配列
-//		void _ElemToCommand ( const P_Element pElem, const P_Command & pCommand );
 		void _ElemToCommand ( const P_Element pElem, Chara & ch );
-
-		//エレメントポインタからブランチを読み込む
-		V_STR	m_vBranchName;
-//		void _ElemToBranchArray ( const P_Element pElem, Chara & ch );	//配列
-//		void _ElemToBranch ( const P_Element pElem, const P_Branch & pBranch );
-		void _ElemToBranch ( const P_Element pElem, Chara & ch );
-
-		//エレメントポインタからルートを読み込む
-		V_STR	m_vRouteName;
-//		void _ElemToRouteArray ( const P_Element pElem, Chara & ch );	//配列
-//		void _ElemToRoute ( const P_Element pElem, Chara & ch, const P_Route & pRoute );
-		void _ElemToRoute ( const P_Element pElem, Chara & ch );
-
 
 		//エレメントポインタからゲームキーコマンドを読み込む
 		void _ElemToGameKeyCmd ( const P_Element pElem, _GameKeyCommand & gameKeyCmd );
 		_GameKeyCommand::GAME_KEY_STATE StrToKeyState ( tstring str );
 
+		//ブランチ
+		V_STR	m_vBranchName;
+		void _ElemToBranch ( const P_Element pElem, Chara & ch );
+
+		//ルート
+		V_STR	m_vRouteName;
+		void _ElemToRoute ( const P_Element pElem, Chara & ch );
+
 		//基本状態アクションID
 		void _ElemToBasicActionID ( const P_Element pElem, Chara & ch );
-
-
-		//エレメントポインタからエフェクトを読み込む
-		V_STR	m_vEffectName;
-//		void _ElemToEffectArray ( const P_Element pElem, Chara & ch );	//配列
-//		void _ElemToEffect ( const P_Element pElem, const P_Effect & pEffect );
-		void _ElemToEffect ( const P_Element pElem, Chara & ch );
-
-		//エレメントポインタからEFジェネレートを読み込む
-		void _ElemToEfGnrtArray ( const P_Element pElem, const P_Script & pScript );	//配列
-		void _ElemToEfGnrt ( const P_Element pElem, const P_EfGnrt & pEfGnrt );
 
 
 		//------------------------------------------------------------
@@ -107,6 +90,10 @@ namespace GAME
 		//------------------------------------------------------------
 		//スクリプト内のルート (アクションとコマンドの読込後、indexから実効オブジェクトのポインタを取得して設定する)
 		void _LoadRouteInScript ( Chara & ch );
+
+		//エレメントポインタからEFジェネレートを読み込む
+		void _ElemToEfGnrtArray ( const P_Element pElem, const P_Script & pScript );	//配列
+		void _ElemToEfGnrt ( const P_Element pElem, const P_EfGnrt & pEfGnrt );
 
 
 	public:

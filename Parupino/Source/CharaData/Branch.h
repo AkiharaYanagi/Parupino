@@ -39,9 +39,6 @@ namespace GAME
 		Branch ( const Branch & rhs ) = delete;
 		~Branch ();
 
-		//代入演算子
-//		Branch& operator = ( const Branch& rhs );
-
 		//条件コマンド配列添字
 		void SetIndexCommand ( UINT index ) { m_indexCommand = index; }
 		UINT GetIndexCommand () const { return m_indexCommand; }

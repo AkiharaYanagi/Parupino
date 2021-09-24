@@ -10,8 +10,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
 #include "../../GameMain/GameConst.h"
-#include "../../CharaData/Action.h"
-#include "../../CharaData/Branch.h"
+#include "../../CharaData/Chara.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -39,6 +38,8 @@ namespace GAME
 		//キー入力配列の参照
 		const V_GAME_KEY & GetvGameKey () const { return m_vGameKey; }
 
+#if 0
+
 		//ブランチリストをチェックして
 		//コマンド条件が達成されていたら遷移先のアクションを返す
 		//戻値：nullptr	不成立
@@ -48,6 +49,13 @@ namespace GAME
 		//コマンド条件が達成されていたら遷移先のアクションIDを返す
 		//戻値：enum { NO_COMPLETE (0xFFFFFFFF) } 不成立
 		virtual UINT GetTransitID ( PVP_Branch pvpBranch, bool dirRight );
+#endif // 0
+
+
+		//ルートリストをチェックして各種ブランチのコマンドが達成されていたら
+		//遷移先のアクションIDを返す
+		//戻値：enum { NO_COMPLETE (0xFFFFFFFF) } 不成立
+		virtual UINT GetTransitID ( Chara & ch, P_Script pScp, bool dirRight );
 
 
 		//-----------------------------------------------------------------
@@ -69,7 +77,7 @@ namespace GAME
 		//後下入力
 //		bool IsInput1 () const { return m_vGameKey[0].IsKeyLvrCmd ( _GameKeyCommand::LVR_CMD_1 ); }
 
-		//後ろ要素の入力確認 : 右向き時4E、ただし入力保存時に向きは反映されている
+		//後要素の入力確認 : 右向き時4E、ただし入力保存時に向きは反映されている
 //		bool IsInputBack () const { return m_vGameKey[0].IsKeyLvrCmd ( _GameKeyCommand::LVR_CMD_4E ); }
 
 		//下要素の入力確認

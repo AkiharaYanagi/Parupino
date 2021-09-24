@@ -133,6 +133,7 @@ namespace GAME
 
 		//コマンドを取得
 		P_Command GetpCommand ( UINT indexCommand ) const { return m_vpCommand[indexCommand]; }
+		const VP_Command & GetvpCommand () const { return m_vpCommand; }
 
 
 		//ブランチ配列に追加
@@ -140,6 +141,7 @@ namespace GAME
 
 		//ブランチを取得
 		P_Branch GetpBranch ( UINT indexBranch ) const { return m_vpBranch[indexBranch]; }
+		const VP_Branch & GetvpBranch () const { return m_vpBranch; }
 
 
 		//ルート配列に追加
@@ -147,6 +149,7 @@ namespace GAME
 
 		//ルートを取得
 		P_Route GetpRoute ( UINT indexRoute ) const { return m_vpRoute[indexRoute]; }
+		const VP_Route & GetvpRoute () const { return m_vpRoute; }
 	};
 
 	using P_Chara = shared_ptr < Chara >;

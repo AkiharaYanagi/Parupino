@@ -69,9 +69,11 @@
 	<EfImage Name="dummy.png"></EfImage>
 </EfImageList>
 <ActionList Num="68">
-	<Action Name="Stand" NextName="Next" Category="0" Posture="0" Balance="0">
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+	<Action Name="Stand" NextName="Stand" NextID="0" Category="0" Posture="0" Balance="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="1">
 				<EfGenerate Name="Effect0" EfName="testEffect0" EfGnrt_PtX="-20" EfGnrt_PtY="-50" EfGnrt_PtZ="50" Gnrt="False" Loop="False" Sync="False"></EfGenerate>
@@ -85,8 +87,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -99,8 +103,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -113,8 +119,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -127,8 +135,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -141,8 +151,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -155,8 +167,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -169,8 +183,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -183,8 +199,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -197,8 +215,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -211,8 +231,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -225,8 +247,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -239,8 +263,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -253,8 +279,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -267,8 +295,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -281,8 +311,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="1" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -295,8 +327,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -309,8 +343,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -323,8 +359,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -337,8 +375,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -351,8 +391,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -365,8 +407,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -379,8 +423,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -393,8 +439,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -407,8 +455,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -421,8 +471,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -435,8 +487,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -449,8 +503,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -463,8 +519,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -477,8 +535,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -491,8 +551,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -505,8 +567,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -519,8 +583,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -533,8 +599,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -547,8 +615,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -561,8 +631,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -575,8 +647,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -589,8 +663,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -603,8 +679,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -617,8 +695,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -631,8 +711,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -645,8 +727,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -659,8 +743,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -673,8 +759,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -687,8 +775,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -701,8 +791,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -715,8 +807,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -729,8 +823,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -743,8 +839,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -757,8 +855,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -771,8 +871,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -785,8 +887,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -799,8 +903,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -813,8 +919,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -827,8 +935,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -841,8 +951,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -855,8 +967,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -869,8 +983,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -883,8 +999,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -897,8 +1015,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -911,8 +1031,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -925,8 +1047,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -939,8 +1063,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -953,8 +1079,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -967,8 +1095,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -981,8 +1111,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -995,8 +1127,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1009,8 +1143,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1023,8 +1159,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1037,8 +1175,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1051,8 +1191,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1065,8 +1207,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1079,8 +1223,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1093,8 +1239,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1107,8 +1255,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1121,8 +1271,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1135,8 +1287,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1149,8 +1303,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1163,8 +1319,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1177,8 +1335,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1191,8 +1351,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1205,8 +1367,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1219,8 +1383,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1233,8 +1399,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1247,8 +1415,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1261,8 +1431,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1275,8 +1447,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1289,8 +1463,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1303,8 +1479,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1317,8 +1495,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1331,8 +1511,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1345,8 +1527,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1359,8 +1543,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1373,8 +1559,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1387,8 +1575,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1401,8 +1591,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1415,8 +1607,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1429,8 +1623,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1443,8 +1639,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1457,8 +1655,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1471,8 +1671,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1485,8 +1687,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1499,8 +1703,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1513,8 +1719,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1527,8 +1735,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1541,8 +1751,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1555,8 +1767,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1569,8 +1783,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1583,8 +1799,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1597,8 +1815,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1611,8 +1831,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1625,8 +1847,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1639,8 +1863,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1653,8 +1879,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1667,8 +1895,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1681,8 +1911,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1695,8 +1927,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1709,8 +1943,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1723,8 +1959,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1737,8 +1975,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1751,8 +1991,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1765,8 +2007,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1779,8 +2023,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1793,8 +2039,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1807,8 +2055,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1821,8 +2071,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1835,8 +2087,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1849,8 +2103,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="1" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1863,8 +2119,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1877,8 +2135,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1891,8 +2151,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1905,8 +2167,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1919,8 +2183,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1933,8 +2199,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1947,8 +2215,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1961,8 +2231,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1975,8 +2247,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1989,8 +2263,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2003,8 +2279,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2017,8 +2295,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2031,8 +2311,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2045,8 +2327,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2059,8 +2343,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2073,8 +2359,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="2" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="2" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2087,8 +2375,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2101,8 +2391,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2115,8 +2407,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2129,8 +2423,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2143,8 +2439,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2157,8 +2455,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2171,8 +2471,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2185,8 +2487,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2199,8 +2503,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2213,8 +2519,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2227,8 +2535,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2241,8 +2551,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2255,8 +2567,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2269,8 +2583,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2283,8 +2599,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2297,8 +2615,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="3" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2311,8 +2631,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2325,8 +2647,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2339,8 +2663,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2353,8 +2679,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2367,8 +2695,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2381,8 +2711,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2395,8 +2727,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2409,8 +2743,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2423,8 +2759,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2437,8 +2775,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2451,8 +2791,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2465,8 +2807,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2479,8 +2823,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2493,8 +2839,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2507,8 +2855,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2521,8 +2871,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2535,8 +2887,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2549,8 +2903,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2563,8 +2919,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2577,8 +2935,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2591,8 +2951,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2605,8 +2967,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2619,8 +2983,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2633,8 +2999,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2647,8 +3015,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2661,8 +3031,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2675,8 +3047,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2689,8 +3063,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2703,8 +3079,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2717,8 +3095,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2731,8 +3111,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2745,8 +3127,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2759,8 +3143,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2773,8 +3159,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2787,8 +3175,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2801,8 +3191,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2815,8 +3207,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2829,8 +3223,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2843,8 +3239,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2857,8 +3255,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2871,8 +3271,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2885,8 +3287,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2899,8 +3303,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2913,8 +3319,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2927,8 +3335,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2941,8 +3351,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2955,8 +3367,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2969,8 +3383,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2983,8 +3399,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2997,8 +3415,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3011,8 +3431,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3025,8 +3447,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3039,8 +3463,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3053,8 +3479,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3067,8 +3495,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3081,8 +3511,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3095,8 +3527,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3109,8 +3543,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3123,8 +3559,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3137,8 +3575,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3151,8 +3591,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3165,8 +3607,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3179,8 +3623,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3193,8 +3639,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3207,8 +3655,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3221,8 +3671,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3235,8 +3687,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3249,8 +3703,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3263,8 +3719,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3277,8 +3735,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3291,8 +3751,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3305,8 +3767,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3319,8 +3783,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3333,8 +3799,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3347,8 +3815,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3361,8 +3831,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3375,8 +3847,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3389,8 +3863,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3403,8 +3879,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3417,8 +3895,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3431,8 +3911,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3445,8 +3927,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3459,8 +3943,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3473,8 +3959,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3487,8 +3975,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3501,8 +3991,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3515,8 +4007,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3529,8 +4023,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3543,8 +4039,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3557,8 +4055,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3571,8 +4071,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3585,8 +4087,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3599,8 +4103,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3613,8 +4119,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3627,8 +4135,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3641,8 +4151,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3655,8 +4167,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3669,8 +4183,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3683,8 +4199,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3697,8 +4215,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3711,8 +4231,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3725,8 +4247,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3739,8 +4263,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3753,8 +4279,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3767,8 +4295,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3781,8 +4311,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3795,8 +4327,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3809,8 +4343,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3823,8 +4359,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3837,8 +4375,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3851,8 +4391,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3865,8 +4407,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="3" Image Name="Stand_02.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3879,8 +4423,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3893,8 +4439,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3907,8 +4455,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3921,8 +4471,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3935,8 +4487,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3949,8 +4503,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3963,8 +4519,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3977,8 +4535,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -3991,8 +4551,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4005,8 +4567,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4019,8 +4583,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4033,8 +4599,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4047,8 +4615,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4061,8 +4631,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4075,8 +4647,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -4089,7 +4663,235 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script group="4" Image Name="Stand_00.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+		<Script group="4" Image Name="Stand_01.png" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+				<Route Name="地上通常技" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+	<Action Name="FrontMove" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="1" Image Name="FrontMove_00.png" X="-221" Y="-439" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script group="2" Image Name="FrontMove_01.png" X="-229" Y="-456" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -4104,233 +4906,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="FrontMove" NextName="Next" Category="1" Posture="0" Balance="0">
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-	</Action>
-	<Action Name="BackMove" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="BackMove" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-10" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -4556,7 +5132,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="VerticalJump" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="VerticalJump" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -4726,7 +5302,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="FrontJump" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="FrontJump" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -4742,7 +5318,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="BackJump" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="BackJump" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="-20" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -4758,7 +5334,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Drop" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="Drop" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -4928,7 +5504,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="VerticalJump(D)" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="VerticalJump(D)" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5098,7 +5674,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="FrontJump(D)" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="FrontJump(D)" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="-87" Y="-224" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5268,7 +5844,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="BackJump(D)" NextName="Next" Category="1" Posture="0" Balance="0">
+	<Action Name="BackJump(D)" NextName="Stand" NextID="0" Category="1" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5284,7 +5860,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="FrontDash" NextName="Next" Category="2" Posture="0" Balance="0">
+	<Action Name="FrontDash" NextName="Stand" NextID="0" Category="2" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5300,7 +5876,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="FrontDashDuration" NextName="Next" Category="2" Posture="0" Balance="0">
+	<Action Name="FrontDashDuration" NextName="Stand" NextID="0" Category="2" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5316,7 +5892,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="BackDash" NextName="Next" Category="2" Posture="0" Balance="0">
+	<Action Name="BackDash" NextName="Stand" NextID="0" Category="2" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5332,7 +5908,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="BackDashDuration" NextName="Next" Category="2" Posture="0" Balance="0">
+	<Action Name="BackDashDuration" NextName="Stand" NextID="0" Category="2" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5348,7 +5924,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_5L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="Attack_5L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5364,7 +5940,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_5Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_5Ma" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5380,7 +5956,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_5Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_5Mb" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5396,7 +5972,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_5H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="Attack_5H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5412,7 +5988,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_6L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="Attack_6L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5428,7 +6004,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_6Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_6Ma" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5444,7 +6020,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_6Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_6Mb" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5460,7 +6036,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_6H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="Attack_6H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5476,7 +6052,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_4L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="Attack_4L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5492,7 +6068,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_4Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_4Ma" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5508,7 +6084,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_4Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_4Mb" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5524,7 +6100,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_4H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="Attack_4H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5540,7 +6116,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_2L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="Attack_2L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5556,7 +6132,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_2Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_2Ma" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5572,7 +6148,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_2Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_2Mb" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5588,7 +6164,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_2H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="Attack_2H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5604,7 +6180,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_8L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="Attack_8L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5620,7 +6196,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_8Ma" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_8Ma" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5636,7 +6212,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_8Mb" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_8Mb" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5652,7 +6228,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_8H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="Attack_8H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5668,7 +6244,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_JL" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="Attack_JL" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5684,7 +6260,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_JMa" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_JMa" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5700,7 +6276,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_JMb" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="Attack_JMb" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5716,7 +6292,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Attack_JH" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="Attack_JH" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5732,7 +6308,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP0_L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="SP0_L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5748,7 +6324,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP0_M" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="SP0_M" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5764,7 +6340,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP0_H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="SP0_H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5780,7 +6356,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP1_L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="SP1_L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5796,7 +6372,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP1_M" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="SP1_M" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5812,7 +6388,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP1_H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="SP1_H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5828,7 +6404,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP2_L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="SP2_L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5844,7 +6420,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP2_M" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="SP2_M" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5860,7 +6436,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="SP2_H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="SP2_H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5876,7 +6452,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="OD0_L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="OD0_L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5892,7 +6468,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="OD0_M" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="OD0_M" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5908,7 +6484,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="OD0_H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="OD0_H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5924,7 +6500,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="OD1_L" NextName="Next" Category="3" Posture="0" Balance="0">
+	<Action Name="OD1_L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5940,7 +6516,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="OD1_M" NextName="Next" Category="4" Posture="0" Balance="0">
+	<Action Name="OD1_M" NextName="Stand" NextID="0" Category="4" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5956,7 +6532,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="OD1_H" NextName="Next" Category="5" Posture="0" Balance="0">
+	<Action Name="OD1_H" NextName="Stand" NextID="0" Category="5" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5972,7 +6548,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Guard" NextName="Next" Category="12" Posture="0" Balance="0">
+	<Action Name="Guard" NextName="Stand" NextID="0" Category="12" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -5988,7 +6564,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Poised" NextName="Next" Category="6" Posture="0" Balance="0">
+	<Action Name="Poised" NextName="Stand" NextID="0" Category="6" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6004,7 +6580,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Clang" NextName="Next" Category="7" Posture="0" Balance="0">
+	<Action Name="Clang" NextName="Stand" NextID="0" Category="7" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6020,7 +6596,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Avoid" NextName="Next" Category="8" Posture="0" Balance="0">
+	<Action Name="Avoid" NextName="Stand" NextID="0" Category="8" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6036,7 +6612,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Dotty" NextName="Next" Category="9" Posture="0" Balance="0">
+	<Action Name="Dotty" NextName="Stand" NextID="0" Category="9" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6052,7 +6628,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Damaged_L" NextName="Next" Category="10" Posture="0" Balance="0">
+	<Action Name="Damaged_L" NextName="Stand" NextID="0" Category="10" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6068,7 +6644,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Damaged_M" NextName="Next" Category="10" Posture="0" Balance="0">
+	<Action Name="Damaged_M" NextName="Stand" NextID="0" Category="10" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6084,7 +6660,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Damaged_H" NextName="Next" Category="10" Posture="0" Balance="0">
+	<Action Name="Damaged_H" NextName="Stand" NextID="0" Category="10" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6100,7 +6676,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Down" NextName="Next" Category="10" Posture="0" Balance="0">
+	<Action Name="Down" NextName="Stand" NextID="0" Category="10" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6116,7 +6692,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="DownRecover" NextName="Next" Category="10" Posture="0" Balance="0">
+	<Action Name="DownRecover" NextName="Stand" NextID="0" Category="10" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6132,7 +6708,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Lose" NextName="Next" Category="13" Posture="0" Balance="0">
+	<Action Name="Lose" NextName="Stand" NextID="0" Category="13" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6148,7 +6724,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="LoseDuration" NextName="Next" Category="13" Posture="0" Balance="0">
+	<Action Name="LoseDuration" NextName="Stand" NextID="0" Category="13" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6164,7 +6740,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Win" NextName="Next" Category="13" Posture="0" Balance="0">
+	<Action Name="Win" NextName="Stand" NextID="0" Category="13" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6180,7 +6756,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="WinDuration" NextName="Next" Category="13" Posture="0" Balance="0">
+	<Action Name="WinDuration" NextName="Stand" NextID="0" Category="13" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6196,7 +6772,7 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="Start" NextName="Next" Category="13" Posture="0" Balance="0">
+	<Action Name="Start" NextName="Stand" NextID="0" Category="13" Posture="0" Balance="0">
 		<Script group="0" Image Name="ImgName" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" power="0">
 			<RouteList>
 			</RouteList>
@@ -6263,91 +6839,91 @@
 </EffectList>
 <CommandList Num="13">
 	<Command Name="L" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="Ma" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_PUSH" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_PUSH" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="Mb" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_PUSH" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_PUSH" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="H" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
 	</Command>
 	<Command Name="6" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="4" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="6離" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_NIS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_NIS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="4離" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_NIS" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_NIS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="6.6" Limit="6">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_PUSH" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_PUSH" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="4.4" Limit="6">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_PUSH" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_PUSH" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="8" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_IS" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_IS" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="9" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_IS" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_IS" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 	<Command Name="7" Limit="1">
-		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_IS" Key_7="KEY_WILD" Key_8="KEY_WILD" Key_9="KEY_WILD" Key_10="KEY_WILD" Key_11="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_IS" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
 </CommandList>
 <BranchList Num="13">
-	<Branch Name="L → 立L" NameCommand="L" NameAction="Attack_5L" Frame="0">
+	<Branch Name="L → 立L" NameCommand="L" CommandID="0" NameAction="0" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="Ma → 立Ma" NameCommand="Ma" NameAction="Attack_5Ma" Frame="0">
+	<Branch Name="Ma → 立Ma" NameCommand="Ma" CommandID="1" NameAction="1" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="Mb → 立Mb" NameCommand="Mb" NameAction="Attack_5Mb" Frame="0">
+	<Branch Name="Mb → 立Mb" NameCommand="Mb" CommandID="2" NameAction="2" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="H → 立H" NameCommand="H" NameAction="Attack_5H" Frame="0">
+	<Branch Name="H → 立H" NameCommand="H" CommandID="3" NameAction="3" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="6 → FrontMove" NameCommand="6" NameAction="FrontMove" Frame="0">
+	<Branch Name="6 → FrontMove" NameCommand="6" CommandID="4" NameAction="4" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="4 → BackMove" NameCommand="4" NameAction="BackMove" Frame="0">
+	<Branch Name="4 → BackMove" NameCommand="4" CommandID="5" NameAction="5" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="6離 → FrontDuration" NameCommand="6離" NameAction="Stand" Frame="0">
+	<Branch Name="6離 → FrontDuration" NameCommand="6離" CommandID="6" NameAction="6" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="4離 → BackDuration" NameCommand="4離" NameAction="Stand" Frame="0">
+	<Branch Name="4離 → BackDuration" NameCommand="4離" CommandID="7" NameAction="7" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="6.6 → FrontDash" NameCommand="6.6" NameAction="FrontDash" Frame="0">
+	<Branch Name="6.6 → FrontDash" NameCommand="6.6" CommandID="8" NameAction="8" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="4.4 → BackDash" NameCommand="4.4" NameAction="BackDash" Frame="0">
+	<Branch Name="4.4 → BackDash" NameCommand="4.4" CommandID="9" NameAction="9" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="8 → VerticalJump" NameCommand="8" NameAction="VerticalJump" Frame="0">
+	<Branch Name="8 → VerticalJump" NameCommand="8" CommandID="10" NameAction="10" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="9 → FrontJump" NameCommand="9" NameAction="FrontJump" Frame="0">
+	<Branch Name="9 → FrontJump" NameCommand="9" CommandID="11" NameAction="11" ActionID="-1" Frame="0">
 	</Branch>
-	<Branch Name="7 → BackJump" NameCommand="7" NameAction="BackJump" Frame="0">
+	<Branch Name="7 → BackJump" NameCommand="7" CommandID="12" NameAction="12" ActionID="-1" Frame="0">
 	</Branch>
 </BranchList>
 <RouteList Num="2">
 	<Route Name="地上通常技" Summary="立ち状態で移行する技全般">
 		<BranchNameList Num="4">
-			<BranchName Name="L → 立L"></BranchName>
-			<BranchName Name="Ma → 立Ma"></BranchName>
-			<BranchName Name="Mb → 立Mb"></BranchName>
-			<BranchName Name="H → 立H"></BranchName>
+			<BranchName Name="L → 立L" ID="0"></BranchName>
+			<BranchName Name="Ma → 立Ma" ID="1"></BranchName>
+			<BranchName Name="Mb → 立Mb" ID="2"></BranchName>
+			<BranchName Name="H → 立H" ID="3"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="地上移動" Summary="立ち状態から出る移動全般">
 		<BranchNameList Num="5">
-			<BranchName Name="6 → FrontMove"></BranchName>
-			<BranchName Name="4 → BackMove"></BranchName>
-			<BranchName Name="8 → VerticalJump"></BranchName>
-			<BranchName Name="9 → FrontJump"></BranchName>
-			<BranchName Name="7 → BackJump"></BranchName>
+			<BranchName Name="6 → FrontMove" ID="4"></BranchName>
+			<BranchName Name="4 → BackMove" ID="5"></BranchName>
+			<BranchName Name="8 → VerticalJump" ID="10"></BranchName>
+			<BranchName Name="9 → FrontJump" ID="11"></BranchName>
+			<BranchName Name="7 → BackJump" ID="12"></BranchName>
 		</BranchNameList>
 	</Route>
 </RouteList>

@@ -46,34 +46,24 @@ using LCF = LoadCharaFunc;
 
 		//---------------------------------------------------------------
 		//アクション配列のエレメント
-//		P_Element pElemVecAction = pvpElemChara->at ( EL_ACTION );
-//		_ElemToActionArray ( pElemVecAction, ch );
 		ElemAry ( pvpeCh->at ( EL_ACTION ), ch, bind ( & LCF::_ElemToActionC, this, _1, _2 ) );
 		m_utl.ElemToNameArray ( pvpeCh->at ( EL_ACTION ), m_vActionName );
 
 		//---------------------------------------------------------------
 		//エフェクト配列のエレメント
-//		P_Element pElemVecEf = pvpElemChara->at ( EL_EFFECT );
-//		_ElemToEffectArray ( pElemVecEf, ch );
 		ElemAry ( pvpeCh->at ( EL_EFFECT ), ch, bind ( & LCF::_ElemToEffect, this, _1, _2 ) );
 		m_utl.ElemToNameArray ( pvpeCh->at ( EL_EFFECT ), m_vEffectName );
 
 		//---------------------------------------------------------------
 		//コマンド配列のエレメント
-//		P_Element pElemVecCommand = pvpElemChara->at ( EL_COMMAND );
-//		_ElemToCommandArray ( pElemVecCommand, ch );
 		ElemAry ( pvpeCh->at ( EL_COMMAND ), ch, bind ( & LCF::_ElemToCommand, this, _1, _2 ) );
 		m_utl.ElemToNameArray ( pvpeCh->at ( EL_COMMAND ), m_vCommandName );
 
 		//ブランチ配列のエレメント
-//		P_Element pElemVecBranch = pvpElemChara->at ( EL_BRANCH );
-//		_ElemToBranchArray ( pElemVecBranch, ch );
 		ElemAry ( pvpeCh->at ( EL_BRANCH ), ch, bind ( & LCF::_ElemToBranch, this, _1, _2 ) );
 		m_utl.ElemToNameArray ( pvpeCh->at ( EL_BRANCH ), m_vBranchName );
 
 		//ルート配列のエレメント
-//		P_Element pElemVecRoute = pvpElemChara->at ( EL_ROUTE );
-//		_ElemToRouteArray ( pElemVecRoute, ch );
 		ElemAry ( pvpeCh->at ( EL_ROUTE ), ch, bind ( & LCF::_ElemToRoute, this, _1, _2 ) );
 		m_utl.ElemToNameArray ( pvpeCh->at ( EL_ROUTE ), m_vRouteName );
 
@@ -97,59 +87,6 @@ using LCF = LoadCharaFunc;
 		}
 	}
 
-#if 0
-
-	//-------------------------------------------------------------------
-	//エレメントポインタからアクション配列を読み込む
-	void LoadCharaFunc::_ElemToActionArray ( const P_Element pElem, Chara & ch )
-	{
-		const PVP_Element pvpElemAction = pElem->GetpvpElement();
-		for ( P_Element pe : * pvpElemAction )
-		{
-			P_Action pAction = make_shared < Action > ();	//代入用の新規アクション
-			_ElemToAction ( pe, pAction );		//エレメントからアクションに読込
-			ch.AddpAction ( pAction );			//キャラにアクションを追加
-		}
-	}
-
-	//エレメントポインタからアクションを読み込む
-	void LoadCharaFunc::_ElemToAction ( const P_Element pElem, const P_Action & pAction )
-	{
-		//attribute配列ポインタ
-		const PVP_Attribute pvpAttrAction = pElem->GetpvpAttribute ();
-
-		//アクション "名前"
-		pAction->SetName ( pvpAttrAction->at ( ATTR_ACTION_NAME )->GetValue () );
-
-		//UINT 次アクションID (終了時における次アクションのリスト内インデックス)
-		pAction->SetNextID ( m_utl._AttrToUINT ( pvpAttrAction->at ( ATTR_ACTION_NEXT ) ) );
-
-		//アクション属性
-		UINT indexCategory = m_utl._AttrToUINT ( (*pvpAttrAction)[ATTR_ACTION_CATEGORY] );
-		ACTION_CATEGORY category = static_cast <ACTION_CATEGORY> (indexCategory);
-		pAction->SetCategory ( category );
-
-		//アクション体勢
-		ACTION_POSTURE ap = m_utl._AttrToACTION_POSTURE ( (*pvpAttrAction)[ATTR_ACTION_POSTURE] );
-		pAction->SetPosture ( ap );
-
-		//int 消費バランス値
-//		pAction->SetBalance ( _AttrToInt ( (*pvpAttrAction)[ATTR_ACTION_BALANCE] ) );
-
-		//---------------------------
-		//<Action>内のElement
-		//	<Script>　...不定数
-		const PVP_Element pvpElemScript = pElem->GetpvpElement ();
-		UINT _frame = 0;
-		for ( P_Element pe : *pvpElemScript )
-		{
-			P_Script pScript = make_shared < Script > ();		//設定用スクリプトを生成
-			_ElemToScript ( pe, pScript, _frame ++ );		//エレメントからスクリプトを読込
-			pAction->AddpScript ( pScript );			//アクションにスクリプトを追加
-		}
-	}
-#endif // 0
-
 	//エレメントポインタからアクションを読み込み、キャラに追加する
 	void LoadCharaFunc::_ElemToActionC ( const P_Element pElem, Chara & ch )
 	{
@@ -163,7 +100,7 @@ using LCF = LoadCharaFunc;
 		pAction->SetName ( pvpAttrAction->at ( ATTR_ACTION_NAME )->GetValue () );
 
 		//UINT 次アクションID (終了時における次アクションのリスト内インデックス)
-		pAction->SetNextID ( m_utl._AttrToUINT ( pvpAttrAction->at ( ATTR_ACTION_NEXT ) ) );
+		pAction->SetNextID ( m_utl._AttrToUINT ( pvpAttrAction->at ( ATTR_ACTION_ID) ) );
 
 		//アクション属性
 		UINT indexCategory = m_utl._AttrToUINT ( (*pvpAttrAction)[ATTR_ACTION_CATEGORY] );
@@ -195,41 +132,6 @@ using LCF = LoadCharaFunc;
 		ch.AddpAction ( pAction );			//キャラにアクションを追加
 	}
 
-
-#if 0
-
-	//エレメントポインタからエフェクト配列を読み込む
-	void LoadCharaFunc::_ElemToEffectArray ( const P_Element pElem, Chara & ch )
-	{
-		const PVP_Element pvpElemEffect = pElem->GetpvpElement();
-		for ( P_Element pe : * pvpElemEffect )
-		{
-			P_Effect pEffect = make_shared < Effect > ();	//代入用の新規エフェクト
-			_ElemToEffect ( pe, pEffect );		//エレメントからエフェクトに読込
-			ch.AddpEffect ( pEffect );			//キャラにエフェクトを追加
-		}
-	}
-
-	//エレメントポインタからエフェクトを読み込む
-	void LoadCharaFunc::_ElemToEffect ( const P_Element pElem, const P_Effect & pEffect )
-	{
-		//attribute配列ポインタ
-		const PVP_Attribute pvpAttrAction = pElem->GetpvpAttribute ();
-
-		//---------------------------
-		//<Effect>内のElement
-		//	<Script>　...不定数
-		const PVP_Element pvpElemScript = pElem->GetpvpElement ();
-		UINT _frame = 0;
-		for ( P_Element pe : * pvpElemScript )
-		{
-			P_Script pScript = make_shared < Script > ();		//設定用スクリプトを生成
-			_ElemToScript ( pe, pScript, _frame ++ );		//エレメントからスクリプトを読込
-			pEffect->AddpScript ( pScript );			//エフェクトにスクリプトを追加
-		}
-	}
-#endif // 0
-
 	//エレメントポインタからエフェクトを読み込み、キャラに追加する
 	void LoadCharaFunc::_ElemToEffect ( const P_Element pElem, Chara & ch )
 	{
@@ -253,7 +155,6 @@ using LCF = LoadCharaFunc;
 
 		ch.AddpEffect ( pEffect );			//キャラにエフェクトを追加
 	}
-
 
 	void LoadCharaFunc::_ElemToScript ( const P_Element pElem, const P_Script pScript, UINT frame )
 	{
@@ -295,12 +196,15 @@ using LCF = LoadCharaFunc;
 		//スクリプト内部のエレメント
 		const PVP_Element pvpElemInScript = pElem->GetpvpElement ();
 
-
 		//ルート配列のエレメント
 		P_Element pElemVecRoute = pvpElemInScript->at ( ELEM_SCRIPT_ROUTE );
-#if 0
-		_ElemToRouteArray ( pElemVecRoute, pScript );
-#endif // 0
+		PVP_Element pvpElemRouteName = pElemVecRoute->GetpvpElement ();
+		for ( P_Element pe : * pvpElemRouteName )
+		{
+			PVP_Attribute pa = pe->GetpvpAttribute ();
+			UINT i = m_utl._AttrToUINT ( pa->at ( ATTR_SCRIPT_ROUTE_ID ) );
+			pScript->AddRouteID ( i );
+		}
 
 		//EFジェネレート配列のエレメント
 		P_Element pElemVecEfGnrt = pvpElemInScript->at ( ELEM_SCRIPT_EFGNRT );
@@ -309,51 +213,6 @@ using LCF = LoadCharaFunc;
 		//枠読込
 		_LoadRectAll ( pvpElemInScript, pScript );
 	}
-
-
-
-#if 0
-	//エレメントポインタからコマンド配列を読み込む
-	void LoadCharaFunc::_ElemToCommandArray ( const P_Element pElem, Chara & ch )
-	{
-		const PVP_Element pvpElemCommand = pElem->GetpvpElement ();
-		for ( P_Element pe : * pvpElemCommand )
-		{
-			P_Command pCommand = make_shared < Command > ();	//代入用の新規作成
-			_ElemToCommand ( pe, pCommand );			//エレメントからコマンドに読込
-			ch.AddpCommand ( pCommand );			//キャラに追加
-		}
-	}
-
-	//エレメントポインタからコマンドを読み込む
-	void LoadCharaFunc::_ElemToCommand ( const P_Element pElem, const P_Command & pCommand )
-	{
-		//------------------------------------------------------------
-		//アトリビュート配列
-		const PVP_Attribute pvpAttrCommand = pElem->GetpvpAttribute ();
-
-		//Name
-		const P_Attribute pAttrCommand = pvpAttrCommand->at ( ATTR_COMMAND_NAME );
-		tstring strName = pAttrCommand->GetValue ();
-		pCommand->SetName ( strName );
-
-		//Limit
-		UINT limitTime = m_utl._AttrToUINT ( pvpAttrCommand->at ( ATTR_COMMAND_LIMIT ) );
-		pCommand->SetLimitTime ( limitTime );
-
-		//------------------------------------------------------------
-		//エレメント
-
-		//子Elementは_GameKeyを不定数保持
-		const PVP_Element pvpElemGameKey = pElem->GetpvpElement ();
-		for ( P_Element pe : * pvpElemGameKey )
-		{
-			_GameKeyCommand gameKeyCmd;	//コピー可
-			_ElemToGameKeyCmd ( pe, gameKeyCmd );
-			pCommand->AddGameKey ( gameKeyCmd );
-		}
-	}
-#endif // 0
 
 	//エレメントポインタからコマンドを読み込む
 	void LoadCharaFunc::_ElemToCommand ( const P_Element pElem, Chara & ch )
@@ -384,6 +243,9 @@ using LCF = LoadCharaFunc;
 			_ElemToGameKeyCmd ( pe, gameKeyCmd );
 			pCommand->AddGameKey ( gameKeyCmd );
 		}
+		//------------------------------------------------------------
+
+		ch.AddpCommand ( pCommand );
 	}
 
 	//エレメントポインタからゲームキーコマンドを読み込む
@@ -396,58 +258,35 @@ using LCF = LoadCharaFunc;
 		gameKeyCmd.SetNot ( m_utl._AttrToBool ( pvpAttrGameKey->at ( ATTR_GAMEKEY_NOT ) ) );
 
 		//文字列を読み込んでENUMに変換する
+		int index = ATTR_GAMEKEY_LVR_ST;
 		//・Lvr
-		UINT idLvr = m_utl._AttrToUINT( pvpAttrGameKey->at ( ATTR_GAMEKEY_LVR_NUM ) );
-		tstring strGameLvr = pvpAttrGameKey->at ( ATTR_GAMEKEY_LVR_NUM )->GetValue ();
-		gameKeyCmd.SetLvr ( idLvr, StrToKeyState ( strGameLvr ) );
+		for ( UINT i = 0; i < (UINT)_GameKey::_LVR_NUM; ++ i )
+		{
+			tstring strGameLvr = pvpAttrGameKey->at ( index + i )->GetValue ();
+			gameKeyCmd.SetLvr ( i, StrToKeyState ( strGameLvr ) );
+		}
+		index += _GameKey::_LVR_NUM;
 
 		//・Btn
-		for ( UINT i = 0; i < _GameKey::_BTN_NUM; ++ i )
+		for ( UINT i = 0; i < (UINT)_GameKey::_BTN_NUM; ++ i )
 		{
-			tstring strGameKey = pvpAttrGameKey->at ( ATTR_GAMEKEY_BTN_ST + i )->GetValue();
+			tstring strGameKey = pvpAttrGameKey->at ( index + i )->GetValue();
 			gameKeyCmd.SetBtn ( i, StrToKeyState ( strGameKey ) );
 		}
 	}
 
 	_GameKeyCommand::GAME_KEY_STATE LoadCharaFunc::StrToKeyState ( tstring str )
 	{
+		if ( 0 == str.compare ( _T ( "KEY_OFF" ) ) ){ return _GameKeyCommand::GAME_KEY_OFF; }
+		else	if ( 0 == str.compare ( _T ( "KEY_ON" ) ) ) { return _GameKeyCommand::GAME_KEY_ON; }
+		else	if ( 0 == str.compare ( _T ( "KEY_PUSH" ) ) ) { return _GameKeyCommand::GAME_KEY_PUSH; }
+		else	if ( 0 == str.compare ( _T ( "KEY_RELE" ) ) ) { return _GameKeyCommand::GAME_KEY_RELE; }
+		else	if ( 0 == str.compare ( _T ( "KEY_WILD" ) ) ) { return _GameKeyCommand::GAME_KEY_WILD; }
+		else	if ( 0 == str.compare ( _T ( "KEY_IS" ) ) ) { return _GameKeyCommand::GAME_KEY_IS; }
+		else	if ( 0 == str.compare ( _T ( "KEY_NIS" ) ) ) { return _GameKeyCommand::GAME_KEY_NIS; }
 		return _GameKeyCommand::GAME_KEY_STATE ();
 	}
 	
-#if 0
-
-	//エレメントポインタからブランチ配列を読み込む
-	void LoadCharaFunc::_ElemToBranchArray ( const P_Element pElem, Chara & ch )
-	{
-		const PVP_Element pvpElemBranchAry = pElem->GetpvpElement ();
-		for ( P_Element pe : * pvpElemBranchAry )
-		{
-			P_Branch pBranch = make_shared < Branch > ();	//代入用の新規作成
-			_ElemToBranch ( pe, pBranch );			//エレメントからコマンドに読込
-			ch.AddpBranch ( pBranch );			//キャラに追加
-		}
-	}
-	void LoadCharaFunc::_ElemToBranch ( const P_Element pElem, const P_Branch & pBranch )
-	{
-		//ブランチのアトリビュート
-		const PVP_Attribute pa = pElem->GetpvpAttribute ();
-
-		//条件コマンドインデックス
-		tstring nameCmd = pa->at ( ATTR_BRANCH_COMMAND_INDEX )->GetValue ();
-		UINT indexCommand = m_utl.IndexOf ( m_vCommandName, nameCmd );
-		pBranch->SetIndexCommand ( indexCommand );
-
-		//遷移先アクションインデックス
-		tstring nameAct = pa->at ( ATTR_BRANCH_ACTION_INDEX )->GetValue ();
-		UINT indexAction = m_utl.IndexOf ( m_vActionName, nameAct );
-		pBranch->SetIndexAction ( indexAction );
-
-		//遷移先スクリプトインデックス
-		UINT indexFrame = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_FRAME_INDEX ) );
-		pBranch->SetIndexFrame ( indexFrame );
-	}
-#endif // 0
-
 	void LoadCharaFunc::_ElemToBranch ( const P_Element pElem, Chara & ch )
 	{
 		P_Branch pBranch = make_shared < Branch > ();	//代入用の新規作成
@@ -457,13 +296,15 @@ using LCF = LoadCharaFunc;
 		const PVP_Attribute pa = pElem->GetpvpAttribute ();
 
 		//条件コマンドインデックス
-		tstring nameCmd = pa->at ( ATTR_BRANCH_COMMAND_NAME )->GetValue ();
-		UINT indexCommand = m_utl.IndexOf ( m_vCommandName, nameCmd );
+//		tstring nameCmd = pa->at ( ATTR_BRANCH_COMMAND_NAME )->GetValue ();
+//		UINT indexCommand = m_utl.IndexOf ( m_vCommandName, nameCmd );
+		UINT indexCommand = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_COMMAND_ID ) );
 		pBranch->SetIndexCommand ( indexCommand );
 
 		//遷移先アクションインデックス
-		tstring nameAct = pa->at ( ATTR_BRANCH_ACTION_NAME )->GetValue ();
-		UINT indexAction = m_utl.IndexOf ( m_vActionName, nameAct );
+//		tstring nameAct = pa->at ( ATTR_BRANCH_ACTION_NAME )->GetValue ();
+//		UINT indexAction = m_utl.IndexOf ( m_vActionName, nameAct );
+		UINT indexAction = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_ACTION_ID ) );
 		pBranch->SetIndexAction ( indexAction );
 
 		//遷移先スクリプトインデックス
@@ -473,35 +314,6 @@ using LCF = LoadCharaFunc;
 		//------------------------------------------------------------
 		ch.AddpBranch ( pBranch );			//キャラに追加
 	}
-
-#if 0
-
-	//エレメントポインタからルート配列を読み込む
-	void LoadCharaFunc::_ElemToRouteArray ( const P_Element pElem, Chara & ch )
-	{
-		const PVP_Element pvpElemRouteAry = pElem->GetpvpElement ();
-		for ( P_Element pe : * pvpElemRouteAry )
-		{
-			P_Route pRoute = make_shared < Route > ();	//代入用の新規作成
-			_ElemToRoute ( pe, ch, pRoute );		//エレメントからルートに読込
-			ch.AddpRoute ( pRoute );			//キャラに追加
-		}
-	}
-	void LoadCharaFunc::_ElemToRoute ( const P_Element pElem, Chara & ch, const P_Route & pRoute )
-	{
-		//ルートのアトリビュート
-
-		//ルートのエレメント
-		P_Element pElemBlanchNameListNum = pElem->GetpvpElement ()->at ( 0 );
-		const PVP_Element pvpElemBlanchNameList = pElemBlanchNameListNum->GetpvpElement ();
-		for ( P_Element pe : * pvpElemBlanchNameList )
-		{
-			P_Attribute pa = pe->GetpvpAttribute ()->at ( ATTR_NAME_0 );
-			UINT i = m_utl.IndexOf ( m_vBranchName, pa->GetValue () );
-			pRoute->AddBranchID ( i );
-		}
-	}
-#endif // 0
 
 	void LoadCharaFunc::_ElemToRoute ( const P_Element pElem, Chara & ch )
 	{
@@ -519,7 +331,6 @@ using LCF = LoadCharaFunc;
 		//------------------------------------------------------------
 		ch.AddpRoute ( pRoute );			//キャラに追加
 	}
-
 
 	//エレメントポインタからEFジェネレートを読み込む
 	void LoadCharaFunc::_ElemToEfGnrtArray ( const P_Element pElem, const P_Script & pScript )

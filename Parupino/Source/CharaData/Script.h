@@ -61,7 +61,7 @@ namespace GAME
 		PV_RECT	m_pvHRect;		//当り枠リスト
 		PV_RECT	m_pvORect;		//相殺枠リスト
 
-		PVP_Route	m_pvpRoute;		//ルートリスト
+		V_UINT		m_vRouteID;		//ルートリスト
 		PVP_EfGnrt	m_pvpEfGnrt;	//Efジェネレートリスト
 
 		int		m_power;		//攻撃値
@@ -98,13 +98,9 @@ namespace GAME
 		void SetCalcState ( CLC_ST clcSt ) { m_CalcState = clcSt; }
 		CLC_ST GetCalcState () const { return m_CalcState; }
 
-#if 0
-		//ブランチリスト
-		PVP_Branch GetpvpBranch () const { return m_pvpBranch; }
-
-		//ブランチリストに追加
-		void AddpBranch ( P_Branch pBranch ) { m_pvpBranch->push_back ( pBranch ); }
-#endif // 0
+		//ルート
+		void AddRouteID ( UINT i ) { m_vRouteID.push_back ( i ); }
+		const V_UINT & GetvRouteID () const { return m_vRouteID; }
 
 		//EfGnrtリスト
 		PVP_EfGnrt GetpvpEfGnrt () const { return m_pvpEfGnrt; }

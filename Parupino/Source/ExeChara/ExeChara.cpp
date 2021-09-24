@@ -93,16 +93,6 @@ namespace GAME
 		LoadChara loadChara ( name, *m_pChara );
 
 		//基本状態アクションIDを手動で設定する
-#if 0
-		<STAND ID = "0" Name = "Stand">< / STAND>
-		<POISED ID = "25" Name = "S_Guard">< / POISED>
-		<CLANG ID = "29" Name = "Clang">< / CLANG>
-		<AVOID ID = "30" Name = "Avoid">< / AVOID>
-		<DOTTY ID = "31" Name = "Dotty">< / DOTTY>
-		<DAMAGED ID = "32" Name = "DamagedL">< / DAMAGED>
-		<DOWN ID = "39" Name = "Lose">< / DOWN>
-		<WIN ID = "41" Name = "Win">< / WIN>
-#endif // 0
 		m_pChara->SetBsAction ( BA_STAND, 0 );
 		m_pChara->SetBsAction ( BA_POISED, 25 );
 		m_pChara->SetBsAction ( BA_CLANG, 29 );
@@ -519,7 +509,7 @@ namespace GAME
 		PVP_Branch pvpBranch = m_pScript->GetpvpBranch ();
 		UINT transitID = m_pCharaInput->GetTransitID ( pvpBranch, m_dirRight );
 #endif // 0
-		UINT transitID = NO_COMPLETE;
+		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_dirRight );
 
 		//コマンドが完成していたら
 		if ( NO_COMPLETE != transitID )

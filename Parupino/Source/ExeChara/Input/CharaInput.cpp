@@ -29,11 +29,15 @@ namespace GAME
 			m_vGameKey.push_back ( gameKey );
 		}
 
+#if 0
+
 		//スクリプトで指定しない直接入力の状態
 		gkc_lvr4.SetLvr ( _GameKeyCommand::LVR_CMD_4, _GameKeyCommand::GAME_KEY_IS );
 		gkc_lvr1.SetLvr ( _GameKeyCommand::LVR_CMD_1, _GameKeyCommand::GAME_KEY_IS );
 		gkc_lvr4E.SetLvr ( _GameKeyCommand::LVR_CMD_4E, _GameKeyCommand::GAME_KEY_IS );
 		gkc_lvr2E.SetLvr ( _GameKeyCommand::LVR_CMD_2E, _GameKeyCommand::GAME_KEY_IS );
+
+#endif // 0
 	}
 
 	//デストラクタ
@@ -139,6 +143,8 @@ namespace GAME
 		m_vGameKey[0] = gameKey;
 	}
 
+#if 0
+
 	//ブランチリストをチェックして
 	//コマンド条件が達成されていたら遷移先のアクションを返す
 	P_Action CharaInput::GetpTransitAction ( PVP_Branch pvpBranch, bool dirRight )
@@ -169,6 +175,42 @@ namespace GAME
 				return (*it)->GetIndexAction ();
 			}
 		}
+		return NO_COMPLETE;
+	}
+
+#endif // 0
+
+
+	//ルートリストをチェックして各種ブランチのコマンドが達成されていたら
+	//遷移先のアクションIDを返す
+	//戻値：enum { NO_COMPLETE (0xFFFFFFFF) } 不成立
+	UINT CharaInput::GetTransitID ( Chara & ch, P_Script pScp, bool dirRight )
+	{
+		//キャラの持つルート,ブランチ,コマンドの参照
+		const VP_Route vpRoute = ch.GetvpRoute ();
+		const VP_Branch vpBranch = ch.GetvpBranch ();
+		const VP_Command vpCommand = ch.GetvpCommand ();
+		
+		//スクリプトの持つルートリスト
+		for ( UINT indexRoute : pScp->GetvRouteID () )
+		{
+			const V_UINT vBranchID = vpRoute[indexRoute]->GetvIDBranch ();
+
+			//対象のブランチリスト
+			for ( UINT indexBranch : vBranchID )
+			{
+				UINT indexCommand = vpBranch[indexBranch]->GetIndexCommand ();
+				P_Command pCmd = vpCommand[indexCommand];
+
+				//対象コマンドが成立していたら
+				if ( pCmd->Compare ( m_vGameKey, dirRight ) )
+				{
+					//遷移先アクションIDを返す
+					return vpBranch[indexBranch]->GetIndexAction ();
+				}
+			}
+		}
+		//不成立のとき
 		return NO_COMPLETE;
 	}
 

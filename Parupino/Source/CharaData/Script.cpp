@@ -15,7 +15,6 @@ namespace GAME
 
 	Script::~Script ()
 	{
-		m_pvpRoute->clear ();
 		m_pvpEfGnrt->clear ();
 	}
 
@@ -26,13 +25,11 @@ namespace GAME
 		m_pvHRect = make_shared < V_RECT > ();
 		m_pvORect = make_shared < V_RECT > ();
 
-		m_pvpRoute = make_shared < VP_Route > ();
 		m_pvpEfGnrt = make_shared < VP_EfGnrt > ();
 	}
 
 	void Script::Rele ()
 	{
-		m_pvpRoute->clear (); m_pvpRoute.reset ();
 		m_pvpEfGnrt->clear (); m_pvpEfGnrt.reset ();
 	}
 
