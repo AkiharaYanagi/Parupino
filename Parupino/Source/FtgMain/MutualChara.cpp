@@ -537,7 +537,8 @@ namespace GAME
 	//˜g•\¦Ø‘Ö ExeChara‚ÅŒÄ‚Ô‚Æ1P2P‚Å‚Q‰ñŒÄ‚Î‚ê‚Ä‚µ‚Ü‚¤
 	void MutualChara::SwitchRect ()
 	{
-		static bool b1 = false;
+		//static bool b1 = false;
+		static bool b1 = true;
 		if ( ::GetAsyncKeyState ( '1' ) & 0x0001 ) { b1 ^= true; }
 		if ( b1 )
 		{

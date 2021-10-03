@@ -168,9 +168,10 @@ using LCF = LoadCharaFunc;
 		//グループ(実効では用いない)
 
 		//イメージID
-		//名前をIDに変換
-		tstring tstrImageName = pAttr->at ( ATTR_SCRIPT_IMAGE_ID )->GetValue ();
-		pScript->SetImageIndex ( m_utl.IndexOf ( m_vMainImageName, tstrImageName ) );
+//		//名前をIDに変換
+//		tstring tstrImageName = pAttr->at ( ATTR_SCRIPT_IMAGE_ID )->GetValue ();
+//		pScript->SetImageIndex ( m_utl.IndexOf ( m_vMainImageName, tstrImageName ) );
+		pScript->SetImageIndex ( m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_IMAGE_ID ) ) );
 
 		//Pos
 		VEC2 pos = m_utl._AttrToVec2 ( pAttr->at ( ATTR_SCRIPT_POS_X ), pAttr->at ( ATTR_SCRIPT_POS_Y ) );

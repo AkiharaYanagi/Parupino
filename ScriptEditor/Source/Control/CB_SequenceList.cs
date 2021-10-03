@@ -4,6 +4,7 @@ using System.ComponentModel;
 
 namespace ScriptEditor
 {
+	using BD_Sqc = BindingDictionary < Sequence >;
 	using BL_Sqc = BindingList < Sequence >;
 	using SetFunc = System.Action < ScriptEditor.Sequence >;
 //	using GetFunc = System.Func < int >;
@@ -13,6 +14,9 @@ namespace ScriptEditor
 	//------------------------------------------------------------
 	public class CB_SequenceList : ComboBox 
 	{
+		//対象の保存
+		public BD_Sqc BD_Sqc = null;
+
 		//表示の更新用
 		public DispCompend DispCompend { get; set; } = null;
 
@@ -26,10 +30,13 @@ namespace ScriptEditor
 		}
 
 		//キャラデータ読込時
-		public void SetCharaData ( BL_Sqc bl_sqc )
+		public void SetCharaData ( BD_Sqc bd_sqc )
 		{
+			//保存
+			BD_Sqc = bd_sqc;
+
 			//データソースに指定
-			this.DataSource = bl_sqc;
+			this.DataSource = bd_sqc.GetBindingList ();
 		}
 
 		//関連付け
@@ -38,8 +45,14 @@ namespace ScriptEditor
 			Set = sf;
 		}
 
+		//名前から選択
+		public void SelectName ( string name )
+		{
+			SelectedItem = BD_Sqc.Get ( name );
+		}
+
 		//閉じたときのイベント
-		protected override void OnDropDownClosed ( EventArgs e )
+		protected override void OnSelectionChangeCommitted ( EventArgs e )
 		{
 			if ( null == Set ) { return; }
 
@@ -49,7 +62,7 @@ namespace ScriptEditor
 			//表示更新
 			DispCompend.Disp ();
 
-			base.OnDropDownClosed ( e );
+			base.OnSelectionChangeCommitted ( e );
 		}
 	}
 

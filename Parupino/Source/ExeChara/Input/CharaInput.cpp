@@ -48,9 +48,6 @@ namespace GAME
 	//更新
 	void CharaInput::Update ( bool dirRight )
 	{
-		//今回のキーを前回に保存する
-
-
 		//今回の入力をゲームキーに直して保存
 		_GameKey gameKey;
 
@@ -125,7 +122,8 @@ namespace GAME
 			bButton3 = IS_KEY ( P2_BUTTON4 );
 		}
 
-		if ( bButton3 )
+//		if ( bButton0 )
+		if ( bKey6 )
 		{
 			int i = 0;
 		}
@@ -134,6 +132,11 @@ namespace GAME
 		gameKey.SetBtn ( 1, bButton1 );
 		gameKey.SetBtn ( 2, bButton2 );
 		gameKey.SetBtn ( 3, bButton3 );
+
+
+		//前回のキーを今回にも保存する
+		gameKey.ReservePrevious ( m_vGameKey[0] );
+
 
 		//ゲーム入力を更新しながら現在フレーム分を保存
 		for ( int i = m_vGameKeyNum - 1; i >= 1; -- i )

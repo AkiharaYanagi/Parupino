@@ -83,7 +83,8 @@ namespace GAME
 		//tstring&のためassignで指定する
 		switch ( m_name )
 		{
-		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
+//		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
+		case CHARA_TEST: name.assign ( _T ( "PlayerChara.dat" ) ); break;
 #if 0
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
 		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;
@@ -425,7 +426,7 @@ namespace GAME
 	// アクションとスクリプトによらない一定の処理
 	void ExeChara::AlwaysMove ()
 	{
-		//ダメージ表示減少
+		//ダメージ分のライフ表示減少
 		if ( 0 < m_damage ) { --m_damage; }
 
 		//---------------------------------------------------
@@ -712,6 +713,10 @@ namespace GAME
 
 		//ゲージ更新
 		m_dispChara.UpdateGauge ( m_playerID, m_life, m_damage, m_balance );
+
+		//入力更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
+
 	}
 
 
@@ -760,11 +765,13 @@ namespace GAME
 		}
 #endif // 0
 
+
 		//計算種類で分岐
 		CLC_ST clcSt = m_pScript->GetCalcState ();
 		switch ( clcSt )
 		{
 		case CLC_MAINTAIN: 	//持続
+			m_acc = m_pScript->GetAcc ();
 
 			m_vel.x += m_acc.x;		//加速度
 			m_ptChara.x += dir * m_vel.x;		//速度
@@ -860,7 +867,8 @@ namespace GAME
 	void ExeChara::LookOther ()
 	{
 		//空中は持続
-		if ( IsJump () ) { return; }
+		if ( IsJump () )
+		{ return; }
 
 		//位置xが同じ場合は持続
 		VEC2 otherPos = m_pOther.lock ()->GetPos ();

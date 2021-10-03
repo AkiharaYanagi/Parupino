@@ -22,9 +22,11 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------------
 		//内部使用定数
 		private const int W = 20;	//升幅
-		private const int H = 20;	//升高
+		private const int H = 12;	//升高
 		private const int BX = 100;	//基準X
-		private const int BY = 20;	//基準Y
+		private const int BY = 12;	//基準Y
+
+		private const int HH = 10;	//升高半分
 
 
 		//-----------------------------------------------------------------------------
@@ -62,7 +64,6 @@ namespace ScriptEditor
 			pictureBox1.Invalidate ();
 		}
 
-
 		private void pictureBox1_Paint ( object sender, PaintEventArgs e )
 		{
 			//オブジェクトが設定されていないときデフォルトの表示
@@ -76,8 +77,8 @@ namespace ScriptEditor
 
 			//内部使用リソース
 			using ( Pen PEN_BAR = new Pen ( Color.FromArgb ( 0x80, 0x80, 0xff ), 1 ) )
-			using ( Pen PEN_BASE_BAR = new Pen ( Color.FromArgb ( 0xa0, 0xa0, 0xa0 ), 1 ) )
-			using ( Pen PEN_SELECTED = new Pen ( Color.FromArgb ( 0x00, 0x00, 0xff ), 1.1f ) )
+			using ( Pen PEN_BASE_BAR = new Pen ( Color.FromArgb ( 0xc0, 0xc0, 0xc0 ), 0.5f ) )
+			using ( Pen PEN_SELECTED = new Pen ( Color.FromArgb ( 0x00, 0x00, 0xff ), 2.0f ) )
 			using ( SolidBrush BRUSH_0 = new SolidBrush ( Color.FromArgb ( 0xff, 0xd0, 0xff, 0xd0 ) ) )
 			using ( StringFormat STR_FMT = new StringFormat () )
 			{
@@ -93,6 +94,7 @@ namespace ScriptEditor
 			this.Height = 130 + BY + ( 2 * H );
 
 			pictureBox1.Width = scWidth + 100;
+			pictureBox1.Height = H * 7;
 
 			//大きさの一時保存
 			int TW = this.Width;
@@ -101,6 +103,8 @@ namespace ScriptEditor
 
 			//個数
 			int N = Sqc.ListScript.Count;
+			//余剰個数
+			const int SURPLUS = 5;
 
 			//選択
 			int selectedScript = EditCompend.SelectedScriptIndex;
@@ -127,6 +131,7 @@ namespace ScriptEditor
 			int count = 0;
 			foreach ( Script s in Sqc.ListScript )
 			{
+#if false
 				Color c_0 =  Color.FromArgb ( 0xff, 0xff, 0xff );
 
 				//グループ表示
@@ -147,6 +152,13 @@ namespace ScriptEditor
 				Rectangle r_eg = new Rectangle ( BX + (W * count), W * 4, W, H );
 				Color c_eg = ( 0 < s.BD_EfGnrt.Count () ) ? Color.FromArgb ( 0xc0, 0xff, 0xff ) : c_0;
 				g.FillRectangle ( new SolidBrush ( c_eg ), r_eg );
+#endif
+				DrawScp ( g, count, 0, DefineColor.Get ( s.Group ) );	//グループ表示
+				DrawScp ( g, count, 2, GetScpCntClr ( s.ListCRect, ScpCntColor [ 1 ] ) );	//接触枠
+				DrawScp ( g, count, 3, GetScpCntClr ( s.ListHRect, ScpCntColor [ 2 ] ) );	//防御枠
+				DrawScp ( g, count, 4, GetScpCntClr ( s.ListARect, ScpCntColor [ 3 ] ) );	//攻撃枠
+				DrawScp ( g, count, 5, GetScpCntClr ( s.ListORect, ScpCntColor [ 4 ] ) );	//相殺枠
+				DrawScp ( g, count, 6, GetScpEfGnClr ( s.BD_EfGnrt, ScpCntColor [ 5 ] ) );	//相殺枠
 
 				++ count;
 			}
@@ -154,45 +166,54 @@ namespace ScriptEditor
 
 			//---------------------------------------------------------
 			//フレーム数
-			for ( int i = 0; i < N + 5; ++i )
+			for ( int i = 0; i < N + SURPLUS; ++i )
 			{
-				Rectangle r = new Rectangle ( BX + i * W, H, W, H );
-				g.DrawString ( i.ToString (), this.Font, Brushes.Gray, r, STR_FMT );
+				Rectangle r = new Rectangle ( BX + i * W - 10, H + 2, W + 20, H );
+				g.DrawString ( i.ToString (), Font, Brushes.Gray, r, STR_FMT );
 			}
 
 			//文字
-			Rectangle rs0 = new Rectangle ( 0, 0, BX, H );
-			g.DrawString ( "Group", Font, Brushes.Gray, rs0, STR_FMT );
-			Rectangle rs1 = new Rectangle ( 0, H, BX, H );
-			g.DrawString ( "Frame", Font, Brushes.Gray, rs1, STR_FMT );
-			Rectangle rs2 = new Rectangle ( 0, H * 2, BX, H );
-			g.DrawString ( "ARect", Font, Brushes.LightCoral, rs2, STR_FMT );
-			Rectangle rs3 = new Rectangle ( 0, H * 3, BX, H );
-			g.DrawString ( "ORect", Font, Brushes.Goldenrod, rs3, STR_FMT );
-			Rectangle rs4 = new Rectangle ( 0, H * 4, BX, H );
-			g.DrawString ( "EfGnrt", Font, Brushes.Goldenrod, rs4, STR_FMT );
+			DrawStr_0 ( g, "Group", 0, STR_FMT );
+			DrawStr_0 ( g, "Frame", 1, STR_FMT );
+			DrawStr_0 ( g, "CRect", 2, STR_FMT );
+			DrawStr_0 ( g, "HRect", 3, STR_FMT );
+			DrawStr_0 ( g, "ARect", 4, STR_FMT );
+			DrawStr_0 ( g, "ORect", 5, STR_FMT );
+			DrawStr_0 ( g, "EfGnrt", 6, STR_FMT );
 
 			//---------------------------------------------------------
 			//基準線
-			g.DrawLine ( PEN_BASE_BAR, 0, 0, 0, (2+3) * H );
-			for ( int i = 0; i < N + 5; ++ i )	//縦線
+			const int PH = H + H * 6;
+
+			//縦線	
+			g.DrawLine ( PEN_BASE_BAR, 0, 0, 0, PH );
+			for ( int i = 0; i < N + SURPLUS + 1; ++ i )
 			{
-				int bx0 = ( BX + W ) + W * i;
-				g.DrawLine ( PEN_BASE_BAR, bx0, H, bx0, (2+3) * H );
+				int bx0 = BX + W * i;
+				g.DrawLine ( PEN_BASE_BAR, bx0, 0, bx0, PH );
 			}
-			for ( int i = 0; i < 3; ++ i )	//横線
+
+			//横線
+			g.DrawLine ( PEN_BASE_BAR, 0, 0, PW, 0 );
+#if false
+			for ( int i = 0; i < 6; ++ i )
 			{
-				int by0 = BY + H * (i + 2);
+				int by0 = BY + H * i;
 				g.DrawLine ( PEN_BASE_BAR, 0, by0, PW, by0 );
 			}
+			g.DrawLine ( PEN_BASE_BAR, 0, PH - 1, PW, PH - 1 );
+#endif
+
+#if false
 			g.DrawLine ( PEN_BAR, BX, 0, BX, TH );
 			g.DrawLine ( PEN_BAR, 0, BY, PW, BY );
 			g.DrawLine ( PEN_BAR, 0, 0, PW, 0 );
 			g.DrawLine ( PEN_BAR, 0, BY + H, PW, BY + H );
+#endif
 
 			//---------------------------------------------------------
 			//選択位置表示
-			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, 0, W, TH );	//フレーム選択
+			g.DrawRectangle ( Pens.Firebrick, BX + selectedScript * W, 0, W, PH - 1 );	//フレーム選択
 			
 			}	//using
 		}
@@ -201,6 +222,54 @@ namespace ScriptEditor
 		private void pictureBox1_Paint_Default ( object sender, PaintEventArgs e )
 		{
 		}
+
+		//DrawStringFunc
+		private void DrawStr_0 ( Graphics g, string str, int i, StringFormat sf )
+		{
+			Rectangle r = new Rectangle ( 0, H * i + 2, BX, H );
+			using ( Font FONT0 = new Font ( "Meiryo", 8.0f ) )
+			{
+				g.DrawString ( str, FONT0, StrColorBrushes [ i ], r, sf );
+			}
+		}
+		private readonly Brush[] StrColorBrushes =
+		{
+			Brushes.Gray, 
+			Brushes.Gray, 
+			new SolidBrush ( ScpCntColor [ 1 ] ),
+			Brushes.Teal, 
+			Brushes.LimeGreen, 
+			Brushes.LightCoral, 
+			Brushes.Goldenrod, 
+			Brushes.Turquoise, 
+		};
+
+		//DrawScript
+		private void DrawScp ( Graphics g, int count, int i, Color clr )
+		{
+			Rectangle r = new Rectangle ( BX + (W * count), H * i, W, H );
+			g.FillRectangle ( new SolidBrush ( clr ), r );
+		}
+		private Color GetScpCntClr ( List<Rectangle> L_Rect, Color clr )
+		{
+			Color ret_clr = ( 0 < L_Rect.Count ) ? clr : Color.White;
+			return ret_clr;
+		}
+		private Color GetScpEfGnClr ( BindingDictionary < EffectGenerate > BD_EfGn, Color clr )
+		{
+			Color ret_clr = ( 0 < BD_EfGn.Count () ) ? clr : Color.White;
+			return ret_clr;
+		}
+		private static readonly Color[] ScpCntColor =
+		{
+			Color.White,
+			Color.FromArgb ( 0x80, 0x80, 0xff ),
+			Color.FromArgb ( 0xc0, 0xff, 0xc0 ),
+			Color.FromArgb ( 0xff, 0xc0, 0x80 ),
+			Color.FromArgb ( 0xff, 0xff, 0xb0 ),
+			Color.FromArgb ( 0xc0, 0xff, 0xff ), 
+		};
+
 
 		//----------------------------------------------------------------------------------
 		//	マウスイベント
@@ -332,6 +401,8 @@ namespace ScriptEditor
 			EditCompend ec = EditCompend;
 			EditScript es = ec.EditScript;
 			es.PasteGroup ( ec.SelectedScript );
+
+			pictureBox1.Invalidate ();
 		}
 
 

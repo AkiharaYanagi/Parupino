@@ -42,23 +42,6 @@ namespace ScriptEditor
 				TestChara testChara = new TestChara ();
 				testChara.Test ( testCharaData );
 
-				//イメージファイル読込のテスト
-#if true
-				testCharaData.behavior.BD_Image.Clear ();
-				string tsetImageDir = "out";
-				string[] files = Directory.GetFiles ( tsetImageDir );
-				foreach ( string filename in files )
-				{
-					string f = Path.GetFileName ( filename );
-					string fn = f.Substring ( 4 );	//先頭のインデックス("ddd_")を除く
-
-					//画像からImageData型を作成
-					ImageData imageData = new ImageData ( fn, Image.FromFile ( filename ) );
-
-					//追加
-					testCharaData.behavior.BD_Image.Add ( imageData );
-				}
-#endif
 
 #if true
 				//書出
@@ -75,14 +58,15 @@ namespace ScriptEditor
 				//読込
 				LoadChara loadChara = new LoadChara ( edittingFilename, chara );
 
-				//フォームテキストの更新
-				SetFormText ( edittingFilename );
 		
 				//テストデータからキャラ作成ソースファイルを作成
 //				MakeTestCharaData mtcd = new MakeTestCharaData ( chara );
 
 				//キャラデータの適用
 				SetCharaData ( chara );
+
+				//フォームテキストの更新
+				SetFormText ( edittingFilename );
 			}
 			catch ( ArgumentException e )
 			{

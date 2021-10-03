@@ -62,7 +62,7 @@ namespace ScriptEditor
 		//キャラデータ
 		public void SetCharaData ( Chara ch )
 		{
-			CBSL_Next.SetCharaData ( ch.behavior.BD_Sequence.GetBindingList() );
+			CBSL_Next.SetCharaData ( ch.behavior.BD_Sequence );
 		}
 
 		//関連付け
@@ -70,18 +70,19 @@ namespace ScriptEditor
 		{
 			action = act;
 			TB_Name.Text = act.Name;
-//			CBSL_Next.SelectedItem = act.NextAction;
+			CBSL_Next.SelectName ( act.NextActionName );
 			CB_Category.SelectedItem = act.Category;
 			CB_Posture.SelectedItem = act.Posture;
 
 			//各コントロールに設定用のデリゲートを渡す
 //			CBSL_Next.Associate ( a => act.NextAction = (Action)a );
+			CBSL_Next.Set = a => { act.NextActionName = a.Name; };
 			TBN_Balance.Assosiate ( i => act._Balance = i, ()=> act._Balance );
 		}
 
 		//-----------------------------------------------------------
 		//アクション：名前の変更
-		private void TB_Name_TextChanged ( object sender, System.EventArgs e )
+		private void TB_Name_TextChanged ( object sender, EventArgs e )
 		{
 			action.Name = TB_Name.Text;
 //			DispCompend.UpdateData ();
@@ -115,7 +116,6 @@ namespace ScriptEditor
 		private void CB_Posture_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			action.Posture = (ActionPosture)CB_Posture.SelectedItem;
-//			DispCompend.UpdateData ();
 		}
 
 	}
