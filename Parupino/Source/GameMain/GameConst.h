@@ -84,6 +84,21 @@ namespace GAME
 		AP_STAND, AP_CROUCH, AP_JUMP
 	};
 
+	//ブランチ条件
+	enum BRANCH_CONDITION
+	{
+		BRC_DMG,	//自分が喰らい
+		BRC_HIT_I,	//相手にヒット(自身を変更)
+		BRC_HIT_E,	//相手にヒット(相手を変更)
+		BRC_THR,	//投げ成立 (ゲームメイン指定)
+						//打撃がヒット→バランス値参照→０なら成立
+		BRC_CMD,	//コマンド成立
+		BRC_GRD,	//着地
+
+		//他、特殊フラグをゲームメインで設定できる
+		//FLG_0, 
+	};
+
 	//打合結果 (左右)
 	enum CLANG_DECISION_LR
 	{

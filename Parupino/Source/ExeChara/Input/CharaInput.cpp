@@ -202,6 +202,10 @@ namespace GAME
 			//対象のブランチリスト
 			for ( UINT indexBranch : vBranchID )
 			{
+				//コマンド分岐以外は飛ばす
+				if ( BRC_CMD != vpBranch[indexBranch]->GetCondition () ) { continue; }
+
+				//コマンド取得
 				UINT indexCommand = vpBranch[indexBranch]->GetIndexCommand ();
 				P_Command pCmd = vpCommand[indexCommand];
 

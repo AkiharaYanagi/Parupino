@@ -296,6 +296,10 @@ using LCF = LoadCharaFunc;
 		//ブランチのアトリビュート
 		const PVP_Attribute pa = pElem->GetpvpAttribute ();
 
+		//分岐条件
+		UINT indexCondition = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_CONDITION ) );
+		pBranch->SetCondition ( (BRANCH_CONDITION)indexCondition );
+
 		//条件コマンドインデックス
 //		tstring nameCmd = pa->at ( ATTR_BRANCH_COMMAND_NAME )->GetValue ();
 //		UINT indexCommand = m_utl.IndexOf ( m_vCommandName, nameCmd );

@@ -10,6 +10,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
+#include "../GameMain/GameConst.h"
 #include "Command.h"
 
 //-------------------------------------------------------------------------------------------------
@@ -28,6 +29,7 @@ namespace GAME
 
 	class Branch
 	{
+		BRANCH_CONDITION		m_condition;	//分岐条件
 		UINT		m_indexCommand;		//条件コマンド配列添字
 		WP_Command	m_pCommand;			//条件コマンドポインタ
 		UINT		m_indexSequence;	//遷移先シークエンス添字
@@ -38,6 +40,10 @@ namespace GAME
 		Branch ();
 		Branch ( const Branch & rhs ) = delete;
 		~Branch ();
+
+		//分岐条件
+		void SetCondition ( BRANCH_CONDITION bc ) { m_condition = bc; }
+		BRANCH_CONDITION GetCondition () const { return m_condition; }
 
 		//条件コマンド配列添字
 		void SetIndexCommand ( UINT index ) { m_indexCommand = index; }
