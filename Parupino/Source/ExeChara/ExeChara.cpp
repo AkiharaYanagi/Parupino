@@ -269,7 +269,8 @@ namespace GAME
 	}
 
 
-	//ヒット発生
+	//相手・攻撃 → 自分・くらい
+	//くらい状態・ダメージ処理
 	void ExeChara::OnDamaged ( int damage )
 	{
 		//回避判定
@@ -367,7 +368,7 @@ namespace GAME
 			SOUND->Play ( SE_Guard );
 		}
 
-		//ヒット時
+		//くらい時
 		if ( hit )
 		{
 			//ダメージをライフによって補正(根性値)
@@ -398,10 +399,38 @@ namespace GAME
 		}
 	}
 
+	//自分・攻撃 -> 相手・くらい
 	//ヒット発生(攻撃成立側)
 	void ExeChara::OnHit ()
 	{
 		m_hitEst = true;		//攻撃成立フラグ
+
+		//-----------------------------------------------------
+		//条件分岐
+
+		//投げ・自分
+		UINT indexAction = TransitAction_Hit ();
+		if ( NO_COMPLETE != indexAction )
+		{
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( indexAction );
+			P_Script pscr = pact->GetpScript ( 0 );
+
+			m_actionID = indexAction;			//遷移
+		}
+
+		//投げ・相手
+		UINT indexAction_e = TransitAction_Hit_Enemy ();
+		if ( NO_COMPLETE != indexAction_e )
+		{
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( indexAction_e );
+			P_Script pscr = pact->GetpScript ( 0 );
+
+			m_pOther.lock()->TransitAction ( indexAction_e );			//遷移
+		}
+		//-----------------------------------------------------
+
 		m_tmrHitstop->Start ();		//ヒットストップの設定
 	}
 
@@ -480,7 +509,7 @@ namespace GAME
 	}
 
 
-	//アクションの移項
+	//アクションの移項(直接指定)
 	void ExeChara::TransitAction ( UINT actionID )
 	{
 		//遷移先チェック
@@ -495,7 +524,7 @@ namespace GAME
 		m_pScript = m_pAction->GetpScript ( m_frame );
 	}
 
-	// アクション移項
+	// アクション移項(条件:コマンド, アクション終了)
 	void ExeChara::TransitAction ()
 	{
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
@@ -554,6 +583,55 @@ namespace GAME
 
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 	}
+
+	//アクション移項(条件:ヒット時、対象:自分)
+	UINT ExeChara::TransitAction_Hit ()
+	{
+		//キャラの持つルート,ブランチ,コマンドの参照
+		const VP_Route vpRoute = m_pChara->GetvpRoute ();
+		const VP_Branch vpBranch = m_pChara->GetvpBranch ();
+
+		//スクリプトの持つルートリスト
+		for ( UINT indexRut : m_pScript->GetvRouteID () )
+		{
+			const V_UINT vBrcID = vpRoute[indexRut]->GetvIDBranch ();
+	
+			//対象のブランチリスト
+			for ( UINT id : vBrcID )
+			{
+				//投げ成立(自分)
+				if ( BRC_THR_I != vpBranch[id]->GetCondition () ) { continue; }
+
+				return vpBranch[id]->GetIndexAction ();
+			}
+		}
+		return NO_COMPLETE;
+	}
+
+	//アクション移項(条件:ヒット時、対象:相手)
+	UINT ExeChara::TransitAction_Hit_Enemy ()
+	{
+		//キャラの持つルート,ブランチ,コマンドの参照
+		const VP_Route vpRoute = m_pChara->GetvpRoute ();
+		const VP_Branch vpBranch = m_pChara->GetvpBranch ();
+
+		//スクリプトの持つルートリスト
+		for ( UINT indexRut : m_pScript->GetvRouteID () )
+		{
+			const V_UINT vBrcID = vpRoute[indexRut]->GetvIDBranch ();
+
+			//対象のブランチリスト
+			for ( UINT id : vBrcID )
+			{
+				//投げ成立(相手)
+				if ( BRC_THR_E != vpBranch[id]->GetCondition () ) { continue; }
+
+				return vpBranch[id]->GetIndexAction ();
+			}
+		}
+		return NO_COMPLETE;
+	}
+
 
 	//エフェクト処理の生成
 	void ExeChara::MakeEfOprt ()
