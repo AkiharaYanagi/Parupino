@@ -33,11 +33,17 @@ namespace ScriptEditor
 		//コンポーネント初期化
 		private void InitializeComponent ()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.treeView1 = new System.Windows.Forms.TreeView();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.すべて展開ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.すべて閉鎖ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.contextMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// treeView1
 			// 
+			this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
 			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeView1.HideSelection = false;
 			this.treeView1.Location = new System.Drawing.Point(0, 0);
@@ -47,12 +53,35 @@ namespace ScriptEditor
 			this.treeView1.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeSelect);
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
 			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.すべて展開ToolStripMenuItem,
+            this.すべて閉鎖ToolStripMenuItem});
+			this.contextMenuStrip1.Name = "contextMenuStrip1";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+			// 
+			// すべて展開ToolStripMenuItem
+			// 
+			this.すべて展開ToolStripMenuItem.Name = "すべて展開ToolStripMenuItem";
+			this.すべて展開ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.すべて展開ToolStripMenuItem.Text = "すべて展開";
+			this.すべて展開ToolStripMenuItem.Click += new System.EventHandler(this.すべて展開ToolStripMenuItem_Click);
+			// 
+			// すべて閉鎖ToolStripMenuItem
+			// 
+			this.すべて閉鎖ToolStripMenuItem.Name = "すべて閉鎖ToolStripMenuItem";
+			this.すべて閉鎖ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.すべて閉鎖ToolStripMenuItem.Text = "すべて閉鎖";
+			this.すべて閉鎖ToolStripMenuItem.Click += new System.EventHandler(this.すべて閉鎖ToolStripMenuItem_Click);
+			// 
 			// SequenceTree
 			// 
 			this.AutoScroll = true;
 			this.Controls.Add(this.treeView1);
 			this.Name = "SequenceTree";
 			this.Size = new System.Drawing.Size(129, 266);
+			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -96,8 +125,8 @@ namespace ScriptEditor
 				string seq_name = treeView1.SelectedNode.Text;
 				EditCompend.SelectSequence ( seq_name );
 			}
-#if false
-#endif
+
+			treeView1.ExpandAll ();
 		}
 
 		//更新
@@ -188,6 +217,11 @@ namespace ScriptEditor
 //			ReExpand ();	
 		}
 
+		private ContextMenuStrip contextMenuStrip1;
+		private IContainer components;
+		private ToolStripMenuItem すべて展開ToolStripMenuItem;
+		private ToolStripMenuItem すべて閉鎖ToolStripMenuItem;
+
 		//選択済みノードを一時保存して再展開
 		private TreeNode tmpNd = null;	//選択を一時保存
 		public void ReExpand ()
@@ -264,6 +298,16 @@ namespace ScriptEditor
 			//全追加
 			treeView1.Nodes.AddRange ( root );
 
+		}
+
+		private void すべて展開ToolStripMenuItem_Click ( object sender, EventArgs e )
+		{
+			treeView1.ExpandAll ();
+		}
+
+		private void すべて閉鎖ToolStripMenuItem_Click ( object sender, EventArgs e )
+		{
+			treeView1.CollapseAll ();
 		}
 	}
 }

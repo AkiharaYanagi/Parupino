@@ -90,6 +90,8 @@ namespace GAME
 		bool	m_FirstEf;		//初回Efフラグ
 		bool	m_FirstSE;		//初回SEフラグ
 
+		bool	m_ForcedChange;	//強制変更
+
 		P_Timer	m_tmrHitstop;	//ヒットストップタイマー
 		P_Timer	m_tmrDown;		//ダウンタイマー
 		P_Timer	m_tmrEnd;		//終了状態タイマー

@@ -25,6 +25,7 @@ namespace GAME
 		, m_wait ( true ), m_stop ( false ), m_FirstEf ( false ), m_FirstSE ( false )
 		, m_life ( 0 ), m_balance ( 0 ), m_damage ( 0 ), m_power ( 0 )
 		, m_hitEst ( false ), m_clang ( false ), m_transit ( false )
+		, m_ForcedChange ( false )
 		, m_bDispRect ( true )
 //		, m_lurch ( 0 ), m_lurchTimer ( 0 )
 	{
@@ -368,8 +369,8 @@ namespace GAME
 			SOUND->Play ( SE_Guard );
 		}
 
-		//くらい時
-		if ( hit )
+		//くらい時 ( ガードをしていない ) && ( 強制変更されていない )
+		if ( hit && ! m_ForcedChange )
 		{
 			//ダメージをライフによって補正(根性値)
 			if ( m_life < LIFE_MAX * 0.5f )
@@ -427,7 +428,8 @@ namespace GAME
 			P_Action pact = m_pChara->GetpAction ( indexAction_e );
 			P_Script pscr = pact->GetpScript ( 0 );
 
-			m_pOther.lock()->TransitAction ( indexAction_e );			//遷移
+			m_pOther.lock ()->TransitAction ( indexAction_e );			//遷移
+			m_pOther.lock ()->m_ForcedChange = true;
 		}
 		//-----------------------------------------------------
 
@@ -1001,6 +1003,7 @@ namespace GAME
 		m_clang = false;
 		m_hitEst = false;
 		m_FirstEf = false;
+		m_ForcedChange = false;
 //		m_lurch = 0;
 //		m_lurchTimer = 0;
 	}

@@ -22,10 +22,10 @@ namespace ScriptEditor
 		private void 上書保存ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
 			//上書保存
-			SaveChara saveChara = new SaveChara ( edittingFilename, chara );
+			SaveChara saveChara = new SaveChara ( settings.LastFilename, chara );
 
 			//編集中ファイル名更新(非保存表示を消去)
-			this.Text = edittingFilename + " - " + formText;
+			SetFormText ( settings.LastFilename );
 
 			STS_TXT.Trace ( "上書保存" );
 		}
@@ -36,19 +36,17 @@ namespace ScriptEditor
 			saveFileDialog1.DefaultExt = "dat";
 
 			//初期ファイル名
-			saveFileDialog1.FileName = edittingFilename;
+			saveFileDialog1.FileName = settings.LastFilename;
 
 			//ダイアログ開始
 			if ( saveFileDialog1.ShowDialog () == DialogResult.OK )
 			{
-//				editChara.Save ( saveFileDialog2.FileName );
 				SaveChara saveChara = new SaveChara ( saveFileDialog1.FileName, chara );
 
 				//編集中ファイル名更新(非保存表示を消去)
-				edittingFilename = Path.GetFileName ( saveFileDialog1.FileName );
-				this.Text = edittingFilename + " - " + formText;
+				settings.LastFilename = saveFileDialog1.FileName;
+				SetFormText ( settings.LastFilename );
 
-				settings.LastFilename = edittingFilename;
 				settings.LastDirectory = Path.GetDirectoryName ( saveFileDialog1.FileName );
 				settings.Save ();
 			}
@@ -73,7 +71,7 @@ namespace ScriptEditor
 				LoadCharaData ();
 			}
 			//ファイル名更新
-			edittingFilename = Path.GetFileName ( openFileDialog1.FileName );
+			settings.LastFilename = Path.GetFileName ( openFileDialog1.FileName );
 
 			STS_TXT.Trace ( "読込" );
 		}
@@ -83,18 +81,14 @@ namespace ScriptEditor
 		{
 			//各コントロールにデータを設定
 			SetCharaData ( chara );
-			ReloadTitleBarText ();
 
 			//設定ファイルにファイル位置を記録
-			settings.LastFilename = edittingFilename;
 			settings.LastDirectory = Path.GetDirectoryName ( openFileDialog1.FileName );
 			settings.Save ();
 
 			//カレントディレクトリも変更する
 			Directory.SetCurrentDirectory ( settings.LastDirectory );
-
-			//タイトルバーテキスト更新
-			ReloadTitleBarText();
+			SetFormText ( settings.LastFilename );
 
 			//タブアクションを選択
 			tabAction_Selected ();
@@ -119,7 +113,7 @@ namespace ScriptEditor
 		//タイトルバーテキスト更新
 		private void ReloadTitleBarText ()
 		{
-			this.Text = Directory.GetCurrentDirectory() + "\\" + edittingFilename + " - " + formText;
+			this.Text = Directory.GetCurrentDirectory() + "\\" + settings.LastFilename + " - " + formText;
 		}
 	}
 

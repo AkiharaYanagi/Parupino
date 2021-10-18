@@ -6,7 +6,7 @@ namespace ScriptEditor
 	{
 		//--------------------------------------------------------------------------
 		//タイトルバー
-		private string formText = "ScriptEditor";		//フォームテキスト(タイトル)
+		private readonly string formText = "ScriptEditor";		//フォームテキスト(タイトル)
 
 		private void InitFormText ()
 		{

@@ -30,7 +30,9 @@ namespace ScriptEditor
 		public void TestCharaData ()
 		{
 			//ファイル名指定
-			edittingFilename = "testChara.dat";
+			//edittingFilename = "testChara.dat";
+			string testName = "testChara.dat";
+//			settings.LastFilename = testName;
 
 			//キャラのテストデータの作成・書出・読込の動作確認
 			try
@@ -45,7 +47,7 @@ namespace ScriptEditor
 
 #if true
 				//書出
-				SaveChara saveChara = new SaveChara ( edittingFilename, testCharaData );
+				SaveChara saveChara = new SaveChara ( testName, testCharaData );
 #else
 				//既存のとき書出しない
 				if ( ! File.Exists ( edittingFilename ) )
@@ -56,7 +58,7 @@ namespace ScriptEditor
 
 #endif
 				//読込
-				LoadChara loadChara = new LoadChara ( edittingFilename, chara );
+				LoadChara loadChara = new LoadChara ( testName, chara );
 
 		
 				//テストデータからキャラ作成ソースファイルを作成
@@ -66,7 +68,7 @@ namespace ScriptEditor
 				SetCharaData ( chara );
 
 				//フォームテキストの更新
-				SetFormText ( edittingFilename );
+				SetFormText ( testName );
 			}
 			catch ( ArgumentException e )
 			{
@@ -151,14 +153,24 @@ namespace ScriptEditor
 		//==================================================================================
 		//	開始
 		//==================================================================================
+		private void LoadForm ()
+		{
+			settings.Load ();
+			//読込
+			LoadChara loadChara = new LoadChara ( settings.LastFilename, chara );
+
+			//保存先
+			SetFormText ( settings.LastFilename );
+
+			//キャラデータの適用
+			SetCharaData ( chara );
+		}
+
 		private void Init ()
 		{
 			//ステータスバーテキストを登録
 			STS_TXT.Tssl = 	toolStripStatusLabel1;
 			STS_TXT.Trace ( "Init." );
-
-			//キャラデータの適用
-			SetCharaData ( chara );
 
 			//タブの選択
 			tabAction_Selected ();
