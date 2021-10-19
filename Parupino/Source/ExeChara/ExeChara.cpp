@@ -274,6 +274,11 @@ namespace GAME
 	//くらい状態・ダメージ処理
 	void ExeChara::OnDamaged ( int damage )
 	{
+
+		bool hit = true;
+		bool guard = false;
+
+
 		//回避判定
 #if 0
 		//攻撃中でなく、下要素が入力されているとき
@@ -311,10 +316,8 @@ namespace GAME
 		}
 #endif // 0
 
-		bool hit = true;
-		bool guard = false;
-
 		//ガード発生
+#if 0
 		//攻撃中でないとき
 		//ダッシュ中、よろけ中なども除外する (歩きは可能)
 		if ( !IsAttacking () && !IsDamaged () )
@@ -368,6 +371,7 @@ namespace GAME
 			//SE
 			SOUND->Play ( SE_Guard );
 		}
+#endif // 0
 
 		//くらい時 ( ガードをしていない ) && ( 強制変更されていない )
 		if ( hit && ! m_ForcedChange )
@@ -387,7 +391,7 @@ namespace GAME
 			tstring act;
 			switch ( m_pAction->GetPosture () )
 			{
-			case AP_STAND:	act.assign ( _T ( "DamagedL" ) ); break;
+			case AP_STAND:	act.assign ( _T ( "Damaged_L" ) ); break;
 			case AP_CROUCH: act.assign ( _T ( "C_DamagedL" ) ); break;
 			case AP_JUMP:	act.assign ( _T ( "J_DamagedL" ) ); break;
 			}
