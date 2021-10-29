@@ -28,12 +28,14 @@ namespace GAME
 		, m_ForcedChange ( false )
 		, m_bDispRect ( true )
 //		, m_lurch ( 0 ), m_lurchTimer ( 0 )
+		, m_blackOut ( 0 ), m_scpStop ( 0 )
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
 		m_charaRect = make_shared < CharaRect > ();		//枠
 
 		//タイマーの初期化
+		//ヒットストップ
 		m_tmrHitstop = make_shared < Timer > ();
 		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
 		AddpTask ( m_tmrHitstop );
@@ -47,6 +49,10 @@ namespace GAME
 		m_tmrEnd = make_shared < Timer > ();
 		m_tmrEnd->SetTargetTime ( END_TIME );
 		AddpTask ( m_tmrEnd );
+
+		//ストップタイマ
+		m_stopTimer = make_shared < Timer > ();
+		AddpTask ( m_stopTimer );
 	}
 
 	//デストラクタ
@@ -95,6 +101,7 @@ namespace GAME
 		LoadChara loadChara ( name, *m_pChara );
 
 		//基本状態アクションIDを手動で設定する
+#if 0
 		m_pChara->SetBsAction ( BA_STAND, 0 );
 		m_pChara->SetBsAction ( BA_POISED, 25 );
 		m_pChara->SetBsAction ( BA_CLANG, 29 );
@@ -103,11 +110,13 @@ namespace GAME
 		m_pChara->SetBsAction ( BA_DAMAGED, 32 );
 		m_pChara->SetBsAction ( BA_DOWN, 39 );
 		m_pChara->SetBsAction ( BA_WIN, 41 );
-
+#endif // 0
 
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
 		m_dispChara.Load ();
+
+		m_dispInput.Load ();
 
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
@@ -197,6 +206,8 @@ namespace GAME
 		m_oprtEf.PostScriptMove ( m_ptChara, m_dirRight );
 	}
 
+	//==========================================================
+	//MutualCharaから呼ばれる主な関数
 
 	//■#########################################################
 	//■
@@ -209,9 +220,12 @@ namespace GAME
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 
 		// アクションとスクリプトによらない一定の処理
+		//	入力など
 		AlwaysMove ();
 
-		if ( m_stop ) { return; }		//一時停止のときは何もしない
+//		if ( m_stop ) { return; }		//一時停止のときは何もしない
+		if ( m_stopTimer->IsActive () )
+		{ return; }		//一時停止のときは何もしない
 
 		// ヒットストップ時は入力の保存と表示関連の処理をして終了
 		//Activeとの兼ね合いでタイマーのラストは有効　0～N-1まで
@@ -228,6 +242,39 @@ namespace GAME
 
 		//接触枠設定
 		AdjustCRect ();
+	}
+
+
+	//■###########################################################################
+	//■		
+	//■		両者の接触判定後に攻撃・相殺・当り判定枠を設定
+	//■		
+	//■###########################################################################
+	void ExeChara::ScriptRectMove ()
+	{
+		assert ( nullptr != m_pAction && nullptr != m_pScript );
+		if ( m_stop ) { return; }		//一時停止のときは何もしない
+
+		//相殺枠設定
+		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_dirRight, m_ptChara );
+
+		//攻撃枠設定
+		// ヒット時に後の攻撃枠を一時停止(多段防止)
+		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
+		if ( m_hitEst || m_clang )
+		{
+			m_charaRect->ResetARect ();
+		}
+		else
+		{
+			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_dirRight, m_ptChara );
+		}
+
+		//攻撃力設定
+		m_power = m_pScript->GetPower ();
+
+		//当り枠設定
+		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_dirRight, m_ptChara );
 	}
 
 
@@ -249,6 +296,8 @@ namespace GAME
 		// グラフィック
 		UpdateGraphic ();
 	}
+
+	//==========================================================
 
 
 	//================================================
@@ -506,12 +555,16 @@ namespace GAME
 		}
 
 		//---------------------------------------------------
+		//入力
 		// 入力を可能な状態
 		if ( CanInput () )
 		{
 			//入力の保存
 			m_pCharaInput->Update ( m_dirRight );
 		}
+		//入力更新
+		m_dispInput.UpdateInput ( m_pCharaInput );
+
 	}
 
 
@@ -696,8 +749,6 @@ namespace GAME
 			{
 				int i = 0;
 #if false
-
-
 				//エフェクトインデックスの取得
 				UINT index = pEfGnrt->GetIndex ();
 				//エフェクトの取得
@@ -795,11 +846,22 @@ namespace GAME
 		}
 #endif // 0
 
+
+		//@todo 共通グラフィックの記述位置を調整
+		//停止時のスキップによる
+
+		//共通グラフィック
+		if ( ! m_stopTimer->IsActive () )
+		{
+			//暗転
+			m_blackOut = m_pScript->GetBlackOut ();
+
+			//スクリプトからの停止
+			m_scpStop = m_pScript->GetStop ();
+		}
+
 		//ゲージ更新
 		m_dispChara.UpdateGauge ( m_playerID, m_life, m_damage, m_balance );
-
-		//入力更新
-		m_dispChara.UpdateInput ( m_pCharaInput );
 
 	}
 
@@ -971,33 +1033,6 @@ namespace GAME
 		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_dirRight, m_ptChara );
 	}
 
-	//両者の接触判定後に攻撃・相殺・当り判定枠を設定
-	void ExeChara::ScriptRectMove ()
-	{
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
-		if ( m_stop ) { return; }		//一時停止のときは何もしない
-
-		//相殺枠設定
-		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_dirRight, m_ptChara );
-
-		//攻撃枠設定
-		// ヒット時に後の攻撃枠を一時停止(多段防止)
-		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
-		if ( m_hitEst || m_clang )
-		{
-			m_charaRect->ResetARect ();
-		}
-		else
-		{
-			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_dirRight, m_ptChara );
-		}
-
-		//攻撃力設定
-		m_power = m_pScript->GetPower ();
-
-		//当り枠設定
-		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_dirRight, m_ptChara );
-	}
 
 	//------------------------------------------------
 	//アクション終了処理

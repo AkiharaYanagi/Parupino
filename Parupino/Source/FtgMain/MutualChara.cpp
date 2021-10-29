@@ -16,7 +16,7 @@ namespace GAME
 {
 	MutualChara::MutualChara ()
 		: m_startTimer ( 0 ), m_startTime ( 0 ), m_endTimer ( 0 ), m_endTime ( 0 )
-		, m_tmrHitstop ( 0 )
+		, m_tmrHitstop ( 0 ), m_blackOut ( 0 )
 	{
 		//キャラ
 		m_exeChara1 = make_shared < ExeChara > ( PLAYER_ID_1 );
@@ -81,12 +81,8 @@ namespace GAME
 		m_exeChara1->PostScriptMove ();
 		m_exeChara2->PostScriptMove ();
 
-		//---------------------------------------------------
-		//画面表示の基準位置を決定
-		VEC2 pos1p = m_exeChara1->GetPos ();
-		VEC2 pos2p = m_exeChara2->GetPos ();
-		G_Ftg::inst ()->CulcPosMutualBase ( pos1p, pos2p );
-		//---------------------------------------------------
+		//グラフィック共通
+		Grp ();
 	}
 
 
@@ -337,6 +333,41 @@ namespace GAME
 			m_exeChara2->OnHit ();		//ヒット状態
 			m_exeChara1->OnDamaged ( power2P );		//くらい状態・ダメージ処理
 		}
+	}
+
+	//------------------------------------------------------
+	//	共通グラフィック
+	//------------------------------------------------------
+	void MutualChara::Grp ()
+	{
+		//---------------------------------------------------
+		//暗転
+		UINT blackout1P = m_exeChara1->GetBlackOut ();
+		UINT blackout2P = m_exeChara2->GetBlackOut ();
+		if ( 0 < blackout1P )
+		{
+			m_blackOut = blackout1P;
+			m_exeChara1->SetBlackOut ( 0 );
+		}
+
+		//---------------------------------------------------
+		//スクリプトからの停止
+		UINT scpStop1P = m_exeChara1->GetScpStop ();
+		UINT scpStop2P = m_exeChara2->GetScpStop ();
+		if ( 0 < scpStop1P )
+		{
+			m_scpStop = scpStop1P;
+			m_exeChara1->SetScpStop ( 0 );
+
+			m_exeChara1->SetStopTimer ( m_scpStop );
+			m_exeChara2->SetStopTimer ( m_scpStop );
+		}
+
+		//---------------------------------------------------
+		//画面表示の基準位置を決定
+		VEC2 pos1p = m_exeChara1->GetPos ();
+		VEC2 pos2p = m_exeChara2->GetPos ();
+		G_Ftg::inst ()->CulcPosMutualBase ( pos1p, pos2p );
 	}
 
 	//------------------------------------------------------
@@ -597,7 +628,6 @@ namespace GAME
 		m_exeChara1->SetCharaState ( chst );
 		m_exeChara2->SetCharaState ( chst );
 	}
-
 
 }	//namespace GAME
 

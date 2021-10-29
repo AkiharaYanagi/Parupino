@@ -65,6 +65,9 @@ namespace GAME
 		PVP_EfGnrt	m_pvpEfGnrt;	//EfÉWÉFÉlÉåÅ[ÉgÉäÉXÉg
 
 		int		m_power;		//çUåÇíl
+		UINT	m_blackOut;		//à√ì]
+		UINT	m_vibration;	//êUìÆ
+		UINT	m_stop;			//í‚é~
 
 	public:
 		Script ();
@@ -121,6 +124,18 @@ namespace GAME
 		//çUåÇíl
 		int GetPower () const { return m_power; }
 		void SetPower ( int power ) { m_power = power; }
+
+		//à√ì]
+		UINT GetBlackOut () const { return m_blackOut; }
+		void SetBlackOut ( UINT blackout ) { m_blackOut = blackout; }
+
+		//êUìÆ
+		UINT GetVibration () const { return m_vibration; }
+		void SetVibration ( UINT viberation ) { m_vibration = viberation; }
+
+		//í‚é~
+		UINT GetStop () const { return m_stop; }
+		void SetStop ( UINT stop ) { m_stop = stop; }
 	};
 
 

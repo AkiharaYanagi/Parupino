@@ -317,9 +317,16 @@ namespace ScriptEditor
 		//	スクリプト配列
 		//----------------------------------------------------------------------------------
 		//挿入
-		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
+		private void Btn_ScpInc_Click ( object sender, System.EventArgs e )
 		{
 			EditCompend.InsertScript ();
+			DispCompend.Disp ();
+		}
+
+		//追加
+		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
+		{
+			EditCompend.AddScript ();
 			DispCompend.Disp ();
 		}
 
@@ -335,6 +342,13 @@ namespace ScriptEditor
 		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
 		{
 			EditCompend.MultiInsert ();
+			DispCompend.Disp ();
+		}
+
+		//複数追加
+		private void Btn_MlcIns_Click ( object sender, System.EventArgs e )
+		{
+			EditCompend.MultiAdd ();
 			DispCompend.Disp ();
 		}
 
@@ -460,8 +474,11 @@ namespace ScriptEditor
 		//関連付け
 		private void Assosiate ()
 		{
-			FormScript.Inst.Assosiate ( EditCompend.SelectedScript );
-			FormRoute.Inst.Assosiate ( EditCompend.SelectedScript );
+			Script scp = EditCompend.SelectedScript;
+			FormScript.Inst.Assosiate ( scp );
+			FormRoute.Inst.Assosiate ( scp );
+			FormRect.Inst.Assosiate ( scp );
+			FormEfGnrt.Inst.Assosiate ( scp );
 		}
 	}
 }

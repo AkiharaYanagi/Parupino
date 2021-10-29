@@ -18,18 +18,11 @@
 #include "../../FtgMain/G_Ftg.h"
 #include "../CharaRect.h"
 
-#include "../Input/CharaInput.h"
-
 //-------------------------------------------------------------------------------------------------
 // 宣言
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	using VP_PRMRECT = vector < P_PrmRect >;
-	using PVP_PRMRECT = shared_ptr < VP_PRMRECT >;
-	using VPVP_PRMRECT = vector < PVP_PRMRECT >;
-
-
 	class DispChara : public TASK_VEC
 	{
 		P_Chara		m_pChara;			//キャラポインタ
@@ -42,17 +35,6 @@ namespace GAME
 		P_PrmRect	m_gaugeLife;			//ライフゲージ表示
 		P_PrmRect	m_gaugeFrameLife;		//ライフゲージ枠表示
 		P_PrmRect	m_gaugeDecreaseLife;	//ライフゲージ減少分表示
-
-
-		//キー入力
-		static const UINT NUM_DISP_INPUT;
-
-		P_PrmRect		m_bg;
-
-		VPVP_PRMRECT	m_vpvpRect;
-
-		UINT			m_timer;
-		float			m_vel;
 
 
 #if	0
@@ -118,9 +100,6 @@ namespace GAME
 		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
 
 
-		//入力更新
-		void UpdateInput ( P_CharaInput pCharaInput );
-
 #if 0
 		//ヒットストップ時間表示の更新
 		void UpdateHitStop ( VEC2 ptChara, bool dirRight, UINT lurch, UINT lurchTimer );
@@ -138,8 +117,6 @@ namespace GAME
 		void OnPoised ( VEC2 ptChara, bool dirRight );
 #endif // 0
 
-	private:
-		bool GetBoolInput ( P_CharaInput pCharaInput, int n, int i );
 	};
 
 }	//namespace GAME

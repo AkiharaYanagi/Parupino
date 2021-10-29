@@ -30,6 +30,14 @@ namespace GAME
 		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
 		GRPLST_INSERT ( m_bg );
 
+		m_bg_blackout = make_shared < GrpAcv > ();
+		m_bg_blackout->AddTexture ( _T ( "ftgmain_bg_black.png" ) );
+		m_bg_blackout->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
+		m_bg_blackout->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
+		m_bg_blackout->SetValid ( false );
+		GRPLST_INSERT ( m_bg_blackout );
+
+
 		//キャラ相互処理
 		m_mutualChara = make_shared < MutualChara > ();
 		AddpTask ( m_mutualChara );
@@ -95,6 +103,10 @@ namespace GAME
 		//グラフィックリストをタスクベクタの最後にする
 		//他処理がすべて終わってからグラフィックのMove()を行う
 		End ( GrpLst::Inst ()->GetpTaskList () );
+
+		//タイマ
+		m_bgTimer = make_shared < Timer > ();
+		AddpTask ( m_bgTimer );
 	}
 
 	Fighting::~Fighting ()
@@ -159,6 +171,7 @@ namespace GAME
 				m_mutualChara->SetEndWait ();
 				G_FTG_STATE_SET ( FS_DOWN_DISP );
 			}
+
 		break;
 
 		case FS_DOWN_DISP:
@@ -207,13 +220,16 @@ namespace GAME
 			break;
 
 		case FS_END:
-			break;
+		break;
 
 		default: break;
 		}
 
 		//両者処理
 		m_mutualChara->Conduct ();
+
+		//共通グラフィック処理
+		Grp ();
 
 		//背景位置補正
 		m_bg->SetPos ( G_BASE_POS ().x, (float)BG_POS_Y );
@@ -285,6 +301,38 @@ namespace GAME
 				m_pause->SetValid ( true );
 				m_mutualChara->Stop ( true );
 			}
+		}
+	}
+
+	//共通グラフィック処理
+	void Fighting::Grp ()
+	{
+		UINT blackOut = 0;
+
+		//暗転
+		if ( ! m_bgTimer->IsActive () )
+		{
+			blackOut = m_mutualChara->GetBlackOut ();
+			//初回
+			if ( 0 < blackOut )
+			{
+				m_bgTimer->SetTargetTime ( blackOut );
+				m_bgTimer->Start ();
+
+				blackOut = 0;
+				m_mutualChara->SetBlackOut ( 0 );
+
+				m_bg->SetValid ( false );
+				m_bg_blackout->SetValid ( true );
+			}
+		}
+
+		if ( m_bgTimer->IsLast () )
+		{
+			m_bgTimer->Stop ();
+			m_bgTimer->Reset ();
+			m_bg->SetValid ( true );
+			m_bg_blackout->SetValid ( false );
 		}
 	}
 

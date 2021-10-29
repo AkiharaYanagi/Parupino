@@ -18,6 +18,7 @@
 #include "../CharaData/Chara.h"
 #include "../CharaData/IO/LoadChara.h"
 #include "Disp/DispChara.h"
+#include "Disp/DispInput.h"
 #include "Input/CharaInput.h"
 #include "Input/PlayerInput.h"
 #include "Input/CPUInput.h"
@@ -48,6 +49,7 @@ namespace GAME
 		//------------------------------------------------
 		//表示
 		DispChara		m_dispChara;	//キャラ全般表示
+		DispInput		m_dispInput;	//入力表示
 
 		//------------------------------------------------
 		//入力
@@ -111,6 +113,12 @@ namespace GAME
 
 		bool	m_wait;			//入力を一時停止
 		bool	m_stop;			//入力、スクリプト処理を一時停止
+
+		P_Timer	m_stopTimer;
+
+
+		UINT	m_blackOut;		//暗転
+		UINT	m_scpStop;		//スクリプトからの停止
 
 	public:
 		ExeChara ( PLAYER_ID m_playerID );
@@ -200,8 +208,12 @@ namespace GAME
 		//外部からの状態変更
 
 		//一時停止
-		void SetWait ( bool b ) { m_wait = b; }
-		void SetStop ( bool b ) { m_stop = b; }
+		void SetWait ( bool b ) { m_wait = b; }	//入力を停止
+		void SetStop ( bool b ) { m_stop = b; }	//描画更新を停止
+		void SetStopTimer ( UINT i ) {
+			m_stopTimer->SetTargetTime ( i ); 
+			m_stopTimer->Start ();
+		}
 
 		//打合
 		bool GetClang () const { return m_clang; }
@@ -220,6 +232,18 @@ namespace GAME
 		void SetHit ( bool b ) { m_hitEst = b; }
 		void OnHit ();
 		void OnEfHit ();
+
+		//-------------------------------------------------
+		//スクリプトからの変更
+		//暗転
+		UINT GetBlackOut () const { return m_blackOut; }
+		void SetBlackOut ( UINT i ) { m_blackOut = i; }
+
+		//停止
+		UINT GetScpStop () const { return m_scpStop; }
+		void SetScpStop ( UINT i ) { m_scpStop = i; }
+
+		//-------------------------------------------------
 
 		//終了待機
 		void SetEndWait ();

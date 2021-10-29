@@ -186,6 +186,9 @@
     <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h">
       <Filter>CharaData\IO</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ExeChara\Disp\DispInput.h">
+      <Filter>ExeChara\Disp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -304,6 +307,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp">
       <Filter>CharaData\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ExeChara\Disp\DispInput.cpp">
+      <Filter>ExeChara\Disp</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

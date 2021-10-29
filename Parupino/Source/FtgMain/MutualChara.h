@@ -45,6 +45,12 @@ namespace GAME
 		UINT	m_endTime;
 		P_Timer	m_tmrEndWait;
 
+		//暗転
+		UINT	m_blackOut;
+
+		//スクリプトからのストップ
+		UINT	m_scpStop;
+
 		//ヒットストップ
 		P_Timer	m_tmrHitstop;
 
@@ -64,6 +70,8 @@ namespace GAME
 		void Collision ();		//重なり判定
 		void Decision ();		//攻撃判定
 
+		void Grp ();			//グラフィック共通
+
 
 		//状態変更
 		void SetReady ();
@@ -79,6 +87,12 @@ namespace GAME
 		bool CheckWinEnd ();	//勝利終了状態判定
 		bool CheckWinner ();	//勝利側判定
 		void ForcedEnd ();	//強制終了
+
+		UINT GetBlackOut () const { return m_blackOut; };	//暗転
+		void SetBlackOut ( UINT i ) { m_blackOut = i; };
+
+		UINT GetScpStop () const { return m_scpStop; };	//停止
+		void SetScpStop ( UINT i ) { m_scpStop = i; };
 
 		void SetCharaState ( CHARA_STATE chst );
 

@@ -99,6 +99,13 @@ using LCF = LoadCharaFunc;
 		//アクション "名前"
 		pAction->SetName ( pvpAttrAction->at ( ATTR_ACTION_NAME )->GetValue () );
 
+
+		if ( _T ( "OD0_L" ) == pAction->GetName () )
+		{
+			int i = 0;
+		}
+
+
 		//UINT 次アクションID (終了時における次アクションのリスト内インデックス)
 		pAction->SetNextID ( m_utl._AttrToUINT ( pvpAttrAction->at ( ATTR_ACTION_ID) ) );
 
@@ -192,6 +199,18 @@ using LCF = LoadCharaFunc;
 		//power
 		int power = m_utl._AttrToInt ( pAttr->at ( ATTR_SCRIPT_POWER ) );
 		pScript->SetPower ( power );
+
+		//blackout
+		UINT blackout = m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_BLACKOUT ) );
+		pScript->SetBlackOut ( blackout );
+
+		//viberation
+		UINT viberation = m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_VIBRATION ) );
+		pScript->SetVibration ( viberation );
+
+		//stop
+		UINT stop = m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_STOP ) );
+		pScript->SetStop ( stop );
 
 		//-----------------------------------------------------------------------------
 		//スクリプト内部のエレメント

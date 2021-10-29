@@ -22,6 +22,9 @@ namespace GAME
 	{
 		//背景
 		P_GrpAcv		m_bg;
+		P_GrpAcv		m_bg_blackout;
+
+		P_Timer			m_bgTimer;
 
 		//画面固定システム表示
 		//ゲージ枠
@@ -58,6 +61,9 @@ namespace GAME
 		void StartGrpDemo ( P_GrpDemo pGrp, UINT time );
 
 		void Pause ();
+
+		//共通グラフィック処理
+		void Grp ();
 	};
 
 

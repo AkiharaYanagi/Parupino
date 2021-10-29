@@ -47,6 +47,10 @@ namespace ScriptEditor
 			tBN_VelY.UpdateData ();
 			tBN_AccX.UpdateData ();
 			tBN_AccY.UpdateData ();
+			tBN_Power.UpdateData ();
+			tBN_BlackOut.UpdateData ();
+			tBN_Vibration.UpdateData ();
+			tBN_Stop.UpdateData ();
 		}
 
 		//関連付け(対象が変更になったとき)
@@ -67,6 +71,9 @@ namespace ScriptEditor
 			tBN_AccX.Assosiate ( i => scp.SetAccX ( i ), ()=> scp.Acc.X );
 			tBN_AccY.Assosiate ( i => scp.SetAccY ( i ), ()=> scp.Acc.Y );
 			tBN_Power.Assosiate ( i => scp.Power = i, ()=> scp.Power );
+			tBN_BlackOut.Assosiate ( i => scp.BlackOut = i, ()=> scp.BlackOut );
+			tBN_Vibration.Assosiate ( i => scp.Vibration = i, ()=> scp.Vibration );
+			tBN_Stop.Assosiate ( i => scp.Stop = i, ()=> scp.Stop );
 
 			//グループセッタを登録
 			tBN_PosX.GroupSetter = EditScript.GroupSetterPosX;

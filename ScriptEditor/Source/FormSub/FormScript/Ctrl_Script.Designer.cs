@@ -48,6 +48,12 @@
 			this.tBN_Power = new ScriptEditor.TB_Number();
 			this.Lbl_Img = new System.Windows.Forms.Label();
 			this.Tb_Img = new System.Windows.Forms.TextBox();
+			this.Lbl_BlackOut = new System.Windows.Forms.Label();
+			this.tBN_BlackOut = new ScriptEditor.TB_Number();
+			this.Lbl_Vibration = new System.Windows.Forms.Label();
+			this.tBN_Vibration = new ScriptEditor.TB_Number();
+			this.Lbl_Stop = new System.Windows.Forms.Label();
+			this.tBN_Stop = new ScriptEditor.TB_Number();
 			this.SuspendLayout();
 			// 
 			// cB_ClcSt
@@ -257,6 +263,72 @@
 			this.Tb_Img.Size = new System.Drawing.Size(141, 19);
 			this.Tb_Img.TabIndex = 22;
 			// 
+			// Lbl_BlackOut
+			// 
+			this.Lbl_BlackOut.AutoSize = true;
+			this.Lbl_BlackOut.Location = new System.Drawing.Point(26, 206);
+			this.Lbl_BlackOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_BlackOut.Name = "Lbl_BlackOut";
+			this.Lbl_BlackOut.Size = new System.Drawing.Size(52, 12);
+			this.Lbl_BlackOut.TabIndex = 10;
+			this.Lbl_BlackOut.Text = "BlackOut";
+			// 
+			// tBN_BlackOut
+			// 
+			this.tBN_BlackOut.GetFunc = null;
+			this.tBN_BlackOut.GroupSetter = null;
+			this.tBN_BlackOut.Location = new System.Drawing.Point(108, 203);
+			this.tBN_BlackOut.Margin = new System.Windows.Forms.Padding(2);
+			this.tBN_BlackOut.Name = "tBN_BlackOut";
+			this.tBN_BlackOut.SetFunc = null;
+			this.tBN_BlackOut.Size = new System.Drawing.Size(74, 19);
+			this.tBN_BlackOut.TabIndex = 18;
+			this.tBN_BlackOut.Text = "0";
+			// 
+			// Lbl_Vibration
+			// 
+			this.Lbl_Vibration.AutoSize = true;
+			this.Lbl_Vibration.Location = new System.Drawing.Point(26, 229);
+			this.Lbl_Vibration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_Vibration.Name = "Lbl_Vibration";
+			this.Lbl_Vibration.Size = new System.Drawing.Size(51, 12);
+			this.Lbl_Vibration.TabIndex = 10;
+			this.Lbl_Vibration.Text = "Vibration";
+			// 
+			// tBN_Vibration
+			// 
+			this.tBN_Vibration.GetFunc = null;
+			this.tBN_Vibration.GroupSetter = null;
+			this.tBN_Vibration.Location = new System.Drawing.Point(108, 226);
+			this.tBN_Vibration.Margin = new System.Windows.Forms.Padding(2);
+			this.tBN_Vibration.Name = "tBN_Vibration";
+			this.tBN_Vibration.SetFunc = null;
+			this.tBN_Vibration.Size = new System.Drawing.Size(74, 19);
+			this.tBN_Vibration.TabIndex = 18;
+			this.tBN_Vibration.Text = "0";
+			// 
+			// Lbl_Stop
+			// 
+			this.Lbl_Stop.AutoSize = true;
+			this.Lbl_Stop.Location = new System.Drawing.Point(26, 252);
+			this.Lbl_Stop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_Stop.Name = "Lbl_Stop";
+			this.Lbl_Stop.Size = new System.Drawing.Size(28, 12);
+			this.Lbl_Stop.TabIndex = 10;
+			this.Lbl_Stop.Text = "Stop";
+			// 
+			// tBN_Stop
+			// 
+			this.tBN_Stop.GetFunc = null;
+			this.tBN_Stop.GroupSetter = null;
+			this.tBN_Stop.Location = new System.Drawing.Point(108, 249);
+			this.tBN_Stop.Margin = new System.Windows.Forms.Padding(2);
+			this.tBN_Stop.Name = "tBN_Stop";
+			this.tBN_Stop.SetFunc = null;
+			this.tBN_Stop.Size = new System.Drawing.Size(74, 19);
+			this.tBN_Stop.TabIndex = 18;
+			this.tBN_Stop.Text = "0";
+			// 
 			// Ctrl_Script
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -269,6 +341,9 @@
 			this.Controls.Add(this.tBN_VelX);
 			this.Controls.Add(this.tBN_PosY);
 			this.Controls.Add(this.tBN_PosX);
+			this.Controls.Add(this.tBN_Stop);
+			this.Controls.Add(this.tBN_Vibration);
+			this.Controls.Add(this.tBN_BlackOut);
 			this.Controls.Add(this.tBN_Power);
 			this.Controls.Add(this.cB_ClcSt);
 			this.Controls.Add(this.tB_Frame);
@@ -277,13 +352,16 @@
 			this.Controls.Add(this.lbl_AccY);
 			this.Controls.Add(this.lbl_PosX);
 			this.Controls.Add(this.lbl_AccX);
+			this.Controls.Add(this.Lbl_Stop);
 			this.Controls.Add(this.lbl_VelY);
+			this.Controls.Add(this.Lbl_Vibration);
 			this.Controls.Add(this.lbl_VelX);
+			this.Controls.Add(this.Lbl_BlackOut);
 			this.Controls.Add(this.lbl_Frame);
 			this.Controls.Add(this.lbl_AP);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Ctrl_Script";
-			this.Size = new System.Drawing.Size(368, 171);
+			this.Size = new System.Drawing.Size(368, 297);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -311,5 +389,11 @@
 		private TB_Number tBN_AccY;
 		private System.Windows.Forms.Label Lbl_Img;
 		private System.Windows.Forms.TextBox Tb_Img;
+		private System.Windows.Forms.Label Lbl_BlackOut;
+		public TB_Number tBN_BlackOut;
+		private System.Windows.Forms.Label Lbl_Vibration;
+		public TB_Number tBN_Vibration;
+		private System.Windows.Forms.Label Lbl_Stop;
+		public TB_Number tBN_Stop;
 	}
 }

@@ -85,13 +85,16 @@ namespace ScriptEditor
 
 			//リソース使用の宣言
 			using ( Font font0 = new Font ( "MS UI Gothic", 14, FontStyle.Regular ) )
+			using ( Font font1 = new Font ( "MS UI Gothic", 12, FontStyle.Regular ) )
 			using ( Pen pen0 = new Pen ( Color.FromArgb ( 0x80, 0x80, 0xff ), 1 ) )
 			using ( Pen pen1 = new Pen ( Color.FromArgb ( 0xa0, 0xa0, 0xa0 ), 1 ) )
+			using ( Pen pen2 = new Pen ( Color.FromArgb ( 0x40, 0x40, 0x40 ), 1.5f ) )
 			using ( Brush brush_Rect = new SolidBrush ( Color.FromArgb ( 255, 255, 255, 255 ) ) )
 			using ( Brush brush_BG = new SolidBrush ( Color.FromArgb ( 255, 220, 220, 220 ) ) )
 			using ( Brush brush_BG_ALL = new SolidBrush ( Color.FromArgb ( 255, 180, 180, 180 ) ) )
 			using ( Brush brush_Not = new SolidBrush ( Color.FromArgb ( 63, 255, 63, 63 ) ) )
 			{
+
 			//描画用一時変数
 			Bitmap bmp = new Bitmap ( CULUMN_WIDTH * CULUMN, ROW_HEIGHT * ROW + 1 );
 			int w = e.ClipRectangle.Width;
@@ -106,7 +109,7 @@ namespace ScriptEditor
 				g.DrawString ( i.ToString (), font0, Brushes.Gray, CW + DISIT_REVISED_POS_X + i * CW, DISIT_REVISED_POS_Y, sf );
 			}
 
-			//見出：レバー(十字),ボタン(L,M,H,S)
+			//見出：レバー(十字),ボタン(L,Ma,Mb,H)
 			g.DrawImage ( PR.arrow, 0, RH * 1, CW, RH );
 			g.DrawImage ( PR.command_L , 0, RH * 2, CW, RH );
 			g.DrawImage ( PR.command_Ma, 0, RH * 3, CW, RH );
@@ -129,7 +132,7 @@ namespace ScriptEditor
 				GKC_ST gkcst = gc.GetLvrSt ();
 				int indexLvr = (int)gc.GetLever ();
 				// g.DrawImage ( AryImgLvr [ indexLvr, (int)gkcstL ], CW + CW * iFrame, RH, CW, RH );
-				for ( int i = 0; i < 8; ++ i )
+				for ( int i = 0; i < GameKeyData.LVR_NUM; ++ i )
 				{
 					int imgIndex = (int) gc.Lvr [ i ];
 						
@@ -138,6 +141,11 @@ namespace ScriptEditor
 					int y = RH + ( 16 * (2 - (pos_i / 3) ) );
 
 					g.DrawImage ( AryImgLvr_ [ imgIndex ], x, y, 16, 16 );
+					
+					if ( GKC_ST.KEY_WILD != gc.Lvr [ i ] )
+					{
+						g.DrawString ( ItoLvr[ i ].ToString (), font1, Brushes.Black, x + 2, y );
+					}
 				}
 
 				//ボタン
@@ -164,7 +172,7 @@ namespace ScriptEditor
 			g.DrawLine ( pen0, 0, ROW_HEIGHT, w, ROW_HEIGHT );
 			for ( int i = 0; i < w / 20; ++i )
 			{
-				g.DrawLine ( pen1, CW * ( i + 2 ), 0, CW * ( i + 2 ), h );
+				g.DrawLine ( pen2, CW * ( i + 2 ), 0, CW * ( i + 2 ), h );
 			}
 			for ( int i = 0; i < h / 20; ++i )
 			{
