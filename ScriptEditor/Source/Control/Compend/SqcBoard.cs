@@ -341,14 +341,14 @@ namespace ScriptEditor
 		//複数挿入
 		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
 		{
-			EditCompend.MultiInsert ();
+			EditCompend.MultiAdd ();
 			DispCompend.Disp ();
 		}
 
 		//複数追加
 		private void Btn_MlcIns_Click ( object sender, System.EventArgs e )
 		{
-			EditCompend.MultiAdd ();
+			EditCompend.MultiInsert ();
 			DispCompend.Disp ();
 		}
 
@@ -409,7 +409,7 @@ namespace ScriptEditor
 			pictureBox1.Invalidate ();
 		}
 
-		//複製
+		//同一化
 		private void Btn_Paste_Click ( object sender, System.EventArgs e )
 		{
 			EditCompend ec = EditCompend;
@@ -448,6 +448,7 @@ namespace ScriptEditor
 			bDrag = true;
 
 			//更新
+			EditCompend.Assosiate ();
 			Assosiate ();
 			DispCompend.Disp ();
 		}

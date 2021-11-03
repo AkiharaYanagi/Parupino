@@ -125,7 +125,6 @@
 			// TBN_Balance
 			// 
 			this.TBN_Balance.GetFunc = null;
-			this.TBN_Balance.GroupSetter = null;
 			this.TBN_Balance.Location = new System.Drawing.Point(69, 157);
 			this.TBN_Balance.Name = "TBN_Balance";
 			this.TBN_Balance.SetFunc = null;

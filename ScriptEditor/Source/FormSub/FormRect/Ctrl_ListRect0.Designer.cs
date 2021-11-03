@@ -130,7 +130,6 @@
 			// 
 			// Tbn_H
 			// 
-			this.Tbn_H.GroupSetter = null;
 			this.Tbn_H.Location = new System.Drawing.Point(275, 28);
 			this.Tbn_H.Name = "Tbn_H";
 			this.Tbn_H.Size = new System.Drawing.Size(49, 19);
@@ -139,7 +138,6 @@
 			// 
 			// Tbn_Y
 			// 
-			this.Tbn_Y.GroupSetter = null;
 			this.Tbn_Y.Location = new System.Drawing.Point(183, 28);
 			this.Tbn_Y.Name = "Tbn_Y";
 			this.Tbn_Y.Size = new System.Drawing.Size(53, 19);
@@ -148,7 +146,6 @@
 			// 
 			// Tbn_W
 			// 
-			this.Tbn_W.GroupSetter = null;
 			this.Tbn_W.Location = new System.Drawing.Point(275, 0);
 			this.Tbn_W.Name = "Tbn_W";
 			this.Tbn_W.Size = new System.Drawing.Size(49, 19);
@@ -157,7 +154,6 @@
 			// 
 			// Tbn_X
 			// 
-			this.Tbn_X.GroupSetter = null;
 			this.Tbn_X.Location = new System.Drawing.Point(183, 0);
 			this.Tbn_X.Name = "Tbn_X";
 			this.Tbn_X.Size = new System.Drawing.Size(53, 19);

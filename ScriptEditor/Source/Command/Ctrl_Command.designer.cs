@@ -267,7 +267,6 @@
 			// TBN_LimitTime
 			// 
 			this.TBN_LimitTime.GetFunc = null;
-			this.TBN_LimitTime.GroupSetter = null;
 			this.TBN_LimitTime.Location = new System.Drawing.Point(60, 404);
 			this.TBN_LimitTime.Name = "TBN_LimitTime";
 			this.TBN_LimitTime.SetFunc = null;

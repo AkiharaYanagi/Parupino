@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace ScriptEditor
 {
+	using PrmInt = ScriptParam < int >;
+
+
 	public partial class Ctrl_Script : UserControl
 	{
 		//スクリプト総合編集
@@ -11,8 +15,16 @@ namespace ScriptEditor
 		//現在スクリプト
 		private Script script = null;
 
+		//コントロール集合
+		private List < TB_Number > l_tbn = new List<TB_Number> ();
+
 		//計算状態反映グループセッタ
 		private System.Action < Script, CLC_ST > GrouptSetterCLC_ST;
+
+
+		//@todo グループを越えて、設定項目を全体に反映する切り替えボタン
+		//グループ編集
+		// 各値が異なるとき空白表示、同一のとき値表示
 
 
 		//コンストラクタ
@@ -20,12 +32,27 @@ namespace ScriptEditor
 		{
 			InitializeComponent ();
 
-			//計算状態初期化
+			//計算状態 プルダウンメニュー初期化
 			foreach ( CLC_ST clcst in Enum.GetValues ( typeof ( CLC_ST ) ) )
 			{
 				cB_ClcSt.Items.Add ( clcst );
 			}
 			GrouptSetterCLC_ST = (s,c) => s.CalcState = c;
+
+			//設定用デリゲートを指定
+			TBSN_posx.PrmInt = new PrmInt ( (s,i)=>s.SetPosX(i), s=>s.Pos.X );
+
+			//登録
+			l_tbn.Add ( tBN_PosX );
+			l_tbn.Add ( tBN_PosY );
+			l_tbn.Add ( tBN_VelX );
+			l_tbn.Add ( tBN_VelY );
+			l_tbn.Add ( tBN_AccX );
+			l_tbn.Add ( tBN_AccY );
+			l_tbn.Add ( tBN_Power );
+			l_tbn.Add ( tBN_BlackOut );
+			l_tbn.Add ( tBN_Vibration );
+			l_tbn.Add ( tBN_Stop );
 		}
 
 		//コントロール設定
@@ -41,16 +68,10 @@ namespace ScriptEditor
 			cB_ClcSt.SelectedItem = script.CalcState;
 			Tb_Img.Text = script.ImgName;
 
-			tBN_PosX.UpdateData ();
-			tBN_PosY.UpdateData ();
-			tBN_VelX.UpdateData ();
-			tBN_VelY.UpdateData ();
-			tBN_AccX.UpdateData ();
-			tBN_AccY.UpdateData ();
-			tBN_Power.UpdateData ();
-			tBN_BlackOut.UpdateData ();
-			tBN_Vibration.UpdateData ();
-			tBN_Stop.UpdateData ();
+			foreach ( TB_Number tbn in l_tbn )
+			{
+				tbn.UpdateData ();
+			}
 		}
 
 		//関連付け(対象が変更になったとき)
@@ -75,6 +96,7 @@ namespace ScriptEditor
 			tBN_Vibration.Assosiate ( i => scp.Vibration = i, ()=> scp.Vibration );
 			tBN_Stop.Assosiate ( i => scp.Stop = i, ()=> scp.Stop );
 
+#if false
 			//グループセッタを登録
 			tBN_PosX.GroupSetter = EditScript.GroupSetterPosX;
 			tBN_PosY.GroupSetter = EditScript.GroupSetterPosY;
@@ -83,14 +105,7 @@ namespace ScriptEditor
 			tBN_AccX.GroupSetter = EditScript.GroupSetterAccX;
 			tBN_AccY.GroupSetter = EditScript.GroupSetterAccY;
 			tBN_Power.GroupSetter = EditScript.GroupSetterPower;
-		}
-
-		private void btn_Rect_Click ( object sender, System.EventArgs e )
-		{
-		}
-
-		private void btn_branch_Click ( object sender, System.EventArgs e )
-		{
+#endif
 		}
 
 		//計算状態
@@ -103,6 +118,22 @@ namespace ScriptEditor
 		{
 			script.CalcState = (CLC_ST)cB_ClcSt.SelectedItem;
 			EditScript.DoGroupSetterT ( GrouptSetterCLC_ST, script.CalcState );
+		}
+
+		//編集範囲を設定
+		private void RB_TRG_ALL_CheckedChanged ( object sender, EventArgs e )
+		{
+			//foreach ( TB_Number tbn in l_tbn ) { tbn.SetAll (); }
+		}
+
+		private void RB_TRG_GRP_CheckedChanged ( object sender, EventArgs e )
+		{
+			//foreach ( TB_Number tbn in l_tbn ) { tbn.SetGroup (); }
+		}
+
+		private void RB_TRG_SGL_CheckedChanged ( object sender, EventArgs e )
+		{
+			//foreach ( TB_Number tbn in l_tbn ) { tbn.SetSingle (); }
 		}
 	}
 

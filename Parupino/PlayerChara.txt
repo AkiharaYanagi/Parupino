@@ -78,8 +78,7 @@
 				<Route Name="ジャンプ" ID="4"></Route>
 				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
-			<EfGenerateList Num="1">
-				<EfGenerate Name="Effect0" EfName="testEffect0" EfGnrt_PtX="-20" EfGnrt_PtY="-50" EfGnrt_PtZ="50" Gnrt="False" Loop="False" Sync="False"></EfGenerate>
+			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
 				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
@@ -7184,9 +7183,10 @@
 			</OffsetRectList>
 		</Script>
 	</Action>
-	<Action Name="FrontDashDuration" NextName="Stand" NextID="0" Category="2" Posture="0" Balance="0">
-		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+	<Action Name="FrontDashDuration" NextName="FrontDashDuration" NextID="11" Category="2" Posture="0" Balance="0">
+		<Script Group="1" ImageName="FrontDash_00.png" ImageID="9" X="-250" Y="-450" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -7199,8 +7199,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="FrontDash_00.png" ImageID="9" X="-250" Y="-450" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -7213,8 +7214,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="FrontDash_00.png" ImageID="9" X="-250" Y="-450" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -7227,8 +7229,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="FrontDash_00.png" ImageID="9" X="-250" Y="-450" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -7241,8 +7244,234 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="FrontDash_00.png" ImageID="9" X="-250" Y="-450" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="FrontDash_01.png" ImageID="10" X="-273" Y="-445" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="FrontDash_01.png" ImageID="10" X="-273" Y="-445" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="FrontDash_01.png" ImageID="10" X="-273" Y="-445" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="FrontDash_01.png" ImageID="10" X="-273" Y="-445" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="FrontDash_01.png" ImageID="10" X="-273" Y="-445" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="FrontDash_02.png" ImageID="11" X="-192" Y="-454" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="FrontDash_02.png" ImageID="11" X="-192" Y="-454" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="FrontDash_02.png" ImageID="11" X="-192" Y="-454" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="FrontDash_02.png" ImageID="11" X="-192" Y="-454" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="FrontDash_02.png" ImageID="11" X="-192" Y="-454" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="FrontDash_03.png" ImageID="12" X="-285" Y="-429" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="FrontDash_03.png" ImageID="12" X="-285" Y="-429" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="FrontDash_03.png" ImageID="12" X="-285" Y="-429" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="FrontDash_03.png" ImageID="12" X="-285" Y="-429" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="FrontDash_03.png" ImageID="12" X="-285" Y="-429" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+			<RouteList>
+				<Route Name="前持続停止" ID="2"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -7406,14 +7635,14 @@
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+			<CollisionRectList Num="2">
+				<CollisionRect X="-2" Y="-194" W="99" H="180"></CollisionRect>
+				<CollisionRect X="75" Y="-235" W="64" H="212"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="50" Y="-245" W="83" H="250"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
@@ -7423,14 +7652,14 @@
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+			<CollisionRectList Num="2">
+				<CollisionRect X="-2" Y="-194" W="99" H="180"></CollisionRect>
+				<CollisionRect X="75" Y="-235" W="64" H="212"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="50" Y="-245" W="83" H="250"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
@@ -7440,14 +7669,14 @@
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+			<CollisionRectList Num="2">
+				<CollisionRect X="-2" Y="-194" W="99" H="180"></CollisionRect>
+				<CollisionRect X="75" Y="-235" W="64" H="212"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="50" Y="-245" W="83" H="250"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
@@ -7457,14 +7686,14 @@
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+			<CollisionRectList Num="2">
+				<CollisionRect X="-2" Y="-194" W="99" H="180"></CollisionRect>
+				<CollisionRect X="75" Y="-235" W="64" H="212"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="50" Y="-245" W="83" H="250"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
@@ -7474,14 +7703,14 @@
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+			<CollisionRectList Num="2">
+				<CollisionRect X="-2" Y="-194" W="99" H="180"></CollisionRect>
+				<CollisionRect X="75" Y="-235" W="64" H="212"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="50" Y="-245" W="83" H="250"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
@@ -7491,337 +7720,194 @@
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+			<CollisionRectList Num="2">
+				<CollisionRect X="-2" Y="-194" W="99" H="180"></CollisionRect>
+				<CollisionRect X="75" Y="-235" W="64" H="212"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="50" Y="-245" W="83" H="250"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-245" W="96" H="239"></CollisionRect>
 			</CollisionRectList>
 			<AttackRectList Num="1">
 				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="-19" Y="-251" W="160" H="235"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-245" W="96" H="239"></CollisionRect>
 			</CollisionRectList>
 			<AttackRectList Num="1">
 				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="-19" Y="-251" W="160" H="235"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-245" W="96" H="239"></CollisionRect>
 			</CollisionRectList>
 			<AttackRectList Num="1">
 				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="-19" Y="-251" W="160" H="235"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-245" W="96" H="239"></CollisionRect>
 			</CollisionRectList>
 			<AttackRectList Num="1">
 				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="-19" Y="-251" W="160" H="235"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
 			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
+			<AttackRectList Num="0">
 			</AttackRectList>
 			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="1" ImageName="Part_5L_00.png" ImageID="17" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="1">
-				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
-			</CollisionRectList>
-			<AttackRectList Num="1">
-				<AttackRect X="130" Y="-250" W="60" H="100"></AttackRect>
-			</AttackRectList>
-			<HitRectList Num="1">
-				<HitRect X="-100" Y="-280" W="120" H="350"></HitRect>
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
@@ -8746,7 +8832,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8762,7 +8848,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8778,7 +8864,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8794,7 +8880,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="2" ImageName="Part_5H_01.png" ImageID="33" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8810,7 +8896,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 				<Route Name="被ダメ_H" ID="10"></Route>
 			</RouteList>
@@ -8828,7 +8914,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 				<Route Name="被ダメ_H" ID="10"></Route>
 			</RouteList>
@@ -8846,7 +8932,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 				<Route Name="被ダメ_H" ID="10"></Route>
 			</RouteList>
@@ -8864,7 +8950,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="3" ImageName="Part_5H_02.png" ImageID="34" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 				<Route Name="被ダメ_H" ID="10"></Route>
 			</RouteList>
@@ -8882,7 +8968,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="4" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8898,7 +8984,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="4" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8914,7 +9000,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="4" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8930,7 +9016,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="4" ImageName="Part_5H_03.png" ImageID="35" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8946,7 +9032,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="5" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8962,7 +9048,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="5" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8978,7 +9064,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="5" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -8994,7 +9080,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="5" ImageName="Part_5H_04.png" ImageID="36" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17540,11 +17626,11 @@
 		</Script>
 	</Action>
 	<Action Name="OD0_L" NextName="Stand" NextID="0" Category="3" Posture="0" Balance="0">
-		<Script Group="1" ImageName="StarMassStrike_01.png" ImageID="50" X="-227" Y="-473" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="30" Vibration="0" Stop="30">
+		<Script Group="1" ImageName="StarMassStrike_01.png" ImageID="50" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="30" Vibration="0" Stop="10">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="1">
-				<EfGenerate Name="testEffect0" EfName="Ef" EfGnrt_PtX="74" EfGnrt_PtY="-326" EfGnrt_PtZ="50" Gnrt="True" Loop="False" Sync="False"></EfGenerate>
+				<EfGenerate Name="EfGn" EfName="testEffect0" EfGnrt_PtX="180" EfGnrt_PtY="-250" EfGnrt_PtZ="50" Gnrt="True" Loop="False" Sync="False"></EfGenerate>
 			</EfGenerateList>
 			<CollisionRectList Num="1">
 				<CollisionRect X="-90" Y="-300" W="100" H="250"></CollisionRect>
@@ -17557,7 +17643,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17573,7 +17659,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17589,7 +17675,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17605,7 +17691,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17621,7 +17707,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17637,7 +17723,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17653,7 +17739,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17669,7 +17755,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17685,7 +17771,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17701,7 +17787,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17717,7 +17803,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17733,7 +17819,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17749,7 +17835,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17765,7 +17851,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17781,7 +17867,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17797,7 +17883,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17813,7 +17899,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17829,7 +17915,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17845,7 +17931,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17861,7 +17947,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17877,7 +17963,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17893,7 +17979,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17909,7 +17995,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17925,7 +18011,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17941,7 +18027,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17957,7 +18043,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17973,7 +18059,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -17989,7 +18075,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -18005,7 +18091,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="1" ImageName="Part_6H_02.png" ImageID="45" X="-157" Y="-424" VX="10" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -21087,37 +21173,25 @@
 </ActionList>
 <EffectList Num="2">
 	<Effect Name="testEffect0">
-		<Script Group="0" ImageName="Ef0.png" ImageID="0" X="-120" Y="-220" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="0" ImageName="Ef0.png" ImageID="0" X="-120" Y="-220" VX="20" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="0">
+			<CollisionRectList Num="1">
+				<CollisionRect X="25" Y="-260" W="98" H="253"></CollisionRect>
 			</CollisionRectList>
 			<AttackRectList Num="0">
 			</AttackRectList>
-			<HitRectList Num="0">
-			</HitRectList>
-			<OffsetRectList Num="0">
-			</OffsetRectList>
-		</Script>
-		<Script Group="0" ImageName="dummy.png" ImageID="-1" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
-			<RouteList>
-			</RouteList>
-			<EfGenerateList Num="0">
-			</EfGenerateList>
-			<CollisionRectList Num="0">
-			</CollisionRectList>
-			<AttackRectList Num="0">
-			</AttackRectList>
-			<HitRectList Num="0">
+			<HitRectList Num="1">
+				<HitRect X="21" Y="-255" W="109" H="247"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
 	</Effect>
 	<Effect Name="testEffect1">
-		<Script Group="0" ImageName="dummy.png" ImageID="-1" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
+		<Script Group="0" ImageName="Ef0.png" ImageID="0" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -21133,7 +21207,7 @@
 		</Script>
 	</Effect>
 </EffectList>
-<CommandList Num="35">
+<CommandList Num="53">
 	<Command Name="_N" Limit="0">
 	</Command>
 	<Command Name="L" Limit="1">
@@ -21237,20 +21311,115 @@
 	<Command Name="_8H" Limit="1">
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_IS" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
 	</Command>
-	<Command Name="SP0" Limit="16">
+	<Command Name="SP0_L" Limit="24">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP0_Ma" Limit="24">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_PUSH" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP0_Mb" Limit="24">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_PUSH" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP0_H" Limit="24">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
+	</Command>
+	<Command Name="SP1_L" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP1_Ma" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_PUSH" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP1_Mb" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_PUSH" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP1_H" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
+	</Command>
+	<Command Name="SP2_L" Limit="16">
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 	</Command>
-	<Command Name="OD0" Limit="32">
+	<Command Name="SP2_Ma" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_PUSH" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP2_Mb" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_PUSH" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="SP2_H" Limit="16">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
+	</Command>
+	<Command Name="OD0_L" Limit="80">
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_IS" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_IS" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_PUSH" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+	</Command>
+	<Command Name="OD0_Ma" Limit="0">
+	</Command>
+	<Command Name="OD0_Mb" Limit="0">
+	</Command>
+	<Command Name="OD0_H" Limit="0">
+	</Command>
+	<Command Name="OD1_L" Limit="0">
+	</Command>
+	<Command Name="OD1_Ma" Limit="0">
+	</Command>
+	<Command Name="OD1_Mb" Limit="0">
+	</Command>
+	<Command Name="OD1_H" Limit="32">
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_IS" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_IS" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_IS" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_WILD"></Key>
+		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH"></Key>
 	</Command>
 </CommandList>
 <BranchList Num="36">
@@ -21262,7 +21431,7 @@
 	</Branch>
 	<Branch Name="H_立H" Condition="5" NameCommand="H" CommandID="4" NameAction="Attack_5H" ActionID="17" Frame="0">
 	</Branch>
-	<Branch Name="_6_F_Move" Condition="5" NameCommand="_6" CommandID="5" NameAction="FrontMove" ActionID="1" Frame="0">
+	<Branch Name="_6_F_Move" Condition="5" NameCommand="_6" CommandID="5" NameAction="FrontDashDuration" ActionID="11" Frame="0">
 	</Branch>
 	<Branch Name="_4_B_Move" Condition="5" NameCommand="_4" CommandID="6" NameAction="BackMove" ActionID="2" Frame="0">
 	</Branch>
@@ -21284,9 +21453,9 @@
 	</Branch>
 	<Branch Name="SP01" Condition="5" NameCommand="_6H" CommandID="20" NameAction="SP0_L" ActionID="38" Frame="0">
 	</Branch>
-	<Branch Name="SP0" Condition="5" NameCommand="SP0" CommandID="33" NameAction="SP0_L" ActionID="38" Frame="0">
+	<Branch Name="SP0" Condition="5" NameCommand="SP0_L" CommandID="33" NameAction="SP0_L" ActionID="38" Frame="0">
 	</Branch>
-	<Branch Name="OD0" Condition="5" NameCommand="OD0" CommandID="34" NameAction="OD0_L" ActionID="50" Frame="0">
+	<Branch Name="OD0" Condition="5" NameCommand="OD0_L" CommandID="45" NameAction="OD0_L" ActionID="50" Frame="0">
 	</Branch>
 	<Branch Name="投げ分岐_自" Condition="3" NameCommand="_N" CommandID="0" NameAction="SP01_L" ActionID="41" Frame="0">
 	</Branch>

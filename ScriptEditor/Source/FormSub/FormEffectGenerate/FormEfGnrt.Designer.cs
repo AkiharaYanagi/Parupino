@@ -137,11 +137,8 @@
 			// 
 			// Tbn_Z
 			// 
-			this.Tbn_Z.GetFunc = null;
-			this.Tbn_Z.GroupSetter = null;
 			this.Tbn_Z.Location = new System.Drawing.Point(295, 25);
 			this.Tbn_Z.Name = "Tbn_Z";
-			this.Tbn_Z.SetFunc = null;
 			this.Tbn_Z.Size = new System.Drawing.Size(33, 19);
 			this.Tbn_Z.TabIndex = 10;
 			this.Tbn_Z.Text = "0";
@@ -158,22 +155,16 @@
 			// 
 			// Tbn_Y
 			// 
-			this.Tbn_Y.GetFunc = null;
-			this.Tbn_Y.GroupSetter = null;
 			this.Tbn_Y.Location = new System.Drawing.Point(219, 25);
 			this.Tbn_Y.Name = "Tbn_Y";
-			this.Tbn_Y.SetFunc = null;
 			this.Tbn_Y.Size = new System.Drawing.Size(35, 19);
 			this.Tbn_Y.TabIndex = 8;
 			this.Tbn_Y.Text = "0";
 			// 
 			// Tbn_X
 			// 
-			this.Tbn_X.GetFunc = null;
-			this.Tbn_X.GroupSetter = null;
 			this.Tbn_X.Location = new System.Drawing.Point(159, 25);
 			this.Tbn_X.Name = "Tbn_X";
-			this.Tbn_X.SetFunc = null;
 			this.Tbn_X.Size = new System.Drawing.Size(35, 19);
 			this.Tbn_X.TabIndex = 7;
 			this.Tbn_X.Text = "0";
