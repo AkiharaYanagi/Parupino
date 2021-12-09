@@ -59,7 +59,7 @@ namespace ScriptEditor
 		{
 			//共通フォームにビヘイビアを設定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
-			Assosiate ( eb.SelectedScript );
+			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
 
 			//イメージフォームにビヘイビアを設定
@@ -81,7 +81,7 @@ namespace ScriptEditor
 		{
 			//共通フォームにガーニッシュを設定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
-			Assosiate ( eg.SelectedScript );
+			Assosiate ( eg.SelectedSequence, eg.SelectedScript );
 			eg.SelectScript ( 0, 0 );
 
 			//イメージフォームにガーニッシュを設定

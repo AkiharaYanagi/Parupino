@@ -31,20 +31,11 @@
 			this.cB_ClcSt = new System.Windows.Forms.ComboBox();
 			this.tB_Frame = new System.Windows.Forms.TextBox();
 			this.lbl_clc = new System.Windows.Forms.Label();
-			this.lbl_VelX = new System.Windows.Forms.Label();
+			this.lbl_Vel = new System.Windows.Forms.Label();
 			this.lbl_Frame = new System.Windows.Forms.Label();
 			this.lbl_AP = new System.Windows.Forms.Label();
-			this.lbl_PosX = new System.Windows.Forms.Label();
-			this.lbl_PosY = new System.Windows.Forms.Label();
-			this.lbl_VelY = new System.Windows.Forms.Label();
-			this.lbl_AccX = new System.Windows.Forms.Label();
-			this.lbl_AccY = new System.Windows.Forms.Label();
-			this.tBN_AccY = new ScriptEditor.TB_Number();
-			this.tBN_AccX = new ScriptEditor.TB_Number();
-			this.tBN_VelY = new ScriptEditor.TB_Number();
-			this.tBN_VelX = new ScriptEditor.TB_Number();
-			this.tBN_PosY = new ScriptEditor.TB_Number();
-			this.tBN_PosX = new ScriptEditor.TB_Number();
+			this.lbl_Pos = new System.Windows.Forms.Label();
+			this.lbl_Acc = new System.Windows.Forms.Label();
 			this.tBN_Power = new ScriptEditor.TB_Number();
 			this.Lbl_Img = new System.Windows.Forms.Label();
 			this.Tb_Img = new System.Windows.Forms.TextBox();
@@ -58,14 +49,36 @@
 			this.RB_TRG_GRP = new System.Windows.Forms.RadioButton();
 			this.RB_TRG_SGL = new System.Windows.Forms.RadioButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.TBSN_posx = new ScriptEditor.TB_ScpNumber();
+			this.Lbl_Rad = new System.Windows.Forms.Label();
+			this.tB_Number1 = new ScriptEditor.TB_Number();
+			this.tB_Number2 = new ScriptEditor.TB_Number();
+			this.Lbl_AI_Time = new System.Windows.Forms.Label();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.Lbl_AI_Pitch = new System.Windows.Forms.Label();
+			this.tB_Number3 = new ScriptEditor.TB_Number();
+			this.Lbl_AI_N = new System.Windows.Forms.Label();
+			this.tB_Number4 = new ScriptEditor.TB_Number();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.tB_Number5 = new ScriptEditor.TB_Number();
+			this.tB_Number7 = new ScriptEditor.TB_Number();
+			this.TBSN_AccY = new ScriptEditor.TB_ScpNumber();
+			this.TBSN_AccX = new ScriptEditor.TB_ScpNumber();
+			this.TBSN_VelY = new ScriptEditor.TB_ScpNumber();
+			this.TBSN_VelX = new ScriptEditor.TB_ScpNumber();
+			this.TBSN_PosY = new ScriptEditor.TB_ScpNumber();
+			this.TBSN_PosX = new ScriptEditor.TB_ScpNumber();
+			this.tB_ScpHex1 = new ScriptEditor.TB_ScpHex();
 			this.groupBox1.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// cB_ClcSt
 			// 
 			this.cB_ClcSt.FormattingEnabled = true;
-			this.cB_ClcSt.Location = new System.Drawing.Point(244, 116);
+			this.cB_ClcSt.Location = new System.Drawing.Point(75, 87);
 			this.cB_ClcSt.Margin = new System.Windows.Forms.Padding(2);
 			this.cB_ClcSt.Name = "cB_ClcSt";
 			this.cB_ClcSt.Size = new System.Drawing.Size(74, 20);
@@ -77,37 +90,37 @@
 			// 
 			this.tB_Frame.BackColor = System.Drawing.SystemColors.Control;
 			this.tB_Frame.Cursor = System.Windows.Forms.Cursors.Default;
-			this.tB_Frame.Location = new System.Drawing.Point(59, 75);
+			this.tB_Frame.Location = new System.Drawing.Point(75, 62);
 			this.tB_Frame.Margin = new System.Windows.Forms.Padding(2);
 			this.tB_Frame.Name = "tB_Frame";
 			this.tB_Frame.ReadOnly = true;
-			this.tB_Frame.Size = new System.Drawing.Size(62, 19);
+			this.tB_Frame.Size = new System.Drawing.Size(30, 19);
 			this.tB_Frame.TabIndex = 14;
 			// 
 			// lbl_clc
 			// 
 			this.lbl_clc.AutoSize = true;
-			this.lbl_clc.Location = new System.Drawing.Point(207, 121);
+			this.lbl_clc.Location = new System.Drawing.Point(27, 87);
 			this.lbl_clc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_clc.Name = "lbl_clc";
 			this.lbl_clc.Size = new System.Drawing.Size(33, 12);
 			this.lbl_clc.TabIndex = 7;
 			this.lbl_clc.Text = "ClcSt";
 			// 
-			// lbl_VelX
+			// lbl_Vel
 			// 
-			this.lbl_VelX.AutoSize = true;
-			this.lbl_VelX.Location = new System.Drawing.Point(15, 156);
-			this.lbl_VelX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_VelX.Name = "lbl_VelX";
-			this.lbl_VelX.Size = new System.Drawing.Size(29, 12);
-			this.lbl_VelX.TabIndex = 8;
-			this.lbl_VelX.Text = "VelX";
+			this.lbl_Vel.AutoSize = true;
+			this.lbl_Vel.Location = new System.Drawing.Point(18, 145);
+			this.lbl_Vel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lbl_Vel.Name = "lbl_Vel";
+			this.lbl_Vel.Size = new System.Drawing.Size(46, 12);
+			this.lbl_Vel.TabIndex = 8;
+			this.lbl_Vel.Text = "Vel(X,Y)";
 			// 
 			// lbl_Frame
 			// 
 			this.lbl_Frame.AutoSize = true;
-			this.lbl_Frame.Location = new System.Drawing.Point(15, 77);
+			this.lbl_Frame.Location = new System.Drawing.Point(23, 65);
 			this.lbl_Frame.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_Frame.Name = "lbl_Frame";
 			this.lbl_Frame.Size = new System.Drawing.Size(37, 12);
@@ -117,127 +130,37 @@
 			// lbl_AP
 			// 
 			this.lbl_AP.AutoSize = true;
-			this.lbl_AP.Location = new System.Drawing.Point(182, 156);
+			this.lbl_AP.Location = new System.Drawing.Point(173, 91);
 			this.lbl_AP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_AP.Name = "lbl_AP";
 			this.lbl_AP.Size = new System.Drawing.Size(70, 12);
 			this.lbl_AP.TabIndex = 10;
 			this.lbl_AP.Text = "AttackPower";
 			// 
-			// lbl_PosX
+			// lbl_Pos
 			// 
-			this.lbl_PosX.AutoSize = true;
-			this.lbl_PosX.Location = new System.Drawing.Point(15, 120);
-			this.lbl_PosX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_PosX.Name = "lbl_PosX";
-			this.lbl_PosX.Size = new System.Drawing.Size(31, 12);
-			this.lbl_PosX.TabIndex = 8;
-			this.lbl_PosX.Text = "PosX";
+			this.lbl_Pos.AutoSize = true;
+			this.lbl_Pos.Location = new System.Drawing.Point(16, 123);
+			this.lbl_Pos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lbl_Pos.Name = "lbl_Pos";
+			this.lbl_Pos.Size = new System.Drawing.Size(48, 12);
+			this.lbl_Pos.TabIndex = 8;
+			this.lbl_Pos.Text = "Pos(X,Y)";
 			// 
-			// lbl_PosY
+			// lbl_Acc
 			// 
-			this.lbl_PosY.AutoSize = true;
-			this.lbl_PosY.Location = new System.Drawing.Point(101, 120);
-			this.lbl_PosY.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_PosY.Name = "lbl_PosY";
-			this.lbl_PosY.Size = new System.Drawing.Size(31, 12);
-			this.lbl_PosY.TabIndex = 8;
-			this.lbl_PosY.Text = "PosY";
-			// 
-			// lbl_VelY
-			// 
-			this.lbl_VelY.AutoSize = true;
-			this.lbl_VelY.Location = new System.Drawing.Point(101, 156);
-			this.lbl_VelY.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_VelY.Name = "lbl_VelY";
-			this.lbl_VelY.Size = new System.Drawing.Size(29, 12);
-			this.lbl_VelY.TabIndex = 8;
-			this.lbl_VelY.Text = "VelY";
-			// 
-			// lbl_AccX
-			// 
-			this.lbl_AccX.AutoSize = true;
-			this.lbl_AccX.Location = new System.Drawing.Point(15, 193);
-			this.lbl_AccX.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_AccX.Name = "lbl_AccX";
-			this.lbl_AccX.Size = new System.Drawing.Size(32, 12);
-			this.lbl_AccX.TabIndex = 8;
-			this.lbl_AccX.Text = "AccX";
-			// 
-			// lbl_AccY
-			// 
-			this.lbl_AccY.AutoSize = true;
-			this.lbl_AccY.Location = new System.Drawing.Point(101, 193);
-			this.lbl_AccY.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_AccY.Name = "lbl_AccY";
-			this.lbl_AccY.Size = new System.Drawing.Size(32, 12);
-			this.lbl_AccY.TabIndex = 8;
-			this.lbl_AccY.Text = "AccY";
-			// 
-			// tBN_AccY
-			// 
-			this.tBN_AccY.GetFunc = null;
-			this.tBN_AccY.Location = new System.Drawing.Point(141, 191);
-			this.tBN_AccY.Name = "tBN_AccY";
-			this.tBN_AccY.SetFunc = null;
-			this.tBN_AccY.Size = new System.Drawing.Size(30, 19);
-			this.tBN_AccY.TabIndex = 20;
-			this.tBN_AccY.Text = "0";
-			// 
-			// tBN_AccX
-			// 
-			this.tBN_AccX.GetFunc = null;
-			this.tBN_AccX.Location = new System.Drawing.Point(59, 190);
-			this.tBN_AccX.Name = "tBN_AccX";
-			this.tBN_AccX.SetFunc = null;
-			this.tBN_AccX.Size = new System.Drawing.Size(30, 19);
-			this.tBN_AccX.TabIndex = 20;
-			this.tBN_AccX.Text = "0";
-			// 
-			// tBN_VelY
-			// 
-			this.tBN_VelY.GetFunc = null;
-			this.tBN_VelY.Location = new System.Drawing.Point(141, 154);
-			this.tBN_VelY.Name = "tBN_VelY";
-			this.tBN_VelY.SetFunc = null;
-			this.tBN_VelY.Size = new System.Drawing.Size(30, 19);
-			this.tBN_VelY.TabIndex = 20;
-			this.tBN_VelY.Text = "0";
-			// 
-			// tBN_VelX
-			// 
-			this.tBN_VelX.GetFunc = null;
-			this.tBN_VelX.Location = new System.Drawing.Point(59, 153);
-			this.tBN_VelX.Name = "tBN_VelX";
-			this.tBN_VelX.SetFunc = null;
-			this.tBN_VelX.Size = new System.Drawing.Size(30, 19);
-			this.tBN_VelX.TabIndex = 20;
-			this.tBN_VelX.Text = "0";
-			// 
-			// tBN_PosY
-			// 
-			this.tBN_PosY.GetFunc = null;
-			this.tBN_PosY.Location = new System.Drawing.Point(141, 117);
-			this.tBN_PosY.Name = "tBN_PosY";
-			this.tBN_PosY.SetFunc = null;
-			this.tBN_PosY.Size = new System.Drawing.Size(30, 19);
-			this.tBN_PosY.TabIndex = 20;
-			this.tBN_PosY.Text = "0";
-			// 
-			// tBN_PosX
-			// 
-			this.tBN_PosX.GetFunc = null;
-			this.tBN_PosX.Location = new System.Drawing.Point(59, 116);
-			this.tBN_PosX.Name = "tBN_PosX";
-			this.tBN_PosX.SetFunc = null;
-			this.tBN_PosX.Size = new System.Drawing.Size(30, 19);
-			this.tBN_PosX.TabIndex = 20;
-			this.tBN_PosX.Text = "0";
+			this.lbl_Acc.AutoSize = true;
+			this.lbl_Acc.Location = new System.Drawing.Point(15, 170);
+			this.lbl_Acc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lbl_Acc.Name = "lbl_Acc";
+			this.lbl_Acc.Size = new System.Drawing.Size(49, 12);
+			this.lbl_Acc.TabIndex = 8;
+			this.lbl_Acc.Text = "Acc(X,Y)";
 			// 
 			// tBN_Power
 			// 
 			this.tBN_Power.GetFunc = null;
-			this.tBN_Power.Location = new System.Drawing.Point(264, 153);
+			this.tBN_Power.Location = new System.Drawing.Point(247, 88);
 			this.tBN_Power.Margin = new System.Windows.Forms.Padding(2);
 			this.tBN_Power.Name = "tBN_Power";
 			this.tBN_Power.SetFunc = null;
@@ -248,7 +171,7 @@
 			// Lbl_Img
 			// 
 			this.Lbl_Img.AutoSize = true;
-			this.Lbl_Img.Location = new System.Drawing.Point(148, 78);
+			this.Lbl_Img.Location = new System.Drawing.Point(176, 65);
 			this.Lbl_Img.Name = "Lbl_Img";
 			this.Lbl_Img.Size = new System.Drawing.Size(23, 12);
 			this.Lbl_Img.TabIndex = 21;
@@ -256,16 +179,16 @@
 			// 
 			// Tb_Img
 			// 
-			this.Tb_Img.Location = new System.Drawing.Point(177, 75);
+			this.Tb_Img.Location = new System.Drawing.Point(213, 62);
 			this.Tb_Img.Name = "Tb_Img";
 			this.Tb_Img.ReadOnly = true;
-			this.Tb_Img.Size = new System.Drawing.Size(141, 19);
+			this.Tb_Img.Size = new System.Drawing.Size(89, 19);
 			this.Tb_Img.TabIndex = 22;
 			// 
 			// Lbl_BlackOut
 			// 
 			this.Lbl_BlackOut.AutoSize = true;
-			this.Lbl_BlackOut.Location = new System.Drawing.Point(15, 238);
+			this.Lbl_BlackOut.Location = new System.Drawing.Point(13, 231);
 			this.Lbl_BlackOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_BlackOut.Name = "Lbl_BlackOut";
 			this.Lbl_BlackOut.Size = new System.Drawing.Size(52, 12);
@@ -275,18 +198,18 @@
 			// tBN_BlackOut
 			// 
 			this.tBN_BlackOut.GetFunc = null;
-			this.tBN_BlackOut.Location = new System.Drawing.Point(97, 235);
+			this.tBN_BlackOut.Location = new System.Drawing.Point(75, 228);
 			this.tBN_BlackOut.Margin = new System.Windows.Forms.Padding(2);
 			this.tBN_BlackOut.Name = "tBN_BlackOut";
 			this.tBN_BlackOut.SetFunc = null;
-			this.tBN_BlackOut.Size = new System.Drawing.Size(74, 19);
+			this.tBN_BlackOut.Size = new System.Drawing.Size(42, 19);
 			this.tBN_BlackOut.TabIndex = 18;
 			this.tBN_BlackOut.Text = "0";
 			// 
 			// Lbl_Vibration
 			// 
 			this.Lbl_Vibration.AutoSize = true;
-			this.Lbl_Vibration.Location = new System.Drawing.Point(15, 261);
+			this.Lbl_Vibration.Location = new System.Drawing.Point(14, 254);
 			this.Lbl_Vibration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_Vibration.Name = "Lbl_Vibration";
 			this.Lbl_Vibration.Size = new System.Drawing.Size(51, 12);
@@ -296,18 +219,18 @@
 			// tBN_Vibration
 			// 
 			this.tBN_Vibration.GetFunc = null;
-			this.tBN_Vibration.Location = new System.Drawing.Point(97, 258);
+			this.tBN_Vibration.Location = new System.Drawing.Point(75, 251);
 			this.tBN_Vibration.Margin = new System.Windows.Forms.Padding(2);
 			this.tBN_Vibration.Name = "tBN_Vibration";
 			this.tBN_Vibration.SetFunc = null;
-			this.tBN_Vibration.Size = new System.Drawing.Size(74, 19);
+			this.tBN_Vibration.Size = new System.Drawing.Size(42, 19);
 			this.tBN_Vibration.TabIndex = 18;
 			this.tBN_Vibration.Text = "0";
 			// 
 			// Lbl_Stop
 			// 
 			this.Lbl_Stop.AutoSize = true;
-			this.Lbl_Stop.Location = new System.Drawing.Point(15, 284);
+			this.Lbl_Stop.Location = new System.Drawing.Point(37, 277);
 			this.Lbl_Stop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_Stop.Name = "Lbl_Stop";
 			this.Lbl_Stop.Size = new System.Drawing.Size(28, 12);
@@ -317,11 +240,11 @@
 			// tBN_Stop
 			// 
 			this.tBN_Stop.GetFunc = null;
-			this.tBN_Stop.Location = new System.Drawing.Point(97, 281);
+			this.tBN_Stop.Location = new System.Drawing.Point(75, 274);
 			this.tBN_Stop.Margin = new System.Windows.Forms.Padding(2);
 			this.tBN_Stop.Name = "tBN_Stop";
 			this.tBN_Stop.SetFunc = null;
-			this.tBN_Stop.Size = new System.Drawing.Size(74, 19);
+			this.tBN_Stop.Size = new System.Drawing.Size(42, 19);
 			this.tBN_Stop.TabIndex = 18;
 			this.tBN_Stop.Text = "0";
 			// 
@@ -375,52 +298,280 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Target";
 			// 
-			// TBSN_posx
+			// Lbl_Rad
 			// 
-			this.TBSN_posx.Location = new System.Drawing.Point(264, 214);
-			this.TBSN_posx.Name = "TBSN_posx";
-			this.TBSN_posx.PrmInt = null;
-			this.TBSN_posx.Scp = null;
-			this.TBSN_posx.Size = new System.Drawing.Size(45, 19);
-			this.TBSN_posx.TabIndex = 27;
+			this.Lbl_Rad.AutoSize = true;
+			this.Lbl_Rad.Location = new System.Drawing.Point(198, 126);
+			this.Lbl_Rad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_Rad.Name = "Lbl_Rad";
+			this.Lbl_Rad.Size = new System.Drawing.Size(40, 12);
+			this.Lbl_Rad.TabIndex = 10;
+			this.Lbl_Rad.Text = "Radian";
+			// 
+			// tB_Number1
+			// 
+			this.tB_Number1.GetFunc = null;
+			this.tB_Number1.Location = new System.Drawing.Point(260, 123);
+			this.tB_Number1.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number1.Name = "tB_Number1";
+			this.tB_Number1.SetFunc = null;
+			this.tB_Number1.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number1.TabIndex = 18;
+			this.tB_Number1.Text = "0";
+			// 
+			// tB_Number2
+			// 
+			this.tB_Number2.GetFunc = null;
+			this.tB_Number2.Location = new System.Drawing.Point(68, 18);
+			this.tB_Number2.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number2.Name = "tB_Number2";
+			this.tB_Number2.SetFunc = null;
+			this.tB_Number2.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number2.TabIndex = 18;
+			this.tB_Number2.Text = "0";
+			// 
+			// Lbl_AI_Time
+			// 
+			this.Lbl_AI_Time.AutoSize = true;
+			this.Lbl_AI_Time.Location = new System.Drawing.Point(19, 21);
+			this.Lbl_AI_Time.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_AI_Time.Name = "Lbl_AI_Time";
+			this.Lbl_AI_Time.Size = new System.Drawing.Size(30, 12);
+			this.Lbl_AI_Time.TabIndex = 10;
+			this.Lbl_AI_Time.Text = "Time";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.tB_Number4);
+			this.groupBox2.Controls.Add(this.tB_Number3);
+			this.groupBox2.Controls.Add(this.tB_Number2);
+			this.groupBox2.Controls.Add(this.Lbl_AI_N);
+			this.groupBox2.Controls.Add(this.Lbl_AI_Pitch);
+			this.groupBox2.Controls.Add(this.Lbl_AI_Time);
+			this.groupBox2.Location = new System.Drawing.Point(192, 210);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(126, 102);
+			this.groupBox2.TabIndex = 28;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "AfterImage";
+			// 
+			// Lbl_AI_Pitch
+			// 
+			this.Lbl_AI_Pitch.AutoSize = true;
+			this.Lbl_AI_Pitch.Location = new System.Drawing.Point(19, 44);
+			this.Lbl_AI_Pitch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_AI_Pitch.Name = "Lbl_AI_Pitch";
+			this.Lbl_AI_Pitch.Size = new System.Drawing.Size(31, 12);
+			this.Lbl_AI_Pitch.TabIndex = 10;
+			this.Lbl_AI_Pitch.Text = "Pitch";
+			// 
+			// tB_Number3
+			// 
+			this.tB_Number3.GetFunc = null;
+			this.tB_Number3.Location = new System.Drawing.Point(68, 41);
+			this.tB_Number3.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number3.Name = "tB_Number3";
+			this.tB_Number3.SetFunc = null;
+			this.tB_Number3.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number3.TabIndex = 18;
+			this.tB_Number3.Text = "0";
+			// 
+			// Lbl_AI_N
+			// 
+			this.Lbl_AI_N.AutoSize = true;
+			this.Lbl_AI_N.Location = new System.Drawing.Point(19, 67);
+			this.Lbl_AI_N.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_AI_N.Name = "Lbl_AI_N";
+			this.Lbl_AI_N.Size = new System.Drawing.Size(28, 12);
+			this.Lbl_AI_N.TabIndex = 10;
+			this.Lbl_AI_N.Text = "Num";
+			// 
+			// tB_Number4
+			// 
+			this.tB_Number4.GetFunc = null;
+			this.tB_Number4.Location = new System.Drawing.Point(68, 64);
+			this.tB_Number4.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number4.Name = "tB_Number4";
+			this.tB_Number4.SetFunc = null;
+			this.tB_Number4.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number4.TabIndex = 18;
+			this.tB_Number4.Text = "0";
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Location = new System.Drawing.Point(0, 210);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(149, 102);
+			this.groupBox3.TabIndex = 29;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "System";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(11, 344);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(60, 12);
+			this.label1.TabIndex = 10;
+			this.label1.Text = "Vibr_Chara";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(26, 367);
+			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(32, 12);
+			this.label2.TabIndex = 10;
+			this.label2.Text = "Color";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(11, 390);
+			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(58, 12);
+			this.label3.TabIndex = 10;
+			this.label3.Text = "Color_time";
+			// 
+			// tB_Number5
+			// 
+			this.tB_Number5.GetFunc = null;
+			this.tB_Number5.Location = new System.Drawing.Point(75, 341);
+			this.tB_Number5.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number5.Name = "tB_Number5";
+			this.tB_Number5.SetFunc = null;
+			this.tB_Number5.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number5.TabIndex = 18;
+			this.tB_Number5.Text = "0";
+			// 
+			// tB_Number7
+			// 
+			this.tB_Number7.GetFunc = null;
+			this.tB_Number7.Location = new System.Drawing.Point(75, 387);
+			this.tB_Number7.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number7.Name = "tB_Number7";
+			this.tB_Number7.SetFunc = null;
+			this.tB_Number7.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number7.TabIndex = 18;
+			this.tB_Number7.Text = "0";
+			// 
+			// TBSN_AccY
+			// 
+			this.TBSN_AccY.Location = new System.Drawing.Point(126, 166);
+			this.TBSN_AccY.Name = "TBSN_AccY";
+			this.TBSN_AccY.PrmInt = null;
+			this.TBSN_AccY.Scp = null;
+			this.TBSN_AccY.Size = new System.Drawing.Size(36, 19);
+			this.TBSN_AccY.TabIndex = 27;
+			this.TBSN_AccY.Text = "0";
+			// 
+			// TBSN_AccX
+			// 
+			this.TBSN_AccX.Location = new System.Drawing.Point(75, 166);
+			this.TBSN_AccX.Name = "TBSN_AccX";
+			this.TBSN_AccX.PrmInt = null;
+			this.TBSN_AccX.Scp = null;
+			this.TBSN_AccX.Size = new System.Drawing.Size(36, 19);
+			this.TBSN_AccX.TabIndex = 27;
+			this.TBSN_AccX.Text = "0";
+			// 
+			// TBSN_VelY
+			// 
+			this.TBSN_VelY.Location = new System.Drawing.Point(126, 143);
+			this.TBSN_VelY.Name = "TBSN_VelY";
+			this.TBSN_VelY.PrmInt = null;
+			this.TBSN_VelY.Scp = null;
+			this.TBSN_VelY.Size = new System.Drawing.Size(36, 19);
+			this.TBSN_VelY.TabIndex = 27;
+			this.TBSN_VelY.Text = "0";
+			// 
+			// TBSN_VelX
+			// 
+			this.TBSN_VelX.Location = new System.Drawing.Point(75, 143);
+			this.TBSN_VelX.Name = "TBSN_VelX";
+			this.TBSN_VelX.PrmInt = null;
+			this.TBSN_VelX.Scp = null;
+			this.TBSN_VelX.Size = new System.Drawing.Size(36, 19);
+			this.TBSN_VelX.TabIndex = 27;
+			this.TBSN_VelX.Text = "0";
+			// 
+			// TBSN_PosY
+			// 
+			this.TBSN_PosY.Location = new System.Drawing.Point(126, 120);
+			this.TBSN_PosY.Name = "TBSN_PosY";
+			this.TBSN_PosY.PrmInt = null;
+			this.TBSN_PosY.Scp = null;
+			this.TBSN_PosY.Size = new System.Drawing.Size(36, 19);
+			this.TBSN_PosY.TabIndex = 27;
+			this.TBSN_PosY.Text = "0";
+			// 
+			// TBSN_PosX
+			// 
+			this.TBSN_PosX.Location = new System.Drawing.Point(75, 120);
+			this.TBSN_PosX.Name = "TBSN_PosX";
+			this.TBSN_PosX.PrmInt = null;
+			this.TBSN_PosX.Scp = null;
+			this.TBSN_PosX.Size = new System.Drawing.Size(36, 19);
+			this.TBSN_PosX.TabIndex = 27;
+			this.TBSN_PosX.Text = "0";
+			// 
+			// tB_ScpHex1
+			// 
+			this.tB_ScpHex1.Location = new System.Drawing.Point(75, 365);
+			this.tB_ScpHex1.Name = "tB_ScpHex1";
+			this.tB_ScpHex1.PrmInt = null;
+			this.tB_ScpHex1.Scp = null;
+			this.tB_ScpHex1.Size = new System.Drawing.Size(69, 19);
+			this.tB_ScpHex1.TabIndex = 30;
 			// 
 			// Ctrl_Script
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.TBSN_posx);
+			this.Controls.Add(this.tB_ScpHex1);
+			this.Controls.Add(this.tB_Number7);
+			this.Controls.Add(this.TBSN_AccY);
+			this.Controls.Add(this.tB_Number5);
+			this.Controls.Add(this.TBSN_AccX);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.TBSN_VelY);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.TBSN_VelX);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.TBSN_PosY);
+			this.Controls.Add(this.TBSN_PosX);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.Tb_Img);
 			this.Controls.Add(this.Lbl_Img);
-			this.Controls.Add(this.tBN_AccY);
-			this.Controls.Add(this.tBN_AccX);
-			this.Controls.Add(this.tBN_VelY);
-			this.Controls.Add(this.tBN_VelX);
-			this.Controls.Add(this.tBN_PosY);
-			this.Controls.Add(this.tBN_PosX);
 			this.Controls.Add(this.tBN_Stop);
 			this.Controls.Add(this.tBN_Vibration);
+			this.Controls.Add(this.tB_Number1);
 			this.Controls.Add(this.tBN_BlackOut);
 			this.Controls.Add(this.tBN_Power);
 			this.Controls.Add(this.cB_ClcSt);
 			this.Controls.Add(this.tB_Frame);
 			this.Controls.Add(this.lbl_clc);
-			this.Controls.Add(this.lbl_PosY);
-			this.Controls.Add(this.lbl_AccY);
-			this.Controls.Add(this.lbl_PosX);
-			this.Controls.Add(this.lbl_AccX);
+			this.Controls.Add(this.lbl_Pos);
+			this.Controls.Add(this.lbl_Acc);
 			this.Controls.Add(this.Lbl_Stop);
-			this.Controls.Add(this.lbl_VelY);
 			this.Controls.Add(this.Lbl_Vibration);
-			this.Controls.Add(this.lbl_VelX);
+			this.Controls.Add(this.Lbl_Rad);
+			this.Controls.Add(this.lbl_Vel);
 			this.Controls.Add(this.Lbl_BlackOut);
 			this.Controls.Add(this.lbl_Frame);
 			this.Controls.Add(this.lbl_AP);
+			this.Controls.Add(this.groupBox2);
+			this.Controls.Add(this.groupBox3);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Ctrl_Script";
-			this.Size = new System.Drawing.Size(337, 319);
+			this.Size = new System.Drawing.Size(358, 437);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -432,20 +583,11 @@
 		public System.Windows.Forms.ComboBox cB_ClcSt;
 		public System.Windows.Forms.TextBox tB_Frame;
 		private System.Windows.Forms.Label lbl_clc;
-		private System.Windows.Forms.Label lbl_VelX;
+		private System.Windows.Forms.Label lbl_Vel;
 		private System.Windows.Forms.Label lbl_Frame;
 		private System.Windows.Forms.Label lbl_AP;
-		private System.Windows.Forms.Label lbl_PosX;
-		private System.Windows.Forms.Label lbl_PosY;
-		private System.Windows.Forms.Label lbl_VelY;
-		private System.Windows.Forms.Label lbl_AccX;
-		private System.Windows.Forms.Label lbl_AccY;
-		private TB_Number tBN_PosX;
-		private TB_Number tBN_VelX;
-		private TB_Number tBN_AccX;
-		private TB_Number tBN_PosY;
-		private TB_Number tBN_VelY;
-		private TB_Number tBN_AccY;
+		private System.Windows.Forms.Label lbl_Pos;
+		private System.Windows.Forms.Label lbl_Acc;
 		private System.Windows.Forms.Label Lbl_Img;
 		private System.Windows.Forms.TextBox Tb_Img;
 		private System.Windows.Forms.Label Lbl_BlackOut;
@@ -458,6 +600,27 @@
 		private System.Windows.Forms.RadioButton RB_TRG_GRP;
 		private System.Windows.Forms.RadioButton RB_TRG_SGL;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private TB_ScpNumber TBSN_posx;
+		private TB_ScpNumber TBSN_PosX;
+		private TB_ScpNumber TBSN_PosY;
+		private TB_ScpNumber TBSN_VelX;
+		private TB_ScpNumber TBSN_VelY;
+		private TB_ScpNumber TBSN_AccX;
+		private TB_ScpNumber TBSN_AccY;
+		private System.Windows.Forms.Label Lbl_Rad;
+		public TB_Number tB_Number1;
+		public TB_Number tB_Number2;
+		private System.Windows.Forms.Label Lbl_AI_Time;
+		private System.Windows.Forms.GroupBox groupBox2;
+		public TB_Number tB_Number4;
+		public TB_Number tB_Number3;
+		private System.Windows.Forms.Label Lbl_AI_N;
+		private System.Windows.Forms.Label Lbl_AI_Pitch;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
+		public TB_Number tB_Number5;
+		public TB_Number tB_Number7;
+		private TB_ScpHex tB_ScpHex1;
 	}
 }

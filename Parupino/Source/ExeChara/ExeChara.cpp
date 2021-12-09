@@ -91,7 +91,8 @@ namespace GAME
 		switch ( m_name )
 		{
 //		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
-		case CHARA_TEST: name.assign ( _T ( "PlayerChara.dat" ) ); break;
+//		case CHARA_TEST: name.assign ( _T ( "PlayerChara.dat" ) ); break;
+		case CHARA_TEST: name.assign ( _T ( "Yukino.dat" ) ); break;
 #if 0
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
 		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;

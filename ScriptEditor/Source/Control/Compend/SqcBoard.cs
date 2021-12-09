@@ -448,7 +448,6 @@ namespace ScriptEditor
 			bDrag = true;
 
 			//更新
-			EditCompend.Assosiate ();
 			Assosiate ();
 			DispCompend.Disp ();
 		}
@@ -476,7 +475,8 @@ namespace ScriptEditor
 		private void Assosiate ()
 		{
 			Script scp = EditCompend.SelectedScript;
-			FormScript.Inst.Assosiate ( scp );
+			EditCompend.Assosiate ();
+			FormScript.Inst.Assosiate ( scp, Sqc );
 			FormRoute.Inst.Assosiate ( scp );
 			FormRect.Inst.Assosiate ( scp );
 			FormEfGnrt.Inst.Assosiate ( scp );

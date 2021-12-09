@@ -43,10 +43,10 @@ namespace ScriptEditor
 		//==================================================================================
 		//各フォームに更新を伝える (読込時、変更時)
 		//==================================================================================
-		public void Assosiate ( Script scp )
+		public void Assosiate ( Sequence sqc, Script scp )
 		{
 			FormRect.Inst.Assosiate ( scp );
-			FormScript.Inst.Assosiate ( scp );
+			FormScript.Inst.Assosiate ( scp, sqc );
 			FormEfGnrt.Inst.Assosiate ( scp );
 			Disp ();
 		}

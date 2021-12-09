@@ -33,17 +33,18 @@
 			// 
 			// ctrl_Script1
 			// 
+			this.ctrl_Script1.EditScript = null;
 			this.ctrl_Script1.Location = new System.Drawing.Point(1, 0);
 			this.ctrl_Script1.Margin = new System.Windows.Forms.Padding(1);
 			this.ctrl_Script1.Name = "ctrl_Script1";
-			this.ctrl_Script1.Size = new System.Drawing.Size(345, 348);
+			this.ctrl_Script1.Size = new System.Drawing.Size(339, 415);
 			this.ctrl_Script1.TabIndex = 0;
 			// 
 			// FormScript
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(344, 358);
+			this.ClientSize = new System.Drawing.Size(339, 420);
 			this.Controls.Add(this.ctrl_Script1);
 			this.Name = "FormScript";
 			this.Text = "Script";

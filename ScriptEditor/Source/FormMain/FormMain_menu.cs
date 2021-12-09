@@ -2,6 +2,8 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace ScriptEditor
 {
@@ -92,6 +94,19 @@ namespace ScriptEditor
 
 			//タブアクションを選択
 			tabAction_Selected ();
+
+
+			//名前参照のチェック
+			TestChara testChara = new TestChara ();
+			if ( testChara._TestNameAssign ( chara ) )
+			{
+				STS_TXT.Tssl.BackColor = Color.Red;
+				STS_TXT.Trace( "Name Refference Error." );
+			}
+			else
+			{
+				STS_TXT.Tssl.BackColor = SystemColors.Control;
+			}
 
 			//表示の更新
 			DispChara.Inst.Disp ();

@@ -15,6 +15,9 @@ namespace ScriptEditor
 		//現在スクリプト
 		private Script script = null;
 
+		//現在シークエンス
+		private Sequence sequence = null;
+
 		//コントロール集合
 		private List < TB_Number > l_tbn = new List<TB_Number> ();
 
@@ -40,15 +43,14 @@ namespace ScriptEditor
 			GrouptSetterCLC_ST = (s,c) => s.CalcState = c;
 
 			//設定用デリゲートを指定
-			TBSN_posx.PrmInt = new PrmInt ( (s,i)=>s.SetPosX(i), s=>s.Pos.X );
+			TBSN_PosX.PrmInt = new PrmInt ( (s,i)=>s.SetPosX(i), s=>s.Pos.X );
+			TBSN_PosY.PrmInt = new PrmInt ( (s,i)=>s.SetPosY(i), s=>s.Pos.Y );
+			TBSN_VelX.PrmInt = new PrmInt ( (s,i)=>s.SetVelX(i), s=>s.Vel.X );
+			TBSN_VelY.PrmInt = new PrmInt ( (s,i)=>s.SetVelY(i), s=>s.Vel.Y );
+			TBSN_AccX.PrmInt = new PrmInt ( (s,i)=>s.SetAccX(i), s=>s.Acc.X );
+			TBSN_AccY.PrmInt = new PrmInt ( (s,i)=>s.SetAccY(i), s=>s.Acc.Y );
 
 			//登録
-			l_tbn.Add ( tBN_PosX );
-			l_tbn.Add ( tBN_PosY );
-			l_tbn.Add ( tBN_VelX );
-			l_tbn.Add ( tBN_VelY );
-			l_tbn.Add ( tBN_AccX );
-			l_tbn.Add ( tBN_AccY );
 			l_tbn.Add ( tBN_Power );
 			l_tbn.Add ( tBN_BlackOut );
 			l_tbn.Add ( tBN_Vibration );
@@ -75,22 +77,20 @@ namespace ScriptEditor
 		}
 
 		//関連付け(対象が変更になったとき)
-		public void Assosiate ( Script scp )
+		public void Assosiate ( Script scp, Sequence sqc )
 		{
 			script = scp;
+			sequence = sqc;
 
 			//スクリプトから表示を設定
 			tB_Frame.Text = scp.Frame.ToString ();
 			cB_ClcSt.SelectedItem = scp.CalcState;
 			Tb_Img.Text = script.ImgName;
 
+			//コントロールにスクリプト参照を設定
+			TBSN_PosX.Scp = scp;
+
 			//ラムダ式で単体設定デリゲートを指定
-			tBN_PosX.Assosiate ( i => scp.SetPosX ( i ), ()=> scp.Pos.X );
-			tBN_PosY.Assosiate ( i => scp.SetPosY ( i ), ()=> scp.Pos.Y );
-			tBN_VelX.Assosiate ( i => scp.SetVelX ( i ), ()=> scp.Vel.X );
-			tBN_VelY.Assosiate ( i => scp.SetVelY ( i ), ()=> scp.Vel.Y );
-			tBN_AccX.Assosiate ( i => scp.SetAccX ( i ), ()=> scp.Acc.X );
-			tBN_AccY.Assosiate ( i => scp.SetAccY ( i ), ()=> scp.Acc.Y );
 			tBN_Power.Assosiate ( i => scp.Power = i, ()=> scp.Power );
 			tBN_BlackOut.Assosiate ( i => scp.BlackOut = i, ()=> scp.BlackOut );
 			tBN_Vibration.Assosiate ( i => scp.Vibration = i, ()=> scp.Vibration );

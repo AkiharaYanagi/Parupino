@@ -34,9 +34,9 @@ namespace ScriptEditor
 			ds.SetCtrlScript ( ctrl_Script1 );
 		}
 	
-		public void Assosiate ( Script scp )
+		public void Assosiate ( Script scp, Sequence sqc )
 		{
-			ctrl_Script1.Assosiate ( scp );
+			ctrl_Script1.Assosiate ( scp, sqc );
 		}
 
 		public void UpdateData ()
