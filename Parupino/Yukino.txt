@@ -67,7 +67,7 @@
 </EfImageList>
 <ActionList Num="70">
 	<Action Name="Stand" NextName="Stand" NextID="0" Category="0" Posture="0" Balance="0">
-		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="Stand_00.png" ImageID="0" X="-272" Y="-482" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5779,7 +5779,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5800,7 +5800,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5821,7 +5821,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5842,7 +5842,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5863,7 +5863,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5884,7 +5884,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5905,7 +5905,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5926,7 +5926,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5947,7 +5947,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5968,7 +5968,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -5989,7 +5989,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -6010,7 +6010,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -6031,7 +6031,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -6052,7 +6052,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -6073,7 +6073,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>
@@ -6094,7 +6094,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="4" ImageName="Stand_01.png" ImageID="1" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="Stand_00.png" ImageID="0" X="-250" Y="-450" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 				<Route Name="地上超必" ID="7"></Route>
 				<Route Name="地上必殺技" ID="5"></Route>

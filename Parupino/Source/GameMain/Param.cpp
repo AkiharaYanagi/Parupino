@@ -19,7 +19,8 @@ namespace GAME
 		: m_demo ( F ), m_battleStart ( F )
 		, m_training ( F ), m_mutchMode ( MODE_PLAYER_PLAYER )
 //		, m_charaName1p ( CHARA_SONIA ), m_charaName2p ( CHARA_ORFLOAT )
-		, m_charaName1p ( CHARA_TEST ), m_charaName2p ( CHARA_TEST )
+//		, m_charaName1p ( CHARA_TEST ), m_charaName2p ( CHARA_TEST )
+		, m_charaName1p ( CHARA_RAKUNO ), m_charaName2p ( CHARA_YUKINO)
 	{
 		//ゲーム設定ファイル開始
 		GM_STG ()->Create ();
@@ -40,7 +41,8 @@ namespace GAME
 	Param::Param ( const Param & rhs )
 		: m_demo ( F ), m_battleStart ( F )
 		, m_training ( F ), m_mutchMode ( MODE_PLAYER_PLAYER )
-		, m_charaName1p ( CHARA_TEST ), m_charaName2p ( CHARA_TEST )
+//		, m_charaName1p ( CHARA_TEST ), m_charaName2p ( CHARA_TEST )
+		, m_charaName1p ( CHARA_RAKUNO ), m_charaName2p ( CHARA_YUKINO )
 	{
 		m_demo = rhs.m_demo;
 		m_battleStart = rhs.m_battleStart;

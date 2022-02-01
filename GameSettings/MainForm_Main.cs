@@ -67,13 +67,15 @@ namespace GameSettings
 			}
 
 			//キャラ選択コンボボックス初期化
-			cB_Chara1p.Items.Add ( CHARA_NAME.SONIA );
-			cB_Chara1p.Items.Add ( CHARA_NAME.ORFLOAT );
+			string[] names = Enum.GetNames ( typeof ( CHARA_NAME ) );
+			foreach ( string name in names )
+			{
+				cB_Chara1p.Items.Add ( Enum.Parse ( typeof ( CHARA_NAME ), name ) );
+				cB_Chara2p.Items.Add ( Enum.Parse ( typeof ( CHARA_NAME ), name ) );
+			}
 			cB_Chara1p.SelectedIndex = (int)gmStg.name1p;
 
 			//キャラ選択コンボボックス初期化
-			cB_Chara2p.Items.Add ( CHARA_NAME.SONIA );
-			cB_Chara2p.Items.Add ( CHARA_NAME.ORFLOAT );
 			cB_Chara2p.SelectedIndex = (int)gmStg.name2p;
 
 			//キーコンフィグ初期化

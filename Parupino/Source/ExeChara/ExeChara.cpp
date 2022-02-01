@@ -16,7 +16,8 @@ namespace GAME
 {
 	//コンストラクタ
 	ExeChara::ExeChara ( PLAYER_ID m_playerID )
-		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_TEST )
+//		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_TEST )
+		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_RAKUNO )
 		, m_playerMode ( MODE_PLAYER ), m_oprtEf ()
 		, m_actionID ( 0 ), m_frame ( 0 )
 		, m_dirRight ( true ), m_ptChara ( 0, 0 ), m_tempPt ( 0, 0 ), m_inertial ( 0, 0 )
@@ -90,13 +91,13 @@ namespace GAME
 		//tstring&のためassignで指定する
 		switch ( m_name )
 		{
+#if 0
 //		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
 //		case CHARA_TEST: name.assign ( _T ( "PlayerChara.dat" ) ); break;
 		case CHARA_TEST: name.assign ( _T ( "Yukino.dat" ) ); break;
-#if 0
+#endif // 0
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
 		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;
-#endif // 0
 		default: break;
 		}
 		LoadChara loadChara ( name, *m_pChara );

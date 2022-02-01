@@ -65,9 +65,13 @@ namespace GAME
 #if 0
 		m_name1p = CHARA_SONIA;		//選択キャラ
 		m_name2p = CHARA_ORFLOAT;
-#endif // 0
+
 		m_name1p = CHARA_TEST;		//選択キャラ
 		m_name2p = CHARA_TEST;
+#endif // 0
+
+		m_name1p = CHARA_RAKUNO;		//選択キャラ
+		m_name2p = CHARA_YUKINO;
 	}
 
 

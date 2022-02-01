@@ -10,8 +10,8 @@ namespace GameSettings
 	//キャラ名
 	public enum CHARA_NAME
 	{
-		SONIA,
-		ORFLOAT,
+		RAKUNO,
+		YUKINO,
 	};
 
 	public class GameSettings

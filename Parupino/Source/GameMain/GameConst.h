@@ -23,7 +23,7 @@ namespace GAME
 	//ƒLƒƒƒ‰–¼
 	enum CHARA_NAME
 	{
-		CHARA_TEST,
+//		CHARA_TEST,
 		CHARA_RAKUNO,
 		CHARA_YUKINO,
 		CHARA_NAME_NUM,
