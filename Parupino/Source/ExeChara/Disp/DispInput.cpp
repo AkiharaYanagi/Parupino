@@ -17,13 +17,13 @@ namespace GAME
 	const UINT DispInput::NUM_DISP_INPUT = 20;
 
 	DispInput::DispInput ()
-		: m_timer ( 0 ), m_vel ( 1.f )
+		: m_timer ( 0 ), m_vel ( 1.f ), m_base ( 20 )
 	{
 		//---------------------------------------------------------------
 		//キー入力
 		//背景
 		m_bg = make_shared < PrmRect > ();
-		m_bg->SetRect ( 20, 200, 80, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base, 200, 80, 10 * NUM_DISP_INPUT );
 		m_bg->SetZ ( Z_SYS );
 		m_bg->SetAllColor ( 0x8080c080 );
 		GRPLST_INSERT ( m_bg );
@@ -40,7 +40,7 @@ namespace GAME
 			{
 				P_PrmRect pRect = make_shared < PrmRect > ();
 				pvpRect->push_back ( pRect );
-				pRect->SetRect ( 20.f + 20 * i, 10.f + 20 * n, 10.f, 10.f );
+				pRect->SetRect ( m_base + 20 * i, 10.f + 20 * n, 10.f, 10.f );
 				pRect->SetZ ( Z_SYS - 0.01f );
 
 				//初期値ランダム
@@ -58,6 +58,18 @@ namespace GAME
 	{
 	}
 
+	void DispInput::InitDisp ( PLAYER_ID playerID )
+	{
+		if ( PLAYER_ID_1 == playerID )
+		{
+			m_base = 20;
+		}
+		else
+		{
+			m_base = 640 - 20 - 80;
+		}
+		m_bg->SetRect ( m_base, 200, 80, 10 * NUM_DISP_INPUT );
+	}
 
 	void DispInput::UpdateInput ( P_CharaInput pCharaInput )
 	{
@@ -99,7 +111,7 @@ namespace GAME
 			for ( P_PrmRect pRect : (*pvpRect) )
 			{
 				(*m_vpvpRect[n])[i]->SetValid ( GetBoolInput ( pCharaInput, n, i ) );
-				pRect->SetRect ( 20.f + 10 * i, 200.f + 10 * n + m_vel * m_timer, 10.f, 10.f );
+				pRect->SetRect ( m_base + 10 * i, 200.f + 10 * n + m_vel * m_timer, 10.f, 10.f );
 				++ i;
 			}
 			++ n;

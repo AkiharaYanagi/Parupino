@@ -18,8 +18,8 @@ namespace GAME
 	//@Later	いずれEffectにEfGnrtを統合
 	//------------------------------------------
 
-	ExeEffect::ExeEffect ( P_Effect pEffect, PVP_TxBs pvpEfTexture, P_EfGnrt pEfGnrt, VEC2 ptChara, bool dirRight )
-	 :	  m_dispEffect ( pvpEfTexture, pEfGnrt->GetZ() )
+	ExeEffect::ExeEffect ( P_Effect pEffect, P_Chara pChara, P_EfGnrt pEfGnrt, VEC2 ptChara, bool dirRight )
+	 :	  m_dispEffect ( pChara->GetpvpEfTexture (), pEfGnrt->GetZ() )
 		, m_active ( true ), m_end ( false ), m_frame ( 0 )
 		, m_ptEffect ( VEC2 ( 0, 0 ) ), m_dirRight ( dirRight )
 		, m_vel ( VEC2 ( 0, 0 ) ), m_acc ( VEC2 ( 0, 0 ) )
@@ -29,6 +29,10 @@ namespace GAME
 	{
 		SetpEfGnrt ( pEfGnrt );
 		m_pScript = m_pEffect->GetpScript ( 0 );
+
+		m_pChara = pChara;
+		m_vpBranch = pChara->GetvpBranch ();
+		m_vpRoute = pChara->GetvpRoute ();
 
 		//初期位置 (キャラ位置+エフェクト発生位置)
 		m_ptEffect = ptChara + Dir ( m_ptGnrt );
@@ -64,17 +68,57 @@ namespace GAME
 			m_end = true;
 		}
 
+
+		//エフェクト移項用
+		UINT sqcID = 0;
+
 		//現在エフェクトが最終フレームならば
 		if ( m_pEffect->IsEndScript ( m_frame ) )
 		{
-			if ( m_loop )
+			bool bBranch = false;
+
+			//スクリプト分岐条件から
+
+			//ルートのチェック
+			V_UINT vec_RouteID = m_pScript->GetvRouteID ();
+			for ( UINT indexRoute : vec_RouteID )
 			{
-				m_frame = 0;	//ループ
+				//ブランチのチェック
+				V_UINT vBranchID = m_vpRoute[indexRoute]->GetvIDBranch ();
+				for ( UINT indexBranch : vBranchID )
+				{
+					//終了時以外は飛ばす
+					if ( BRC_END == m_vpBranch[indexBranch]->GetCondition () )
+					{
+						//次シークエンスID
+						sqcID = m_vpBranch[indexBranch]->GetIndexSequence ();
+						bBranch = true;
+					}
+				}
+			}
+			
+			if ( bBranch )
+			{
+				//@todo シークエンス(エフェクト)内でエフェクトの移項
+				m_pEffect = m_pChara->GetpEffect ( sqcID );
+				m_frame = 0;
+
+
+
 			}
 			else
 			{
-				m_end = true;	//終了
+				if ( m_loop )
+				{
+					m_frame = 0;	//ループ
+				}
+				else
+				{
+					m_end = true;	//終了
+				}
+
 			}
+
 		}
 		else
 		{

@@ -34,13 +34,16 @@ namespace GAME
 
 	void OperateEffect::SetpChara ( P_Chara p )
 	{
+		m_pChara = p;
 		m_pvpEfTexture = p->GetpvpEfTexture ();
+		m_vpBranch = p->GetvpBranch ();
+		m_vpRoute = p->GetvpRoute ();
 	}
 
-	//エフェクトリストに追加
+	//エフェクトリストに新規追加
 	void OperateEffect::AddListEffect ( P_Effect pEffect, P_EfGnrt pEfGnrt, VEC2 ptChara, bool dirRight )
 	{
-		P_ExEf pExeEffect = make_shared < ExeEffect > ( pEffect, m_pvpEfTexture, pEfGnrt, ptChara, dirRight );
+		P_ExEf pExeEffect = make_shared < ExeEffect > ( pEffect, m_pChara, pEfGnrt, ptChara, dirRight );
 		m_plpExeEffect->push_back ( pExeEffect );
 	}
 

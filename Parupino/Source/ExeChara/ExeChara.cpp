@@ -94,10 +94,12 @@ namespace GAME
 #if 0
 //		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
 //		case CHARA_TEST: name.assign ( _T ( "PlayerChara.dat" ) ); break;
-		case CHARA_TEST: name.assign ( _T ( "Yukino.dat" ) ); break;
+//		case CHARA_TEST: name.assign ( _T ( "Yukino.dat" ) ); break;
+		case CHARA_TEST: name.assign ( _T ( "chara.dat" ) ); break;
 #endif // 0
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
 		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;
+//		case CHARA_YUKINO: name.assign ( _T ( "chara.dat" ) ); break;
 		default: break;
 		}
 		LoadChara loadChara ( name, *m_pChara );
@@ -168,6 +170,8 @@ namespace GAME
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
 		m_dispChara.UpdateMainImage ( m_pScript, m_ptChara, m_dirRight );
 		m_dispChara.InitDisp ( m_playerID );
+
+		m_dispInput.InitDisp ( m_playerID );
 
 		TASK_VEC::Init ();
 	}
@@ -663,7 +667,7 @@ namespace GAME
 				//投げ成立(自分)
 				if ( BRC_THR_I != vpBranch[id]->GetCondition () ) { continue; }
 
-				return vpBranch[id]->GetIndexAction ();
+				return vpBranch[id]->GetIndexSequence ();
 			}
 		}
 		return NO_COMPLETE;
@@ -687,7 +691,7 @@ namespace GAME
 				//投げ成立(相手)
 				if ( BRC_THR_E != vpBranch[id]->GetCondition () ) { continue; }
 
-				return vpBranch[id]->GetIndexAction ();
+				return vpBranch[id]->GetIndexSequence ();
 			}
 		}
 		return NO_COMPLETE;

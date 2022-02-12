@@ -39,6 +39,8 @@ namespace ScriptEditor
 			{
 				//テスト用キャラの作成
 				Chara testCharaData = new Chara ();
+				TestCharaData tcd = new TestCharaData ();
+				tcd.Make ( testCharaData );
 
 				//テストオブジェクトによる機能のテスト
 				TestChara testChara = new TestChara ();
@@ -103,6 +105,7 @@ namespace ScriptEditor
 			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
 			cpd_Behavior.SetBehavior ();
 
+			//サブフォームの初期化
 			FormImage.Inst.SetEnviron ( this, eb, db );			//フォーム：イメージ
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
 			FormScript.Inst.SetCtrl ( eb.EditScript, db.DispScript );	//フォーム：スクリプト
@@ -121,10 +124,9 @@ namespace ScriptEditor
 			cpd_Garnish.SetEnviron ( eg, dg );	//ビヘイビア(:コンペンド)初期化
 			cpd_Garnish.SetGarnish ();
 	
-			//フォーム：スクリプトの初期化
+			//サブフォームの初期化
+			FormImage.Inst.SetEnviron ( this, eg, dg );
 			FormScript.Inst.SetCtrl ( eg.EditScript, dg.DispScript );
-
-			//フォーム：レクトの初期化
 			FormRect.Inst.SetCtrl ( eg.EditScript );
 		}
 

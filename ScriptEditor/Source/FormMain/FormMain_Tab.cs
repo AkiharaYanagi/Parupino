@@ -59,12 +59,13 @@ namespace ScriptEditor
 		{
 			//共通フォームにビヘイビアを設定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
+			DispBehavior db = DispChara.Inst.DispBehavior;
 			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
 
-			//イメージフォームにビヘイビアを設定
-			FormImage.Inst.Set ( eb.Compend.BD_Image );
-			FormImage.Inst.EditCompend = eb;
+			//サブフォームにビヘイビアを設定
+			FormImage.Inst.SetEnviron ( this, eb, db );			//フォーム：イメージ
+			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
 
 		//[アクション]タブ離去時
@@ -81,13 +82,13 @@ namespace ScriptEditor
 		{
 			//共通フォームにガーニッシュを設定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
+			DispGarnish dg = DispChara.Inst.DispGarnish;
 			Assosiate ( eg.SelectedSequence, eg.SelectedScript );
 			eg.SelectScript ( 0, 0 );
 
-			//イメージフォームにガーニッシュを設定
-			//FormImage.Inst.SetTarget ( eg.Compend.BD_Image.GetBindingList () );
-			FormImage.Inst.Set ( eg.Compend.BD_Image );
-			FormImage.Inst.EditCompend = eg;
+			//サブフォームにガーニッシュを設定
+			FormImage.Inst.SetEnviron ( this, eg, dg );
+			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}
 
 		public void tabEffect_Deselected ()

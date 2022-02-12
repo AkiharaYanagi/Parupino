@@ -98,15 +98,13 @@ namespace ScriptEditor
 
 			//名前参照のチェック
 			TestChara testChara = new TestChara ();
-			if ( testChara._TestNameAssign ( chara ) )
+			try { testChara._TestNameAssign ( chara ); }
+			catch
 			{
 				STS_TXT.Tssl.BackColor = Color.Red;
 				STS_TXT.Trace( "Name Refference Error." );
 			}
-			else
-			{
-				STS_TXT.Tssl.BackColor = SystemColors.Control;
-			}
+			STS_TXT.Tssl.BackColor = SystemColors.Control;
 
 			//表示の更新
 			DispChara.Inst.Disp ();

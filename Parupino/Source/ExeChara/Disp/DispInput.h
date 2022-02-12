@@ -35,10 +35,14 @@ namespace GAME
 		UINT			m_timer;
 		float			m_vel;
 
+		float			m_base;
+
 	public:
 		DispInput ();
 		DispInput ( const DispInput & rhs ) = delete;
 		~DispInput ();
+
+		void InitDisp ( PLAYER_ID playerID );
 
 		//“ü—ÍXV
 		void UpdateInput ( P_CharaInput pCharaInput );

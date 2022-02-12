@@ -25,7 +25,7 @@ namespace ScriptEditor
 		//コントロールの参照
 		public TextBox TbFrame { get; set; } = null;		//フレーム数
 		public TextBox TbImage { get; set; } = null;		//イメージ名
-		public Ctrl_Image PbImg { get; set; } = null;		//画像表示
+		public Ctrl_Image CtrlImg { get; set; } = null;		//画像表示
 //		private DispRefPt dispRefPt = new DispRefPt();      //イメージ表示差分位置 ( X, Y )
 
 		//-----------------------------------------------------------
@@ -60,7 +60,7 @@ namespace ScriptEditor
 		//コンポーネント参照の設定
 		public void Set ( Ctrl_Compend ctrlCmpd )
 		{
-			PbImg = ctrlCmpd.Ctrl_Img;	//イメージ表示
+			CtrlImg = ctrlCmpd.Ctrl_Img;	//イメージ表示
 //			TbFrame = ctrlCmpd.tBN_Frame;	//フレーム数
 //			TbImage = ctrlCmpd.tB_Image;	//イメージ選択
 
@@ -246,15 +246,15 @@ namespace ScriptEditor
 #endif
 			//----------------------------------------
 			//イメージの反映
-//			PbImg.SetImg ( bmp );
-			PbImg.Invalidate ();
+			//PbImg.SetImg ( bmp );
+			CtrlImg.Invalidate ();
 		}
 		
 		//動作条件
 		//戻値：true 可動, false 不可
 		private bool Condition ()
 		{
-			if ( null == PbImg ) { return false; }
+			if ( null == CtrlImg ) { return false; }
 			return true;
 		}
 	}

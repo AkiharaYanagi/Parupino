@@ -19,8 +19,12 @@ namespace GAME
 {
 	class OperateEffect
 	{
+		P_Chara			m_pChara;			//キャラ
+		PLP_ExEf		m_plpExeEffect;		//エフェクトの実行リスト(GameMain中に動的に生成・解放する)
+
 		PVP_TxBs		m_pvpEfTexture;		//エフェクトイメージのテクスチャリスト
-		PLP_ExEf		m_plpExeEffect;		//エグゼエフェクトのリスト(GameMain中に動的に生成・解放する)
+		VP_Branch		m_vpBranch;			//エフェクトの分岐
+		VP_Route		m_vpRoute;			//ルート
 
 	public:
 		OperateEffect ();

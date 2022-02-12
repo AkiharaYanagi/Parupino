@@ -19,7 +19,8 @@ namespace ScriptEditor
 		private Sequence sequence = null;
 
 		//コントロール集合
-		private List < TB_Number > l_tbn = new List<TB_Number> ();
+		private List < TB_Number > ls_tbn = new List<TB_Number> ();
+		private List < TB_ScpNumber > ls_tbsn = new List<TB_ScpNumber> ();
 
 		//計算状態反映グループセッタ
 		private System.Action < Script, CLC_ST > GrouptSetterCLC_ST;
@@ -42,19 +43,27 @@ namespace ScriptEditor
 			}
 			GrouptSetterCLC_ST = (s,c) => s.CalcState = c;
 
-			//設定用デリゲートを指定
+			//スクリプトの数値設定用デリゲートを指定
 			TBSN_PosX.PrmInt = new PrmInt ( (s,i)=>s.SetPosX(i), s=>s.Pos.X );
 			TBSN_PosY.PrmInt = new PrmInt ( (s,i)=>s.SetPosY(i), s=>s.Pos.Y );
 			TBSN_VelX.PrmInt = new PrmInt ( (s,i)=>s.SetVelX(i), s=>s.Vel.X );
 			TBSN_VelY.PrmInt = new PrmInt ( (s,i)=>s.SetVelY(i), s=>s.Vel.Y );
 			TBSN_AccX.PrmInt = new PrmInt ( (s,i)=>s.SetAccX(i), s=>s.Acc.X );
 			TBSN_AccY.PrmInt = new PrmInt ( (s,i)=>s.SetAccY(i), s=>s.Acc.Y );
+			//登録
+			ls_tbsn.Add ( TBSN_PosX );
+			ls_tbsn.Add ( TBSN_PosY );
+			ls_tbsn.Add ( TBSN_VelX );
+			ls_tbsn.Add ( TBSN_VelY );
+			ls_tbsn.Add ( TBSN_AccX );
+			ls_tbsn.Add ( TBSN_AccY );
+
 
 			//登録
-			l_tbn.Add ( tBN_Power );
-			l_tbn.Add ( tBN_BlackOut );
-			l_tbn.Add ( tBN_Vibration );
-			l_tbn.Add ( tBN_Stop );
+			ls_tbn.Add ( tBN_Power );
+			ls_tbn.Add ( tBN_BlackOut );
+			ls_tbn.Add ( tBN_Vibration );
+			ls_tbn.Add ( tBN_Stop );
 		}
 
 		//コントロール設定
@@ -70,7 +79,7 @@ namespace ScriptEditor
 			cB_ClcSt.SelectedItem = script.CalcState;
 			Tb_Img.Text = script.ImgName;
 
-			foreach ( TB_Number tbn in l_tbn )
+			foreach ( TB_Number tbn in ls_tbn )
 			{
 				tbn.UpdateData ();
 			}
@@ -87,8 +96,11 @@ namespace ScriptEditor
 			cB_ClcSt.SelectedItem = scp.CalcState;
 			Tb_Img.Text = script.ImgName;
 
-			//コントロールにスクリプト参照を設定
-			TBSN_PosX.Scp = scp;
+			//各コントロールにスクリプト参照を設定
+			foreach ( TB_ScpNumber tbsn in ls_tbsn )
+			{
+				tbsn.Assosiate ( scp );
+			}
 
 			//ラムダ式で単体設定デリゲートを指定
 			tBN_Power.Assosiate ( i => scp.Power = i, ()=> scp.Power );

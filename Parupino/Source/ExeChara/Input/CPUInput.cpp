@@ -389,7 +389,7 @@ namespace GAME
 			
 			if ( pCommand->Compare ( m_vGameKey, dirRight ) )
 			{
-				return (*it)->GetIndexAction ();
+				return (*it)->GetIndexSequence ();
 			}
 		}
 		return NO_COMPLETE;

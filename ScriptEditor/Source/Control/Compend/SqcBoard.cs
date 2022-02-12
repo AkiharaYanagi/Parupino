@@ -238,10 +238,10 @@ namespace ScriptEditor
 			Brushes.Gray, 
 			new SolidBrush ( ScpCntColor [ 1 ] ),
 			Brushes.Teal, 
-			Brushes.LimeGreen, 
 			Brushes.LightCoral, 
 			Brushes.Goldenrod, 
 			Brushes.Turquoise, 
+			Brushes.LimeGreen, 
 		};
 
 		//DrawScript
@@ -286,7 +286,7 @@ namespace ScriptEditor
 			//升目に合わせる
 			int pos_x = ( pt.X - BX ) / W;
 			int pos_y = ( pt.Y - BY ) / H;
-			STS_TXT.Trace ( pos_x.ToString() + "," + pos_y.ToString () );
+//			STS_TXT.Trace ( pos_x.ToString() + "," + pos_y.ToString () );
 			return new Point ( pos_x, pos_y );
 		}
 
@@ -441,15 +441,27 @@ namespace ScriptEditor
 		//位置から対象を選択
 		private void SelectFromPos ()
 		{
+			EditCompend ec = EditCompend;
 			Point pos = GetCell ();
-			EditCompend.SelectFrame ( pos.X );
-			EditCompend.SelectedSpanStart = pos.X;
-			EditCompend.SelectedSpanEnd = pos.X;
+			ec.SelectFrame ( pos.X );
+			ec.SelectedSpanStart = pos.X;
+			ec.SelectedSpanEnd = pos.X;
 			bDrag = true;
+
+			
+			EditScript es = ec.EditScript;
+			es.SelectGroup ( ec.SelectedScript.Group );
+
+
+			//@todo 選択位置をステータスに表示
+			Script s = EditCompend.SelectedScript;
+			STS_TXT.Trace ( s.Frame.ToString () + ", [" + s.Group + "]" );
 
 			//更新
 			Assosiate ();
 			DispCompend.Disp ();
+
+
 		}
 
 		//１つ後ろを選択

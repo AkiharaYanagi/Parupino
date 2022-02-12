@@ -320,16 +320,12 @@ using LCF = LoadCharaFunc;
 		pBranch->SetCondition ( (BRANCH_CONDITION)indexCondition );
 
 		//条件コマンドインデックス
-//		tstring nameCmd = pa->at ( ATTR_BRANCH_COMMAND_NAME )->GetValue ();
-//		UINT indexCommand = m_utl.IndexOf ( m_vCommandName, nameCmd );
 		UINT indexCommand = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_COMMAND_ID ) );
 		pBranch->SetIndexCommand ( indexCommand );
 
-		//遷移先アクションインデックス
-//		tstring nameAct = pa->at ( ATTR_BRANCH_ACTION_NAME )->GetValue ();
-//		UINT indexAction = m_utl.IndexOf ( m_vActionName, nameAct );
-		UINT indexAction = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_ACTION_ID ) );
-		pBranch->SetIndexAction ( indexAction );
+		//遷移先シークエンスインデックス
+		UINT indexAction = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_SEQUENCE_ID ) );
+		pBranch->SetIndexSequence ( indexAction );
 
 		//遷移先スクリプトインデックス
 		UINT indexFrame = m_utl._AttrToUINT ( pa->at ( ATTR_BRANCH_FRAME_INDEX ) );

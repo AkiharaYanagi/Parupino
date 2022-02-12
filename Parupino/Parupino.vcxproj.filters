@@ -28,9 +28,6 @@
     <Filter Include="CharaData">
       <UniqueIdentifier>{a99df77d-0ad7-47dc-a8a0-590cb232af59}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CharaData\IO">
-      <UniqueIdentifier>{0a60d0b2-bced-43ac-91c1-5b0ebbb44cb9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CharaSele">
       <UniqueIdentifier>{bf651318-b4a3-4e99-8fdc-d224b413ef79}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,9 @@
     </Filter>
     <Filter Include="ExeChara\Rect">
       <UniqueIdentifier>{f0ce1179-119e-447d-ac75-8d869a43e991}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CharaIO">
+      <UniqueIdentifier>{0a60d0b2-bced-43ac-91c1-5b0ebbb44cb9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -121,13 +121,13 @@
       <Filter>CharaData</Filter>
     </ClInclude>
     <ClInclude Include="Source\CharaData\IO\LoadChara.h">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClInclude>
     <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClInclude>
     <ClInclude Include="Source\CharaData\IO\IOCharaDefine.h">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClInclude>
     <ClInclude Include="Source\CharaSele\CharaSele.h">
       <Filter>CharaSele</Filter>
@@ -184,7 +184,7 @@
       <Filter>CharaData</Filter>
     </ClInclude>
     <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClInclude>
     <ClInclude Include="Source\ExeChara\Disp\DispInput.h">
       <Filter>ExeChara\Disp</Filter>
@@ -261,10 +261,10 @@
       <Filter>CharaData</Filter>
     </ClCompile>
     <ClCompile Include="Source\CharaData\IO\LoadChara.cpp">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClCompile>
     <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClCompile>
     <ClCompile Include="Source\CharaSele\CharaSele.cpp">
       <Filter>CharaSele</Filter>
@@ -306,7 +306,7 @@
       <Filter>CharaData</Filter>
     </ClCompile>
     <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp">
-      <Filter>CharaData\IO</Filter>
+      <Filter>CharaIO</Filter>
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispInput.cpp">
       <Filter>ExeChara\Disp</Filter>

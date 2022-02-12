@@ -24,6 +24,10 @@ namespace GAME
 		//------------------------------------------------
 		P_Effect		m_pEffect;		//実効エフェクトポインタ
 
+		P_Chara			m_pChara;		//キャラ
+		VP_Branch		m_vpBranch;		//エフェクトの分岐
+		VP_Route		m_vpRoute;		//ルート
+
 		//------------------------------------------------
 		DispEffect		m_dispEffect;	//表示項目管理
 		bool			m_bDispRect;	//枠表示
@@ -52,7 +56,7 @@ namespace GAME
 		bool		m_hit;			//ヒット
 
 	public:
-		ExeEffect ( P_Effect pEffect, PVP_TxBs pvpEfTexture, P_EfGnrt pEfGnrt, VEC2 ptChara, bool dirRight );
+		ExeEffect ( P_Effect pEffect, P_Chara pChara, P_EfGnrt pEfGnrt, VEC2 ptChara, bool dirRight );
 		ExeEffect ( const ExeEffect & rhs ) = delete;
 		~ExeEffect ();
 

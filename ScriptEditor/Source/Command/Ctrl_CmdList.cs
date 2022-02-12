@@ -28,7 +28,10 @@ namespace ScriptEditor
 		{
 			EL_Cmd.SetData ( ch.BD_Command.GetBindingList () );
 			Command cmd = EL_Cmd.Get ();
-			ctrl_Command1.Set ( cmd );
+			if ( cmd != null )
+			{
+				ctrl_Command1.Set ( cmd );
+			}
 		}
 	}
 }

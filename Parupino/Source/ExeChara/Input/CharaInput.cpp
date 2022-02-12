@@ -213,7 +213,7 @@ namespace GAME
 				if ( pCmd->Compare ( m_vGameKey, dirRight ) )
 				{
 					//‘JˆÚæƒAƒNƒVƒ‡ƒ“ID‚ð•Ô‚·
-					return vpBranch[indexBranch]->GetIndexAction ();
+					return vpBranch[indexBranch]->GetIndexSequence ();
 				}
 			}
 		}

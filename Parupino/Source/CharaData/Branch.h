@@ -54,8 +54,8 @@ namespace GAME
 		WP_Command GetpCommand () const { return m_pCommand; }
 
 		//遷移先シークエンス配列添字
-		void SetIndexAction ( UINT index ) { m_indexSequence = index; }
-		UINT GetIndexAction () const { return m_indexSequence; }
+		void SetIndexSequence ( UINT index ) { m_indexSequence = index; }
+		UINT GetIndexSequence () const { return m_indexSequence; }
 
 		//遷移先シークエンスポインタ
 		void SetpSequence ( P_Sqc pAction ) { m_pSequence = pAction; }

@@ -52,7 +52,7 @@ namespace ScriptEditor
 		}
 
 		//対象を設定
-		public void Set ( BindingDictionary < ImageData > bd_imgDt )
+		public void SetData ( BindingDictionary < ImageData > bd_imgDt )
 		{
 			BD_ImageData = bd_imgDt;
 

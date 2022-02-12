@@ -48,6 +48,7 @@ namespace ScriptEditor
 			FormRect.Inst.Assosiate ( scp );
 			FormScript.Inst.Assosiate ( scp, sqc );
 			FormEfGnrt.Inst.Assosiate ( scp );
+			FormRoute.Inst.Assosiate ( scp );
 			Disp ();
 		}
 
