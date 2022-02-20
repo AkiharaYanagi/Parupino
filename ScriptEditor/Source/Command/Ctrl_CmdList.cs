@@ -6,7 +6,7 @@ namespace ScriptEditor
 {
 	public partial class Ctrl_CmdList :UserControl
 	{
-		private EditListbox < Command > EL_Cmd = new EditListbox<Command> ();
+		private EditListbox < Command > ED_Cmd = new EditListbox<Command> ();
 		
 		public Ctrl_CmdList ()
 		{
@@ -14,20 +14,20 @@ namespace ScriptEditor
 
 			//----------------------------------
 			//コントロール(ルート)
-			EL_Cmd.Location = new Point ( 3, 3 );
-			this.Controls.Add ( EL_Cmd );
+			ED_Cmd.Location = new Point ( 3, 3 );
+			this.Controls.Add ( ED_Cmd );
 
-			EL_Cmd.SelectedIndexChanged = ()=>
+			ED_Cmd.SelectedIndexChanged = ()=>
 			{
-				Command cmd = EL_Cmd.Get ();
+				Command cmd = ED_Cmd.Get ();
 				ctrl_Command1.Set ( cmd );
 			};
 		}
 
 		public void SetCharaData ( Chara ch )
 		{
-			EL_Cmd.SetData ( ch.BD_Command.GetBindingList () );
-			Command cmd = EL_Cmd.Get ();
+			ED_Cmd.SetData ( ch.BD_Command );
+			Command cmd = ED_Cmd.Get ();
 			if ( cmd != null )
 			{
 				ctrl_Command1.Set ( cmd );

@@ -7,7 +7,7 @@ namespace ScriptEditor
 	public partial class FormRoute :EditorForm
 	{
 		//コントロール(ルート)
-		EditListbox < TName > EL_Route = new EditListbox < TName > ();
+		EditListbox < TName > ED_Route = new EditListbox < TName > ();
 
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -27,15 +27,15 @@ namespace ScriptEditor
 
 			//----------------------------------
 			//コントロール(ルート)
-			EL_Route.Location = new Point ( 3, 0 );
-			this.Controls.Add ( EL_Route );
+			ED_Route.Location = new Point ( 3, 0 );
+			this.Controls.Add ( ED_Route );
 
 			//追加時
-			EL_Route.Add = ()=>
+			ED_Route.Add = ()=>
 			{
 			};
 			//選択変更時
-			EL_Route.SelectedIndexChanged = ()=>
+			ED_Route.SelectedIndexChanged = ()=>
 			{
 			};
 
@@ -63,15 +63,15 @@ namespace ScriptEditor
 		public void Assosiate ( Script scp )
 		{
 			Script = scp;
-			EL_Route.SetData ( scp.BL_RutName );
+			ED_Route.SetData ( scp.BD_RutName );
 		}
 
 		//選択
 		private void Cb_Route_SelectionChangeCommitted ( object sender, EventArgs e )
 		{
 			Route rut = (Route)Cb_Route.SelectedItem;
-			EL_Route.Get ().Name = rut.Name;
-			EL_Route.ResetItems ();
+			ED_Route.Get ().Name = rut.Name;
+			ED_Route.ResetItems ();
 		}
 	}
 }
