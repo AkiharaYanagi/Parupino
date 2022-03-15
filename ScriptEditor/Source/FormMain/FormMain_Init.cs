@@ -86,11 +86,17 @@ namespace ScriptEditor
 		//各タブの初期化
 		private void LoadTab ()
 		{
+			TabSequence_Load ();
 			TabAction_Load ();
 			TabEffect_Load ();
 			TabCommand_Load ();
 			TabBranch_Load ();
 			TabChara_Load ();
+		}
+
+		private void TabSequence_Load ()
+		{
+			ctrl_SqcList1.Init ();
 		}
 
 		//タブ_アクションの初期化
@@ -181,7 +187,7 @@ namespace ScriptEditor
 
 			//サブフォームの初期表示
 //			FormAction.Inst.Show ();
-			FormScript.Inst.Show ();
+//			FormScript.Inst.Show ();
 //			FormEfGnrt.Inst.Show ();
 //			FormRect.Inst.Show ();
 //			FormBranch.Inst.Show ();

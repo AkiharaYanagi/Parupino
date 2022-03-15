@@ -42,8 +42,9 @@
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabAction = new System.Windows.Forms.TabPage();
-			this.tabEffect = new System.Windows.Forms.TabPage();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabScriptA = new System.Windows.Forms.TabPage();
+			this.tabScriptE = new System.Windows.Forms.TabPage();
 			this.tabCommand = new System.Windows.Forms.TabPage();
 			this.tabBranch = new System.Windows.Forms.TabPage();
 			this.ctrl_Branch1 = new ScriptEditor.Ctrl_Branch();
@@ -51,14 +52,16 @@
 			this.ctrl_Route1 = new ScriptEditor.Ctrl_Route();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.ctrl_SqcList1 = new ScriptEditor.Ctrl_SqcList();
 			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
 			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
 			this.ctrl_CmdList1 = new ScriptEditor.Ctrl_CmdList();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
-			this.tabAction.SuspendLayout();
-			this.tabEffect.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.tabScriptA.SuspendLayout();
+			this.tabScriptE.SuspendLayout();
 			this.tabCommand.SuspendLayout();
 			this.tabBranch.SuspendLayout();
 			this.tabRoute.SuspendLayout();
@@ -148,8 +151,9 @@
 			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.tabControl1.Controls.Add(this.tabAction);
-			this.tabControl1.Controls.Add(this.tabEffect);
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabScriptA);
+			this.tabControl1.Controls.Add(this.tabScriptE);
 			this.tabControl1.Controls.Add(this.tabCommand);
 			this.tabControl1.Controls.Add(this.tabBranch);
 			this.tabControl1.Controls.Add(this.tabRoute);
@@ -161,35 +165,45 @@
 			this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 			this.tabControl1.Deselected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Deselected);
 			// 
-			// tabAction
+			// tabPage1
 			// 
-			this.tabAction.AutoScroll = true;
-			this.tabAction.Controls.Add(this.cpd_Behavior);
-			this.tabAction.Location = new System.Drawing.Point(4, 22);
-			this.tabAction.Name = "tabAction";
-			this.tabAction.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAction.Size = new System.Drawing.Size(976, 716);
-			this.tabAction.TabIndex = 0;
-			this.tabAction.Text = "アクション";
-			this.tabAction.UseVisualStyleBackColor = true;
+			this.tabPage1.Controls.Add(this.ctrl_SqcList1);
+			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Size = new System.Drawing.Size(976, 716);
+			this.tabPage1.TabIndex = 6;
+			this.tabPage1.Text = "アクション";
+			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// tabEffect
+			// tabScriptA
 			// 
-			this.tabEffect.Controls.Add(this.cpd_Garnish);
-			this.tabEffect.Location = new System.Drawing.Point(4, 22);
-			this.tabEffect.Name = "tabEffect";
-			this.tabEffect.Padding = new System.Windows.Forms.Padding(3);
-			this.tabEffect.Size = new System.Drawing.Size(976, 701);
-			this.tabEffect.TabIndex = 1;
-			this.tabEffect.Text = "エフェクト";
-			this.tabEffect.UseVisualStyleBackColor = true;
+			this.tabScriptA.AutoScroll = true;
+			this.tabScriptA.Controls.Add(this.cpd_Behavior);
+			this.tabScriptA.Location = new System.Drawing.Point(4, 22);
+			this.tabScriptA.Name = "tabScriptA";
+			this.tabScriptA.Padding = new System.Windows.Forms.Padding(3);
+			this.tabScriptA.Size = new System.Drawing.Size(976, 716);
+			this.tabScriptA.TabIndex = 0;
+			this.tabScriptA.Text = "スクリプト(A)";
+			this.tabScriptA.UseVisualStyleBackColor = true;
+			// 
+			// tabScriptE
+			// 
+			this.tabScriptE.Controls.Add(this.cpd_Garnish);
+			this.tabScriptE.Location = new System.Drawing.Point(4, 22);
+			this.tabScriptE.Name = "tabScriptE";
+			this.tabScriptE.Padding = new System.Windows.Forms.Padding(3);
+			this.tabScriptE.Size = new System.Drawing.Size(976, 716);
+			this.tabScriptE.TabIndex = 1;
+			this.tabScriptE.Text = "スクリプト(E)";
+			this.tabScriptE.UseVisualStyleBackColor = true;
 			// 
 			// tabCommand
 			// 
 			this.tabCommand.Controls.Add(this.ctrl_CmdList1);
 			this.tabCommand.Location = new System.Drawing.Point(4, 22);
 			this.tabCommand.Name = "tabCommand";
-			this.tabCommand.Size = new System.Drawing.Size(976, 701);
+			this.tabCommand.Size = new System.Drawing.Size(976, 716);
 			this.tabCommand.TabIndex = 2;
 			this.tabCommand.Text = "コマンド";
 			this.tabCommand.UseVisualStyleBackColor = true;
@@ -199,7 +213,7 @@
 			this.tabBranch.Controls.Add(this.ctrl_Branch1);
 			this.tabBranch.Location = new System.Drawing.Point(4, 22);
 			this.tabBranch.Name = "tabBranch";
-			this.tabBranch.Size = new System.Drawing.Size(976, 701);
+			this.tabBranch.Size = new System.Drawing.Size(976, 716);
 			this.tabBranch.TabIndex = 4;
 			this.tabBranch.Text = "ブランチ";
 			this.tabBranch.UseVisualStyleBackColor = true;
@@ -219,7 +233,7 @@
 			this.tabRoute.Controls.Add(this.ctrl_Route1);
 			this.tabRoute.Location = new System.Drawing.Point(4, 22);
 			this.tabRoute.Name = "tabRoute";
-			this.tabRoute.Size = new System.Drawing.Size(976, 701);
+			this.tabRoute.Size = new System.Drawing.Size(976, 716);
 			this.tabRoute.TabIndex = 5;
 			this.tabRoute.Text = "ルート";
 			this.tabRoute.UseVisualStyleBackColor = true;
@@ -234,6 +248,13 @@
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
+			// ctrl_SqcList1
+			// 
+			this.ctrl_SqcList1.Location = new System.Drawing.Point(3, 3);
+			this.ctrl_SqcList1.Name = "ctrl_SqcList1";
+			this.ctrl_SqcList1.Size = new System.Drawing.Size(770, 563);
+			this.ctrl_SqcList1.TabIndex = 0;
 			// 
 			// cpd_Behavior
 			// 
@@ -283,8 +304,9 @@
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
-			this.tabAction.ResumeLayout(false);
-			this.tabEffect.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.tabScriptA.ResumeLayout(false);
+			this.tabScriptE.ResumeLayout(false);
 			this.tabCommand.ResumeLayout(false);
 			this.tabBranch.ResumeLayout(false);
 			this.tabRoute.ResumeLayout(false);
@@ -301,11 +323,11 @@
 		private System.Windows.Forms.ToolStripMenuItem 読込ToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem フォルダToolStripMenuItem;
 		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabAction;
+		private System.Windows.Forms.TabPage tabScriptA;
 		private System.Windows.Forms.TabPage tabCommand;
 		private System.Windows.Forms.ToolStripMenuItem 別名保存ToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 基準保存TToolStripMenuItem;
-		private System.Windows.Forms.TabPage tabEffect;
+		private System.Windows.Forms.TabPage tabScriptE;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -317,6 +339,8 @@
 		private Ctrl_Branch ctrl_Branch1;
 		private System.Windows.Forms.TabPage tabRoute;
 		private Ctrl_Route ctrl_Route1;
+		private System.Windows.Forms.TabPage tabPage1;
+		private Ctrl_SqcList ctrl_SqcList1;
 	}
 }
 

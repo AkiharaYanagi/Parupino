@@ -88,33 +88,33 @@
     <Compile Include="Source\Chara\DispChara\DispRects.cs" />
     <Compile Include="Source\Chara\DispChara\DispScript.cs" />
     <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
-    <Compile Include="Source\Command\Ctrl_CmdList.cs">
+    <Compile Include="Source\Control\Command\Ctrl_CmdList.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Command\Ctrl_CmdList.Designer.cs">
+    <Compile Include="Source\Control\Command\Ctrl_CmdList.Designer.cs">
       <DependentUpon>Ctrl_CmdList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Command\Ctrl_Command.cs">
+    <Compile Include="Source\Control\Command\Ctrl_Command.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Command\Ctrl_Command.designer.cs">
+    <Compile Include="Source\Control\Command\Ctrl_Command.designer.cs">
       <DependentUpon>Ctrl_Command.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Command\DispCommand.cs" />
-    <Compile Include="Source\Command\EditCommand.cs" />
-    <Compile Include="Source\Command\ListCommand.cs">
+    <Compile Include="Source\Control\Command\DispCommand.cs" />
+    <Compile Include="Source\Control\Command\EditCommand.cs" />
+    <Compile Include="Source\Control\Command\ListCommand.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Source\Command\ListCommand.designer.cs">
+    <Compile Include="Source\Control\Command\ListCommand.designer.cs">
       <DependentUpon>ListCommand.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Command\Pb_Command.cs">
+    <Compile Include="Source\Control\Command\Pb_Command.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Command\Pb_Command.designer.cs">
+    <Compile Include="Source\Control\Command\Pb_Command.designer.cs">
       <DependentUpon>Pb_Command.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\Command\SelectKey.cs" />
+    <Compile Include="Source\Control\Command\SelectKey.cs" />
     <Compile Include="Source\Control\CB_ActionList.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -138,12 +138,6 @@
     <Compile Include="Source\Control\Compend\RB_Tool.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Control\Ctrl_ListBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Ctrl_ListBox.Designer.cs">
-      <DependentUpon>Ctrl_ListBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\Control\Compend\SequenceTree.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,12 +151,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Control\Compend\ToolImg.cs" />
-    <Compile Include="Source\Control\testAutoScroll.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\testAutoScroll.Designer.cs">
-      <DependentUpon>testAutoScroll.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\FormMain\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,16 +236,16 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Command\Ctrl_CmdList.resx">
+    <EmbeddedResource Include="Source\Control\Command\Ctrl_CmdList.resx">
       <DependentUpon>Ctrl_CmdList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Command\Ctrl_Command.resx">
+    <EmbeddedResource Include="Source\Control\Command\Ctrl_Command.resx">
       <DependentUpon>Ctrl_Command.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Command\ListCommand.resx">
+    <EmbeddedResource Include="Source\Control\Command\ListCommand.resx">
       <DependentUpon>ListCommand.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Command\Pb_Command.resx">
+    <EmbeddedResource Include="Source\Control\Command\Pb_Command.resx">
       <DependentUpon>Pb_Command.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Control\Compend\Ctrl_Compend.resx">
@@ -266,17 +254,11 @@
     <EmbeddedResource Include="Source\Control\Compend\Ctrl_Image.resx">
       <DependentUpon>Ctrl_Image.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Ctrl_ListBox.resx">
-      <DependentUpon>Ctrl_ListBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Control\Compend\SequenceTree.resx">
       <DependentUpon>SequenceTree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\Control\Compend\SqcBoard.resx">
       <DependentUpon>SqcBoard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\testAutoScroll.resx">
-      <DependentUpon>testAutoScroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
