@@ -13,10 +13,11 @@ namespace ScriptEditor
 		public enum TAB_NAME
 		{
 			TAB_ACTION,     // 0 : "アクション"
-			TAB_EFFECT,     // 1 : "エフェクト"
-			TAB_COMMAND,    // 2 : "コマンド" 
-			TAB_BRANCH,		// 3 : "ブランチ" 
-			TAB_ROUTE,      // 4 : "ルート"
+			TAB_SCRIPT,		// 1 : "スクリプト(A)"
+			TAB_EFFECT,     // 2 : "エフェクト"
+			TAB_COMMAND,    // 3 : "コマンド" 
+			TAB_BRANCH,		// 4 : "ブランチ" 
+			TAB_ROUTE,      // 5 : "ルート"
 		}
 
 		//タブ変更時
@@ -26,6 +27,7 @@ namespace ScriptEditor
 			switch ( tabControl1.SelectedIndex )
 			{
 				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Selected (); break;
+				case ( int ) TAB_NAME.TAB_SCRIPT: tabScript_Selected (); break;
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Selected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Selected (); break;
 				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
@@ -41,6 +43,7 @@ namespace ScriptEditor
 			switch ( tabControl1.SelectedIndex )
 			{
 				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Deselected (); break;
+				case ( int ) TAB_NAME.TAB_SCRIPT: tabScript_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
@@ -54,12 +57,29 @@ namespace ScriptEditor
 		{
 		}
 
+
+
+		//-----------------------------------------------------------------------
 		//[アクション]タブ選択時
 		public void tabAction_Selected ()
+		{
+			ctrl_SqcList1.UpdateData ();
+		}
+
+		//[アクション]タブ離去時
+		public void tabAction_Deselected ()
+		{
+			ctrl_SqcList1.ApplyData ();
+		}
+
+		//[スクリプト]タブ選択時
+		public void tabScript_Selected ()
 		{
 			//共通フォームにビヘイビアを設定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
+			
+			cpd_Behavior.UpdateData ();
 			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
 
@@ -68,8 +88,8 @@ namespace ScriptEditor
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
 
-		//[アクション]タブ離去時
-		public void tabAction_Deselected ()
+		//[スクリプト]タブ離去時
+		public void tabScript_Deselected ()
 		{
 			FormImage.Inst.Hide ();
 			FormAction.Inst.Hide ();

@@ -14,6 +14,11 @@ namespace ScriptEditor
 			//表示
 			DispChara.Inst.SetCharaData ( ch );
 
+			//----------------------------------------------
+			//シークエンス
+			ctrl_SqcList1.SetData ( ch.behavior );
+
+			//----------------------------------------------
 			//コントロール
 			cpd_Behavior.SetCharaData ( ch );
 			cpd_Garnish.SetCharaData ( ch );

@@ -43,19 +43,19 @@
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.ctrl_SqcList1 = new ScriptEditor.Ctrl_SqcList();
 			this.tabScriptA = new System.Windows.Forms.TabPage();
+			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
 			this.tabScriptE = new System.Windows.Forms.TabPage();
+			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
 			this.tabCommand = new System.Windows.Forms.TabPage();
+			this.ctrl_CmdList1 = new ScriptEditor.Ctrl_CmdList();
 			this.tabBranch = new System.Windows.Forms.TabPage();
 			this.ctrl_Branch1 = new ScriptEditor.Ctrl_Branch();
 			this.tabRoute = new System.Windows.Forms.TabPage();
 			this.ctrl_Route1 = new ScriptEditor.Ctrl_Route();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.ctrl_SqcList1 = new ScriptEditor.Ctrl_SqcList();
-			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
-			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
-			this.ctrl_CmdList1 = new ScriptEditor.Ctrl_CmdList();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
@@ -175,6 +175,14 @@
 			this.tabPage1.Text = "アクション";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// ctrl_SqcList1
+			// 
+			this.ctrl_SqcList1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ctrl_SqcList1.Location = new System.Drawing.Point(0, 0);
+			this.ctrl_SqcList1.Name = "ctrl_SqcList1";
+			this.ctrl_SqcList1.Size = new System.Drawing.Size(976, 716);
+			this.ctrl_SqcList1.TabIndex = 0;
+			// 
 			// tabScriptA
 			// 
 			this.tabScriptA.AutoScroll = true;
@@ -187,6 +195,19 @@
 			this.tabScriptA.Text = "スクリプト(A)";
 			this.tabScriptA.UseVisualStyleBackColor = true;
 			// 
+			// cpd_Behavior
+			// 
+			this.cpd_Behavior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.cpd_Behavior.AutoScroll = true;
+			this.cpd_Behavior.BoolAction = false;
+			this.cpd_Behavior.EditCompend = null;
+			this.cpd_Behavior.Location = new System.Drawing.Point(0, 0);
+			this.cpd_Behavior.Name = "cpd_Behavior";
+			this.cpd_Behavior.Size = new System.Drawing.Size(977, 742);
+			this.cpd_Behavior.TabIndex = 0;
+			// 
 			// tabScriptE
 			// 
 			this.tabScriptE.Controls.Add(this.cpd_Garnish);
@@ -198,6 +219,15 @@
 			this.tabScriptE.Text = "スクリプト(E)";
 			this.tabScriptE.UseVisualStyleBackColor = true;
 			// 
+			// cpd_Garnish
+			// 
+			this.cpd_Garnish.BoolAction = false;
+			this.cpd_Garnish.EditCompend = null;
+			this.cpd_Garnish.Location = new System.Drawing.Point(0, 0);
+			this.cpd_Garnish.Name = "cpd_Garnish";
+			this.cpd_Garnish.Size = new System.Drawing.Size(977, 711);
+			this.cpd_Garnish.TabIndex = 0;
+			// 
 			// tabCommand
 			// 
 			this.tabCommand.Controls.Add(this.ctrl_CmdList1);
@@ -207,6 +237,13 @@
 			this.tabCommand.TabIndex = 2;
 			this.tabCommand.Text = "コマンド";
 			this.tabCommand.UseVisualStyleBackColor = true;
+			// 
+			// ctrl_CmdList1
+			// 
+			this.ctrl_CmdList1.Location = new System.Drawing.Point(0, 0);
+			this.ctrl_CmdList1.Name = "ctrl_CmdList1";
+			this.ctrl_CmdList1.Size = new System.Drawing.Size(880, 573);
+			this.ctrl_CmdList1.TabIndex = 0;
 			// 
 			// tabBranch
 			// 
@@ -248,42 +285,6 @@
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
-			// ctrl_SqcList1
-			// 
-			this.ctrl_SqcList1.Location = new System.Drawing.Point(3, 3);
-			this.ctrl_SqcList1.Name = "ctrl_SqcList1";
-			this.ctrl_SqcList1.Size = new System.Drawing.Size(770, 563);
-			this.ctrl_SqcList1.TabIndex = 0;
-			// 
-			// cpd_Behavior
-			// 
-			this.cpd_Behavior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.cpd_Behavior.AutoScroll = true;
-			this.cpd_Behavior.BoolAction = false;
-			this.cpd_Behavior.EditCompend = null;
-			this.cpd_Behavior.Location = new System.Drawing.Point(0, 0);
-			this.cpd_Behavior.Name = "cpd_Behavior";
-			this.cpd_Behavior.Size = new System.Drawing.Size(977, 742);
-			this.cpd_Behavior.TabIndex = 0;
-			// 
-			// cpd_Garnish
-			// 
-			this.cpd_Garnish.BoolAction = false;
-			this.cpd_Garnish.EditCompend = null;
-			this.cpd_Garnish.Location = new System.Drawing.Point(0, 0);
-			this.cpd_Garnish.Name = "cpd_Garnish";
-			this.cpd_Garnish.Size = new System.Drawing.Size(977, 711);
-			this.cpd_Garnish.TabIndex = 0;
-			// 
-			// ctrl_CmdList1
-			// 
-			this.ctrl_CmdList1.Location = new System.Drawing.Point(0, 0);
-			this.ctrl_CmdList1.Name = "ctrl_CmdList1";
-			this.ctrl_CmdList1.Size = new System.Drawing.Size(880, 573);
-			this.ctrl_CmdList1.TabIndex = 0;
 			// 
 			// FormMain
 			// 

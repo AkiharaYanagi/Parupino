@@ -3,6 +3,7 @@ using System.ComponentModel;
 
 namespace ScriptEditor
 {
+	using BD_Sqc = BindingDictionary < Sequence >;
 	using BL_Sqc = BindingList < Sequence >;
 
 	//==================================================================================
@@ -109,13 +110,9 @@ namespace ScriptEditor
 		//更新
 		public void UpdateData ()
 		{
-			BL_Sqc blsqc = EditCompend.Compend.BD_Sequence.GetBindingList();
-			for ( int i = 0; i < blsqc.Count; ++ i )
-			{
-				blsqc.ResetItem ( i );	
-			}
-
-			sequenceTree1.UpdateCategory ( blsqc );
+			BD_Sqc bdsqc = EditCompend.Compend.BD_Sequence;
+			bdsqc.ResetItems ();
+			sequenceTree1.UpdateCategory ( bdsqc.GetBindingList () );
 		}
 
 		//-------------------------------------------------------------------------

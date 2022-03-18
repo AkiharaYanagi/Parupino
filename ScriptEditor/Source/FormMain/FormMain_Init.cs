@@ -30,7 +30,6 @@ namespace ScriptEditor
 		public void TestCharaData ()
 		{
 			//ファイル名指定
-			//edittingFilename = "testChara.dat";
 			string testName = "testChara.dat";
 //			settings.LastFilename = testName;
 
@@ -45,8 +44,6 @@ namespace ScriptEditor
 				//テストオブジェクトによる機能のテスト
 				TestChara testChara = new TestChara ();
 				testChara.Test ( testCharaData );
-
-
 #if true
 				//書出
 				SaveChara saveChara = new SaveChara ( testName, testCharaData );
@@ -57,7 +54,6 @@ namespace ScriptEditor
 					//書出
 					SaveChara saveChara = new SaveChara ( edittingFilename, testCharaData );
 				}
-
 #endif
 				//読込
 				LoadChara loadChara = new LoadChara ( testName, chara );
@@ -86,21 +82,24 @@ namespace ScriptEditor
 		//各タブの初期化
 		private void LoadTab ()
 		{
-			TabSequence_Load ();
 			TabAction_Load ();
+			TabScript_Load ();
 			TabEffect_Load ();
 			TabCommand_Load ();
 			TabBranch_Load ();
 			TabChara_Load ();
 		}
 
-		private void TabSequence_Load ()
-		{
-			ctrl_SqcList1.Init ();
-		}
-
 		//タブ_アクションの初期化
 		private void TabAction_Load ()
+		{
+			ctrl_SqcList1.LoadCtrl ();
+			ctrl_SqcList1.SetEnviroment ( ()=>new Action() );
+			ctrl_SqcList1.SetData ( chara.behavior );
+		}
+
+		//タブ_スクリプトの初期化
+		private void TabScript_Load ()
 		{
 			//ビヘイビア(:コンペンド)の指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
@@ -118,6 +117,7 @@ namespace ScriptEditor
 			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
 			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
 		}
+
 		//タブ_エフェクトの初期化
 		private void TabEffect_Load ()
 		{

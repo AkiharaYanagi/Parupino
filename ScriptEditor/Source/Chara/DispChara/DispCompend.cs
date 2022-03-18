@@ -51,6 +51,7 @@
 		{
 			CtrlCmpd.Invalidate ();
 			SqcBoard.Invalidate ();
+			
 			DispSequence.Disp ( EditCompend.SelectedSequence );		//シークエンス
 			DispScript.Disp ( EditCompend.SelectedScript );	//スクリプト
 		}
