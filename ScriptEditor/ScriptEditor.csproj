@@ -151,6 +151,15 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Control\Compend\ToolImg.cs" />
+    <Compile Include="Source\FormMain\FormMain_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain_InitChara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Source\FormMain\FormMain_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\FormMain\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,7 +172,7 @@
     <Compile Include="Source\FormMain\FormMain_Init.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormMain\FormMain_menu.cs">
+    <Compile Include="Source\FormMain\FormMain_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormMain\FormMain_Tab.cs">

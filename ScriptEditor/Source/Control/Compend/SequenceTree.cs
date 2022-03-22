@@ -99,8 +99,12 @@ namespace ScriptEditor
 			if ( bd_sq is null ) { return; }
 			BD_sq = bd_sq;
 			BindingList < Sequence > bl = bd_sq.GetBindingList();
-
-			if ( 0 >= bd_sq.Count() ) { return; }
+			
+			//０のときダミー
+			if ( 0 >= bd_sq.Count() )
+			{
+				bd_sq.New ();
+			}
 
 
 			//アクションのときのみアクションカテゴリで分類

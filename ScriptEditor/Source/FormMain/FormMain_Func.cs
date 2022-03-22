@@ -5,47 +5,6 @@ namespace ScriptEditor
 	public partial class FormMain : Form
 	{
 		//==================================================================================
-		//各コントロールのデータソースにキャラデータを設定する (読込時に１回のみ)
-		//==================================================================================
-		public void SetCharaData ( Chara ch )
-		{
-			//編集
-			EditChara.Inst.SetCharaDara ( ch );
-			//表示
-			DispChara.Inst.SetCharaData ( ch );
-
-			//----------------------------------------------
-			//シークエンス
-			ctrl_SqcList1.SetData ( ch.behavior );
-
-			//----------------------------------------------
-			//コントロール
-			cpd_Behavior.SetCharaData ( ch );
-			cpd_Garnish.SetCharaData ( ch );
-
-			//----------------------------------------------
-			//コマンド
-			ctrl_CmdList1.SetCharaData ( ch );
-
-			//ブランチ
-			ctrl_Branch1.SetCharaData ( ch );
-
-			//ルート
-			ctrl_Route1.SetCharaData ( ch );
-
-			//----------------------------------------------
-			// [エフェクトジェネレートフォーム]
-			FormEfGnrt.Inst.SetCharaData ( ch );
-
-			//フォーム ルート
-			FormRoute.Inst.SetCharaData ( ch );
-			
-			//----------------------------------------------
-			// [メインフォーム] キャラ内容表示
-			UpdateData ();
-		}
-
-		//==================================================================================
 		//各フォームに更新を伝える (読込時、変更時)
 		//==================================================================================
 		public void Assosiate ( Sequence sqc, Script scp )

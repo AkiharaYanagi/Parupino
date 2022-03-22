@@ -27,19 +27,10 @@ namespace ScriptEditor
 			//コンポーネントの初期化
 			InitializeComponent ();
 
-			//サブフォーム初期化
-			LoadSubForm ();
+			//環境初期化
+			LoadEnvironment ();
 
-			//タブ初期化
-			LoadTab ();
-
-			//キャラデータのテスト
-			TestCharaData ();
-
-			//読込
-//			LoadForm ();
-
-			//開始
+			//開始設定
 			Init ();
 
 			//表示
