@@ -11,13 +11,13 @@ namespace ScriptEditor
 		private void InitChara ()
 		{
 			//キャラ：空データ
+			SetCharaData ( chara );
 
 			//キャラ：テストデータ
 //			TestCharaData ();
 
 			//キャラ：既存データ自動読込
 //			CharaLoad ();
-
 		}
 
 
