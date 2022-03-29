@@ -31,7 +31,7 @@ namespace ScriptEditor
 			this.Controls.Add ( ED_Route );
 
 			//追加時
-			ED_Route.Add = ()=>
+			ED_Route.Listbox_Add = ()=>
 			{
 			};
 			//選択変更時

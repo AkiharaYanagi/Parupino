@@ -177,6 +177,7 @@
 			// 
 			// ctrl_SqcList1
 			// 
+			this.ctrl_SqcList1.AutoSize = true;
 			this.ctrl_SqcList1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ctrl_SqcList1.Location = new System.Drawing.Point(0, 0);
 			this.ctrl_SqcList1.Name = "ctrl_SqcList1";
@@ -262,7 +263,7 @@
 			this.ctrl_Branch1.BD_Sequence = bindingDictionary_13;
 			this.ctrl_Branch1.Location = new System.Drawing.Point(13, 7);
 			this.ctrl_Branch1.Name = "ctrl_Branch1";
-			this.ctrl_Branch1.Size = new System.Drawing.Size(501, 452);
+			this.ctrl_Branch1.Size = new System.Drawing.Size(766, 568);
 			this.ctrl_Branch1.TabIndex = 0;
 			// 
 			// tabRoute
@@ -306,6 +307,7 @@
 			this.statusStrip1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
+			this.tabPage1.PerformLayout();
 			this.tabScriptA.ResumeLayout(false);
 			this.tabScriptE.ResumeLayout(false);
 			this.tabCommand.ResumeLayout(false);
