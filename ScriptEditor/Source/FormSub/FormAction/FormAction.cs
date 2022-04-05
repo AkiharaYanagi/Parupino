@@ -102,7 +102,7 @@ namespace ScriptEditor
 		//ドロップダウンリストから変更されて閉じたとき
 		private void CB_Category_SelectionChangeCommitted ( object sender, EventArgs e )
 		{
-			//@info ◆現フォームからのみイベントが発生する
+			//@info ◆現ドロップダウンリストを閉じたときのみイベントが発生する
 
 			//シークエンスツリーの再構築が必要
 			action.Category = (ActionCategory)CB_Category.SelectedItem;

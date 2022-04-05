@@ -13,11 +13,12 @@ namespace ScriptEditor
 		public enum TAB_NAME
 		{
 			TAB_ACTION,     // 0 : "アクション"
-			TAB_SCRIPT,		// 1 : "スクリプト(A)"
+			TAB_SCRIPT_A,	// 1 : "スクリプト(A)"
 			TAB_EFFECT,     // 2 : "エフェクト"
-			TAB_COMMAND,    // 3 : "コマンド" 
-			TAB_BRANCH,		// 4 : "ブランチ" 
-			TAB_ROUTE,      // 5 : "ルート"
+			TAB_SCRIPT_E,	// 3 : "スクリプト(E)"
+			TAB_COMMAND,    // 4 : "コマンド" 
+			TAB_BRANCH,		// 5 : "ブランチ" 
+			TAB_ROUTE,      // 6 : "ルート"
 		}
 
 		//タブ変更時
@@ -27,8 +28,9 @@ namespace ScriptEditor
 			switch ( tabControl1.SelectedIndex )
 			{
 				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Selected (); break;
-				case ( int ) TAB_NAME.TAB_SCRIPT: tabScript_Selected (); break;
+				case ( int ) TAB_NAME.TAB_SCRIPT_A: tabScript_A_Selected (); break;
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Selected (); break;
+				case ( int ) TAB_NAME.TAB_SCRIPT_E: tabScript_E_Selected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Selected (); break;
 				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
 				case ( int ) TAB_NAME.TAB_ROUTE: tabChara_Selected (); break;
@@ -43,8 +45,9 @@ namespace ScriptEditor
 			switch ( tabControl1.SelectedIndex )
 			{
 				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Deselected (); break;
-				case ( int ) TAB_NAME.TAB_SCRIPT: tabScript_Deselected (); break;
+				case ( int ) TAB_NAME.TAB_SCRIPT_A: tabScript_A_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Deselected (); break;
+				case ( int ) TAB_NAME.TAB_SCRIPT_E: tabScript_E_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
 				case ( int ) TAB_NAME.TAB_ROUTE: tabChara_Selected (); break;
@@ -63,17 +66,17 @@ namespace ScriptEditor
 		//[アクション]タブ選択時
 		public void tabAction_Selected ()
 		{
-			ctrl_SqcList1.UpdateData ();
+			ctrl_SqcList_Act.UpdateData ();
 		}
 
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
-			ctrl_SqcList1.ApplyData ();
+			ctrl_SqcList_Act.ApplyData ();
 		}
 
-		//[スクリプト]タブ選択時
-		public void tabScript_Selected ()
+		//[スクリプト(A)]タブ選択時
+		public void tabScript_A_Selected ()
 		{
 			//共通フォームにビヘイビアを設定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
@@ -88,8 +91,8 @@ namespace ScriptEditor
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
 
-		//[スクリプト]タブ離去時
-		public void tabScript_Deselected ()
+		//[スクリプト(A)]タブ離去時
+		public void tabScript_A_Deselected ()
 		{
 			FormImage.Inst.Hide ();
 			FormAction.Inst.Hide ();
@@ -98,11 +101,26 @@ namespace ScriptEditor
 			FormEfGnrt.Inst.Hide ();
 		}
 
+		//[エフェクト]タブ選択時
 		public void tabEffect_Selected ()
+		{
+			ctrl_SqcList_Ef.UpdateData ();
+		}
+
+		//[エフェクト]タブ離去時
+		public void tabEffect_Deselected ()
+		{
+			ctrl_SqcList_Ef.ApplyData ();
+		}
+
+		//[スクリプト(E)]
+		public void tabScript_E_Selected ()
 		{
 			//共通フォームにガーニッシュを設定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
+
+			cpd_Garnish.UpdateData ();
 			Assosiate ( eg.SelectedSequence, eg.SelectedScript );
 			eg.SelectScript ( 0, 0 );
 
@@ -111,27 +129,24 @@ namespace ScriptEditor
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}
 
-		public void tabEffect_Deselected ()
+		//[スクリプト(E)]
+		public void tabScript_E_Deselected ()
 		{
-
 		}
+
 
 		public void tabCommand_Selected ()
 		{
-
 		}
 		public void tabCommand_Deselected ()
 		{
-
 		}
 
 		public void tabChara_Selected ()
 		{
-
 		}
 		public void tabChara_Deselected ()
 		{
-
 		}
 	}
 }

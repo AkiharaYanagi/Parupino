@@ -24,10 +24,10 @@ namespace ScriptEditor
 		private void 上書保存ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
 			//上書保存
-			SaveChara saveChara = new SaveChara ( settings.LastFilename, chara );
+			SaveChara saveChara = new SaveChara ( stgs.LastFilename, chara );
 
 			//編集中ファイル名更新(非保存表示を消去)
-			SetFormText ( settings.LastFilename );
+			SetFormText ( stgs.LastFilename );
 
 			STS_TXT.Trace ( "上書保存" );
 		}
@@ -38,7 +38,7 @@ namespace ScriptEditor
 			saveFileDialog1.DefaultExt = "dat";
 
 			//初期ファイル名
-			saveFileDialog1.FileName = settings.LastFilename;
+			saveFileDialog1.FileName = stgs.LastFilename;
 
 			//ダイアログ開始
 			if ( saveFileDialog1.ShowDialog () == DialogResult.OK )
@@ -46,11 +46,12 @@ namespace ScriptEditor
 				SaveChara saveChara = new SaveChara ( saveFileDialog1.FileName, chara );
 
 				//編集中ファイル名更新(非保存表示を消去)
-				settings.LastFilename = saveFileDialog1.FileName;
-				SetFormText ( settings.LastFilename );
+				stgs.LastFilename = saveFileDialog1.FileName;
+				SetFormText ( stgs.LastFilename );
 
-				settings.LastDirectory = Path.GetDirectoryName ( saveFileDialog1.FileName );
-				settings.Save ();
+				stgs.LastDirectory = Path.GetDirectoryName ( saveFileDialog1.FileName );
+
+				XML_IO.Save ( stgs );
 			}
 			STS_TXT.Trace ( "別名保存" );
 		}
@@ -64,7 +65,7 @@ namespace ScriptEditor
 		private void 読込ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
 			//ダイアログ中の初期ファイル名
-			openFileDialog1.FileName = settings.LastFilename;
+			openFileDialog1.FileName = stgs.LastFilename;
 
 			//ダイアログ開始
 			if ( openFileDialog1.ShowDialog () == DialogResult.OK )
@@ -73,7 +74,7 @@ namespace ScriptEditor
 				LoadCharaData ();
 			}
 			//ファイル名更新
-			settings.LastFilename = Path.GetFileName ( openFileDialog1.FileName );
+			stgs.LastFilename = Path.GetFileName ( openFileDialog1.FileName );
 
 			STS_TXT.Trace ( "読込" );
 		}
@@ -85,12 +86,12 @@ namespace ScriptEditor
 			SetCharaData ( chara );
 
 			//設定ファイルにファイル位置を記録
-			settings.LastDirectory = Path.GetDirectoryName ( openFileDialog1.FileName );
-			settings.Save ();
+			stgs.LastDirectory = Path.GetDirectoryName ( openFileDialog1.FileName );
+			XML_IO.Save ( stgs );
 
 			//カレントディレクトリも変更する
-			Directory.SetCurrentDirectory ( settings.LastDirectory );
-			SetFormText ( settings.LastFilename );
+			Directory.SetCurrentDirectory ( stgs.LastDirectory );
+			SetFormText ( stgs.LastFilename );
 
 			//タブアクションを選択
 			tabAction_Selected ();
@@ -113,7 +114,7 @@ namespace ScriptEditor
 		private void テキストから読込ToolStripMenuItem_Click ( object sender, System.EventArgs e )
 		{
 			//ダイアログ中の初期ファイル名
-			openFileDialog1.FileName = settings.LastFilename;
+			openFileDialog1.FileName = stgs.LastFilename;
 
 			//ダイアログ開始
 			if ( openFileDialog1.ShowDialog () == DialogResult.OK )
@@ -126,7 +127,7 @@ namespace ScriptEditor
 		//タイトルバーテキスト更新
 		private void ReloadTitleBarText ()
 		{
-			this.Text = Directory.GetCurrentDirectory() + "\\" + settings.LastFilename + " - " + formText;
+			this.Text = Directory.GetCurrentDirectory() + "\\" + stgs.LastFilename + " - " + formText;
 		}
 	}
 

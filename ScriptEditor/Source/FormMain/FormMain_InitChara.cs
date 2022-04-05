@@ -24,12 +24,11 @@ namespace ScriptEditor
 		//既存のキャラデータ読込
 		private void CharaLoad ()
 		{
-			settings.Load ();
 			//読込
-			LoadChara loadChara = new LoadChara ( settings.LastFilename, chara );
+			LoadChara loadChara = new LoadChara ( stgs.LastFilename, chara );
 
 			//保存先
-			SetFormText ( settings.LastFilename );
+			SetFormText ( stgs.LastFilename );
 
 			//キャラデータの適用
 			SetCharaData ( chara );
@@ -45,7 +44,8 @@ namespace ScriptEditor
 			DispChara.Inst.SetCharaData ( ch );			//表示
 
 			//----------------------------------------------
-			ctrl_SqcList1.SetData ( ch.behavior );			//シークエンス
+			ctrl_SqcList_Act.SetCharaData ( ch.behavior );			//シークエンス
+			ctrl_SqcList_Ef.SetCharaData ( ch.garnish );			//シークエンス
 
 			//----------------------------------------------
 			cpd_Behavior.SetCharaData ( ch );			//コンペンド

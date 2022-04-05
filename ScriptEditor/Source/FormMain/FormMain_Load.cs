@@ -10,11 +10,32 @@ namespace ScriptEditor
 		//==================================================================================
 		private void LoadEnvironment ()
 		{
-			//サブフォーム初期化
-			LoadSubForm ();
+			LoadSetting ();		//設定ファイル初期化
+			LoadSubForm ();		//サブフォーム初期化
+			LoadTab ();			//タブ初期化
+		}
 
-			//タブ初期化
-			LoadTab ();
+		//==================================================================================
+		//	設定ファイル初期化
+		//==================================================================================
+		private void LoadSetting ()
+		{
+			//設定ファイル読込
+			XML_IO.SettingFilename = stgs.SettingFilename;
+			stgs = (Ctrl_Settings) XML_IO.Load ( stgs.GetType () );
+		}
+
+		//==================================================================================
+		//	サブフォーム関連
+		//==================================================================================
+		private void LoadSubForm ()
+		{
+			FormImage.Inst.FormMain = this;
+			FormAction.Inst.FormMain = this;
+			FormScript.Inst.FormMain = this;
+			FormRect.Inst.FormMain = this;
+			FormEfGnrt.Inst.FormMain = this;
+			FormRoute.Inst.FormMain = this;
 		}
 
 		//==================================================================================
@@ -26,23 +47,26 @@ namespace ScriptEditor
 		private void LoadTab ()
 		{
 			TabAction_Load ();
-			TabScript_Load ();
+			TabScript_A_Load ();
 			TabEffect_Load ();
+			TabScript_E_Load ();
 			TabCommand_Load ();
 			TabBranch_Load ();
-			TabChara_Load ();
+			TabRoute_Load ();
 		}
+		//--------------------------------------------------------------------------
 
 		//タブ_アクションの初期化
 		private void TabAction_Load ()
 		{
-			ctrl_SqcList1.LoadCtrl ();
-			ctrl_SqcList1.SetEnviroment ( ()=>new Action() );
-			ctrl_SqcList1.SetData ( chara.behavior );
+			Ctrl_SqcList.CTRL_SQC ac = Ctrl_SqcList.CTRL_SQC.ACTION;
+			ctrl_SqcList_Act.SetEnviroment ( ac, ()=>new Action(), stgs );
+			ctrl_SqcList_Act.SetCharaData ( chara.behavior );
+			ctrl_SqcList_Act.LoadCtrl ();
 		}
 
-		//タブ_スクリプトの初期化
-		private void TabScript_Load ()
+		//タブ_スクリプト(A)の初期化
+		private void TabScript_A_Load ()
 		{
 			//ビヘイビア(:コンペンド)の指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
@@ -64,6 +88,15 @@ namespace ScriptEditor
 		//タブ_エフェクトの初期化
 		private void TabEffect_Load ()
 		{
+			Ctrl_SqcList.CTRL_SQC ef = Ctrl_SqcList.CTRL_SQC.EFFECT;
+			ctrl_SqcList_Ef.SetEnviroment ( ef, ()=>new Effect(), stgs );
+			ctrl_SqcList_Ef.SetCharaData ( chara.garnish );
+			ctrl_SqcList_Ef.LoadCtrl ();
+		}
+
+		//タブ_スクリプト(E)の初期化
+		private void TabScript_E_Load ()
+		{
 			//ガーニッシュ(:コンペンド)の指定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
@@ -82,29 +115,33 @@ namespace ScriptEditor
 		//タブ_コマンドの初期化
 		private void TabCommand_Load ()
 		{
+			ctrl_CmdList1.SetEnvironment ( stgs );
 		}
 
 		//タブ_ブランチの初期化
 		private void TabBranch_Load ()
 		{
+			ctrl_Branch1.SetEnvironment ( stgs );
+			ctrl_Branch1.SetCharaData ( chara );
 		}
 
-		//タブ_キャラの初期化
-		private void TabChara_Load ()
+		//タブ_ルートの初期化
+		private void TabRoute_Load ()
 		{
+			ctrl_Route1.SetEnvironment ( stgs );
 		}
 
-		//--------------------------------------------------------------------------
-		//サブフォーム関連
-		private void LoadSubForm ()
+
+
+
+		//既存データの読込
+		public void LoadData ()
 		{
-			FormImage.Inst.FormMain = this;
-			FormAction.Inst.FormMain = this;
-			FormScript.Inst.FormMain = this;
-			FormRect.Inst.FormMain = this;
-			FormEfGnrt.Inst.FormMain = this;
-			FormRoute.Inst.FormMain = this;
+			ctrl_SqcList_Act.LoadData ();
+			ctrl_SqcList_Ef.LoadData ();
+			ctrl_CmdList1.LoadData ();
+			ctrl_Branch1.LoadData ();
+			ctrl_Route1.LoadData ();
 		}
-
 	}
 }

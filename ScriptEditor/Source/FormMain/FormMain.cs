@@ -13,8 +13,7 @@ namespace ScriptEditor
 		//	メンバ変数
 		//==================================================================================
 		private Chara chara = new Chara ();		//編集対象キャラクタ
-//		private string edittingFilename = "chara.dat";	//編集中のファイル名
-		private Settings settings = new Settings();		//スクリプトエディタ自身の設定ファイル
+		private Ctrl_Settings stgs = new Ctrl_Settings();		//スクリプトエディタ自身の設定ファイル
 
 		//==================================================================================
 		//	コンストラクタ
@@ -32,6 +31,9 @@ namespace ScriptEditor
 
 			//開始設定
 			Init ();
+
+			//データ読込
+			LoadData ();
 
 			//表示
 			Disp ();

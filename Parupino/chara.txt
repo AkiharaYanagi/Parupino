@@ -1,0 +1,55 @@
+﻿<Chara>
+<ver>110</ver>
+
+<ImageList Num="1">
+	<Image Name="Stand_00.png"></Image>
+</ImageList>
+<EfImageList Num="0">
+</EfImageList>
+<ActionList Num="1">
+	<Action Name="SqcName" NextName="SqcName" NextID="0" Category="0" Posture="0" Balance="0">
+		<Script Group="0" ImageName="Stand_00.png" ImageID="0" X="-197" Y="-490" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Action>
+</ActionList>
+<EffectList Num="1">
+	<Effect Name="">
+		<Script Group="0" ImageName="ImgName" ImageID="-1" X="0" Y="0" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+	</Effect>
+</EffectList>
+<CommandList Num="1">
+	<Command Name="New Command" Limit="1">
+	</Command>
+</CommandList>
+<BranchList Num="1">
+	<Branch Name="BrcName" Condition="0" NameCommand="New Command" CommandID="0" NameSequence="SqcName" SequenceID="0" Frame="0">
+	</Branch>
+</BranchList>
+<RouteList Num="0">
+</RouteList>
+</Chara>
