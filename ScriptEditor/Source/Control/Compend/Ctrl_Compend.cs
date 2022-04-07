@@ -81,6 +81,16 @@ namespace ScriptEditor
 			Assosiate ();
 		}
 
+		//先頭を選択
+		public void SelectTop ()
+		{
+			if ( 0 < EditCompend.Compend.BD_Sequence.Count () )
+			{
+				sequenceTree1.SelectTop ();
+				sequenceTree1.Focus ();
+			}
+		}
+
 		//関連付け
 		public void Assosiate ()
 		{

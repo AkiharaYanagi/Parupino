@@ -83,6 +83,7 @@ namespace ScriptEditor
 			DispBehavior db = DispChara.Inst.DispBehavior;
 			
 			cpd_Behavior.UpdateData ();
+			cpd_Behavior.SelectTop ();
 			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
 
@@ -121,6 +122,7 @@ namespace ScriptEditor
 			DispGarnish dg = DispChara.Inst.DispGarnish;
 
 			cpd_Garnish.UpdateData ();
+			cpd_Garnish.SelectTop ();
 			Assosiate ( eg.SelectedSequence, eg.SelectedScript );
 			eg.SelectScript ( 0, 0 );
 

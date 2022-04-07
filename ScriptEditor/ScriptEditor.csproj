@@ -101,7 +101,7 @@
       <DependentUpon>Ctrl_Compend.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Control\Compend\PaintImage.cs" />
-    <Compile Include="Source\Control\ControlsEfGnrt.cs" />
+    <Compile Include="Source\FormSub\FormEffectGenerate\ControlsEfGnrt.cs" />
     <Compile Include="Source\Control\Compend\Ctrl_Image.cs">
       <SubType>UserControl</SubType>
     </Compile>

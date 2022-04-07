@@ -448,20 +448,17 @@ namespace ScriptEditor
 			ec.SelectedSpanEnd = pos.X;
 			bDrag = true;
 
-			
+			//グループ
 			EditScript es = ec.EditScript;
 			es.SelectGroup ( ec.SelectedScript.Group );
 
-
-			//@todo 選択位置をステータスに表示
+			//選択位置をステータスに表示
 			Script s = EditCompend.SelectedScript;
-			STS_TXT.Trace ( s.Frame.ToString () + ", [" + s.Group + "]" );
+			STS_TXT.Trace ( "Frame:" + s.Frame.ToString () + ", Group[" + s.Group + "]" );
 
 			//更新
 			Assosiate ();
 			DispCompend.Disp ();
-
-
 		}
 
 		//１つ後ろを選択

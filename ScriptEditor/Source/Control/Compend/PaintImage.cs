@@ -116,7 +116,7 @@ namespace ScriptEditor
 			Image img = null;
 			using ( Font font = new Font ( "メイリオ", 20 ) )
 			{
-			Bitmap bmp_nl = new Bitmap ( 256, 256 );
+			Bitmap bmp_nl = new Bitmap ( 512, 256 );
 			Graphics g_nl = Graphics.FromImage ( bmp_nl );
 			g_nl.DrawString ( "\"" + script.ImgName + "\"", font, Brushes.Orange, 64, 128 );
 			g_nl.DrawString ( "is not exist.", font, Brushes.Orange, 64, 160 );

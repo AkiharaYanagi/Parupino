@@ -239,7 +239,6 @@
 			// 
 			this.sequenceTree1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-			this.sequenceTree1.AutoScroll = true;
 			this.sequenceTree1.BD_sq = null;
 			this.sequenceTree1.CtrlCompend = null;
 			this.sequenceTree1.DispCompend = null;

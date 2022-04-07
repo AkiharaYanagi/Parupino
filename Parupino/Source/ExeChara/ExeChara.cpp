@@ -88,6 +88,8 @@ namespace GAME
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定が必要
 		tstring name ( _T ( "testChara.dat" ) );
 
+#if 0
+
 		//tstring&のためassignで指定する
 		switch ( m_name )
 		{
@@ -102,6 +104,7 @@ namespace GAME
 //		case CHARA_YUKINO: name.assign ( _T ( "chara.dat" ) ); break;
 		default: break;
 		}
+#endif // 0
 		LoadChara loadChara ( name, *m_pChara );
 
 		//基本状態アクションIDを手動で設定する

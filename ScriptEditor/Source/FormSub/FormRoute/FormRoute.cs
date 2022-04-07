@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Drawing;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace ScriptEditor
@@ -7,7 +9,11 @@ namespace ScriptEditor
 	public partial class FormRoute :EditorForm
 	{
 		//コントロール(ルート)
-		EditListbox < TName > ED_Route = new EditListbox < TName > ();
+		EditListbox < TName > EL_Route = new EditListbox < TName > ();
+
+		//チェック用ルートリスト
+		private BindingDictionary < Route > BD_Route = new BindingDictionary<Route> ();
+
 
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -27,20 +33,27 @@ namespace ScriptEditor
 
 			//----------------------------------
 			//コントロール(ルート)
-			ED_Route.Location = new Point ( 3, 0 );
-			this.Controls.Add ( ED_Route );
+			EL_Route.Location = new Point ( 3, -70 );
+			this.Controls.Add ( EL_Route );
+			EL_Route.IO_Visible ( false );
+			EL_Route.TbName_Off ();
 
 			//追加時
-			ED_Route.Listbox_Add = ()=>
+			EL_Route.Listbox_Add = ()=>
 			{
 			};
 			//選択変更時
-			ED_Route.SelectedIndexChanged = ()=>
+			EL_Route.SelectedIndexChanged = ()=>
 			{
 			};
-
+			EL_Route.Func_color_check = (ob)=>
+			{
+				//ルート名が存在するかどうか
+				return ! BD_Route.ContainsKey ( ((TName)ob).Name );
+			};
 			//==============================================================
 
+			Lb_Copy.DisplayMember = "Name";
 		}
 
 		//---------------------------------------------------------------------
@@ -51,6 +64,9 @@ namespace ScriptEditor
 			//コンボボックスに登録
 			Cb_Route.DataSource = ch.BD_Route.GetBindingList ();
 			Cb_Route.DisplayMember = "Name";
+
+			//チェック用保存
+			BD_Route = ch.BD_Route;
 		}
 
 		//ルートの設定
@@ -63,15 +79,38 @@ namespace ScriptEditor
 		public void Assosiate ( Script scp )
 		{
 			Script = scp;
-			ED_Route.SetData ( scp.BD_RutName );
+			EL_Route.SetData ( scp.BD_RutName );
 		}
 
 		//選択
 		private void Cb_Route_SelectionChangeCommitted ( object sender, EventArgs e )
 		{
 			Route rut = (Route)Cb_Route.SelectedItem;
-			ED_Route.Get ().Name = rut.Name;
-			ED_Route.ResetItems ();
+			EL_Route.Get ().Name = rut.Name;
+			EL_Route.ResetItems ();
+		}
+
+		//一時コピー
+		private void Btn_Copy_Click ( object sender, EventArgs e )
+		{
+			ListBox lb = EL_Route.GetListBox ();
+			Lb_Copy.Items.Clear ();
+			foreach ( object ob in lb.Items )
+			{
+				Lb_Copy.Items.Add ( (TName)ob );
+			}
+		}
+
+		//グループにペースト
+		private void Btn_PasteGroup_Click ( object sender, EventArgs e )
+		{
+
+		}
+
+		//全体にペースト
+		private void Btn_PastAll_Click ( object sender, EventArgs e )
+		{
+
 		}
 	}
 }

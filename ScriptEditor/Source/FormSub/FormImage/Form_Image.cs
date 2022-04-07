@@ -151,10 +151,10 @@ namespace ScriptEditor
 				try
 				{
 					string f = Path.GetFileName ( filename );
-					string fn = f.Substring ( 4 );	//先頭のインデックス("ddd_")を除く
+					//string fn = f.Substring ( 4 );	//先頭のインデックス("ddd_")を除く
 
 					//画像からImageData型を作成
-					imageData = new ImageData ( fn, Image.FromFile ( filename ) );
+					imageData = new ImageData ( f, Image.FromFile ( filename ) );
 
 					//L_ImageData.Add ( imageData );			//内部データに保存
 					BD_ImageData.Add ( imageData );

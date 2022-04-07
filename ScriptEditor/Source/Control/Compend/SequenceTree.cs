@@ -11,9 +11,6 @@ namespace ScriptEditor
 	//------------------------------------------------------------------
 	public class SequenceTree : UserControl
 	{
-		//ツリー表示
-		private TreeView treeView1;
-
 		//対象シークエンス
 		public BindingDictionary < Sequence > BD_sq { get; set; } = null;
 
@@ -28,7 +25,15 @@ namespace ScriptEditor
 		public SequenceTree ()
 		{
 			InitializeComponent ();
+
+			treeView1.Scrollable = true;
 		}
+
+		private TreeView treeView1;
+		private ContextMenuStrip contextMenuStrip1;
+		private IContainer components;
+		private ToolStripMenuItem すべて展開ToolStripMenuItem;
+		private ToolStripMenuItem すべて閉鎖ToolStripMenuItem;
 
 		//コンポーネント初期化
 		private void InitializeComponent ()
@@ -133,10 +138,27 @@ namespace ScriptEditor
 			treeView1.ExpandAll ();
 		}
 
+		//先頭を選択
+		public void SelectTop ()
+		{
+			BindingList < Sequence > bl = BD_sq.GetBindingList();
+
+			//アクションのときのみアクションカテゴリで分類
+			if ( bl[0] is Action ) 
+			{
+				treeView1.SelectedNode = treeView1.Nodes[0].Nodes[0];
+			}
+			//アクションではない(エフェクト)のとき
+			else
+			{
+				treeView1.SelectedNode = treeView1.Nodes[0];
+			}
+		}
+
 		//更新
 		public void UpdateCategory ( BindingList < Sequence > bl )
 		{
-			//@todo ツリー選択時の再構築で順番が変わってしまう
+			//@info ツリー選択時の再構築で順番が変わってしまう
 			//->コンペンドの選択イベントでUpdateが呼ばれる
 
 			//アクションフォームにおいて、アクション選択時にカテゴリが異なると
@@ -220,11 +242,6 @@ namespace ScriptEditor
 		{
 //			ReExpand ();	
 		}
-
-		private ContextMenuStrip contextMenuStrip1;
-		private IContainer components;
-		private ToolStripMenuItem すべて展開ToolStripMenuItem;
-		private ToolStripMenuItem すべて閉鎖ToolStripMenuItem;
 
 		//選択済みノードを一時保存して再展開
 		private TreeNode tmpNd = null;	//選択を一時保存
