@@ -30,9 +30,11 @@ namespace ScriptEditor
 		//==================================================================================
 		private void LoadSubForm ()
 		{
-			FormImage.Inst.FormMain = this;
 			FormAction.Inst.FormMain = this;
+			Form_ScriptList.Inst.FormMain = this;
 			FormScript.Inst.FormMain = this;
+			FormImage.Inst.FormMain = this;
+			FormRoute.Inst.FormMain = this;
 			FormRect.Inst.FormMain = this;
 			FormEfGnrt.Inst.FormMain = this;
 			FormRoute.Inst.FormMain = this;
@@ -78,11 +80,13 @@ namespace ScriptEditor
 			cpd_Behavior.SetBehavior ();
 
 			//サブフォームの初期化
-			FormImage.Inst.SetEnviron ( this, eb, db );			//フォーム：イメージ
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
+			Form_ScriptList.Inst.SetEnvironment ( eb );
 			FormScript.Inst.SetCtrl ( eb.EditScript, db.DispScript );	//フォーム：スクリプト
+			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
 			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
 			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
+			FormRoute.Inst.SetEnvironment ( eb );
 		}
 
 		//タブ_エフェクトの初期化
@@ -107,7 +111,8 @@ namespace ScriptEditor
 			cpd_Garnish.SetGarnish ();
 	
 			//サブフォームの初期化
-			FormImage.Inst.SetEnviron ( this, eg, dg );
+			Form_ScriptList.Inst.SetEnvironment ( eg );
+			FormImage.Inst.SetEnviron ( eg, dg );
 			FormScript.Inst.SetCtrl ( eg.EditScript, dg.DispScript );
 			FormRect.Inst.SetCtrl ( eg.EditScript );
 		}

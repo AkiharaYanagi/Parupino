@@ -28,13 +28,11 @@ namespace GAME
 		//キー入力表示個数
 		static const UINT NUM_DISP_INPUT;
 
-		P_PrmRect		m_bg;
-
-		VPVP_PRMRECT	m_vpvpRect;
+		P_PrmRect		m_bg;		//背景
+		VPVP_PRMRECT	m_vpvpRect;	//キー種類 * [F]表示
 
 		UINT			m_timer;
 		float			m_vel;
-
 		float			m_base;
 
 	public:

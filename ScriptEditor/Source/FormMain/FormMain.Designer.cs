@@ -188,7 +188,7 @@
 			this.ctrl_SqcList_Act.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.ctrl_SqcList_Act.Location = new System.Drawing.Point(0, 0);
 			this.ctrl_SqcList_Act.Name = "ctrl_SqcList_Act";
-			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1006, 751);
+			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1060, 805);
 			this.ctrl_SqcList_Act.TabIndex = 0;
 			// 
 			// tabScriptA
@@ -307,7 +307,7 @@
 			// 
 			this.ctrl_Route1.Location = new System.Drawing.Point(12, 0);
 			this.ctrl_Route1.Name = "ctrl_Route1";
-			this.ctrl_Route1.Size = new System.Drawing.Size(809, 553);
+			this.ctrl_Route1.Size = new System.Drawing.Size(809, 611);
 			this.ctrl_Route1.TabIndex = 0;
 			// 
 			// openFileDialog1

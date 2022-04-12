@@ -88,7 +88,8 @@ namespace ScriptEditor
 			eb.SelectScript ( 0, 0 );
 
 			//サブフォームにビヘイビアを設定
-			FormImage.Inst.SetEnviron ( this, eb, db );			//フォーム：イメージ
+			Form_ScriptList.Inst.SetEnvironment ( eb );
+			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
 
@@ -100,6 +101,7 @@ namespace ScriptEditor
 			FormScript.Inst.Hide ();
 			FormRect.Inst.Hide ();
 			FormEfGnrt.Inst.Hide ();
+			FormRoute.Inst.Hide ();
 		}
 
 		//[エフェクト]タブ選択時
@@ -127,7 +129,8 @@ namespace ScriptEditor
 			eg.SelectScript ( 0, 0 );
 
 			//サブフォームにガーニッシュを設定
-			FormImage.Inst.SetEnviron ( this, eg, dg );
+			Form_ScriptList.Inst.SetEnvironment ( eg );
+			FormImage.Inst.SetEnviron ( eg, dg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}
 

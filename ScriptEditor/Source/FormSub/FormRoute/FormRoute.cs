@@ -14,6 +14,8 @@ namespace ScriptEditor
 		//チェック用ルートリスト
 		private BindingDictionary < Route > BD_Route = new BindingDictionary<Route> ();
 
+		//編集用
+		public EditCompend EditCompend { get; set; } = new EditCompend ();
 
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -69,9 +71,10 @@ namespace ScriptEditor
 			BD_Route = ch.BD_Route;
 		}
 
-		//ルートの設定
-		public void SetRoute ( Route rut )
+		//環境設定
+		public void SetEnvironment ( EditCompend ec )
 		{
+			EditCompend = ec;
 		}
 
 		//関連付け
@@ -104,13 +107,24 @@ namespace ScriptEditor
 		//グループにペースト
 		private void Btn_PasteGroup_Click ( object sender, EventArgs e )
 		{
+			EditScript es = EditCompend.EditScript;
+			es.DoGroup ( scp => SetBD_Route ( scp ) );
+		}
 
+		//スクリプトにコピーしているルートリストを設定
+		private void SetBD_Route ( Script scp )
+		{
+			scp.BD_RutName.Clear ();
+			foreach ( TName tn in Lb_Copy.Items )
+			{
+				scp.BD_RutName.Add ( tn );
+			}
 		}
 
 		//全体にペースト
 		private void Btn_PastAll_Click ( object sender, EventArgs e )
 		{
-
+			EditCompend.DoAllScript ( scp=>SetBD_Route ( scp ) );
 		}
 	}
 }

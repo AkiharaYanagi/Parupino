@@ -25,6 +25,7 @@ namespace ScriptEditor
 
 			//サブフォームの初期表示
 //			FormAction.Inst.Show ();
+			Form_ScriptList.Inst.Show ();
 //			FormScript.Inst.Show ();
 //			FormEfGnrt.Inst.Show ();
 //			FormRect.Inst.Show ();

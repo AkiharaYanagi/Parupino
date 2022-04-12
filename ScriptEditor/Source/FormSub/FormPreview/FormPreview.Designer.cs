@@ -33,24 +33,23 @@
 			this.Btn_Stop = new System.Windows.Forms.Button();
 			this.Btn_Pause = new System.Windows.Forms.Button();
 			this.Btn_Advance = new System.Windows.Forms.Button();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.pictureBox1.Location = new System.Drawing.Point(12, 25);
+			this.pictureBox1.Location = new System.Drawing.Point(8, 57);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(465, 428);
+			this.pictureBox1.Size = new System.Drawing.Size(355, 480);
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			// 
 			// Btn_Start
 			// 
-			this.Btn_Start.Location = new System.Drawing.Point(297, 400);
+			this.Btn_Start.Location = new System.Drawing.Point(178, 12);
 			this.Btn_Start.Name = "Btn_Start";
 			this.Btn_Start.Size = new System.Drawing.Size(65, 39);
 			this.Btn_Start.TabIndex = 1;
@@ -60,7 +59,7 @@
 			// 
 			// Btn_Stop
 			// 
-			this.Btn_Stop.Location = new System.Drawing.Point(381, 400);
+			this.Btn_Stop.Location = new System.Drawing.Point(249, 12);
 			this.Btn_Stop.Name = "Btn_Stop";
 			this.Btn_Stop.Size = new System.Drawing.Size(70, 39);
 			this.Btn_Stop.TabIndex = 2;
@@ -70,7 +69,7 @@
 			// 
 			// Btn_Pause
 			// 
-			this.Btn_Pause.Location = new System.Drawing.Point(44, 404);
+			this.Btn_Pause.Location = new System.Drawing.Point(12, 12);
 			this.Btn_Pause.Name = "Btn_Pause";
 			this.Btn_Pause.Size = new System.Drawing.Size(77, 31);
 			this.Btn_Pause.TabIndex = 3;
@@ -80,7 +79,7 @@
 			// 
 			// Btn_Advance
 			// 
-			this.Btn_Advance.Location = new System.Drawing.Point(138, 404);
+			this.Btn_Advance.Location = new System.Drawing.Point(95, 12);
 			this.Btn_Advance.Name = "Btn_Advance";
 			this.Btn_Advance.Size = new System.Drawing.Size(77, 31);
 			this.Btn_Advance.TabIndex = 3;
@@ -88,11 +87,21 @@
 			this.Btn_Advance.UseVisualStyleBackColor = true;
 			this.Btn_Advance.Click += new System.EventHandler(this.Btn_Advance_Click);
 			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.pictureBox2.Location = new System.Drawing.Point(433, 69);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(403, 452);
+			this.pictureBox2.TabIndex = 4;
+			this.pictureBox2.TabStop = false;
+			// 
 			// FormPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(489, 465);
+			this.ClientSize = new System.Drawing.Size(941, 606);
+			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.Btn_Advance);
 			this.Controls.Add(this.Btn_Pause);
 			this.Controls.Add(this.Btn_Stop);
@@ -102,6 +111,7 @@
 			this.Text = "FormPreview";
 			this.VisibleChanged += new System.EventHandler(this.FormPreview_VisibleChanged);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -113,5 +123,6 @@
 		private System.Windows.Forms.Button Btn_Stop;
 		private System.Windows.Forms.Button Btn_Pause;
 		private System.Windows.Forms.Button Btn_Advance;
+		private System.Windows.Forms.PictureBox pictureBox2;
 	}
 }

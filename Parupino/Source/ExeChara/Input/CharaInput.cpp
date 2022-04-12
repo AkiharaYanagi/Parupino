@@ -17,7 +17,7 @@
 namespace GAME
 {
 	//static実体
-	const UINT CharaInput::m_vGameKeyNum = 20;		//キー入力の保存フレーム数
+	const UINT CharaInput::m_vGameKeyNum = 60;		//キー入力の保存フレーム数
 
 	//コンストラクタ
 	CharaInput::CharaInput () : 

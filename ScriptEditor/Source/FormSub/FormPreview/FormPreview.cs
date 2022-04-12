@@ -69,6 +69,11 @@ namespace ScriptEditor
 
 		public void Start ()
 		{
+			string imgname = EditCompend.SelectedScript.ImgName;
+			ImageData imgdt = EditCompend.Compend.BD_Image.Get ( imgname );
+			pictureBox2.Image = imgdt.Img;
+
+
 			GameMain.SetCharaData ( EditChara.Inst.Chara );
 			GameMain.Setter0 = SetBmp;
 			GameMain.Seq = EditCompend.SelectedSequence;

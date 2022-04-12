@@ -17,6 +17,9 @@ namespace ScriptEditor
 
 		public int FPS { get; set; } = 60000;
 		public string Trace { get; set; } = "Trace";
+		
+		const int BMP_W = 640;
+		const int BMP_H = 480;
 
 
 		public void SetCharaData ( Chara ch )
@@ -27,9 +30,9 @@ namespace ScriptEditor
 		public void Init ()
 		{
 			frame = 0;
-			int W = Pb.Width;
-			int H = Pb.Height;
-			bmp = new Bitmap ( W, H );
+//			int W = Pb.Width;
+//			int H = Pb.Height;
+			bmp = new Bitmap ( BMP_W, BMP_H );
 		}
 		
 		//--------------------------------------------
@@ -47,8 +50,10 @@ namespace ScriptEditor
 
 		public void Draw ()
 		{
-			int W = Pb.Width;
-			int H = Pb.Height;
+//			int W = Pb.Width;
+//			int H = Pb.Height;
+			int W = BMP_W;
+			int H = BMP_H;
 			
 			Script scp = Seq.ListScript [ frame ];
 			
@@ -78,8 +83,9 @@ namespace ScriptEditor
 			}	//using
 
 			//描画
-			Pb.Invoke ( Setter0, bmp );
+//			Pb.Invoke ( Setter0, bmp );
 //			Pb.Image = bmp;
+			Setter0?.Invoke ( bmp );
 		}
 	}
 }

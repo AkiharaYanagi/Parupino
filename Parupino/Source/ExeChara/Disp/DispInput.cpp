@@ -14,10 +14,13 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	//キー入力表示個数
+	//@todo CharaInputの入力保存数と同一なので統合する
 	const UINT DispInput::NUM_DISP_INPUT = 20;
 
+	//コンストラクタ
 	DispInput::DispInput ()
-		: m_timer ( 0 ), m_vel ( 1.f ), m_base ( 20 )
+		: m_timer ( 0 ), m_vel ( 1.f ), m_base ( 10 )
 	{
 		//---------------------------------------------------------------
 		//キー入力
@@ -30,7 +33,7 @@ namespace GAME
 
 		//矩形管理 ( 8種類 * 60[FPS] )
 		//縦 60FPS
-		for ( UINT n = 0; n < NUM_DISP_INPUT; ++ n )
+		for ( UINT frame = 0; frame < NUM_DISP_INPUT; ++ frame )
 		{
 			PVP_PRMRECT pvpRect = make_shared < VP_PRMRECT > ();
 			m_vpvpRect.push_back ( pvpRect );
@@ -40,7 +43,7 @@ namespace GAME
 			{
 				P_PrmRect pRect = make_shared < PrmRect > ();
 				pvpRect->push_back ( pRect );
-				pRect->SetRect ( m_base + 20 * i, 10.f + 20 * n, 10.f, 10.f );
+				pRect->SetRect ( m_base + 20 * i, 10.f + 20 * frame, 10.f, 10.f );
 				pRect->SetZ ( Z_SYS - 0.01f );
 
 				//初期値ランダム
@@ -58,19 +61,22 @@ namespace GAME
 	{
 	}
 
+	//表示初期化
 	void DispInput::InitDisp ( PLAYER_ID playerID )
 	{
+		//位置
 		if ( PLAYER_ID_1 == playerID )
 		{
-			m_base = 20;
+			m_base = 10;
 		}
 		else
 		{
-			m_base = 640 - 20 - 80;
+			m_base = 1280 - 10 - 80;
 		}
 		m_bg->SetRect ( m_base, 200, 80, 10 * NUM_DISP_INPUT );
 	}
 
+	//更新
 	void DispInput::UpdateInput ( P_CharaInput pCharaInput )
 	{
 		//---------------------------------------------------------------
@@ -83,18 +89,18 @@ namespace GAME
 			bool b[INPUT_NUM] = { F };
 			bool b_prev[INPUT_NUM] = { F };
 
-			int n = 0;
+			int frame = 0;
 			for ( PVP_PRMRECT pvpRect : m_vpvpRect )
 			{
-				int i = 0;
+				int index = 0;
 				for ( P_PrmRect pRect : (*pvpRect) )
 				{
-					b[i] = pRect->GetValid ();
-					pRect->SetValid ( b_prev[i] );
-					b_prev[i] = b[i];
-					++ i;
+					b[index] = pRect->GetValid ();
+					pRect->SetValid ( b_prev[index] );
+					b_prev[index] = b[index];
+					++ index;
 				}
-				++ n;
+				++ frame;
 			}
 
 			m_timer = 0;
@@ -104,23 +110,24 @@ namespace GAME
 		V_GAME_KEY vKey = pCharaInput->GetvGameKey ();
 
 		//表示位置
-		int n = 0;
+		int frame = 0;
 		for ( PVP_PRMRECT pvpRect : m_vpvpRect )
 		{
-			int i = 0;
+			int index = 0;
 			for ( P_PrmRect pRect : (*pvpRect) )
 			{
-				(*m_vpvpRect[n])[i]->SetValid ( GetBoolInput ( pCharaInput, n, i ) );
-				pRect->SetRect ( m_base + 10 * i, 200.f + 10 * n + m_vel * m_timer, 10.f, 10.f );
-				++ i;
+				pRect->SetValid ( GetBoolInput ( pCharaInput, frame, index ) );
+				pRect->SetRect ( m_base + 10 * index, 200.f + 10 * frame + m_vel * m_timer, 10.f, 10.f );
+				++ index;
 			}
-			++ n;
+			++ frame;
 		}
 		//---------------------------------------------------------------
 	}
 
 	//-------------------------------------
 	//内部利用
+	//n:キー種類, i:[F]
 	bool DispInput::GetBoolInput ( P_CharaInput pCharaInput, int n, int i )
 	{
 		//現入力

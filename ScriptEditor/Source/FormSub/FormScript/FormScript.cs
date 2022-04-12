@@ -14,7 +14,7 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormScript ()
 		{
-			InitPt = new System.Drawing.Point ( 0, 230 );
+			base.InitPt = new System.Drawing.Point ( 0, 230 );
 			InitializeComponent ();
 			LoadObject ();
 		}

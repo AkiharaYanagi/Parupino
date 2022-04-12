@@ -50,6 +50,11 @@ namespace ScriptEditor
 			Btn_Sqc.Enabled = false;
 		}
 
+		public SequenceTree GetSequenceTree ()
+		{
+			return sequenceTree1;
+		}
+
 		//読込時キャラデータの設定
 		public void SetCharaData ( Chara ch )
 		{
@@ -129,35 +134,20 @@ namespace ScriptEditor
 		//[アクション/エフェクト] (シークエンス) ボタン
 		private void Btn_Sqc_Click ( object sender, System.EventArgs e )
 		{
-			SwitchFormAction ();
-		}
-
-		private void シークエンスToolStripMenuItem_Click ( object sender, System.EventArgs e )
-		{
-			SwitchFormAction ();
-		}
-
-		private void SwitchFormAction ()
-		{
-			FormAction f = FormAction.Inst;
-			f.Visible = ! f.Visible;	//反転
+			FormAction.Inst.VisFlip ();
 		}
 
 		//-------------------------------------------------------------------------
-		//スクリプトボタン
+		//スクリプト(リスト)　ボタン
+		private void Btn_ScriptList_Click ( object sender, System.EventArgs e )
+		{
+			Form_ScriptList.Inst.VisFlip ();
+		}
+		//-------------------------------------------------------------------------
+		//スクリプト(値) ボタン
 		private void Btn_Scp_Click ( object sender, System.EventArgs e )
 		{
-			SwitchFormScript ();
-		}
-
-		private void スクリプトPToolStripMenuItem_Click ( object sender, System.EventArgs e )
-		{
-			SwitchFormScript ();
-		}
-
-		private void SwitchFormScript ()
-		{
-			FormScript.Inst.Visible = ! FormScript.Inst.Visible;
+			FormScript.Inst.VisFlip ();
 		}
 
 		//-------------------------------------------------------------------------
@@ -178,7 +168,7 @@ namespace ScriptEditor
 		//Ef生成
 		private void Btn_EfGnrt_Click ( object sender, System.EventArgs e )
 		{
-			FormEfGnrt.Inst.Visible = ! FormEfGnrt.Inst.Visible;
+			FormEfGnrt.Inst.VisFlip ();
 		}
 
 		//-------------------------------------------------------------------------
@@ -187,12 +177,6 @@ namespace ScriptEditor
 		{
 			FormRoute.Inst.VisFlip ();
 		}
-		//-------------------------------------------------------------------------
-
-		public SequenceTree GetSequenceTree ()
-		{
-			return sequenceTree1;
-		}
 
 		//-------------------------------------------------------------------------
 		//プレビュー
@@ -200,5 +184,6 @@ namespace ScriptEditor
 		{
 			FormPreview.Inst.Visible = ! FormPreview.Inst.Visible;
 		}
+
 	}
 }

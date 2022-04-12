@@ -44,9 +44,8 @@ namespace ScriptEditor
 		public string GetImageName () { return ( (ImageData)Lb_Image.SelectedItem ).Name; }
 
 		//環境を設定
-		public void SetEnviron ( FormMain fm, EditCompend ec, DispCompend dc )
+		public void SetEnviron ( EditCompend ec, DispCompend dc )
 		{
-			FormMain = fm;
 			EditCompend = ec;
 			DispCompend = dc;
 		}

@@ -86,7 +86,8 @@ namespace GAME
 	{
 		//スクリプトファイルからキャラのロード
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定が必要
-		tstring name ( _T ( "testChara.dat" ) );
+//		tstring name (_T ("testChara.dat"));
+		tstring name (_T ("chara.dat"));
 
 #if 0
 
