@@ -128,9 +128,11 @@ namespace ScriptEditor
 		//---------------------------------------------------------------------
 
 		public EditCompend EditCompend { get; set; } = null;
-		public void SetEnvironment ( EditCompend ec )
+		public Chara Chara { get; set; } = null;
+		public void SetEnvironment ( EditCompend ec, Chara ch )
 		{
 			EditCompend = ec;
+			Chara = ch;
 		}
 
 		//書出
@@ -147,7 +149,7 @@ namespace ScriptEditor
 					using ( StreamWriter sw = new StreamWriter ( sfd.FileName, false, Encoding.UTF8 ) )
 					{
 						CharaToDoc ctod = new CharaToDoc ();
-						ctod.WriteListScript ( sw, EditCompend.Compend, EditCompend.SelectedSequence.ListScript ) ;
+						ctod.WriteListScript ( Chara, sw, EditCompend.Compend, EditCompend.SelectedSequence.ListScript ) ;
 					}
 				}
 			}
@@ -173,7 +175,7 @@ namespace ScriptEditor
 						dtoc.ReadScriptList ( sqc, doc.Root.Elements );
 
 						string name = EditCompend.SelectedSequence.Name;
-						EditCompend.SelectedSequence.Copy ( sqc );
+						EditCompend.SelectedSequence.CopyScpList ( sqc );
 						EditCompend.SelectSequence ( name );
 						DispChara.Inst.Disp ();
 					}

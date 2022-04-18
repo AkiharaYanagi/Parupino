@@ -182,7 +182,8 @@ namespace ScriptEditor
 		//プレビュー
 		private void Btn_Preview_Click ( object sender, System.EventArgs e )
 		{
-			FormPreview.Inst.Visible = ! FormPreview.Inst.Visible;
+			FormPreview.Inst.VisFlip ();
+			FormPreview.Inst.Start ();
 		}
 
 	}

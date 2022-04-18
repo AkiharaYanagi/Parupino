@@ -67,6 +67,7 @@ namespace ScriptEditor
 		public void tabAction_Selected ()
 		{
 			ctrl_SqcList_Act.UpdateData ();
+			ctrl_SqcList_Act.UpdateImage ();
 		}
 
 		//[アクション]タブ離去時
@@ -88,7 +89,7 @@ namespace ScriptEditor
 			eb.SelectScript ( 0, 0 );
 
 			//サブフォームにビヘイビアを設定
-			Form_ScriptList.Inst.SetEnvironment ( eb );
+			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
 			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
@@ -108,6 +109,7 @@ namespace ScriptEditor
 		public void tabEffect_Selected ()
 		{
 			ctrl_SqcList_Ef.UpdateData ();
+			ctrl_SqcList_Ef.UpdateImage ();
 		}
 
 		//[エフェクト]タブ離去時
@@ -129,7 +131,7 @@ namespace ScriptEditor
 			eg.SelectScript ( 0, 0 );
 
 			//サブフォームにガーニッシュを設定
-			Form_ScriptList.Inst.SetEnvironment ( eg );
+			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
 			FormImage.Inst.SetEnviron ( eg, dg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}

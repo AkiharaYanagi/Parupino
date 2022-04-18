@@ -24,9 +24,9 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormRoute ()
 		{
-			this.InitPt = new Point ( 0, 0 );
 			InitializeComponent ();
-			LoadObject ();
+			base.InitPt = new Point ( 0, 0 );
+			base.LoadObject ();
 
 			Cb_Route.DisplayMember = "Name";
 
@@ -47,6 +47,14 @@ namespace ScriptEditor
 			//選択変更時
 			EL_Route.SelectedIndexChanged = ()=>
 			{
+				if ( BD_Route.ContainsKey ( EL_Route.Get ().Name ) )
+				{
+					Cb_Route.SelectedValue = EL_Route.Get ().Name;
+				}
+				else
+				{
+					Cb_Route.SelectedIndex = -1;
+				}
 			};
 			EL_Route.Func_color_check = (ob)=>
 			{
@@ -66,6 +74,7 @@ namespace ScriptEditor
 			//コンボボックスに登録
 			Cb_Route.DataSource = ch.BD_Route.GetBindingList ();
 			Cb_Route.DisplayMember = "Name";
+			Cb_Route.ValueMember = "Name";
 
 			//チェック用保存
 			BD_Route = ch.BD_Route;

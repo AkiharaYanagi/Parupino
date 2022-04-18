@@ -54,25 +54,31 @@
 			this.tB_Number2 = new ScriptEditor.TB_Number();
 			this.Lbl_AI_Time = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.Lbl_AI_Pitch = new System.Windows.Forms.Label();
+			this.tB_Number4 = new ScriptEditor.TB_Number();
 			this.tB_Number3 = new ScriptEditor.TB_Number();
 			this.Lbl_AI_N = new System.Windows.Forms.Label();
-			this.tB_Number4 = new ScriptEditor.TB_Number();
+			this.Lbl_AI_Pitch = new System.Windows.Forms.Label();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.tB_Number5 = new ScriptEditor.TB_Number();
 			this.tB_Number7 = new ScriptEditor.TB_Number();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.Btn_PasteSqc = new System.Windows.Forms.Button();
+			this.Btn_PasteGroup = new System.Windows.Forms.Button();
+			this.Btn_Copy = new System.Windows.Forms.Button();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.TBSN_AccY = new ScriptEditor.TB_ScpNumber();
 			this.TBSN_AccX = new ScriptEditor.TB_ScpNumber();
 			this.TBSN_VelY = new ScriptEditor.TB_ScpNumber();
 			this.TBSN_VelX = new ScriptEditor.TB_ScpNumber();
 			this.TBSN_PosY = new ScriptEditor.TB_ScpNumber();
 			this.TBSN_PosX = new ScriptEditor.TB_ScpNumber();
-			this.tB_ScpHex1 = new ScriptEditor.TB_ScpHex();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// cB_ClcSt
@@ -191,9 +197,9 @@
 			this.Lbl_BlackOut.Location = new System.Drawing.Point(13, 231);
 			this.Lbl_BlackOut.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_BlackOut.Name = "Lbl_BlackOut";
-			this.Lbl_BlackOut.Size = new System.Drawing.Size(52, 12);
+			this.Lbl_BlackOut.Size = new System.Drawing.Size(29, 12);
 			this.Lbl_BlackOut.TabIndex = 10;
-			this.Lbl_BlackOut.Text = "BlackOut";
+			this.Lbl_BlackOut.Text = "暗転";
 			// 
 			// tBN_BlackOut
 			// 
@@ -212,9 +218,9 @@
 			this.Lbl_Vibration.Location = new System.Drawing.Point(14, 254);
 			this.Lbl_Vibration.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_Vibration.Name = "Lbl_Vibration";
-			this.Lbl_Vibration.Size = new System.Drawing.Size(51, 12);
+			this.Lbl_Vibration.Size = new System.Drawing.Size(29, 12);
 			this.Lbl_Vibration.TabIndex = 10;
-			this.Lbl_Vibration.Text = "Vibration";
+			this.Lbl_Vibration.Text = "振動";
 			// 
 			// tBN_Vibration
 			// 
@@ -230,12 +236,12 @@
 			// Lbl_Stop
 			// 
 			this.Lbl_Stop.AutoSize = true;
-			this.Lbl_Stop.Location = new System.Drawing.Point(37, 277);
+			this.Lbl_Stop.Location = new System.Drawing.Point(13, 67);
 			this.Lbl_Stop.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_Stop.Name = "Lbl_Stop";
-			this.Lbl_Stop.Size = new System.Drawing.Size(28, 12);
+			this.Lbl_Stop.Size = new System.Drawing.Size(29, 12);
 			this.Lbl_Stop.TabIndex = 10;
-			this.Lbl_Stop.Text = "Stop";
+			this.Lbl_Stop.Text = "停止";
 			// 
 			// tBN_Stop
 			// 
@@ -293,7 +299,7 @@
 			this.groupBox1.Controls.Add(this.RB_TRG_ALL);
 			this.groupBox1.Location = new System.Drawing.Point(8, 7);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(310, 43);
+			this.groupBox1.Size = new System.Drawing.Size(246, 43);
 			this.groupBox1.TabIndex = 26;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Target";
@@ -336,9 +342,9 @@
 			this.Lbl_AI_Time.Location = new System.Drawing.Point(19, 21);
 			this.Lbl_AI_Time.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_AI_Time.Name = "Lbl_AI_Time";
-			this.Lbl_AI_Time.Size = new System.Drawing.Size(30, 12);
+			this.Lbl_AI_Time.Size = new System.Drawing.Size(29, 12);
 			this.Lbl_AI_Time.TabIndex = 10;
-			this.Lbl_AI_Time.Text = "Time";
+			this.Lbl_AI_Time.Text = "時間";
 			// 
 			// groupBox2
 			// 
@@ -353,17 +359,18 @@
 			this.groupBox2.Size = new System.Drawing.Size(126, 102);
 			this.groupBox2.TabIndex = 28;
 			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "AfterImage";
+			this.groupBox2.Text = "残像";
 			// 
-			// Lbl_AI_Pitch
+			// tB_Number4
 			// 
-			this.Lbl_AI_Pitch.AutoSize = true;
-			this.Lbl_AI_Pitch.Location = new System.Drawing.Point(19, 44);
-			this.Lbl_AI_Pitch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.Lbl_AI_Pitch.Name = "Lbl_AI_Pitch";
-			this.Lbl_AI_Pitch.Size = new System.Drawing.Size(31, 12);
-			this.Lbl_AI_Pitch.TabIndex = 10;
-			this.Lbl_AI_Pitch.Text = "Pitch";
+			this.tB_Number4.GetFunc = null;
+			this.tB_Number4.Location = new System.Drawing.Point(68, 64);
+			this.tB_Number4.Margin = new System.Windows.Forms.Padding(2);
+			this.tB_Number4.Name = "tB_Number4";
+			this.tB_Number4.SetFunc = null;
+			this.tB_Number4.Size = new System.Drawing.Size(42, 19);
+			this.tB_Number4.TabIndex = 18;
+			this.tB_Number4.Text = "0";
 			// 
 			// tB_Number3
 			// 
@@ -382,29 +389,29 @@
 			this.Lbl_AI_N.Location = new System.Drawing.Point(19, 67);
 			this.Lbl_AI_N.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.Lbl_AI_N.Name = "Lbl_AI_N";
-			this.Lbl_AI_N.Size = new System.Drawing.Size(28, 12);
+			this.Lbl_AI_N.Size = new System.Drawing.Size(29, 12);
 			this.Lbl_AI_N.TabIndex = 10;
-			this.Lbl_AI_N.Text = "Num";
+			this.Lbl_AI_N.Text = "個数";
 			// 
-			// tB_Number4
+			// Lbl_AI_Pitch
 			// 
-			this.tB_Number4.GetFunc = null;
-			this.tB_Number4.Location = new System.Drawing.Point(68, 64);
-			this.tB_Number4.Margin = new System.Windows.Forms.Padding(2);
-			this.tB_Number4.Name = "tB_Number4";
-			this.tB_Number4.SetFunc = null;
-			this.tB_Number4.Size = new System.Drawing.Size(42, 19);
-			this.tB_Number4.TabIndex = 18;
-			this.tB_Number4.Text = "0";
+			this.Lbl_AI_Pitch.AutoSize = true;
+			this.Lbl_AI_Pitch.Location = new System.Drawing.Point(19, 44);
+			this.Lbl_AI_Pitch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.Lbl_AI_Pitch.Name = "Lbl_AI_Pitch";
+			this.Lbl_AI_Pitch.Size = new System.Drawing.Size(29, 12);
+			this.Lbl_AI_Pitch.TabIndex = 10;
+			this.Lbl_AI_Pitch.Text = "間隔";
 			// 
 			// groupBox3
 			// 
+			this.groupBox3.Controls.Add(this.Lbl_Stop);
 			this.groupBox3.Location = new System.Drawing.Point(0, 210);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(149, 102);
 			this.groupBox3.TabIndex = 29;
 			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "System";
+			this.groupBox3.Text = "全体";
 			// 
 			// label1
 			// 
@@ -412,9 +419,9 @@
 			this.label1.Location = new System.Drawing.Point(11, 344);
 			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(60, 12);
+			this.label1.Size = new System.Drawing.Size(53, 12);
 			this.label1.TabIndex = 10;
-			this.label1.Text = "Vibr_Chara";
+			this.label1.Text = "個別振動";
 			// 
 			// label2
 			// 
@@ -422,9 +429,9 @@
 			this.label2.Location = new System.Drawing.Point(26, 367);
 			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(32, 12);
+			this.label2.Size = new System.Drawing.Size(17, 12);
 			this.label2.TabIndex = 10;
-			this.label2.Text = "Color";
+			this.label2.Text = "色";
 			// 
 			// label3
 			// 
@@ -432,9 +439,9 @@
 			this.label3.Location = new System.Drawing.Point(11, 390);
 			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(58, 12);
+			this.label3.Size = new System.Drawing.Size(41, 12);
 			this.label3.TabIndex = 10;
-			this.label3.Text = "Color_time";
+			this.label3.Text = "色時間";
 			// 
 			// tB_Number5
 			// 
@@ -458,11 +465,58 @@
 			this.tB_Number7.TabIndex = 18;
 			this.tB_Number7.Text = "0";
 			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.Btn_PasteSqc);
+			this.groupBox4.Controls.Add(this.Btn_PasteGroup);
+			this.groupBox4.Controls.Add(this.Btn_Copy);
+			this.groupBox4.Controls.Add(this.textBox1);
+			this.groupBox4.Location = new System.Drawing.Point(355, 17);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(180, 167);
+			this.groupBox4.TabIndex = 31;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "複製";
+			// 
+			// Btn_PasteSqc
+			// 
+			this.Btn_PasteSqc.Location = new System.Drawing.Point(22, 134);
+			this.Btn_PasteSqc.Name = "Btn_PasteSqc";
+			this.Btn_PasteSqc.Size = new System.Drawing.Size(136, 25);
+			this.Btn_PasteSqc.TabIndex = 2;
+			this.Btn_PasteSqc.Text = "シークエンスにペースト";
+			this.Btn_PasteSqc.UseVisualStyleBackColor = true;
+			// 
+			// Btn_PasteGroup
+			// 
+			this.Btn_PasteGroup.Location = new System.Drawing.Point(22, 103);
+			this.Btn_PasteGroup.Name = "Btn_PasteGroup";
+			this.Btn_PasteGroup.Size = new System.Drawing.Size(136, 25);
+			this.Btn_PasteGroup.TabIndex = 2;
+			this.Btn_PasteGroup.Text = "グループにペースト";
+			this.Btn_PasteGroup.UseVisualStyleBackColor = true;
+			// 
+			// Btn_Copy
+			// 
+			this.Btn_Copy.Location = new System.Drawing.Point(16, 19);
+			this.Btn_Copy.Name = "Btn_Copy";
+			this.Btn_Copy.Size = new System.Drawing.Size(108, 23);
+			this.Btn_Copy.TabIndex = 1;
+			this.Btn_Copy.Text = "コピー";
+			this.Btn_Copy.UseVisualStyleBackColor = true;
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(16, 48);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.ReadOnly = true;
+			this.textBox1.Size = new System.Drawing.Size(143, 19);
+			this.textBox1.TabIndex = 0;
+			// 
 			// TBSN_AccY
 			// 
 			this.TBSN_AccY.Location = new System.Drawing.Point(126, 166);
 			this.TBSN_AccY.Name = "TBSN_AccY";
-			this.TBSN_AccY.PrmInt = null;
 			this.TBSN_AccY.Scp = null;
 			this.TBSN_AccY.Size = new System.Drawing.Size(36, 19);
 			this.TBSN_AccY.TabIndex = 27;
@@ -472,7 +526,6 @@
 			// 
 			this.TBSN_AccX.Location = new System.Drawing.Point(75, 166);
 			this.TBSN_AccX.Name = "TBSN_AccX";
-			this.TBSN_AccX.PrmInt = null;
 			this.TBSN_AccX.Scp = null;
 			this.TBSN_AccX.Size = new System.Drawing.Size(36, 19);
 			this.TBSN_AccX.TabIndex = 27;
@@ -482,7 +535,6 @@
 			// 
 			this.TBSN_VelY.Location = new System.Drawing.Point(126, 143);
 			this.TBSN_VelY.Name = "TBSN_VelY";
-			this.TBSN_VelY.PrmInt = null;
 			this.TBSN_VelY.Scp = null;
 			this.TBSN_VelY.Size = new System.Drawing.Size(36, 19);
 			this.TBSN_VelY.TabIndex = 27;
@@ -492,7 +544,6 @@
 			// 
 			this.TBSN_VelX.Location = new System.Drawing.Point(75, 143);
 			this.TBSN_VelX.Name = "TBSN_VelX";
-			this.TBSN_VelX.PrmInt = null;
 			this.TBSN_VelX.Scp = null;
 			this.TBSN_VelX.Size = new System.Drawing.Size(36, 19);
 			this.TBSN_VelX.TabIndex = 27;
@@ -502,7 +553,6 @@
 			// 
 			this.TBSN_PosY.Location = new System.Drawing.Point(126, 120);
 			this.TBSN_PosY.Name = "TBSN_PosY";
-			this.TBSN_PosY.PrmInt = null;
 			this.TBSN_PosY.Scp = null;
 			this.TBSN_PosY.Size = new System.Drawing.Size(36, 19);
 			this.TBSN_PosY.TabIndex = 27;
@@ -512,26 +562,16 @@
 			// 
 			this.TBSN_PosX.Location = new System.Drawing.Point(75, 120);
 			this.TBSN_PosX.Name = "TBSN_PosX";
-			this.TBSN_PosX.PrmInt = null;
 			this.TBSN_PosX.Scp = null;
 			this.TBSN_PosX.Size = new System.Drawing.Size(36, 19);
 			this.TBSN_PosX.TabIndex = 27;
 			this.TBSN_PosX.Text = "0";
 			// 
-			// tB_ScpHex1
-			// 
-			this.tB_ScpHex1.Location = new System.Drawing.Point(75, 365);
-			this.tB_ScpHex1.Name = "tB_ScpHex1";
-			this.tB_ScpHex1.PrmInt = null;
-			this.tB_ScpHex1.Scp = null;
-			this.tB_ScpHex1.Size = new System.Drawing.Size(69, 19);
-			this.tB_ScpHex1.TabIndex = 30;
-			// 
 			// Ctrl_Script
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.tB_ScpHex1);
+			this.Controls.Add(this.groupBox4);
 			this.Controls.Add(this.tB_Number7);
 			this.Controls.Add(this.TBSN_AccY);
 			this.Controls.Add(this.tB_Number5);
@@ -556,7 +596,6 @@
 			this.Controls.Add(this.lbl_clc);
 			this.Controls.Add(this.lbl_Pos);
 			this.Controls.Add(this.lbl_Acc);
-			this.Controls.Add(this.Lbl_Stop);
 			this.Controls.Add(this.Lbl_Vibration);
 			this.Controls.Add(this.Lbl_Rad);
 			this.Controls.Add(this.lbl_Vel);
@@ -567,11 +606,15 @@
 			this.Controls.Add(this.groupBox3);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Ctrl_Script";
-			this.Size = new System.Drawing.Size(358, 437);
+			this.Size = new System.Drawing.Size(561, 437);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
+			this.groupBox4.ResumeLayout(false);
+			this.groupBox4.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -621,6 +664,10 @@
 		private System.Windows.Forms.Label label3;
 		public TB_Number tB_Number5;
 		public TB_Number tB_Number7;
-		private TB_ScpHex tB_ScpHex1;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.Button Btn_PasteSqc;
+		private System.Windows.Forms.Button Btn_PasteGroup;
+		private System.Windows.Forms.Button Btn_Copy;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }

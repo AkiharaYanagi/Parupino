@@ -9,14 +9,15 @@ namespace ScriptEditor
 
 	public partial class Ctrl_Script : UserControl
 	{
-		//スクリプト総合編集
+		//編集環境
+		public EditCompend EditCompend { get; set; } = null;
 		public EditScript EditScript { get; set; } = null;
 
 		//現在スクリプト
 		private Script script = null;
 
 		//現在シークエンス
-		private Sequence sequence = null;
+//		private Sequence sequence = null;
 
 		//コントロール集合
 		private List < TB_Number > ls_tbn = new List<TB_Number> ();
@@ -44,12 +45,16 @@ namespace ScriptEditor
 			GrouptSetterCLC_ST = (s,c) => s.CalcState = c;
 
 			//スクリプトの数値設定用デリゲートを指定
+#if false
 			TBSN_PosX.PrmInt = new PrmInt ( (s,i)=>s.SetPosX(i), s=>s.Pos.X );
 			TBSN_PosY.PrmInt = new PrmInt ( (s,i)=>s.SetPosY(i), s=>s.Pos.Y );
-			TBSN_VelX.PrmInt = new PrmInt ( (s,i)=>s.SetVelX(i), s=>s.Vel.X );
-			TBSN_VelY.PrmInt = new PrmInt ( (s,i)=>s.SetVelY(i), s=>s.Vel.Y );
-			TBSN_AccX.PrmInt = new PrmInt ( (s,i)=>s.SetAccX(i), s=>s.Acc.X );
-			TBSN_AccY.PrmInt = new PrmInt ( (s,i)=>s.SetAccY(i), s=>s.Acc.Y );
+			TBSN_VelX.PrmInt = new PrmInt ( (s,i)=>s.Param_Btl.SetVelX(i), s=>s.Param_Btl.Vel.X );
+			TBSN_VelY.PrmInt = new PrmInt ( (s,i)=>s.Param_Btl.SetVelY(i), s=>s.Param_Btl.Vel.Y );
+			TBSN_AccX.PrmInt = new PrmInt ( (s,i)=>s.Param_Btl.SetAccX(i), s=>s.Param_Btl.Acc.X );
+			TBSN_AccY.PrmInt = new PrmInt ( (s,i)=>s.Param_Btl.SetAccY(i), s=>s.Param_Btl.Acc.Y );
+#endif
+//			TBSN_PosX.Setter = (s,i)=>s.SetPosX(i);
+
 			//登録
 			ls_tbsn.Add ( TBSN_PosX );
 			ls_tbsn.Add ( TBSN_PosY );
@@ -67,9 +72,12 @@ namespace ScriptEditor
 		}
 
 		//コントロール設定
-		public void SetCtrl ( EditScript es )
+		public void SetEnvironment ( EditCompend ec )
 		{
-			EditScript = es;
+			EditCompend = ec;
+			EditScript = ec.EditScript;
+
+			TBSN_PosX.SetEnvironment ( ec, new PrmInt ( (s,i)=>s.SetPosX(i), s=>s.Pos.X ) );
 		}
 
 		//更新(対象に変更があったとき)
@@ -89,11 +97,11 @@ namespace ScriptEditor
 		public void Assosiate ( Script scp, Sequence sqc )
 		{
 			script = scp;
-			sequence = sqc;
+//			sequence = sqc;
 
 			//スクリプトから表示を設定
-			tB_Frame.Text = scp.Frame.ToString ();
-			cB_ClcSt.SelectedItem = scp.CalcState;
+			tB_Frame.Text = script.Frame.ToString ();
+			cB_ClcSt.SelectedItem = script.CalcState;
 			Tb_Img.Text = script.ImgName;
 
 			//各コントロールにスクリプト参照を設定
@@ -103,10 +111,10 @@ namespace ScriptEditor
 			}
 
 			//ラムダ式で単体設定デリゲートを指定
-			tBN_Power.Assosiate ( i => scp.Power = i, ()=> scp.Power );
-			tBN_BlackOut.Assosiate ( i => scp.BlackOut = i, ()=> scp.BlackOut );
-			tBN_Vibration.Assosiate ( i => scp.Vibration = i, ()=> scp.Vibration );
-			tBN_Stop.Assosiate ( i => scp.Stop = i, ()=> scp.Stop );
+			tBN_Power.Assosiate ( i => scp.Param_Btl.Power = i, ()=> scp.Param_Btl.Power );
+			tBN_BlackOut.Assosiate ( i => scp.Param_Ef.BlackOut = i, ()=> scp.Param_Ef.BlackOut );
+			tBN_Vibration.Assosiate ( i => scp.Param_Ef.Vibration = i, ()=> scp.Param_Ef.Vibration );
+			tBN_Stop.Assosiate ( i => scp.Param_Ef.Stop = i, ()=> scp.Param_Ef.Stop );
 
 #if false
 			//グループセッタを登録
@@ -129,7 +137,7 @@ namespace ScriptEditor
 		private void cB_ClcSt_SelectionChangeCommitted ( object sender, EventArgs e )
 		{
 			script.CalcState = (CLC_ST)cB_ClcSt.SelectedItem;
-			EditScript.DoGroupSetterT ( GrouptSetterCLC_ST, script.CalcState );
+			EditScript.DoSetterInGroup_T ( GrouptSetterCLC_ST, script.CalcState );
 		}
 
 		//編集範囲を設定

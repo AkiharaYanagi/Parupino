@@ -51,11 +51,12 @@ namespace ScriptEditor
 			ctrl_ListHRect.EditScript = es;
 			ctrl_ListARect.EditScript = es;
 			ctrl_ListORect.EditScript = es;
-
+#if false
 			ctrl_ListCRect.GroupSetter = es.GroupSetterCRect;
 			ctrl_ListHRect.GroupSetter = es.GroupSetterHRect;
 			ctrl_ListARect.GroupSetter = es.GroupSetterARect;
 			ctrl_ListORect.GroupSetter = es.GroupSetterORect;
+#endif
 		}
 
 		//関連付け

@@ -33,19 +33,21 @@
 			this.Btn_Stop = new System.Windows.Forms.Button();
 			this.Btn_Pause = new System.Windows.Forms.Button();
 			this.Btn_Advance = new System.Windows.Forms.Button();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.pictureBox1.Location = new System.Drawing.Point(8, 57);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(355, 480);
+			this.pictureBox1.Size = new System.Drawing.Size(587, 537);
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
+			this.pictureBox1.SizeChanged += new System.EventHandler(this.pictureBox1_SizeChanged);
 			// 
 			// Btn_Start
 			// 
@@ -87,21 +89,11 @@
 			this.Btn_Advance.UseVisualStyleBackColor = true;
 			this.Btn_Advance.Click += new System.EventHandler(this.Btn_Advance_Click);
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
-			this.pictureBox2.Location = new System.Drawing.Point(433, 69);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(403, 452);
-			this.pictureBox2.TabIndex = 4;
-			this.pictureBox2.TabStop = false;
-			// 
 			// FormPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(941, 606);
-			this.Controls.Add(this.pictureBox2);
+			this.ClientSize = new System.Drawing.Size(607, 606);
 			this.Controls.Add(this.Btn_Advance);
 			this.Controls.Add(this.Btn_Pause);
 			this.Controls.Add(this.Btn_Stop);
@@ -109,9 +101,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.Name = "FormPreview";
 			this.Text = "FormPreview";
-			this.VisibleChanged += new System.EventHandler(this.FormPreview_VisibleChanged);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -123,6 +113,5 @@
 		private System.Windows.Forms.Button Btn_Stop;
 		private System.Windows.Forms.Button Btn_Pause;
 		private System.Windows.Forms.Button Btn_Advance;
-		private System.Windows.Forms.PictureBox pictureBox2;
 	}
 }

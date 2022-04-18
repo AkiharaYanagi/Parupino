@@ -28,62 +28,64 @@
 		/// </summary>
 		private void InitializeComponent ()
 		{
-			this.lbl_Name = new System.Windows.Forms.Label();
-			this.lbl_Next = new System.Windows.Forms.Label();
-			this.lbl_Category = new System.Windows.Forms.Label();
-			this.lbl_Balance = new System.Windows.Forms.Label();
-			this.lbl_Posture = new System.Windows.Forms.Label();
+			this.Lbl_Name = new System.Windows.Forms.Label();
+			this.Lbl_Next = new System.Windows.Forms.Label();
+			this.Lbl_Category = new System.Windows.Forms.Label();
+			this.Lbl_HitNum = new System.Windows.Forms.Label();
+			this.Lbl_Posture = new System.Windows.Forms.Label();
 			this.TB_Name = new System.Windows.Forms.TextBox();
 			this.CB_Category = new System.Windows.Forms.ComboBox();
 			this.CB_Posture = new System.Windows.Forms.ComboBox();
 			this.CBSL_Next = new ScriptEditor.CB_SequenceList();
-			this.TBN_Balance = new ScriptEditor.TB_Number();
+			this.TBN_HitNum = new ScriptEditor.TB_Number();
+			this.Lbl_HitPitch = new System.Windows.Forms.Label();
+			this.Tbn_HitPitch = new ScriptEditor.TB_Number();
 			this.SuspendLayout();
 			// 
-			// lbl_Name
+			// Lbl_Name
 			// 
-			this.lbl_Name.AutoSize = true;
-			this.lbl_Name.Location = new System.Drawing.Point(12, 12);
-			this.lbl_Name.Name = "lbl_Name";
-			this.lbl_Name.Size = new System.Drawing.Size(34, 12);
-			this.lbl_Name.TabIndex = 1;
-			this.lbl_Name.Text = "Name";
+			this.Lbl_Name.AutoSize = true;
+			this.Lbl_Name.Location = new System.Drawing.Point(12, 12);
+			this.Lbl_Name.Name = "Lbl_Name";
+			this.Lbl_Name.Size = new System.Drawing.Size(17, 12);
+			this.Lbl_Name.TabIndex = 1;
+			this.Lbl_Name.Text = "名";
 			// 
-			// lbl_Next
+			// Lbl_Next
 			// 
-			this.lbl_Next.AutoSize = true;
-			this.lbl_Next.Location = new System.Drawing.Point(12, 49);
-			this.lbl_Next.Name = "lbl_Next";
-			this.lbl_Next.Size = new System.Drawing.Size(29, 12);
-			this.lbl_Next.TabIndex = 2;
-			this.lbl_Next.Text = "Next";
+			this.Lbl_Next.AutoSize = true;
+			this.Lbl_Next.Location = new System.Drawing.Point(12, 49);
+			this.Lbl_Next.Name = "Lbl_Next";
+			this.Lbl_Next.Size = new System.Drawing.Size(17, 12);
+			this.Lbl_Next.TabIndex = 2;
+			this.Lbl_Next.Text = "次";
 			// 
-			// lbl_Category
+			// Lbl_Category
 			// 
-			this.lbl_Category.AutoSize = true;
-			this.lbl_Category.Location = new System.Drawing.Point(12, 86);
-			this.lbl_Category.Name = "lbl_Category";
-			this.lbl_Category.Size = new System.Drawing.Size(51, 12);
-			this.lbl_Category.TabIndex = 3;
-			this.lbl_Category.Text = "Category";
+			this.Lbl_Category.AutoSize = true;
+			this.Lbl_Category.Location = new System.Drawing.Point(12, 86);
+			this.Lbl_Category.Name = "Lbl_Category";
+			this.Lbl_Category.Size = new System.Drawing.Size(39, 12);
+			this.Lbl_Category.TabIndex = 3;
+			this.Lbl_Category.Text = "カテゴリ";
 			// 
-			// lbl_Balance
+			// Lbl_HitNum
 			// 
-			this.lbl_Balance.AutoSize = true;
-			this.lbl_Balance.Location = new System.Drawing.Point(12, 160);
-			this.lbl_Balance.Name = "lbl_Balance";
-			this.lbl_Balance.Size = new System.Drawing.Size(46, 12);
-			this.lbl_Balance.TabIndex = 4;
-			this.lbl_Balance.Text = "Balance";
+			this.Lbl_HitNum.AutoSize = true;
+			this.Lbl_HitNum.Location = new System.Drawing.Point(12, 160);
+			this.Lbl_HitNum.Name = "Lbl_HitNum";
+			this.Lbl_HitNum.Size = new System.Drawing.Size(40, 12);
+			this.Lbl_HitNum.TabIndex = 4;
+			this.Lbl_HitNum.Text = "ヒット数";
 			// 
-			// lbl_Posture
+			// Lbl_Posture
 			// 
-			this.lbl_Posture.AutoSize = true;
-			this.lbl_Posture.Location = new System.Drawing.Point(12, 123);
-			this.lbl_Posture.Name = "lbl_Posture";
-			this.lbl_Posture.Size = new System.Drawing.Size(44, 12);
-			this.lbl_Posture.TabIndex = 5;
-			this.lbl_Posture.Text = "Posture";
+			this.Lbl_Posture.AutoSize = true;
+			this.Lbl_Posture.Location = new System.Drawing.Point(12, 123);
+			this.Lbl_Posture.Name = "Lbl_Posture";
+			this.Lbl_Posture.Size = new System.Drawing.Size(29, 12);
+			this.Lbl_Posture.TabIndex = 5;
+			this.Lbl_Posture.Text = "体勢";
 			// 
 			// TB_Name
 			// 
@@ -122,31 +124,52 @@
 			this.CBSL_Next.Size = new System.Drawing.Size(218, 20);
 			this.CBSL_Next.TabIndex = 10;
 			// 
-			// TBN_Balance
+			// TBN_HitNum
 			// 
-			this.TBN_Balance.GetFunc = null;
-			this.TBN_Balance.Location = new System.Drawing.Point(69, 157);
-			this.TBN_Balance.Name = "TBN_Balance";
-			this.TBN_Balance.SetFunc = null;
-			this.TBN_Balance.Size = new System.Drawing.Size(100, 19);
-			this.TBN_Balance.TabIndex = 11;
-			this.TBN_Balance.Text = "0";
+			this.TBN_HitNum.GetFunc = null;
+			this.TBN_HitNum.Location = new System.Drawing.Point(69, 157);
+			this.TBN_HitNum.Name = "TBN_HitNum";
+			this.TBN_HitNum.SetFunc = null;
+			this.TBN_HitNum.Size = new System.Drawing.Size(100, 19);
+			this.TBN_HitNum.TabIndex = 11;
+			this.TBN_HitNum.Text = "0";
+			// 
+			// Lbl_HitPitch
+			// 
+			this.Lbl_HitPitch.AutoSize = true;
+			this.Lbl_HitPitch.Location = new System.Drawing.Point(12, 197);
+			this.Lbl_HitPitch.Name = "Lbl_HitPitch";
+			this.Lbl_HitPitch.Size = new System.Drawing.Size(52, 12);
+			this.Lbl_HitPitch.TabIndex = 4;
+			this.Lbl_HitPitch.Text = "ヒット間隔";
+			// 
+			// Tbn_HitPitch
+			// 
+			this.Tbn_HitPitch.GetFunc = null;
+			this.Tbn_HitPitch.Location = new System.Drawing.Point(69, 194);
+			this.Tbn_HitPitch.Name = "Tbn_HitPitch";
+			this.Tbn_HitPitch.SetFunc = null;
+			this.Tbn_HitPitch.Size = new System.Drawing.Size(100, 19);
+			this.Tbn_HitPitch.TabIndex = 11;
+			this.Tbn_HitPitch.Text = "0";
 			// 
 			// FormAction
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(314, 199);
-			this.Controls.Add(this.TBN_Balance);
+			this.ClientSize = new System.Drawing.Size(338, 267);
+			this.Controls.Add(this.Tbn_HitPitch);
+			this.Controls.Add(this.TBN_HitNum);
 			this.Controls.Add(this.CBSL_Next);
 			this.Controls.Add(this.CB_Posture);
 			this.Controls.Add(this.CB_Category);
 			this.Controls.Add(this.TB_Name);
-			this.Controls.Add(this.lbl_Posture);
-			this.Controls.Add(this.lbl_Balance);
-			this.Controls.Add(this.lbl_Category);
-			this.Controls.Add(this.lbl_Next);
-			this.Controls.Add(this.lbl_Name);
+			this.Controls.Add(this.Lbl_Posture);
+			this.Controls.Add(this.Lbl_HitPitch);
+			this.Controls.Add(this.Lbl_HitNum);
+			this.Controls.Add(this.Lbl_Category);
+			this.Controls.Add(this.Lbl_Next);
+			this.Controls.Add(this.Lbl_Name);
 			this.Name = "FormAction";
 			this.Text = "Action";
 			this.ResumeLayout(false);
@@ -155,15 +178,17 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Label lbl_Name;
-		private System.Windows.Forms.Label lbl_Next;
-		private System.Windows.Forms.Label lbl_Category;
-		private System.Windows.Forms.Label lbl_Balance;
-		private System.Windows.Forms.Label lbl_Posture;
+		private System.Windows.Forms.Label Lbl_Name;
+		private System.Windows.Forms.Label Lbl_Next;
+		private System.Windows.Forms.Label Lbl_Category;
+		private System.Windows.Forms.Label Lbl_HitNum;
+		private System.Windows.Forms.Label Lbl_Posture;
 		public System.Windows.Forms.TextBox TB_Name;
 		public System.Windows.Forms.ComboBox CB_Category;
 		public System.Windows.Forms.ComboBox CB_Posture;
 		public CB_SequenceList CBSL_Next;
-		private TB_Number TBN_Balance;
+		private TB_Number TBN_HitNum;
+		private System.Windows.Forms.Label Lbl_HitPitch;
+		private TB_Number Tbn_HitPitch;
 	}
 }

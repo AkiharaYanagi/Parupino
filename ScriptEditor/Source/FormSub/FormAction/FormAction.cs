@@ -19,7 +19,7 @@ namespace ScriptEditor
 		private FormAction ()
 		{
 			InitializeComponent ();
-			LoadObject ();
+			base.LoadObject ();
 
 			//アクション属性
 			foreach ( ActionCategory ac in Enum.GetValues ( typeof ( ActionCategory ) ) )
@@ -53,7 +53,7 @@ namespace ScriptEditor
 			DispAction = da;
 			DispCompend = dc;
 
-			da.SetCtrl ( TB_Name, CBSL_Next, CB_Category, CB_Posture, TBN_Balance );
+			da.SetCtrl ( TB_Name, CBSL_Next, CB_Category, CB_Posture, TBN_HitNum );
 			CBSL_Next.SetDisp ( dc );
 
 			SequenceTree = dc.CtrlCmpd.GetSequenceTree ();
@@ -73,11 +73,13 @@ namespace ScriptEditor
 			CBSL_Next.SelectName ( act.NextActionName );
 			CB_Category.SelectedItem = act.Category;
 			CB_Posture.SelectedItem = act.Posture;
+			TBN_HitNum.Text = act.HitNum.ToString();
+			Tbn_HitPitch.Text = act.HitPitch.ToString();
 
 			//各コントロールに設定用のデリゲートを渡す
-//			CBSL_Next.Associate ( a => act.NextAction = (Action)a );
-			CBSL_Next.Set = a => { act.NextActionName = a.Name; };
-			TBN_Balance.Assosiate ( i => act._Balance = i, ()=> act._Balance );
+			CBSL_Next.Set = a=>act.NextActionName = a.Name;
+			TBN_HitNum.SetFunc = i=>act.HitNum = i;
+			Tbn_HitPitch.SetFunc = i=>act.HitPitch = i;
 		}
 
 		//-----------------------------------------------------------

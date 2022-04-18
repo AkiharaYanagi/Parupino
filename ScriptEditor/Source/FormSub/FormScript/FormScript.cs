@@ -11,9 +11,14 @@ namespace ScriptEditor
 		//シングルトン実体
 		public static FormScript Inst { get; set; } = new FormScript ();
 		
+		private _Ctrl_Script ctrl_Script1 = null;
+
 		//プライベートコンストラクタ
 		private FormScript ()
 		{
+			ctrl_Script1 = new _Ctrl_Script ();
+			this.Controls.Add ( ctrl_Script1 );
+
 			base.InitPt = new System.Drawing.Point ( 0, 230 );
 			InitializeComponent ();
 			LoadObject ();
@@ -25,18 +30,18 @@ namespace ScriptEditor
 		public DispScript DispScript { get; set; } = null;
 		
 		//設定
-		public void SetCtrl ( EditScript es, DispScript ds )
+		public void SetEnvironment ( EditCompend ec, DispScript ds )
 		{
-			EditScript = es;
+			EditScript = ec.EditScript;
 			DispScript = ds;
 
-			ctrl_Script1.SetCtrl ( es );
-			ds.SetCtrlScript ( ctrl_Script1 );
+			ctrl_Script1.SetEnvironment ( ec, DispChara.Inst.Disp );
+//			ds.SetCtrlScript ( ctrl_Script1 );
 		}
 	
 		public void Assosiate ( Script scp, Sequence sqc )
 		{
-			ctrl_Script1.Assosiate ( scp, sqc );
+			ctrl_Script1.Assosiate ( scp );
 		}
 
 		public void UpdateData ()

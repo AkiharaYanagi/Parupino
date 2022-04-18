@@ -1,18 +1,14 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
+﻿using System.Drawing;
 using System;
 
 namespace ScriptEditor
 {
-	//@todo ２重スタートのときエラー
-
-
 	//--------------------------------------------
 	//	アクションを指定して繰り返し動作する
 	//		イメージ表示のみ
 	//		[F]に基づく描画
 	//--------------------------------------------
-	public partial class FormPreview :Form
+	public partial class FormPreview :EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -21,40 +17,27 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormPreview ()
 		{
-			this.StartPosition = FormStartPosition.Manual;
-			this.ShowInTaskbar = false;	//タスクバーに非表示
-
 			InitializeComponent ();
+			base.InitPt = new Point ( -800, 100 );
+			base.LoadObject ();
 
 			GameMain.Pb = this.pictureBox1;
 			FrameControl.GameMain = GameMain;
+			fcon.FormPreview = this;
 			Btn_Advance.Enabled = false;
 		}
-
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			fcon.End ();
-
-			e.Cancel = true;
-			this.Hide ();
-		}
-
-		private void FormPreview_VisibleChanged ( object sender, System.EventArgs e )
-		{
-			//フォーム位置を親フォームからの相対位置にする
-			int x = FormMain.Location.X + 100;
-			int y = FormMain.Location.Y + 100;
-			this.Location = new Point ( x, y );
-		}
-
 		//---------------------------------------------------------------------
 
-		private FormMain FormMain = null;
 		private EditCompend EditCompend = null;
 
 		private FrameControl fcon = new FrameControl ();
 		private GameMain GameMain = new GameMain ();
+
+		public void SetEnviron ( FormMain fm, EditCompend ec )
+		{
+			FormMain = fm;
+			EditCompend = ec;
+		}
 
 		public void SetBmp ( Bitmap bmp )
 		{
@@ -69,26 +52,14 @@ namespace ScriptEditor
 
 		public void Start ()
 		{
-			string imgname = EditCompend.SelectedScript.ImgName;
-			ImageData imgdt = EditCompend.Compend.BD_Image.Get ( imgname );
-			pictureBox2.Image = imgdt.Img;
-
-
 			GameMain.SetCharaData ( EditChara.Inst.Chara );
-			GameMain.Setter0 = SetBmp;
+			GameMain.SetterBmp = SetBmp;
 			GameMain.Seq = EditCompend.SelectedSequence;
 			GameMain.Init ();
-			fcon.FormPreview = this;
 			fcon.Start ();
 
 			Btn_Start.Enabled = false;
 			Btn_Stop.Enabled = true;
-		}
-
-		public void SetEnviron ( FormMain fm, EditCompend ec )
-		{
-			FormMain = fm;
-			EditCompend = ec;
 		}
 
 		public void _Move ()
@@ -146,6 +117,12 @@ namespace ScriptEditor
 		private void Btn_Advance_Click ( object sender, EventArgs e )
 		{
 			advance = true;
+		}
+
+		//ピクチャボックスのサイズ変更
+		private void pictureBox1_SizeChanged ( object sender, EventArgs e )
+		{
+			GameMain.SetBmpSize ( pictureBox1.Width, pictureBox1.Height );
 		}
 	}
 }
