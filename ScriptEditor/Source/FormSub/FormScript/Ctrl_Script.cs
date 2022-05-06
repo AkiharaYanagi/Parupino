@@ -6,7 +6,6 @@ namespace ScriptEditor
 {
 	using PrmInt = ScriptParam < int >;
 
-
 	public partial class Ctrl_Script : UserControl
 	{
 		//編集環境
@@ -15,9 +14,6 @@ namespace ScriptEditor
 
 		//現在スクリプト
 		private Script script = null;
-
-		//現在シークエンス
-//		private Sequence sequence = null;
 
 		//コントロール集合
 		private List < TB_Number > ls_tbn = new List<TB_Number> ();

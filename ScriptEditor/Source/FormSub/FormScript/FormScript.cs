@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+
 
 namespace ScriptEditor
 {
@@ -19,7 +21,7 @@ namespace ScriptEditor
 			ctrl_Script1 = new _Ctrl_Script ();
 			this.Controls.Add ( ctrl_Script1 );
 
-			base.InitPt = new System.Drawing.Point ( 0, 230 );
+			base.InitPt = new Point ( 0, 230 );
 			InitializeComponent ();
 			LoadObject ();
 		}

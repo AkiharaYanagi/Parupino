@@ -160,7 +160,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.sqcBoard1.AutoScroll = true;
 			this.sqcBoard1.BackColor = System.Drawing.SystemColors.Control;
-			this.sqcBoard1.Ctrl_Script = null;
 			this.sqcBoard1.DispCompend = null;
 			this.sqcBoard1.EditCompend = null;
 			this.sqcBoard1.Location = new System.Drawing.Point(140, 0);

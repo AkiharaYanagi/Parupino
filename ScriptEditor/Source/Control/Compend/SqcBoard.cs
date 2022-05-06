@@ -11,8 +11,6 @@ namespace ScriptEditor
 		public EditCompend EditCompend { get; set; } = null;
 		public DispCompend DispCompend { get; set; } = null;
 
-		public Ctrl_Script Ctrl_Script { get; set; } = null;
-
 		//編集対象シークエンスの参照
 		public Sequence Sqc = null;
 
@@ -174,11 +172,11 @@ namespace ScriptEditor
 
 			//文字
 			DrawStr_0 ( g, "Group", 0, STR_FMT );
-			DrawStr_0 ( g, "Frame", 1, STR_FMT );
-			DrawStr_0 ( g, "CRect", 2, STR_FMT );
-			DrawStr_0 ( g, "HRect", 3, STR_FMT );
-			DrawStr_0 ( g, "ARect", 4, STR_FMT );
-			DrawStr_0 ( g, "ORect", 5, STR_FMT );
+			DrawStr_0 ( g, "[Frame]", 1, STR_FMT );
+			DrawStr_0 ( g, "■ CRect", 2, STR_FMT );
+			DrawStr_0 ( g, "■ HRect", 3, STR_FMT );
+			DrawStr_0 ( g, "■ ARect", 4, STR_FMT );
+			DrawStr_0 ( g, "■ ORect", 5, STR_FMT );
 			DrawStr_0 ( g, "EfGnrt", 6, STR_FMT );
 
 			//---------------------------------------------------------

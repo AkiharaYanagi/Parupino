@@ -82,7 +82,6 @@ namespace ScriptEditor
 			//サブフォームの初期化
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
 			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
-			FormScript.Inst.SetEnvironment ( eb, db.DispScript );	//フォーム：スクリプト
 			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
 			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
 			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
@@ -113,7 +112,6 @@ namespace ScriptEditor
 			//サブフォームの初期化
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
 			FormImage.Inst.SetEnviron ( eg, dg );
-			FormScript.Inst.SetEnvironment ( eg, dg.DispScript );
 			FormRect.Inst.SetCtrl ( eg.EditScript );
 		}
 

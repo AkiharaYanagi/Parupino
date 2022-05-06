@@ -88,7 +88,8 @@ namespace ScriptEditor
 			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
 
-			//サブフォームにビヘイビアを設定
+			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
+			FormScript.Inst.SetEnvironment ( eb, db.DispScript );	//フォーム：スクリプト
 			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
 			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );

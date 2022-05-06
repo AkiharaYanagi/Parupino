@@ -69,10 +69,12 @@ namespace ScriptEditor
 //			DispRects.Set ( FormRect.ctrl_ );
 		}
 
+#if false
 		public void SetCtrlScript ( Ctrl_Script ctrlScript )
 		{
 			tbaPower = ctrlScript.tBN_Power;
 		}
+#endif
 
 #if false
 

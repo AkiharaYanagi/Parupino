@@ -201,12 +201,6 @@
     <Compile Include="Source\FormSub\FormScriptList\Form_ScriptList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormSub\FormScript\Ctrl_Script.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\FormSub\FormScript\Ctrl_Script.Designer.cs">
-      <DependentUpon>Ctrl_Script.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\FormSub\FormScript\FormScript.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormScriptList\Form_ScriptList.resx">
       <DependentUpon>Form_ScriptList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\FormSub\FormScript\Ctrl_Script.resx">
-      <DependentUpon>Ctrl_Script.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormScript\FormScript.resx">
       <DependentUpon>FormScript.cs</DependentUpon>
