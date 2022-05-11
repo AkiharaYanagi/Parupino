@@ -21,6 +21,7 @@ namespace ScriptEditor
 			this.Location = Cursor.Position;
 
 			InitializeComponent ();
+			base.LoadObject ();
 
 			Lb_Image.DisplayMember = "Name";
 			Lb_Image.ValueMember = "Image";

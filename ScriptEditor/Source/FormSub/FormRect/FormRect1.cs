@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace ScriptEditor
 {
-	public sealed partial class FormRect : Form
+	public sealed partial class FormRect : EditorForm
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -12,34 +12,15 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormRect ()
 		{
-			//フォーム開始位置をマウス位置にする
-			this.StartPosition = FormStartPosition.Manual;
-			this.ShowInTaskbar = false;	//タスクバーに非表示
+			base.InitPt = new Point ( 0, 330 );
 
 			InitializeComponent ();
+			base.LoadObject ();
 
 			ctrl_ListCRect.SetName ( "接触枠" );
 			ctrl_ListHRect.SetName ( "当り枠" );
 			ctrl_ListARect.SetName ( "攻撃枠" );
 			ctrl_ListORect.SetName ( "相殺枠" );
-		}
-			
-		//閉じたときに破棄しない
-		protected override void OnFormClosing ( FormClosingEventArgs e )
-		{
-			e.Cancel = true;
-			this.Hide ();
-		}
-
-		//親フォーム参照
-		public FormMain FormMain { get; set; } = null;
-
-		//フォーム位置を親フォームの右端にする
-		private void FormRect1_VisibleChanged ( object sender, System.EventArgs e )
-		{
-			int x = FormMain.Location.X + 200 + FormMain.Width;
-			int y = FormMain.Location.Y + 330;
-			this.Location = new Point ( x, y );
 		}
 		
 		//---------------------------------------------------------------------

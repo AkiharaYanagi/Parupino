@@ -134,48 +134,76 @@ namespace ScriptEditor
 		//[アクション/エフェクト] (シークエンス) ボタン
 		private void Btn_Sqc_Click ( object sender, System.EventArgs e )
 		{
-			FormAction.Inst.VisFlip ();
+			FormAction.Inst.Active ();
+		}
+		private void Btn_HideSqc_Click ( object sender, System.EventArgs e )
+		{
+			FormAction.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------
 		//スクリプト(リスト)　ボタン
 		private void Btn_ScriptList_Click ( object sender, System.EventArgs e )
 		{
-			Form_ScriptList.Inst.VisFlip ();
+			Form_ScriptList.Inst.Active ();
+		}
+		private void Btn_HideScpLs_Click ( object sender, System.EventArgs e )
+		{
+			Form_ScriptList.Inst.Hidden ();
 		}
 		//-------------------------------------------------------------------------
 		//スクリプト(値) ボタン
 		private void Btn_Scp_Click ( object sender, System.EventArgs e )
 		{
-			FormScript.Inst.VisFlip ();
+			FormScript.Inst.Active ();
+		}
+		private void Btn_HideScpPrm_Click ( object sender, System.EventArgs e )
+		{
+			FormScript.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------
 		//イメージ
 		private void Btn_Image_Click ( object sender, System.EventArgs e )
 		{
-			FormImage.Inst.VisFlip ();
+			FormImage.Inst.Active ();
+		}
+		private void Btn_HideImage_Click ( object sender, System.EventArgs e )
+		{
+			FormImage.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------
 		//判定枠
 		private void Btn_Rect_Click ( object sender, System.EventArgs e )
 		{
-			FormRect.Inst.Visible = ! FormRect.Inst.Visible;
+			FormRect.Inst.Active ();
+		}
+		private void Btn_HideRect_Click ( object sender, System.EventArgs e )
+		{
+			FormRect.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------
 		//Ef生成
 		private void Btn_EfGnrt_Click ( object sender, System.EventArgs e )
 		{
-			FormEfGnrt.Inst.VisFlip ();
+			FormEfGnrt.Inst.Active ();
+		}
+		private void Btn_HideEfGnrt_Click ( object sender, System.EventArgs e )
+		{
+			FormEfGnrt.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------
 		//ルート
 		private void Btn_Route_Click ( object sender, System.EventArgs e )
 		{
-			FormRoute.Inst.VisFlip ();
+			FormRoute.Inst.Active ();
+		}
+		private void Btn_HideRut_Click ( object sender, System.EventArgs e )
+		{
+			FormRoute.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------
@@ -185,6 +213,9 @@ namespace ScriptEditor
 			FormPreview.Inst.VisFlip ();
 			FormPreview.Inst.Start ();
 		}
+
+
+
 
 	}
 }

@@ -48,6 +48,28 @@ namespace ScriptEditor
 			this.Visible = ! this.Visible;
 		}
 
+		//最前面にする(既に最前面のとき隠す)
+		public void Active ()
+		{
+			if ( this.Visible == false)
+			{
+				this.Visible = true;
+				this.TopMost = true;
+				this.TopMost = false;
+			}
+			else
+			{
+				this.TopMost = true;
+				this.TopMost = false;
+			}
+		}
+
+		//隠す
+		public void Hidden ()
+		{
+			this.Hide ();
+		}
+
 		//親フォーム参照
 		public FormMain FormMain { get; set; } = null;
 		public Point InitPt { get; set; } = new Point ( 0, 0 );

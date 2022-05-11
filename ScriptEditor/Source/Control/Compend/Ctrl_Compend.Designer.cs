@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent ()
 		{
-			ScriptEditor.ToolImg_Main toolImg_Main1 = new ScriptEditor.ToolImg_Main();
+			ScriptEditor.ToolImg_Main toolImg_Main5 = new ScriptEditor.ToolImg_Main();
 			this.Btn_Sqc = new System.Windows.Forms.Button();
 			this.Btn_Scp = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -38,6 +38,13 @@
 			this.Btn_Rect = new System.Windows.Forms.Button();
 			this.Btn_Image = new System.Windows.Forms.Button();
 			this.Btn_ScriptList = new System.Windows.Forms.Button();
+			this.Btn_HideSqc = new System.Windows.Forms.Button();
+			this.Btn_HideScpLs = new System.Windows.Forms.Button();
+			this.Btn_HideScpPrm = new System.Windows.Forms.Button();
+			this.Btn_HideImage = new System.Windows.Forms.Button();
+			this.Btn_HideRect = new System.Windows.Forms.Button();
+			this.Btn_HideEfGnrt = new System.Windows.Forms.Button();
+			this.Btn_HideRut = new System.Windows.Forms.Button();
 			this.sqcBoard1 = new ScriptEditor.SqcBoard();
 			this.sequenceTree1 = new ScriptEditor.SequenceTree();
 			this.Ctrl_Img = new ScriptEditor.Ctrl_Image();
@@ -81,6 +88,13 @@
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideRut);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideEfGnrt);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideRect);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideImage);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideScpPrm);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideScpLs);
+			this.splitContainer1.Panel2.Controls.Add(this.Btn_HideSqc);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Preview);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_Route);
 			this.splitContainer1.Panel2.Controls.Add(this.Btn_EfGnrt);
@@ -153,6 +167,76 @@
 			this.Btn_ScriptList.UseVisualStyleBackColor = true;
 			this.Btn_ScriptList.Click += new System.EventHandler(this.Btn_ScriptList_Click);
 			// 
+			// Btn_HideSqc
+			// 
+			this.Btn_HideSqc.Location = new System.Drawing.Point(120, 3);
+			this.Btn_HideSqc.Name = "Btn_HideSqc";
+			this.Btn_HideSqc.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideSqc.TabIndex = 12;
+			this.Btn_HideSqc.Text = "▼";
+			this.Btn_HideSqc.UseVisualStyleBackColor = true;
+			this.Btn_HideSqc.Click += new System.EventHandler(this.Btn_HideSqc_Click);
+			// 
+			// Btn_HideScpLs
+			// 
+			this.Btn_HideScpLs.Location = new System.Drawing.Point(120, 37);
+			this.Btn_HideScpLs.Name = "Btn_HideScpLs";
+			this.Btn_HideScpLs.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideScpLs.TabIndex = 12;
+			this.Btn_HideScpLs.Text = "▼";
+			this.Btn_HideScpLs.UseVisualStyleBackColor = true;
+			this.Btn_HideScpLs.Click += new System.EventHandler(this.Btn_HideScpLs_Click);
+			// 
+			// Btn_HideScpPrm
+			// 
+			this.Btn_HideScpPrm.Location = new System.Drawing.Point(120, 73);
+			this.Btn_HideScpPrm.Name = "Btn_HideScpPrm";
+			this.Btn_HideScpPrm.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideScpPrm.TabIndex = 12;
+			this.Btn_HideScpPrm.Text = "▼";
+			this.Btn_HideScpPrm.UseVisualStyleBackColor = true;
+			this.Btn_HideScpPrm.Click += new System.EventHandler(this.Btn_HideScpPrm_Click);
+			// 
+			// Btn_HideImage
+			// 
+			this.Btn_HideImage.Location = new System.Drawing.Point(120, 108);
+			this.Btn_HideImage.Name = "Btn_HideImage";
+			this.Btn_HideImage.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideImage.TabIndex = 12;
+			this.Btn_HideImage.Text = "▼";
+			this.Btn_HideImage.UseVisualStyleBackColor = true;
+			this.Btn_HideImage.Click += new System.EventHandler(this.Btn_HideImage_Click);
+			// 
+			// Btn_HideRect
+			// 
+			this.Btn_HideRect.Location = new System.Drawing.Point(120, 143);
+			this.Btn_HideRect.Name = "Btn_HideRect";
+			this.Btn_HideRect.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideRect.TabIndex = 12;
+			this.Btn_HideRect.Text = "▼";
+			this.Btn_HideRect.UseVisualStyleBackColor = true;
+			this.Btn_HideRect.Click += new System.EventHandler(this.Btn_HideRect_Click);
+			// 
+			// Btn_HideEfGnrt
+			// 
+			this.Btn_HideEfGnrt.Location = new System.Drawing.Point(120, 177);
+			this.Btn_HideEfGnrt.Name = "Btn_HideEfGnrt";
+			this.Btn_HideEfGnrt.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideEfGnrt.TabIndex = 12;
+			this.Btn_HideEfGnrt.Text = "▼";
+			this.Btn_HideEfGnrt.UseVisualStyleBackColor = true;
+			this.Btn_HideEfGnrt.Click += new System.EventHandler(this.Btn_HideEfGnrt_Click);
+			// 
+			// Btn_HideRut
+			// 
+			this.Btn_HideRut.Location = new System.Drawing.Point(120, 211);
+			this.Btn_HideRut.Name = "Btn_HideRut";
+			this.Btn_HideRut.Size = new System.Drawing.Size(29, 31);
+			this.Btn_HideRut.TabIndex = 12;
+			this.Btn_HideRut.Text = "▼";
+			this.Btn_HideRut.UseVisualStyleBackColor = true;
+			this.Btn_HideRut.Click += new System.EventHandler(this.Btn_HideRut_Click);
+			// 
 			// sqcBoard1
 			// 
 			this.sqcBoard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -191,9 +275,9 @@
 			this.Ctrl_Img.Location = new System.Drawing.Point(0, 0);
 			this.Ctrl_Img.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
 			this.Ctrl_Img.Name = "Ctrl_Img";
-			toolImg_Main1.EditCompend = null;
-			toolImg_Main1.RbTl = null;
-			this.Ctrl_Img.SelectingTool = toolImg_Main1;
+			toolImg_Main5.EditCompend = null;
+			toolImg_Main5.RbTl = null;
+			this.Ctrl_Img.SelectingTool = toolImg_Main5;
 			this.Ctrl_Img.Size = new System.Drawing.Size(482, 358);
 			this.Ctrl_Img.TabIndex = 0;
 			// 
@@ -226,5 +310,12 @@
 		public SqcBoard sqcBoard1;
 		private System.Windows.Forms.Button Btn_Route;
 		private System.Windows.Forms.Button Btn_ScriptList;
+		private System.Windows.Forms.Button Btn_HideRut;
+		private System.Windows.Forms.Button Btn_HideEfGnrt;
+		private System.Windows.Forms.Button Btn_HideRect;
+		private System.Windows.Forms.Button Btn_HideImage;
+		private System.Windows.Forms.Button Btn_HideScpPrm;
+		private System.Windows.Forms.Button Btn_HideScpLs;
+		private System.Windows.Forms.Button Btn_HideSqc;
 	}
 }

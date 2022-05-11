@@ -103,7 +103,6 @@
 			this.Controls.Add(this.ctrl_ListCRect);
 			this.Name = "FormRect1";
 			this.Text = "Rect";
-			this.VisibleChanged += new System.EventHandler(this.FormRect1_VisibleChanged);
 			this.ResumeLayout(false);
 
 		}
