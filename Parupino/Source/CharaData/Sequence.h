@@ -23,6 +23,7 @@ namespace GAME
 	{
 		PVP_Script		m_pvpScript;	//スクリプト配列
 		UINT			m_next;			//次シークエンスID
+		tstring			m_nextName;		//次シークエンス名
 
 	public:
 		Sequence ();
@@ -52,7 +53,11 @@ namespace GAME
 
 		//次シークエンスID
 		UINT GetNextID () const { return m_next; }
-		void SetNextID ( UINT id ) { m_next = id; }
+		void SetNextID (UINT id) { m_next = id; }
+
+		//次シークエンス名
+		tstring GetNextName () const { return m_nextName; }
+		void SetNextName ( tstring tstr ) { m_nextName = tstr; }
 	};
 
 	using WP_Sqc = weak_ptr < Sequence >;

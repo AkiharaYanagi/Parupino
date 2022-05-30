@@ -68,6 +68,7 @@ namespace ScriptEditor
 		{
 			ctrl_SqcList_Act.UpdateData ();
 			ctrl_SqcList_Act.UpdateImage ();
+			ctrl_SqcList_Act.Refresh ();
 		}
 
 		//[アクション]タブ離去時

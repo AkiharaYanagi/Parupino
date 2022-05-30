@@ -99,7 +99,7 @@ namespace ScriptEditor
 
 			LsRect [ selectedIndex ] = r;
 
-			GroupSetter ( LsRect );
+			GroupSetter?.Invoke ( LsRect );
 		}
 
 		private void numericUpDown1_ValueChanged ( object sender, System.EventArgs e )

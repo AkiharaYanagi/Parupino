@@ -100,14 +100,12 @@ using LCF = LoadCharaFunc;
 		pAction->SetName ( pvpAttrAction->at ( ATTR_ACTION_NAME )->GetValue () );
 
 
-		if ( _T ( "OD0_L" ) == pAction->GetName () )
-		{
-			int i = 0;
-		}
-
-
 		//UINT 次アクションID (終了時における次アクションのリスト内インデックス)
-		pAction->SetNextID ( m_utl._AttrToUINT ( pvpAttrAction->at ( ATTR_ACTION_ID) ) );
+		pAction->SetNextID (m_utl._AttrToUINT (pvpAttrAction->at (ATTR_ACTION_ID)));
+
+		//tstring 次アクション名 (終了時における次アクションの名前)
+		pAction->SetNextName ( pvpAttrAction->at (ATTR_ACTION_ID)->GetValue () );
+
 
 		//アクション属性
 		UINT indexCategory = m_utl._AttrToUINT ( (*pvpAttrAction)[ATTR_ACTION_CATEGORY] );

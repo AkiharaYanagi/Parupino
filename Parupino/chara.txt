@@ -1,7 +1,7 @@
 ﻿<Chara>
 <ver>110</ver>
 
-<ImageList Num="103">
+<ImageList Num="108">
 	<Image Name="000_Stand_00.png"></Image>
 	<Image Name="000_Stand_01.png"></Image>
 	<Image Name="000_Stand_02.png"></Image>
@@ -104,6 +104,11 @@
 	<Image Name="055_Damaged_M_N_00.png"></Image>
 	<Image Name="058_Damaged_H_N_00.png"></Image>
 	<Image Name="061_Down_00.png"></Image>
+	<Image Name="069_Start_Demo_00.png"></Image>
+	<Image Name="069_Start_Demo_01.png"></Image>
+	<Image Name="069_Start_Demo_02.png"></Image>
+	<Image Name="069_Start_Demo_03.png"></Image>
+	<Image Name="069_Start_Demo_04.png"></Image>
 	<Image Name="077_Start_00.png"></Image>
 </ImageList>
 <EfImageList Num="1">
@@ -111,26 +116,26 @@
 </EfImageList>
 <ActionList Num="78">
 	<Action Name="Stand" NextName="Stand" NextID="0" Category="0" Posture="0" HitNum="1" HitPitch="10">
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
-			<CollisionRectList Num="0">
+			<CollisionRectList Num="1">
+				<CollisionRect X="-77" Y="-355" W="157" H="348"></CollisionRect>
 			</CollisionRectList>
 			<AttackRectList Num="0">
 			</AttackRectList>
-			<HitRectList Num="0">
+			<HitRectList Num="1">
+				<HitRect X="-52" Y="-374" W="136" H="363"></HitRect>
 			</HitRectList>
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -143,10 +148,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -159,10 +163,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -175,10 +178,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -191,10 +193,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -207,10 +208,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -223,10 +223,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -239,10 +238,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -255,10 +253,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -271,10 +268,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -287,10 +283,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -303,10 +298,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -319,10 +313,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -335,10 +328,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -351,10 +343,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -367,10 +358,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -383,10 +373,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -399,10 +388,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -415,10 +403,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -431,10 +418,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -447,10 +433,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -463,10 +448,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -479,10 +463,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -495,10 +478,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -511,10 +493,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -527,10 +508,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -543,10 +523,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -559,10 +538,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -575,10 +553,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -591,10 +568,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -607,10 +583,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -623,10 +598,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -639,10 +613,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -655,10 +628,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -671,10 +643,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -687,10 +658,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -703,10 +673,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -719,10 +688,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -735,10 +703,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -751,10 +718,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -767,10 +733,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -783,10 +748,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -799,10 +763,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -815,10 +778,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -831,10 +793,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -847,10 +808,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -863,10 +823,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -879,10 +838,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -895,10 +853,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -911,10 +868,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -927,10 +883,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -943,10 +898,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -959,10 +913,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -975,10 +928,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -991,10 +943,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1007,10 +958,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1023,10 +973,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1039,10 +988,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1055,10 +1003,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1071,10 +1018,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1087,10 +1033,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1103,10 +1048,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1119,10 +1063,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1135,10 +1078,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1151,10 +1093,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1167,10 +1108,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1183,10 +1123,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1199,10 +1138,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1215,10 +1153,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1231,10 +1168,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1247,10 +1183,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1263,10 +1198,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1279,10 +1213,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1295,10 +1228,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1311,10 +1243,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1327,10 +1258,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1343,10 +1273,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1359,10 +1288,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1375,10 +1303,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1391,10 +1318,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1407,10 +1333,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1423,10 +1348,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1439,10 +1363,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1455,10 +1378,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1471,10 +1393,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1487,10 +1408,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1503,10 +1423,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1519,10 +1438,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1535,10 +1453,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1551,10 +1468,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1567,10 +1483,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1583,10 +1498,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1599,10 +1513,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="000_Stand_00.png" ImageID="0" X="-208" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1615,10 +1528,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1631,10 +1543,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1647,10 +1558,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1663,10 +1573,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1679,10 +1588,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1695,10 +1603,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1711,10 +1618,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1727,10 +1633,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1743,10 +1648,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1759,10 +1663,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1775,10 +1678,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1791,10 +1693,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1807,10 +1708,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1823,10 +1723,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1839,10 +1738,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1855,10 +1753,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1871,10 +1768,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1887,10 +1783,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="3" ImageName="000_Stand_02.png" ImageID="2" X="-200" Y="-485" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1903,10 +1798,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1919,10 +1813,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1935,10 +1828,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1951,10 +1843,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1967,10 +1858,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1983,10 +1873,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -1999,10 +1888,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2015,10 +1903,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2031,10 +1918,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2047,10 +1933,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2063,10 +1948,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2079,10 +1963,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2095,10 +1978,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2111,10 +1993,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2127,10 +2008,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2143,10 +2023,9 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="4" ImageName="000_Stand_01.png" ImageID="1" X="-199" Y="-486" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="地上通常技" ID="1"></Route>
-				<Route Name="地上移動" ID="0"></Route>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2161,9 +2040,27 @@
 		</Script>
 	</Action>
 	<Action Name="FrontDash" NextName="FrontDash" NextID="1" Category="3" Posture="0" HitNum="1" HitPitch="10">
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="1">
+				<AttackRect X="95" Y="-290" W="63" H="130"></AttackRect>
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2176,9 +2073,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2191,9 +2089,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2206,9 +2105,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2221,9 +2121,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2236,9 +2137,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2251,9 +2153,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2266,9 +2169,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2281,9 +2185,10 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2296,9 +2201,346 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="001_FrontDash_00.png" ImageID="3" X="-250" Y="-500" VX="15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="前持続停止" ID="2"></Route>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="2" ImageName="001_FrontDash_01.png" ImageID="4" X="-261" Y="-431" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="3" ImageName="001_FrontDash_02.png" ImageID="5" X="-159" Y="-454" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
+			</RouteList>
+			<EfGenerateList Num="0">
+			</EfGenerateList>
+			<CollisionRectList Num="0">
+			</CollisionRectList>
+			<AttackRectList Num="0">
+			</AttackRectList>
+			<HitRectList Num="0">
+			</HitRectList>
+			<OffsetRectList Num="0">
+			</OffsetRectList>
+		</Script>
+		<Script Group="4" ImageName="001_FrontDash_03.png" ImageID="6" X="-275" Y="-435" VX="10" VY="0" AX="0" AY="0" CLC_ST="2" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+			<RouteList>
+				<Route Name="ダッシュぶつかり" ID="0"></Route>
+				<Route Name="前持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2313,7 +2555,7 @@
 		</Script>
 	</Action>
 	<Action Name="Dash_Grasping" NextName="Stand" NextID="0" Category="3" Posture="0" HitNum="1" HitPitch="10">
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2327,7 +2569,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2341,7 +2583,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2355,7 +2597,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2369,7 +2611,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2383,7 +2625,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2397,7 +2639,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2411,7 +2653,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2425,7 +2667,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2439,7 +2681,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="1" ImageName="002_Dash_Grasping_00.png" ImageID="7" X="-235" Y="-468" VX="-2" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -2455,9 +2697,8 @@
 		</Script>
 	</Action>
 	<Action Name="BackDash" NextName="BackDash" NextID="3" Category="3" Posture="0" HitNum="1" HitPitch="10">
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2470,9 +2711,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2485,9 +2725,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2500,9 +2739,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2515,9 +2753,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2530,9 +2767,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2545,9 +2781,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2560,9 +2795,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2575,9 +2809,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -2590,9 +2823,8 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="-15" VY="0" AX="0" AY="0" CLC_ST="1" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="003_BackDash_00.png" ImageID="8" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
-				<Route Name="後持続停止" ID="3"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -11837,7 +12069,7 @@
 		</Script>
 	</Action>
 	<Action Name="Start_Demo" NextName="Stand" NextID="0" Category="17" Posture="0" HitNum="1" HitPitch="10">
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11851,7 +12083,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11865,7 +12097,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11879,7 +12111,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11893,7 +12125,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11907,7 +12139,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11921,7 +12153,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11935,7 +12167,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11949,7 +12181,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -11963,7 +12195,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="000_Stand_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="069_Start_Demo_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12679,7 +12911,7 @@
 		</Script>
 	</Action>
 	<Action Name="Start" NextName="Stand" NextID="0" Category="17" Posture="0" HitNum="1" HitPitch="10">
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12693,7 +12925,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12707,7 +12939,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12721,7 +12953,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12735,7 +12967,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12749,7 +12981,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12763,7 +12995,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12777,7 +13009,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12791,7 +13023,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12805,7 +13037,7 @@
 			<OffsetRectList Num="0">
 			</OffsetRectList>
 		</Script>
-		<Script Group="0" ImageName="077_Start_00.png" ImageID="102" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
+		<Script Group="0" ImageName="077_Start_00.png" ImageID="107" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
 			</RouteList>
 			<EfGenerateList Num="0">
@@ -12825,6 +13057,7 @@
 	<Effect Name="Ef_Dash">
 		<Script Group="0" ImageName="000_Ef_Dash_00.png" ImageID="0" X="-250" Y="-500" VX="0" VY="0" AX="0" AY="0" CLC_ST="0" Power="0" BlackOut="0" Vibration="0" Stop="0" Radian="0" AfterImage_pitch="0" AfterImage_N="0" AfterImage_time="0" Vibration_S="0" Color="Color [Empty]" Color_time="0">
 			<RouteList>
+				<Route Name="地上移動" ID="1"></Route>
 			</RouteList>
 			<EfGenerateList Num="0">
 			</EfGenerateList>
@@ -13558,7 +13791,9 @@
 		<Key Not="False" Key_0="KEY_WILD" Key_1="KEY_WILD" Key_2="KEY_WILD" Key_3="KEY_WILD" Key_4="KEY_WILD" Key_5="KEY_WILD" Key_6="KEY_WILD" Key_7="KEY_WILD" Btn_0 ="KEY_WILD" Btn_1 ="KEY_WILD" Btn_2 ="KEY_WILD" Btn_3 ="KEY_PUSH" Btn_4 ="KEY_WILD" Btn_5 ="KEY_WILD" Btn_6 ="KEY_WILD" Btn_7 ="KEY_WILD"></Key>
 	</Command>
 </CommandList>
-<BranchList Num="42">
+<BranchList Num="43">
+	<Branch Name="ダッシュぶつかり" Condition="3" NameCommand="N" CommandID="0" NameSequence="Dash_Grasping" SequenceID="2" Frame="0">
+	</Branch>
 	<Branch Name="L_立L" Condition="0" NameCommand="L" CommandID="1" NameSequence="Attack_5L" SequenceID="8" Frame="0">
 	</Branch>
 	<Branch Name="Ma_立Ma" Condition="0" NameCommand="Ma" CommandID="2" NameSequence="Attack_5Ma" SequenceID="9" Frame="0">
@@ -13644,103 +13879,108 @@
 	<Branch Name="被ダメ_体勢L4" Condition="0" NameCommand="_4L" CommandID="21" NameSequence="Damaged_L_B" SequenceID="54" Frame="0">
 	</Branch>
 </BranchList>
-<RouteList Num="14">
+<RouteList Num="15">
+	<Route Name="ダッシュぶつかり" Summary="摘要">
+		<BranchNameList Num="1">
+			<BranchName Name="ダッシュぶつかり" ID="0"></BranchName>
+		</BranchNameList>
+	</Route>
 	<Route Name="地上移動" Summary="立ち状態で移行する移動全般">
 		<BranchNameList Num="5">
-			<BranchName Name="_9_F_Jump" ID="11"></BranchName>
-			<BranchName Name="_7_B_Jump" ID="12"></BranchName>
-			<BranchName Name="_8_V_Jump" ID="10"></BranchName>
-			<BranchName Name="_6_F_Move" ID="4"></BranchName>
-			<BranchName Name="_4_B_Move" ID="5"></BranchName>
+			<BranchName Name="_9_F_Jump" ID="12"></BranchName>
+			<BranchName Name="_7_B_Jump" ID="13"></BranchName>
+			<BranchName Name="_8_V_Jump" ID="11"></BranchName>
+			<BranchName Name="_6_F_Move" ID="5"></BranchName>
+			<BranchName Name="_4_B_Move" ID="6"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="地上通常技" Summary="立ち状態から出る通常技全般">
 		<BranchNameList Num="20">
-			<BranchName Name="_4L" ID="19"></BranchName>
-			<BranchName Name="_4Ma" ID="20"></BranchName>
-			<BranchName Name="_4Mb" ID="21"></BranchName>
-			<BranchName Name="_4H" ID="22"></BranchName>
-			<BranchName Name="_2L" ID="23"></BranchName>
-			<BranchName Name="_2Ma" ID="24"></BranchName>
-			<BranchName Name="_2Mb" ID="25"></BranchName>
-			<BranchName Name="_2H" ID="26"></BranchName>
-			<BranchName Name="_6L" ID="27"></BranchName>
-			<BranchName Name="_6Ma" ID="28"></BranchName>
-			<BranchName Name="_6Mb" ID="29"></BranchName>
-			<BranchName Name="_6H" ID="30"></BranchName>
-			<BranchName Name="_8L" ID="31"></BranchName>
-			<BranchName Name="_8Ma" ID="32"></BranchName>
-			<BranchName Name="_8Mb" ID="33"></BranchName>
-			<BranchName Name="_8H" ID="34"></BranchName>
-			<BranchName Name="L_立L" ID="0"></BranchName>
-			<BranchName Name="Ma_立Ma" ID="1"></BranchName>
-			<BranchName Name="Mb_立Mb" ID="2"></BranchName>
-			<BranchName Name="H_立H" ID="3"></BranchName>
+			<BranchName Name="_4L" ID="20"></BranchName>
+			<BranchName Name="_4Ma" ID="21"></BranchName>
+			<BranchName Name="_4Mb" ID="22"></BranchName>
+			<BranchName Name="_4H" ID="23"></BranchName>
+			<BranchName Name="_2L" ID="24"></BranchName>
+			<BranchName Name="_2Ma" ID="25"></BranchName>
+			<BranchName Name="_2Mb" ID="26"></BranchName>
+			<BranchName Name="_2H" ID="27"></BranchName>
+			<BranchName Name="_6L" ID="28"></BranchName>
+			<BranchName Name="_6Ma" ID="29"></BranchName>
+			<BranchName Name="_6Mb" ID="30"></BranchName>
+			<BranchName Name="_6H" ID="31"></BranchName>
+			<BranchName Name="_8L" ID="32"></BranchName>
+			<BranchName Name="_8Ma" ID="33"></BranchName>
+			<BranchName Name="_8Mb" ID="34"></BranchName>
+			<BranchName Name="_8H" ID="35"></BranchName>
+			<BranchName Name="L_立L" ID="1"></BranchName>
+			<BranchName Name="Ma_立Ma" ID="2"></BranchName>
+			<BranchName Name="Mb_立Mb" ID="3"></BranchName>
+			<BranchName Name="H_立H" ID="4"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="前持続停止" Summary="前持続を離す">
 		<BranchNameList Num="1">
-			<BranchName Name="_6離_Stand" ID="6"></BranchName>
+			<BranchName Name="_6離_Stand" ID="7"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="後持続停止" Summary="後持続を離す">
 		<BranchNameList Num="1">
-			<BranchName Name="_4離_Stand" ID="7"></BranchName>
+			<BranchName Name="_4離_Stand" ID="8"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="ジャンプ" Summary="ジャンプ">
 		<BranchNameList Num="3">
-			<BranchName Name="_8_V_Jump" ID="10"></BranchName>
-			<BranchName Name="_9_F_Jump" ID="11"></BranchName>
-			<BranchName Name="_7_B_Jump" ID="12"></BranchName>
+			<BranchName Name="_8_V_Jump" ID="11"></BranchName>
+			<BranchName Name="_9_F_Jump" ID="12"></BranchName>
+			<BranchName Name="_7_B_Jump" ID="13"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="地上必殺技" Summary="地上必殺技">
 		<BranchNameList Num="1">
-			<BranchName Name="SP0" ID="15"></BranchName>
+			<BranchName Name="SP0" ID="16"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="特殊" Summary="特殊">
 		<BranchNameList Num="1">
-			<BranchName Name="SP01" ID="14"></BranchName>
+			<BranchName Name="SP01" ID="15"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="地上超必" Summary="地上超必">
 		<BranchNameList Num="1">
-			<BranchName Name="OD0" ID="16"></BranchName>
+			<BranchName Name="OD0" ID="17"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="投げ分岐_自" Summary="投げ分岐_自">
 		<BranchNameList Num="1">
-			<BranchName Name="投げ分岐_自" ID="17"></BranchName>
+			<BranchName Name="投げ分岐_自" ID="18"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="投げ分岐_相" Summary="投げ分岐_相">
 		<BranchNameList Num="1">
-			<BranchName Name="投げ分岐_相" ID="18"></BranchName>
+			<BranchName Name="投げ分岐_相" ID="19"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="与ダメ_L" Summary="与ダメ_L">
 		<BranchNameList Num="1">
-			<BranchName Name="与ダメ_L" ID="35"></BranchName>
+			<BranchName Name="与ダメ_L" ID="36"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="与ダメ_M" Summary="与ダメ_M">
 		<BranchNameList Num="1">
-			<BranchName Name="与ダメ_M" ID="36"></BranchName>
+			<BranchName Name="与ダメ_M" ID="37"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="与ダメ_H" Summary="与ダメ_H">
 		<BranchNameList Num="1">
-			<BranchName Name="与ダメ_H" ID="37"></BranchName>
+			<BranchName Name="与ダメ_H" ID="38"></BranchName>
 		</BranchNameList>
 	</Route>
 	<Route Name="ダメージ体勢L" Summary="摘要">
 		<BranchNameList Num="4">
-			<BranchName Name="被ダメ_体勢L4" ID="41"></BranchName>
-			<BranchName Name="被ダメ_体勢L6" ID="40"></BranchName>
-			<BranchName Name="被ダメ_体勢L2" ID="39"></BranchName>
-			<BranchName Name="被ダメ_体勢L8" ID="38"></BranchName>
+			<BranchName Name="被ダメ_体勢L4" ID="42"></BranchName>
+			<BranchName Name="被ダメ_体勢L6" ID="41"></BranchName>
+			<BranchName Name="被ダメ_体勢L2" ID="40"></BranchName>
+			<BranchName Name="被ダメ_体勢L8" ID="39"></BranchName>
 		</BranchNameList>
 	</Route>
 </RouteList>

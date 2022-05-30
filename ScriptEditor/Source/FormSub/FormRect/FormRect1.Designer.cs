@@ -63,6 +63,7 @@
 			// 
 			// ctrl_ListORect
 			// 
+			this.ctrl_ListORect.GroupSetter = null;
 			this.ctrl_ListORect.Location = new System.Drawing.Point(3, 223);
 			this.ctrl_ListORect.Name = "ctrl_ListORect";
 			this.ctrl_ListORect.Size = new System.Drawing.Size(353, 52);
@@ -70,6 +71,7 @@
 			// 
 			// ctrl_ListARect
 			// 
+			this.ctrl_ListARect.GroupSetter = null;
 			this.ctrl_ListARect.Location = new System.Drawing.Point(3, 152);
 			this.ctrl_ListARect.Name = "ctrl_ListARect";
 			this.ctrl_ListARect.Size = new System.Drawing.Size(353, 52);
@@ -77,6 +79,7 @@
 			// 
 			// ctrl_ListHRect
 			// 
+			this.ctrl_ListHRect.GroupSetter = null;
 			this.ctrl_ListHRect.Location = new System.Drawing.Point(3, 83);
 			this.ctrl_ListHRect.Name = "ctrl_ListHRect";
 			this.ctrl_ListHRect.Size = new System.Drawing.Size(353, 52);
@@ -84,12 +87,13 @@
 			// 
 			// ctrl_ListCRect
 			// 
+			this.ctrl_ListCRect.GroupSetter = null;
 			this.ctrl_ListCRect.Location = new System.Drawing.Point(3, 10);
 			this.ctrl_ListCRect.Name = "ctrl_ListCRect";
 			this.ctrl_ListCRect.Size = new System.Drawing.Size(353, 52);
 			this.ctrl_ListCRect.TabIndex = 0;
 			// 
-			// FormRect1
+			// FormRect
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -101,7 +105,7 @@
 			this.Controls.Add(this.ctrl_ListARect);
 			this.Controls.Add(this.ctrl_ListHRect);
 			this.Controls.Add(this.ctrl_ListCRect);
-			this.Name = "FormRect1";
+			this.Name = "FormRect";
 			this.Text = "Rect";
 			this.ResumeLayout(false);
 

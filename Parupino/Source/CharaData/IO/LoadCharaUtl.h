@@ -33,7 +33,7 @@ namespace GAME
 		UINT IndexOf ( const V_STR& vstr, tstring name ) const;
 
 		//------------------------------------------------------------
-		//アトリビュート変換
+		//アトリビュート変換 (文字列はAttributeのGetValue()を用いる)
 		bool _AttrToBool ( const P_Attribute pAttr );
 		UINT _AttrToUINT ( const P_Attribute pAttr );
 		int  _AttrToInt ( const P_Attribute pAttr );
@@ -44,6 +44,7 @@ namespace GAME
 			const P_Attribute pa0, const P_Attribute pa1,  
 			const P_Attribute pa2, const P_Attribute pa3  
 		);
+
 		CLC_ST _AttrToCLC_ST ( const P_Attribute pAttr );
 		ACTION_POSTURE _AttrToACTION_POSTURE ( const P_Attribute pAttr );
 

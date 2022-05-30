@@ -90,19 +90,11 @@ namespace GAME
 		tstring name (_T ("chara.dat"));
 
 #if 0
-
 		//tstring&‚Ì‚½‚ßassign‚ÅŽw’è‚·‚é
 		switch ( m_name )
 		{
-#if 0
-//		case CHARA_TEST: name.assign ( _T ( "testChara.dat" ) ); break;
-//		case CHARA_TEST: name.assign ( _T ( "PlayerChara.dat" ) ); break;
-//		case CHARA_TEST: name.assign ( _T ( "Yukino.dat" ) ); break;
-		case CHARA_TEST: name.assign ( _T ( "chara.dat" ) ); break;
-#endif // 0
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
 		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;
-//		case CHARA_YUKINO: name.assign ( _T ( "chara.dat" ) ); break;
 		default: break;
 		}
 #endif // 0

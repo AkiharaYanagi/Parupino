@@ -49,5 +49,11 @@ namespace ScriptEditor
 			FormAction.Inst.Owner = null;
 			FormScript.Inst.Owner = null;
 		}
+
+		private void FormMain_Shown ( object sender, System.EventArgs e )
+		{
+			ctrl_SqcList_Act.Refresh ();
+
+		}
 	}
 }
