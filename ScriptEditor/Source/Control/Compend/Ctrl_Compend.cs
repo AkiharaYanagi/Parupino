@@ -177,11 +177,13 @@ namespace ScriptEditor
 		//判定枠
 		private void Btn_Rect_Click ( object sender, System.EventArgs e )
 		{
-			FormRect.Inst.Active ();
+//			FormRect.Inst.Active ();
+			FormRect2.Inst.Active ();
 		}
 		private void Btn_HideRect_Click ( object sender, System.EventArgs e )
 		{
-			FormRect.Inst.Hidden ();
+//			FormRect.Inst.Hidden ();
+			FormRect2.Inst.Hidden ();
 		}
 
 		//-------------------------------------------------------------------------

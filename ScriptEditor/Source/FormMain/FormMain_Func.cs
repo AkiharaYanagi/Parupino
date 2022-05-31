@@ -9,7 +9,8 @@ namespace ScriptEditor
 		//==================================================================================
 		public void Assosiate ( Sequence sqc, Script scp )
 		{
-			FormRect.Inst.Assosiate ( scp );
+//			FormRect.Inst.Assosiate ( scp );
+			FormRect2.Inst.Assosiate ( scp );
 			FormScript.Inst.Assosiate ( scp, sqc );
 			FormEfGnrt.Inst.Assosiate ( scp );
 			FormRoute.Inst.Assosiate ( scp );

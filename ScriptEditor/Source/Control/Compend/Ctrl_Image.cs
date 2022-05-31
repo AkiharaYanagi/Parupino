@@ -112,7 +112,8 @@ namespace ScriptEditor
 			}
 
 			paintImage.Paint ( sc );
-			FormRect.Inst.UpdateData ();
+			//FormRect.Inst.UpdateData ();
+			FormRect2.Inst.UpdateData ();
 		}
 
 		//イベント・マウス移動時
@@ -149,9 +150,8 @@ namespace ScriptEditor
 			}
 			Script sc = EditCompend.SelectedScript;
 			paintImage.Paint ( sc );
-			FormRect.Inst.UpdateData ();
-//			DispChara.Inst.Disp ();
-//			DispCompend.Disp ();
+//			FormRect.Inst.UpdateData ();
+			FormRect2.Inst.UpdateData ();
 			FormScript.Inst.UpdateData ();
 		}
 

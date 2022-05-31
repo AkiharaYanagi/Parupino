@@ -35,7 +35,8 @@ namespace ScriptEditor
 			FormScript.Inst.FormMain = this;
 			FormImage.Inst.FormMain = this;
 			FormRoute.Inst.FormMain = this;
-			FormRect.Inst.FormMain = this;
+//			FormRect.Inst.FormMain = this;
+			FormRect2.Inst.FormMain = this;
 			FormEfGnrt.Inst.FormMain = this;
 			FormRoute.Inst.FormMain = this;
 		}
@@ -83,7 +84,8 @@ namespace ScriptEditor
 			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
 			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
 			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
-			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
+//			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
+			FormRect2.Inst.SetEnvironment ( eb );			//フォーム：レクト
 			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
 			FormRoute.Inst.SetEnvironment ( eb );
 		}

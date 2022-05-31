@@ -1,17 +1,21 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
+
 
 namespace ScriptEditor
 {
+	using LsRect = List< Rectangle >;
+
 	//イメージを操作する共通クラス
 	public class ToolImg
 	{
-		//イメージ表示のコントロール
+		//イメージ表示のコントロール(親)
 		public Ctrl_Image CtrlImg = null;
 
 		//位置
-		protected Point prePt;
-		protected Point startPt;
+		protected Point prePt = new Point ( 0, 0 );
+		protected Point startPt = new Point ( 0, 0 );
 		protected bool dragging = false;
 
 		//コンペンド編集
@@ -92,8 +96,9 @@ namespace ScriptEditor
 	//枠設定
 	public class ToolImg_Rect : ToolImg
 	{
-		protected Ctrl_ListRect ctrlRect;
-		private Point startRectPt;
+//		protected Ctrl_ListRect ctrlRect;
+		public  Rectangle rect { get; set; } = new Rectangle ();
+		private Point startRectPt = new Point ( 0, 0 );
 
 		public override void MouseDown ()
 		{
@@ -107,6 +112,9 @@ namespace ScriptEditor
 			{
 				Point dragPt = PointUt.PtSub ( Cursor.Position, startPt );
 				Rectangle r = new Rectangle ( startRectPt.X, startRectPt.Y, dragPt.X, dragPt.Y );
+//				ctrlRect.SetRect ( r );
+
+				//Ctrlが位置を保持しているため
 				ctrlRect.SetRect ( r );
 			}
 		}
@@ -116,6 +124,7 @@ namespace ScriptEditor
 		}
 	}
 
+#if false
 	public class ToolImg_CRect : ToolImg_Rect
 	{
 		public ToolImg_CRect () { ctrlRect = FormRect.Inst.ctrl_ListCRect; }
@@ -132,4 +141,5 @@ namespace ScriptEditor
 	{
 		public ToolImg_ORect() { ctrlRect = FormRect.Inst.ctrl_ListORect; }
 	}
+#endif
 }

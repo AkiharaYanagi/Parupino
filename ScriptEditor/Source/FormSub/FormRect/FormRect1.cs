@@ -3,6 +3,7 @@ using System.Drawing;
 
 namespace ScriptEditor
 {
+#if true
 	public sealed partial class FormRect : EditorForm
 	{
 		//---------------------------------------------------------------------
@@ -68,4 +69,5 @@ namespace ScriptEditor
 		}
 
 	}
+#endif
 }

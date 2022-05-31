@@ -485,7 +485,8 @@ namespace ScriptEditor
 			EditCompend.Assosiate ();
 			FormScript.Inst.Assosiate ( scp, Sqc );
 			FormRoute.Inst.Assosiate ( scp );
-			FormRect.Inst.Assosiate ( scp );
+//			FormRect.Inst.Assosiate ( scp );
+			FormRect2.Inst.Assosiate ( scp );
 			FormEfGnrt.Inst.Assosiate ( scp );
 		}
 	}
