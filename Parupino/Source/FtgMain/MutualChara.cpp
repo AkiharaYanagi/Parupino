@@ -190,6 +190,23 @@ namespace GAME
 
 		//------------------------------------------------------
 		//判定
+
+
+		//------------------------------------------------------
+		//ダッシュぶつかり判定
+		//[D]:ダッシュにおける攻撃判定[A]
+
+
+		//[D]-><-[D] : 特殊相殺
+		bool b = DcsAtoA ( pCharaRect1p, pCharaRect2p, center );
+
+
+		//[D]->[A],[D]->[O] : 通常相殺
+		//[D]->[H] : 通常ヒットから互いにスクリプトでアクション移行
+
+
+
+		//------------------------------------------------------
 		//打合：攻撃判定と攻撃判定、または攻撃判定と相殺判定 (相殺と相殺は何もしない)
 
 		//エフェクトリストの相殺チェック
@@ -200,6 +217,7 @@ namespace GAME
 		offset = DcsOffset ( pCharaRect1p, pCharaRect2p, center );
 
 
+		//------------------------------------------------------
 		//エフェクトのヒットチェック
 		int powerEf1p;
 		int powerEf2p;
@@ -220,119 +238,6 @@ namespace GAME
 			hit1P |= OverlapAryRect ( pvARect2, pvHRect1 );	//ヒット判定と攻撃判定(2P->1P)
 		}
 
-		//------------------------------------------------------
-		//反映
-
-		//相殺処理
-		if ( offset )
-		{
-#if 0
-			//攻撃種類の取得
-			Action::ACTION_CATEGORY ac1p = m_exeChara1.GetActionCategory ();
-			Action::ACTION_CATEGORY ac2p = m_exeChara2.GetActionCategory ();
-
-			//攻撃種類の組合せ
-			UINT x = 0;
-			switch ( ac1p )
-			{
-			case Action::ATTACK_L: x = 0; break;
-			case Action::ATTACK_M: x = 1; break;
-			case Action::ATTACK_H: x = 2; break;
-			default: 0; break;	//その他は"弱"扱い
-			}
-			UINT y = 0;
-			switch ( ac2p )
-			{
-			case Action::ATTACK_L: y = 0; break;
-			case Action::ATTACK_M: y = 1; break;
-			case Action::ATTACK_H: y = 2; break;
-			default: 0; break;	//その他は"弱"扱い
-			}
-			UINT lurch1p = LURCH[x][y];
-			UINT lurch2p = LURCH[y][x];
-
-
-			//[縦][横]
-			const UINT c_indexDecision[3][3] =
-			{
-				//	{弱弱, 弱中, 弱強}, 
-				//	{中弱, 中中, 中強}, 
-				//	{強弱, 強中, 強強}
-	#if	0
-					{ CD_EQUAL, CD_RIGHT, CD_RIGHT },
-					{ CD_LEFT, CD_EQUAL, CD_RIGHT },
-					{ CD_LEFT, CD_LEFT, CD_EQUAL }
-	#endif	//0
-					//弱＞強
-					{ CD_EQUAL, CD_RIGHT, CD_LEFT },
-					{ CD_LEFT, CD_EQUAL, CD_RIGHT },
-					{ CD_RIGHT, CD_LEFT, CD_EQUAL }
-			};
-
-			//判定勝ちの方は打合のけぞりにならず、ヒットストップの後アクション続行(キャンセル可能)
-
-			//ExeCharaに通達
-			const CLANG_DECISION_WL c_decision_wl[3] = { CD_DRAW, CD_WIN, CD_LOSE };
-
-			m_exeChara1.OnClang ( lurch1p, c_decision_wl[c_indexDecision[x][y]] );
-			m_exeChara2.OnClang ( lurch2p, c_decision_wl[c_indexDecision[y][x]] );
-
-
-			//打合結果
-			const CLANG_DECISION_LR c_decision[3] = { CD_EQUAL, CD_LEFT, CD_RIGHT };
-
-			//打合結果表示 (打合結果勝負を左右に変換)
-			if ( m_exeChara1.GetDirRight () )	//1Pが右向(左側：LEFT)
-			{
-				sendDecision = c_decision[c_indexDecision[x][y]];
-			}
-			else
-			{
-				sendDecision = c_decision[c_indexDecision[y][x]];
-			}
-#endif // 0
-
-			//打合時のエフェクト発生
-			m_efClang->On ( center );
-			m_efSpark->On ( center );
-
-			//SE
-			SOUND->Play ( SE_Clang );
-
-			//ヒットストップ開始
-			m_tmrHitstop->Start ();
-			m_exeChara1->OnClang ( 0, CD_DRAW );
-			m_exeChara2->OnClang ( 0, CD_DRAW );
-		}
-
-		//------------------------------------------------------
-		//Efヒット処理
-		if ( Efhit2P )
-		{
-			m_exeChara1->OnEfHit ();		//ヒット状態
-			m_exeChara2->OnDamaged ( powerEf1p );		//くらい状態・ダメージ処理
-		}
-
-		if ( Efhit1P )
-		{
-			m_exeChara2->OnEfHit ();		//ヒット状態
-			m_exeChara1->OnDamaged ( powerEf2p );		//くらい状態・ダメージ処理
-		}
-
-		//メインヒット処理
-		if ( hit2P )
-		{
-			int power1P = m_exeChara1->GetPower ();	//攻撃値
-			m_exeChara1->OnHit ();		//ヒット状態
-			m_exeChara2->OnDamaged ( power1P );		//くらい状態・ダメージ処理
-		}
-
-		if ( hit1P )
-		{
-			int power2P = m_exeChara2->GetPower ();	//攻撃値
-			m_exeChara2->OnHit ();		//ヒット状態
-			m_exeChara1->OnDamaged ( power2P );		//くらい状態・ダメージ処理
-		}
 	}
 
 	//------------------------------------------------------
@@ -469,8 +374,25 @@ namespace GAME
 	//------------------------------------------------------
 	//	内部関数
 	//------------------------------------------------------
+	//攻撃枠 同士判定　(中心付)
+	bool MutualChara::DcsAtoA (P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center)
+	{
+		//攻撃枠を取得
+		PV_RECT pvARect1 = pcr1->GetpvARect ();
+		PV_RECT pvARect2 = pcr2->GetpvARect ();
+
+		//------------------------------------------------------
+		//攻撃判定と攻撃判定が重なっていたらtrue
+		if ( OverlapAryRect_Center (pvARect1, pvARect2, center) )
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	//相殺枠判定(中心付)
-	bool MutualChara::DcsOffset ( P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center )
+	bool MutualChara::DcsOffset (P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center)
 	{
 		//攻撃枠を取得
 		PV_RECT pvARect1 = pcr1->GetpvARect ();
@@ -486,13 +408,13 @@ namespace GAME
 
 		//------------------------------------------------------
 		//打合：攻撃判定と攻撃判定、または攻撃判定と相殺判定 (相殺と相殺は何もしない)
-		if ( OverlapAryRect_Center ( pvARect1, pvARect2, center )
-			|| OverlapAryRect_Center ( pvORect1, pvARect2, center )
-			|| OverlapAryRect_Center ( pvARect1, pvORect2, center ) ) 
+		if (OverlapAryRect_Center (pvARect1, pvARect2, center)
+			|| OverlapAryRect_Center (pvORect1, pvARect2, center)
+			|| OverlapAryRect_Center (pvARect1, pvORect2, center))
 		{
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -565,6 +487,126 @@ namespace GAME
 		return ret;
 	}
 
+	//判定後にキャラに反映する
+	void MutualChara::Propagate ()
+	{
+		//------------------------------------------------------
+		//反映
+
+		//相殺処理
+		if (offset)
+		{
+#if 0
+			//攻撃種類の取得
+			Action::ACTION_CATEGORY ac1p = m_exeChara1.GetActionCategory ();
+			Action::ACTION_CATEGORY ac2p = m_exeChara2.GetActionCategory ();
+
+			//攻撃種類の組合せ
+			UINT x = 0;
+			switch (ac1p)
+			{
+			case Action::ATTACK_L: x = 0; break;
+			case Action::ATTACK_M: x = 1; break;
+			case Action::ATTACK_H: x = 2; break;
+			default: 0; break;	//その他は"弱"扱い
+			}
+			UINT y = 0;
+			switch (ac2p)
+			{
+			case Action::ATTACK_L: y = 0; break;
+			case Action::ATTACK_M: y = 1; break;
+			case Action::ATTACK_H: y = 2; break;
+			default: 0; break;	//その他は"弱"扱い
+			}
+			UINT lurch1p = LURCH[x][y];
+			UINT lurch2p = LURCH[y][x];
+
+
+			//[縦][横]
+			const UINT c_indexDecision[3][3] =
+			{
+				//	{弱弱, 弱中, 弱強}, 
+				//	{中弱, 中中, 中強}, 
+				//	{強弱, 強中, 強強}
+	#if	0
+					{ CD_EQUAL, CD_RIGHT, CD_RIGHT },
+					{ CD_LEFT, CD_EQUAL, CD_RIGHT },
+					{ CD_LEFT, CD_LEFT, CD_EQUAL }
+	#endif	//0
+					//弱＞強
+					{ CD_EQUAL, CD_RIGHT, CD_LEFT },
+					{ CD_LEFT, CD_EQUAL, CD_RIGHT },
+					{ CD_RIGHT, CD_LEFT, CD_EQUAL }
+			};
+
+			//判定勝ちの方は打合のけぞりにならず、ヒットストップの後アクション続行(キャンセル可能)
+
+			//ExeCharaに通達
+			const CLANG_DECISION_WL c_decision_wl[3] = { CD_DRAW, CD_WIN, CD_LOSE };
+
+			m_exeChara1.OnClang (lurch1p, c_decision_wl[c_indexDecision[x][y]]);
+			m_exeChara2.OnClang (lurch2p, c_decision_wl[c_indexDecision[y][x]]);
+
+
+			//打合結果
+			const CLANG_DECISION_LR c_decision[3] = { CD_EQUAL, CD_LEFT, CD_RIGHT };
+
+			//打合結果表示 (打合結果勝負を左右に変換)
+			if (m_exeChara1.GetDirRight ())	//1Pが右向(左側：LEFT)
+			{
+				sendDecision = c_decision[c_indexDecision[x][y]];
+			}
+			else
+			{
+				sendDecision = c_decision[c_indexDecision[y][x]];
+			}
+#endif // 0
+
+			//打合時のエフェクト発生
+			m_efClang->On (center);
+			m_efSpark->On (center);
+
+			//SE
+			SOUND->Play (SE_Clang);
+
+			//ヒットストップ開始
+			m_tmrHitstop->Start ();
+			m_exeChara1->OnClang (0, CD_DRAW);
+			m_exeChara2->OnClang (0, CD_DRAW);
+		}
+
+		//------------------------------------------------------
+		//Efヒット処理
+		if (Efhit2P)
+		{
+			m_exeChara1->OnEfHit ();		//ヒット状態
+			m_exeChara2->OnDamaged (powerEf1p);		//くらい状態・ダメージ処理
+		}
+
+		if (Efhit1P)
+		{
+			m_exeChara2->OnEfHit ();		//ヒット状態
+			m_exeChara1->OnDamaged (powerEf2p);		//くらい状態・ダメージ処理
+		}
+
+		//メインヒット処理
+		if (hit2P)
+		{
+			int power1P = m_exeChara1->GetPower ();	//攻撃値
+			m_exeChara1->OnHit ();		//ヒット状態
+			m_exeChara2->OnDamaged (power1P);		//くらい状態・ダメージ処理
+		}
+
+		if (hit1P)
+		{
+			int power2P = m_exeChara2->GetPower ();	//攻撃値
+			m_exeChara2->OnHit ();		//ヒット状態
+			m_exeChara1->OnDamaged (power2P);		//くらい状態・ダメージ処理
+		}
+	}
+
+
+	//------------------------------------------------------
 	//枠表示切替 ExeCharaで呼ぶと1P2Pで２回呼ばれてしまう
 	void MutualChara::SwitchRect ()
 	{

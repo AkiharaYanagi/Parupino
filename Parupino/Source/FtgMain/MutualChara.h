@@ -105,14 +105,22 @@ namespace GAME
 		//	内部関数
 		//------------------------------------------------------
 
+		//攻撃枠 同士判定　(中心付)
+		bool DcsAtoA (P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center);
+
 		//相殺枠判定(中心付)
-		bool DcsOffset ( P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center );
+		bool DcsOffset (P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center);
 
 		//エフェクトの相殺枠判定
 		void DcsOffsetEf ( PLP_ExEf plpExEf1, PLP_ExEf plpExEf2, P_CharaRect pCharaRect2p );
 
 		//エフェクトのヒット枠判定
 		bool DcsHitEf ( PLP_ExEf plpExEf1, PV_RECT pvHRect2, P_ExeChara pHitChara, int & refPower );
+
+
+		//判定後にキャラに反映する
+		void Propagate ();
+
 
 		//枠表示切替
 		void SwitchRect ();

@@ -50,40 +50,6 @@ namespace GAME
 		GRPLST_INSERT ( m_gauge_frame );
 
 		//ƒfƒ‚
-#if 0
-		m_demo_GetReady = make_shared < GrpDemo > ();
-		m_demo_GetReady->AddTexture ( _T ( "Demo_GetReady.png" ) );
-		SetGrpDemo ( m_demo_GetReady );
-		GRPLST_INSERT ( m_demo_GetReady );
-
-		m_demo_Attack = make_shared < GrpDemo > ();
-		m_demo_Attack->AddTexture ( _T ( "Demo_Attack.png" ) );
-		SetGrpDemo ( m_demo_Attack );
-		GRPLST_INSERT ( m_demo_Attack );
-
-		m_demo_Down = make_shared < GrpDemo > ();
-		m_demo_Down->AddTexture ( _T ( "Demo_Down.png" ) );
-		SetGrpDemo ( m_demo_Down );
-		GRPLST_INSERT ( m_demo_Down );
-
-		m_demo_Winner = make_shared < GrpDemo > ();
-		m_demo_Winner->AddTexture ( _T ( "Demo_Winner.png" ) );
-		SetGrpDemo ( m_demo_Winner );
-		m_demo_Winner->SetPos ( VEC2 ( 128, 250 ) );
-		GRPLST_INSERT ( m_demo_Winner );
-
-		m_demo_SONIA = make_shared < GrpDemo > ();
-		m_demo_SONIA->AddTexture ( _T ( "CH_SONIA.png" ) );
-		SetGrpDemo ( m_demo_SONIA );
-		m_demo_SONIA->SetPos ( VEC2 ( 128, 550 ) );
-		GRPLST_INSERT ( m_demo_SONIA );
-
-		m_demo_ORFLOAT = make_shared < GrpDemo > ();
-		m_demo_ORFLOAT->AddTexture ( _T ( "CH_ORFLOAT.png" ) );
-		SetGrpDemo ( m_demo_ORFLOAT );
-		m_demo_ORFLOAT->SetPos ( VEC2 ( 128, 550 ) );
-		GRPLST_INSERT ( m_demo_ORFLOAT );
-#endif // 0
 		MakeGrpDemo ( m_demo_GetReady,	_T ( "Demo_GetReady.png" ) );
 		MakeGrpDemo ( m_demo_Attack,	_T ( "Demo_Attack.png" ) );
 		MakeGrpDemo ( m_demo_Down,		_T ( "Demo_Down.png" ) );
