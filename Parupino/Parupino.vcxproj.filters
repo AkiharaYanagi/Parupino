@@ -189,6 +189,9 @@
     <ClInclude Include="Source\ExeChara\Disp\DispInput.h">
       <Filter>ExeChara\Disp</Filter>
     </ClInclude>
+    <ClInclude Include="Source\FtgMain\Decision.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -310,6 +313,9 @@
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispInput.cpp">
       <Filter>ExeChara\Disp</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Decision.cpp">
+      <Filter>FtgMain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

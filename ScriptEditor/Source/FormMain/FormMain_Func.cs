@@ -4,19 +4,6 @@ namespace ScriptEditor
 {
 	public partial class FormMain : Form
 	{
-		//==================================================================================
-		//各フォームに更新を伝える (読込時、変更時)
-		//==================================================================================
-		public void Assosiate ( Sequence sqc, Script scp )
-		{
-//			FormRect.Inst.Assosiate ( scp );
-			FormRect2.Inst.Assosiate ( scp );
-			FormScript.Inst.Assosiate ( scp, sqc );
-			FormEfGnrt.Inst.Assosiate ( scp );
-			FormRoute.Inst.Assosiate ( scp );
-			Disp ();
-		}
-
 		public void UpdateData ()
 		{
 			Disp ();

@@ -28,10 +28,13 @@ namespace GAME
 		AddpTask ( m_exeChara1 );
 		AddpTask ( m_exeChara2 );
 
+		m_decision.SetpChara (m_exeChara1, m_exeChara2);
+
 		//ヒットストップタイマー
 		m_tmrHitstop = make_shared < Timer > ();
 		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
 		AddpTask ( m_tmrHitstop );
+		m_decision.SetpHitStop ( m_tmrHitstop );
 
 		//共通エフェクト
 		m_efClang = make_shared < EfClang > ();
@@ -40,6 +43,8 @@ namespace GAME
 		GRPLST_INSERT ( m_efSpark );
 //		m_testEf = make_shared < TestEf > ();
 //		GRPLST_INSERT ( m_testEf );
+
+		m_decision.SetpCommonEf (m_efClang, m_efSpark);
 	}
 
 	MutualChara::~MutualChara ()
@@ -63,32 +68,34 @@ namespace GAME
 		SwitchRect ();	//枠表示切替
 		//---------------------------------------------------
 
-		//スクリプト前処理(入力、移動など)
+		//◆スクリプト前処理(入力、移動など)
 		m_exeChara1->PreScriptMove ();
 		m_exeChara2->PreScriptMove ();
 
-		//相互判定(ぶつかり枠)
+		//◆相互判定(ぶつかり枠)
 		Collision ();
 
-		//ぶつかり後、攻撃・ヒット判定枠を設定
+		//◆ぶつかり後、攻撃・ヒット判定枠を設定
 		m_exeChara1->ScriptRectMove ();
 		m_exeChara2->ScriptRectMove ();
 
-		//相互判定(攻撃・ヒット枠)
+		//◆相互判定(攻撃・ヒット枠)
 		Decision ();
 
-		//スクリプト後処理(グラフィック位置など)
+		//◆スクリプト後処理(グラフィック位置など)
 		m_exeChara1->PostScriptMove ();
 		m_exeChara2->PostScriptMove ();
 
 		//グラフィック共通
 		Grp ();
 	}
+	//■#########################################################
 
 
-	//■================================
-	//		相互判定(ぶつかり枠)
-	//■================================
+
+	//◆================================
+	//◆		相互判定(ぶつかり枠)
+	//◆================================
 	void MutualChara::Collision ()
 	{
 		//両者の接触枠を取得
@@ -135,114 +142,17 @@ namespace GAME
 		}
 	}
 
-	//■================================
-	//■		相互判定(攻撃・ヒット枠)
-	//■================================
+	//◆================================
+	//◆		相互判定 (攻撃・ヒット枠)
+	//◆================================
 	void MutualChara::Decision ()
 	{
-		//------------------------------------------------------
-		//ヒットストップは何もしない
-		if ( m_tmrHitstop->IsActive () ) { return; }
-#if 0
-		//打合時は何もしない
-		if ( m_exeChara1.GetClang () || m_exeChara2.GetClang () ) { return;	}
-#endif // 0
-
-		//------------------------------------------------------
-		//判定用一時変数
-
-		//判定送信用
-//		CLANG_DECISION_LR sendDecision = CD_OFF; 
-
-		//重なり中心位置
-		VEC2 center = VEC2 ( 0, 0 );
-
-		//本体相殺フラグ
-		bool offset = false;
-
-		//本体ヒットフラグ
-		bool hit1P = false;
-		bool hit2P = false;
-
-		//エフェクトヒットフラグ
-		bool Efhit1P = false;
-		bool Efhit2P = false;
-
-		//枠管理の取得
-		P_CharaRect pCharaRect1p = m_exeChara1->GetpCharaRect ();
-		P_CharaRect pCharaRect2p = m_exeChara2->GetpCharaRect ();
-
-		//攻撃枠を取得
-		PV_RECT pvARect1 = pCharaRect1p->GetpvARect ();
-		PV_RECT pvARect2 = pCharaRect2p->GetpvARect ();
-
-		//相殺枠を取得
-		PV_RECT pvORect1 = pCharaRect1p->GetpvORect ();
-		PV_RECT pvORect2 = pCharaRect2p->GetpvORect ();
-
-		//当り枠を取得
-		PV_RECT pvHRect1 = pCharaRect1p->GetpvHRect ();
-		PV_RECT pvHRect2 = pCharaRect2p->GetpvHRect ();
-
-		//エフェクトリストの取得
-		PLP_ExEf plpExEf1 = m_exeChara1->GetplpExEf ();
-		PLP_ExEf plpExEf2 = m_exeChara2->GetplpExEf ();
-
-		//------------------------------------------------------
-		//判定
-
-
-		//------------------------------------------------------
-		//ダッシュぶつかり判定
-		//[D]:ダッシュにおける攻撃判定[A]
-
-
-		//[D]-><-[D] : 特殊相殺
-		bool b = DcsAtoA ( pCharaRect1p, pCharaRect2p, center );
-
-
-		//[D]->[A],[D]->[O] : 通常相殺
-		//[D]->[H] : 通常ヒットから互いにスクリプトでアクション移行
-
-
-
-		//------------------------------------------------------
-		//打合：攻撃判定と攻撃判定、または攻撃判定と相殺判定 (相殺と相殺は何もしない)
-
-		//エフェクトリストの相殺チェック
-		DcsOffsetEf ( plpExEf1, plpExEf2, pCharaRect2p );		//p1からp2へのチェック
-		DcsOffsetEf ( plpExEf2, plpExEf1, pCharaRect1p );		//p2からp1へのチェック
-
-		//メインキャラ同士の相殺チェック
-		offset = DcsOffset ( pCharaRect1p, pCharaRect2p, center );
-
-
-		//------------------------------------------------------
-		//エフェクトのヒットチェック
-		int powerEf1p;
-		int powerEf2p;
-		if ( DcsHitEf ( plpExEf1, pvHRect2, m_exeChara2, powerEf1p ) )
-		{
-			Efhit2P = true;	//p1からp2へのチェック
-		}
-		if ( DcsHitEf ( plpExEf2, pvHRect1, m_exeChara1, powerEf2p ) )
-		{
-			Efhit1P = true;	//p2からp1へのチェック
-		}
-
-		//メインキャラのヒットチェック
-		//両者の判定を行ってから反映する(片方ずつ反映するとヒット状態を参照してしまうため)
-		if ( !offset )	//相殺していないときのみ
-		{	//or演算
-			hit2P |= OverlapAryRect ( pvARect1, pvHRect2 );	//ヒット判定と攻撃判定(1P->2P)
-			hit1P |= OverlapAryRect ( pvARect2, pvHRect1 );	//ヒット判定と攻撃判定(2P->1P)
-		}
-
+		m_decision.Do ();
 	}
 
-	//------------------------------------------------------
-	//	共通グラフィック
-	//------------------------------------------------------
+	//◆================================
+	//◆		共通グラフィック
+	//◆================================
 	void MutualChara::Grp ()
 	{
 		//---------------------------------------------------
@@ -274,6 +184,8 @@ namespace GAME
 		VEC2 pos2p = m_exeChara2->GetPos ();
 		G_Ftg::inst ()->CulcPosMutualBase ( pos1p, pos2p );
 	}
+
+
 
 	//------------------------------------------------------
 	//	終了判定
@@ -374,237 +286,6 @@ namespace GAME
 	//------------------------------------------------------
 	//	内部関数
 	//------------------------------------------------------
-	//攻撃枠 同士判定　(中心付)
-	bool MutualChara::DcsAtoA (P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center)
-	{
-		//攻撃枠を取得
-		PV_RECT pvARect1 = pcr1->GetpvARect ();
-		PV_RECT pvARect2 = pcr2->GetpvARect ();
-
-		//------------------------------------------------------
-		//攻撃判定と攻撃判定が重なっていたらtrue
-		if ( OverlapAryRect_Center (pvARect1, pvARect2, center) )
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-	//相殺枠判定(中心付)
-	bool MutualChara::DcsOffset (P_CharaRect pcr1, P_CharaRect pcr2, VEC2 & center)
-	{
-		//攻撃枠を取得
-		PV_RECT pvARect1 = pcr1->GetpvARect ();
-		PV_RECT pvARect2 = pcr2->GetpvARect ();
-
-		//相殺枠を取得
-		PV_RECT pvORect1 = pcr1->GetpvORect ();
-		PV_RECT pvORect2 = pcr2->GetpvORect ();
-
-		//当り枠を取得
-		PV_RECT pvHRect1 = pcr1->GetpvHRect ();
-		PV_RECT pvHRect2 = pcr2->GetpvHRect ();
-
-		//------------------------------------------------------
-		//打合：攻撃判定と攻撃判定、または攻撃判定と相殺判定 (相殺と相殺は何もしない)
-		if (OverlapAryRect_Center (pvARect1, pvARect2, center)
-			|| OverlapAryRect_Center (pvORect1, pvARect2, center)
-			|| OverlapAryRect_Center (pvARect1, pvORect2, center))
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-	//エフェクトの相殺枠判定
-	void MutualChara::DcsOffsetEf ( PLP_ExEf plpExEf1, PLP_ExEf plpExEf2, P_CharaRect pCharaRect2p )
-	{
-		VEC2 centeref = VEC2 ( 0, 0 );
-
-		//エフェクトリストの相殺チェック
-		for ( P_ExEf pexef1 : (*plpExEf1) )
-		{
-			P_CharaRect pcref1 = pexef1->GetpCharaRect ();
-
-			//Ef
-			for ( P_ExEf pexef2 : (*plpExEf2) )
-			{
-				P_CharaRect pcref2 = pexef2->GetpCharaRect ();
-
-				if ( DcsOffset ( pcref1, pcref2, centeref ) )
-				{
-					//相殺時 各Efに記録
-					pexef1->SetOffset ( true );
-				}
-			}
-			//Chara
-			if ( DcsOffset ( pcref1, pCharaRect2p, centeref ) )
-			{
-				//Efに相殺状態を設定
-				pexef1->SetOffset ( true );
-			}
-		}
-
-	}
-
-
-	//エフェクトのヒット枠判定
-	bool MutualChara::DcsHitEf ( PLP_ExEf plpExEf1, PV_RECT pvHRect2, P_ExeChara pHitChara, int & refPower )
-	{
-		bool ret = false;
-		VEC2 centeref = VEC2 ( 0, 0 );
-
-		//エフェクトリストのヒットチェック
-		for ( P_ExEf pexef1 : (*plpExEf1) )
-		{
-			P_CharaRect pcref1 = pexef1->GetpCharaRect ();
-
-			//相殺時は飛ばす
-			if ( pexef1->GetOffset () ) { continue; }
-
-			//枠管理の取得
-			P_CharaRect pcr1pEf = pexef1->GetpCharaRect ();
-
-			//攻撃枠を取得
-			PV_RECT pvARect1 = pcr1pEf->GetpvARect ();
-
-			//Chara
-			if ( OverlapAryRect_Center ( pvARect1, pvHRect2, centeref ) )
-			{
-				//攻撃値を設定
-				refPower = pexef1->GetpScript ()->GetPower ();
-
-				//Efにヒット状態を設定
-				pexef1->SetHit ( true );
-
-				//Charaにヒット状態を設定
-				ret = true;
-			}
-		}
-
-		return ret;
-	}
-
-	//判定後にキャラに反映する
-	void MutualChara::Propagate ()
-	{
-		//------------------------------------------------------
-		//反映
-
-		//相殺処理
-		if (offset)
-		{
-#if 0
-			//攻撃種類の取得
-			Action::ACTION_CATEGORY ac1p = m_exeChara1.GetActionCategory ();
-			Action::ACTION_CATEGORY ac2p = m_exeChara2.GetActionCategory ();
-
-			//攻撃種類の組合せ
-			UINT x = 0;
-			switch (ac1p)
-			{
-			case Action::ATTACK_L: x = 0; break;
-			case Action::ATTACK_M: x = 1; break;
-			case Action::ATTACK_H: x = 2; break;
-			default: 0; break;	//その他は"弱"扱い
-			}
-			UINT y = 0;
-			switch (ac2p)
-			{
-			case Action::ATTACK_L: y = 0; break;
-			case Action::ATTACK_M: y = 1; break;
-			case Action::ATTACK_H: y = 2; break;
-			default: 0; break;	//その他は"弱"扱い
-			}
-			UINT lurch1p = LURCH[x][y];
-			UINT lurch2p = LURCH[y][x];
-
-
-			//[縦][横]
-			const UINT c_indexDecision[3][3] =
-			{
-				//	{弱弱, 弱中, 弱強}, 
-				//	{中弱, 中中, 中強}, 
-				//	{強弱, 強中, 強強}
-	#if	0
-					{ CD_EQUAL, CD_RIGHT, CD_RIGHT },
-					{ CD_LEFT, CD_EQUAL, CD_RIGHT },
-					{ CD_LEFT, CD_LEFT, CD_EQUAL }
-	#endif	//0
-					//弱＞強
-					{ CD_EQUAL, CD_RIGHT, CD_LEFT },
-					{ CD_LEFT, CD_EQUAL, CD_RIGHT },
-					{ CD_RIGHT, CD_LEFT, CD_EQUAL }
-			};
-
-			//判定勝ちの方は打合のけぞりにならず、ヒットストップの後アクション続行(キャンセル可能)
-
-			//ExeCharaに通達
-			const CLANG_DECISION_WL c_decision_wl[3] = { CD_DRAW, CD_WIN, CD_LOSE };
-
-			m_exeChara1.OnClang (lurch1p, c_decision_wl[c_indexDecision[x][y]]);
-			m_exeChara2.OnClang (lurch2p, c_decision_wl[c_indexDecision[y][x]]);
-
-
-			//打合結果
-			const CLANG_DECISION_LR c_decision[3] = { CD_EQUAL, CD_LEFT, CD_RIGHT };
-
-			//打合結果表示 (打合結果勝負を左右に変換)
-			if (m_exeChara1.GetDirRight ())	//1Pが右向(左側：LEFT)
-			{
-				sendDecision = c_decision[c_indexDecision[x][y]];
-			}
-			else
-			{
-				sendDecision = c_decision[c_indexDecision[y][x]];
-			}
-#endif // 0
-
-			//打合時のエフェクト発生
-			m_efClang->On (center);
-			m_efSpark->On (center);
-
-			//SE
-			SOUND->Play (SE_Clang);
-
-			//ヒットストップ開始
-			m_tmrHitstop->Start ();
-			m_exeChara1->OnClang (0, CD_DRAW);
-			m_exeChara2->OnClang (0, CD_DRAW);
-		}
-
-		//------------------------------------------------------
-		//Efヒット処理
-		if (Efhit2P)
-		{
-			m_exeChara1->OnEfHit ();		//ヒット状態
-			m_exeChara2->OnDamaged (powerEf1p);		//くらい状態・ダメージ処理
-		}
-
-		if (Efhit1P)
-		{
-			m_exeChara2->OnEfHit ();		//ヒット状態
-			m_exeChara1->OnDamaged (powerEf2p);		//くらい状態・ダメージ処理
-		}
-
-		//メインヒット処理
-		if (hit2P)
-		{
-			int power1P = m_exeChara1->GetPower ();	//攻撃値
-			m_exeChara1->OnHit ();		//ヒット状態
-			m_exeChara2->OnDamaged (power1P);		//くらい状態・ダメージ処理
-		}
-
-		if (hit1P)
-		{
-			int power2P = m_exeChara2->GetPower ();	//攻撃値
-			m_exeChara2->OnHit ();		//ヒット状態
-			m_exeChara1->OnDamaged (power2P);		//くらい状態・ダメージ処理
-		}
-	}
-
 
 	//------------------------------------------------------
 	//枠表示切替 ExeCharaで呼ぶと1P2Pで２回呼ばれてしまう

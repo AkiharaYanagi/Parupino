@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace ScriptEditor
 {
@@ -15,9 +14,10 @@ namespace ScriptEditor
 			LoadTab ();			//タブ初期化
 		}
 
-		//==================================================================================
+
+		//---------------------------------------------------------------------
 		//	設定ファイル初期化
-		//==================================================================================
+		//---------------------------------------------------------------------
 		private void LoadSetting ()
 		{
 			//設定ファイル読込
@@ -25,27 +25,11 @@ namespace ScriptEditor
 			stgs = (Ctrl_Settings) XML_IO.Load ( stgs.GetType () );
 		}
 
-		//==================================================================================
-		//	サブフォーム関連
-		//==================================================================================
-		private void LoadSubForm ()
-		{
-			FormAction.Inst.FormMain = this;
-			Form_ScriptList.Inst.FormMain = this;
-			FormScript.Inst.FormMain = this;
-			FormImage.Inst.FormMain = this;
-			FormRoute.Inst.FormMain = this;
-//			FormRect.Inst.FormMain = this;
-			FormRect2.Inst.FormMain = this;
-			FormEfGnrt.Inst.FormMain = this;
-			FormRoute.Inst.FormMain = this;
-		}
 
-		//==================================================================================
+		//---------------------------------------------------------------------
 		//	タブ初期化関連
-		//==================================================================================
+		//---------------------------------------------------------------------
 
-		//--------------------------------------------------------------------------
 		//各タブの初期化
 		private void LoadTab ()
 		{
@@ -80,14 +64,8 @@ namespace ScriptEditor
 			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
 			cpd_Behavior.SetBehavior ();
 
-			//サブフォームの初期化
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
-			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
-			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
-//			FormRect.Inst.SetCtrl ( eb.EditScript );			//フォーム：レクト
-			FormRect2.Inst.SetEnvironment ( eb );			//フォーム：レクト
-			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
-			FormRoute.Inst.SetEnvironment ( eb );
+			//サブフォームにおける環境設定
+			SetEnvironmentSubForms ();
 		}
 
 		//タブ_エフェクトの初期化
@@ -114,7 +92,8 @@ namespace ScriptEditor
 			//サブフォームの初期化
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
 			FormImage.Inst.SetEnviron ( eg, dg );
-			FormRect.Inst.SetCtrl ( eg.EditScript );
+			//FormRect.Inst.SetCtrl ( eg.EditScript );
+			FormRect2.Inst.SetEnvironment ( eg );
 		}
 
 		//タブ_コマンドの初期化
@@ -139,7 +118,7 @@ namespace ScriptEditor
 
 
 
-		//既存データの読込
+		//プレデータテキストファイルから既存データの読込
 		public void LoadData ()
 		{
 			ctrl_SqcList_Act.LoadData ();

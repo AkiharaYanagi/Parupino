@@ -24,12 +24,7 @@ namespace ScriptEditor
 			tabControl1.SelectedIndex = ( int ) TAB_NAME.TAB_ACTION;
 
 			//サブフォームの初期表示
-//			FormAction.Inst.Show ();
-//			Form_ScriptList.Inst.Show ();
-//			FormScript.Inst.Show ();
-//			FormEfGnrt.Inst.Show ();
-//			FormRect.Inst.Show ();
-//			FormBranch.Inst.Show ();
+			ShowSubForms ();
 		}
 	}
 }

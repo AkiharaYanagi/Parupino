@@ -32,7 +32,7 @@ namespace ScriptEditor
 			//開始設定
 			Init ();
 
-			//データ読込
+			//プレデータテキストファイルから既存データの読込
 			LoadData ();
 
 			//表示
@@ -46,14 +46,15 @@ namespace ScriptEditor
 		{
 			//メインフォームを閉じるため、
 			//モーダルフォームで開いた子フォームの関連を切る
-			FormAction.Inst.Owner = null;
-			FormScript.Inst.Owner = null;
+			CloseSubForms ();
 		}
 
+		//==================================================================================
+		//	初回表示時に強制再描画
+		//==================================================================================
 		private void FormMain_Shown ( object sender, System.EventArgs e )
 		{
 			ctrl_SqcList_Act.Refresh ();
-
 		}
 	}
 }

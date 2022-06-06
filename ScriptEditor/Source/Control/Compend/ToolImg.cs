@@ -96,9 +96,14 @@ namespace ScriptEditor
 	//枠設定
 	public class ToolImg_Rect : ToolImg
 	{
-//		protected Ctrl_ListRect ctrlRect;
-		public  Rectangle rect { get; set; } = new Rectangle ();
+		private Ctrl_ListRect ctrlRect;
 		private Point startRectPt = new Point ( 0, 0 );
+
+		//対象の枠コントロールを設定する
+		public void SetCtrlListRect ( Ctrl_ListRect ctrl_lr )
+		{
+			ctrlRect = ctrl_lr;
+		}
 
 		public override void MouseDown ()
 		{
@@ -112,9 +117,8 @@ namespace ScriptEditor
 			{
 				Point dragPt = PointUt.PtSub ( Cursor.Position, startPt );
 				Rectangle r = new Rectangle ( startRectPt.X, startRectPt.Y, dragPt.X, dragPt.Y );
-//				ctrlRect.SetRect ( r );
 
-				//Ctrlが位置を保持しているため
+				//CtrlからRectを設定する
 				ctrlRect.SetRect ( r );
 			}
 		}
@@ -127,19 +131,19 @@ namespace ScriptEditor
 #if false
 	public class ToolImg_CRect : ToolImg_Rect
 	{
-		public ToolImg_CRect () { ctrlRect = FormRect.Inst.ctrl_ListCRect; }
+		public ToolImg_CRect () { ctrlRect = FormRect2.Inst.ctrl_ListCRect; }
 	}
 	public class ToolImg_HRect : ToolImg_Rect
 	{
-		public ToolImg_HRect() { ctrlRect = FormRect.Inst.ctrl_ListHRect; }
+		public ToolImg_HRect() { ctrlRect = FormRect2.Inst.ctrl_ListHRect; }
 	}
 	public class ToolImg_ARect : ToolImg_Rect
 	{
-		public ToolImg_ARect() { ctrlRect = FormRect.Inst.ctrl_ListARect; }
+		public ToolImg_ARect() { ctrlRect = FormRect2.Inst.ctrl_ListARect; }
 	}
 	public class ToolImg_ORect : ToolImg_Rect
 	{
-		public ToolImg_ORect() { ctrlRect = FormRect.Inst.ctrl_ListORect; }
+		public ToolImg_ORect() { ctrlRect = FormRect2.Inst.ctrl_ListORect; }
 	}
 #endif
 }

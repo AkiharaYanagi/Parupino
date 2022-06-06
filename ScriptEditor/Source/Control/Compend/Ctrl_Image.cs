@@ -33,16 +33,21 @@ namespace ScriptEditor
 
 		//ツール
 		private ToolImg_Main Tlimg_Main = new ToolImg_Main ();
-		private ToolImg_CRect Tlimg_CRect = new ToolImg_CRect ();
-		private ToolImg_HRect Tlimg_HRect = new ToolImg_HRect ();
-		private ToolImg_ARect Tlimg_ARect = new ToolImg_ARect ();
-		private ToolImg_ORect Tlimg_ORect = new ToolImg_ORect ();
+		private ToolImg_Rect Tlimg_CRect = new ToolImg_Rect ();
+		private ToolImg_Rect Tlimg_HRect = new ToolImg_Rect ();
+		private ToolImg_Rect Tlimg_ARect = new ToolImg_Rect ();
+		private ToolImg_Rect Tlimg_ORect = new ToolImg_Rect ();
 		private ToolImg_Ef Tlimg_Ef = new ToolImg_Ef ();
 
 		//==================================================================================
 		public Ctrl_Image ()
 		{
 			InitializeComponent ();
+
+			Tlimg_CRect.SetCtrlListRect ( FormRect2.Inst.Ctrl_AllRect.GetCtrlListCRect () );
+			Tlimg_HRect.SetCtrlListRect ( FormRect2.Inst.Ctrl_AllRect.GetCtrlListHRect () );
+			Tlimg_ARect.SetCtrlListRect ( FormRect2.Inst.Ctrl_AllRect.GetCtrlListARect () );
+			Tlimg_ORect.SetCtrlListRect ( FormRect2.Inst.Ctrl_AllRect.GetCtrlListORect () );
 
 			SelectingTool = Tlimg_Main;
 		}

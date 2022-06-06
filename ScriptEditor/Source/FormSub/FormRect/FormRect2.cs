@@ -12,7 +12,7 @@ namespace ScriptEditor
 		private FormRect2 ()
 		{
 			//枠リスト コントロール
-			this.Controls.Add ( ctrl_AllRect );
+			this.Controls.Add ( Ctrl_AllRect );
 
 			InitializeComponent ();
 			base.LoadObject ();
@@ -20,24 +20,24 @@ namespace ScriptEditor
 		//---------------------------------------------------------------------
 
 		//枠リスト コントロール
-		Ctrl_AllRect ctrl_AllRect = new Ctrl_AllRect ();
+		public Ctrl_AllRect Ctrl_AllRect { get; set; } = new Ctrl_AllRect ();
 
 		//環境設定
 		public void SetEnvironment ( EditCompend ec )
 		{
-			ctrl_AllRect.SetEnvironment ( ec );
+			Ctrl_AllRect.SetEnvironment ( ec );
 		}
 
 		//関連付け
 		public void Assosiate ( Script scp )
 		{
-			ctrl_AllRect.Assosiate ( scp );
+			Ctrl_AllRect.Assosiate ( scp );
 		}
 
 		//更新
 		public void UpdateData ()
 		{
-			ctrl_AllRect.UpdateData ();
+			Ctrl_AllRect.UpdateData ();
 		}
 
 	}

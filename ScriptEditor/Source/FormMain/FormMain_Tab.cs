@@ -102,7 +102,8 @@ namespace ScriptEditor
 			FormImage.Inst.Hide ();
 			FormAction.Inst.Hide ();
 			FormScript.Inst.Hide ();
-			FormRect.Inst.Hide ();
+			//FormRect.Inst.Hide ();
+			FormRect2.Inst.Hide ();
 			FormEfGnrt.Inst.Hide ();
 			FormRoute.Inst.Hide ();
 		}
