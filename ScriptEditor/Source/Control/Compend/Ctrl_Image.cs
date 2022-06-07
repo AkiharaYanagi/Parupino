@@ -155,7 +155,6 @@ namespace ScriptEditor
 			}
 			Script sc = EditCompend.SelectedScript;
 			paintImage.Paint ( sc );
-//			FormRect.Inst.UpdateData ();
 			FormRect2.Inst.UpdateData ();
 			FormScript.Inst.UpdateData ();
 		}

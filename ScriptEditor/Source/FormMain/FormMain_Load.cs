@@ -65,7 +65,7 @@ namespace ScriptEditor
 			cpd_Behavior.SetBehavior ();
 
 			//サブフォームにおける環境設定
-			SetEnvironmentSubForms ();
+			SetEnvironmentSubForms ( eb, db );
 		}
 
 		//タブ_エフェクトの初期化
@@ -92,7 +92,6 @@ namespace ScriptEditor
 			//サブフォームの初期化
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
 			FormImage.Inst.SetEnviron ( eg, dg );
-			//FormRect.Inst.SetCtrl ( eg.EditScript );
 			FormRect2.Inst.SetEnvironment ( eg );
 		}
 

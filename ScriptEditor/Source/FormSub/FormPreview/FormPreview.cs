@@ -33,9 +33,8 @@ namespace ScriptEditor
 		private FrameControl fcon = new FrameControl ();
 		private GameMain GameMain = new GameMain ();
 
-		public void SetEnviron ( FormMain fm, EditCompend ec )
+		public void SetEnviron ( EditCompend ec )
 		{
-			FormMain = fm;
 			EditCompend = ec;
 		}
 

@@ -19,8 +19,7 @@ namespace ScriptEditor
 			STS_TXT.Trace ( "Init." );
 
 			//タブの選択
-			tabAction_Selected ();
-
+			tabAction_Selected ();	//選択イベントは発生しないので手動で呼ぶ
 			tabControl1.SelectedIndex = ( int ) TAB_NAME.TAB_ACTION;
 
 			//サブフォームの初期表示

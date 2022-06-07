@@ -116,7 +116,6 @@ namespace ScriptEditor
 			//スクリプト
 			Script scp = EditCompend.SelectedScript;
 			FormScript.Inst.Assosiate ( scp, sqc );	//各値
-//			FormRect.Inst.Assosiate ( scp );	//枠
 			FormRect2.Inst.Assosiate ( scp );	//枠
 			FormEfGnrt.Inst.Assosiate ( scp );	//Ef生成
 			FormRoute.Inst.Assosiate ( scp );	//ルート

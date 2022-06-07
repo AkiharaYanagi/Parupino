@@ -77,6 +77,7 @@ namespace ScriptEditor
 			ctrl_SqcList_Act.ApplyData ();
 		}
 
+		//-----------------------------------------------------------------------
 		//[スクリプト(A)]タブ選択時
 		public void tabScript_A_Selected ()
 		{
@@ -90,24 +91,22 @@ namespace ScriptEditor
 			eb.SelectScript ( 0, 0 );
 
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
-			FormScript.Inst.SetEnvironment ( eb, db.DispScript );	//フォーム：スクリプト
-			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
-			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
+			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
+			SetEnvironmentSubForms ( eb, db );
+
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
+
+			//テスト
+			FormRect2.Inst.Show ();
 		}
 
 		//[スクリプト(A)]タブ離去時
 		public void tabScript_A_Deselected ()
 		{
-			FormImage.Inst.Hide ();
-			FormAction.Inst.Hide ();
-			FormScript.Inst.Hide ();
-			//FormRect.Inst.Hide ();
-			FormRect2.Inst.Hide ();
-			FormEfGnrt.Inst.Hide ();
-			FormRoute.Inst.Hide ();
+			HideSubForms ();
 		}
 
+		//-----------------------------------------------------------------------
 		//[エフェクト]タブ選択時
 		public void tabEffect_Selected ()
 		{
@@ -121,6 +120,7 @@ namespace ScriptEditor
 			ctrl_SqcList_Ef.ApplyData ();
 		}
 
+		//-----------------------------------------------------------------------
 		//[スクリプト(E)]
 		public void tabScript_E_Selected ()
 		{
@@ -142,9 +142,11 @@ namespace ScriptEditor
 		//[スクリプト(E)]
 		public void tabScript_E_Deselected ()
 		{
+			HideSubForms ();
 		}
 
 
+		//-----------------------------------------------------------------------
 		public void tabCommand_Selected ()
 		{
 		}

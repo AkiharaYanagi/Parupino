@@ -20,23 +20,20 @@ namespace ScriptEditor
 			FormRect2.Inst.FormMain = this;
 			FormEfGnrt.Inst.FormMain = this;
 			FormRoute.Inst.FormMain = this;
+			FormPreview.Inst.FormMain = this;
 		}
 
 		//==================================================================================
 		//	環境設定
 		//==================================================================================
-		private void SetEnvironmentSubForms ()
+		private void SetEnvironmentSubForms ( EditCompend ec, DispCompend dc )
 		{
-			//ビヘイビア(:コンペンド)の指定
-			EditBehavior eb = EditChara.Inst.EditBehavior;
-			DispBehavior db = DispChara.Inst.DispBehavior;
-
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
-			Form_ScriptList.Inst.SetEnvironment ( eb, chara );
-			FormImage.Inst.SetEnviron ( eb, db );			//フォーム：イメージ
-			FormRect2.Inst.SetEnvironment ( eb );			//フォーム：レクト
-			FormPreview.Inst.SetEnviron ( this, eb );	//フォーム：プレビュー
-			FormRoute.Inst.SetEnvironment ( eb );
+			//コンペンド(ビヘイビア、ガーニッシュ)の指定
+			Form_ScriptList.Inst.SetEnvironment ( ec, chara );
+			FormImage.Inst.SetEnviron ( ec, dc );			//フォーム：イメージ
+			FormRect2.Inst.SetEnvironment ( ec );			//フォーム：レクト
+			FormRoute.Inst.SetEnvironment ( ec );
+			FormPreview.Inst.SetEnviron ( ec );	//フォーム：プレビュー
 		}
 
 		//==================================================================================
@@ -60,8 +57,19 @@ namespace ScriptEditor
 //			Form_ScriptList.Inst.Show ();
 //			FormScript.Inst.Show ();
 //			FormEfGnrt.Inst.Show ();
-//			FormRect.Inst.Show ();
-//			FormBranch.Inst.Show ();
+//			FormRect2.Inst.Show ();
+//			FormRoute.Inst.Show ();
+		}
+
+		public void HideSubForms ()
+		{
+			FormAction.Inst.Hide ();
+			Form_ScriptList.Inst.Hide ();
+			FormScript.Inst.Hide ();
+			FormEfGnrt.Inst.Hide ();
+			FormRect2.Inst.Hide ();
+			FormRoute.Inst.Hide ();
+			FormPreview.Inst.Hide ();
 		}
 
 		//==================================================================================
