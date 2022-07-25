@@ -125,7 +125,7 @@ namespace GAME
 
 		SetpDispBase ( G_BASE_POS () );
 		SetPos ( center );
-		SetWait ( 60 );
+//		SetWait ( 60 );
 		SetFadeOut ( 60 );
 		SetValid ( true );
 		GrpEf::On ();

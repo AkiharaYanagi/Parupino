@@ -177,8 +177,8 @@ namespace GAME
 				m_grpPlayer2P.GetpMatrix()->SetPos ( VEC2 ( GRP_PLAYER2_X, GRP_PLAYER2_Y ) );
 			}
 #endif // 0
-			m_gaugeFrameLife->SetRect (		WINDOW_WIDTH - GAUGE_WIDTH - LIFE_GAUGE_X-2,		LIFE_GAUGE_Y-2,	 GAUGE_WIDTH+4, GAUGE_HEIGHT+4 );
-			m_gaugeLife->SetRect (			WINDOW_WIDTH - GAUGE_WIDTH - LIFE_GAUGE_X,		LIFE_GAUGE_Y,	 GAUGE_WIDTH, GAUGE_HEIGHT );
+			m_gaugeFrameLife->SetRect ( GAME_WINDOW_WIDTH - GAUGE_WIDTH - LIFE_GAUGE_X-2,		LIFE_GAUGE_Y-2,	 GAUGE_WIDTH+4, GAUGE_HEIGHT+4 );
+			m_gaugeLife->SetRect ( GAME_WINDOW_WIDTH - GAUGE_WIDTH - LIFE_GAUGE_X,		LIFE_GAUGE_Y,	 GAUGE_WIDTH, GAUGE_HEIGHT );
 			m_gaugeDecreaseLife->SetRect (	0, 0, 0, 0 );
 		}
 
@@ -265,7 +265,7 @@ namespace GAME
 
 		const float lx = LIFE_GAUGE_X + GAUGE_WIDTH;
 
-		const float lx2p = WINDOW_WIDTH - LIFE_GAUGE_X - GAUGE_WIDTH;
+		const float lx2p = GAME_WINDOW_WIDTH - LIFE_GAUGE_X - GAUGE_WIDTH;
 
 		if ( wl < 0 ) { wl = 0; }
 

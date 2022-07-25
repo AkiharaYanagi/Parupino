@@ -21,7 +21,7 @@ namespace GAME
 		G_Ftg::Create ();
 
 		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
-		AddpTask ( GRPLST_NEW () );
+		AddpTask ( GRPLST_MAKE () );
 
 		//背景
 		m_bg = make_shared < GrpAcv > ();
@@ -118,7 +118,7 @@ namespace GAME
 			if ( ! m_demo_GetReady->GetValid () )
 			{
 				m_demo_Attack->SetFadeOut ( 60 );
-				m_demo_Attack->SetWait ( 60 );
+//				m_demo_Attack->SetWait ( 60 );
 				m_demo_Attack->Init ();
 				m_mutualChara->Wait ( false );
 				m_mutualChara->SetMain ();
@@ -249,7 +249,7 @@ namespace GAME
 
 	void Fighting::StartGrpDemo ( P_GrpDemo pGrp, UINT time )
 	{
-		pGrp->SetWait ( time );
+//		pGrp->SetWait ( time );
 		pGrp->Init ();
 	}
 

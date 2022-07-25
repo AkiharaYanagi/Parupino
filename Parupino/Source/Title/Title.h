@@ -29,7 +29,7 @@ namespace GAME
 
 		TitleEf		m_titleEf;
 
-		P_Fade		m_fade;
+//		P_Fade		m_fade;
 		UINT		m_fadeOutTimer;
 
 		UINT		m_timer;

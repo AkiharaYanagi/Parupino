@@ -39,7 +39,7 @@ namespace GAME
 
 		//位置
 		float averagex = (pos1p.x + pos2p.x) * 0.5f;	//中心
-		float window_center = WINDOW_WIDTH * 0.5f;
+		float window_center = GAME_WINDOW_WIDTH * 0.5f;
 		float gw = GAME_WIDTH;
 
 		//画面端表示処理
@@ -52,7 +52,7 @@ namespace GAME
 		//右寄
 		else if ( averagex > GAME_WIDTH - window_center )
 		{
-			posMutualBase = WINDOW_WIDTH - GAME_WIDTH;
+			posMutualBase = GAME_WINDOW_WIDTH - GAME_WIDTH;
 		}
 		//中央
 		else

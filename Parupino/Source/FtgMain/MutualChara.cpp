@@ -135,7 +135,7 @@ namespace GAME
 		//‹——£§ŒÀ(‰æ–Ê’[“¯Žm)
 		float p1x = m_exeChara1->GetPos ().x;
 		float p2x = m_exeChara2->GetPos ().x;
-		if ( p2x - p1x > WINDOW_WIDTH - FIELD_EDGE * 2 )
+		if ( p2x - p1x > GAME_WINDOW_WIDTH - FIELD_EDGE * 2 )
 		{
 			m_exeChara1->BackPtX ();	//ŒÝ‚¢‚ÉˆÊ’u‚ð–ß‚·
 			m_exeChara2->BackPtX ();

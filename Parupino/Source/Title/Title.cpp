@@ -24,7 +24,7 @@ namespace GAME
 		, m_demoTimer ( 0 )
 	{
 		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
-		AddpTask ( GRPLST_NEW () );
+		AddpTask ( GRPLST_MAKE () );
 
 		//各グラフィックの初期化
 		m_bg = make_shared < GrpAcv > ();
@@ -60,9 +60,11 @@ namespace GAME
 		m_demo_mode->SetValid ( false );
 		GRPLST_INSERT ( m_demo_mode );
 
+#if 0
 		m_fade = make_shared < Fade > ();
 		m_fade->SetDarkIn ( 15 );
 		GRPLST_INSERT ( m_fade );
+#endif // 0
 
 		//乱数の種
 		::srand ( timeGetTime () );
@@ -225,7 +227,7 @@ namespace GAME
 			//共通パラメータに値を保存してシーンの移行
 			Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_1 ) );
 
-			m_fade->SetDarkOut ( 15 );
+//			m_fade->SetDarkOut ( 15 );
 			m_fadeOutTimer = 17;
 		}
 
@@ -234,7 +236,7 @@ namespace GAME
 			//共通パラメータに値を保存してシーンの移行
 			Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_2 ) );
 
-			m_fade->SetDarkOut ( 15 );
+//			m_fade->SetDarkOut ( 15 );
 			m_fadeOutTimer = 17;
 		}
 
