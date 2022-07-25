@@ -128,7 +128,7 @@ namespace ScriptEditor
 		//---------------------------------------------------------------------
 
 		public EditCompend EditCompend { get; set; } = null;
-		public Chara Chara { get; set; } = null;
+		public Chara Chara { get; set; } = null;	//ファイル書出のためにCharaToDocを用いる
 		public void SetEnvironment ( EditCompend ec, Chara ch )
 		{
 			EditCompend = ec;

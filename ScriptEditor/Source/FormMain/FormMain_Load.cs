@@ -66,6 +66,9 @@ namespace ScriptEditor
 
 			//サブフォームにおける環境設定
 			SetEnvironmentSubForms ( eb, db );
+
+			//アクションのみ
+			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
 		}
 
 		//タブ_エフェクトの初期化
@@ -86,7 +89,7 @@ namespace ScriptEditor
 
 			dg.SetCtrl ( eg, cpd_Garnish );	//表示
 
-			cpd_Garnish.SetEnviron ( eg, dg );	//ビヘイビア(:コンペンド)初期化
+			cpd_Garnish.SetEnviron ( eg, dg );	//ガーニッシュ(:コンペンド)初期化
 			cpd_Garnish.SetGarnish ();
 	
 			//サブフォームの初期化
