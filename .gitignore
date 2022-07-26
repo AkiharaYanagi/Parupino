@@ -1,5 +1,6 @@
 #user added
 
+!ScriptEditor/bin/Debug/Predata/
 !testChara.dat
 *.dat
 *.xml
