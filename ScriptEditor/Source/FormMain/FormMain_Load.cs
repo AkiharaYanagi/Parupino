@@ -95,7 +95,7 @@ namespace ScriptEditor
 			//サブフォームの初期化
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
 			FormImage.Inst.SetEnviron ( eg, dg );
-			FormRect2.Inst.SetEnvironment ( eg );
+			FormRect2.Inst.SetEnvironment ( eg, dg );
 		}
 
 		//タブ_コマンドの初期化

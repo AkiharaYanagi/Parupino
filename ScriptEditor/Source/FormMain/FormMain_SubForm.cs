@@ -31,7 +31,7 @@ namespace ScriptEditor
 			//コンペンド(ビヘイビア、ガーニッシュ)の指定
 			Form_ScriptList.Inst.SetEnvironment ( ec, chara );
 			FormImage.Inst.SetEnviron ( ec, dc );			//フォーム：イメージ
-			FormRect2.Inst.SetEnvironment ( ec );			//フォーム：レクト
+			FormRect2.Inst.SetEnvironment ( ec, dc );			//フォーム：レクト
 			FormRoute.Inst.SetEnvironment ( ec );
 			FormPreview.Inst.SetEnviron ( ec );	//フォーム：プレビュー
 		}
