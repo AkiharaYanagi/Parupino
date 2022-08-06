@@ -38,7 +38,6 @@
 			this.Lbl_Y = new System.Windows.Forms.Label();
 			this.Lbl_Z = new System.Windows.Forms.Label();
 			this.Tbn_Z = new ScriptEditor.TB_Number();
-			this.tbN_Command1 = new ScriptEditor.TBN_Command();
 			this.Tbn_Y = new ScriptEditor.TB_Number();
 			this.Tbn_X = new ScriptEditor.TB_Number();
 			this.cB_SequenceList1 = new ScriptEditor.CB_SequenceList();
@@ -143,16 +142,6 @@
 			this.Tbn_Z.TabIndex = 10;
 			this.Tbn_Z.Text = "0";
 			// 
-			// tbN_Command1
-			// 
-			this.tbN_Command1.dispCommand = null;
-			this.tbN_Command1.editCommand = null;
-			this.tbN_Command1.Location = new System.Drawing.Point(453, 58);
-			this.tbN_Command1.Name = "tbN_Command1";
-			this.tbN_Command1.SetFunc = null;
-			this.tbN_Command1.Size = new System.Drawing.Size(100, 19);
-			this.tbN_Command1.TabIndex = 9;
-			// 
 			// Tbn_Y
 			// 
 			this.Tbn_Y.Location = new System.Drawing.Point(219, 25);
@@ -208,7 +197,6 @@
 			this.Controls.Add(this.Lbl_Y);
 			this.Controls.Add(this.Lbl_X);
 			this.Controls.Add(this.Tbn_Z);
-			this.Controls.Add(this.tbN_Command1);
 			this.Controls.Add(this.Tbn_Y);
 			this.Controls.Add(this.Tbn_X);
 			this.Controls.Add(this.Cb_Sync);
@@ -236,7 +224,6 @@
 		private System.Windows.Forms.CheckBox Cb_Sync;
 		private TB_Number Tbn_X;
 		private TB_Number Tbn_Y;
-		private TBN_Command tbN_Command1;
 		private TB_Number Tbn_Z;
 		private System.Windows.Forms.Label Lbl_X;
 		private System.Windows.Forms.Label Lbl_Y;
