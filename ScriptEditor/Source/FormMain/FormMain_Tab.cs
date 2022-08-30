@@ -32,8 +32,8 @@ namespace ScriptEditor
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Selected (); break;
 				case ( int ) TAB_NAME.TAB_SCRIPT_E: tabScript_E_Selected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Selected (); break;
-				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
-				case ( int ) TAB_NAME.TAB_ROUTE: tabChara_Selected (); break;
+				case ( int ) TAB_NAME.TAB_BRANCH: tabBranch_Selected (); break;
+				case ( int ) TAB_NAME.TAB_ROUTE: tabRoute_Selected (); break;
 				default: Debug.Assert ( false, "タブの選択失敗" ); break;
 			}
 		}
@@ -49,13 +49,13 @@ namespace ScriptEditor
 				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_SCRIPT_E: tabScript_E_Deselected (); break;
 				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Deselected (); break;
-				case ( int ) TAB_NAME.TAB_BRANCH: tabChara_Selected (); break;
-				case ( int ) TAB_NAME.TAB_ROUTE: tabChara_Selected (); break;
+				case ( int ) TAB_NAME.TAB_BRANCH: tabBranch_Deselected (); break;
+				case ( int ) TAB_NAME.TAB_ROUTE: tabRoute_Deselected (); break;
 				default: Debug.Assert ( false, "タブの離去失敗" ); break;
 			}
 		}
 
-		//タブ閉止時
+		//フォーム閉止時
 		private void Form1_FormClosing ( object sender, FormClosingEventArgs e )
 		{
 		}
@@ -154,10 +154,20 @@ namespace ScriptEditor
 		{
 		}
 
-		public void tabChara_Selected ()
+		//-----------------------------------------------------------------------
+		public void tabBranch_Selected ()
+		{
+			ctrl_Branch1.Init ();
+		}
+		public void tabBranch_Deselected ()
 		{
 		}
-		public void tabChara_Deselected ()
+
+		//-----------------------------------------------------------------------
+		public void tabRoute_Selected ()
+		{
+		}
+		public void tabRoute_Deselected ()
 		{
 		}
 	}
