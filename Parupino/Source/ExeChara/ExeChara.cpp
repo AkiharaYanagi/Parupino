@@ -1020,7 +1020,8 @@ namespace GAME
 
 		//ˆÊ’ux‚ª“¯‚¶ê‡‚ÍŽ‘±
 		VEC2 otherPos = m_pOther.lock ()->GetPos ();
-		if ( m_ptChara.x == otherPos.x ) { return; }
+		if ( m_ptChara.x == otherPos.x )
+		{ return; }
 
 		//ŒÝ‚¢‚ÌˆÊ’u‚Å•ûŒü‚ðŒˆ’è
 		m_dirRight = (m_ptChara.x < otherPos.x);

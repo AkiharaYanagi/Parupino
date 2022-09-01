@@ -52,7 +52,7 @@ namespace GAME
 		//‰EŠñ
 		else if ( averagex > GAME_WIDTH - window_center )
 		{
-			posMutualBase = GAME_WINDOW_WIDTH - GAME_WIDTH;
+			posMutualBase = (float)GAME_WINDOW_WIDTH - GAME_WIDTH;
 		}
 		//’†‰›
 		else
