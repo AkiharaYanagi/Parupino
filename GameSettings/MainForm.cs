@@ -28,6 +28,9 @@ namespace GameSettings
 
 			//コンポーネント初期化
 			InitializeComponent ();
+
+
+			tabControl1.Controls[2].Controls.Add ( new ScriptEditor.AppSettings () ); 
 		}
 
 	}

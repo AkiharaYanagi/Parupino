@@ -417,6 +417,14 @@ namespace ScriptEditor
 			pictureBox1.Invalidate ();
 		}
 
+		//----------------------------------------------------------------------------------
+		//	全体
+		//----------------------------------------------------------------------------------
+		//同一化
+		private void Btn_AllPaste_Click ( object sender, System.EventArgs e )
+		{
+			EditCompend.EditScriptInSequence ( s=>s.Copy ( EditCompend.SelectedScript ) );
+		}
 
 		//----------------------------------------------------------------------------------
 		//	選択
@@ -489,5 +497,6 @@ namespace ScriptEditor
 			FormRect2.Inst.Assosiate ( scp );
 			FormEfGnrt.Inst.Assosiate ( scp );
 		}
+
 	}
 }

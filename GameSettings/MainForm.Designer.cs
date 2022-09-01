@@ -88,6 +88,7 @@
 			this.radioButton12 = new System.Windows.Forms.RadioButton();
 			this.radioButton6 = new System.Windows.Forms.RadioButton();
 			this.radioButton13 = new System.Windows.Forms.RadioButton();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -102,6 +103,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -789,6 +791,15 @@
 			this.radioButton13.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			this.radioButton13.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.radioButton1_PreviewKeyDown);
 			// 
+			// tabPage3
+			// 
+			this.tabPage3.Location = new System.Drawing.Point(4, 22);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(377, 329);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "画面設定";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -872,5 +883,6 @@
 		private System.Windows.Forms.CheckBox CH_Demo;
 		private System.Windows.Forms.ComboBox cB_Chara2p;
 		private System.Windows.Forms.CheckBox CH_StartBattle;
+		private System.Windows.Forms.TabPage tabPage3;
 	}
 }
