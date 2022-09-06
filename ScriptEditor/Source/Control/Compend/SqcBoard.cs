@@ -424,6 +424,7 @@ namespace ScriptEditor
 		private void Btn_AllPaste_Click ( object sender, System.EventArgs e )
 		{
 			EditCompend.EditScriptInSequence ( s=>s.Copy ( EditCompend.SelectedScript ) );
+			DispCompend.Disp ();
 		}
 
 		//----------------------------------------------------------------------------------

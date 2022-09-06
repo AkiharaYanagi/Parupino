@@ -43,6 +43,14 @@ namespace ScriptEditor
 			//追加時
 			EL_Route.Listbox_Add = ()=>
 			{
+				//対象の先頭を指定
+				if ( 0 < BD_Route.Count() )
+				{
+					Route rut = BD_Route.Get ( 0 );
+					EL_Route.Get ().Name = rut.Name;
+					EL_Route.ResetItems ();
+				}
+
 			};
 			//選択変更時
 			EL_Route.SelectedIndexChanged = ()=>
@@ -94,7 +102,7 @@ namespace ScriptEditor
 			EL_Route.SetData ( scp.BD_RutName );
 		}
 
-		//選択
+		//コンボボックスで選択
 		private void Cb_Route_SelectionChangeCommitted ( object sender, EventArgs e )
 		{
 			Route rut = (Route)Cb_Route.SelectedItem;

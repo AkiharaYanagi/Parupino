@@ -40,8 +40,8 @@ namespace GAME
 
 		m_gaugeLife = make_shared < PrmRect > ();
 		m_gaugeLife->SetAllColor ( _CLR ( 0xffa0f0d0 ) );
-		m_gaugeLife->SetColor ( 0, _CLR ( 0xffd0f040 ) );
-		m_gaugeLife->SetColor ( 2, _CLR ( 0xfff0f040 ) );
+		m_gaugeLife->SetColorN ( 0, _CLR ( 0xffd0f040 ) );
+		m_gaugeLife->SetColorN ( 2, _CLR ( 0xfff0f040 ) );
 		GRPLST_INSERT ( m_gaugeLife );
 
 		//---------------------------------------------------------------
