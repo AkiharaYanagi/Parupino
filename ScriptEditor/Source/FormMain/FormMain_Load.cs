@@ -23,6 +23,7 @@ namespace ScriptEditor
 			//設定ファイル読込
 			XML_IO.SettingFilename = stgs.SettingFilename;
 			stgs = (Ctrl_Settings) XML_IO.Load ( stgs.GetType () );
+			SetFormText ( stgs.LastFilename );
 		}
 
 

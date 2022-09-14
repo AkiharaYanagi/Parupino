@@ -455,8 +455,8 @@ namespace GAME
 		}
 	}
 
-	//自分・攻撃 -> 相手・くらい
 	//ヒット発生(攻撃成立側)
+	//自分・攻撃 -> 相手・くらい
 	void ExeChara::OnHit ()
 	{
 		m_hitEst = true;		//攻撃成立フラグ
@@ -465,18 +465,18 @@ namespace GAME
 		//条件分岐
 
 		//投げ・自分
-		UINT indexAction = TransitAction_Hit ();
-		if ( NO_COMPLETE != indexAction )
+		UINT indexAction_i = TransitAction_Condition ( BRC_THR_I );
+		if ( NO_COMPLETE != indexAction_i )
 		{
 			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( indexAction );
+			P_Action pact = m_pChara->GetpAction ( indexAction_i );
 			P_Script pscr = pact->GetpScript ( 0 );
 
-			m_actionID = indexAction;			//遷移
+			m_actionID = indexAction_i;			//遷移
 		}
 
 		//投げ・相手
-		UINT indexAction_e = TransitAction_Hit_Enemy ();
+		UINT indexAction_e = TransitAction_Condition ( BRC_THR_E );
 		if ( NO_COMPLETE != indexAction_e )
 		{
 			//遷移先チェック
@@ -484,6 +484,30 @@ namespace GAME
 			P_Script pscr = pact->GetpScript ( 0 );
 
 			m_pOther.lock ()->TransitAction ( indexAction_e );			//遷移
+			m_pOther.lock ()->m_ForcedChange = true;
+		}
+
+		//ヒット・自分
+		UINT indexAction_Hit_m = TransitAction_Condition ( BRC_HIT_I );
+		if ( NO_COMPLETE != indexAction_Hit_m )
+		{
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( indexAction_Hit_m );
+			P_Script pscr = pact->GetpScript ( 0 );
+
+			m_actionID = indexAction_Hit_m;			//遷移
+			TransitAction ( m_actionID );
+		}
+
+		//ヒット・相手
+		UINT indexAction_Hit_e = TransitAction_Condition ( BRC_HIT_E );
+		if ( NO_COMPLETE != indexAction_Hit_e )
+		{
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( indexAction_Hit_e );
+			P_Script pscr = pact->GetpScript ( 0 );
+
+			m_pOther.lock ()->TransitAction ( indexAction_Hit_e );			//遷移
 			m_pOther.lock ()->m_ForcedChange = true;
 		}
 		//-----------------------------------------------------
@@ -645,8 +669,8 @@ namespace GAME
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 	}
 
-	//アクション移項(条件:ヒット時、対象:自分)
-	UINT ExeChara::TransitAction_Hit ()
+	//アクション移行(条件)
+	UINT ExeChara::TransitAction_Condition ( BRANCH_CONDITION BRC_CND )
 	{
 		//キャラの持つルート,ブランチ,コマンドの参照
 		const VP_Route vpRoute = m_pChara->GetvpRoute ();
@@ -655,39 +679,15 @@ namespace GAME
 		//スクリプトの持つルートリスト
 		for ( UINT indexRut : m_pScript->GetvRouteID () )
 		{
-			const V_UINT vBrcID = vpRoute[indexRut]->GetvIDBranch ();
-	
-			//対象のブランチリスト
-			for ( UINT id : vBrcID )
-			{
-				//投げ成立(自分)
-				if ( BRC_THR_I != vpBranch[id]->GetCondition () ) { continue; }
-
-				return vpBranch[id]->GetIndexSequence ();
-			}
-		}
-		return NO_COMPLETE;
-	}
-
-	//アクション移項(条件:ヒット時、対象:相手)
-	UINT ExeChara::TransitAction_Hit_Enemy ()
-	{
-		//キャラの持つルート,ブランチ,コマンドの参照
-		const VP_Route vpRoute = m_pChara->GetvpRoute ();
-		const VP_Branch vpBranch = m_pChara->GetvpBranch ();
-
-		//スクリプトの持つルートリスト
-		for ( UINT indexRut : m_pScript->GetvRouteID () )
-		{
-			const V_UINT vBrcID = vpRoute[indexRut]->GetvIDBranch ();
+			const V_UINT vBrcID = vpRoute [ indexRut ]->GetvIDBranch ();
 
 			//対象のブランチリスト
 			for ( UINT id : vBrcID )
 			{
-				//投げ成立(相手)
-				if ( BRC_THR_E != vpBranch[id]->GetCondition () ) { continue; }
+				//条件成立
+				if ( BRC_CND != vpBranch [ id ]->GetCondition () ) { continue; }
 
-				return vpBranch[id]->GetIndexSequence ();
+				return vpBranch [ id ]->GetIndexSequence ();
 			}
 		}
 		return NO_COMPLETE;
