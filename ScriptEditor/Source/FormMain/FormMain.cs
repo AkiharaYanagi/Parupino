@@ -32,8 +32,8 @@ namespace ScriptEditor
 			//開始設定
 			Init ();
 
-			//プレデータテキストファイルから既存データの読込
-			LoadData ();
+			//キャラ初期化環境の選択
+			EstablishChara ();
 
 			//表示
 			Disp ();

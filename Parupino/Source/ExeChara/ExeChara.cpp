@@ -637,34 +637,48 @@ namespace GAME
 
 			//各種状態の終了
 			EndAction ();
-		}
 
+			//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
+			//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
+			m_pAction = m_pChara->GetpAction ( m_actionID );
+			m_pScript = m_pAction->GetpScript ( m_frame );
+		}
 		//---------------------------------------------------
-		//遷移時に各種状態の終了
-		if ( 0 == m_frame )
-		{
-			//各種状態の終了
-			EndAction ();
-		}
 
-		//0から開始、Move()とDraw()で同一スクリプトを処理する
-		//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
-		m_pAction = m_pChara->GetpAction ( m_actionID );
-		m_pScript = m_pAction->GetpScript ( m_frame );
-
-		//現在アクションが最終フレームならば
-		if ( m_pAction->IsEndScript ( m_frame ) )
-		{
-			//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
-			m_actionID = m_pAction->GetNextID ();
-			m_frame = 0;
-			//今回のフレーム中はm_pActionとm_pScriptを用い、
-			//これ以降はm_actionIDとm_frameを用いない
-		}
+		//コマンドで非遷移 かつ
 		else
 		{
-			++m_frame;
+			//現在アクションが最終フレーム ならば
+			if ( m_pAction->IsEndScript ( m_frame ) )
+			{
+				int i = 0;
+			}
+			
+			if ( m_pAction->IsOverScript ( m_frame ) )
+			{
+				//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
+				m_actionID = m_pAction->GetNextID ();
+				m_frame = 0;
+				//今回のフレーム中はm_pActionとm_pScriptを用い、
+				//これ以降はm_actionIDとm_frameを用いない
+
+				//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
+				//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
+				m_pAction = m_pChara->GetpAction ( m_actionID );
+				m_pScript = m_pAction->GetpScript ( m_frame );
+			}
+			else
+			{
+				//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
+				//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
+				m_pAction = m_pChara->GetpAction ( m_actionID );
+				m_pScript = m_pAction->GetpScript ( m_frame );
+
+				//通常処理：スクリプトを１つ進める
+				++ m_frame;
+			}
 		}
+		//---------------------------------------------------
 
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 	}

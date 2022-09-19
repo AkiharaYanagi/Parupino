@@ -49,7 +49,10 @@ namespace GAME
 		bool IsNextScript ( UINT index ) const { return ( index < m_pvpScript->size() - 1 ); }
 
 		//最終スクリプトかどうか
-		bool IsEndScript ( UINT index ) const { return ( index == m_pvpScript->size() - 1 ); }
+		bool IsEndScript ( UINT index ) const { return ( index == m_pvpScript->size () - 1 ); }
+
+		//オーバースクリプトかどうか
+		bool IsOverScript ( UINT index ) const { return ( index > m_pvpScript->size () - 1 ); }
 
 		//次シークエンスID
 		UINT GetNextID () const { return m_next; }
