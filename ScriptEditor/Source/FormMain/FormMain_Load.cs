@@ -120,14 +120,5 @@ namespace ScriptEditor
 
 
 
-		//プレデータテキストファイルから既存データの読込
-		public void LoadData ()
-		{
-			ctrl_SqcList_Act.LoadData ();
-			ctrl_SqcList_Ef.LoadData ();
-			ctrl_CmdList1.LoadData ();
-			ctrl_Branch1.LoadData ();
-			ctrl_Route1.LoadData ();
-		}
 	}
 }

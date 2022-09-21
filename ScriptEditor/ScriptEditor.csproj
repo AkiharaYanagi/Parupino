@@ -101,6 +101,9 @@
       <DependentUpon>Ctrl_Compend.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Control\Compend\PaintImage.cs" />
+    <Compile Include="Source\FormMain\FormMain_Ctrls.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Source\FormMain\FormMain_SubForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -24,7 +24,10 @@ namespace ScriptEditor
 		private void 上書保存ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
 			//上書保存
-			SaveChara saveChara = new SaveChara ( stgs.LastFilename, chara );
+			SaveChara saveChara = new SaveChara ();
+			saveChara.Do ( stgs.LastFilename, chara );
+
+			CtrlSaveOverwrite ();
 
 			//編集中ファイル名更新(非保存表示を消去)
 			SetFormText ( stgs.LastFilename );
@@ -43,7 +46,8 @@ namespace ScriptEditor
 			//ダイアログ開始
 			if ( saveFileDialog1.ShowDialog () == DialogResult.OK )
 			{
-				SaveChara saveChara = new SaveChara ( saveFileDialog1.FileName, chara );
+				SaveChara saveChara = new SaveChara ();
+				saveChara.Do ( saveFileDialog1.FileName, chara );
 
 				//編集中ファイル名更新(非保存表示を消去)
 				stgs.LastFilename = saveFileDialog1.FileName;
@@ -58,7 +62,8 @@ namespace ScriptEditor
 
 		private void 基準保存TToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
-			SaveChara saveChara = new SaveChara ( "testChara.dat", chara );
+			SaveChara saveChara = new SaveChara ();
+			saveChara.Do ( "testChara.dat", chara );
 			STS_TXT.Trace ( "基準保存" );
 		}
 
