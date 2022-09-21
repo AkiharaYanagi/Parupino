@@ -6,32 +6,37 @@ namespace ScriptEditor
 	public partial class FormMain : Form
 	{
 		//==================================================================================
-		//	キャラ読込
+		//	キャラ初期設定(の選択)
 		//==================================================================================
-		private void InitChara ()
+		private void EstablishChara ()
 		{
+			//-------------------------------
+			//@info 下記いずれかを環境で選ぶ
+			//-------------------------------
+
+#if false
 			//キャラ：空データ
 			SetCharaData ( chara );
 
 			//キャラ：テストデータ
-//			TestCharaData ();
+			TestCharaData ();
 
-			//キャラ：既存データ自動読込
-//			CharaLoad ();
+			//個別データから作成
+			LoadPreData ();
+#endif
+
+			//自動で既存のキャラデータを読込
+			_LoadChara ( stgs.LastFilepath );
 		}
 
-
-		//既存のキャラデータ読込
-		private void CharaLoad ()
+		//プレデータテキストファイルから既存データの読込
+		public void LoadPreData ()
 		{
-			//読込
-			LoadChara loadChara = new LoadChara ( stgs.LastFilename, chara );
-
-			//保存先
-			SetFormText ( stgs.LastFilename );
-
-			//キャラデータの適用
-			SetCharaData ( chara );
+			ctrl_SqcList_Act.LoadData ();
+			ctrl_SqcList_Ef.LoadData ();
+			ctrl_CmdList1.LoadData ();
+			ctrl_Branch1.LoadData ();
+			ctrl_Route1.LoadData ();
 		}
 
 		//==================================================================================

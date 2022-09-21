@@ -204,7 +204,7 @@
 			// 
 			// Btn_AllPaste
 			// 
-			this.Btn_AllPaste.Location = new System.Drawing.Point(6, 16);
+			this.Btn_AllPaste.Location = new System.Drawing.Point(58, 16);
 			this.Btn_AllPaste.Name = "Btn_AllPaste";
 			this.Btn_AllPaste.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.Btn_AllPaste.Size = new System.Drawing.Size(50, 27);

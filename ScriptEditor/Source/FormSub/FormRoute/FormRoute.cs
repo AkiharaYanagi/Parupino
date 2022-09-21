@@ -47,7 +47,8 @@ namespace ScriptEditor
 				if ( 0 < BD_Route.Count() )
 				{
 					Route rut = BD_Route.Get ( 0 );
-					EL_Route.Get ().Name = rut.Name;
+					//追加しているので必ず１個以上存在する
+					EL_Route.BD_T.Get(0).Name = rut.Name;
 					EL_Route.ResetItems ();
 				}
 

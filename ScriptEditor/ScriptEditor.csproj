@@ -101,7 +101,11 @@
       <DependentUpon>Ctrl_Compend.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Control\Compend\PaintImage.cs" />
+<<<<<<< HEAD
     <Compile Include="Source\FormMain\FormMain_Ctrls.cs">
+=======
+    <Compile Include="Source\FormMain\FormMain_IO.cs">
+>>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormMain\FormMain_SubForm.cs">
@@ -130,7 +134,7 @@
     <Compile Include="Source\FormMain\FormMain_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormMain\FormMain_InitChara.cs">
+    <Compile Include="Source\FormMain\FormMain_EstablishChara.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormMain\FormMain_Load.cs">
