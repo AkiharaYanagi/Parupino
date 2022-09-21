@@ -11,9 +11,6 @@ namespace ScriptEditor
 
 		private void Init ()
 		{
-			//キャラデータ設定
-			InitChara ();
-
 			//ステータスバーテキストを登録
 			STS_TXT.Tssl = 	toolStripStatusLabel1;
 			STS_TXT.Trace ( "Init." );

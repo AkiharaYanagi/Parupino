@@ -31,8 +31,13 @@ namespace ScriptEditor
 			//開始設定
 			Init ();
 
+<<<<<<< HEAD
 			//プレデータテキストファイルから既存データの読込
 			LoadCtrlData ();
+=======
+			//キャラ初期化環境の選択
+			EstablishChara ();
+>>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
 
 			//表示
 			Disp ();

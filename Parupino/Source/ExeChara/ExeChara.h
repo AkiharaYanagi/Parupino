@@ -297,8 +297,7 @@ namespace GAME
 
 		void TransitAction ();	// アクション移項
 		void TransitAction ( UINT actionID );		//アクションの移項
-		UINT TransitAction_Hit ();			//アクション移項(条件:ヒット時、対象:自分)
-		UINT TransitAction_Hit_Enemy ();	//アクション移項(条件:ヒット時、対象:相手)
+		UINT TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件)
 
 		void CalcPos ();		//位置計算
 

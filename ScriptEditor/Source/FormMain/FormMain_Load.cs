@@ -1,4 +1,6 @@
 ﻿using System.Windows.Forms;
+using System.IO;
+
 
 namespace ScriptEditor
 {
@@ -14,17 +16,16 @@ namespace ScriptEditor
 			LoadTab ();			//タブ初期化
 		}
 
-
 		//---------------------------------------------------------------------
 		//	設定ファイル初期化
 		//---------------------------------------------------------------------
 		private void LoadSetting ()
 		{
 			//設定ファイル読込
-			XML_IO.SettingFilename = stgs.SettingFilename;
+			XML_IO.SettingFilepath = Directory.GetCurrentDirectory () + "\\setting.xml";
 			stgs = (Ctrl_Settings) XML_IO.Load ( stgs.GetType () );
+			SetFormText ( stgs.LastFilepath );
 		}
-
 
 		//---------------------------------------------------------------------
 		//	タブ初期化関連
@@ -116,9 +117,12 @@ namespace ScriptEditor
 		{
 			ctrl_Route1.SetEnvironment ( stgs );
 		}
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
 	}
 }
