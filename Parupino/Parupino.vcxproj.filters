@@ -192,6 +192,9 @@
     <ClInclude Include="Source\FtgMain\Decision.h">
       <Filter>FtgMain</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ExeChara\BtlParam.h">
+      <Filter>ExeChara</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -316,6 +319,9 @@
     </ClCompile>
     <ClCompile Include="Source\FtgMain\Decision.cpp">
       <Filter>FtgMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ExeChara\BtlParam.cpp">
+      <Filter>ExeChara</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

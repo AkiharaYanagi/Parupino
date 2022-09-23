@@ -512,6 +512,7 @@ using LCF = LoadCharaFunc;
 #endif // 0
 	}
 
+#if 0
 	//基本状態アクションID
 	void LoadCharaFunc::_ElemToBasicActionID ( const P_Element pElem, Chara & ch )
 	{
@@ -524,6 +525,7 @@ using LCF = LoadCharaFunc;
 			ch.SetBsAction ( static_cast < BASIC_ACTION > ( i ), n );
 		}
 	}
+#endif // 0
 
 	//------------------------------------------------------------
 	//イメージアーカイブ読込

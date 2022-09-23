@@ -16,7 +16,6 @@ namespace GAME
 {
 	//コンストラクタ
 	ExeChara::ExeChara ( PLAYER_ID m_playerID )
-//		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_TEST )
 		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_RAKUNO )
 		, m_playerMode ( MODE_PLAYER ), m_oprtEf ()
 		, m_actionID ( 0 ), m_frame ( 0 )
@@ -84,13 +83,11 @@ namespace GAME
 	//読込
 	void ExeChara::Load ()
 	{
-		//スクリプトファイルからキャラのロード
-		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定が必要
+		//名前からスクリプトファイルを指定してキャラのロード
+		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
 		tstring name (_T ("chara.dat"));
-
 #if 0
-		//tstring&のためassignで指定する
 		switch ( m_name )
 		{
 		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
@@ -100,22 +97,11 @@ namespace GAME
 #endif // 0
 		LoadChara loadChara ( name, *m_pChara );
 
-		//基本状態アクションIDを手動で設定する
-#if 0
-		m_pChara->SetBsAction ( BA_STAND, 0 );
-		m_pChara->SetBsAction ( BA_POISED, 25 );
-		m_pChara->SetBsAction ( BA_CLANG, 29 );
-		m_pChara->SetBsAction ( BA_AVOID, 30 );
-		m_pChara->SetBsAction ( BA_DOTTY, 31 );
-		m_pChara->SetBsAction ( BA_DAMAGED, 32 );
-		m_pChara->SetBsAction ( BA_DOWN, 39 );
-		m_pChara->SetBsAction ( BA_WIN, 41 );
-#endif // 0
-
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
 		m_dispChara.Load ();
 
+		//キャラ入力初期化
 		m_dispInput.Load ();
 
 		//エフェクト生成ベクタの生成
@@ -177,7 +163,7 @@ namespace GAME
 	//解放
 	void ExeChara::Rele ()
 	{
-		m_pChara.reset ();
+//		m_pChara.reset ();
 		TASK_VEC::Rele ();
 	}
 
@@ -309,12 +295,14 @@ namespace GAME
 	//打合発生
 	void ExeChara::OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision )
 	{
+#if 0
 //		if ( CD_LOSE == clangDecision )
 		{
 			//状態の変更
 			m_actionID = m_pChara->GetBsAction ( BA_CLANG );
 			m_frame = 0;
 		}
+#endif // 0
 		m_clang = true;		//打合状態
 //		m_lurch = nLurch;		//のけぞり時間の設定
 		m_tmrHitstop->Start ();		//ヒットストップの設定
@@ -553,6 +541,7 @@ namespace GAME
 		//勝利待機状態のとき
 		if ( CHST_WIN_WAIT == m_charaState )
 		{
+#if 0
 			//地上ニュートラルなら
 			if ( IsBasicAction ( BA_STAND ) )
 			{
@@ -562,6 +551,7 @@ namespace GAME
 				m_tmrEnd->Start ();
 				m_charaState = CHST_WIN;
 			}
+#endif // 0
 		}
 
 		//勝利状態のとき
@@ -828,7 +818,7 @@ namespace GAME
 			if ( 0 >= m_life )
 			{
 				//ダウン状態に強制変更
-				m_actionID = m_pChara->GetBsAction ( BA_DOWN );
+				//m_actionID = m_pChara->GetBsAction ( BA_DOWN );
 				TransitAction ( m_actionID );
 				m_tmrDown->Start ();
 				m_charaState = CHST_DOWN;

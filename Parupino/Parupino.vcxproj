@@ -172,6 +172,7 @@
     <ClInclude Include="Source\CharaData\Sequence.h" />
     <ClInclude Include="Source\CharaSele\CharaSele.h" />
     <ClInclude Include="Source\CharaSele\CharaSeleConst.h" />
+    <ClInclude Include="Source\ExeChara\BtlParam.h" />
     <ClInclude Include="Source\ExeChara\CharaRect.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispChara.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispInput.h" />
@@ -221,6 +222,7 @@
     <ClCompile Include="Source\CharaData\Script.cpp" />
     <ClCompile Include="Source\CharaData\Sequence.cpp" />
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
+    <ClCompile Include="Source\ExeChara\BtlParam.cpp" />
     <ClCompile Include="Source\ExeChara\CharaRect.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispChara.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispInput.cpp" />

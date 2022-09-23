@@ -24,6 +24,7 @@
 #include "Input/CPUInput.h"
 #include "Effect/OperateEffect.h"
 #include "CharaRect.h"
+#include "BtlParam.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -57,7 +58,7 @@ namespace GAME
 
 		//------------------------------------------------
 		//スクリプト実行
-		UINT			m_actionID;		//実効現在アクションID (実際に効果のある)
+		UINT			m_actionID;		//実効現在アクションID
 		P_Action		m_pAction;		//実効アクションポインタ
 		UINT			m_frame;		//実効内部フレーム(スクリプトID)
 		P_Script		m_pScript;		//実効スクリプトポインタ
@@ -70,6 +71,10 @@ namespace GAME
 		//枠
 		P_CharaRect		m_charaRect;	//枠
 		bool			m_bDispRect;	//枠表示
+
+		//------------------------------------------------
+		//パラメータ
+		BtlParam		m_btlParam;		//バトルパラメータ	
 
 		//------------------------------------------------
 		//パラメータ
@@ -104,21 +109,15 @@ namespace GAME
 //		UINT	m_lurch;		//のけぞり(キャンセル不可)時間追加
 //		UINT	m_lurchTimer;
 
-		//------------------------------------------------
-		//ゲーム進行状態
-//		bool	m_start;		//開始
-//		bool	m_end;			//終了
-//		bool	m_endWait;		//終了待機
-		CHARA_STATE		m_charaState;
-
 		bool	m_wait;			//入力を一時停止
 		bool	m_stop;			//入力、スクリプト処理を一時停止
-
 		P_Timer	m_stopTimer;
-
-
 		UINT	m_blackOut;		//暗転
 		UINT	m_scpStop;		//スクリプトからの停止
+
+		//------------------------------------------------
+		//ゲーム進行状態
+		CHARA_STATE		m_charaState;
 
 	public:
 		ExeChara ( PLAYER_ID m_playerID );
@@ -269,13 +268,13 @@ namespace GAME
 			if ( m_life <= 0 )
 			{
 				m_charaState = CHST_DOWN_END;
-				m_actionID = m_pChara->GetBsAction ( BA_DOWN );
+//				m_actionID = m_pChara->GetBsAction ( BA_DOWN );
 				TransitAction ( m_actionID );
 			}
 			else
 			{
 				m_charaState = CHST_WIN_END;
-				m_actionID = m_pChara->GetBsAction ( BA_WIN );
+//				m_actionID = m_pChara->GetBsAction ( BA_WIN );
 				TransitAction ( m_actionID );
 			}
 		}
@@ -337,12 +336,14 @@ namespace GAME
 		bool IsDotty ()		{ return m_pAction->GetCategory ()  == AC_DOTTY; }
 		bool IsDamaged ()	{ return m_pAction->GetCategory ()  == AC_DAMAGED; }
 
+#if 0
 		//現在のアクションが基本アクションかどうか
 		bool IsBasicAction ( BASIC_ACTION ba ) 
 		{
 			UINT id = m_pChara->GetBsAction ( ba ); 
 			return id == m_actionID;
 		}
+#endif // 0
 
 		//------------------------------------------------
 #if 0
