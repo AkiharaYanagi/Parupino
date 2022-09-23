@@ -19,19 +19,7 @@ namespace ScriptEditor
 
 		private void 上書保存ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
-<<<<<<< HEAD
-			//上書保存
-			SaveChara saveChara = new SaveChara ();
-			saveChara.Do ( stgs.LastFilename, chara );
-
-			CtrlSaveOverwrite ();
-
-			//編集中ファイル名更新(非保存表示を消去)
-			SetFormText ( stgs.LastFilename );
-
-=======
 			_SaveChara ( stgs.LastFilepath );
->>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
 			STS_TXT.Trace ( "上書保存" );
 		}
 
@@ -48,16 +36,7 @@ namespace ScriptEditor
 			//ダイアログ開始
 			if ( saveFileDialog1.ShowDialog () == DialogResult.OK )
 			{
-<<<<<<< HEAD
-				SaveChara saveChara = new SaveChara ();
-				saveChara.Do ( saveFileDialog1.FileName, chara );
-
-				//編集中ファイル名更新(非保存表示を消去)
-				stgs.LastFilename = saveFileDialog1.FileName;
-				SetFormText ( stgs.LastFilename );
-=======
 				_SaveChara ( saveFileDialog1.FileName );
->>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
 
 				//パスの保存
 				stgs.LastFilepath = saveFileDialog1.FileName;
