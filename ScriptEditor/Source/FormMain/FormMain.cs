@@ -13,7 +13,11 @@ namespace ScriptEditor
 		//	メンバ変数
 		//==================================================================================
 		private Chara chara = new Chara ();		//編集対象キャラクタ
+<<<<<<< HEAD
 		private Ctrl_Settings stgs = new Ctrl_Settings ();	//設定
+=======
+		private Ctrl_Settings stgs = new Ctrl_Settings ();	//設定ファイル
+>>>>>>> origin/master
 
 		//==================================================================================
 		//	コンストラクタ
