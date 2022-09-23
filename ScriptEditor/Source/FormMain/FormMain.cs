@@ -13,6 +13,7 @@ namespace ScriptEditor
 		//	メンバ変数
 		//==================================================================================
 		private Chara chara = new Chara ();		//編集対象キャラクタ
+		private Ctrl_Settings stgs = new Ctrl_Settings ();	//設定
 
 		//==================================================================================
 		//	コンストラクタ
@@ -31,13 +32,8 @@ namespace ScriptEditor
 			//開始設定
 			Init ();
 
-<<<<<<< HEAD
-			//プレデータテキストファイルから既存データの読込
-			LoadCtrlData ();
-=======
 			//キャラ初期化環境の選択
 			EstablishChara ();
->>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
 
 			//表示
 			Disp ();

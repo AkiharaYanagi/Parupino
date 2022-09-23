@@ -117,12 +117,5 @@ namespace ScriptEditor
 		{
 			ctrl_Route1.SetEnvironment ( stgs );
 		}
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 6eb90c5221393b3b859870b2a900cc77a833ba38
 	}
 }
