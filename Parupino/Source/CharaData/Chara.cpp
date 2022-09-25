@@ -55,7 +55,7 @@ namespace GAME
 		//’è”‚Ì‚İ
 		//Ä“Ç‚ÍChara‚²‚Æ
 	}
-
+#if 0
 	UINT Chara::GetActionID ( tstring name ) const
 	{
 		UINT index = 0;
@@ -70,6 +70,7 @@ namespace GAME
 		}
 		return 0;
 	}
+#endif // 0
 
 }	//namespace GAME
 

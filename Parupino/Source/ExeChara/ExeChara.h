@@ -74,8 +74,9 @@ namespace GAME
 
 		//------------------------------------------------
 		//パラメータ
-		BtlParam		m_btlParam;		//バトルパラメータ	
+		BtlParam		m_btlPrm;		//バトルパラメータ	
 
+#if 0
 		//------------------------------------------------
 		//パラメータ
 		VEC2	m_ptChara;		//キャラ位置
@@ -114,12 +115,14 @@ namespace GAME
 		P_Timer	m_stopTimer;
 		UINT	m_blackOut;		//暗転
 		UINT	m_scpStop;		//スクリプトからの停止
+#endif // 0
 
 		//------------------------------------------------
 		//ゲーム進行状態
 		CHARA_STATE		m_charaState;
 
 	public:
+		ExeChara () = delete;
 		ExeChara ( PLAYER_ID m_playerID );
 		ExeChara ( const ExeChara & rhs ) = delete;
 		~ExeChara ();
@@ -127,7 +130,6 @@ namespace GAME
 		void ParamInit ( P_Param pParam );
 		void Load ();
 		void Init ();
-		void Rele ();
 		void Reset ();
 		void Resume ();	//復旧時
 
@@ -145,10 +147,13 @@ namespace GAME
 		//相手を設定
 		void SetpOther ( WP_ExeChara p ) { m_pOther = p; /*m_cpuInput.SetpExeCharaOther ( p );*/ }
 
-		VEC2 GetPos () const { return m_ptChara; }		//位置を取得
-		bool GetDirRight () const { return m_dirRight; }	//向きを取得
-		void SetDirRight ( bool b ) { if ( IsStand () ) { m_dirRight = b; } }		//立ち状態で向きを設定
+		//------------------------------------------------------------
+		//パラメータ
+		VEC2 GetPos () const { return m_btlPrm.GetPos (); }		//位置を取得
+		bool GetDirRight () const { return m_btlPrm.GetDirRight (); }	//向きを取得
+		void SetDirRight ( bool b ) { m_btlPrm.SetDirRight ( b ); }		//立ち状態で向きを設定
 
+#if 0
 		//アクション終了処理
 		void EndAction ();
 
@@ -157,6 +162,7 @@ namespace GAME
 		void BackPtX () { m_ptChara.x = m_tempPt.x; }
 		void BackMoveX ();
 		void LookOther ();	//相手の方向を向く
+#endif // 0
 
 		//---------------------------------------------
 		//ゲーム進行状態
@@ -174,7 +180,7 @@ namespace GAME
 		bool IsMain () const;
 
 		//ライフ０チェック
-		bool IsZeroLife () const { return (0 >= m_life); }
+		bool IsZeroLife () const { return ( 0 >= m_btlPrm.GetLife () ); }
 
 #if 0
 		bool GetStart () const { return m_start; }		//開始状態取得
@@ -215,8 +221,8 @@ namespace GAME
 		}
 
 		//打合
-		bool GetClang () const { return m_clang; }
-		void SetClang ( bool b ) { m_clang = b; }
+		bool GetClang () const { return m_btlPrm.GetClang (); }
+		void SetClang ( bool b ) { m_btl m_clang = b; }
 
 		//引数：打合停止時間
 		void OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision );

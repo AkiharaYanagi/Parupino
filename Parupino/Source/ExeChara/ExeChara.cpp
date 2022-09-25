@@ -19,21 +19,24 @@ namespace GAME
 		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_RAKUNO )
 		, m_playerMode ( MODE_PLAYER ), m_oprtEf ()
 		, m_actionID ( 0 ), m_frame ( 0 )
+		, m_bDispRect ( true )
+		, m_charaState ( CHST_START )
+#if 0
 		, m_dirRight ( true ), m_ptChara ( 0, 0 ), m_tempPt ( 0, 0 ), m_inertial ( 0, 0 )
 		, m_vel ( 0, 0 ), m_acc ( 0, 0 ), m_g ( 0 ), m_vg ( 0 )
-		, m_charaState ( CHST_START )
 		, m_wait ( true ), m_stop ( false ), m_FirstEf ( false ), m_FirstSE ( false )
 		, m_life ( 0 ), m_balance ( 0 ), m_damage ( 0 ), m_power ( 0 )
 		, m_hitEst ( false ), m_clang ( false ), m_transit ( false )
 		, m_ForcedChange ( false )
-		, m_bDispRect ( true )
 //		, m_lurch ( 0 ), m_lurchTimer ( 0 )
 		, m_blackOut ( 0 ), m_scpStop ( 0 )
+#endif // 0
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
 		m_charaRect = make_shared < CharaRect > ();		//枠
 
+#if 0
 		//タイマーの初期化
 		//ヒットストップ
 		m_tmrHitstop = make_shared < Timer > ();
@@ -53,6 +56,7 @@ namespace GAME
 		//ストップタイマ
 		m_stopTimer = make_shared < Timer > ();
 		AddpTask ( m_stopTimer );
+#endif // 0
 	}
 
 	//デストラクタ
@@ -120,37 +124,14 @@ namespace GAME
 		m_frame = 0;
 		m_pScript = m_pAction->GetpScript ( m_frame );
 
-		//初期位置
-		if ( PLAYER_ID_1 == m_playerID )
-		{
-			m_ptChara = VEC2 ( PLAYER_1_BASE_X, PLAYER_1_BASE_Y );
-			m_dirRight = true;
-		}
-		else if ( PLAYER_ID_2 == m_playerID )
-		{
-			m_ptChara = VEC2 ( PLAYER_2_BASE_X, PLAYER_2_BASE_Y );
-			m_dirRight = false;
-		}
-
-		//ゲームパラメータ
-		m_life = LIFE_MAX;
-		m_damage = 0;
-		m_power = 0;
-		m_hitEst = false;
-		m_FirstEf = false;
-		m_FirstSE = false;
-		m_charaState = CHST_START;
-
-		EndAction ();
-
-		//タイマー
-		m_tmrEnd->Reset ();
-		m_tmrHitstop->Reset ();
+		//バトルパラメータ
+		m_btlPrm.InitPlayerID ( m_playerID );
+		m_btlPrm.Init ();
 
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
-		m_dispChara.UpdateMainImage ( m_pScript, m_ptChara, m_dirRight );
+		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 		m_dispChara.InitDisp ( m_playerID );
 
 		m_dispInput.InitDisp ( m_playerID );
@@ -158,16 +139,6 @@ namespace GAME
 		TASK_VEC::Init ();
 	}
 
-
-	//------------------------
-	//解放
-	void ExeChara::Rele ()
-	{
-//		m_pChara.reset ();
-		TASK_VEC::Rele ();
-	}
-
-	//------------------------
 	//再設定
 	void ExeChara::Reset ()
 	{
@@ -188,10 +159,10 @@ namespace GAME
 		m_pScript = m_pAction->GetpScript ( m_frame );
 
 		//メイン イメージ
-		m_dispChara.UpdateMainImage ( m_pScript, m_ptChara, m_dirRight );
+		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 
 		//エフェクト イメージ
-		m_oprtEf.PostScriptMove ( m_ptChara, m_dirRight );
+		m_oprtEf.PostScriptMove ( GetPos (), GetDirRight () );
 	}
 
 	//==========================================================
@@ -211,18 +182,18 @@ namespace GAME
 		//	入力など
 		AlwaysMove ();
 
-//		if ( m_stop ) { return; }		//一時停止のときは何もしない
-		if ( m_stopTimer->IsActive () )
-		{ return; }		//一時停止のときは何もしない
+		//一時停止のときは何もしない
+		if ( m_btlPrm.GetTmr_Stop()->IsActive () )
+		{ return; }
 
 		// ヒットストップ時は入力の保存と表示関連の処理をして終了
 		//Activeとの兼ね合いでタイマーのラストは有効　0～N-1まで
-		if ( ! m_tmrHitstop->IsLast () )
+		if ( ! m_btlPrm.GetTmr_HitStop()->IsLast () )
 		{
-			if ( m_tmrHitstop->IsActive () ) { return; }
+			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
 		}
 
-		// アクション移項
+		// アクション移項z
 		TransitAction ();
 
 		// 位置計算
@@ -241,10 +212,12 @@ namespace GAME
 	void ExeChara::ScriptRectMove ()
 	{
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
-		if ( m_stop ) { return; }		//一時停止のときは何もしない
+
+		//一時停止のときは何もしない
+		if ( m_btlPrm.GetStop () ) { return; }
 
 		//相殺枠設定
-		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_dirRight, m_ptChara );
+		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 
 		//攻撃枠設定
 		// ヒット時に後の攻撃枠を一時停止(多段防止)
@@ -255,14 +228,14 @@ namespace GAME
 		}
 		else
 		{
-			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_dirRight, m_ptChara );
+			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 		}
 
 		//攻撃力設定
-		m_power = m_pScript->GetPower ();
+//		m_power = m_pScript->GetPower ();
 
 		//当り枠設定
-		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_dirRight, m_ptChara );
+		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 	}
 
 
@@ -276,7 +249,8 @@ namespace GAME
 	void ExeChara::PostScriptMove ()
 	{
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
-		if ( m_stop ) { return; }		//一時停止のときは何もしない
+		//一時停止のときは何もしない
+		if ( m_btlPrm.GetStop () ) { return; }
 
 		//ライフ判定
 		CheckLife ();
@@ -305,7 +279,7 @@ namespace GAME
 #endif // 0
 		m_clang = true;		//打合状態
 //		m_lurch = nLurch;		//のけぞり時間の設定
-		m_tmrHitstop->Start ();		//ヒットストップの設定
+		m_btlPrm.GetTmr_HitStop->Start ();		//ヒットストップの設定
 	}
 
 
@@ -525,14 +499,15 @@ namespace GAME
 	void ExeChara::AlwaysMove ()
 	{
 		//ダメージ分のライフ表示減少
-		if ( 0 < m_damage ) { --m_damage; }
+//		if ( 0 < m_damage ) { --m_damage; }
+		if ( 0 < m_btlPrm.GetDamage () ) { --m_damage; }
 
 		//---------------------------------------------------
 		//デモカウント
 		//ダウン状態のとき
 		if ( CHST_DOWN == m_charaState )
 		{
-			if ( ! m_tmrDown->IsActive () )
+			if ( ! m_btlPrm.GetTmr_Down()->IsActive () )
 			{
 				m_charaState = CHST_DOWN_END;
 			}
@@ -557,17 +532,18 @@ namespace GAME
 		//勝利状態のとき
 		if ( CHST_WIN == m_charaState )
 		{
-			if ( ! m_tmrEnd->IsActive () )
+			//if ( ! m_tmrEnd->IsActive () )
+			if ( ! m_btlPrm.GetTmr_End () ->IsActive () )
 			{
 				m_charaState = CHST_WIN_END;
 			}
 		}
 		//---------------------------------------------------
 		//SE
-		if ( m_FirstSE )
+		if ( m_btlPrm.GetFirstEf () )
 		{
 			SOUND->Play ( SE_Hit );
-			m_FirstSE = false;
+			m_btlPrm.SetFirstEf ( F );
 		}
 
 		//---------------------------------------------------
@@ -576,7 +552,7 @@ namespace GAME
 		if ( CanInput () )
 		{
 			//入力の保存
-			m_pCharaInput->Update ( m_dirRight );
+			m_pCharaInput->Update ( GetDirRight () );
 		}
 		//入力更新
 		m_dispInput.UpdateInput ( m_pCharaInput );
@@ -626,7 +602,7 @@ namespace GAME
 			m_actionID = transitID;			//遷移
 
 			//各種状態の終了
-			EndAction ();
+			m_btlPrm.EndAction ();
 
 			//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
 			//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
@@ -749,7 +725,7 @@ namespace GAME
 				//エフェクトの取得
 				P_Effect pEf = m_pChara->GetpEffect ( index );
 				//リストに追加
-				m_oprtEf.AddListEffect ( pEf, pEfGnrt, m_ptChara, m_dirRight );
+				m_oprtEf.AddListEffect ( pEf, pEfGnrt, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 			}
 			else //再利用なら
 			{
@@ -772,10 +748,10 @@ namespace GAME
 	void ExeChara::EffectMove ()
 	{
 		//エフェクト生成と動作
-		if ( m_FirstEf )	//ヒット後の初回のみは動作
+		if ( m_btlPrm.GetFirstEf () )	//ヒット後の初回のみは動作
 		{
 			EffectGenerate ();
-			m_FirstEf = false;
+			m_btlPrm.SetFirstEf ( F );
 		}
 		else
 		{
@@ -996,41 +972,6 @@ namespace GAME
 		if ( m_ptChara.x > FIELD_WIDTH - FIELD_EDGE ) { m_ptChara.x = FIELD_WIDTH - FIELD_EDGE; }
 	}
 
-	void ExeChara::BackMoveX ()
-	{
-		//向きによらず、相手から離れる方向
-		VEC2 otherPos = m_pOther.lock ()->GetPos ();
-		bool dirBack = true;
-
-		//同値の場合は1P2Pで選別
-		if ( m_ptChara.x == otherPos.x )
-		{
-			dirBack = (m_playerID == PLAYER_ID_1);
-		}
-		else
-		{
-			//互いの位置で補正方向を決定
-			dirBack = (m_ptChara.x < otherPos.x);
-		}
-
-		m_ptChara.x += dirBack ? -1.f : 1.f;
-	}
-
-	void ExeChara::LookOther ()
-	{
-		//空中は持続
-		if ( IsJump () )
-		{ return; }
-
-		//位置xが同じ場合は持続
-		VEC2 otherPos = m_pOther.lock ()->GetPos ();
-		if ( m_ptChara.x == otherPos.x )
-		{ return; }
-
-		//互いの位置で方向を決定
-		m_dirRight = (m_ptChara.x < otherPos.x);
-	}
-
 	//-------------------------------------------------------------------------------------------------
 	//	枠設定
 	//-------------------------------------------------------------------------------------------------
@@ -1040,19 +981,15 @@ namespace GAME
 		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_dirRight, m_ptChara );
 	}
 
-
+#if 0
 	//------------------------------------------------
 	//アクション終了処理
 	void ExeChara::EndAction ()
 	{
-		m_frame = 0;				//フレーム初期化
-		m_clang = false;
-		m_hitEst = false;
-		m_FirstEf = false;
-		m_ForcedChange = false;
-//		m_lurch = 0;
-//		m_lurchTimer = 0;
+		m_frame = 0;		//フレーム初期化
+		m_btlParam.EndAction ();
 	}
+#endif // 0
 
 	void ExeChara::SetEndWait ()
 	{
