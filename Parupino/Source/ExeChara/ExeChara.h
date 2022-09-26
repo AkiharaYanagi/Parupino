@@ -160,9 +160,11 @@ namespace GAME
 		//ぶつかり後、位置の修正
 		void BackPt () { m_ptChara = m_tempPt; }
 		void BackPtX () { m_ptChara.x = m_tempPt.x; }
+#endif // 0
+		void BackPt () { m_btlPrm.BackPt (); }
+		void BackPtX () { m_btlPrm.BackPtX (); }
 		void BackMoveX ();
 		void LookOther ();	//相手の方向を向く
-#endif // 0
 
 		//---------------------------------------------
 		//ゲーム進行状態
@@ -205,48 +207,48 @@ namespace GAME
 
 		//各値取得
 		CHARA_NAME GetCharaName () const { return m_name; }
-		int GetPower () const { return m_power; }		//攻撃値取得
-		int GetLife () const { return m_life; }			//ライフ取得
+		int GetPower () const { return m_btlPrm.GetPower (); }		//攻撃値取得
+		int GetLife () const { return m_btlPrm.GetLife (); }		//ライフ取得
 		ACTION_POSTURE GetPosture () const { return m_pAction->GetPosture (); }
 
 		//---------------------------------------------
 		//外部からの状態変更
 
 		//一時停止
-		void SetWait ( bool b ) { m_wait = b; }	//入力を停止
-		void SetStop ( bool b ) { m_stop = b; }	//描画更新を停止
+		void SetWait ( bool b ) { m_btlPrm.SetWait ( b ); }	//入力を停止
+		void SetStop ( bool b ) { m_btlPrm.SetStop ( b ); }	//描画更新を停止
 		void SetStopTimer ( UINT i ) {
-			m_stopTimer->SetTargetTime ( i ); 
-			m_stopTimer->Start ();
+			m_btlPrm.GetTmr_Stop ()->SetTargetTime ( i );
+			m_btlPrm.GetTmr_Stop ()->Start ();
 		}
 
 		//打合
 		bool GetClang () const { return m_btlPrm.GetClang (); }
-		void SetClang ( bool b ) { m_btl m_clang = b; }
+		void SetClang ( bool b ) { m_btlPrm.SetClang ( b ); }
 
 		//引数：打合停止時間
 		void OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision );
 
 		//くらい発生
-		bool IsDamaged () const { return m_damaged; }
-		void SetDamaged ( bool b ) { m_damaged = b; }
+		bool IsDamaged () const { return m_btlPrm.GetDamaged (); }
+		void SetDamaged ( bool b ) { m_btlPrm.SetDamaged ( b ); }
 		void OnDamaged ( int damage );
 
 		//ヒット発生
-		bool IsHit () const { return m_hitEst; }
-		void SetHit ( bool b ) { m_hitEst = b; }
+		bool IsHit () const { return m_btlPrm.GetHitEst (); }
+		void SetHit ( bool b ) { m_btlPrm.SetHitEst ( b ); }
 		void OnHit ();
 		void OnEfHit ();
 
 		//-------------------------------------------------
 		//スクリプトからの変更
 		//暗転
-		UINT GetBlackOut () const { return m_blackOut; }
-		void SetBlackOut ( UINT i ) { m_blackOut = i; }
+		UINT GetBlackOut () const { return m_btlPrm.GetBlackOut (); }
+		void SetBlackOut ( UINT i ) { m_btlPrm.SetBlackOut ( i ); }
 
 		//停止
-		UINT GetScpStop () const { return m_scpStop; }
-		void SetScpStop ( UINT i ) { m_scpStop = i; }
+		UINT GetScpStop () const { return m_btlPrm.GetScpStop (); }
+		void SetScpStop ( UINT i ) { m_btlPrm.SetScpStop ( i ); }
 
 		//-------------------------------------------------
 
@@ -271,7 +273,7 @@ namespace GAME
 		//強制終了状態
 		void ForcedEnd ()
 		{
-			if ( m_life <= 0 )
+			if ( m_btlPrm.GetLife () <= 0 )
 			{
 				m_charaState = CHST_DOWN_END;
 //				m_actionID = m_pChara->GetBsAction ( BA_DOWN );
@@ -304,7 +306,8 @@ namespace GAME
 		void TransitAction ( UINT actionID );		//アクションの移項
 		UINT TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件)
 
-		void CalcPos ();		//位置計算
+		//ぶつかり後、位置の修正
+		void Landing ();	//着地
 
 		//PostScriptMove
 		void CheckLife ();			//ライフ判定

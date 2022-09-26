@@ -193,11 +193,14 @@ namespace GAME
 			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
 		}
 
-		// アクション移項z
+		// アクション移項
 		TransitAction ();
 
 		// 位置計算
-		CalcPos ();
+		m_btlPrm.CalcPos ( m_pScript );
+
+		// 着地
+		Landing ();
 
 		//接触枠設定
 		AdjustCRect ();
@@ -222,7 +225,7 @@ namespace GAME
 		//攻撃枠設定
 		// ヒット時に後の攻撃枠を一時停止(多段防止)
 		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
-		if ( m_hitEst || m_clang )
+		if ( m_btlPrm.GetHitEst () || m_btlPrm.GetClang () )
 		{
 			m_charaRect->ResetARect ();
 		}
@@ -277,9 +280,9 @@ namespace GAME
 			m_frame = 0;
 		}
 #endif // 0
-		m_clang = true;		//打合状態
+		m_btlPrm.SetClang ( true );		//打合状態
 //		m_lurch = nLurch;		//のけぞり時間の設定
-		m_btlPrm.GetTmr_HitStop->Start ();		//ヒットストップの設定
+		m_btlPrm.GetTmr_HitStop()->Start ();		//ヒットストップの設定
 	}
 
 
@@ -387,19 +390,22 @@ namespace GAME
 #endif // 0
 
 		//くらい時 ( ガードをしていない ) && ( 強制変更されていない )
-		if ( hit && ! m_ForcedChange )
+		if ( hit && ! m_btlPrm.GetForcedChange () )
 		{
+			int lf = m_btlPrm.GetLife ();
 			//ダメージをライフによって補正(根性値)
-			if ( m_life < LIFE_MAX * 0.5f )
+			if ( lf < LIFE_MAX * 0.5f )
 			{
-				damage = (int)(damage * (0.001f * (0.5f * LIFE_MAX + m_life)));
+				damage = (int)(damage * (0.001f * (0.5f * LIFE_MAX + lf )));
 			}
 
 			//ダメージ処理
-			if ( m_life < damage ) { m_damage = m_life; }	//ライフ以上は表示制限
-			else { m_damage = damage; }		//表示用
-			m_life -= damage;
+			if ( lf < damage ) { m_btlPrm.SetDamage ( lf ); }	//ライフ以上は表示制限
+			else { m_btlPrm.SetDamage ( damage ); }		//表示用
 
+			m_btlPrm.SetLife ( lf - damage );
+
+#if 0
 			//状態の変更
 			tstring act;
 			switch ( m_pAction->GetPosture () )
@@ -409,10 +415,12 @@ namespace GAME
 			case AP_JUMP:	act.assign ( _T ( "J_DamagedL" ) ); break;
 			}
 			TransitAction ( m_pChara->GetActionID ( act ) );
+#endif // 0
 
-			m_tmrHitstop->Start ();			//ヒットストップの設定
-			m_FirstEf = true;			//初回のみエフェクト発生
-			m_FirstSE = true;			//初回のみSE発生
+			//その他　効果
+			m_btlPrm.GetTmr_HitStop ()->Start ();			//ヒットストップの設定
+			m_btlPrm.SetFirstEf ( true );			//初回のみエフェクト発生
+			m_btlPrm.SetFirstSE ( true );			//初回のみSE発生
 
 		}
 	}
@@ -421,7 +429,7 @@ namespace GAME
 	//自分・攻撃 -> 相手・くらい
 	void ExeChara::OnHit ()
 	{
-		m_hitEst = true;		//攻撃成立フラグ
+		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
 
 		//-----------------------------------------------------
 		//条件分岐
@@ -446,7 +454,7 @@ namespace GAME
 			P_Script pscr = pact->GetpScript ( 0 );
 
 			m_pOther.lock ()->TransitAction ( indexAction_e );			//遷移
-			m_pOther.lock ()->m_ForcedChange = true;
+			m_pOther.lock ()->m_btlPrm.SetForcedChange ( true );
 		}
 
 		//ヒット・自分
@@ -470,17 +478,17 @@ namespace GAME
 			P_Script pscr = pact->GetpScript ( 0 );
 
 			m_pOther.lock ()->TransitAction ( indexAction_Hit_e );			//遷移
-			m_pOther.lock ()->m_ForcedChange = true;
+			m_pOther.lock ()->m_btlPrm.SetForcedChange ( true );
 		}
 		//-----------------------------------------------------
 
-		m_tmrHitstop->Start ();		//ヒットストップの設定
+		m_btlPrm.GetTmr_HitStop()->Start ();		//ヒットストップの設定
 	}
 
 	//エフェクトヒット発生(攻撃成立側)
 	void ExeChara::OnEfHit ()
 	{
-		m_hitEst = true;		//攻撃成立フラグ
+		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
 //		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
 	}
 
@@ -499,8 +507,8 @@ namespace GAME
 	void ExeChara::AlwaysMove ()
 	{
 		//ダメージ分のライフ表示減少
-//		if ( 0 < m_damage ) { --m_damage; }
-		if ( 0 < m_btlPrm.GetDamage () ) { --m_damage; }
+		int dmg = m_btlPrm.GetDamage ();
+		if ( 0 < dmg ) { m_btlPrm.SetDamage ( dmg - 1 ); }
 
 		//---------------------------------------------------
 		//デモカウント
@@ -586,11 +594,7 @@ namespace GAME
 #endif // 0
 
 		// コマンドによる分岐
-#if 0
-		PVP_Branch pvpBranch = m_pScript->GetpvpBranch ();
-		UINT transitID = m_pCharaInput->GetTransitID ( pvpBranch, m_dirRight );
-#endif // 0
-		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_dirRight );
+		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
 
 		//コマンドが完成していたら
 		if ( NO_COMPLETE != transitID )
@@ -755,7 +759,7 @@ namespace GAME
 		}
 		else
 		{
-			if ( !m_tmrHitstop->IsActive () )	//ヒットストップ時は生成しない
+			if ( ! m_btlPrm.GetTmr_HitStop ()->IsActive () )	//ヒットストップ時は生成しない
 			{
 				EffectGenerate ();
 			}
@@ -765,7 +769,7 @@ namespace GAME
 		m_oprtEf.PreScriptMove ();
 
 		//エフェクト同期
-		m_oprtEf.PostScriptMove ( m_ptChara, m_dirRight );
+		m_oprtEf.PostScriptMove ( m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 	}
 
 	//枠表示切替
@@ -791,12 +795,12 @@ namespace GAME
 		if ( IsMain () )
 		{
 			//自分がライフ０
-			if ( 0 >= m_life )
+			if ( 0 >= m_btlPrm.GetLife () )
 			{
 				//ダウン状態に強制変更
 				//m_actionID = m_pChara->GetBsAction ( BA_DOWN );
 				TransitAction ( m_actionID );
-				m_tmrDown->Start ();
+				m_btlPrm.GetTmr_Down ()->Start ();
 				m_charaState = CHST_DOWN;
 			}
 		}
@@ -806,7 +810,7 @@ namespace GAME
 	void ExeChara::UpdateGraphic ()
 	{
 		//メインイメージ
-		m_dispChara.UpdateMainImage ( m_pScript, m_ptChara, m_dirRight );
+		m_dispChara.UpdateMainImage ( m_pScript, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 
 		//エフェクト生成と動作
 		EffectMove ();
@@ -833,127 +837,37 @@ namespace GAME
 		//停止時のスキップによる
 
 		//共通グラフィック
-		if ( ! m_stopTimer->IsActive () )
+		if ( ! m_btlPrm.GetTmr_Stop()->IsActive () )
 		{
 			//暗転
-			m_blackOut = m_pScript->GetBlackOut ();
+			m_btlPrm.SetBlackOut ( m_pScript->GetBlackOut () );
 
 			//スクリプトからの停止
-			m_scpStop = m_pScript->GetStop ();
+			m_btlPrm.SetScpStop ( m_pScript->GetStop () );
 		}
 
 		//ゲージ更新
-		m_dispChara.UpdateGauge ( m_playerID, m_life, m_damage, m_balance );
+		m_dispChara.UpdateGauge ( m_playerID, m_btlPrm.GetLife (), m_btlPrm.GetDamage (), m_btlPrm.GetBalance () );
 
 	}
 
-
-	//------------------------------------------------
-	//位置計算
-	void ExeChara::CalcPos ()
+	//着地
+	void ExeChara::Landing ()
 	{
-		//------------------------
-		// 位置 (xのみ向きを乗算)
-		m_tempPt = m_ptChara;		//一時保存
-		float dir = m_dirRight ? 1.f: -1.f;		//向き
-
-		//------------------------
-		// 慣性
-#if 0
-		//攻撃(スクリプト遷移)時、現在の慣性を反映する
-		//加速度(慣性)
-		if ( m_transit )
-		{
-			m_inertial = m_pScript->GetAcc ();
-			float dir = m_dirRight ? 1.f : -1.f;
-			m_ptChara += dir * m_inertial;
-		}
-
-		// 慣性の減少
-		if ( m_inertial.x > 0 )
-		{
-			m_inertial.x -= 0.3f;
-			if ( m_inertial.x < 0 ) { m_inertial.x = 0; }
-		}
-		else
-		{
-			m_inertial.x += 0.3f;
-			if ( m_inertial.x > 0 ) { m_inertial.x = 0; }
-		}
-
-		if ( m_inertial.y > 0 )
-		{
-			m_inertial.y -= 0.3f;
-			if ( m_inertial.y < 0 ) { m_inertial.y = 0; }
-		}
-		else
-		{
-			m_inertial.y += 0.3f;
-			if ( m_inertial.y > 0 ) { m_inertial.y = 0; }
-		}
-#endif // 0
-
-
-		//計算種類で分岐
-		CLC_ST clcSt = m_pScript->GetCalcState ();
-		switch ( clcSt )
-		{
-		case CLC_MAINTAIN: 	//持続
-			m_acc = m_pScript->GetAcc ();
-
-			m_vel.x += m_acc.x;		//加速度
-			m_ptChara.x += dir * m_vel.x;		//速度
-			m_ptChara.x += dir * m_inertial.x;		//慣性
-
-			m_vel.y += m_acc.y;		//加速度
-			m_ptChara.y += m_vel.y;		//速度
-			m_ptChara.y += m_inertial.y;		//慣性
-
-		break;
-
-		case CLC_SUBSTITUDE:	//代入
-
-			m_vel.x = m_pScript->GetVel ().x;
-			m_acc.x = m_pScript->GetAcc ().x;
-			m_ptChara.x += dir * m_vel.x;		//速度
-			m_ptChara.x += dir * m_inertial.x;		//慣性
-
-			m_vg += m_g;
-			m_vel.y = m_pScript->GetVel ().y + m_vg;
-			m_acc.y = m_pScript->GetAcc ().y;
-			m_ptChara.y += m_vel.y;		//速度
-			m_ptChara.y += m_inertial.y;		//慣性
-
-		break;
-		
-		case CLC_ADD:	//加算
-
-			m_vel.x += m_pScript->GetVel ().x;
-			m_acc.x += m_pScript->GetAcc ().x;
-			m_ptChara.x += dir * m_vel.x;		//速度
-			m_ptChara.x += dir * m_inertial.x;		//慣性
-
-			m_vel.y += m_pScript->GetVel ().y;
-			m_acc.y += m_pScript->GetAcc ().y;
-			m_ptChara.y += m_vel.y;		//速度
-			m_ptChara.y += m_inertial.y;		//慣性
-
-		break;
-		
-		default: break;
-		}
-
-		//---------------
-		//着地
-		if ( PLAYER_BASE_Y < m_ptChara.y )
+		VEC2 pos = m_btlPrm.GetPos ();
+		if ( PLAYER_BASE_Y < pos.y )
 		{
 			//デモ時は何もしない
-			if ( IsActCtg ( AC_DEMO ) ) 
-			{ return; }
+			if ( IsActCtg ( AC_DEMO ) )
+			{
+				return;
+			}
 
-			m_ptChara.y = PLAYER_BASE_Y; 
-			m_vg = 0;
-			m_g = 0;
+			float x = pos.x;
+			float y = PLAYER_BASE_Y;
+			m_btlPrm.SetPos ( VEC2 ( x, y ) );
+			m_btlPrm.SetVg ( 0 );
+			m_btlPrm.SetG ( 0 );
 
 			//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
 			m_actionID = 0;	//standの指定
@@ -961,16 +875,56 @@ namespace GAME
 		}
 
 		//落下
-		if ( IsStand () && PLAYER_BASE_Y > m_ptChara.y )
+		if ( IsStand () && PLAYER_BASE_Y > m_btlPrm.GetPos ().y )
 		{
-			m_g = 5;
+			m_btlPrm.SetG ( 5 );
+		}
+	}
+
+
+	void ExeChara::BackMoveX ()
+	{
+		//向きによらず、相手から離れる方向
+		VEC2 iPos = m_btlPrm.GetPos ();
+		VEC2 ePos = m_pOther.lock ()->GetPos ();
+		bool dirBack = true;
+
+		//同値の場合は1P2Pで選別
+		if ( iPos.x == ePos.x )
+		{
+			dirBack = ( m_playerID == PLAYER_ID_1 );
+		}
+		else
+		{
+			//互いの位置で補正方向を決定
+			dirBack = ( iPos.x < ePos.x );
 		}
 
-		//---------------
-		//画面端
-		if ( m_ptChara.x < FIELD_BASE_X + FIELD_EDGE ) { m_ptChara.x = FIELD_BASE_X + FIELD_EDGE; }
-		if ( m_ptChara.x > FIELD_WIDTH - FIELD_EDGE ) { m_ptChara.x = FIELD_WIDTH - FIELD_EDGE; }
+		float x = iPos.x + ( dirBack ? -1.f : 1.f );
+		float y = iPos.y;
+		m_btlPrm.SetPos ( VEC2 ( x, y ) );
 	}
+
+	void ExeChara::LookOther ()
+	{
+		//空中は持続
+		if ( IsJump () )
+		{
+			return;
+		}
+
+		//位置xが同じ場合は持続
+		VEC2 iPos = m_btlPrm.GetPos ();
+		VEC2 ePos = m_pOther.lock ()->GetPos ();
+		if ( iPos.x == ePos.x )
+		{
+			return;
+		}
+
+		//互いの位置で方向を決定
+		m_btlPrm.SetDirRight ( iPos.x < ePos.x );
+	}
+
 
 	//-------------------------------------------------------------------------------------------------
 	//	枠設定
@@ -978,7 +932,7 @@ namespace GAME
 	//現在位置から接触枠を反映
 	void ExeChara::AdjustCRect ()
 	{
-		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_dirRight, m_ptChara );
+		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 	}
 
 #if 0
