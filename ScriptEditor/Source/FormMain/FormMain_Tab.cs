@@ -166,6 +166,12 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------
 		public void tabRoute_Selected ()
 		{
+
+
+
+			//@todo RouteのBranchリストを読込時に更新する
+
+
 		}
 		public void tabRoute_Deselected ()
 		{

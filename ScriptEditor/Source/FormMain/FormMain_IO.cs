@@ -45,7 +45,7 @@ namespace ScriptEditor
 			{
 				STS_TXT.Tssl.BackColor = Color.Red;
 				STS_TXT.Trace( "Name Refference Error." );
-				return;
+//				return;
 			}
 			STS_TXT.Tssl.BackColor = SystemColors.Control;
 

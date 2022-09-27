@@ -64,10 +64,6 @@ namespace GAME
 		P_Script		m_pScript;		//実効スクリプトポインタ
 
 		//------------------------------------------------
-		//エフェクト監理
-		OperateEffect	m_oprtEf;
-
-		//------------------------------------------------
 		//枠
 		P_CharaRect		m_charaRect;	//枠
 		bool			m_bDispRect;	//枠表示
@@ -76,46 +72,9 @@ namespace GAME
 		//パラメータ
 		BtlParam		m_btlPrm;		//バトルパラメータ	
 
-#if 0
 		//------------------------------------------------
-		//パラメータ
-		VEC2	m_ptChara;		//キャラ位置
-		VEC2	m_tempPt;		//一時保存
-		bool	m_dirRight;		//向き(右：正, 左：逆)
-		VEC2	m_inertial;		//慣性
-		VEC2	m_vel;	//速度
-		VEC2	m_acc;	//加速度
-		float	m_g;	//重力
-		float	m_vg;	//重力
-
-		int		m_life;			//ライフ
-		int		m_balance;		//バランス
-		int		m_power;		//実効攻撃値
-		int		m_damage;		//ダメージ(ライフ減少分)
-
-		bool	m_damaged;		//くらいフラグ
-		bool	m_hitEst;		//攻撃成立フラグ
-		bool	m_FirstEf;		//初回Efフラグ
-		bool	m_FirstSE;		//初回SEフラグ
-
-		bool	m_ForcedChange;	//強制変更
-
-		P_Timer	m_tmrHitstop;	//ヒットストップタイマー
-		P_Timer	m_tmrDown;		//ダウンタイマー
-		P_Timer	m_tmrEnd;		//終了状態タイマー
-
-		bool	m_clang;		//打合発生フラグ
-		bool	m_transit;		//スクリプト遷移したフレーム
-
-//		UINT	m_lurch;		//のけぞり(キャンセル不可)時間追加
-//		UINT	m_lurchTimer;
-
-		bool	m_wait;			//入力を一時停止
-		bool	m_stop;			//入力、スクリプト処理を一時停止
-		P_Timer	m_stopTimer;
-		UINT	m_blackOut;		//暗転
-		UINT	m_scpStop;		//スクリプトからの停止
-#endif // 0
+		//エフェクト監理
+		OperateEffect	m_oprtEf;
 
 		//------------------------------------------------
 		//ゲーム進行状態
@@ -131,7 +90,7 @@ namespace GAME
 		void Load ();
 		void Init ();
 		void Reset ();
-		void Resume ();	//復旧時
+		void _Reset ();	//復旧時
 
 		//------------------------------------------------------------
 		//******************************
@@ -153,14 +112,6 @@ namespace GAME
 		bool GetDirRight () const { return m_btlPrm.GetDirRight (); }	//向きを取得
 		void SetDirRight ( bool b ) { m_btlPrm.SetDirRight ( b ); }		//立ち状態で向きを設定
 
-#if 0
-		//アクション終了処理
-		void EndAction ();
-
-		//ぶつかり後、位置の修正
-		void BackPt () { m_ptChara = m_tempPt; }
-		void BackPtX () { m_ptChara.x = m_tempPt.x; }
-#endif // 0
 		void BackPt () { m_btlPrm.BackPt (); }
 		void BackPtX () { m_btlPrm.BackPtX (); }
 		void BackMoveX ();
@@ -310,6 +261,7 @@ namespace GAME
 		void Landing ();	//着地
 
 		//PostScriptMove
+		void AlwaysPostMove ();		// アクションとスクリプトによらない一定の処理
 		void CheckLife ();			//ライフ判定
 		void UpdateGraphic ();		//グラフィック更新
 		void EffectGenerate ();		//エフェクト生成

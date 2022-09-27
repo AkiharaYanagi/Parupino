@@ -16,47 +16,15 @@ namespace GAME
 {
 	//コンストラクタ
 	ExeChara::ExeChara ( PLAYER_ID m_playerID )
-		: m_pChara ( nullptr ), m_playerID ( m_playerID ), m_name ( CHARA_RAKUNO )
-		, m_playerMode ( MODE_PLAYER ), m_oprtEf ()
+		: m_pChara ( nullptr )
+		, m_playerID ( m_playerID ), m_name ( CHARA_RAKUNO ), m_playerMode ( MODE_PLAYER )
 		, m_actionID ( 0 ), m_frame ( 0 )
 		, m_bDispRect ( true )
 		, m_charaState ( CHST_START )
-#if 0
-		, m_dirRight ( true ), m_ptChara ( 0, 0 ), m_tempPt ( 0, 0 ), m_inertial ( 0, 0 )
-		, m_vel ( 0, 0 ), m_acc ( 0, 0 ), m_g ( 0 ), m_vg ( 0 )
-		, m_wait ( true ), m_stop ( false ), m_FirstEf ( false ), m_FirstSE ( false )
-		, m_life ( 0 ), m_balance ( 0 ), m_damage ( 0 ), m_power ( 0 )
-		, m_hitEst ( false ), m_clang ( false ), m_transit ( false )
-		, m_ForcedChange ( false )
-//		, m_lurch ( 0 ), m_lurchTimer ( 0 )
-		, m_blackOut ( 0 ), m_scpStop ( 0 )
-#endif // 0
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
 		m_charaRect = make_shared < CharaRect > ();		//枠
-
-#if 0
-		//タイマーの初期化
-		//ヒットストップ
-		m_tmrHitstop = make_shared < Timer > ();
-		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
-		AddpTask ( m_tmrHitstop );
-
-		//ダウンタイマー
-		m_tmrDown = make_shared < Timer > ();
-		m_tmrDown->SetTargetTime ( DOWN_TIME );
-		AddpTask ( m_tmrDown );
-
-		//終了状態タイマー
-		m_tmrEnd = make_shared < Timer > ();
-		m_tmrEnd->SetTargetTime ( END_TIME );
-		AddpTask ( m_tmrEnd );
-
-		//ストップタイマ
-		m_stopTimer = make_shared < Timer > ();
-		AddpTask ( m_stopTimer );
-#endif // 0
 	}
 
 	//デストラクタ
@@ -142,18 +110,20 @@ namespace GAME
 	//再設定
 	void ExeChara::Reset ()
 	{
+		_Reset ();	//復旧時
+	}
+
+	//------------------------
+	//復旧時の再設定
+	void ExeChara::_Reset ()
+	{
+		//テクスチャメモリ確保関連は再設定
 		Rele ();
 		m_pChara = make_shared < Chara > ();
 		Load ();
 		m_dispChara.SetpChara ( m_pChara );
 		m_oprtEf.SetpChara ( m_pChara );
-		Resume ();	//復旧時
-	}
 
-	//------------------------
-	//復旧時の再設定
-	void ExeChara::Resume ()
-	{
 		//アクション・スクリプト再取得
 		m_pAction = m_pChara->GetpAction ( m_actionID );
 		m_pScript = m_pAction->GetpScript ( m_frame );
@@ -167,6 +137,13 @@ namespace GAME
 
 	//==========================================================
 	//MutualCharaから呼ばれる主な関数
+	//==========================================================
+	//	↓ 処理順番
+	//	void ExeChara::PreScriptMove ();	//	スクリプト前処理
+	//	void MutualChara::Collision ();		//	相互判定 (接触枠)
+	//	void ExeChara::ScriptRectMove ();	//	ぶつかり後、判定枠を設定
+	//	void MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
+	//	void ExeChara::PostScriptMove ();	//	スクリプト後処理
 
 	//■#########################################################
 	//■
@@ -192,6 +169,11 @@ namespace GAME
 		{
 			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
 		}
+#if 0
+		if ( m_btlPrm.GetTmr_HitStop ()->IsActive () )
+		{ return; }
+#endif // 0
+
 
 		// アクション移項
 		TransitAction ();
@@ -252,6 +234,10 @@ namespace GAME
 	void ExeChara::PostScriptMove ()
 	{
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
+		
+		//1[F]に一度行う処理
+		AlwaysPostMove ();
+
 		//一時停止のときは何もしない
 		if ( m_btlPrm.GetStop () ) { return; }
 
@@ -405,8 +391,8 @@ namespace GAME
 
 			m_btlPrm.SetLife ( lf - damage );
 
-#if 0
 			//状態の変更
+#if 0
 			tstring act;
 			switch ( m_pAction->GetPosture () )
 			{
@@ -607,6 +593,7 @@ namespace GAME
 
 			//各種状態の終了
 			m_btlPrm.EndAction ();
+			m_frame = 0;
 
 			//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
 			//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
@@ -935,16 +922,6 @@ namespace GAME
 		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 	}
 
-#if 0
-	//------------------------------------------------
-	//アクション終了処理
-	void ExeChara::EndAction ()
-	{
-		m_frame = 0;		//フレーム初期化
-		m_btlParam.EndAction ();
-	}
-#endif // 0
-
 	void ExeChara::SetEndWait ()
 	{
 		//ダウン優先
@@ -997,6 +974,12 @@ namespace GAME
 		}
 		return false;
 	}
+
+	void ExeChara::AlwaysPostMove ()
+	{
+		m_btlPrm.Move ();
+	}
+
 
 
 }	//namespace GAME

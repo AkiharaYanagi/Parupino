@@ -43,3 +43,5 @@ OD0,CMD,SP1_L,OD0_L,0
 被ダメ_体勢L2,DMG,N,Damaged_L_D,0
 被ダメ_体勢L6,DMG,N,Damaged_L_N,0
 被ダメ_体勢L4,DMG,N,Damaged_L_N,0
+ダメージ移行_L8,CMD,8,Damaged_L_U,0
+ダメージ移行_L2,CMD,2,Damaged_L_D,0
