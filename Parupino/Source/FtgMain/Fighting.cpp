@@ -21,7 +21,8 @@ namespace GAME
 		G_Ftg::Create ();
 
 		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
-		AddpTask ( GRPLST_MAKE () );
+//		AddpTask ( GRPLST_MAKE () );
+		//-> GameSystemでGrpLstを管理
 
 		//背景
 		m_bg = make_shared < GrpAcv > ();

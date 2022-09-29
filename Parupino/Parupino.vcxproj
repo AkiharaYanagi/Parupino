@@ -175,7 +175,9 @@
     <ClInclude Include="Source\ExeChara\BtlParam.h" />
     <ClInclude Include="Source\ExeChara\CharaRect.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispChara.h" />
+    <ClInclude Include="Source\ExeChara\Disp\DispFrontEnd.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispInput.h" />
+    <ClInclude Include="Source\ExeChara\Disp\DispMainImage.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispRect.h" />
     <ClInclude Include="Source\ExeChara\Effect\DispEffect.h" />
     <ClInclude Include="Source\ExeChara\Effect\ExeEffect.h" />
@@ -225,7 +227,9 @@
     <ClCompile Include="Source\ExeChara\BtlParam.cpp" />
     <ClCompile Include="Source\ExeChara\CharaRect.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispChara.cpp" />
+    <ClCompile Include="Source\ExeChara\Disp\DispFrontEnd.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispInput.cpp" />
+    <ClCompile Include="Source\ExeChara\Disp\DispMainImage.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispRect.cpp" />
     <ClCompile Include="Source\ExeChara\Effect\DispEffect.cpp" />
     <ClCompile Include="Source\ExeChara\Effect\ExeEffect.cpp" />

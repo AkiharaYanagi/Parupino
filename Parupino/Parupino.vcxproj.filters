@@ -195,6 +195,12 @@
     <ClInclude Include="Source\ExeChara\BtlParam.h">
       <Filter>ExeChara</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ExeChara\Disp\DispMainImage.h">
+      <Filter>ExeChara\Disp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ExeChara\Disp\DispFrontEnd.h">
+      <Filter>ExeChara\Disp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -322,6 +328,12 @@
     </ClCompile>
     <ClCompile Include="Source\ExeChara\BtlParam.cpp">
       <Filter>ExeChara</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ExeChara\Disp\DispMainImage.cpp">
+      <Filter>ExeChara\Disp</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ExeChara\Disp\DispFrontEnd.cpp">
+      <Filter>ExeChara\Disp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

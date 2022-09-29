@@ -24,7 +24,7 @@ namespace GAME
 		, m_demoTimer ( 0 )
 	{
 		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
-		AddpTask ( GRPLST_MAKE () );
+//		AddpTask ( GRPLST_MAKE () );
 
 		//各グラフィックの初期化
 		m_bg = make_shared < GrpAcv > ();

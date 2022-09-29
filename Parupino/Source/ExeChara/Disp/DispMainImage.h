@@ -9,6 +9,8 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
+#include "../../FtgMain/G_Ftg.h"
+#include "../../CharaData/Chara.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -16,12 +18,21 @@
 namespace GAME
 {
 
-	class DispMainImage : public TASK_VEC
+	class DispMainImage
 	{
+		P_GrpApTx	m_mainGraphic;		//メイングラフィック表示
+		PVP_TxBs	m_pvpMainTexture;	//メインイメージのテクスチャリスト
+
 	public:
 		DispMainImage ();
 		DispMainImage ( const DispMainImage & rhs ) = delete;
 		~DispMainImage ();
+
+		//元データの設定
+		void SetpChara ( P_Chara pChara );
+
+		//メインイメージの更新
+		void UpdateMainImage ( P_Script pScript, VEC2 ptChara, bool dirRight );
 	};
 
 

@@ -16,12 +16,9 @@ namespace GAME
 {
 	DispChara::DispChara ()
 	{
-		//@info GRPLST はシングルトンとして各所からアクセス可能
-		//DispCharaとしてLoad()とInit()を手動で実行する
+		//メインイメージ
 
-		//メイングラフィック
-		m_mainGraphic = make_shared < GrpApTx > ();
-		GRPLST_INSERT ( m_mainGraphic );
+		//枠表示(DispRect)はポインタでなく実体を保持
 
 		//影
 		m_grpShadow = make_shared < GrpAcv > ();
@@ -29,33 +26,7 @@ namespace GAME
 		m_grpShadow->SetZ ( Z_SHADOW );
 		GRPLST_INSERT ( m_grpShadow );
 
-		//ゲージ
-		m_gaugeFrameLife = make_shared < PrmRect > ();
-		m_gaugeFrameLife->SetAllColor ( _CLR ( 0xff404040 ) );
-		GRPLST_INSERT ( m_gaugeFrameLife );
-
-		m_gaugeDecreaseLife = make_shared < PrmRect > ();
-		m_gaugeDecreaseLife->SetAllColor ( _CLR ( 0xffff9090 ) );
-		GRPLST_INSERT ( m_gaugeDecreaseLife );
-
-		m_gaugeLife = make_shared < PrmRect > ();
-		m_gaugeLife->SetAllColor ( _CLR ( 0xffa0f0d0 ) );
-		m_gaugeLife->SetColorN ( 0, _CLR ( 0xffd0f040 ) );
-		m_gaugeLife->SetColorN ( 2, _CLR ( 0xfff0f040 ) );
-		GRPLST_INSERT ( m_gaugeLife );
-
-		//---------------------------------------------------------------
-
-
-		//枠表示(DispRect)はポインタでなく実体を保持
-
 #if 0
-		//エフェクトグラフィック
-#if 0
-		m_efGraphic = make_shared < GrpApTx > ();
-		GRPLST_INSERT ( m_efGraphic );
-#endif // 0
-
 		//プレイヤー表示
 		m_grpPlayer1P.AddTexture ( _T("Player_1P.png") );
 		m_grpPlayer1P.GetpMatrix()->SetValid ( false );
@@ -102,36 +73,7 @@ namespace GAME
 
 	void DispChara::SetpChara ( const P_Chara pChara )
 	{
-		m_pChara = pChara;
-		m_pvpMainTexture = pChara->GetpvpMainTexture ();
-	}
-
-	void DispChara::InitMainImage ( UINT indexTexture )
-	{
-		P_TxBs pTexture = m_pvpMainTexture->at ( indexTexture );
-		m_mainGraphic->SetpTexture ( pTexture );
-	}
-
-	void DispChara::UpdateMainImage ( P_Script pScript, VEC2 ptChara, bool dirRight )
-	{
-		//位置
-		VEC2 posScript = pScript->GetPos ();
-		float fDir = dirRight ? (1.f) : (-1.f);		//向き
-		float bx = G_Ftg::inst()->GetPosMutualBase ().x;	//基準位置
-		float x = bx + ptChara.x + fDir * posScript.x;
-		float y = 0	 + ptChara.y + 1.f * posScript.y; 
-		VEC2 vecImg = VEC2 ( x, y );
-
-		//表示に反映
-		m_mainGraphic->SetPos ( vecImg );
-		m_mainGraphic->SetScaling ( 1.f * fDir, 1.f );
-		P_TxBs pTexture = m_pvpMainTexture->at ( pScript->GetImageIndex () );
-		m_mainGraphic->SetpTexture ( pTexture );
-
-		//影
-		VEC2 vecImgShadow = VEC2 ( bx, 0 ) + ptChara + VEC2 ( -128 + fDir * 12, 0 );
-		vecImgShadow.y = -32.f + 1.f * PLAYER_BASE_Y;
-		m_grpShadow->SetPos ( vecImgShadow );
+		m_mainImage.SetpChara ( pChara );
 	}
 
 	void DispChara::SetpCharaRect ( P_CharaRect pCharaRect )
@@ -139,9 +81,32 @@ namespace GAME
 		m_dispRect.SetCharaRect ( pCharaRect );
 	}
 
+#if 0
+	void DispChara::InitMainImage ( UINT indexTexture )
+	{
+		P_TxBs pTexture = m_pvpMainTexture->at ( indexTexture );
+		m_mainGraphic->SetpTexture ( pTexture );
+	}
+#endif // 0
+
+	void DispChara::UpdateMainImage ( P_Script pScript, VEC2 posChara, bool dirRight )
+	{
+		//メイン
+		m_mainImage.UpdateMainImage ( pScript, posChara, dirRight );
+
+		//影
+		float fDir = dirRight ? ( 1.f ) : ( -1.f );		//向き
+		float bx = G_Ftg::inst ()->GetPosMutualBase ().x;	//基準位置
+		VEC2 vecImgShadow = VEC2 ( bx, 0 ) + posChara + VEC2 ( -128 + fDir * 12, 0 );
+		vecImgShadow.y = -32.f + 1.f * PLAYER_BASE_Y;
+		m_grpShadow->SetPos ( vecImgShadow );
+	}
+
 
 	void DispChara::InitDisp ( PLAYER_ID playerID )
 	{ 
+		m_frontEnd.InitDisp ( playerID );
+#if 0
 		float dispGameBaseX = G_BASE_POS ().x;
 
 		//初期位置
@@ -182,11 +147,6 @@ namespace GAME
 			m_gaugeDecreaseLife->SetRect (	0, 0, 0, 0 );
 		}
 
-
-
-
-
-
 #if 0
 		//ヒットストップ時間表示
 		m_gaugeHitStop.SetRect ( 0, 0, 0, 0 );
@@ -197,40 +157,8 @@ namespace GAME
 		//枠初期化
 		InitRect ();
 #endif // 0
+#endif // 0
 	}
-
-#if	0
-	//オペレートエフェクトの更新
-	void DispChara::UpdateOperateEffect ( float dispGameBaseX, VEC2 ptChara, bool dirRight )
-	{
-		//エフェクト同期描画
-		//エフェクト非同期描画
-	}
-
-
-	//スクリプトから描画する
-	void DispChara::UpdateEffectImage
-	(
-		Script* pScript,
-		float dispGameBaseX, VEC2 ptChara, bool dirRight 
-	)
-	{
-		GameTextureBase* pEfTexture = (*m_pvpEfTexture) [ pScript->GetImageIndex() ];
-		VEC2 ptScriptPos = pScript->GetPos ();
-		VEC2 vecEfImg = VEC2 ( 0, 0 );
-
-		//向き
-		float fDir = dirRight ? (1.f) : (-1.f);
-		float x = dispGameBaseX + ptChara.x + fDir * ptScriptPos.x;
-		float y = 0 + ptChara.y + ptScriptPos.y; 
-		vecEfImg = VEC2 ( x, y );
-
-		m_efGraphic.GetpMatrix()->SetPos ( vecEfImg );
-		m_efGraphic.GetpMatrix()->SetScaling ( 1.f * fDir, 1.f );
-		m_efGraphic.SetpTexture ( pEfTexture );
-
-	}
-#endif	//0
 
 #if 0
 	void DispChara::UpdateHitStop ( VEC2 ptChara, bool dirRight, UINT hitstop, UINT hitstopTimer )
@@ -259,6 +187,8 @@ namespace GAME
 	//ゲージ更新
 	void DispChara::UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance )
 	{
+		m_frontEnd.UpdateGauge ( playerID, life, damage, balance );
+#if 0
 		const static float cfl = 1.f * GAUGE_WIDTH / LIFE_MAX;		//1ライフあたりの表示長さ
 		float wl = cfl * life;
 		float wd = cfl * damage;
@@ -279,7 +209,7 @@ namespace GAME
 			m_gaugeDecreaseLife->SetRect ( lx2p + wl, LIFE_GAUGE_Y, wd, GAUGE_HEIGHT );
 			m_gaugeLife->SetRect (		lx2p, LIFE_GAUGE_Y, wl, GAUGE_HEIGHT );
 		}
-
+#endif // 0
 	}
 
 
