@@ -49,6 +49,7 @@ namespace GAME
 		//名前
 		void SetName ( tstring name ) { m_name.assign ( name ); }
 		tstring GetName () const { return m_name; }
+		bool IsName ( tstring name ) const { return m_name == name; }
 
 		//アクション属性
 		ACTION_CATEGORY GetCategory () const { return m_category; }

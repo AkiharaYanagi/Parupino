@@ -24,7 +24,7 @@ namespace GAME
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
-		m_charaRect = make_shared < CharaRect > ();		//枠
+		m_charaRect = make_shared < CharaRect > ();		//実効枠
 	}
 
 	//デストラクタ
@@ -155,13 +155,13 @@ namespace GAME
 	{
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 
-		// アクションとスクリプトによらない一定の処理
-		//	入力など
-		AlwaysMove ();
-
 		//一時停止のときは何もしない
 		if ( m_btlPrm.GetTmr_Stop()->IsActive () )
 		{ return; }
+
+		// アクションとスクリプトによらない一定の処理
+		//	入力など
+		AlwaysMove ();
 
 		// ヒットストップ時は入力の保存と表示関連の処理をして終了
 		//Activeとの兼ね合いでタイマーのラストは有効　0～N-1まで
@@ -255,6 +255,11 @@ namespace GAME
 	//	外部からの状態変更
 	//================================================
 
+	void ExeChara::OnDashBranch ()
+	{
+		TransitAction_Condition_I ( BRC_DASH, F );	//ダッシュ相殺・自分
+	}
+
 	//打合発生
 	void ExeChara::OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision )
 	{
@@ -276,10 +281,8 @@ namespace GAME
 	//くらい状態・ダメージ処理
 	void ExeChara::OnDamaged ( int damage )
 	{
-
 		bool hit = true;
 		bool guard = false;
-
 
 		//回避判定
 #if 0
@@ -419,53 +422,11 @@ namespace GAME
 
 		//-----------------------------------------------------
 		//条件分岐
+		TransitAction_Condition_I ( BRC_THR_I, F );	//投げ・自分
+		TransitAction_Condition_E ( BRC_THR_E, T );	//投げ・相手
+		TransitAction_Condition_I ( BRC_HIT_I, F );	//ヒット・自分
+		TransitAction_Condition_E ( BRC_HIT_E, T );	//ヒット・相手
 
-		//投げ・自分
-		UINT indexAction_i = TransitAction_Condition ( BRC_THR_I );
-		if ( NO_COMPLETE != indexAction_i )
-		{
-			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( indexAction_i );
-			P_Script pscr = pact->GetpScript ( 0 );
-
-			m_actionID = indexAction_i;			//遷移
-		}
-
-		//投げ・相手
-		UINT indexAction_e = TransitAction_Condition ( BRC_THR_E );
-		if ( NO_COMPLETE != indexAction_e )
-		{
-			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( indexAction_e );
-			P_Script pscr = pact->GetpScript ( 0 );
-
-			m_pOther.lock ()->TransitAction ( indexAction_e );			//遷移
-			m_pOther.lock ()->m_btlPrm.SetForcedChange ( true );
-		}
-
-		//ヒット・自分
-		UINT indexAction_Hit_m = TransitAction_Condition ( BRC_HIT_I );
-		if ( NO_COMPLETE != indexAction_Hit_m )
-		{
-			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( indexAction_Hit_m );
-			P_Script pscr = pact->GetpScript ( 0 );
-
-			m_actionID = indexAction_Hit_m;			//遷移
-			TransitAction ( m_actionID );
-		}
-
-		//ヒット・相手
-		UINT indexAction_Hit_e = TransitAction_Condition ( BRC_HIT_E );
-		if ( NO_COMPLETE != indexAction_Hit_e )
-		{
-			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( indexAction_Hit_e );
-			P_Script pscr = pact->GetpScript ( 0 );
-
-			m_pOther.lock ()->TransitAction ( indexAction_Hit_e );			//遷移
-			m_pOther.lock ()->m_btlPrm.SetForcedChange ( true );
-		}
 		//-----------------------------------------------------
 
 		m_btlPrm.GetTmr_HitStop()->Start ();		//ヒットストップの設定
@@ -595,7 +556,7 @@ namespace GAME
 			m_btlPrm.EndAction ();
 			m_frame = 0;
 
-			//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
+			//m_frameは0から開始、Move()とDraw()で同一スクリプトを維持する
 			//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
 			m_pAction = m_pChara->GetpAction ( m_actionID );
 			m_pScript = m_pAction->GetpScript ( m_frame );
@@ -640,8 +601,42 @@ namespace GAME
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 	}
 
-	//アクション移行(条件)
-	UINT ExeChara::TransitAction_Condition ( BRANCH_CONDITION BRC_CND )
+	//アクション移行(自身)
+	void  ExeChara::TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced )
+	{
+		//ヒット・相手
+		UINT indexAction = Check_TransitAction_Condition ( CONDITION );
+		if ( NO_COMPLETE != indexAction )
+		{
+			//遷移先チェック
+			P_Action pAct = m_pChara->GetpAction ( indexAction );
+			P_Script pScr = pAct->GetpScript ( 0 );
+
+			//自身を変更
+			TransitAction ( indexAction );	//遷移
+			m_btlPrm.SetForcedChange ( forced );
+		}
+	}
+
+	//アクション移行(相手)
+	void  ExeChara::TransitAction_Condition_E ( BRANCH_CONDITION CONDITION, bool forced )
+	{
+		//ヒット・相手
+		UINT indexAction = Check_TransitAction_Condition ( CONDITION );
+		if ( NO_COMPLETE != indexAction )
+		{
+			//遷移先チェック
+			P_Action pAct = m_pChara->GetpAction ( indexAction );
+			P_Script pScr = pAct->GetpScript ( 0 );
+
+			//相手を変更
+			m_pOther.lock ()->TransitAction ( indexAction );	//遷移
+			m_pOther.lock ()->m_btlPrm.SetForcedChange ( forced );
+		}
+	}
+
+	//アクション移行(条件チェック)
+	UINT ExeChara::Check_TransitAction_Condition ( BRANCH_CONDITION BRC_CND )
 	{
 		//キャラの持つルート,ブランチ,コマンドの参照
 		const VP_Route vpRoute = m_pChara->GetvpRoute ();
@@ -977,7 +972,7 @@ namespace GAME
 
 	void ExeChara::AlwaysPostMove ()
 	{
-		m_btlPrm.Move ();
+		m_btlPrm.Move ();	//タイマー稼働
 	}
 
 

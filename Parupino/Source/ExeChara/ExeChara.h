@@ -242,6 +242,13 @@ namespace GAME
 		void OnDispRect () { m_bDispRect = true; }
 		void OffDispRect () { m_bDispRect = false; }
 
+		//外部からの状態確認
+		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }
+
+		//ダッシュ分岐
+		void OnDashBranch ();
+
+
 	//================================================
 	//	内部関数
 	//================================================
@@ -255,7 +262,9 @@ namespace GAME
 
 		void TransitAction ();	// アクション移項
 		void TransitAction ( UINT actionID );		//アクションの移項
-		UINT TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件)
+		void TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
+		void TransitAction_Condition_E ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
+		UINT Check_TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件チェック)
 
 		//ぶつかり後、位置の修正
 		void Landing ();	//着地
