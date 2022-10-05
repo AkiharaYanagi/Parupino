@@ -7,7 +7,7 @@ using System.Text;
 //using Microsoft.DirectX.DirectInput;
 using SlimDX.DirectInput;
 
-//@todo SlimDXに移行
+//@info SlimDXに移行
 //		プロジェクト参照にSlimDXを追加
 
 

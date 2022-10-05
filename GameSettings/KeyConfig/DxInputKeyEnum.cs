@@ -1,4 +1,11 @@
-﻿namespace GameSettings
+﻿
+//
+//	ゲームメイン(C++ : Direct Input)で用いるキーボード入力定数
+//		スクリプトエディタ、またはゲーム設定(C# : SlimDx)での値を変換する
+//
+
+
+namespace GameSettings
 {
     public enum DxKey
     {
