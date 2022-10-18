@@ -20,8 +20,8 @@ namespace GAME
 	const UINT CharaInput::m_vGameKeyNum = 60;		//キー入力の保存フレーム数
 
 	//コンストラクタ
-	CharaInput::CharaInput () : 
-		m_playerID ( PLAYER_ID_1 )
+	CharaInput::CharaInput ()
+		: m_playerID ( PLAYER_ID_1 )
 	{
 		for ( UINT i = 0; i < m_vGameKeyNum; ++i )
 		{
@@ -109,17 +109,17 @@ namespace GAME
 		bool bButton3 = false;
 		if ( PLAYER_ID_1 == m_playerID )
 		{
-			bButton0 = IS_KEY ( P1_BUTTON1 );
-			bButton1 = IS_KEY ( P1_BUTTON2 );
-			bButton2 = IS_KEY ( P1_BUTTON3 );
-			bButton3 = IS_KEY ( P1_BUTTON4 );
+			bButton0 = IS_KEY ( P1_BTN1 );
+			bButton1 = IS_KEY ( P1_BTN2 );
+			bButton2 = IS_KEY ( P1_BTN3 );
+			bButton3 = IS_KEY ( P1_BTN4 );
 		}
 		else if ( PLAYER_ID_2 == m_playerID )
 		{
-			bButton0 = IS_KEY ( P2_BUTTON1 );
-			bButton1 = IS_KEY ( P2_BUTTON2 );
-			bButton2 = IS_KEY ( P2_BUTTON3 );
-			bButton3 = IS_KEY ( P2_BUTTON4 );
+			bButton0 = IS_KEY ( P2_BTN1 );
+			bButton1 = IS_KEY ( P2_BTN2 );
+			bButton2 = IS_KEY ( P2_BTN3 );
+			bButton3 = IS_KEY ( P2_BTN4 );
 		}
 
 //		if ( bButton0 )

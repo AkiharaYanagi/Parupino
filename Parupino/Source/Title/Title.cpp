@@ -222,7 +222,7 @@ namespace GAME
 		//通常(非デモモード)時
 
 		//キー1でシーンを進める
-		if ( PUSH_KEY ( P1_BUTTON1 ) )
+		if ( PUSH_KEY ( P1_BTN1 ) )
 		{
 			//共通パラメータに値を保存してシーンの移行
 			Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_1 ) );
@@ -231,7 +231,7 @@ namespace GAME
 			m_fadeOutTimer = 17;
 		}
 
-		if ( PUSH_KEY ( P2_BUTTON1 ) )
+		if ( PUSH_KEY ( P2_BTN1 ) )
 		{
 			//共通パラメータに値を保存してシーンの移行
 			Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_2 ) );
