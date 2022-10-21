@@ -278,15 +278,15 @@ using LCF = LoadCharaFunc;
 		//ï∂éöóÒÇì«Ç›çûÇÒÇ≈ENUMÇ…ïœä∑Ç∑ÇÈ
 		int index = ATTR_GAMEKEY_LVR_ST;
 		//ÅELvr
-		for ( UINT i = 0; i < (UINT)_GameKey::_LVR_NUM; ++ i )
+		for ( UINT i = 0; i < (UINT)_GameKey::LVR_NUM; ++ i )
 		{
 			tstring strGameLvr = pvpAttrGameKey->at ( index + i )->GetValue ();
 			gameKeyCmd.SetLvr ( i, StrToKeyState ( strGameLvr ) );
 		}
-		index += _GameKey::_LVR_NUM;
+		index += _GameKey::LVR_NUM;
 
 		//ÅEBtn
-		for ( UINT i = 0; i < (UINT)_GameKey::_BTN_NUM; ++ i )
+		for ( UINT i = 0; i < (UINT)_GameKey::BTN_NUM; ++ i )
 		{
 			tstring strGameKey = pvpAttrGameKey->at ( index + i )->GetValue();
 			gameKeyCmd.SetBtn ( i, StrToKeyState ( strGameKey ) );
