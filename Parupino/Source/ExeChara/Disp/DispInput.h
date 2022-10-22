@@ -23,13 +23,22 @@ namespace GAME
 	using PVP_PRMRECT = shared_ptr < VP_PRMRECT >;
 	using VPVP_PRMRECT = vector < PVP_PRMRECT >;
 
+
+
+
 	class DispInput : public TASK_VEC
 	{
 		//キー入力表示個数
 		static const UINT NUM_DISP_INPUT;
 
 		P_PrmRect		m_bg;		//背景
-		VPVP_PRMRECT	m_vpvpRect;	//キー種類 * [F]表示
+
+
+//		VPVP_PRMRECT	m_vpvpRect;	//キー種類 * [F]表示
+
+		P_GrpAcv		m_grp;
+		VP_Object		m_vpOb;
+
 
 		UINT			m_timer;
 		float			m_vel;

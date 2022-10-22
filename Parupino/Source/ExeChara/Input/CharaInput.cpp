@@ -45,38 +45,6 @@ namespace GAME
 		bool bKey4 = false;	//後(右向き時)
 		bool bKey6 = false;	//前(右向き時)
 
-#if 0
-		if ( PLAYER_ID_1 == m_playerID )
-		{
-			bKey8 = IS_KEY ( P1_UP );
-			bKey2 = IS_KEY ( P1_DOWN );
-			if ( dirRight )	//右向き時
-			{
-				bKey4 = IS_KEY ( P1_LEFT );
-				bKey6 = IS_KEY ( P1_RIGHT );
-			}
-			else	//左向き時
-			{
-				bKey4 = IS_KEY ( P1_RIGHT );
-				bKey6 = IS_KEY ( P1_LEFT );
-			}
-		}
-		else if ( PLAYER_ID_2 == m_playerID )
-		{
-			bKey8 = IS_KEY ( P2_UP );
-			bKey2 = IS_KEY ( P2_DOWN );
-			if ( dirRight )	//右向き時
-			{
-				bKey4 = IS_KEY ( P2_LEFT );
-				bKey6 = IS_KEY ( P2_RIGHT );
-			}
-			else	//左向き時
-			{
-				bKey4 = IS_KEY ( P2_RIGHT );
-				bKey6 = IS_KEY ( P2_LEFT );
-			}
-		}
-#endif // 0
 		if ( PLAYER_ID_1 == m_playerID )
 		{
 			bKey8 = CFG_IS_KEY ( _P1_UP );
@@ -127,22 +95,7 @@ namespace GAME
 		//ボタン
 		bool bButton0 = false; bool bButton1 = false; bool bButton2 = false; bool bButton3 = false;
 		bool bButton4 = false; bool bButton5 = false; bool bButton6 = false; bool bButton7 = false;
-#if 0
-		if ( PLAYER_ID_1 == m_playerID )
-		{
-			bButton0 = IS_KEY ( P1_BTN1 );
-			bButton1 = IS_KEY ( P1_BTN2 );
-			bButton2 = IS_KEY ( P1_BTN3 );
-			bButton3 = IS_KEY ( P1_BTN4 );
-		}
-		else if ( PLAYER_ID_2 == m_playerID )
-		{
-			bButton0 = IS_KEY ( P2_BTN1 );
-			bButton1 = IS_KEY ( P2_BTN2 );
-			bButton2 = IS_KEY ( P2_BTN3 );
-			bButton3 = IS_KEY ( P2_BTN4 );
-		}
-#endif // 0
+
 		if ( PLAYER_ID_1 == m_playerID )
 		{
 			bButton0 = CFG_IS_KEY ( _P1_BTN0 );
@@ -156,10 +109,10 @@ namespace GAME
 		}
 		else if ( PLAYER_ID_2 == m_playerID )
 		{
-			bButton0 = CFG_IS_KEY ( _P2_BTN1 );
-			bButton1 = CFG_IS_KEY ( _P2_BTN2 );
-			bButton2 = CFG_IS_KEY ( _P2_BTN3 );
-			bButton3 = CFG_IS_KEY ( _P2_BTN4 );
+			bButton0 = CFG_IS_KEY ( _P2_BTN0 );
+			bButton1 = CFG_IS_KEY ( _P2_BTN1 );
+			bButton2 = CFG_IS_KEY ( _P2_BTN2 );
+			bButton3 = CFG_IS_KEY ( _P2_BTN3 );
 			bButton4 = CFG_IS_KEY ( _P2_BTN4 );
 			bButton5 = CFG_IS_KEY ( _P2_BTN5 );
 			bButton6 = CFG_IS_KEY ( _P2_BTN6 );

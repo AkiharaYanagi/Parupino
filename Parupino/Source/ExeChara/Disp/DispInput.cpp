@@ -26,11 +26,12 @@ namespace GAME
 		//キー入力
 		//背景
 		m_bg = make_shared < PrmRect > ();
-		m_bg->SetRect ( m_base, 200, 80, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base, 200, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
 		m_bg->SetZ ( Z_SYS );
 		m_bg->SetAllColor ( 0x8080c080 );
 		GRPLST_INSERT ( m_bg );
 
+#if 0
 		//矩形管理 ( 8種類 * 60[FPS] )
 		//縦 60FPS
 		for ( UINT frame = 0; frame < NUM_DISP_INPUT; ++ frame )
@@ -55,6 +56,34 @@ namespace GAME
 				GRPLST_INSERT ( pRect );
 			}
 		}
+#endif // 0
+
+		m_grp = make_shared < GrpAcv > ();
+		m_grp->AddTexture ( _T ( "10_10_white.png" ) );
+		GRPLST_INSERT ( m_grp );
+
+		m_grp->SetZ ( Z_SYS - 0.01f );
+		m_grp->ClearObject ();
+
+		//矩形管理 ( 8種類 * 60[FPS] )
+		//縦 60FPS
+		for ( UINT frame = 0; frame < NUM_DISP_INPUT; ++ frame )
+		{
+			//横 8種類
+			for ( UINT i = 0; i < INPUT_NUM; ++ i )
+			{
+				P_Object pOb = make_shared < GameObject > ();
+				pOb->SetPos ( m_base + 10 * i, 10.f + 10 * frame );
+				m_vpOb.push_back ( pOb );
+				m_grp->AddpObject ( pOb );
+
+				//初期値ランダム
+				if ( 0 == rand () % 2 )
+				{
+					pOb->SetValid ( T );
+				}
+			}
+		}
 	}
 
 	DispInput::~DispInput ()
@@ -71,18 +100,21 @@ namespace GAME
 		}
 		else
 		{
-			m_base = 1280 - 10 - 80;
+			m_base = 1280 - 10 - 10 * INPUT_NUM;
 		}
-		m_bg->SetRect ( m_base, 200, 80, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base, 200, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
+
+		m_timer = 0;
 	}
 
 	//更新
 	void DispInput::UpdateInput ( P_CharaInput pCharaInput )
 	{
 		//---------------------------------------------------------------
-		//キー入力
+		//キー過去入力の表示
 		++ m_timer;
 
+#if 0
 		//1マス分移動したら上にシフト
 		if ( 0 < m_timer )
 		{
@@ -105,10 +137,25 @@ namespace GAME
 
 			m_timer = 0;
 		}
+#endif // 0
+		//1マス分移動したら上にシフト
+		if ( 0 < m_timer )
+		{
+			//上書のため逆順ループ
+			for ( UINT i = m_vpOb.size () - 1; i >= INPUT_NUM; -- i )
+			{
+				m_vpOb [ i ]->SetValid ( m_vpOb [ i - INPUT_NUM ]->GetValid () );
+			}
 
-		//現入力
+			m_timer = 0;
+		}
+
+
+		//--------------------------
+		//現入力の反映
 		V_GAME_KEY vKey = pCharaInput->GetvGameKey ();
 
+#if 0
 		//表示位置
 		int frame = 0;
 		for ( PVP_PRMRECT pvpRect : m_vpvpRect )
@@ -122,6 +169,19 @@ namespace GAME
 			}
 			++ frame;
 		}
+#endif // 0
+		//表示位置
+		int i = 0;
+		for ( P_Object pOb: m_vpOb )
+		{
+			int frame = i / INPUT_NUM;
+			int input = i % INPUT_NUM;
+			pOb->SetValid ( GetBoolInput ( pCharaInput, frame, input ) );
+			pOb->SetPos ( m_base + 10 * input, 200.f + 10 * frame + m_vel * m_timer );
+			++ i;
+		}
+
+
 		//---------------------------------------------------------------
 	}
 
@@ -140,10 +200,14 @@ namespace GAME
 		case 1: ret = vKey[n].GetLvr ( _GameKey::LVR_8 ); break;
 		case 2: ret = vKey[n].GetLvr ( _GameKey::LVR_6 ); break;
 		case 3: ret = vKey[n].GetLvr ( _GameKey::LVR_2 ); break;
-		case 4: ret = vKey[n].GetBtn ( _GameKey::BTN_0 ); break;
-		case 5: ret = vKey[n].GetBtn ( _GameKey::BTN_1 ); break;
-		case 6: ret = vKey[n].GetBtn ( _GameKey::BTN_2 ); break;
-		case 7: ret = vKey[n].GetBtn ( _GameKey::BTN_3 ); break;
+		case 4: ret = vKey [ n ].GetBtn ( _GameKey::BTN_0 ); break;
+		case 5: ret = vKey [ n ].GetBtn ( _GameKey::BTN_1 ); break;
+		case 6: ret = vKey [ n ].GetBtn ( _GameKey::BTN_2 ); break;
+		case 7: ret = vKey [ n ].GetBtn ( _GameKey::BTN_3 ); break;
+		case 8: ret = vKey [ n ].GetBtn ( _GameKey::BTN_4 ); break;
+		case 9: ret = vKey [ n ].GetBtn ( _GameKey::BTN_5 ); break;
+		case 10: ret = vKey [ n ].GetBtn ( _GameKey::BTN_6 ); break;
+		case 11: ret = vKey [ n ].GetBtn ( _GameKey::BTN_7 ); break;
 		default: break;
 		}
 		return ret;
