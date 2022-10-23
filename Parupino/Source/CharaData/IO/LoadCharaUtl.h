@@ -27,7 +27,7 @@ namespace GAME
 		UINT _ElemToUINT ( const P_Element pElem, UINT indexAttr );
 
 		//名前の保存
-		void ElemToNameArray ( const P_Element pElem, vector < tstring > & vec );
+		void ElemToNameArray ( const P_Element pElem, V_STR & vec );
 
 		//名前からインデックスを取得
 		UINT IndexOf ( const V_STR& vstr, tstring name ) const;

@@ -78,7 +78,11 @@ namespace ScriptEditor
 			//イメージ
 			ImageData imgDt = Chara.behavior.BD_Image.Get ( scp.ImgName );
 			Rectangle rect = new Rectangle ( PointUt.PtAdd ( pt0, scp.Pos ), new Size ( 512, 512 ) );
-			g.DrawImage ( imgDt.Img, rect );
+			if ( imgDt != null ) 
+			{
+				g.DrawImage ( imgDt.Img, rect );
+			}
+
 
 			//[F]
 			g.DrawString ( frame.ToString () + "[F]", FONT0, Brushes.White, new Point ( 200, 2 ) );

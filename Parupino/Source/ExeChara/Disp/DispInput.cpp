@@ -182,6 +182,7 @@ namespace GAME
 		}
 
 
+
 		//---------------------------------------------------------------
 	}
 
@@ -191,7 +192,7 @@ namespace GAME
 	bool DispInput::GetBoolInput ( P_CharaInput pCharaInput, int n, int i )
 	{
 		//Œ»“ü—Í
-		V_GAME_KEY vKey = pCharaInput->GetvGameKey ();
+		const V_GAME_KEY& vKey = pCharaInput->GetvGameKey ();
 
 		bool ret = false;
 		switch ( i )

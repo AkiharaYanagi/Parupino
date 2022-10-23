@@ -44,6 +44,13 @@ namespace GAME
 	//------------------------------------------
 	void LoadChara::_Load ( const tstring & filename, Chara & chara )
 	{
+
+
+		DWORD startTime = ::timeGetTime ();
+
+
+
+
 		//初期化
 		chara.Reset ();
 
@@ -80,14 +87,35 @@ namespace GAME
 		char* scriptBuf = new char [ scriptSize ];
 		ifstrm.read ( scriptBuf, scriptSize );
 
+
+
+
+		DWORD scriptRead_Time = ::timeGetTime ();
+
+
+
+
+
 		//Documentを生成
 		Document document ( scriptBuf, scriptSize );
+
+
+		DWORD Document_Time = ::timeGetTime ();
+
+
 
 		//一時読込の破棄
 		delete[] scriptBuf;
 
 		//キャラデータに変換
 		m_func._DocumentToChara ( document, chara );
+
+
+
+
+		DWORD DtoC_Time = ::timeGetTime ();
+
+
 
 		//---------------------------------------------------------------------
 		//グラフィックアーカイブの読込	(スクリプトの続きからEOFまで)
@@ -101,6 +129,16 @@ namespace GAME
 		//---------------------------------------------------------------------
 		//ファイルストリーム終了
 		ifstrm.close ();
+
+
+
+		DWORD LoadImage_Time = ::timeGetTime ();
+
+		DWORD t0 = scriptRead_Time - startTime;
+		DWORD t1 = Document_Time - scriptRead_Time;
+		DWORD t2 = DtoC_Time - Document_Time;
+		DWORD t3 = LoadImage_Time - DtoC_Time;
+		DBGOUT_WND_F ( 6, _T ( "scriptRead_Time = %d, Document_Time = %d, DtoC_Time = %d, LoadImage_Time = %d" ), t0, t1, t2, t3 );
 	}
 
 

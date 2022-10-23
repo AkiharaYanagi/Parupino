@@ -56,8 +56,6 @@ namespace GAME
 		VP_Branch		m_vpBranch;		//ブランチ配列
 		VP_Route		m_vpRoute;		//ルート配列
 
-//		UINT	m_bsAction [ BASIC_ACTION_NUM ];		//基本アクション
-
 	public:
 		Chara ();
 		Chara ( const Chara & rhs ) = delete;
@@ -120,10 +118,6 @@ namespace GAME
 		P_Effect GetpEffect ( UINT index ) { return m_pvpEf->at ( index ); }
 
 		//---------------------------------------------------------------------
-		//基本アクションID
-//		UINT GetBsAction ( BASIC_ACTION index ) const { return m_bsAction[ index ]; }
-//		void SetBsAction ( BASIC_ACTION index, UINT actionID ) { m_bsAction [ index ] = actionID; }
-
 		//名前からアクションIDを取得する(無いときは０を返す)
 		UINT GetActionID ( tstring name ) const;
 

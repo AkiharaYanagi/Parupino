@@ -29,13 +29,28 @@ namespace GAME
 	
 	//------------------------------------------------------------
 	//名前の保存
-	void LoadCharaUtl::ElemToNameArray ( const P_Element pElem, vector < tstring > & vec )
+	void LoadCharaUtl::ElemToNameArray ( const P_Element pElem, V_STR & vec )
 	{
 		PVP_Element pvp_elem = pElem->GetpvpElement ();
+
+#if 0
 		for ( P_Element pe : * pvp_elem )
 		{
 			PVP_Attribute pvp_attr = pe->GetpvpAttribute ();
 			vec.push_back ( (*pvp_attr)[0]->GetValue () );		//名前のアトリビュートは０の位置
+		}
+#endif // 0
+
+		//要素数を数え上げ先にリサイズで確保する
+		vec.resize ( pvp_elem->size () );
+
+		//値の代入
+		UINT i = 0;
+		for ( P_Element pe : * pvp_elem )
+		{
+			PVP_Attribute pvp_attr = pe->GetpvpAttribute ();
+			vec[i] = ( *pvp_attr ) [ 0 ]->GetValue ();		//名前のアトリビュートは０の位置
+			++ i;
 		}
 	}
 

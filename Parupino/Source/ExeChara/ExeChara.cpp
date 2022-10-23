@@ -55,6 +55,11 @@ namespace GAME
 	//読込
 	void ExeChara::Load ()
 	{
+
+		DWORD startTime = ::timeGetTime ();
+
+
+
 		//名前からスクリプトファイルを指定してキャラのロード
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
@@ -69,6 +74,13 @@ namespace GAME
 #endif // 0
 		LoadChara loadChara ( name, *m_pChara );
 
+
+
+		DWORD loadCharaTime = ::timeGetTime ();
+
+
+
+
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
 		m_dispChara.Load ();
@@ -79,7 +91,20 @@ namespace GAME
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
 
+
+		DWORD otherTime = ::timeGetTime ();
+
+
 		TASK_VEC::Load ();
+
+
+		DWORD TASK_VEC_Time = ::timeGetTime ();
+
+
+		DWORD t0 = loadCharaTime - startTime;
+		DWORD t1 = otherTime - loadCharaTime;
+		DWORD t2 = TASK_VEC_Time - otherTime;
+		DBGOUT_WND_F ( 5, _T ( "chara = %d, other = %d, task = %d" ), t0, t1, t2 );
 	}
 
 	//------------------------
@@ -421,11 +446,11 @@ namespace GAME
 		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
 
 		//-----------------------------------------------------
-		//条件分岐
-		TransitAction_Condition_I ( BRC_THR_I, F );	//投げ・自分
+		//条件分岐 (相手→自分でないとスクリプトが変わってしまう)
 		TransitAction_Condition_E ( BRC_THR_E, T );	//投げ・相手
-		TransitAction_Condition_I ( BRC_HIT_I, F );	//ヒット・自分
+		TransitAction_Condition_I ( BRC_THR_I, F );	//投げ・自分
 		TransitAction_Condition_E ( BRC_HIT_E, T );	//ヒット・相手
+		TransitAction_Condition_I ( BRC_HIT_I, F );	//ヒット・自分
 
 		//-----------------------------------------------------
 
@@ -639,13 +664,13 @@ namespace GAME
 	UINT ExeChara::Check_TransitAction_Condition ( BRANCH_CONDITION BRC_CND )
 	{
 		//キャラの持つルート,ブランチ,コマンドの参照
-		const VP_Route vpRoute = m_pChara->GetvpRoute ();
-		const VP_Branch vpBranch = m_pChara->GetvpBranch ();
+		const VP_Route& vpRoute = m_pChara->GetvpRoute ();
+		const VP_Branch& vpBranch = m_pChara->GetvpBranch ();
 
 		//スクリプトの持つルートリスト
 		for ( UINT indexRut : m_pScript->GetvRouteID () )
 		{
-			const V_UINT vBrcID = vpRoute [ indexRut ]->GetvIDBranch ();
+			const V_UINT& vBrcID = vpRoute [ indexRut ]->GetvIDBranch ();
 
 			//対象のブランチリスト
 			for ( UINT id : vBrcID )
