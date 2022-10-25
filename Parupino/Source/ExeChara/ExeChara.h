@@ -238,16 +238,23 @@ namespace GAME
 			}
 		}
 
-		//Rect
-		void OnDispRect () { m_bDispRect = true; }
-		void OffDispRect () { m_bDispRect = false; }
-
 		//外部からの状態確認
 		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }
 
 		//ダッシュ分岐
 		void OnDashBranch ();
 
+
+		//-------------------------------------------------
+		//システム
+
+		//枠表示切替
+		void OnDispRect () { m_bDispRect = true; }
+		void OffDispRect () { m_bDispRect = false; }
+
+		//CPU操作切替
+		void ControlCPU ();
+		void ControlPlayer ();
 
 	//================================================
 	//	内部関数

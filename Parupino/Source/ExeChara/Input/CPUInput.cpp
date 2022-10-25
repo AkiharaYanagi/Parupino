@@ -148,37 +148,6 @@ namespace GAME
 
 			for ( int i = 0; i < CENT; ++ i )
 			{
-#if	0
-				m_randomKeyNear[i] = CPU_NEUTRAL;
-				if		( i < m_actNear[1] ) { m_randomKeyNear[i] = CPU_FRONT; }
-				else if ( i < m_actNear[2] ) { m_randomKeyNear[i] = CPU_BACK;	}
-				else if ( i < m_actNear[3] ) { m_randomKeyNear[i] = CPU_FRONT_DASH; }
-				else if ( i < m_actNear[4] ) { m_randomKeyNear[i] = CPU_BACK_DASH;	}
-				else if ( i < m_actNear[5] ) { m_randomKeyNear[i] = CPU_L; }
-				else if ( i < m_actNear[6] ) { m_randomKeyNear[i] = CPU_M; }
-				else if ( i < m_actNear[7] ) { m_randomKeyNear[i] = CPU_H; }
-				else if ( i < m_actNear[8] ) { m_randomKeyNear[i] = CPU_AVOID; }
-
-				m_randomKeyMiddle[i] = CPU_NEUTRAL;
-				if		( i < m_actMiddle[1] ) { m_randomKeyMiddle[i] = CPU_FRONT; }
-				else if ( i < m_actMiddle[2] ) { m_randomKeyMiddle[i] = CPU_BACK;	}
-				else if ( i < m_actMiddle[3] ) { m_randomKeyMiddle[i] = CPU_FRONT_DASH; }
-				else if ( i < m_actMiddle[4] ) { m_randomKeyMiddle[i] = CPU_BACK_DASH;	}
-				else if ( i < m_actMiddle[5] ) { m_randomKeyMiddle[i] = CPU_L; }
-				else if ( i < m_actMiddle[6] ) { m_randomKeyMiddle[i] = CPU_M; }
-				else if ( i < m_actMiddle[7] ) { m_randomKeyMiddle[i] = CPU_H; }
-				else if ( i < m_actMiddle[8] ) { m_randomKeyMiddle[i] = CPU_AVOID; }
-
-				m_randomKeyFar[i] = CPU_NEUTRAL;
-				if		( i < m_actFar[1] ) { m_randomKeyFar[i] = CPU_FRONT; }
-				else if ( i < m_actFar[2] ) { m_randomKeyFar[i] = CPU_BACK;	}
-				else if ( i < m_actFar[3] ) { m_randomKeyFar[i] = CPU_FRONT_DASH; }
-				else if ( i < m_actFar[4] ) { m_randomKeyFar[i] = CPU_BACK_DASH;	}
-				else if ( i < m_actFar[5] ) { m_randomKeyFar[i] = CPU_L; }
-				else if ( i < m_actFar[6] ) { m_randomKeyFar[i] = CPU_M; }
-				else if ( i < m_actFar[7] ) { m_randomKeyFar[i] = CPU_H; }
-				else if ( i < m_actFar[8] ) { m_randomKeyFar[i] = CPU_AVOID; }
-#endif	//0
 				SetCPU_Act ( i, m_actNear, &(m_randomKeyNear[i]) );
 				SetCPU_Act ( i, m_actMiddle, &(m_randomKeyMiddle[i]) );
 				SetCPU_Act ( i, m_actFar, &(m_randomKeyFar[i]) );
@@ -209,19 +178,6 @@ namespace GAME
 		VEC2 pos = m_pExeChara.lock()->GetPos ();
 		VEC2 posOther = m_pExeCharaOther.lock()->GetPos ();
 
-#if	0
-		//バランス
-		if ( m_pExeChara->GetBalance () < 200 )
-		{
-			if ( ::rand() % 2 == 0 )
-			{
-				m_actTime = 20;
-				m_bAct = true;
-				m_act = CPU_NEUTRAL;
-			}
-		}
-#endif	//0
-
 		//行動未決定ならば
 		if ( ! m_bAct ) 
 		{
@@ -246,17 +202,6 @@ namespace GAME
 			}
 			else 
 			{
-#if	0
-				//バランス回復
-				if ( m_pExeChara->GetBalance () < 200 )
-				{
-					if ( ::rand() % 10 == 0 )
-					{
-						m_act = CPU_POISED;
-					}
-				}
-				else
-#endif	//0
 				{
 //				DebugOutGameWindow::instance()->DebugOutf ( ( PLAYER_1 == m_playerID ) ? 0 : 1, _T("m_randomKeyFar") );
 					m_act = m_randomKeyFar[r];
@@ -375,6 +320,10 @@ namespace GAME
 			m_vGameKey[i] = m_vGameKey[i - 1];
 		}
 		m_vGameKey[0] = gameKey;
+
+
+		//親クラスに反映
+		CharaInput::SetGameKey ( m_vGameKey );
 	}
 
 	//ブランチリストをチェックして

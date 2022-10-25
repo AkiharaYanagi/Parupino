@@ -111,9 +111,11 @@ namespace GAME
 		//	“à•”ŠÖ”
 		//------------------------------------------------------
 
-
 		//˜g•\¦Ø‘Ö
 		void SwitchRect ();
+
+		//CPU‘€ìØ‘Ö
+		void SwithcCPU ();
 	};
 
 	using P_MutualChara = shared_ptr < MutualChara >;

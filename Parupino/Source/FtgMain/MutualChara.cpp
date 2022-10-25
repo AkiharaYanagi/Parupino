@@ -65,7 +65,9 @@ namespace GAME
 	void MutualChara::Conduct ()
 	{
 		//---------------------------------------------------
+		//システム変更
 		SwitchRect ();	//枠表示切替
+		SwithcCPU ();	//CPU操作切替
 		//---------------------------------------------------
 
 		//◆スクリプト前処理(入力、移動など)
@@ -311,6 +313,27 @@ namespace GAME
 		{
 			m_exeChara1->OffDispRect ();
 			m_exeChara2->OffDispRect ();
+		}
+	}
+
+	//------------------------------------------------------
+	//CPU操作切替
+	void MutualChara::SwithcCPU ()
+	{
+		static bool cpu1 = F;
+		static bool cpu2 = F;
+
+		if ( ::GetAsyncKeyState ( '7' ) & 0x0001 ) 
+		{
+			cpu2 ^= T; 
+			if ( cpu2 )
+			{
+				m_exeChara2->ControlCPU ();
+			}
+			else
+			{
+				m_exeChara2->ControlPlayer ();
+			}
 		}
 	}
 

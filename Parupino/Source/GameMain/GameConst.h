@@ -60,7 +60,7 @@ namespace GAME
 	//CPU_INPUT
 	enum CPU_INPUT
 	{
-		CPU_INPUT_GAMEKEY_NUM = 20,
+		CPU_INPUT_GAMEKEY_NUM = 60,
 	};
 	
 	//基本アクション 列挙型定義

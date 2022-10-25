@@ -181,6 +181,15 @@ namespace GAME
 		return NO_COMPLETE;
 	}
 
+	void CharaInput::SetGameKey ( V_GAME_KEY & vKey )
+	{
+		UINT size = m_vGameKey.size ();
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_vGameKey [ i ] = vKey [ i ];
+		}
+	}
+
 
 }	//namespace GAME
 

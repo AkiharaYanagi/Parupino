@@ -55,11 +55,6 @@ namespace GAME
 	//読込
 	void ExeChara::Load ()
 	{
-
-		DWORD startTime = ::timeGetTime ();
-
-
-
 		//名前からスクリプトファイルを指定してキャラのロード
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
@@ -74,13 +69,6 @@ namespace GAME
 #endif // 0
 		LoadChara loadChara ( name, *m_pChara );
 
-
-
-		DWORD loadCharaTime = ::timeGetTime ();
-
-
-
-
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
 		m_dispChara.Load ();
@@ -91,20 +79,7 @@ namespace GAME
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
 
-
-		DWORD otherTime = ::timeGetTime ();
-
-
 		TASK_VEC::Load ();
-
-
-		DWORD TASK_VEC_Time = ::timeGetTime ();
-
-
-		DWORD t0 = loadCharaTime - startTime;
-		DWORD t1 = otherTime - loadCharaTime;
-		DWORD t2 = TASK_VEC_Time - otherTime;
-		DBGOUT_WND_F ( 5, _T ( "chara = %d, other = %d, task = %d" ), t0, t1, t2 );
 	}
 
 	//------------------------
@@ -575,7 +550,15 @@ namespace GAME
 			P_Action pact = m_pChara->GetpAction ( transitID );
 			P_Script pscr = pact->GetpScript ( 0 );
 
-			m_actionID = transitID;			//遷移
+			//ダッシュから遷移時に慣性をつける
+			if ( m_pChara->GetActionID ( _T ( "FrontDash" ) ) == m_actionID )
+			{
+				m_btlPrm.SetDashInertial ( VEC2 ( 8.f, 0 ) );
+			}
+
+			//アクション遷移
+			m_actionID = transitID;	
+
 
 			//各種状態の終了
 			m_btlPrm.EndAction ();
@@ -1001,6 +984,18 @@ namespace GAME
 	}
 
 
+	//CPU操作切替
+	void ExeChara::ControlCPU ()
+	{
+		m_pCharaInput = make_shared < CPUInput > ( shared_from_this (), m_pOther );
+		m_pCharaInput->SetPlayer ( m_playerID );
+	}
+
+	void ExeChara::ControlPlayer ()
+	{
+		m_pCharaInput = make_shared < PlayerInput > ();
+		m_pCharaInput->SetPlayer ( m_playerID );
+	}
 
 }	//namespace GAME
 

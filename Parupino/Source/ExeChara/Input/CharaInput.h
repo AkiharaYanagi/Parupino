@@ -43,6 +43,9 @@ namespace GAME
 		//戻値：enum { NO_COMPLETE (0xFFFFFFFF) } 不成立
 		virtual UINT GetTransitID ( Chara & ch, P_Script pScp, bool dirRight );
 
+		//キーの保存
+		void SetGameKey ( V_GAME_KEY & vKey );
+
 	};
 
 	using P_CharaInput = shared_ptr < CharaInput >;
