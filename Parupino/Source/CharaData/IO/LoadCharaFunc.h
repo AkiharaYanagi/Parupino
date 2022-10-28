@@ -98,7 +98,7 @@ namespace GAME
 
 	public:
 		LoadCharaFunc () = default;
-		LoadCharaFunc ( const LoadCharaUtl & rhs ) = delete;
+		LoadCharaFunc ( const LoadCharaFunc & rhs ) = delete;
 		~LoadCharaFunc () = default;
 
 		//Document‚©‚çƒLƒƒƒ‰‚É•ÏŠ·‚·‚é

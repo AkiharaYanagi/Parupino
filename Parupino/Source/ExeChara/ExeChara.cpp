@@ -9,6 +9,9 @@
 //-------------------------------------------------------------------------------------------------
 #include "ExeChara.h"
 
+#include "..\CharaData\IO\LoadCharaBin.h"
+
+
 //-------------------------------------------------------------------------------------------------
 // 定義
 //-------------------------------------------------------------------------------------------------
@@ -68,6 +71,13 @@ namespace GAME
 		}
 #endif // 0
 		LoadChara loadChara ( name, *m_pChara );
+
+
+		//test
+		Chara charabin;
+		LoadCharaBin loadCharaBin ( _T("charabin.dat"), charabin );
+
+
 
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
@@ -551,9 +561,17 @@ namespace GAME
 			P_Script pscr = pact->GetpScript ( 0 );
 
 			//ダッシュから遷移時に慣性をつける
+			if ( m_pChara->GetActionID ( _T ( "FrontDashStart" ) ) == m_actionID )
+			{
+				m_btlPrm.SetDashInertial ( VEC2 ( 10.f, 0 ) );
+			}
 			if ( m_pChara->GetActionID ( _T ( "FrontDash" ) ) == m_actionID )
 			{
-				m_btlPrm.SetDashInertial ( VEC2 ( 8.f, 0 ) );
+				m_btlPrm.SetDashInertial ( VEC2 ( 10.f, 0 ) );
+			}
+			if ( m_pChara->GetActionID ( _T ( "BackDash" ) ) == m_actionID )
+			{
+				m_btlPrm.SetDashInertial ( VEC2 ( -8.f, 0 ) );
 			}
 
 			//アクション遷移

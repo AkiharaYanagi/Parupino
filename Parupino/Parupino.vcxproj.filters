@@ -31,9 +31,6 @@
     <Filter Include="CharaSele">
       <UniqueIdentifier>{bf651318-b4a3-4e99-8fdc-d224b413ef79}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Document">
-      <UniqueIdentifier>{841cf497-b3d7-46ce-9bdf-e1670c940ffe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FtgMain\Ef">
       <UniqueIdentifier>{e8f09456-b69b-492c-b74d-1c939413b030}</UniqueIdentifier>
     </Filter>
@@ -201,6 +198,12 @@
     <ClInclude Include="Source\ExeChara\Disp\DispFrontEnd.h">
       <Filter>ExeChara\Disp</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CharaData\IO\LoadCharaBin.h">
+      <Filter>CharaIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CharaData\IO\LoadCharaBinFunc.h">
+      <Filter>CharaIO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -334,6 +337,12 @@
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispFrontEnd.cpp">
       <Filter>ExeChara\Disp</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\IO\LoadCharaBin.cpp">
+      <Filter>CharaIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\IO\LoadCharaBinFunc.cpp">
+      <Filter>CharaIO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

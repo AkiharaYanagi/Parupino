@@ -1,6 +1,8 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Diagnostics;
+
 
 namespace ScriptEditor
 {
@@ -129,28 +131,6 @@ namespace ScriptEditor
 			int count = 0;
 			foreach ( Script s in Sqc.ListScript )
 			{
-#if false
-				Color c_0 =  Color.FromArgb ( 0xff, 0xff, 0xff );
-
-				//グループ表示
-				Rectangle r = new Rectangle ( BX + (W * count), 0, W, H );
-				g.FillRectangle ( new SolidBrush ( DefineColor.Get ( s.Group ) ), r );
-				
-				//攻撃枠
-				Rectangle r_a = new Rectangle ( BX + (W * count), W * 2, W, H );
-				Color c_a = ( 0 < s.ListARect.Count ) ? Color.FromArgb ( 0xff, 0xe0, 0xe0 ) : c_0;
-				g.FillRectangle ( new SolidBrush ( c_a ), r_a );
-				
-				//相殺枠
-				Rectangle r_o = new Rectangle ( BX + (W * count), W * 3, W, H );
-				Color c_o = ( 0 < s.ListORect.Count ) ? Color.FromArgb ( 0xff, 0xff, 0xe0 ) : c_0;
-				g.FillRectangle ( new SolidBrush ( c_o ), r_o );
-				
-				//EfGnrt
-				Rectangle r_eg = new Rectangle ( BX + (W * count), W * 4, W, H );
-				Color c_eg = ( 0 < s.BD_EfGnrt.Count () ) ? Color.FromArgb ( 0xc0, 0xff, 0xff ) : c_0;
-				g.FillRectangle ( new SolidBrush ( c_eg ), r_eg );
-#endif
 				DrawScp ( g, count, 0, DefineColor.Get ( s.Group ) );	//グループ表示
 				DrawScp ( g, count, 2, GetScpCntClr ( s.ListCRect, ScpCntColor [ 1 ] ) );	//接触枠
 				DrawScp ( g, count, 3, GetScpCntClr ( s.ListHRect, ScpCntColor [ 2 ] ) );	//防御枠
@@ -273,20 +253,6 @@ namespace ScriptEditor
 		//	マウスイベント
 		//----------------------------------------------------------------------------------
 		bool bDrag = false;	//ドラッグ中
-
-		//マウス位置からフレーム表の升目位置を取得する
-		private Point GetCell () 
-		{
-			//マウス位置をコントロールのクライアント位置に直す
-			Point pt = pictureBox1.PointToClient ( Cursor.Position );
-			if ( pt.X < BX || pt.Y < BY ) { return new Point ( 0, 0 ); }
-
-			//升目に合わせる
-			int pos_x = ( pt.X - BX ) / W;
-			int pos_y = ( pt.Y - BY ) / H;
-//			STS_TXT.Trace ( pos_x.ToString() + "," + pos_y.ToString () );
-			return new Point ( pos_x, pos_y );
-		}
 
 		//マウスダウンで選択
 		private void pictureBox1_MouseDown ( object sender, MouseEventArgs e )
@@ -443,6 +409,20 @@ namespace ScriptEditor
 
 			Assosiate ();
 			DispCompend.Disp ();
+		}
+
+		//マウス位置からフレーム表の升目位置を取得する
+		private Point GetCell () 
+		{
+			//マウス位置をコントロールのクライアント位置に直す
+			Point pt = pictureBox1.PointToClient ( Cursor.Position );
+			if ( pt.X < BX || pt.Y < BY ) { return new Point ( 0, 0 ); }
+
+			//升目に合わせる
+			int pos_x = ( pt.X - BX ) / W;
+			int pos_y = ( pt.Y - BY ) / H;
+//			STS_TXT.Trace ( pos_x.ToString() + "," + pos_y.ToString () );
+			return new Point ( pos_x, pos_y );
 		}
 
 		//位置から対象を選択

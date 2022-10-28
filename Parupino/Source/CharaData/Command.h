@@ -38,8 +38,8 @@ namespace GAME
 		void SetName ( tstring name ) { m_name.assign ( name ); }
 
 		//キー配列
-//		V_GAME_KEY * GetpVecGameKey () { return & m_vecGameKey; }
-		void AddGameKey ( _GameKeyCommand key ) { m_vecGameKey.push_back ( key ); }
+		void AddGameKey ( _GameKeyCommand gkc ) { m_vecGameKey.push_back ( gkc ); }
+		void SetaGameKey ( _GameKeyCommand gkca [], UINT size );
 
 		//入力受付時間
 		UINT GetLimitTime () const { return m_limitTime; }
