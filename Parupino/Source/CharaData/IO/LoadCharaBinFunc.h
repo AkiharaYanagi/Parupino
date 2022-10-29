@@ -4,21 +4,32 @@
 //
 //=================================================================================================
 #pragma once
+#include "Game.h"
+#include "../Chara.h"
 
 //-------------------------------------------------------------------------------------------------
 // êÈåæ
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	using P_CH = shared_ptr < char [] >;
+
 	//------------------------------------------------------------
-	//	LoadCharaÇ≈ópÇ¢ÇÈä÷êîåQ
+	//	LoadCharaBinÇ≈ópÇ¢ÇÈä÷êîåQ
 	//------------------------------------------------------------
 	class LoadCharaBinFunc
 	{
 	public:
-		LoadCharaBinFunc () = default;
+		LoadCharaBinFunc ();
 		LoadCharaBinFunc ( const LoadCharaBinFunc & rhs ) = delete;
 		~LoadCharaBinFunc () = default;
+
+
+		void LoadCommand ( P_CH buf, UINT & pos, Chara & ch );
+		void LoadBranch ( P_CH buf, UINT & pos, Chara & ch );
+		void LoadRoute ( P_CH buf, UINT & pos, Chara & ch );
+
+		tstring LoadText ( char* buf, UINT length );
 	};
 
 

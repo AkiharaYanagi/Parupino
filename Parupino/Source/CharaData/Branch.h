@@ -29,6 +29,7 @@ namespace GAME
 
 	class Branch
 	{
+		tstring		m_name;				//名前
 		BRANCH_CONDITION		m_condition;	//分岐条件
 		UINT		m_indexCommand;		//条件コマンド配列添字
 		WP_Command	m_pCommand;			//条件コマンドポインタ
@@ -40,6 +41,10 @@ namespace GAME
 		Branch ();
 		Branch ( const Branch & rhs ) = delete;
 		~Branch ();
+
+		//名前
+		tstring GetName () const { return m_name; }
+		void SetName ( tstring name ) { m_name.assign ( name ); }
 
 		//分岐条件
 		void SetCondition ( BRANCH_CONDITION bc ) { m_condition = bc; }

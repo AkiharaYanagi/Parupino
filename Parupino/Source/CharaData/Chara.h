@@ -124,6 +124,7 @@ namespace GAME
 		//---------------------------------------------------------------------
 		//コマンド配列に追加
 		void AddpCommand ( P_Command pCommand ) { m_vpCommand.push_back ( pCommand ); }
+		void AddaCommand ( unique_ptr < P_Command [] > aryCmd, UINT size );
 
 		//コマンドを取得
 		P_Command GetpCommand ( UINT indexCommand ) const { return m_vpCommand[indexCommand]; }
@@ -132,6 +133,7 @@ namespace GAME
 
 		//ブランチ配列に追加
 		void AddpBranch ( P_Branch pBranch ) { m_vpBranch.push_back ( pBranch ); }
+		void AddaBranch ( unique_ptr < P_Branch [] > aryBrc, UINT size );
 
 		//ブランチを取得
 		P_Branch GetpBranch ( UINT indexBranch ) const { return m_vpBranch[indexBranch]; }
@@ -140,6 +142,7 @@ namespace GAME
 
 		//ルート配列に追加
 		void AddpRoute ( P_Route pRoute ) { m_vpRoute.push_back ( pRoute ); }
+		void AddaRoute ( unique_ptr < P_Route [] > aryRut, UINT size );
 
 		//ルートを取得
 		P_Route GetpRoute ( UINT indexRoute ) const { return m_vpRoute[indexRoute]; }

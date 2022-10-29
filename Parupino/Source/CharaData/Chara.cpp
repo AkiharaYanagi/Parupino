@@ -16,7 +16,6 @@ namespace GAME
 {
 
 	Chara::Chara ()
-//		: m_bsAction ()
 	{
 		Make ();
 	}
@@ -49,14 +48,43 @@ namespace GAME
 
 	void Chara::Clear ()
 	{
-//		m_vpCommand.clear ();
-//		m_vpBranch.clear ();
-//		m_vpRoute.clear ();
-		//’è”‚Ì‚İ
-		//Ä“Ç‚ÍChara‚²‚Æ
+		//Ä“Ç‚ÍChara‚²‚Æs‚¤
+	}
+
+	//---------------------------------------------------
+
+	void Chara::AddaCommand ( unique_ptr < P_Command [] > aryCmd, UINT size )
+	{
+		m_vpCommand.clear ();
+		m_vpCommand.resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_vpCommand [ i ] = aryCmd [ i ];
+		}
+	}
+
+	void Chara::AddaBranch ( unique_ptr < P_Branch [] > aryBrc, UINT size )
+	{
+		m_vpBranch.clear ();
+		m_vpBranch.resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_vpBranch [ i ] = aryBrc [ i ];
+		}
+	}
+
+	void Chara::AddaRoute ( unique_ptr < P_Route [] > aryRut, UINT size )
+	{
+		m_vpRoute.clear ();
+		m_vpRoute.resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_vpRoute [ i ] = aryRut [ i ];
+		}
 	}
 
 
+	//---------------------------------------------------
 	UINT Chara::GetActionID ( tstring name ) const
 	{
 		UINT index = 0;
@@ -71,8 +99,7 @@ namespace GAME
 		}
 		return 0;
 	}
-#if 0
-#endif // 0
+
 
 }	//namespace GAME
 
