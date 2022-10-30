@@ -17,12 +17,28 @@ namespace GAME
 	
 	class Route
 	{
+		tstring		m_name;				//名前
 		vector < UINT >		m_vIdBranch;
 
 	public:
 		Route ();
 		Route ( const Route & rhs ) = delete;
 		~Route ();
+
+		//名前
+		tstring GetName () const { return m_name; }
+		void SetName ( tstring name ) { m_name.assign ( name ); }
+
+		//データ設定
+		void SetaIdBranch ( unique_ptr < UINT [] > aryId, UINT size )
+		{
+			m_vIdBranch.clear ();
+			m_vIdBranch.resize ( size );
+			for ( UINT i = 0; i < size; ++ i )
+			{
+				m_vIdBranch [ i ] = aryId [ i ];
+			}
+		}
 
 		void Clear ();
 

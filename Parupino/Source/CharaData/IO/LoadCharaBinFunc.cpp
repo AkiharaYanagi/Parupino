@@ -23,10 +23,10 @@ namespace GAME
 		byte nCmd = (byte)buf [ pos ++ ];
 		
 		//メモリの確保
-		unique_ptr < P_Command[] > pCmd = make_unique < P_Command[] > ( nCmd );
+		unique_ptr < P_Command[] > aryCmd = make_unique < P_Command[] > ( nCmd );
 		for ( UINT i = 0; i < nCmd; ++ i )
 		{
-			pCmd [ i ] = make_shared < Command > ();
+			aryCmd [ i ] = make_shared < Command > ();
 		}
 
 		//実データ
@@ -34,22 +34,11 @@ namespace GAME
 		{
 			//コマンド名
 			char nStrName = buf [ pos ++ ];	//Encoding.UTF8
-			pCmd [ i ]->SetName ( LoadText ( buf.get() + pos, nStrName ) );
-#if 0
-			string str ( buf.get () + pos, nStrName );
-			unique_ptr < TCHAR [] >  tbuf = make_unique < TCHAR [] > ( nStrName + 1 );
-			size_t _PptNumOfCharConverted = 0;
-			errno_t err = ::mbstowcs_s ( &_PptNumOfCharConverted, tbuf.get (), nStrName + 1, str.c_str (), _TRUNCATE );
-			pCmd [ i ]->SetName ( tstring ( tbuf.get () ) );
-			
-			
-			tstring tstr ( (wchar_t*)( buf.get () + pos ), nStrName );
-			pCmd [ i ]->SetName ( tstr );
-#endif // 0
+			aryCmd [ i ]->SetName ( LoadText ( buf.get() + pos, nStrName ) );
 			pos += nStrName;
 
 			//受付時間
-			pCmd [ i ]->SetLimitTime ( (UINT)buf [ pos ++ ] );
+			aryCmd [ i ]->SetLimitTime ( (UINT)buf [ pos ++ ] );
 
 			//ゲームキー
 			byte nGameKey = buf [ pos ++ ];
@@ -78,10 +67,10 @@ namespace GAME
 				gkc [ iKey ].SetaBtn ( btn );
 			}
 
-			pCmd [ i ]->SetaGameKey ( gkc.get (), nGameKey );
+			aryCmd [ i ]->SetaGameKey ( gkc.get (), nGameKey );
 		}
 
-		ch.AddaCommand ( ::move ( pCmd ), nCmd );
+		ch.AddaCommand ( ::move ( aryCmd ), nCmd );
 	}
 
 
@@ -91,34 +80,70 @@ namespace GAME
 		byte nBrc = (byte)buf [ pos ++ ];
 
 		//メモリの確保
-		unique_ptr < P_Branch [] > pBrc = make_unique < P_Branch [] > ( nBrc );
+		unique_ptr < P_Branch [] > aryBrc = make_unique < P_Branch [] > ( nBrc );
 		for ( UINT i = 0; i < nBrc; ++ i )
 		{
-			pBrc [ i ] = make_shared < Branch > ();
+			aryBrc [ i ] = make_shared < Branch > ();
 		}
 
 		//実データ
 		for ( UINT i = 0; i < nBrc; ++ i )
 		{
 			//ブランチ名
-			char nStrName = buf [ pos ++ ];	//Encoding.UTF8
-			pBrc [ i ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
+			char nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
+			aryBrc [ i ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
 			pos += nStrName;
 
 			//条件
-			pBrc [ i ]->SetCondition ( (BRANCH_CONDITION)buf [ pos ++ ] );
-			pBrc [ i ]->SetIndexCommand ( (UINT)buf [ pos ++ ] );
-			pBrc [ i ]->SetIndexSequence ( (UINT)buf [ pos ++ ] );
-			pBrc [ i ]->SetIndexFrame ( (UINT)buf [ pos ++ ] );
+			aryBrc [ i ]->SetCondition ( (BRANCH_CONDITION)buf [ pos ++ ] );
+			aryBrc [ i ]->SetIndexCommand ( (UINT)buf [ pos ++ ] );
+			aryBrc [ i ]->SetIndexSequence ( (UINT)buf [ pos ++ ] );
+			aryBrc [ i ]->SetIndexFrame ( (UINT)buf [ pos ++ ] );
 		}
 
-		ch.AddaBranch ( ::move ( pBrc ), nBrc );
+		ch.AddaBranch ( ::move ( aryBrc ), nBrc );
 	}
 
 
 	void LoadCharaBinFunc::LoadRoute ( P_CH buf, UINT & pos, Chara & ch )
 	{
+		//個数
+		byte nRut = (byte)buf [ pos ++ ];
 
+		//メモリの確保
+		unique_ptr < P_Route [] > aryRut = make_unique < P_Route [] > ( nRut );
+		for ( UINT i = 0; i < nRut; ++ i )
+		{
+			aryRut [ i ] = make_shared < Route > ();
+		}
+
+		//実データ
+		for ( UINT i = 0; i < nRut; ++ i )
+		{
+			//ルート名
+			char nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
+//			aryRut [ i ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
+			tstring tstr( LoadText ( buf.get () + pos, nStrName ) );
+			aryRut [ i ]->SetName ( tstr );
+
+			pos += nStrName;
+
+			//ブランチID個数
+			byte nIdBrc = (byte)buf [ pos ++ ];
+
+			unique_ptr < UINT[] > aryIdBrc = make_unique < UINT[] > ( nIdBrc );
+
+			for ( UINT id = 0; id < nIdBrc; ++ id )
+			{
+				aryIdBrc [ id ] = (UINT) buf [ pos ++ ];
+#if 0
+#endif // 0
+			}
+
+			aryRut [ i ]->SetaIdBranch ( ::move ( aryIdBrc ), nIdBrc );
+		}
+
+		ch.AddaRoute ( ::move ( aryRut ), nRut );
 	}
 
 	tstring LoadCharaBinFunc::LoadText ( char* buf, UINT length )

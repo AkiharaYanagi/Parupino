@@ -26,7 +26,7 @@ namespace GAME
 		}
 		catch (...)
 		{
-			TRACE_F ( _T("Error LoadChara.\n") );
+			TRACE_F ( _T("Error LoadCharaBin.\n") );
 		}
 	}
 
