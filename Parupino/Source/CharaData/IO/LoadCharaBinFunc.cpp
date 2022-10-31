@@ -16,10 +16,61 @@ namespace GAME
 	{
 		::setlocale ( LC_ALL, "japanese" );
 	}
-	
+
+
+	void LoadCharaBinFunc::LoadChara ( P_CH buf, UINT & pos, Chara & ch )
+	{
+	}
+
+	void LoadCharaBinFunc::LoadBehavior ( P_CH buf, UINT & pos, Chara & ch )
+	{
+		//アクション個数
+		byte nAct = (byte)buf [ pos ++ ];
+
+		//メモリの確保
+		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
+		for ( UINT i = 0; i < nAct; ++ i )
+		{
+			aryAct [ i ] = make_shared < Action > ();
+		}
+
+		//実データ
+		for ( UINT iAct = 0; iAct < nAct; ++ iAct )
+		{
+			//アクション名
+			byte nStrName = buf [ pos ++ ];	//Encoding.UTF8
+			aryAct [ iAct ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
+			pos += nStrName;
+
+			aryAct [ iAct ]->SetNextID ( (UINT)buf [ pos ++ ] );
+			aryAct [ iAct ]->SetCategory ( (ACTION_CATEGORY)buf [ pos ++ ] );
+			aryAct [ iAct ]->SetPosture ( (ACTION_POSTURE)buf [ pos ++ ] );
+			aryAct [ iAct ]->SetHitNum ( (UINT)buf [ pos ++ ] );
+			aryAct [ iAct ]->SetHitPitch ( (UINT)buf [ pos ++ ] );
+
+			//スクリプト個数
+			byte nScp = (byte)buf [ pos ++ ];
+
+			//メモリの確保
+			unique_ptr < P_Script [] > aryScp = make_unique < P_Script [] > ( nScp );
+			for ( UINT i = 0; i < nScp; ++ i )
+			{
+				aryScp [ i ] = make_shared < Script > ();
+			}
+
+			for ( UINT iScp = 0; iScp < nScp; ++ iScp )
+			{
+				UINT indexImage = (UINT)buf [ pos ++ ];
+
+				aryScp [ iScp ]->SetImageIndex ( indexImage );
+			}
+
+		}
+	}
+
 	void LoadCharaBinFunc::LoadCommand ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//個数
+		//コマンド個数
 		byte nCmd = (byte)buf [ pos ++ ];
 		
 		//メモリの確保
@@ -33,7 +84,7 @@ namespace GAME
 		for ( UINT i = 0; i < nCmd; ++ i )
 		{
 			//コマンド名
-			char nStrName = buf [ pos ++ ];	//Encoding.UTF8
+			byte nStrName = buf [ pos ++ ];	//Encoding.UTF8
 			aryCmd [ i ]->SetName ( LoadText ( buf.get() + pos, nStrName ) );
 			pos += nStrName;
 
@@ -76,7 +127,7 @@ namespace GAME
 
 	void LoadCharaBinFunc::LoadBranch ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//個数
+		//ブランチ個数
 		byte nBrc = (byte)buf [ pos ++ ];
 
 		//メモリの確保
@@ -90,7 +141,7 @@ namespace GAME
 		for ( UINT i = 0; i < nBrc; ++ i )
 		{
 			//ブランチ名
-			char nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
+			byte nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
 			aryBrc [ i ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
 			pos += nStrName;
 
@@ -107,7 +158,7 @@ namespace GAME
 
 	void LoadCharaBinFunc::LoadRoute ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//個数
+		//ルート個数
 		byte nRut = (byte)buf [ pos ++ ];
 
 		//メモリの確保
@@ -121,7 +172,7 @@ namespace GAME
 		for ( UINT i = 0; i < nRut; ++ i )
 		{
 			//ルート名
-			char nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
+			byte nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
 //			aryRut [ i ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
 			tstring tstr( LoadText ( buf.get () + pos, nStrName ) );
 			aryRut [ i ]->SetName ( tstr );
@@ -136,8 +187,6 @@ namespace GAME
 			for ( UINT id = 0; id < nIdBrc; ++ id )
 			{
 				aryIdBrc [ id ] = (UINT) buf [ pos ++ ];
-#if 0
-#endif // 0
 			}
 
 			aryRut [ i ]->SetaIdBranch ( ::move ( aryIdBrc ), nIdBrc );

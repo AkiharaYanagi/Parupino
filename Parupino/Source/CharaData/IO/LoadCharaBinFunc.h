@@ -24,6 +24,9 @@ namespace GAME
 		LoadCharaBinFunc ( const LoadCharaBinFunc & rhs ) = delete;
 		~LoadCharaBinFunc () = default;
 
+		void LoadChara ( P_CH buf, UINT & pos, Chara & ch );
+
+		void LoadBehavior ( P_CH buf, UINT & pos, Chara & ch );
 
 		void LoadCommand ( P_CH buf, UINT & pos, Chara & ch );
 		void LoadBranch ( P_CH buf, UINT & pos, Chara & ch );

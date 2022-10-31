@@ -67,6 +67,9 @@ namespace GAME
 		UINT pos = 0;	//ƒƒ‚ƒŠƒ|ƒCƒ“ƒ^
 
 		//Chara
+
+		//Behavior
+		m_func.LoadBehavior ( scriptBuf, pos, chara );
 		
 		//Command
 		m_func.LoadCommand ( scriptBuf, pos, chara );

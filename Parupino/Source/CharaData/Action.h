@@ -37,9 +37,11 @@ namespace GAME
 	class Action : public Sequence
 	{
 		tstring				m_name;			//名前
-		UINT				m_cost;			//消費コスト
 		ACTION_CATEGORY		m_category;		//アクション属性
 		ACTION_POSTURE		m_posture;		//アクション体勢
+		UINT				m_hitNum;		//ヒット数
+		UINT				m_hitPitch;		//ヒット間隔
+		int					m_balance;		//バランス値
 
 	public:
 		Action ();
@@ -59,7 +61,17 @@ namespace GAME
 		ACTION_POSTURE GetPosture () const { return m_posture; }
 		void SetPosture ( ACTION_POSTURE posture ) { m_posture = posture; }
 
-		int GetBalance () { return 0; }
+		//ヒット数
+		UINT GetHitNum () const { return m_hitNum; }
+		void SetHitNum ( UINT n ) { m_hitNum = n; }
+
+		//ヒット間隔
+		UINT GetHitPitch () const { return m_hitPitch; }
+		void SetHitPitch ( UINT n ) { m_hitPitch = n; }
+
+		//バランス値
+		int GetBalance () { return m_balance; }
+		void SetHitNum ( int i ) { m_balance = i; }
 };
 
 	using P_Action = shared_ptr < Action >;
