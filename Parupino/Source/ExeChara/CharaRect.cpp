@@ -18,11 +18,17 @@ namespace GAME
 	CharaRect::CharaRect ()
 	{
 		m_pvCRect = make_shared < V_RECT > ();
-		m_pvARect = make_shared < V_RECT > ();
 		m_pvHRect = make_shared < V_RECT > ();
+		m_pvARect = make_shared < V_RECT > ();
 		m_pvORect = make_shared < V_RECT > ();
 
 		//既定数だけ生成
+		m_pvCRect->resize ( NUM_RECT );
+		m_pvHRect->resize ( NUM_RECT );
+		m_pvARect->resize ( NUM_RECT );
+		m_pvORect->resize ( NUM_RECT );
+		ResetAllRect ();
+#if 0
 		for ( UINT i = 0; i < NUM_RECT; ++ i )
 		{
 			RECT rect = { 0, 0, 0, 0 };
@@ -31,6 +37,7 @@ namespace GAME
 			m_pvHRect->push_back ( rect );
 			m_pvORect->push_back ( rect );
 		}
+#endif // 0
 	}
 
 	//デストラクタ
@@ -43,8 +50,8 @@ namespace GAME
 	void CharaRect::ResetAllRect ()
 	{
 		ZeroVecRect ( m_pvCRect );
-		ZeroVecRect ( m_pvARect );
 		ZeroVecRect ( m_pvHRect );
+		ZeroVecRect ( m_pvARect );
 		ZeroVecRect ( m_pvORect );
 	}
 
@@ -81,8 +88,8 @@ namespace GAME
 	}
 
 	void CharaRect::SetCRect ( PV_RECT p, bool dir, VEC2 pos ) { SetpvRect ( m_pvCRect, p, dir, pos ); }
-	void CharaRect::SetARect ( PV_RECT p, bool dir, VEC2 pos ) { SetpvRect ( m_pvARect, p, dir, pos ); }
 	void CharaRect::SetHRect ( PV_RECT p, bool dir, VEC2 pos ) { SetpvRect ( m_pvHRect, p, dir, pos ); }
+	void CharaRect::SetARect ( PV_RECT p, bool dir, VEC2 pos ) { SetpvRect ( m_pvARect, p, dir, pos ); }
 	void CharaRect::SetORect ( PV_RECT p, bool dir, VEC2 pos ) { SetpvRect ( m_pvORect, p, dir, pos ); }
 
 	
