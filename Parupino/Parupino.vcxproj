@@ -171,6 +171,8 @@
     <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h" />
     <ClInclude Include="Source\CharaData\Route.h" />
     <ClInclude Include="Source\CharaData\Script.h" />
+    <ClInclude Include="Source\CharaData\ScriptParam_Battle.h" />
+    <ClInclude Include="Source\CharaData\ScriptParam_Staging.h" />
     <ClInclude Include="Source\CharaData\Sequence.h" />
     <ClInclude Include="Source\CharaSele\CharaSele.h" />
     <ClInclude Include="Source\CharaSele\CharaSeleConst.h" />
@@ -226,6 +228,8 @@
     <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp" />
     <ClCompile Include="Source\CharaData\Route.cpp" />
     <ClCompile Include="Source\CharaData\Script.cpp" />
+    <ClCompile Include="Source\CharaData\ScriptParam_Battle.cpp" />
+    <ClCompile Include="Source\CharaData\ScriptParam_Staging.cpp" />
     <ClCompile Include="Source\CharaData\Sequence.cpp" />
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
     <ClCompile Include="Source\ExeChara\BtlParam.cpp" />

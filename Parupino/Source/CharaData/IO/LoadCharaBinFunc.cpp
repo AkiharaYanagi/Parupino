@@ -67,6 +67,10 @@ namespace GAME
 
 		}
 	}
+	
+	void LoadCharaBinFunc::LoadGarnish ( P_CH buf, UINT & pos, Chara & ch )
+	{
+	}
 
 	void LoadCharaBinFunc::LoadCommand ( P_CH buf, UINT & pos, Chara & ch )
 	{

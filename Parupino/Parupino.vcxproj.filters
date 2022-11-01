@@ -204,6 +204,12 @@
     <ClInclude Include="Source\CharaData\IO\LoadCharaBinFunc.h">
       <Filter>CharaIO</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CharaData\ScriptParam_Battle.h">
+      <Filter>CharaData</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CharaData\ScriptParam_Staging.h">
+      <Filter>CharaData</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -343,6 +349,12 @@
     </ClCompile>
     <ClCompile Include="Source\CharaData\IO\LoadCharaBinFunc.cpp">
       <Filter>CharaIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\ScriptParam_Staging.cpp">
+      <Filter>CharaData</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\ScriptParam_Battle.cpp">
+      <Filter>CharaData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

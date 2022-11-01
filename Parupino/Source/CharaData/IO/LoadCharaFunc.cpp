@@ -184,31 +184,36 @@ using LCF = LoadCharaFunc;
 
 		//Vel
 		VEC2 vel = m_utl._AttrToVec2 ( pAttr->at ( ATTR_SCRIPT_VEL_X ), pAttr->at ( ATTR_SCRIPT_VEL_Y ) );
-		pScript->SetVel ( vel );
+//		pScript->SetVel ( vel );
+		pScript->m_prmBattle.Vel = vel;
 
 		//Acc
 		VEC2 acc = m_utl._AttrToVec2 ( pAttr->at ( ATTR_SCRIPT_ACC_X ), pAttr->at ( ATTR_SCRIPT_ACC_Y ) );
-		pScript->SetAcc ( acc );
+//		pScript->SetAcc ( acc );
+		pScript->m_prmBattle.Acc = acc;
 
 		//計算状態
 		CLC_ST clcSt = m_utl._AttrToCLC_ST ( pAttr->at ( ATTR_SCRIPT_CLCST ) );
 		pScript->SetCalcState ( clcSt );
 
+		//----------------------------------------------------
+		//パラメータ
+
 		//power
 		int power = m_utl._AttrToInt ( pAttr->at ( ATTR_SCRIPT_POWER ) );
-		pScript->SetPower ( power );
+		pScript->m_prmBattle.Power = power;
 
 		//blackout
 		UINT blackout = m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_BLACKOUT ) );
-		pScript->SetBlackOut ( blackout );
+		pScript->m_prmStaging.BlackOut = blackout;
 
 		//viberation
 		UINT viberation = m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_VIBRATION ) );
-		pScript->SetVibration ( viberation );
+		pScript->m_prmStaging.Vibration = viberation;
 
 		//stop
 		UINT stop = m_utl._AttrToUINT ( pAttr->at ( ATTR_SCRIPT_STOP ) );
-		pScript->SetStop ( stop );
+		pScript->m_prmStaging.Stop = stop;
 
 		//-----------------------------------------------------------------------------
 		//スクリプト内部のエレメント

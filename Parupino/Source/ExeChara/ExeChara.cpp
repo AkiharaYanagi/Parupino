@@ -848,10 +848,10 @@ namespace GAME
 		if ( ! m_btlPrm.GetTmr_Stop()->IsActive () )
 		{
 			//暗転
-			m_btlPrm.SetBlackOut ( m_pScript->GetBlackOut () );
+			m_btlPrm.SetBlackOut ( m_pScript->m_prmStaging.BlackOut );
 
 			//スクリプトからの停止
-			m_btlPrm.SetScpStop ( m_pScript->GetStop () );
+			m_btlPrm.SetScpStop ( m_pScript->m_prmStaging.Stop );
 		}
 
 		//ゲージ更新

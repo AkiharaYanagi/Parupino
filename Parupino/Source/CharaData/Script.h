@@ -12,6 +12,8 @@
 #include "Game.h"
 #include "Route.h"
 #include "EffectGenerate.h"
+#include "ScriptParam_Battle.h"
+#include "ScriptParam_Staging.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -23,15 +25,12 @@ namespace GAME
 	//		┣フレーム数
 	//		┣イメージID
 	//		┣画像表示位置
-	//		┣速度
-	//		┣加速度
 	//		┣計算状態(持続/代入/加算)
 	//		┣[]ルート
 	//		┣[]接触枠
 	//		┣[]攻撃枠
 	//		┣[]当り枠
 	//		┣[]相殺枠
-	//		┣攻撃値
 	//		┣[]エフェクト発生
 	//
 	//================================================================
@@ -47,13 +46,10 @@ namespace GAME
 	//クラス
 	class Script
 	{
-		UINT	m_frame;		//該当フレーム数
+		UINT	m_frame;		//自身の該当フレーム数
 		UINT	m_imageIndex;	//イメージID
 
 		VEC2	m_pos;			//画像表示位置
-		VEC2	m_vel;			//速度
-		VEC2	m_acc;			//加速度
-
 		CLC_ST	m_CalcState;	//計算状態
 
 		PV_RECT	m_pvCRect;		//接触枠リスト
@@ -63,11 +59,6 @@ namespace GAME
 
 		V_UINT		m_vRouteID;		//ルートリスト
 		PVP_EfGnrt	m_pvpEfGnrt;	//Efジェネレートリスト
-
-		int		m_power;		//攻撃値
-		UINT	m_blackOut;		//暗転
-		UINT	m_vibration;	//振動
-		UINT	m_stop;			//停止
 
 	public:
 		Script ();
@@ -89,6 +80,7 @@ namespace GAME
 		void SetPos ( VEC2 pos ) { m_pos = pos; }
 		VEC2 GetPos () const { return m_pos; }
 
+#if 0
 		//速度
 		void SetVel ( VEC2 vel ) { m_vel = vel; }
 		VEC2 GetVel () const { return m_vel; }
@@ -96,6 +88,7 @@ namespace GAME
 		//加速度
 		void SetAcc ( VEC2 acc ) { m_acc = acc; }
 		VEC2 GetAcc () const { return m_acc; }
+#endif // 0
 
 		//計算状態
 		void SetCalcState ( CLC_ST clcSt ) { m_CalcState = clcSt; }
@@ -121,21 +114,9 @@ namespace GAME
 		void AddHRect ( RECT hrect ) { m_pvHRect->push_back ( hrect ); }
 		void AddORect ( RECT orect ) { m_pvORect->push_back ( orect ); }
 
-		//攻撃値
-		int GetPower () const { return m_power; }
-		void SetPower ( int power ) { m_power = power; }
-
-		//暗転
-		UINT GetBlackOut () const { return m_blackOut; }
-		void SetBlackOut ( UINT blackout ) { m_blackOut = blackout; }
-
-		//振動
-		UINT GetVibration () const { return m_vibration; }
-		void SetVibration ( UINT viberation ) { m_vibration = viberation; }
-
-		//停止
-		UINT GetStop () const { return m_stop; }
-		void SetStop ( UINT stop ) { m_stop = stop; }
+		//値
+		ScriptParam_Battle		m_prmBattle;	//戦闘パラメータ
+		ScriptParam_Staging		m_prmStaging;	//演出パラメータ
 	};
 
 

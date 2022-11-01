@@ -150,7 +150,7 @@ namespace GAME
 		}
 
 		//‘¬“xŒvŽZ
-		m_ptEffect += Dir ( m_pScript->GetVel () );
+		m_ptEffect += Dir ( m_pScript->m_prmBattle.Vel );
 
 //		DBGOUT_WND_F ( 0, _T ( "plpos = (%d,%d)" ), ptChara.x, ptChara.y );
 //		DBGOUT_WND_F ( 1, _T ( "efpos = (%d,%d)" ), m_ptEffect.x, m_ptEffect.y );
