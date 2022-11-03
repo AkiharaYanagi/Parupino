@@ -45,7 +45,7 @@ namespace GAME
 		void AddBranchID ( UINT branchId );
 
 		const V_UINT & GetvIDBranch () const { return m_vIdBranch; }
-};
+	};
 
 	using P_Route = shared_ptr < Route >;
 	using VP_Route = vector < P_Route >;

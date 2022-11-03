@@ -96,6 +96,7 @@ namespace GAME
 
 		//ルート
 		void AddRouteID ( UINT i ) { m_vRouteID.push_back ( i ); }
+		void SetRouteID ( unique_ptr < UINT[] > up_aryUint, UINT size );
 		const V_UINT & GetvRouteID () const { return m_vRouteID; }
 
 		//EfGnrtリスト

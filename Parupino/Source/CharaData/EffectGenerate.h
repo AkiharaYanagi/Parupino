@@ -32,7 +32,7 @@ namespace GAME
 
 	public:
 		EffectGenerate ();
-		EffectGenerate ( const EffectGenerate& rhs ) = delete;		//コピー禁止
+		EffectGenerate ( const EffectGenerate& rhs );		//コピー可能
 		~EffectGenerate ();
 
 		void SetID ( UINT i ) { m_id = i; }

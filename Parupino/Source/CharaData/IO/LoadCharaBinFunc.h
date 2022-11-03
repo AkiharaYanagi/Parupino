@@ -13,6 +13,7 @@
 namespace GAME
 {
 	using P_CH = shared_ptr < char [] >;
+	using L_UINT = unique_ptr < UINT [] >;
 
 	//------------------------------------------------------------
 	//	LoadCharaBinÇ≈ópÇ¢ÇÈä÷êîåQ
@@ -33,7 +34,16 @@ namespace GAME
 		void LoadBranch ( P_CH buf, UINT & pos, Chara & ch );
 		void LoadRoute ( P_CH buf, UINT & pos, Chara & ch );
 
-		tstring LoadText ( char* buf, UINT length );
+		void LoadScript ( P_CH buf, UINT & pos, Script & scp );
+		void LoadScpPrm_Btl ( P_CH buf, UINT & pos, Script & scp );
+		void LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp );
+
+		//----
+		tstring LoadText ( P_CH buf, UINT & pos );
+		int LoadInt ( P_CH buf, UINT & pos );
+		RECT LoadRect ( P_CH buf, UINT & pos );
+		void LoadListRect ( P_CH buf, UINT & pos, PV_RECT pvRect );
+		L_UINT LoadAryUint ( P_CH buf, UINT & pos, UINT & refLength );
 	};
 
 
