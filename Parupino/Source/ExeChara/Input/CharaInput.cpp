@@ -155,9 +155,9 @@ namespace GAME
 		const VP_Command vpCommand = ch.GetvpCommand ();
 		
 		//スクリプトの持つルートリスト
-		for ( UINT indexRoute : pScp->GetvRouteID () )
+		for ( UINT indexRoute : pScp->GetcvRouteID () )
 		{
-			const V_UINT vBranchID = vpRoute[indexRoute]->GetvIDBranch ();
+			const V_UINT vBranchID = vpRoute[indexRoute]->GetcvIDBranch ();
 
 			//対象のブランチリスト
 			for ( UINT indexBranch : vBranchID )

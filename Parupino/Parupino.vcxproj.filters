@@ -210,6 +210,9 @@
     <ClInclude Include="Source\CharaData\ScriptParam_Staging.h">
       <Filter>CharaData</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CharaData\IO\LoadCharaBinUtl.h">
+      <Filter>CharaIO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -355,6 +358,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharaData\ScriptParam_Battle.cpp">
       <Filter>CharaData</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CharaData\IO\LoadCharaBinUtl.cpp">
+      <Filter>CharaIO</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

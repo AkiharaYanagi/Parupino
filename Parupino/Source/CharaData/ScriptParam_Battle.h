@@ -18,6 +18,11 @@ namespace GAME
 	struct ScriptParam_Battle
 	{
 	public:
+		ScriptParam_Battle ();
+		ScriptParam_Battle ( const ScriptParam_Battle & rhs ) = delete;
+		~ScriptParam_Battle ();
+
+		CLC_ST	CalcState;	//計算状態
 		VEC2 Vel;		//速度
 		VEC2 Acc;		//加速度
 		int Power;		//攻撃値
@@ -26,10 +31,6 @@ namespace GAME
 		int Recoil_E;	//反動(x,y)(相手)
 		int Balance_I;	//バランス増減(自分)
 		int Balance_E;	//バランス増減(相手)
-
-		ScriptParam_Battle ();
-		ScriptParam_Battle ( const ScriptParam_Battle & rhs ) = delete;
-		~ScriptParam_Battle ();
 	};
 
 

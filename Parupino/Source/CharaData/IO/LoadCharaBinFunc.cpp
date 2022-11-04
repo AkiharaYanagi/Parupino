@@ -14,55 +14,46 @@ namespace GAME
 {
 	LoadCharaBinFunc::LoadCharaBinFunc ()
 	{
-		::setlocale ( LC_ALL, "japanese" );
 	}
 
 
 	void LoadCharaBinFunc::LoadChara ( P_CH buf, UINT & pos, Chara & ch )
 	{
+		LoadBehavior ( buf, pos, ch );	//Behavior
+		LoadGarnish ( buf, pos, ch );	//Garnish
+		LoadCommand ( buf, pos, ch );	//Command
+		LoadBranch ( buf, pos, ch );	//Branch
+		LoadRoute ( buf, pos, ch );		//Route
 	}
+
 
 	void LoadCharaBinFunc::LoadBehavior ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//アクション個数
+		//アクション個数 と メモリの確保
 		byte nAct = (byte)buf [ pos ++ ];
-
-		//メモリの確保
 		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
-		for ( UINT i = 0; i < nAct; ++ i )
-		{
-			aryAct [ i ] = make_shared < Action > ();
-		}
+		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = make_shared < Action > (); }
 
 		//実データ
 		for ( UINT iAct = 0; iAct < nAct; ++ iAct )
 		{
-			//アクション名
-			aryAct [ iAct ]->SetName ( LoadText ( buf, pos ) );
-
+			//アクション
+			aryAct [ iAct ]->SetName ( m_utl.LoadText ( buf, pos ) );
 			aryAct [ iAct ]->SetNextID ( (UINT)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetCategory ( (ACTION_CATEGORY)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetPosture ( (ACTION_POSTURE)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetHitNum ( (UINT)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetHitPitch ( (UINT)buf [ pos ++ ] );
 
-			//スクリプト個数
+			//スクリプト個数 と メモリの確保
 			byte nScp = (byte)buf [ pos ++ ];
-
-			//メモリの確保
 			unique_ptr < P_Script [] > aryScp = make_unique < P_Script [] > ( nScp );
-			for ( UINT i = 0; i < nScp; ++ i )
-			{
-				aryScp [ i ] = make_shared < Script > ();
-			}
+			for ( UINT i = 0; i < nScp; ++ i ) { aryScp [ i ] = make_shared < Script > (); }
 
 			for ( UINT iScp = 0; iScp < nScp; ++ iScp )
 			{
-				UINT indexImage = (UINT)buf [ pos ++ ];
-
-				aryScp [ iScp ]->SetImageIndex ( indexImage );
+				LoadScript ( buf, pos, (* aryScp [ iScp ]) );
 			}
-
 		}
 	}
 	
@@ -72,23 +63,16 @@ namespace GAME
 
 	void LoadCharaBinFunc::LoadCommand ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//コマンド個数
+		//コマンド個数 と メモリの確保
 		byte nCmd = (byte)buf [ pos ++ ];
-		
-		//メモリの確保
 		unique_ptr < P_Command[] > aryCmd = make_unique < P_Command[] > ( nCmd );
-		for ( UINT i = 0; i < nCmd; ++ i )
-		{
-			aryCmd [ i ] = make_shared < Command > ();
-		}
+		for ( UINT i = 0; i < nCmd; ++ i ) { aryCmd [ i ] = make_shared < Command > (); }
 
 		//実データ
 		for ( UINT i = 0; i < nCmd; ++ i )
 		{
 			//コマンド名
-			byte nStrName = buf [ pos ++ ];	//Encoding.UTF8
-			aryCmd [ i ]->SetName ( LoadText ( buf, pos ) );
-			pos += nStrName;
+			aryCmd [ i ]->SetName ( m_utl.LoadText ( buf, pos ) );
 
 			//受付時間
 			aryCmd [ i ]->SetLimitTime ( (UINT)buf [ pos ++ ] );
@@ -129,23 +113,16 @@ namespace GAME
 
 	void LoadCharaBinFunc::LoadBranch ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//ブランチ個数
+		//ブランチ個数 と メモリの確保
 		byte nBrc = (byte)buf [ pos ++ ];
-
-		//メモリの確保
 		unique_ptr < P_Branch [] > aryBrc = make_unique < P_Branch [] > ( nBrc );
-		for ( UINT i = 0; i < nBrc; ++ i )
-		{
-			aryBrc [ i ] = make_shared < Branch > ();
-		}
+		for ( UINT i = 0; i < nBrc; ++ i ) { aryBrc [ i ] = make_shared < Branch > (); }
 
 		//実データ
 		for ( UINT i = 0; i < nBrc; ++ i )
 		{
 			//ブランチ名
-			byte nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
-			aryBrc [ i ]->SetName ( LoadText ( buf, pos ) );
-			pos += nStrName;
+			aryBrc [ i ]->SetName ( m_utl.LoadText ( buf, pos ) );
 
 			//条件
 			aryBrc [ i ]->SetCondition ( (BRANCH_CONDITION)buf [ pos ++ ] );
@@ -153,46 +130,29 @@ namespace GAME
 			aryBrc [ i ]->SetIndexSequence ( (UINT)buf [ pos ++ ] );
 			aryBrc [ i ]->SetIndexFrame ( (UINT)buf [ pos ++ ] );
 		}
-
 		ch.AddaBranch ( ::move ( aryBrc ), nBrc );
 	}
 
 
 	void LoadCharaBinFunc::LoadRoute ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//ルート個数
+		//ルート個数 と メモリの確保
 		byte nRut = (byte)buf [ pos ++ ];
-
-		//メモリの確保
 		unique_ptr < P_Route [] > aryRut = make_unique < P_Route [] > ( nRut );
-		for ( UINT i = 0; i < nRut; ++ i )
-		{
-			aryRut [ i ] = make_shared < Route > ();
-		}
+		for ( UINT i = 0; i < nRut; ++ i ) { aryRut [ i ] = make_shared < Route > (); }
 
 		//実データ
 		for ( UINT i = 0; i < nRut; ++ i )
 		{
 			//ルート名
-			byte nStrName = buf [ pos ++ ];	//size	Encoding.UTF8
-//			aryRut [ i ]->SetName ( LoadText ( buf.get () + pos, nStrName ) );
-			tstring tstr( LoadText ( buf, pos ) );
-			aryRut [ i ]->SetName ( tstr );
-
-			pos += nStrName;
+			aryRut [ i ]->SetName ( m_utl.LoadText ( buf, pos ) );
 
 			//ブランチID個数
-#if 0
-			byte nIdBrc = (byte)buf [ pos ++ ];
-			unique_ptr < UINT[] > aryIdBrc = make_unique < UINT[] > ( nIdBrc );
-			for ( UINT id = 0; id < nIdBrc; ++ id )
-			{
-				aryIdBrc [ id ] = (UINT) buf [ pos ++ ];
-			}
-#endif // 0
 			UINT nIdBrc = 0;
-			unique_ptr < UINT [] > aryIdBrc = LoadAryUint ( buf, pos, nIdBrc );
+			unique_ptr < UINT [] > aryIdBrc = m_utl.LoadAryUint ( buf, pos, nIdBrc );
 			aryRut [ i ]->SetaIdBranch ( ::move ( aryIdBrc ), nIdBrc );
+
+			m_utl.LoadAryUint ( buf, pos, aryRut [ i ]->GetvIDBranch () );
 		}
 
 		ch.AddaRoute ( ::move ( aryRut ), nRut );
@@ -205,30 +165,18 @@ namespace GAME
 		scp.SetImageIndex ( (UINT)b );
 
 		//位置
-		int pos_x = LoadInt ( buf, pos );
-		int pos_y = LoadInt ( buf, pos );
-		scp.SetPos ( VEC2 ( (float)pos_x, (float)pos_y ) );
+		scp.SetPos ( m_utl.LoadVec2 ( buf, pos ) );
 
-		//ルートID
-#if 0
-		byte nIdRut = buf [ pos ++ ];
-		unique_ptr < UINT [] > aryIdRut = make_unique < UINT [] > ( nIdRut );
-		for ( UINT i = 0; i < nIdRut; ++ i )
-		{
-			aryIdRut [ i ] = (UINT)buf [ pos ++ ];
-		}
-#endif // 0
-		UINT nIdRut = 0;
-		unique_ptr < UINT [] > aryIdRut = LoadAryUint ( buf, pos, nIdRut );
-		scp.SetRouteID ( ::move ( aryIdRut ), nIdRut );
+		// [] ルートID
+		m_utl.LoadAryUint ( buf, pos, scp.GetvRouteID () );
 
 		//枠
-		LoadListRect ( buf, pos, scp.GetpvCRect () );
-		LoadListRect ( buf, pos, scp.GetpvHRect () );
-		LoadListRect ( buf, pos, scp.GetpvARect () );
-		LoadListRect ( buf, pos, scp.GetpvORect () );
+		m_utl.LoadListRect ( buf, pos, scp.GetpvCRect () );
+		m_utl.LoadListRect ( buf, pos, scp.GetpvHRect () );
+		m_utl.LoadListRect ( buf, pos, scp.GetpvARect () );
+		m_utl.LoadListRect ( buf, pos, scp.GetpvORect () );
 
-		//エフェクト生成
+		// [] エフェクト生成
 		byte nIdEfGnrt = buf [ pos ++ ];
 		unique_ptr < EffectGenerate [] > aryEfGnrt = make_unique < EffectGenerate [] > ( nIdEfGnrt );
 		for ( UINT i = 0; i < nIdEfGnrt; ++ i )
@@ -236,8 +184,8 @@ namespace GAME
 			//エフェクトID
 			aryEfGnrt [ i ].SetIndex ( (UINT)buf [ pos ++ ] );
 			//位置
-			int pos_x = LoadInt ( buf, pos );
-			int pos_y = LoadInt ( buf, pos );
+			int pos_x = m_utl.LoadInt ( buf, pos );
+			int pos_y = m_utl.LoadInt ( buf, pos );
 			aryEfGnrt [ i ].SetPos ( VEC2 ( (float)pos_x, (float)pos_y ) );
 			//Z値
 			int z_per100F = (int)buf [ pos ++ ];
@@ -251,88 +199,35 @@ namespace GAME
 		}
 
 		//バトルパラメータ
+		LoadScpPrm_Btl ( buf, pos, scp );
 
 		//ステージング(演出)パラメータ
+		LoadScpPrm_Stg ( buf, pos, scp );
 	}
+
 
 	//スクリプト・戦闘パラメータ
 	void LoadCharaBinFunc::LoadScpPrm_Btl ( P_CH buf, UINT & pos, Script & scp )
 	{
+		scp.m_prmBattle.CalcState = (CLC_ST)m_utl.LoadInt ( buf, pos );
+		scp.m_prmBattle.Vel = m_utl.LoadVec2 ( buf, pos );
+		scp.m_prmBattle.Acc = m_utl.LoadVec2 ( buf, pos );
+		scp.m_prmBattle.Power = m_utl.LoadInt ( buf, pos );
+		scp.m_prmBattle.Warp = m_utl.LoadInt ( buf, pos );
+		scp.m_prmBattle.Recoil_I = m_utl.LoadInt ( buf, pos );
+		scp.m_prmBattle.Recoil_E = m_utl.LoadInt ( buf, pos );
+		scp.m_prmBattle.Balance_I = m_utl.LoadInt ( buf, pos );
+		scp.m_prmBattle.Balance_E = m_utl.LoadInt ( buf, pos );
 	}
+
 
 	//スクリプト・演出パラメータ
 	void LoadCharaBinFunc::LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp )
 	{
+		scp.m_prmStaging.BlackOut = (UINT)m_utl.LoadInt ( buf, pos );
 	}
 
 
-
-	//-----------------------------------------------------------------------
-	tstring LoadCharaBinFunc::LoadText ( P_CH buf, UINT & pos )
-	{
-		//名前のサイズ
-		byte length = buf [ pos ++ ];	//Encoding.UTF8
-
-		//		unique_ptr < char [] > arypChar = make_unique < char [] > ( length + 1 );
-//		memcpy_s ( arypChar.get(), length ,buf, length );
-		
-//		unique_ptr < TCHAR [] >  tbuf = make_unique < TCHAR [] > ( length + 1 );
-//		size_t _PptNumOfCharConverted = 0;
-//		errno_t err = ::mbstowcs_s ( &_PptNumOfCharConverted, tbuf.get (), length + 1, arypChar.get (), _TRUNCATE );
-
-		//UTF8 -> wstring
-		string str ( buf.get() + pos, length );
-		std::wstring_convert < std::codecvt_utf8_utf16 < wchar_t > > converter;
-		tstring tstr = converter.from_bytes ( str );
-
-		//位置を更新
-		pos += length;
-
-		//取得した名前を返す
-		return tstr ;
-	}
-
-	int LoadCharaBinFunc::LoadInt ( P_CH buf, UINT & pos )
-	{
-		//リトルエンディアン読込 (byte[])0x67 0x45 0x23 0x01 -> (int)0x01234567
-		int i = 0;
-		rsize_t size = sizeof ( int );
-		::memcpy_s ( &i, size, buf.get () + pos, size );
-		return i;
-	}
-
-	RECT LoadCharaBinFunc::LoadRect ( P_CH buf, UINT & pos )
-	{
-		//リトルエンディアン読込 (byte[])0x67 0x45 0x23 0x01 -> (int)0x01234567
-		RECT rect = { 0 };
-		rsize_t size = sizeof ( RECT );
-		::memcpy_s ( &rect, size, buf.get () + pos, size );
-		return rect;
-	}
-
-	void LoadCharaBinFunc::LoadListRect ( P_CH buf, UINT & pos, PV_RECT pvRect )
-	{
-		UINT n = buf [ pos ++ ];
-		pvRect->clear ();
-		pvRect->resize ( n );
-		for ( UINT i = 0; i < n; ++ i )
-		{
-			( *pvRect ) [ i ] = LoadRect ( buf, pos );
-		}
-	}
-
-	L_UINT LoadCharaBinFunc::LoadAryUint ( P_CH buf, UINT & pos, UINT & refLength )
-	{
-		refLength = buf [ pos ++ ];
-
-		unique_ptr < UINT [] > ary_uint = make_unique < UINT [] > ( refLength );
-		for ( UINT i = 0; i < refLength; ++ i )
-		{
-			ary_uint [ i ] = (UINT)buf [ pos ++ ];
-		}
-
-		return ::move ( ary_uint );
-	}
 
 }	//namespace GAME
 

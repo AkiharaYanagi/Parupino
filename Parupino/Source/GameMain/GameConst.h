@@ -84,6 +84,14 @@ namespace GAME
 		AP_STAND, AP_CROUCH, AP_JUMP
 	};
 
+	//ŒvŽZó‘Ô(CalcState)
+	enum CLC_ST
+	{
+		CLC_MAINTAIN,	//Ž‘±
+		CLC_SUBSTITUDE,	//‘ã“ü
+		CLC_ADD,		//‰ÁŽZ
+	};
+
 	//ƒuƒ‰ƒ“ƒ`ðŒ
 	enum BRANCH_CONDITION
 	{

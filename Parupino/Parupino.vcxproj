@@ -167,6 +167,7 @@
     <ClInclude Include="Source\CharaData\IO\LoadChara.h" />
     <ClInclude Include="Source\CharaData\IO\LoadCharaBin.h" />
     <ClInclude Include="Source\CharaData\IO\LoadCharaBinFunc.h" />
+    <ClInclude Include="Source\CharaData\IO\LoadCharaBinUtl.h" />
     <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h" />
     <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h" />
     <ClInclude Include="Source\CharaData\Route.h" />
@@ -224,6 +225,7 @@
     <ClCompile Include="Source\CharaData\IO\LoadChara.cpp" />
     <ClCompile Include="Source\CharaData\IO\LoadCharaBin.cpp" />
     <ClCompile Include="Source\CharaData\IO\LoadCharaBinFunc.cpp" />
+    <ClCompile Include="Source\CharaData\IO\LoadCharaBinUtl.cpp" />
     <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp" />
     <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp" />
     <ClCompile Include="Source\CharaData\Route.cpp" />

@@ -669,9 +669,9 @@ namespace GAME
 		const VP_Branch& vpBranch = m_pChara->GetvpBranch ();
 
 		//スクリプトの持つルートリスト
-		for ( UINT indexRut : m_pScript->GetvRouteID () )
+		for ( UINT indexRut : m_pScript->GetcvRouteID () )
 		{
-			const V_UINT& vBrcID = vpRoute [ indexRut ]->GetvIDBranch ();
+			const V_UINT& vBrcID = vpRoute [ indexRut ]->GetcvIDBranch ();
 
 			//対象のブランチリスト
 			for ( UINT id : vBrcID )

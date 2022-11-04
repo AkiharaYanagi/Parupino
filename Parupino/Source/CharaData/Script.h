@@ -10,6 +10,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
+#include "../GameMain/GameConst.h"
 #include "Route.h"
 #include "EffectGenerate.h"
 #include "ScriptParam_Battle.h"
@@ -35,14 +36,6 @@ namespace GAME
 	//
 	//================================================================
 
-	//計算状態(CalcState)
-	enum CLC_ST
-	{
-		CLC_MAINTAIN,	//持続
-		CLC_SUBSTITUDE,	//代入
-		CLC_ADD,		//加算
-	};
-
 	//クラス
 	class Script
 	{
@@ -50,7 +43,7 @@ namespace GAME
 		UINT	m_imageIndex;	//イメージID
 
 		VEC2	m_pos;			//画像表示位置
-		CLC_ST	m_CalcState;	//計算状態
+//		CLC_ST	m_CalcState;	//計算状態
 
 		PV_RECT	m_pvCRect;		//接触枠リスト
 		PV_RECT	m_pvARect;		//攻撃枠リスト
@@ -88,16 +81,17 @@ namespace GAME
 		//加速度
 		void SetAcc ( VEC2 acc ) { m_acc = acc; }
 		VEC2 GetAcc () const { return m_acc; }
-#endif // 0
 
 		//計算状態
 		void SetCalcState ( CLC_ST clcSt ) { m_CalcState = clcSt; }
 		CLC_ST GetCalcState () const { return m_CalcState; }
+#endif // 0
 
 		//ルート
 		void AddRouteID ( UINT i ) { m_vRouteID.push_back ( i ); }
 		void SetRouteID ( unique_ptr < UINT[] > up_aryUint, UINT size );
-		const V_UINT & GetvRouteID () const { return m_vRouteID; }
+		const V_UINT & GetcvRouteID () const { return m_vRouteID; }
+		V_UINT & GetvRouteID () { return m_vRouteID; }
 
 		//EfGnrtリスト
 		PVP_EfGnrt GetpvpEfGnrt () const { return m_pvpEfGnrt; }

@@ -1,12 +1,11 @@
 //=================================================================================================
 //
-// LoadCharaBinFunc ヘッダファイル
+// LoadCharaBinUtl ヘッダファイル
 //
 //=================================================================================================
 #pragma once
 #include "Game.h"
 #include "../Chara.h"
-#include "LoadCharaBinUtl.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -19,29 +18,21 @@ namespace GAME
 	//------------------------------------------------------------
 	//	LoadCharaBinで用いる関数群
 	//------------------------------------------------------------
-	class LoadCharaBinFunc
+	class LoadCharaBinUtl
 	{
-		LoadCharaBinUtl		m_utl;
-
-
 	public:
-		LoadCharaBinFunc ();
-		LoadCharaBinFunc ( const LoadCharaBinFunc & rhs ) = delete;
-		~LoadCharaBinFunc () = default;
+		LoadCharaBinUtl ();
+		LoadCharaBinUtl ( const LoadCharaBinUtl & rhs ) = delete;
+		~LoadCharaBinUtl () = default;
 
-		void LoadChara ( P_CH buf, UINT & pos, Chara & ch );
-
-		void LoadBehavior ( P_CH buf, UINT & pos, Chara & ch );
-		void LoadGarnish ( P_CH buf, UINT & pos, Chara & ch );
-
-		void LoadCommand ( P_CH buf, UINT & pos, Chara & ch );
-		void LoadBranch ( P_CH buf, UINT & pos, Chara & ch );
-		void LoadRoute ( P_CH buf, UINT & pos, Chara & ch );
-
-		void LoadScript ( P_CH buf, UINT & pos, Script & scp );
-		void LoadScpPrm_Btl ( P_CH buf, UINT & pos, Script & scp );
-		void LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp );
-
+		//----
+		tstring LoadText ( P_CH buf, UINT & pos );
+		int LoadInt ( P_CH buf, UINT & pos );
+		VEC2 LoadVec2 ( P_CH buf, UINT & pos );
+		RECT LoadRect ( P_CH buf, UINT & pos );
+		void LoadListRect ( P_CH buf, UINT & pos, PV_RECT pvRect );
+		L_UINT LoadAryUint ( P_CH buf, UINT & pos, UINT & refLength );
+		void LoadAryUint ( P_CH buf, UINT & pos, V_UINT & refAryUint );
 	};
 
 

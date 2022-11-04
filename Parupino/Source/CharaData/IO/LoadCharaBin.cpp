@@ -69,12 +69,6 @@ namespace GAME
 		//Chara
 		m_func.LoadChara ( scriptBuf, pos, chara );
 
-		m_func.LoadBehavior ( scriptBuf, pos, chara );		//Behavior
-		m_func.LoadGarnish ( scriptBuf, pos, chara );		//Garnish
-		m_func.LoadCommand ( scriptBuf, pos, chara );		//Command
-		m_func.LoadBranch ( scriptBuf, pos, chara );		//Branch
-		m_func.LoadRoute ( scriptBuf, pos, chara );		//Route
-
 		//---------------------------------------------------------------------
 		//ファイルストリーム終了
 		ifstrm.close ();
