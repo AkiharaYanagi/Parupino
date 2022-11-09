@@ -43,6 +43,9 @@ namespace GAME
 		//スクリプトの追加
 		void AddpScript ( P_Script pScript ) { m_pvpScript->push_back ( pScript ); }
 
+		//スクリプト配列にまとめて追加
+		void AddaScript ( unique_ptr < P_Script[] > arypScript, rsize_t size );
+
 		//スクリプト配列サイズの取得
 		UINT SizeScript () const { return m_pvpScript->size(); }
 

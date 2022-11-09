@@ -24,6 +24,9 @@ namespace GAME
 		LoadCommand ( buf, pos, ch );	//Command
 		LoadBranch ( buf, pos, ch );	//Branch
 		LoadRoute ( buf, pos, ch );		//Route
+
+		LoadImg ( buf, pos, ch.GetpvpMainTexture () );
+		LoadImg ( buf, pos, ch.GetpvpEfTexture () );
 	}
 
 
@@ -68,6 +71,8 @@ namespace GAME
 				aryScp [ iScp ]->SetFrame ( iScp );
 				LoadScript ( buf, pos, (* aryScp [ iScp ]) );
 			}
+
+			aryAct [ iAct ]->AddaScript ( ::move (aryScp), nScp );
 		}
 
 		ch.AddpAction ( aryAct, nAct );
@@ -275,6 +280,28 @@ namespace GAME
 		scp.m_prmStaging.Color_time		 = (UINT)m_utl.LoadByte ( buf, pos );
 	}
 
+
+	void LoadCharaBinFunc::LoadImg ( P_CH buf, UINT & pos, PVP_TxBs pvpTxBs )
+	{
+		//個数を取得
+		UINT nImg = (UINT)m_utl.LoadByte ( buf, pos );
+		pvpTxBs->clear ();
+		pvpTxBs->resize ( nImg );
+
+		for ( UINT i = 0; i < nImg; ++ i )
+		{
+			//サイズを取得
+			UINT size = m_utl.LoadUInt ( buf, pos );
+
+			//メモリ上のデータからゲームテクスチャに変換
+			P_TxMem pTx = make_shared < TxMem > ( (LPCVOID)(buf.get() + pos), size );
+			pos += size;
+
+			//キャラ内部のテクスチャリストに加える
+			( *pvpTxBs ) [ i ] = pTx;
+		}
+
+	}
 
 
 }	//namespace GAME

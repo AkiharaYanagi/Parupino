@@ -70,12 +70,18 @@ namespace GAME
 		default: break;
 		}
 #endif // 0
+
+
+
+#if 0
 		LoadChara loadChara ( name, *m_pChara );
 
-
-		//test
-		Chara charabin;
-		LoadCharaBin loadCharaBin ( _T("charabin.dat"), charabin );
+#else
+		//バイナリデータ読込
+//		Chara charabin;
+//		LoadCharaBin loadCharaBin ( _T("charabin.dat"), charabin );
+		LoadCharaBin loadCharaBin ( _T("charabin.dat"), *m_pChara );
+#endif // 0
 
 
 

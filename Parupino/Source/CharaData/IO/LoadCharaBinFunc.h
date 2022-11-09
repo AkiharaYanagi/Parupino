@@ -42,6 +42,8 @@ namespace GAME
 		void LoadScpPrm_Btl ( P_CH buf, UINT & pos, Script & scp );
 		void LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp );
 
+		void LoadImg ( P_CH buf, UINT & pos, PVP_TxBs pvp_txBs );
+
 	};
 
 
