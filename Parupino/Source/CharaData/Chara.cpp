@@ -52,7 +52,56 @@ namespace GAME
 	}
 
 	//---------------------------------------------------
+	//アクション配列にまとめて追加
+	void Chara::AddpAction ( unique_ptr < P_Action [] > arypAction, rsize_t size )
+	{
+		if ( ! m_pvpAction ) { return; }
 
+		m_pvpAction->clear ();
+		m_pvpAction->resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_pvpAction->at ( i ) = arypAction [ i ];
+		}
+	}
+	void Chara::AddpAction ( const vector < P_Action > & arypAction, rsize_t size )
+	{
+		if ( ! m_pvpAction ) { return; }
+
+		m_pvpAction->clear ();
+		m_pvpAction->resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_pvpAction->at ( i ) = arypAction [ i ];
+		}
+	}
+
+	//---------------------------------------------------
+	//エフェクト配列にまとめて追加
+	void Chara::AddpEffect ( unique_ptr < P_Effect [] > arypEffect, rsize_t size )
+	{
+		if ( ! m_pvpEf ) { return; }
+
+		m_pvpEf->clear ();
+		m_pvpEf->resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_pvpEf->at ( i ) = arypEffect [ i ];
+		}
+	}
+	void Chara::AddpEffect ( const vector < P_Effect > & arypEffect, rsize_t size )
+	{
+		if ( ! m_pvpEf ) { return; }
+
+		m_pvpEf->clear ();
+		m_pvpEf->resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			m_pvpEf->at ( i ) = arypEffect [ i ];
+		}
+	}
+
+	//---------------------------------------------------
 	void Chara::AddaCommand ( unique_ptr < P_Command [] > aryCmd, UINT size )
 	{
 		m_vpCommand.clear ();

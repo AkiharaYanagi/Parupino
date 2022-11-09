@@ -194,7 +194,7 @@ using LCF = LoadCharaFunc;
 
 		//計算状態
 		CLC_ST clcSt = m_utl._AttrToCLC_ST ( pAttr->at ( ATTR_SCRIPT_CLCST ) );
-		pScript->SetCalcState ( clcSt );
+		pScript->m_prmBattle.CalcState = clcSt;
 
 		//----------------------------------------------------
 		//パラメータ

@@ -31,8 +31,20 @@ namespace GAME
 	{
 		//アクション個数 と メモリの確保
 		byte nAct = (byte)buf [ pos ++ ];
+
+#if 0
+		unique_ptr < Action [] > pi = make_unique < Action [] > ( nAct );
+
 		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
+//		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = make_shared < Action > (); }
+
+		shared_ptr < P_Action [] > aryShared { new P_Action [ nAct ] };
+		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = aryShared [ i ]; }
+#endif // 0
+		vector < P_Action > aryAct ( nAct );
 		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = make_shared < Action > (); }
+
+
 
 		//実データ
 		for ( UINT iAct = 0; iAct < nAct; ++ iAct )
@@ -44,6 +56,7 @@ namespace GAME
 			aryAct [ iAct ]->SetPosture ( (ACTION_POSTURE)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetHitNum ( (UINT)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetHitPitch ( (UINT)buf [ pos ++ ] );
+			aryAct [ iAct ]->SetBalance ( m_utl.LoadInt ( buf, pos ) );
 
 			//スクリプト個数 と メモリの確保
 			byte nScp = (byte)buf [ pos ++ ];
@@ -52,13 +65,41 @@ namespace GAME
 
 			for ( UINT iScp = 0; iScp < nScp; ++ iScp )
 			{
+				aryScp [ iScp ]->SetFrame ( iScp );
 				LoadScript ( buf, pos, (* aryScp [ iScp ]) );
 			}
 		}
+
+		ch.AddpAction ( aryAct, nAct );
 	}
 	
 	void LoadCharaBinFunc::LoadGarnish ( P_CH buf, UINT & pos, Chara & ch )
 	{
+		//エフェクト個数 と メモリの確保
+		byte nEfc = (byte)buf [ pos ++ ];
+
+		vector < P_Effect > aryEfc( nEfc );
+		for ( UINT i = 0; i < nEfc; ++ i ) { aryEfc [ i ] = make_shared < Effect > (); }
+
+		//実データ
+		for ( UINT iEfc = 0; iEfc < nEfc; ++ iEfc )
+		{
+			//エフェクト
+			aryEfc [ iEfc ]->SetName ( m_utl.LoadText ( buf, pos ) );
+
+			//スクリプト個数 と メモリの確保
+			byte nScp = (byte)buf [ pos ++ ];
+			unique_ptr < P_Script [] > aryScp = make_unique < P_Script [] > ( nScp );
+			for ( UINT i = 0; i < nScp; ++ i ) { aryScp [ i ] = make_shared < Script > (); }
+
+			for ( UINT iScp = 0; iScp < nScp; ++ iScp )
+			{
+				aryScp [ iScp ]->SetFrame ( iScp );
+				LoadScript ( buf, pos, ( * aryScp [ iScp ] ) );
+			}
+		}
+
+		ch.AddpEffect ( aryEfc, nEfc );
 	}
 
 	void LoadCharaBinFunc::LoadCommand ( P_CH buf, UINT & pos, Chara & ch )
@@ -144,14 +185,12 @@ namespace GAME
 		//実データ
 		for ( UINT i = 0; i < nRut; ++ i )
 		{
+			P_Route pr = aryRut [ i ];
+
 			//ルート名
 			aryRut [ i ]->SetName ( m_utl.LoadText ( buf, pos ) );
 
 			//ブランチID個数
-			UINT nIdBrc = 0;
-			unique_ptr < UINT [] > aryIdBrc = m_utl.LoadAryUint ( buf, pos, nIdBrc );
-			aryRut [ i ]->SetaIdBranch ( ::move ( aryIdBrc ), nIdBrc );
-
 			m_utl.LoadAryUint ( buf, pos, aryRut [ i ]->GetvIDBranch () );
 		}
 
@@ -224,7 +263,16 @@ namespace GAME
 	//スクリプト・演出パラメータ
 	void LoadCharaBinFunc::LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp )
 	{
-		scp.m_prmStaging.BlackOut = (UINT)m_utl.LoadInt ( buf, pos );
+		scp.m_prmStaging.BlackOut		 = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Vibration		 = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Stop			 = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Radian			 = m_utl.LoadInt ( buf, pos );	//int
+		scp.m_prmStaging.AfterImage_N	 = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.AfterImage_time = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.AfterImage_pitch = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Vibration_S	 = (UINT)m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Color			 = m_utl.LoadUInt ( buf, pos );	//COLOR
+		scp.m_prmStaging.Color_time		 = (UINT)m_utl.LoadByte ( buf, pos );
 	}
 
 

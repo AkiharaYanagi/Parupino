@@ -84,6 +84,10 @@ namespace GAME
 		//アクション配列に追加
 		void AddpAction ( P_Action pAction ) { m_pvpAction->push_back ( pAction ); }
 
+		//アクション配列にまとめて追加
+		void AddpAction ( unique_ptr < P_Action [] > arypAction, rsize_t size );
+		void AddpAction ( const vector < P_Action > & arypAction, rsize_t size );
+
 		//アクションポインタを取得
 		P_Action GetpAction ( UINT index ) { return m_pvpAction->at ( index ); }
 
@@ -103,6 +107,10 @@ namespace GAME
 
 		//Efイメージ テクスチャ配列に追加
 		void AddpEfTexture ( P_TxBs pTexture ) { m_pvpTxEf->push_back ( pTexture ); }
+
+		//エフェクト配列にまとめて追加
+		void AddpEffect ( unique_ptr < P_Effect [] > arypEffect, rsize_t size );
+		void AddpEffect ( const vector < P_Effect > & arypEffect, rsize_t size );
 
 		//Efイメージ テクスチャポインタの取得
 		P_TxBs GetpEfTexture ( UINT index ) { return m_pvpTxEf->at ( index ); }

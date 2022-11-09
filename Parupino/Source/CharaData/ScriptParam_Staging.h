@@ -26,12 +26,12 @@ namespace GAME
 		//------
 		//演出(個別)
 		int		Radian;				//回転
-		int		AfterImage_N;		//残像[個]
-		int		AfterImage_time;	//残像[F] 持続
-		int		AfterImage_pitch;	//残像[F] pitch
-		int		Vibration_S;		//振動[F](個別)
+		UINT		AfterImage_N;		//残像[個]
+		UINT		AfterImage_time;	//残像[F] 持続
+		UINT		AfterImage_pitch;	//残像[F] pitch
+		UINT		Vibration_S;		//振動[F](個別)
 		_CLR	Color;				//色調変更
-		int		Color_time;			//色調変更[F] 持続
+		UINT		Color_time;			//色調変更[F] 持続
 
 		ScriptParam_Staging ();
 		ScriptParam_Staging ( const ScriptParam_Staging & rhs ) = delete;

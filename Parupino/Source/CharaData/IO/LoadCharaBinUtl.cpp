@@ -43,12 +43,30 @@ namespace GAME
 	}
 
 
+	byte LoadCharaBinUtl::LoadByte ( P_CH buf, UINT & pos )
+	{
+		//1バイト読み込んでポインタを進め、値を返す
+		byte b = buf [ pos ++ ];
+		return b;
+	}
+
 	int LoadCharaBinUtl::LoadInt ( P_CH buf, UINT & pos )
 	{
 		//リトルエンディアン読込 (byte[])0x67 0x45 0x23 0x01 -> (int)0x01234567
 		int i = 0;
 		rsize_t size = sizeof ( int );
 		::memcpy_s ( &i, size, buf.get () + pos, size );
+		pos += size;
+		return i;
+	}
+
+	UINT LoadCharaBinUtl::LoadUInt ( P_CH buf, UINT & pos )
+	{
+		//リトルエンディアン読込 (byte[])0x67 0x45 0x23 0x01 -> (int)0x01234567
+		UINT i = 0;
+		rsize_t size = sizeof ( int );
+		::memcpy_s ( &i, size, buf.get () + pos, size );
+		pos += size;
 		return i;
 	}
 
@@ -67,6 +85,7 @@ namespace GAME
 		RECT rect = { 0 };
 		rsize_t size = sizeof ( RECT );
 		::memcpy_s ( &rect, size, buf.get () + pos, size );
+		pos += size;
 		return rect;
 	}
 

@@ -21,6 +21,7 @@ namespace GAME
 	//-----------------------------------------------------------------
 	class Sequence
 	{
+		tstring			m_name;			//名前
 		PVP_Script		m_pvpScript;	//スクリプト配列
 		UINT			m_next;			//次シークエンスID
 		tstring			m_nextName;		//次シークエンス名
@@ -31,6 +32,12 @@ namespace GAME
 		virtual ~Sequence ();
 
 		void Rele ();
+
+		//-----------------------------------------------------------------
+		//名前
+		void SetName ( tstring name ) { m_name.assign ( name ); }
+		tstring GetName () const { return m_name; }
+		bool IsName ( tstring name ) const { return m_name == name; }
 
 		//-----------------------------------------------------------------
 		//スクリプトの追加
