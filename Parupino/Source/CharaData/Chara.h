@@ -86,6 +86,7 @@ namespace GAME
 
 		//アクション配列にまとめて追加
 		void AddpAction ( unique_ptr < P_Action [] > arypAction, rsize_t size );
+		void AddpAction ( shared_ptr < P_Action [] > arypAction, rsize_t size );
 		void AddpAction ( const vector < P_Action > & arypAction, rsize_t size );
 
 		//アクションポインタを取得

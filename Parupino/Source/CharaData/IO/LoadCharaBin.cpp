@@ -43,6 +43,13 @@ namespace GAME
 	//------------------------------------------
 	void LoadCharaBin::_Load ( const tstring & filename, Chara & chara )
 	{
+
+
+		DWORD startTime = ::timeGetTime ();
+
+
+
+
 		//---------------------------------------------------------------------
 		//ファイルストリーム開始
 		ifstream ifstrm ( filename.c_str (), ios::binary );
@@ -62,16 +69,44 @@ namespace GAME
 		ifstrm.read ( (char*)& scriptSize, sizeof ( UINT ) );
 
 		//一時読込
-		P_CH scriptBuf = make_unique < char[] > ( scriptSize );
-		ifstrm.read ( scriptBuf.get(), scriptSize );
+		P_CH scriptBuf = make_unique < char [] > ( scriptSize );
+		ifstrm.read ( scriptBuf.get (), scriptSize );
 		UINT pos = 0;	//メモリポインタ
 
-		//Chara
-		m_func.LoadChara ( scriptBuf, pos, chara );
+
+
+		DWORD scriptRead_Time = ::timeGetTime ();
+
+
+
+		//------------------------------------------
+
+		//キャラ読込
+
+		//スクリプト
+		m_func.LoadCharaScript ( scriptBuf, pos, chara );
+
+
+
+		DWORD LoadScript_Time = ::timeGetTime ();
+
+
+
+		//イメージ
+		m_func.LoadCharaImage ( scriptBuf, pos, chara );
 
 		//---------------------------------------------------------------------
 		//ファイルストリーム終了
 		ifstrm.close ();
+
+
+		DWORD LoadImage_Time = ::timeGetTime ();
+
+
+		DWORD t0 = scriptRead_Time - startTime;
+		DWORD t2 = LoadScript_Time - scriptRead_Time;
+		DWORD t3 = LoadImage_Time - LoadScript_Time;
+		DBGOUT_WND_F ( 6, _T ( "scriptRead_Time = %d, LoadScript_Time = %d, LoadImage_Time = %d" ), t0, t2, t3 );
 	}
 
 

@@ -60,7 +60,7 @@ namespace ScriptEditor
 				EffectGenerate efgnrt = GetEfGnrt ();
 				Tbn_X.Text = efgnrt.Pt.X.ToString();
 				Tbn_Y.Text = efgnrt.Pt.Y.ToString();
-				Tbn_Z.Text = efgnrt.Z.ToString();
+				Tbn_Z.Text = efgnrt.Z_PER100F.ToString();
 				Cb_Gnrt.Checked = efgnrt.Gnrt;
 				Cb_Loop.Checked = efgnrt.Loop;
 				Cb_Sync.Checked = efgnrt.Sync;

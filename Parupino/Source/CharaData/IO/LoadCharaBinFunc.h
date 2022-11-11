@@ -30,6 +30,8 @@ namespace GAME
 		~LoadCharaBinFunc () = default;
 
 		void LoadChara ( P_CH buf, UINT & pos, Chara & ch );
+		void LoadCharaScript ( P_CH buf, UINT & pos, Chara & ch );
+		void LoadCharaImage ( P_CH buf, UINT & pos, Chara & ch );
 
 		void LoadBehavior ( P_CH buf, UINT & pos, Chara & ch );
 		void LoadGarnish ( P_CH buf, UINT & pos, Chara & ch );

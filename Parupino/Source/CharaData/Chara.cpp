@@ -61,7 +61,18 @@ namespace GAME
 		m_pvpAction->resize ( size );
 		for ( UINT i = 0; i < size; ++ i )
 		{
-			(*m_pvpAction) [ i ] = arypAction [ i ];
+			( *m_pvpAction ) [ i ] = arypAction [ i ];
+		}
+	}
+	void Chara::AddpAction ( shared_ptr < P_Action [] > arypAction, rsize_t size )
+	{
+		if ( ! m_pvpAction ) { return; }
+
+		m_pvpAction->clear ();
+		m_pvpAction->resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			( *m_pvpAction ) [ i ] = arypAction [ i ];
 		}
 	}
 	void Chara::AddpAction ( const vector < P_Action > & arypAction, rsize_t size )
