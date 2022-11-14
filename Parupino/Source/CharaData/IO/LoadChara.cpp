@@ -100,6 +100,8 @@ namespace GAME
 		Document document ( scriptBuf, scriptSize );
 
 
+
+
 		DWORD Document_Time = ::timeGetTime ();
 
 

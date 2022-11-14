@@ -158,7 +158,11 @@ namespace GAME
 
 		//各値取得
 		CHARA_NAME GetCharaName () const { return m_name; }
-		int GetPower () const { return m_btlPrm.GetPower (); }		//攻撃値取得
+		int GetPower () const
+		{
+//			return m_btlPrm.GetPower (); 
+			return m_pScript->m_prmBattle.Power;
+		}		//攻撃値取得
 		int GetLife () const { return m_btlPrm.GetLife (); }		//ライフ取得
 		ACTION_POSTURE GetPosture () const { return m_pAction->GetPosture (); }
 
@@ -304,7 +308,7 @@ namespace GAME
 			||	m_pAction->GetCategory ()  == AC_ATTACK_M
 			||	m_pAction->GetCategory ()  == AC_ATTACK_H; 
 		}
-		bool IsStand ()		{ return m_pAction->GetCategory ()  == AC_STAND; }
+		bool IsStand ()		{ return m_pAction->GetCategory ()  == AC_NEUTRAL; }
 		bool IsMove ()		{ return m_pAction->GetCategory ()  == AC_MOVE; }
 		bool IsDash ()		{ return m_pAction->GetCategory ()  == AC_DASH; }
 		bool IsPoised ()	{ return m_pAction->GetCategory ()  == AC_POISED; }

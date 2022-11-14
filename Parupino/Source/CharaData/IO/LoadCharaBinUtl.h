@@ -27,6 +27,7 @@ namespace GAME
 
 		//----
 		tstring LoadText ( P_CH buf, UINT & pos );
+		byte LoadByte ( P_CH buf, UINT & pos );
 		int LoadInt ( P_CH buf, UINT & pos );
 		UINT LoadUInt ( P_CH buf, UINT & pos );
 		VEC2 LoadVec2 ( P_CH buf, UINT & pos );

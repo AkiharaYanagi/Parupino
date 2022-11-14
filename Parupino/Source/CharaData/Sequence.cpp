@@ -29,6 +29,16 @@ namespace GAME
 		for ( auto p : * m_pvpScript ) { p->Rele (); } m_pvpScript->clear (); m_pvpScript.reset ();
 	}
 
+	void Sequence::AddaScript ( unique_ptr < P_Script [] > aryScript, rsize_t size )
+	{
+		m_pvpScript->clear ();
+		m_pvpScript->resize ( size );
+		for ( UINT i = 0; i < size; ++ i )
+		{
+			( *m_pvpScript ) [ i ] = aryScript [ i ];
+		}
+	}
+
 
 }	//namespace GAME
 

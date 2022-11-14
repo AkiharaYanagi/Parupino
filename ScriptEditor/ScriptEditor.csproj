@@ -56,11 +56,16 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Chara">
-      <HintPath>..\..\ScriptEditorUtility\Chara\bin\Debug\Chara.dll</HintPath>
+    <Reference Include="Chara, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ScriptEditorUtility\Chara\bin\x86\Debug\Chara.dll</HintPath>
     </Reference>
-    <Reference Include="Ctrl_Chara">
-      <HintPath>..\..\scripteditorutility\Ctrl_Chara\bin\Debug\Ctrl_Chara.dll</HintPath>
+    <Reference Include="Ctrl_Chara, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ScriptEditorUtility\Ctrl_Chara\bin\x86\Debug\Ctrl_Chara.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyConfig">
+      <HintPath>..\..\ScriptEditorUtility\KeyConfig\bin\x86\Debug\KeyConfig.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
@@ -77,8 +82,9 @@
     <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
     </Reference>
-    <Reference Include="ScriptEditorUtility">
-      <HintPath>..\..\ScriptEditorUtility\ScriptEditorUtility\bin\Debug\ScriptEditorUtility.dll</HintPath>
+    <Reference Include="ScriptEditorUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ScriptEditorUtility\ScriptEditorUtility\bin\x86\Debug\ScriptEditorUtility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -16,7 +16,7 @@ namespace GAME
 {
 
 	Action::Action ()
-		: m_category ( AC_STAND), m_posture ( AP_STAND )
+		: m_category ( AC_NEUTRAL ), m_posture ( AP_STAND )
 		, m_hitNum ( 0 ), m_hitPitch ( 0 ), m_balance ( 0 )
 	{
 	}

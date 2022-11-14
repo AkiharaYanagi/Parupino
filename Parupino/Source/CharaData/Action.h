@@ -36,7 +36,6 @@ namespace GAME
 	
 	class Action : public Sequence
 	{
-		tstring				m_name;			//名前
 		ACTION_CATEGORY		m_category;		//アクション属性
 		ACTION_POSTURE		m_posture;		//アクション体勢
 		UINT				m_hitNum;		//ヒット数
@@ -47,11 +46,6 @@ namespace GAME
 		Action ();
 		Action ( const Action & rhs ) = delete;
 		~Action ();
-
-		//名前
-		void SetName ( tstring name ) { m_name.assign ( name ); }
-		tstring GetName () const { return m_name; }
-		bool IsName ( tstring name ) const { return m_name == name; }
 
 		//アクション属性
 		ACTION_CATEGORY GetCategory () const { return m_category; }
@@ -71,7 +65,7 @@ namespace GAME
 
 		//バランス値
 		int GetBalance () { return m_balance; }
-		void SetHitNum ( int i ) { m_balance = i; }
+		void SetBalance ( int i ) { m_balance = i; }
 };
 
 	using P_Action = shared_ptr < Action >;

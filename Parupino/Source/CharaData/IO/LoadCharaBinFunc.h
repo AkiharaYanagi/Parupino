@@ -30,6 +30,8 @@ namespace GAME
 		~LoadCharaBinFunc () = default;
 
 		void LoadChara ( P_CH buf, UINT & pos, Chara & ch );
+		void LoadCharaScript ( P_CH buf, UINT & pos, Chara & ch );
+		void LoadCharaImage ( P_CH buf, UINT & pos, Chara & ch );
 
 		void LoadBehavior ( P_CH buf, UINT & pos, Chara & ch );
 		void LoadGarnish ( P_CH buf, UINT & pos, Chara & ch );
@@ -41,6 +43,8 @@ namespace GAME
 		void LoadScript ( P_CH buf, UINT & pos, Script & scp );
 		void LoadScpPrm_Btl ( P_CH buf, UINT & pos, Script & scp );
 		void LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp );
+
+		void LoadImg ( P_CH buf, UINT & pos, PVP_TxBs pvp_txBs );
 
 	};
 
