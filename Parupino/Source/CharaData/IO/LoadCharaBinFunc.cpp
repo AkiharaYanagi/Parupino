@@ -29,6 +29,9 @@ namespace GAME
 
 	void LoadCharaBinFunc::LoadBehavior ( P_CH buf, UINT & pos, Chara & ch )
 	{
+		//@todo メモリコントローラ
+		//先頭に 総アクション数, 総スクリプト数 を記述、必要時に該当分のアドレスを返す
+
 		//アクション個数 と メモリの確保
 		byte nAct = (byte)buf [ pos ++ ];
 		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
@@ -224,7 +227,17 @@ namespace GAME
 	//スクリプト・演出パラメータ
 	void LoadCharaBinFunc::LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp )
 	{
-		scp.m_prmStaging.BlackOut = (UINT)m_utl.LoadInt ( buf, pos );
+		scp.m_prmStaging.BlackOut		 = m_utl.LoadUInt ( buf, pos );
+		scp.m_prmStaging.Vibration		 = m_utl.LoadUInt ( buf, pos );
+		scp.m_prmStaging.Stop			 = m_utl.LoadUInt ( buf, pos );
+
+		scp.m_prmStaging.Radian			 = m_utl.LoadInt ( buf, pos );
+		scp.m_prmStaging.AfterImage_N	 = m_utl.LoadUInt ( buf, pos );
+		scp.m_prmStaging.AfterImage_time = m_utl.LoadUInt ( buf, pos ); ;
+		scp.m_prmStaging.AfterImage_pitch = m_utl.LoadUInt ( buf, pos ); ;
+		scp.m_prmStaging.Vibration_S	 = m_utl.LoadUInt ( buf, pos );;
+		scp.m_prmStaging.Color			 = (_CLR)m_utl.LoadUInt ( buf, pos );;
+		scp.m_prmStaging.Color_time		 = m_utl.LoadUInt ( buf, pos );;
 	}
 
 

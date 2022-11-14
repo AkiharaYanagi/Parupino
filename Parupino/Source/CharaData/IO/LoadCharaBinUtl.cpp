@@ -49,6 +49,17 @@ namespace GAME
 		int i = 0;
 		rsize_t size = sizeof ( int );
 		::memcpy_s ( &i, size, buf.get () + pos, size );
+		pos += size;
+		return i;
+	}
+
+	UINT LoadCharaBinUtl::LoadUInt ( P_CH buf, UINT & pos )
+	{
+		//リトルエンディアン読込 (byte[])0x67 0x45 0x23 0x01 -> (UINT)0x01234567
+		UINT i = 0;
+		rsize_t size = sizeof ( UINT );
+		::memcpy_s ( &i, size, buf.get () + pos, size );
+		pos += size;
 		return i;
 	}
 
