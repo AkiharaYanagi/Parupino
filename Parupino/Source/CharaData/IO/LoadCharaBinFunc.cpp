@@ -295,7 +295,6 @@ namespace GAME
 	//スクリプト・演出パラメータ
 	void LoadCharaBinFunc::LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp )
 	{
-<<<<<<< HEAD
 		scp.m_prmStaging.BlackOut		 = m_utl.LoadUInt ( buf, pos );
 		scp.m_prmStaging.Vibration		 = m_utl.LoadUInt ( buf, pos );
 		scp.m_prmStaging.Stop			 = m_utl.LoadUInt ( buf, pos );
@@ -307,18 +306,6 @@ namespace GAME
 		scp.m_prmStaging.Vibration_S	 = m_utl.LoadUInt ( buf, pos );;
 		scp.m_prmStaging.Color			 = (_CLR)m_utl.LoadUInt ( buf, pos );;
 		scp.m_prmStaging.Color_time		 = m_utl.LoadUInt ( buf, pos );;
-=======
-		scp.m_prmStaging.BlackOut		 = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.Vibration		 = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.Stop			 = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.Radian			 = m_utl.LoadInt ( buf, pos );	//int
-		scp.m_prmStaging.AfterImage_N	 = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.AfterImage_time = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.AfterImage_pitch = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.Vibration_S	 = (UINT)m_utl.LoadByte ( buf, pos );
-		scp.m_prmStaging.Color			 = m_utl.LoadUInt ( buf, pos );	//COLOR
-		scp.m_prmStaging.Color_time		 = (UINT)m_utl.LoadByte ( buf, pos );
->>>>>>> c7243cb6fd70ba556ebdac2ca1a8e23bcffc7dfd
 	}
 
 
