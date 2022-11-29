@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration ( "" )]
 [assembly: AssemblyCompany ( "" )]
 [assembly: AssemblyProduct ( "GameSettings" )]
-[assembly: AssemblyCopyright ( "Copyright ©  2019" )]
+[assembly: AssemblyCopyright ( "Copyright ©  2022" )]
 [assembly: AssemblyTrademark ( "" )]
 [assembly: AssemblyCulture ( "" )]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible ( false )]
 
 // このプロジェクトが COM に公開される場合、次の GUID が typelib の ID になります
-[assembly: Guid ( "b1bf85af-2553-4203-8087-2bec59f1d114" )]
+[assembly: Guid ( "c99b1490-67dd-49bf-8edd-df8cc601e671" )]
 
 // アセンブリのバージョン情報は次の 4 つの値で構成されています:
 //

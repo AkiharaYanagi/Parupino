@@ -6,13 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameSettings
 {
-	public class CharaName
+	public class SaveGameSettings
 	{
-		public CHARA_NAME name;
-
-		public override string ToString ()
-		{
-			return name.ToString(); 
-		}
 	}
 }
