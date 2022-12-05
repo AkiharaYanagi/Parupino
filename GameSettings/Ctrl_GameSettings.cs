@@ -16,7 +16,7 @@ namespace GameSettings
 		//対象データ
 		private GameSettingsData stgData = new GameSettingsData ();
 
-		private string filename = "test.dat";
+		private string filename = "GameSettings.dat";
 
 		//-----------------------------------------------------
 		//コンストラクタ

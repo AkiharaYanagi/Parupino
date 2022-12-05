@@ -26,7 +26,8 @@ namespace GameSettings
 
 			//test
 			//開始タブ選択
-			tabControl1.SelectedIndex = 2;
+			tabControl1.SelectedIndex = 0;
+//			tabControl1.SelectedIndex = 2;
 			
 		}
 	}
