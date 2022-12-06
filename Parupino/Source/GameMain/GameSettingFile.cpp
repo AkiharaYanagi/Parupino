@@ -14,28 +14,34 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	//------------------------------------------
-	//	Static実体
-	//------------------------------------------
-	// シングルトンオブジェクト
-	UP_GmStgFl	GameSettingFile::m_inst;
-
+	//コンストラクタ
 	GameSettingFile::GameSettingFile ()
+		: m_startMode ( START_BATTLE )
+		, m_playerMode1p ( MODE_PLAYER ), m_playerMode2p ( MODE_PLAYER )
+		, m_name1p ( CHARA_TEST ), m_name2p ( CHARA_TEST )
+	{
+	}
+
+	//コピーコンストラクタ
+	GameSettingFile::GameSettingFile ( const GameSettingFile & rhs )
+	{
+		m_startMode		= rhs.m_startMode;
+		m_playerMode1p	= rhs.m_playerMode1p;
+		m_playerMode2p	= rhs.m_playerMode2p;
+		m_name1p		= rhs.m_name1p;
+		m_name2p		= rhs.m_name2p;
+	}
+
+	void GameSettingFile::Load ()
 	{
 		try
 		{
 			//入力ストリームを生成
-			ifstream ifstrm( _T("GameSetting.dat"), ios::in );
+			ifstream ifstrm( _T("GameSettings.dat"), ios::in | ios::binary );
 			
 			//見つからないときデフォルトの値を設定して終了
 			if ( ! ifstrm ) { SetDefault (); }
-			
-			//読込
-			ifstrm.read ( (char*)& m_demo, sizeof ( bool ) );
-			ifstrm.read ( (char*)& m_startBattle, sizeof ( bool ) );
-			ifstrm.read ( (char*)& m_training, sizeof ( bool ) );
-			ifstrm.read ( (char*)& m_input1pPlayer, sizeof ( bool ) );
-			ifstrm.read ( (char*)& m_input2pPlayer, sizeof ( bool ) );
+
 			byte tempName1p = 0;
 			byte tempName2p = 0;
 			ifstrm.read ( (char*)& tempName1p, sizeof ( byte ) );
@@ -48,6 +54,7 @@ namespace GAME
 		}
 		catch (...)
 		{
+			SetDefault ();
 		}
 	}
 
@@ -57,21 +64,11 @@ namespace GAME
 	
 	void GameSettingFile::SetDefault ()
 	{
-		m_demo = false;				//デモモード
-		m_startBattle = false;		//バトルから開始
-		m_training = false;		//トレーニングモード
-		m_input1pPlayer = true;
-		m_input2pPlayer = true;
-#if 0
-		m_name1p = CHARA_SONIA;		//選択キャラ
-		m_name2p = CHARA_ORFLOAT;
-
-		m_name1p = CHARA_TEST;		//選択キャラ
+		m_startMode = START_BATTLE;
+		m_playerMode1p = MODE_PLAYER;
+		m_playerMode2p = MODE_PLAYER;
+		m_name1p = CHARA_TEST;
 		m_name2p = CHARA_TEST;
-#endif // 0
-
-		m_name1p = CHARA_RAKUNO;		//選択キャラ
-		m_name2p = CHARA_YUKINO;
 	}
 
 

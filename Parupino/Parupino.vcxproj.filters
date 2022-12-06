@@ -4,9 +4,6 @@
     <Filter Include="GameMain">
       <UniqueIdentifier>{ab42d7e5-0629-42ea-bd13-393c41442b14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Title">
-      <UniqueIdentifier>{097359c8-d7c9-4a8e-a189-bf6d78c02165}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FtgMain">
       <UniqueIdentifier>{8dc28020-2fb6-4ded-9e6c-9469a7849475}</UniqueIdentifier>
     </Filter>
@@ -40,16 +37,19 @@
     <Filter Include="CharaIO">
       <UniqueIdentifier>{0a60d0b2-bced-43ac-91c1-5b0ebbb44cb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameMain\Title">
+      <UniqueIdentifier>{097359c8-d7c9-4a8e-a189-bf6d78c02165}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Title\Title.h">
-      <Filter>Title</Filter>
+      <Filter>GameMain\Title</Filter>
     </ClInclude>
     <ClInclude Include="Source\Title\TitleConst.h">
-      <Filter>Title</Filter>
+      <Filter>GameMain\Title</Filter>
     </ClInclude>
     <ClInclude Include="Source\Title\TitleEf.h">
-      <Filter>Title</Filter>
+      <Filter>GameMain\Title</Filter>
     </ClInclude>
     <ClInclude Include="Source\FtgMain\Fighting.h">
       <Filter>FtgMain</Filter>
@@ -216,10 +216,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
-      <Filter>Title</Filter>
+      <Filter>GameMain\Title</Filter>
     </ClCompile>
     <ClCompile Include="Source\Title\Title.cpp">
-      <Filter>Title</Filter>
+      <Filter>GameMain\Title</Filter>
     </ClCompile>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
       <Filter>FtgMain</Filter>

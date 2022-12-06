@@ -23,10 +23,20 @@ namespace GAME
 	//ÉLÉÉÉâñº
 	enum CHARA_NAME
 	{
-//		CHARA_TEST,
+		CHARA_TEST,
 		CHARA_RAKUNO,
 		CHARA_YUKINO,
+		CHARA_RONDUM,
 		CHARA_NAME_NUM,
+	};
+
+	//äJénèÛë‘
+	enum START_MODE
+	{
+		START_TITLE,
+		START_BATTLE,
+		START_TRAINING,
+		START_DEMO,
 	};
 
 	//ì¸óÕ

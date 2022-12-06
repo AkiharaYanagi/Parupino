@@ -39,11 +39,21 @@ namespace GAME
 	//シーンパラメータ関連初期化
 	void ExeChara::ParamInit ( P_Param pParam )
 	{
-		//選択キャラ
-		m_name = pParam->GetCharaName ( m_playerID );
+		//ゲーム設定
+		GameSettingFile stg = pParam->GetGameSetting ();
 
-		//入力モード
-		m_playerMode = pParam->GetMode ( m_playerID );
+		//選択キャラ //入力モード
+		if ( m_playerID == PLAYER_ID_1 )
+		{
+			m_name = stg.GetName1p ();
+			m_playerMode = stg.GetPlayerMode1p ();
+		}
+		if ( m_playerID == PLAYER_ID_2 )
+		{
+			m_name = stg.GetName2p ();
+			m_playerMode = stg.GetPlayerMode1p ();
+		}
+
 		switch ( m_playerMode )
 		{
 		case MODE_PLAYER: m_pCharaInput = make_shared < PlayerInput > (); break;

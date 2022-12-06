@@ -86,7 +86,11 @@ namespace GAME
 	void Title::Init ()
 	{
 		//デモモードにより表示の切替を初期化
+#if 0
 		GetpParam()->GetDemo () ? DemoOn () : DemoOff ();
+#endif // 0
+		START_MODE start = GetpParam ()->GetGameSetting ().GetStartMode ();
+		( start == START_DEMO ) ? DemoOn (): DemoOff ();
 
 		//カーソル位置を初期化
 		m_cursor->SetPos ( VEC2 ( TTL_CURSOR_X, TTL_CURSOR_Y0 ) );
@@ -102,20 +106,20 @@ namespace GAME
 		//F1でデモモードを切り替え
 		if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
 		{
-			if ( GetpParam ()->GetDemo () )
+			if ( IsDemo () )
 			{
-				GetpParam ()->SetDemo ( false );
+				GetpParam ()->GetGameSetting().SetDemo ( F );
 				DemoOff ();		//On->Off
 			}
 			else
 			{
-				GetpParam ()->SetDemo ( true );
+				GetpParam ()->GetGameSetting ().SetDemo ( T );
 				DemoOn ();		//Off->On
 			}
 		}
 
 		//デモモード時は何もしない
-		if ( GetpParam()->GetDemo () )
+		if ( IsDemo () )
 		{
 			GameScene::Move ();
 			return;
@@ -196,7 +200,7 @@ namespace GAME
 
 		//---------------------------------------------------------------
 		//デモモード
-		if ( GetpParam ()->GetDemo () )
+		if ( IsDemo () )
 		{
 			//自動
 			if ( ++ m_demoTimer == DM_TITLE_WAIT )
@@ -254,14 +258,14 @@ namespace GAME
 				//トレーニング
 				if ( TTLM_TRAINING == m_menuPos )
 				{
-					pParam->SetTraining ( true );					
+					pParam->GetGameSetting().SetTraining ( T );					
 					return make_shared < CharaSele > ();
 //					return make_shared < Training > ();
 				}
 				else
 				{
 					//メイン
-					pParam->SetTraining ( false );
+					pParam->GetGameSetting ().SetTraining ( false );
 					return make_shared < CharaSele > ();
 	//				return make_shared < Fighting > ();
 				}
@@ -271,6 +275,11 @@ namespace GAME
 		return shared_from_this ();		//通常は自身を返す
 	}
 
+	bool Title::IsDemo ()
+	{
+		START_MODE start = GetpParam ()->GetGameSetting ().GetStartMode ();
+		return ( start == START_DEMO );
+	}
 
 	void Title::DemoOn ()
 	{

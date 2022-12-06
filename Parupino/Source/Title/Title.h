@@ -48,6 +48,8 @@ namespace GAME
 		MUTCH_MODE MENU_to_MODE ( TITLE_MENU tm, PLAYER_ID id );
 
 		//デモモード表示
+		bool IsDemo ();
+
 		UINT	m_demoTimer;
 		enum DEMO_MODE
 		{

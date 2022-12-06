@@ -16,50 +16,39 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME 
 {
+	//ゲーム内設定
 	class GameSettingFile
 	{
-	//---------------------------------------------------------------------
-	//シングルトンパターン
-	private:
-		using _GmStgFl = GameSettingFile;
-		using _UP_GmStgFl = unique_ptr < _GmStgFl >;
-		static _UP_GmStgFl	m_inst;		//シングルトンインスタンス
-		GameSettingFile ();		//private コンストラクタで通常の実体化は禁止
-	public:
-		~GameSettingFile ();	//デストラクタはunique_ptrのためpublic
-		static void Create () { if ( ! m_inst ) { m_inst = _UP_GmStgFl ( new _GmStgFl () ); } }
-		static _UP_GmStgFl & Inst () { return m_inst; }	//インスタンス取得
-	//---------------------------------------------------------------------
+		START_MODE		m_startMode;	//開始指定
 
-		//ゲーム内設定
-		bool	m_demo;				//デモモード
-		bool	m_startBattle;		//バトルから開始
-		bool	m_training;			//トレーニングモード
-		bool	m_input1pPlayer;	//入力(true:プレイヤー, false:CPU)
-		bool	m_input2pPlayer;
-		CHARA_NAME	m_name1p;		//選択キャラ
-		CHARA_NAME	m_name2p;
+		PLAYER_MODE		m_playerMode1p;	//１P操作
+		PLAYER_MODE		m_playerMode2p;	//２P操作
 
-		void	SetDefault ();
+		CHARA_NAME		m_name1p;		//選択キャラ
+		CHARA_NAME		m_name2p;
 
 	public:
+		GameSettingFile ();
+		GameSettingFile ( const GameSettingFile & rhs );	//コピー可能
+		~GameSettingFile ();
+
+		//読込
+		void Load ();
 
 		//値の取得
-		bool GetDemo () const { return m_demo; }
-		bool GetStartBattle () const { return m_startBattle; }
-		bool GetTraining () const { return m_training; }
-
-		bool GetbInput1pPlayer () const { return m_input1pPlayer; }
-		bool GetbInput2pPlayer () const { return m_input2pPlayer; }
-
+		START_MODE GetStartMode () const { return m_startMode; }
+		PLAYER_MODE GetPlayerMode1p () const { return m_playerMode1p; }
+		PLAYER_MODE GetPlayerMode2p () const { return m_playerMode2p; }
 		CHARA_NAME GetName1p () const { return m_name1p; }
 		CHARA_NAME GetName2p () const { return m_name2p; }
+
+		//切替
+		void SetDemo ( bool b ) { m_startMode = b ? START_DEMO : START_TITLE; }
+		void SetTraining ( bool b ) { m_startMode = b ? START_TRAINING : START_TITLE; }
+
+		//初期値
+		void	SetDefault ();
 	};
-
-	using UP_GmStgFl = unique_ptr < GameSettingFile >;
-
-//シングルトンアクセス用
-#define GM_STG	GameSettingFile::Inst
 
 }	//namespace GAME
 
