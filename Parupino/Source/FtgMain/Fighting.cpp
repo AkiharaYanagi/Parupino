@@ -20,10 +20,6 @@ namespace GAME
 		//格闘部分共通パラメータシングルトン生成
 		G_Ftg::Create ();
 
-		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
-//		AddpTask ( GRPLST_MAKE () );
-		//-> GameSystemでGrpLstを管理
-
 		//背景
 		m_bg = make_shared < GrpAcv > ();
 //		m_bg->AddTexture (_T ("ftgmain_bg.png"));
@@ -67,10 +63,6 @@ namespace GAME
 		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
 		GRPLST_INSERT ( m_pause );
 		m_pause->SetValid ( false );
-
-		//グラフィックリストをタスクベクタの最後にする
-		//他処理がすべて終わってからグラフィックのMove()を行う
-		End ( GrpLst::Inst ()->GetpTaskList () );
 
 		//タイマ
 		m_bgTimer = make_shared < Timer > ();

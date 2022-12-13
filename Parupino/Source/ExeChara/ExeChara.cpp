@@ -20,7 +20,7 @@ namespace GAME
 	//コンストラクタ
 	ExeChara::ExeChara ( PLAYER_ID m_playerID )
 		: m_pChara ( nullptr )
-		, m_playerID ( m_playerID ), m_name ( CHARA_RAKUNO ), m_playerMode ( MODE_PLAYER )
+		, m_playerID ( m_playerID ), m_name ( CHARA_TEST ), m_playerMode ( MODE_PLAYER )
 		, m_actionID ( 0 ), m_frame ( 0 )
 		, m_bDispRect ( true )
 		, m_charaState ( CHST_START )
@@ -90,9 +90,6 @@ namespace GAME
 
 #else
 		//バイナリデータ読込
-//		Chara charabin;
-//		LoadCharaBin loadCharaBin ( _T("charabin.dat"), charabin );
-//		LoadCharaBin loadCharaBin ( _T ( "charabin.dat" ), *m_pChara );
 		LoadCharaBin loadCharaBin ( _T ( "chara.dat" ), *m_pChara );
 #endif // 0
 
