@@ -71,7 +71,8 @@ namespace GAME
 		//名前からスクリプトファイルを指定してキャラのロード
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
-		tstring name (_T ("chara.dat"));
+//		tstring name ( _T ( "chara.dat" ) );
+		tstring name ( _T ( "charaBin.dat" ) );
 #if 0
 		switch ( m_name )
 		{
@@ -90,7 +91,8 @@ namespace GAME
 
 #else
 		//バイナリデータ読込
-		LoadCharaBin loadCharaBin ( _T ( "chara.dat" ), *m_pChara );
+//		LoadCharaBin loadCharaBin ( _T ( "chara.dat" ), *m_pChara );
+		LoadCharaBin loadCharaBin ( _T ( "charaBin.dat" ), *m_pChara );
 #endif // 0
 
 

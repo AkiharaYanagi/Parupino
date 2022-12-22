@@ -72,6 +72,10 @@ namespace GAME
 		{
 			P_Action pAct = aryAct [ iAct ];
 
+
+			TRACE_F ( _T ( "%d\n" ), iAct );
+
+
 			//アクション
 			aryAct [ iAct ]->SetName ( m_utl.LoadText ( buf, pos ) );
 			aryAct [ iAct ]->SetNextID ( (UINT)buf [ pos ++ ] );
@@ -246,6 +250,11 @@ namespace GAME
 		unique_ptr < EffectGenerate [] > aryEfGnrt = make_unique < EffectGenerate [] > ( nIdEfGnrt );
 		for ( UINT i = 0; i < nIdEfGnrt; ++ i )
 		{
+
+
+			TRACE_F ( _T ( "%d\n" ), i );
+
+
 			//エフェクトID
 			aryEfGnrt [ i ].SetIndex ( (UINT)buf [ pos ++ ] );
 			//位置
@@ -295,17 +304,17 @@ namespace GAME
 	//スクリプト・演出パラメータ
 	void LoadCharaBinFunc::LoadScpPrm_Stg ( P_CH buf, UINT & pos, Script & scp )
 	{
-		scp.m_prmStaging.BlackOut		 = m_utl.LoadUInt ( buf, pos );
-		scp.m_prmStaging.Vibration		 = m_utl.LoadUInt ( buf, pos );
-		scp.m_prmStaging.Stop			 = m_utl.LoadUInt ( buf, pos );
+		scp.m_prmStaging.BlackOut		 = m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Vibration		 = m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.Stop			 = m_utl.LoadByte ( buf, pos );
 
 		scp.m_prmStaging.Radian			 = m_utl.LoadInt ( buf, pos );
-		scp.m_prmStaging.AfterImage_N	 = m_utl.LoadUInt ( buf, pos );
-		scp.m_prmStaging.AfterImage_time = m_utl.LoadUInt ( buf, pos ); ;
-		scp.m_prmStaging.AfterImage_pitch = m_utl.LoadUInt ( buf, pos ); ;
-		scp.m_prmStaging.Vibration_S	 = m_utl.LoadUInt ( buf, pos );;
+		scp.m_prmStaging.AfterImage_N	 = m_utl.LoadByte ( buf, pos );
+		scp.m_prmStaging.AfterImage_time = m_utl.LoadByte ( buf, pos ); ;
+		scp.m_prmStaging.AfterImage_pitch = m_utl.LoadByte ( buf, pos ); ;
+		scp.m_prmStaging.Vibration_S	 = m_utl.LoadByte ( buf, pos );;
 		scp.m_prmStaging.Color			 = (_CLR)m_utl.LoadUInt ( buf, pos );;
-		scp.m_prmStaging.Color_time		 = m_utl.LoadUInt ( buf, pos );;
+		scp.m_prmStaging.Color_time		 = m_utl.LoadByte ( buf, pos );;
 	}
 
 

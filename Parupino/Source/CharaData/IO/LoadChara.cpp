@@ -73,7 +73,7 @@ namespace GAME
 		//ファイルが存在しないとき何もしない
 		if ( ifstrm.fail () ) { throw _T("ファイルが存在しません。"); } 
 
-		//キャラアーカイブファイル形式のバージョン
+		//キャラデータ形式のバージョン[uint]
 		UINT version = 0;	//読込用
 		ifstrm.read ( (char*)& version, sizeof ( UINT ) );
 		if ( CHARA_VERSION != version ) { throw _T("キャラアーカイブのバージョンが異なります。"); } 

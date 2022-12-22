@@ -58,13 +58,13 @@ namespace GAME
 		if ( ifstrm.fail () ) { throw _T ( "ファイルが存在しません。" ); }
 
 		//キャラアーカイブファイル形式のバージョン
-		byte version = 0;	//読込用
-		ifstrm.read ( (char*)& version, sizeof ( byte ) );
-		const byte CHARA_VERSION = 110;
+		UINT version = 0;	//読込用
+		ifstrm.read ( (char*)& version, sizeof ( UINT ) );
+		const UINT CHARA_VERSION = 110;
 		if ( CHARA_VERSION != version ) { throw _T ( "キャラアーカイブのバージョンが異なります。" ); }
 
 		//---------------------------------------------------------------------
-		//スクリプト部のサイズ
+		//全体のサイズ
 		UINT scriptSize = 0;
 		ifstrm.read ( (char*)& scriptSize, sizeof ( UINT ) );
 
