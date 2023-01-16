@@ -70,6 +70,9 @@ namespace GAME
 
 		void ParamInit ( P_Param pParam );
 
+		//戦闘開始の初期化
+		void Start ();
+
 		//スクリプトの毎フレーム処理
 		void Conduct ();
 

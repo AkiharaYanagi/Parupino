@@ -57,6 +57,14 @@ namespace GAME
 		m_exeChara2->ParamInit ( pParam );
 	}
 
+
+	void MutualChara::Start ()
+	{
+		m_exeChara1->Init ();
+		m_exeChara2->Init ();
+	}
+
+
 	//■#########################################################
 	//■
 	//■	スクリプトの毎フレーム処理

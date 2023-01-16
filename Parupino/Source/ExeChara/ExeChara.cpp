@@ -620,6 +620,8 @@ namespace GAME
 			{
 				//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
 				m_actionID = m_pAction->GetNextID ();
+				//各種状態の終了
+				m_btlPrm.EndAction ();
 				m_frame = 0;
 				//今回のフレーム中はm_pActionとm_pScriptを用い、
 				//これ以降はm_actionIDとm_frameを用いない

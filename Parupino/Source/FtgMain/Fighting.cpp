@@ -111,7 +111,6 @@ namespace GAME
 			if ( ! m_demo_GetReady->GetValid () )
 			{
 				m_demo_Attack->SetFadeOut ( 60 );
-//				m_demo_Attack->SetWait ( 60 );
 				m_demo_Attack->Init ();
 				m_mutualChara->Wait ( false );
 				m_mutualChara->SetMain ();
@@ -175,11 +174,18 @@ namespace GAME
 		case FS_WINNER:
 			if ( ! m_demo_Winner->GetValid () )
 			{
-				G_FTG_STATE_SET ( FS_END );
+				//G_FTG_STATE_SET ( FS_END );
+
+				//test ‰Šú‰»
+				G_FTG_STATE_SET ( FS_GETREADY );
+				m_mutualChara->Start ();
 			}
-			break;
+		break;
 
 		case FS_END:
+			
+			//FS_ENDŽž‚É‚ÍTransit()‚ª•ªŠò‚µ‚Ä‚¢‚é
+
 		break;
 
 		default: break;
