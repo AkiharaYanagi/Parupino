@@ -51,10 +51,12 @@ namespace GAME
 		MakeGrpDemo ( m_demo_Attack,	_T ( "Demo_Attack.png" ) );
 		MakeGrpDemo ( m_demo_Down,		_T ( "Demo_Down.png" ) );
 		MakeGrpDemo ( m_demo_Winner,	_T ( "Demo_Winner.png" ) );
+#if 0
 		MakeGrpDemo ( m_demo_SONIA,		_T ( "CH_SONIA.png" ) );
 		m_demo_SONIA->SetPos ( VEC2 ( 128, 550 ) );
 		MakeGrpDemo ( m_demo_ORFLOAT,	_T ( "CH_ORFLOAT.png" ) );
 		m_demo_ORFLOAT->SetPos ( VEC2 ( 128, 550 ) );
+#endif // 0
 
 		//ポーズ
 		m_pause = make_shared < GrpAcv > ();
@@ -85,10 +87,11 @@ namespace GAME
 		m_pause->SetValid ( false );
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 0
+#define DEMO_ON 1
 #if DEMO_ON
 		G_FTG_STATE_SET ( FS_GETREADY );
-		m_demo_GetReady->SetWait ( 90 );
+		m_demo_GetReady->SetEnd ( 90 );
+//		m_demo_GetReady->SetFadeOut ( 60 );
 		m_demo_GetReady->Init ();
 		Scene::Init ();
 		m_mutualChara->SetReady ();
