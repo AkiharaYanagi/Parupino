@@ -38,8 +38,6 @@ namespace GAME
 		P_GrpDemo		m_demo_Attack;
 		P_GrpDemo		m_demo_Down;
 		P_GrpDemo		m_demo_Winner;
-//		P_GrpDemo		m_demo_SONIA;
-//		P_GrpDemo		m_demo_ORFLOAT;
 
 		//É|Å[ÉY
 		P_GrpAcv		m_pause;

@@ -213,6 +213,9 @@
     <ClInclude Include="Source\CharaData\IO\LoadCharaBinUtl.h">
       <Filter>CharaIO</Filter>
     </ClInclude>
+    <ClInclude Include="Source\FtgMain\FtgDemo.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -361,6 +364,9 @@
     </ClCompile>
     <ClCompile Include="Source\CharaData\IO\LoadCharaBinUtl.cpp">
       <Filter>CharaIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\FtgDemo.cpp">
+      <Filter>FtgMain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
