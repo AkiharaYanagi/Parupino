@@ -51,12 +51,9 @@ namespace GAME
 		MakeGrpDemo ( m_demo_Attack,	_T ( "Demo_Attack.png" ) );
 		MakeGrpDemo ( m_demo_Down,		_T ( "Demo_Down.png" ) );
 		MakeGrpDemo ( m_demo_Winner,	_T ( "Demo_Winner.png" ) );
-#if 0
-		MakeGrpDemo ( m_demo_SONIA,		_T ( "CH_SONIA.png" ) );
-		m_demo_SONIA->SetPos ( VEC2 ( 128, 550 ) );
-		MakeGrpDemo ( m_demo_ORFLOAT,	_T ( "CH_ORFLOAT.png" ) );
-		m_demo_ORFLOAT->SetPos ( VEC2 ( 128, 550 ) );
-#endif // 0
+
+		//m_demo_GetReady->SetValid ( T );
+		m_demo_GetReady->SetValid ( F );
 
 		//É|Å[ÉY
 		m_pause = make_shared < GrpAcv > ();
@@ -234,7 +231,7 @@ namespace GAME
 	void Fighting::MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName )
 	{
 		pGrp = make_shared < GrpDemo > ();
-		pGrp->AddTexture ( _T ( "CH_ORFLOAT.png" ) );
+		pGrp->AddTexture ( txName );
 		SetGrpDemo ( pGrp );
 		GRPLST_INSERT ( pGrp );
 	}

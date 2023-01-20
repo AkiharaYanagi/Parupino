@@ -12,6 +12,7 @@
 #include "FtgConst.h"	
 #include "MutualChara.h"
 #include "../GameMain/Scene.h"
+#include "FtgDemo.h"
 
 //-------------------------------------------------------------------------------------------------
 // êÈåæ
@@ -38,6 +39,13 @@ namespace GAME
 		P_GrpDemo		m_demo_Attack;
 		P_GrpDemo		m_demo_Down;
 		P_GrpDemo		m_demo_Winner;
+
+		P_FTG_DM_GetReady	m_demoGetReady;
+		P_FTG_DM_Attack		m_demoAttack;
+		P_FTG_DM_Main		m_demoMain;
+		P_FTG_DM_Down		m_demoDown;
+		P_FTG_DM_Winner		m_demoWinner;
+
 
 		//É|Å[ÉY
 		P_GrpAcv		m_pause;
