@@ -46,6 +46,8 @@ namespace GAME
 		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
 		GRPLST_INSERT ( m_gauge_frame );
 
+
+
 		//デモ
 		MakeGrpDemo ( m_demo_GetReady,	_T ( "Demo_GetReady.png" ) );
 		MakeGrpDemo ( m_demo_Attack,	_T ( "Demo_Attack.png" ) );
@@ -54,6 +56,16 @@ namespace GAME
 
 		//m_demo_GetReady->SetValid ( T );
 		m_demo_GetReady->SetValid ( F );
+
+
+		//デモオブジェクト
+		m_demoGetReady = make_shared < FTG_DM_GetReady > ();
+		m_demoAttack = make_shared < FTG_DM_Attack > ();
+		m_demoMain = make_shared < FTG_DM_Main > ();
+		m_demoDown = make_shared < FTG_DM_Down > ();
+		m_demoWinner = make_shared < FTG_DM_Winner > ();
+
+
 
 		//ポーズ
 		m_pause = make_shared < GrpAcv > ();
