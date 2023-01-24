@@ -49,6 +49,7 @@ namespace GAME
 
 
 		//=====================================================
+		//デモ
 #if 0
 		//------------------------------------------------
 
@@ -138,7 +139,7 @@ namespace GAME
 		G_FTG_STATE_SET ( FS_GAME_MAIN );
 		Scene::Init ();
 		m_mutualChara->SetMain ();
-#endif // 0
+#endif // DEMO_ON
 	}
 
 	void Fighting::Move ()
@@ -146,7 +147,7 @@ namespace GAME
 		//ポーズ
 		Pause ();
 
-
+		//--------------------------
 
 #if 0
 
@@ -240,12 +241,9 @@ namespace GAME
 #endif // 0
 
 		//デモ分岐
-//		m_demo->Do ();
 		m_demoActor->Do ();
 
-
 		//--------------------------
-
 
 		//両者処理
 		m_mutualChara->Conduct ();

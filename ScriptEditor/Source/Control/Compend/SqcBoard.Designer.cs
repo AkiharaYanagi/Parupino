@@ -41,13 +41,10 @@
 			this.Btn_ScpIns = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.Btn_AllPaste = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.groupBox3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Btn_GrpMake
@@ -192,33 +189,11 @@
 			this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
 			this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
 			// 
-			// groupBox3
-			// 
-			this.groupBox3.Controls.Add(this.Btn_AllPaste);
-			this.groupBox3.Location = new System.Drawing.Point(569, 3);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(114, 53);
-			this.groupBox3.TabIndex = 9;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "全体";
-			// 
-			// Btn_AllPaste
-			// 
-			this.Btn_AllPaste.Location = new System.Drawing.Point(58, 16);
-			this.Btn_AllPaste.Name = "Btn_AllPaste";
-			this.Btn_AllPaste.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Btn_AllPaste.Size = new System.Drawing.Size(50, 27);
-			this.Btn_AllPaste.TabIndex = 0;
-			this.Btn_AllPaste.Text = "同一化";
-			this.Btn_AllPaste.UseVisualStyleBackColor = true;
-			this.Btn_AllPaste.Click += new System.EventHandler(this.Btn_AllPaste_Click);
-			// 
 			// SqcBoard
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.panel1);
@@ -229,7 +204,6 @@
 			this.groupBox2.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.groupBox3.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -249,7 +223,5 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button Btn_Add;
 		private System.Windows.Forms.Button BtnMlcIns;
-		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.Button Btn_AllPaste;
 	}
 }

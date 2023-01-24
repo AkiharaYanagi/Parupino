@@ -29,20 +29,7 @@ namespace GAME
 		P_GrpAcv		m_grpShadow;	//影
 		DispFrontEnd	m_frontEnd;		//フロントエンド
 
-#if 0
-		P_PrmRect	m_gaugeLife;			//ライフゲージ表示
-		P_PrmRect	m_gaugeFrameLife;		//ライフゲージ枠表示
-		P_PrmRect	m_gaugeDecreaseLife;	//ライフゲージ減少分表示
-#endif // 0
-
 #if	0
-		GrpAcv		m_grpPlayer1P;	//プレイヤー表示"1P"
-		GrpAcv		m_grpPlayer2P;	//プレイヤー表示"2P"
-		GrpAcv		m_grpPlayerCOM;	//プレイヤー表示"CPU"
-
-		PrmRect		m_gaugeHitStop;			//ヒットストップ時間表示
-		PrmRect		m_gaugeLurch;			//のけぞり時間表示
-
 		//エフェクト
 		GrpEf		m_grpHitEf;			//ヒットエフェクト
 		GrpEf		m_grpAvoidEf;		//アヴォイドエフェクト
