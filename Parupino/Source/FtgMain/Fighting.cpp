@@ -35,6 +35,7 @@ namespace GAME
 		m_bg_blackout->SetValid ( false );
 		GRPLST_INSERT ( m_bg_blackout );
 
+		//------------------------------------------------
 
 		//キャラ相互処理
 		m_mutualChara = make_shared < MutualChara > ();
@@ -47,6 +48,9 @@ namespace GAME
 		GRPLST_INSERT ( m_gauge_frame );
 
 
+		//=====================================================
+#if 0
+		//------------------------------------------------
 
 		//デモ
 		MakeGrpDemo ( m_demo_GetReady,	_T ( "Demo_GetReady.png" ) );
@@ -58,6 +62,11 @@ namespace GAME
 		m_demo_GetReady->SetValid ( F );
 
 
+		//------------------------------------------------
+		//デモパラメータ
+		m_prmDemo = make_shared < FtgDemoParam > ();
+		m_prmDemo->SetpMutualChara ( m_mutualChara );
+
 		//デモオブジェクト
 		m_demoGetReady = make_shared < FTG_DM_GetReady > ();
 		m_demoAttack = make_shared < FTG_DM_Attack > ();
@@ -65,7 +74,23 @@ namespace GAME
 		m_demoDown = make_shared < FTG_DM_Down > ();
 		m_demoWinner = make_shared < FTG_DM_Winner > ();
 
+		m_demoGetReady->SetpPrm ( m_prmDemo );
+		m_demoAttack->SetpPrm ( m_prmDemo );
+		m_demoMain->SetpPrm ( m_prmDemo );
+		m_demoDown->SetpPrm ( m_prmDemo );
+		m_demoWinner->SetpPrm ( m_prmDemo );
 
+//		m_demo = m_demoGetReady;
+		m_demo = m_demoMain;
+
+		//------------------------------------------------
+#endif // 0
+
+		m_demoActor = make_shared < FtgDemoActor > ();
+		m_demoActor->Load ();
+		m_demoActor->SetpMutualChara ( m_mutualChara );
+
+		//=====================================================
 
 		//ポーズ
 		m_pause = make_shared < GrpAcv > ();
@@ -98,11 +123,15 @@ namespace GAME
 		//Debug用　開始デモをスキップ切替
 #define DEMO_ON 1
 #if DEMO_ON
+
+#if 0
 		G_FTG_STATE_SET ( FS_GETREADY );
 		m_demo_GetReady->SetEnd ( 90 );
 //		m_demo_GetReady->SetFadeOut ( 60 );
 		m_demo_GetReady->Init ();
+#endif // 0
 		Scene::Init ();
+
 		m_mutualChara->SetReady ();
 		m_mutualChara->Wait ( true );
 #else
@@ -114,7 +143,12 @@ namespace GAME
 
 	void Fighting::Move ()
 	{
+		//ポーズ
 		Pause ();
+
+
+
+#if 0
 
 		//デモ分岐
 		switch ( G_FTG_STATE () )
@@ -202,6 +236,16 @@ namespace GAME
 
 		default: break;
 		}
+
+#endif // 0
+
+		//デモ分岐
+//		m_demo->Do ();
+		m_demoActor->Do ();
+
+
+		//--------------------------
+
 
 		//両者処理
 		m_mutualChara->Conduct ();
