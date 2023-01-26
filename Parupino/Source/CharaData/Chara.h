@@ -89,8 +89,13 @@ namespace GAME
 		void AddpAction ( shared_ptr < P_Action [] > arypAction, rsize_t size );
 		void AddpAction ( const vector < P_Action > & arypAction, rsize_t size );
 
+		//---------------------------------------------------------------------
+		//名前からアクションIDを取得する(無いときは０を返す)
+		UINT GetActionID ( tstring name ) const;
+
 		//アクションポインタを取得
 		P_Action GetpAction ( UINT index ) { return m_pvpAction->at ( index ); }
+		P_Action GetpAction ( tstring name ) { return GetpAction ( GetActionID ( name ) ); }
 
 		//---------------------------------------------------------------------
 		//スクリプトポインタを取得
@@ -125,10 +130,6 @@ namespace GAME
 
 		//エフェクトポインタを取得
 		P_Effect GetpEffect ( UINT index ) { return m_pvpEf->at ( index ); }
-
-		//---------------------------------------------------------------------
-		//名前からアクションIDを取得する(無いときは０を返す)
-		UINT GetActionID ( tstring name ) const;
 
 		//---------------------------------------------------------------------
 		//コマンド配列に追加

@@ -20,6 +20,7 @@ namespace GAME
 		//格闘部分共通パラメータシングルトン生成
 		G_Ftg::Create ();
 
+		//------------------------------------------------
 		//背景
 		m_bg = make_shared < GrpAcv > ();
 //		m_bg->AddTexture (_T ("ftgmain_bg.png"));
@@ -35,61 +36,34 @@ namespace GAME
 		m_bg_blackout->SetValid ( false );
 		GRPLST_INSERT ( m_bg_blackout );
 
-		//------------------------------------------------
-
-		//キャラ相互処理
-		m_mutualChara = make_shared < MutualChara > ();
-		AddpTask ( m_mutualChara );
-
 		//ゲージ枠
 		m_gauge_frame = make_shared < GrpAcv > ();
 		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
 		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
 		GRPLST_INSERT ( m_gauge_frame );
 
+		//BGタイマ
+		m_bgTimer = make_shared < Timer > ();
+		AddpTask ( m_bgTimer );
+
+		//------------------------------------------------
+
+		//=====================================================
+		//キャラ相互処理
+		//=====================================================
+//		m_mutualChara = make_shared < MutualChara > ();
+//		AddpTask ( m_mutualChara );
+
+		//デモ用キャラ相互処理
+		m_mutualChara_Demo = make_shared < MutualChara_Demo > ();
+		AddpTask ( m_mutualChara_Demo );
+
 
 		//=====================================================
 		//デモ
-#if 0
-		//------------------------------------------------
-
-		//デモ
-		MakeGrpDemo ( m_demo_GetReady,	_T ( "Demo_GetReady.png" ) );
-		MakeGrpDemo ( m_demo_Attack,	_T ( "Demo_Attack.png" ) );
-		MakeGrpDemo ( m_demo_Down,		_T ( "Demo_Down.png" ) );
-		MakeGrpDemo ( m_demo_Winner,	_T ( "Demo_Winner.png" ) );
-
-		//m_demo_GetReady->SetValid ( T );
-		m_demo_GetReady->SetValid ( F );
-
-
-		//------------------------------------------------
-		//デモパラメータ
-		m_prmDemo = make_shared < FtgDemoParam > ();
-		m_prmDemo->SetpMutualChara ( m_mutualChara );
-
-		//デモオブジェクト
-		m_demoGetReady = make_shared < FTG_DM_GetReady > ();
-		m_demoAttack = make_shared < FTG_DM_Attack > ();
-		m_demoMain = make_shared < FTG_DM_Main > ();
-		m_demoDown = make_shared < FTG_DM_Down > ();
-		m_demoWinner = make_shared < FTG_DM_Winner > ();
-
-		m_demoGetReady->SetpPrm ( m_prmDemo );
-		m_demoAttack->SetpPrm ( m_prmDemo );
-		m_demoMain->SetpPrm ( m_prmDemo );
-		m_demoDown->SetpPrm ( m_prmDemo );
-		m_demoWinner->SetpPrm ( m_prmDemo );
-
-//		m_demo = m_demoGetReady;
-		m_demo = m_demoMain;
-
-		//------------------------------------------------
-#endif // 0
-
 		m_demoActor = make_shared < FtgDemoActor > ();
 		m_demoActor->Load ();
-		m_demoActor->SetpMutualChara ( m_mutualChara );
+//		m_demoActor->SetpMutualChara ( m_mutualChara );
 
 		//=====================================================
 
@@ -100,19 +74,17 @@ namespace GAME
 		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
 		GRPLST_INSERT ( m_pause );
 		m_pause->SetValid ( false );
-
-		//タイマ
-		m_bgTimer = make_shared < Timer > ();
-		AddpTask ( m_bgTimer );
 	}
 
 	Fighting::~Fighting ()
 	{
 	}
 
+
 	void Fighting::ParamInit ()
 	{
-		m_mutualChara->ParamInit ( GetpParam () );
+//		m_mutualChara->ParamInit ( GetpParam () );
+		m_mutualChara_Demo->ParamInit ( GetpParam () );
 	}
 
 	void Fighting::Init ()
@@ -121,34 +93,27 @@ namespace GAME
 		SOUND->PlayLoop ( BGM_Main );
 		m_pause->SetValid ( false );
 
+		Scene::Init ();
+
 		//Debug用　開始デモをスキップ切替
 #define DEMO_ON 1
 #if DEMO_ON
-
-#if 0
-		G_FTG_STATE_SET ( FS_GETREADY );
-		m_demo_GetReady->SetEnd ( 90 );
-//		m_demo_GetReady->SetFadeOut ( 60 );
-		m_demo_GetReady->Init ();
-#endif // 0
-		Scene::Init ();
-
-		m_mutualChara->SetReady ();
-		m_mutualChara->Wait ( true );
+		m_demoActor->Init ();
+//		m_mutualChara_Demo->SetMain ();
+//		m_mutualChara->SetReady ();
+//		m_mutualChara->Wait ( true );
 #else
-		G_FTG_STATE_SET ( FS_GAME_MAIN );
-		Scene::Init ();
 		m_mutualChara->SetMain ();
 #endif // DEMO_ON
 	}
 
 	void Fighting::Move ()
 	{
+		//--------------------------
 		//ポーズ
 		Pause ();
 
 		//--------------------------
-
 #if 0
 
 		//デモ分岐
@@ -246,17 +211,19 @@ namespace GAME
 		//--------------------------
 
 		//両者処理
-		m_mutualChara->Conduct ();
+//		m_mutualChara->Conduct ();
+		m_mutualChara_Demo->Conduct ();
 
+		//--------------------------
 		//共通グラフィック処理
 		Grp ();
 
-		//背景位置補正
-		m_bg->SetPos ( G_BASE_POS ().x, (float)BG_POS_Y );
-
+		//--------------------------
 		Scene::Move ();
 	}
 
+
+	//状態遷移
 	P_GameScene Fighting::Transit ()
 	{
 		//ESCで戻る
@@ -314,12 +281,12 @@ namespace GAME
 			if ( m_pause->GetValid () )	//On->Off
 			{
 				m_pause->SetValid ( false );
-				m_mutualChara->Stop ( false );
+//				m_mutualChara->Stop ( false );
 			}
 			else	//Off->On
 			{
 				m_pause->SetValid ( true );
-				m_mutualChara->Stop ( true );
+//				m_mutualChara->Stop ( true );
 			}
 		}
 	}
@@ -332,7 +299,7 @@ namespace GAME
 		//暗転
 		if ( ! m_bgTimer->IsActive () )
 		{
-			blackOut = m_mutualChara->GetBlackOut ();
+//			blackOut = m_mutualChara->GetBlackOut ();
 			//初回
 			if ( 0 < blackOut )
 			{
@@ -340,7 +307,7 @@ namespace GAME
 				m_bgTimer->Start ();
 
 				blackOut = 0;
-				m_mutualChara->SetBlackOut ( 0 );
+//				m_mutualChara->SetBlackOut ( 0 );
 
 				m_bg->SetValid ( false );
 				m_bg_blackout->SetValid ( true );
@@ -354,6 +321,9 @@ namespace GAME
 			m_bg->SetValid ( true );
 			m_bg_blackout->SetValid ( false );
 		}
+
+		//背景位置補正
+		m_bg->SetPos ( G_BASE_POS ().x, (float)BG_POS_Y );
 	}
 
 

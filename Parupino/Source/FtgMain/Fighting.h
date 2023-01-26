@@ -11,6 +11,7 @@
 #include "Game.h"
 #include "FtgConst.h"	
 #include "MutualChara.h"
+#include "MutualChara_Demo.h"
 #include "../GameMain/Scene.h"
 #include "FtgDemo.h"
 
@@ -32,33 +33,11 @@ namespace GAME
 		P_GrpAcv		m_gauge_frame;
 
 		//キャラ相互処理
-		P_MutualChara	m_mutualChara;
+//		P_MutualChara	m_mutualChara;
+		P_MutualChara_Demo	m_mutualChara_Demo;
 
 		//=====================================================
-#if 0
-		//---------------------------------------
 		//デモ
-		P_GrpDemo		m_demo_GetReady;
-		P_GrpDemo		m_demo_Attack;
-		P_GrpDemo		m_demo_Down;
-		P_GrpDemo		m_demo_Winner;
-
-		//---------------------------------------
-		//デモオブジェクト
-		P_FTG_DM_GetReady	m_demoGetReady;
-		P_FTG_DM_Attack		m_demoAttack;
-		P_FTG_DM_Main		m_demoMain;
-		P_FTG_DM_Down		m_demoDown;
-		P_FTG_DM_Winner		m_demoWinner;
-
-		//選択デモ
-		P_FtgDemo			m_demo;
-
-		//共通パラメータ
-		P_PRM_FTG_DEMO		m_prmDemo;
-#endif // 0
-
-		//---------------------------------------
 		P_FtgDemoActor		m_demoActor;
 
 		//=====================================================

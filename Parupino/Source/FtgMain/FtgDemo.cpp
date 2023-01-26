@@ -33,10 +33,35 @@ namespace GAME
 
 
 	//=====================================================
+	FTG_DM_Greeting::FTG_DM_Greeting ()
+	{
+		m_timer = make_shared < Timer > ();
+	}
+
+	void FTG_DM_Greeting::Init ()
+	{
+		m_timer->SetTargetTime ( 90 );
+		m_timer->Start ();
+	}
+
+	void FTG_DM_Greeting::Do ()
+	{
+		m_timer->Move ();
+		if ( m_timer->IsLast () )
+		{
+//			m_prmFtgDemo->GetpFtgDemoActor ()->Change_Greeting_To_GetReady ();
+		}
+	}
+
+	//-------------
+
 	FTG_DM_GetReady::FTG_DM_GetReady ()
 	{
 		m_grpGetReady = SetGrpValue ( _T ( "Demo_GetReady.png" ) );
+	}
 
+	void FTG_DM_GetReady::Init ()
+	{
 		m_grpGetReady->SetValid ( T );
 		m_grpGetReady->Init ();
 		m_grpGetReady->SetEnd ( 90 );
@@ -90,19 +115,22 @@ namespace GAME
 	FtgDemoActor::FtgDemoActor ()
 	{
 		//ステート
+		m_Greeting = make_shared < FTG_DM_Greeting > ();
 		m_GetReady = make_shared < FTG_DM_GetReady > ();
 		m_Attack = make_shared < FTG_DM_Attack > ();
 		m_Main = make_shared < FTG_DM_Main > ();
 		m_Down = make_shared < FTG_DM_Down > ();
 		m_Winner = make_shared < FTG_DM_Winner > ();
 
+		mvp_FtgDemo.push_back ( m_Greeting );
 		mvp_FtgDemo.push_back ( m_GetReady );
 		mvp_FtgDemo.push_back ( m_Attack );
 		mvp_FtgDemo.push_back ( m_Main );
 		mvp_FtgDemo.push_back ( m_Down );
 		mvp_FtgDemo.push_back ( m_Winner );
 
-		mp_FtgDemo = m_GetReady;
+		//初期ステート
+		mp_FtgDemo = m_Greeting;
 
 
 		//パラメータ
@@ -118,9 +146,20 @@ namespace GAME
 		mp_Param->SetpFtgDemoActor ( shared_from_this () );
 	}
 
+	void FtgDemoActor::Init ()
+	{
+		m_Greeting->Init ();
+	}
+
 	void FtgDemoActor::Do ()
 	{
 		mp_FtgDemo->Do ();
+	}
+
+	void FtgDemoActor::Change_Greeting_To_GetReady ()
+	{
+		m_GetReady->Init ();
+		mp_FtgDemo = m_GetReady;
 	}
 
 	void FtgDemoActor::Change_GetReady_To_Attack ()

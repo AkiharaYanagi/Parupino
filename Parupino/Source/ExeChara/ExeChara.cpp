@@ -197,11 +197,6 @@ namespace GAME
 		{
 			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
 		}
-#if 0
-		if ( m_btlPrm.GetTmr_HitStop ()->IsActive () )
-		{ return; }
-#endif // 0
-
 
 		// ƒAƒNƒVƒ‡ƒ“ˆÚ€
 		TransitAction ();

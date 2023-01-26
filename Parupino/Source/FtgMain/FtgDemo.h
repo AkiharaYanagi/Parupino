@@ -11,6 +11,7 @@
 #include "Game.h"
 #include "FtgConst.h"	
 #include "MutualChara.h"
+#include "MutualChara_Demo.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -24,12 +25,16 @@ namespace GAME
 	class FtgDemoParam
 	{
 		P_MutualChara		m_mutualChara;
+		P_MutualChara_Demo		m_mutualChara_Demo;
 		P_FtgDemoActor		m_ftgDemoActor;
 
 	public:
 		
 		void SetpMutualChara ( P_MutualChara p ) { m_mutualChara = p; }
 		P_MutualChara GetpMutualChara () const { return m_mutualChara; }
+
+		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { m_mutualChara_Demo = p; }
+		P_MutualChara_Demo GetpMutualChara_Demo () const { return m_mutualChara_Demo; }
 
 		void SetpFtgDemoActor ( P_FtgDemoActor p ) { m_ftgDemoActor = p; }
 		P_FtgDemoActor GetpFtgDemoActor () const { return m_ftgDemoActor; }
@@ -60,6 +65,21 @@ namespace GAME
 	//State_Derivered
 	//------------------------------------------------
 
+	class FTG_DM_Greeting : public FtgDemoState
+	{
+		//タイマ
+		P_Timer		m_timer;
+	public:
+		FTG_DM_Greeting ();
+		FTG_DM_Greeting ( const FTG_DM_Greeting & rhs ) = delete;
+		~FTG_DM_Greeting () {}
+		void Init ();
+		void Do ();
+	};
+	using P_FTG_DM_Greeting = shared_ptr < FTG_DM_Greeting >;
+
+	//------------------------------------------------
+
 	class FTG_DM_GetReady : public FtgDemoState
 	{
 		P_GrpDemo		m_grpGetReady;
@@ -67,6 +87,7 @@ namespace GAME
 		FTG_DM_GetReady ();
 		FTG_DM_GetReady ( const FTG_DM_GetReady & rhs ) = delete;
 		~FTG_DM_GetReady () {}
+		void Init ();
 		void Do ();
 	};
 	using P_FTG_DM_GetReady = shared_ptr < FTG_DM_GetReady >;
@@ -121,6 +142,7 @@ namespace GAME
 	class FtgDemoActor : public enable_shared_from_this < FtgDemoActor >
 	{
 		//ステート
+		P_FTG_DM_Greeting	m_Greeting;
 		P_FTG_DM_GetReady	m_GetReady;
 		P_FTG_DM_Attack		m_Attack;
 		P_FTG_DM_Main		m_Main;
@@ -139,10 +161,14 @@ namespace GAME
 	public:
 		FtgDemoActor ();
 
+		void Init ();
 		void Load ();
 		void Do ();
 
 		void SetpMutualChara ( P_MutualChara p ) { mp_Param->SetpMutualChara ( p ); }
+		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { mp_Param->SetpMutualChara_Demo ( p ); }
+
+		void Change_Greeting_To_GetReady ();
 		void Change_GetReady_To_Attack ();
 	};
 

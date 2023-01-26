@@ -56,17 +56,9 @@ namespace GAME
 		//名前からスクリプトファイルを指定してキャラのロード
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 		tstring name ( _T ( "charaBin.dat" ) );
-#if 0
-		switch ( m_name )
-		{
-		case CHARA_RAKUNO: name.assign ( _T ( "Rakuno.dat" ) ); break;
-		case CHARA_YUKINO: name.assign ( _T ( "Yukino.dat" ) ); break;
-		default: break;
-		}
-#endif // 0
 
 		//バイナリデータ読込
-		LoadCharaBin loadCharaBin ( _T ( "charaBin.dat" ), *m_pChara );
+		LoadCharaBin loadCharaBin ( name, *m_pChara );
 
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
@@ -80,7 +72,8 @@ namespace GAME
 	void ExeChara_Demo::Init ()
 	{
 		//アクション・スクリプト初期化
-		m_actionID = 0;
+//		m_actionID = 0;
+		m_actionID = m_pChara->GetActionID ( _T("Start_Demo") );
 		m_pAction = m_pChara->GetpAction ( m_actionID );
 		m_frame = 0;
 		m_pScript = m_pAction->GetpScript ( m_frame );
@@ -146,27 +139,8 @@ namespace GAME
 		if ( m_btlPrm.GetTmr_Stop()->IsActive () )
 		{ return; }
 
-		// アクションとスクリプトによらない一定の処理
-		//	入力など
-//		AlwaysMove ();
-
-		// ヒットストップ時は入力の保存と表示関連の処理をして終了
-		//Activeとの兼ね合いでタイマーのラストは有効　0～N-1まで
-		if ( ! m_btlPrm.GetTmr_HitStop()->IsLast () )
-		{
-			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
-		}
-#if 0
-		if ( m_btlPrm.GetTmr_HitStop ()->IsActive () )
-		{ return; }
-#endif // 0
-
-
 		// アクション移項
 		TransitAction ();
-
-		// 位置計算
-		m_btlPrm.CalcPos ( m_pScript );
 	}
 
 
