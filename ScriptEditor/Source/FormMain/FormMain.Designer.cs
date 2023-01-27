@@ -188,7 +188,7 @@
 			this.ctrl_SqcList_Act.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.ctrl_SqcList_Act.Location = new System.Drawing.Point(0, 0);
 			this.ctrl_SqcList_Act.Name = "ctrl_SqcList_Act";
-			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1570, 1315);
+			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1624, 1369);
 			this.ctrl_SqcList_Act.TabIndex = 0;
 			// 
 			// tabScriptA

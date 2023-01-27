@@ -128,6 +128,8 @@ namespace ScriptEditor
 			BD_Sqc bdsqc = EditCompend.Compend.BD_Sequence;
 			bdsqc.ResetItems ();
 			sequenceTree1.UpdateCategory ( bdsqc.GetBindingList () );
+
+			Assosiate ();
 		}
 
 		//-------------------------------------------------------------------------
