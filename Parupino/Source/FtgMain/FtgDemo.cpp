@@ -51,7 +51,7 @@ namespace GAME
 		m_timer->Move ();
 		if ( m_timer->IsLast () )
 		{
-			m_prmFtgDemo->GetpFtgDemoActor ()->Change_Greeting_To_GetReady ();
+			GetwpFtgDemoActor ().lock()->Change_Greeting_To_GetReady ();
 		}
 	}
 
@@ -110,7 +110,7 @@ namespace GAME
 		{
 			GetpMutualChara ()->SetMain ();
 
-			m_prmFtgDemo->GetpFtgDemoActor ()->Change_GetReady_To_Attack ();
+			GetwpFtgDemoActor ().lock()->Change_GetReady_To_Attack ();
 		}
 	}
 
@@ -168,7 +168,6 @@ namespace GAME
 		//初期ステート
 		mp_FtgDemo = m_Greeting;
 
-
 		//パラメータ
 		mp_Param = make_shared < FtgDemoParam > ();
 		for ( P_FtgDemo p : mvp_FtgDemo )
@@ -179,7 +178,7 @@ namespace GAME
 
 	void FtgDemoActor::Load ()
 	{
-		mp_Param->SetpFtgDemoActor ( shared_from_this () );
+		mp_Param->SetwpFtgDemoActor ( shared_from_this () );
 	}
 
 	void FtgDemoActor::StartGreeting ()

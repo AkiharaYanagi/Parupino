@@ -19,25 +19,25 @@
 namespace GAME
 {
 	//=====================================================
-	class FtgDemoActor; using P_FtgDemoActor = shared_ptr < FtgDemoActor >;
+	class FtgDemoActor; using WP_FtgDemoActor = weak_ptr < FtgDemoActor >;
 
 	//param
 	class FtgDemoParam
 	{
 		P_MutualChara			m_mutualChara;
-		P_MutualChara_Demo		m_mutualChara_Demo;
-		P_FtgDemoActor			m_ftgDemoActor;
+//		P_MutualChara_Demo		m_mutualChara_Demo;
+		WP_FtgDemoActor			m_ftgDemoActor;
 
 	public:
 		
 		void SetpMutualChara ( P_MutualChara p ) { m_mutualChara = p; }
 		P_MutualChara GetpMutualChara () const { return m_mutualChara; }
 
-		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { m_mutualChara_Demo = p; }
-		P_MutualChara_Demo GetpMutualChara_Demo () const { return m_mutualChara_Demo; }
+//		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { m_mutualChara_Demo = p; }
+//		P_MutualChara_Demo GetpMutualChara_Demo () const { return m_mutualChara_Demo; }
 
-		void SetpFtgDemoActor ( P_FtgDemoActor p ) { m_ftgDemoActor = p; }
-		P_FtgDemoActor GetpFtgDemoActor () const { return m_ftgDemoActor; }
+		void SetwpFtgDemoActor ( WP_FtgDemoActor p ) { m_ftgDemoActor = p; }
+		WP_FtgDemoActor GetwpFtgDemoActor () const { return m_ftgDemoActor; }
 	};
 	using P_PRM_FTG_DEMO = shared_ptr < FtgDemoParam >;
 
@@ -59,6 +59,7 @@ namespace GAME
 		P_GrpDemo MakeGrpValue ( LPCTSTR txName );
 
 		P_MutualChara GetpMutualChara () const { return m_prmFtgDemo->GetpMutualChara (); }
+		WP_FtgDemoActor GetwpFtgDemoActor () const { return m_prmFtgDemo->GetwpFtgDemoActor (); }
 
 	};
 	using P_FtgDemo = shared_ptr < FtgDemoState >;
@@ -173,7 +174,7 @@ namespace GAME
 		void Do ();
 
 		void SetpMutualChara ( P_MutualChara p ) { mp_Param->SetpMutualChara ( p ); }
-		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { mp_Param->SetpMutualChara_Demo ( p ); }
+//		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { mp_Param->SetpMutualChara_Demo ( p ); }
 
 		void Change_Greeting_To_GetReady ();
 		void Change_GetReady_To_Attack ();
@@ -181,6 +182,8 @@ namespace GAME
 	private:
 		P_MutualChara GetpMutualChara () const { return mp_Param->GetpMutualChara (); }
 	};
+
+	using P_FtgDemoActor = shared_ptr < FtgDemoActor >;
 
 
 }	//namespace GAME
