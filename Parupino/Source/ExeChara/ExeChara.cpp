@@ -278,6 +278,33 @@ namespace GAME
 	//	外部からの状態変更
 	//================================================
 
+	void ExeChara::StartGreeting ()
+	{
+		//アクション・スクリプト初期化
+		m_actionID = m_pChara->GetActionID ( _T ( "Start_Demo" ) );
+		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_frame = 0;
+		m_pScript = m_pAction->GetpScript ( m_frame );
+
+		//バトルパラメータ
+		m_btlPrm.InitPlayerID ( m_playerID );
+		m_btlPrm.Init ();
+
+	}
+
+	void ExeChara::StartFighting ()
+	{
+		//アクション・スクリプト初期化
+		m_actionID = 0;
+		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_frame = 0;
+		m_pScript = m_pAction->GetpScript ( m_frame );
+
+		//バトルパラメータ
+		m_btlPrm.InitPlayerID ( m_playerID );
+		m_btlPrm.Init ();
+	}
+
 	void ExeChara::OnDashBranch ()
 	{
 		TransitAction_Condition_I ( BRC_DASH, F );	//ダッシュ相殺・自分

@@ -58,12 +58,6 @@ namespace GAME
 	}
 
 
-	void MutualChara::Start ()
-	{
-		m_exeChara1->Init ();
-		m_exeChara2->Init ();
-	}
-
 
 	//¡#########################################################
 	//¡
@@ -348,6 +342,18 @@ namespace GAME
 	//------------------------------------------------------
 	//	ExeChara—¼Ò‘€ì
 	//------------------------------------------------------
+	void MutualChara::StartGreeting ()
+	{
+		m_exeChara1->StartGreeting ();
+		m_exeChara2->StartGreeting ();
+	}
+
+	void MutualChara::StartFighting ()
+	{
+		m_exeChara1->StartFighting ();
+		m_exeChara2->StartFighting ();
+	}
+
 	void MutualChara::SetReady ()
 	{
 		//€”õ

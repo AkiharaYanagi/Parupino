@@ -41,7 +41,7 @@ namespace GAME
 
 	void LoadCharaBinFunc::LoadBehavior ( P_CH buf, UINT & pos, Chara & ch )
 	{
-		//@todo メモリコントローラ
+		//@afford メモリコントローラ
 		//先頭に 総アクション数, 総スクリプト数 を記述、必要時に該当分のアドレスを返す
 
 		//アクション個数 と メモリの確保

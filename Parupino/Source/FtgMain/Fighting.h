@@ -33,8 +33,8 @@ namespace GAME
 		P_GrpAcv		m_gauge_frame;
 
 		//ÉLÉÉÉâëäå›èàóù
-//		P_MutualChara	m_mutualChara;
-		P_MutualChara_Demo	m_mutualChara_Demo;
+		P_MutualChara	m_mutualChara;
+//		P_MutualChara_Demo	m_mutualChara_Demo;
 
 		//=====================================================
 		//ÉfÉÇ
@@ -57,9 +57,11 @@ namespace GAME
 		P_GameScene Transit ();
 
 	private:
+#if 0
 		void MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName );
 		void SetGrpDemo ( P_GrpDemo pGrp );
 		void StartGrpDemo ( P_GrpDemo pGrp, UINT time );
+#endif // 0
 
 		void Pause ();
 

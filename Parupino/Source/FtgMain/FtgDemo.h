@@ -24,9 +24,9 @@ namespace GAME
 	//param
 	class FtgDemoParam
 	{
-		P_MutualChara		m_mutualChara;
+		P_MutualChara			m_mutualChara;
 		P_MutualChara_Demo		m_mutualChara_Demo;
-		P_FtgDemoActor		m_ftgDemoActor;
+		P_FtgDemoActor			m_ftgDemoActor;
 
 	public:
 		
@@ -56,7 +56,10 @@ namespace GAME
 
 		void SetpPrm ( P_PRM_FTG_DEMO p ) { m_prmFtgDemo = p; }
 
-		P_GrpDemo SetGrpValue ( LPCTSTR txName );
+		P_GrpDemo MakeGrpValue ( LPCTSTR txName );
+
+		P_MutualChara GetpMutualChara () const { return m_prmFtgDemo->GetpMutualChara (); }
+
 	};
 	using P_FtgDemo = shared_ptr < FtgDemoState >;
 
@@ -83,12 +86,16 @@ namespace GAME
 	class FTG_DM_GetReady : public FtgDemoState
 	{
 		P_GrpDemo		m_grpGetReady;
+		P_GrpAcv		m_grpClock;
+		P_Timer			m_timer;
+
 	public:
 		FTG_DM_GetReady ();
 		FTG_DM_GetReady ( const FTG_DM_GetReady & rhs ) = delete;
 		~FTG_DM_GetReady () {}
 		void Init ();
 		void Do ();
+		void Final ();
 	};
 	using P_FTG_DM_GetReady = shared_ptr < FTG_DM_GetReady >;
 
@@ -161,7 +168,7 @@ namespace GAME
 	public:
 		FtgDemoActor ();
 
-		void Init ();
+		void StartGreeting ();
 		void Load ();
 		void Do ();
 
@@ -170,6 +177,9 @@ namespace GAME
 
 		void Change_Greeting_To_GetReady ();
 		void Change_GetReady_To_Attack ();
+
+	private:
+		P_MutualChara GetpMutualChara () const { return mp_Param->GetpMutualChara (); }
 	};
 
 

@@ -8,6 +8,8 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "FtgDemo.h"
+#include <iomanip>
+
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -15,7 +17,7 @@
 namespace GAME
 {
 	//=====================================================
-	P_GrpDemo FtgDemoState::SetGrpValue ( LPCTSTR txName )
+	P_GrpDemo FtgDemoState::MakeGrpValue ( LPCTSTR txName )
 	{
 		P_GrpDemo pGrp = make_shared < GrpDemo > ();
 		pGrp->AddTexture ( txName );
@@ -49,7 +51,7 @@ namespace GAME
 		m_timer->Move ();
 		if ( m_timer->IsLast () )
 		{
-//			m_prmFtgDemo->GetpFtgDemoActor ()->Change_Greeting_To_GetReady ();
+			m_prmFtgDemo->GetpFtgDemoActor ()->Change_Greeting_To_GetReady ();
 		}
 	}
 
@@ -57,7 +59,27 @@ namespace GAME
 
 	FTG_DM_GetReady::FTG_DM_GetReady ()
 	{
-		m_grpGetReady = SetGrpValue ( _T ( "Demo_GetReady.png" ) );
+		m_grpGetReady = MakeGrpValue ( _T ( "Demo_GetReady.png" ) );
+
+
+		m_grpClock = make_shared < GrpAcv > ();
+		m_grpClock->SetPos ( VEC2 ( 640 - 256 , 300 ) );
+		m_grpClock->SetValid ( F );
+		m_grpClock->SetZ( Z_EFF );
+		GRPLST_INSERT ( m_grpClock );
+
+		tostringstream toss;
+		tstring filename_base = _T ( "clock\\clock_" );
+		tstring ext = _T ( ".png" );
+
+		for ( UINT i = 1; i < 61; ++ i )
+		{
+			toss << filename_base << std::setw ( 2 ) << std::setfill ( _T('0') ) << i << ext;
+			m_grpClock->AddTexture ( toss.str () );
+			toss.str( _T("") );
+		}
+
+		m_timer = make_shared < Timer > ();
 	}
 
 	void FTG_DM_GetReady::Init ()
@@ -65,14 +87,28 @@ namespace GAME
 		m_grpGetReady->SetValid ( T );
 		m_grpGetReady->Init ();
 		m_grpGetReady->SetEnd ( 90 );
+
+		m_grpClock->SetValid ( T );
+		m_timer->Start ();
+	}
+
+	void FTG_DM_GetReady::Final ()
+	{
+		m_grpClock->SetValid ( F );
 	}
 
 	void FTG_DM_GetReady::Do ()
 	{
+		m_timer->Move ();
+		UINT t = m_timer->GetTime ();
+		if ( 60 > t )
+		{
+			m_grpClock->SetIndexTexture ( t );
+		}
+
 		if ( ! m_grpGetReady->GetValid () )
 		{
-			m_prmFtgDemo->GetpMutualChara ()->Wait ( F );
-			m_prmFtgDemo->GetpMutualChara ()->SetMain ();
+			GetpMutualChara ()->SetMain ();
 
 			m_prmFtgDemo->GetpFtgDemoActor ()->Change_GetReady_To_Attack ();
 		}
@@ -82,7 +118,7 @@ namespace GAME
 
 	FTG_DM_Attack::FTG_DM_Attack ()
 	{
-		m_grpAttack = SetGrpValue ( _T ( "Demo_Attack.png" ) );
+		m_grpAttack = MakeGrpValue ( _T ( "Demo_Attack.png" ) );
 	}
 
 	void FTG_DM_Attack::Init ()
@@ -146,8 +182,12 @@ namespace GAME
 		mp_Param->SetpFtgDemoActor ( shared_from_this () );
 	}
 
-	void FtgDemoActor::Init ()
+	void FtgDemoActor::StartGreeting ()
 	{
+//		m_mutualChara_Demo->SetMain ();
+//		m_mutualChara->SetReady ();
+//		m_mutualChara->Wait ( true );
+		GetpMutualChara ()->StartGreeting ();
 		m_Greeting->Init ();
 	}
 
@@ -164,6 +204,7 @@ namespace GAME
 
 	void FtgDemoActor::Change_GetReady_To_Attack ()
 	{
+		m_GetReady->Final ();
 		m_Attack->Init ();
 		mp_FtgDemo = m_Attack;
 	}

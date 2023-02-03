@@ -169,6 +169,10 @@ namespace GAME
 		//---------------------------------------------
 		//外部からの状態変更
 
+		//Demo用
+		void StartGreeting ();
+		void StartFighting ();
+
 		//一時停止
 		void SetWait ( bool b ) { m_btlPrm.SetWait ( b ); }	//入力を停止
 		void SetStop ( bool b ) { m_btlPrm.SetStop ( b ); }	//描画更新を停止
@@ -316,15 +320,6 @@ namespace GAME
 		bool IsAvoid ()		{ return m_pAction->GetCategory ()  == AC_AVOID; }
 		bool IsDotty ()		{ return m_pAction->GetCategory ()  == AC_DOTTY; }
 		bool IsDamaged ()	{ return m_pAction->GetCategory ()  == AC_DAMAGED; }
-
-#if 0
-		//現在のアクションが基本アクションかどうか
-		bool IsBasicAction ( BASIC_ACTION ba ) 
-		{
-			UINT id = m_pChara->GetBsAction ( ba ); 
-			return id == m_actionID;
-		}
-#endif // 0
 
 		//------------------------------------------------
 #if 0

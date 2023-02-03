@@ -51,19 +51,19 @@ namespace GAME
 		//=====================================================
 		//キャラ相互処理
 		//=====================================================
-//		m_mutualChara = make_shared < MutualChara > ();
-//		AddpTask ( m_mutualChara );
+		m_mutualChara = make_shared < MutualChara > ();
+		AddpTask ( m_mutualChara );
 
 		//デモ用キャラ相互処理
-		m_mutualChara_Demo = make_shared < MutualChara_Demo > ();
-		AddpTask ( m_mutualChara_Demo );
+//		m_mutualChara_Demo = make_shared < MutualChara_Demo > ();
+//		AddpTask ( m_mutualChara_Demo );
 
 
 		//=====================================================
 		//デモ
 		m_demoActor = make_shared < FtgDemoActor > ();
 		m_demoActor->Load ();
-//		m_demoActor->SetpMutualChara ( m_mutualChara );
+		m_demoActor->SetpMutualChara ( m_mutualChara );
 
 		//=====================================================
 
@@ -83,8 +83,8 @@ namespace GAME
 
 	void Fighting::ParamInit ()
 	{
-//		m_mutualChara->ParamInit ( GetpParam () );
-		m_mutualChara_Demo->ParamInit ( GetpParam () );
+		m_mutualChara->ParamInit ( GetpParam () );
+//		m_mutualChara_Demo->ParamInit ( GetpParam () );
 	}
 
 	void Fighting::Init ()
@@ -98,12 +98,9 @@ namespace GAME
 		//Debug用　開始デモをスキップ切替
 #define DEMO_ON 1
 #if DEMO_ON
-		m_demoActor->Init ();
-//		m_mutualChara_Demo->SetMain ();
-//		m_mutualChara->SetReady ();
-//		m_mutualChara->Wait ( true );
+		m_demoActor->StartGreeting ();
 #else
-		m_mutualChara->SetMain ();
+		m_demoActor->StartFighting ();
 #endif // DEMO_ON
 	}
 
@@ -211,8 +208,8 @@ namespace GAME
 		//--------------------------
 
 		//両者処理
-//		m_mutualChara->Conduct ();
-		m_mutualChara_Demo->Conduct ();
+		m_mutualChara->Conduct ();
+//		m_mutualChara_Demo->Conduct ();
 
 		//--------------------------
 		//共通グラフィック処理
@@ -248,7 +245,7 @@ namespace GAME
 	//=============================================================
 	//	内部関数
 	//=============================================================
-
+#if 0
 	void Fighting::MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName )
 	{
 		pGrp = make_shared < GrpDemo > ();
@@ -272,6 +269,7 @@ namespace GAME
 //		pGrp->SetWait ( time );
 		pGrp->Init ();
 	}
+#endif // 0
 
 	void Fighting::Pause ()
 	{
