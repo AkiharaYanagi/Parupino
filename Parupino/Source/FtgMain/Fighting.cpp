@@ -104,6 +104,7 @@ namespace GAME
 #endif // DEMO_ON
 	}
 
+
 	void Fighting::Move ()
 	{
 		//--------------------------
@@ -111,102 +112,10 @@ namespace GAME
 		Pause ();
 
 		//--------------------------
-#if 0
-
-		//デモ分岐
-		switch ( G_FTG_STATE () )
-		{
-		case FS_GETREADY:
-			if ( ! m_demo_GetReady->GetValid () )
-			{
-				m_demo_Attack->SetFadeOut ( 60 );
-				m_demo_Attack->Init ();
-				m_mutualChara->Wait ( false );
-				m_mutualChara->SetMain ();
-				G_FTG_STATE_SET ( FS_GAME_MAIN );
-			}
-		break;
-	
-		case FS_ATTACK:
-		break;
-
-		case FS_GAME_MAIN:
-			// 格闘終了判定
-			if ( m_mutualChara->CheckDown () )
-			{
-				StartGrpDemo ( m_demo_Down, 120 );
-				m_mutualChara->Stop ( true );
-				m_mutualChara->SetEndWait ();
-				G_FTG_STATE_SET ( FS_DOWN_DISP );
-			}
-
-		break;
-
-		case FS_DOWN_DISP:
-			if ( ! m_demo_Down->GetValid () )
-			{
-				m_mutualChara->Stop ( false );
-				m_mutualChara->CheckWinner ();
-
-				//@info 終了時に挙動が不安定なため飛ばす
-//				G_FTG_STATE_SET ( FS_DOWN_WAIT );
-				StartGrpDemo ( m_demo_Winner, 180 );
-				G_FTG_STATE_SET ( FS_POST_DEMO_START );
-			}
-		break;
-
-		case FS_DOWN_WAIT:
-			if ( m_mutualChara->CheckDownEnd () )
-			{
-//				m_mutualChara->EndAct ();
-				G_FTG_STATE_SET ( FS_POST_DEMO_START );
-			}
-		break;
-
-		case FS_POST_DEMO_START:
-			if ( m_mutualChara->CheckWinEnd () )
-			{
-				StartGrpDemo ( m_demo_Winner, 180 );
-#if 0
-				switch ( m_mutualChara->GetWinnerName () )
-				{
-				case CHARA_SONIA: StartGrpDemo ( m_demo_SONIA, 180 ); break;
-				case CHARA_ORFLOAT: StartGrpDemo ( m_demo_ORFLOAT, 180 ); break;
-				default: break;
-				}
-#endif // 0
-				G_FTG_STATE_SET ( FS_WINNER );
-				m_mutualChara->ForcedEnd ();
-			}
-		break;
-
-		case FS_WINNER:
-			if ( ! m_demo_Winner->GetValid () )
-			{
-				//G_FTG_STATE_SET ( FS_END );
-
-				//test 初期化
-				G_FTG_STATE_SET ( FS_GETREADY );
-				m_mutualChara->Start ();
-			}
-		break;
-
-		case FS_END:
-			
-			//FS_END時にはTransit()が分岐している
-
-		break;
-
-		default: break;
-		}
-
-#endif // 0
-
 		//デモ分岐
 		m_demoActor->Do ();
 
 		//--------------------------
-
 		//両者処理
 		m_mutualChara->Conduct ();
 //		m_mutualChara_Demo->Conduct ();
@@ -245,32 +154,6 @@ namespace GAME
 	//=============================================================
 	//	内部関数
 	//=============================================================
-#if 0
-	void Fighting::MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName )
-	{
-		pGrp = make_shared < GrpDemo > ();
-		pGrp->AddTexture ( txName );
-		SetGrpDemo ( pGrp );
-		GRPLST_INSERT ( pGrp );
-	}
-
-	void Fighting::SetGrpDemo ( P_GrpDemo pGrp )
-	{
-		pGrp->SetPos ( VEC2 ( 128, 400 ) );
-		pGrp->SetScalingCenter ( VEC2 ( 512, 128 ) );
-		pGrp->SetStartScaling ( VEC2 ( 1.3f, 1.3f ) );
-		pGrp->SetSecondVel ( VEC2 ( -0.001f, -0.001f ) );
-		pGrp->SetZ ( Z_SYS );
-		pGrp->SetValid ( false );
-	}
-
-	void Fighting::StartGrpDemo ( P_GrpDemo pGrp, UINT time )
-	{
-//		pGrp->SetWait ( time );
-		pGrp->Init ();
-	}
-#endif // 0
-
 	void Fighting::Pause ()
 	{
 		//F1でポーズ切替

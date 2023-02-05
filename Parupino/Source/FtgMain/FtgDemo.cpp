@@ -42,6 +42,8 @@ namespace GAME
 
 	void FTG_DM_Greeting::Init ()
 	{
+//		m_mutualChara->SetReady ();
+//		m_mutualChara->Wait ( true );
 		m_timer->SetTargetTime ( 90 );
 		m_timer->Start ();
 	}
@@ -56,6 +58,8 @@ namespace GAME
 	}
 
 	//-------------
+	const UINT FTG_DM_GetReady::COUNT = 90;
+	const UINT FTG_DM_GetReady::COUNT_D = 60 - COUNT % 60;
 
 	FTG_DM_GetReady::FTG_DM_GetReady ()
 	{
@@ -86,7 +90,7 @@ namespace GAME
 	{
 		m_grpGetReady->SetValid ( T );
 		m_grpGetReady->Init ();
-		m_grpGetReady->SetEnd ( 90 );
+		m_grpGetReady->SetEnd ( COUNT );
 
 		m_grpClock->SetValid ( T );
 		m_timer->Start ();
@@ -101,10 +105,8 @@ namespace GAME
 	{
 		m_timer->Move ();
 		UINT t = m_timer->GetTime ();
-		if ( 60 > t )
-		{
-			m_grpClock->SetIndexTexture ( t );
-		}
+		UINT index = ( t + COUNT_D ) % 60;
+		m_grpClock->SetIndexTexture ( index );
 
 		if ( ! m_grpGetReady->GetValid () )
 		{
@@ -137,11 +139,41 @@ namespace GAME
 
 	void FTG_DM_Main::Do ()
 	{
+		// 格闘終了判定
+		if ( GetpMutualChara()->CheckDown () )
+		{
+			GetpMutualChara ()->Stop ( true );
+			GetpMutualChara ()->SetEndWait ();
+			GetwpFtgDemoActor ().lock ()->Change_Main_To_Down ();
+		}
+	}
+
+	//-------------
+
+	FTG_DM_Down::FTG_DM_Down ()
+	{
+		m_grpDown = MakeGrpValue ( _T ( "Demo_Down.png" ) );
+	}
+
+	void FTG_DM_Down::Init ()
+	{
+		m_grpDown->SetValid ( T );
+		m_grpDown->SetEnd ( 90 );
+		m_grpDown->Init ();
 	}
 
 	void FTG_DM_Down::Do ()
 	{
+		if ( ! m_grpDown->GetValid () )
+		{
+			GetpMutualChara ()->StartFighting ();
+			GetpMutualChara ()->SetMain ();
+			GetwpFtgDemoActor ().lock ()->Change_GetReady_To_Attack ();
+		}
 	}
+
+
+	//-------------
 
 	void FTG_DM_Winner::Do ()
 	{
@@ -183,9 +215,6 @@ namespace GAME
 
 	void FtgDemoActor::StartGreeting ()
 	{
-//		m_mutualChara_Demo->SetMain ();
-//		m_mutualChara->SetReady ();
-//		m_mutualChara->Wait ( true );
 		GetpMutualChara ()->StartGreeting ();
 		m_Greeting->Init ();
 	}
@@ -205,8 +234,137 @@ namespace GAME
 	{
 		m_GetReady->Final ();
 		m_Attack->Init ();
-		mp_FtgDemo = m_Attack;
+		mp_FtgDemo = m_Main;
 	}
+
+	void FtgDemoActor::Change_Main_To_Down ()
+	{
+		m_Down->Init ();
+		mp_FtgDemo = m_Down;
+	}
+
+
+
+
+
+
+	//デモ分岐
+#if 0
+
+	switch ( G_FTG_STATE () )
+	{
+	case FS_GETREADY:
+		if ( ! m_demo_GetReady->GetValid () )
+		{
+			m_demo_Attack->SetFadeOut ( 60 );
+			m_demo_Attack->Init ();
+			m_mutualChara->Wait ( false );
+			m_mutualChara->SetMain ();
+			G_FTG_STATE_SET ( FS_GAME_MAIN );
+		}
+		break;
+
+	case FS_ATTACK:
+		break;
+
+	case FS_GAME_MAIN:
+		// 格闘終了判定
+		if ( m_mutualChara->CheckDown () )
+		{
+			StartGrpDemo ( m_demo_Down, 120 );
+			m_mutualChara->Stop ( true );
+			m_mutualChara->SetEndWait ();
+			G_FTG_STATE_SET ( FS_DOWN_DISP );
+		}
+
+		break;
+
+	case FS_DOWN_DISP:
+		if ( ! m_demo_Down->GetValid () )
+		{
+			m_mutualChara->Stop ( false );
+			m_mutualChara->CheckWinner ();
+
+			//@info 終了時に挙動が不安定なため飛ばす
+//				G_FTG_STATE_SET ( FS_DOWN_WAIT );
+			StartGrpDemo ( m_demo_Winner, 180 );
+			G_FTG_STATE_SET ( FS_POST_DEMO_START );
+		}
+		break;
+
+	case FS_DOWN_WAIT:
+		if ( m_mutualChara->CheckDownEnd () )
+		{
+			//				m_mutualChara->EndAct ();
+			G_FTG_STATE_SET ( FS_POST_DEMO_START );
+		}
+		break;
+
+	case FS_POST_DEMO_START:
+		if ( m_mutualChara->CheckWinEnd () )
+		{
+			StartGrpDemo ( m_demo_Winner, 180 );
+#if 0
+			switch ( m_mutualChara->GetWinnerName () )
+			{
+			case CHARA_SONIA: StartGrpDemo ( m_demo_SONIA, 180 ); break;
+			case CHARA_ORFLOAT: StartGrpDemo ( m_demo_ORFLOAT, 180 ); break;
+			default: break;
+			}
+#endif // 0
+			G_FTG_STATE_SET ( FS_WINNER );
+			m_mutualChara->ForcedEnd ();
+		}
+		break;
+
+	case FS_WINNER:
+		if ( ! m_demo_Winner->GetValid () )
+		{
+			//G_FTG_STATE_SET ( FS_END );
+
+			//test 初期化
+			G_FTG_STATE_SET ( FS_GETREADY );
+			m_mutualChara->Start ();
+		}
+		break;
+
+	case FS_END:
+
+		//FS_END時にはTransit()が分岐している
+
+		break;
+
+	default: break;
+	}
+
+#endif // 0
+
+	//デモ関数
+#if 0
+	void Fighting::MakeGrpDemo ( P_GrpDemo & pGrp, LPCTSTR txName )
+	{
+		pGrp = make_shared < GrpDemo > ();
+		pGrp->AddTexture ( txName );
+		SetGrpDemo ( pGrp );
+		GRPLST_INSERT ( pGrp );
+	}
+
+	void Fighting::SetGrpDemo ( P_GrpDemo pGrp )
+	{
+		pGrp->SetPos ( VEC2 ( 128, 400 ) );
+		pGrp->SetScalingCenter ( VEC2 ( 512, 128 ) );
+		pGrp->SetStartScaling ( VEC2 ( 1.3f, 1.3f ) );
+		pGrp->SetSecondVel ( VEC2 ( -0.001f, -0.001f ) );
+		pGrp->SetZ ( Z_SYS );
+		pGrp->SetValid ( false );
+	}
+
+	void Fighting::StartGrpDemo ( P_GrpDemo pGrp, UINT time )
+	{
+		//		pGrp->SetWait ( time );
+		pGrp->Init ();
+	}
+#endif // 0
 
 
 }	//namespace GAME

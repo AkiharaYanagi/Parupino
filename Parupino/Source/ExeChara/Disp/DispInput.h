@@ -24,8 +24,6 @@ namespace GAME
 	using VPVP_PRMRECT = vector < PVP_PRMRECT >;
 
 
-
-
 	class DispInput : public TASK_VEC
 	{
 		//キー入力表示個数
@@ -49,7 +47,7 @@ namespace GAME
 		DispInput ( const DispInput & rhs ) = delete;
 		~DispInput ();
 
-		void InitDisp ( PLAYER_ID playerID );
+		void LoadDisp ( PLAYER_ID playerID );
 
 		//入力更新
 		void UpdateInput ( P_CharaInput pCharaInput );

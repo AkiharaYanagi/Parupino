@@ -91,7 +91,7 @@ namespace GAME
 	}
 
 	//ï\é¶èâä˙âª
-	void DispInput::InitDisp ( PLAYER_ID playerID )
+	void DispInput::LoadDisp ( PLAYER_ID playerID )
 	{
 		//à íu
 		if ( PLAYER_ID_1 == playerID )

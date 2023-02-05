@@ -28,6 +28,13 @@ namespace GAME
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
 		m_charaRect = make_shared < CharaRect > ();		//実効枠
+
+		//バトルパラメータ
+		m_btlPrm.LoadPlayerID ( m_playerID );
+
+		//表示位置
+		m_dispChara.LoadPlayer ( m_playerID );
+		m_dispInput.LoadDisp ( m_playerID );
 	}
 
 	//デストラクタ
@@ -82,20 +89,15 @@ namespace GAME
 		}
 #endif // 0
 
-
-
 #if 0
 		tstring nameDoc ( _T ( "charaDoc.dat" ) );
 //		LoadChara loadChara ( name, *m_pChara );
 		LoadChara loadChara ( nameDoc, *m_pChara );
-
 #else
 		//バイナリデータ読込
 //		LoadCharaBin loadCharaBin ( _T ( "chara.dat" ), *m_pChara );
 		LoadCharaBin loadCharaBin ( _T ( "charaBin.dat" ), *m_pChara );
 #endif // 0
-
-
 
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
@@ -121,16 +123,12 @@ namespace GAME
 		m_pScript = m_pAction->GetpScript ( m_frame );
 
 		//バトルパラメータ
-		m_btlPrm.InitPlayerID ( m_playerID );
 		m_btlPrm.Init ();
 
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
 		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
-		m_dispChara.InitDisp ( m_playerID );
-
-		m_dispInput.InitDisp ( m_playerID );
 
 		TASK_VEC::Init ();
 	}
@@ -277,32 +275,29 @@ namespace GAME
 	//================================================
 	//	外部からの状態変更
 	//================================================
-
-	void ExeChara::StartGreeting ()
+	void ExeChara::SetAction ( tstring action_name )
 	{
-		//アクション・スクリプト初期化
-		m_actionID = m_pChara->GetActionID ( _T ( "Start_Demo" ) );
+		SetAction ( m_pChara->GetActionID ( action_name ) );
+	}
+
+	void ExeChara::SetAction ( UINT action_id )
+	{
+		m_actionID = action_id;
 		m_pAction = m_pChara->GetpAction ( m_actionID );
 		m_frame = 0;
 		m_pScript = m_pAction->GetpScript ( m_frame );
+	}
 
-		//バトルパラメータ
-		m_btlPrm.InitPlayerID ( m_playerID );
-		m_btlPrm.Init ();
-
+	void ExeChara::StartGreeting ()
+	{
+		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
+		m_btlPrm.Init ();		//バトルパラメータ
 	}
 
 	void ExeChara::StartFighting ()
 	{
-		//アクション・スクリプト初期化
-		m_actionID = 0;
-		m_pAction = m_pChara->GetpAction ( m_actionID );
-		m_frame = 0;
-		m_pScript = m_pAction->GetpScript ( m_frame );
-
-		//バトルパラメータ
-		m_btlPrm.InitPlayerID ( m_playerID );
-		m_btlPrm.Init ();
+		SetAction ( _T ( "Stand" ) );		//アクション・スクリプト初期化
+		m_btlPrm.Init ();		//バトルパラメータ
 	}
 
 	void ExeChara::OnDashBranch ()
@@ -1040,7 +1035,7 @@ namespace GAME
 
 	void ExeChara::AlwaysPostMove ()
 	{
-		m_btlPrm.Move ();	//タイマー稼働
+		m_btlPrm.TimerMove ();	//タイマー稼働
 	}
 
 

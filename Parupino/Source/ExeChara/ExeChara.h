@@ -124,7 +124,11 @@ namespace GAME
 		void SetCharaState ( CHARA_STATE chst ) { m_charaState = chst; }
 
 		//開始
-		void SetMain () { m_charaState = CHST_MAIN; }
+		void SetMain ()
+		{
+			Init ();
+			m_charaState = CHST_MAIN; 
+		}
 
 		//入力をする状態かどうか
 		bool CanInput () const;
@@ -168,6 +172,10 @@ namespace GAME
 
 		//---------------------------------------------
 		//外部からの状態変更
+
+		//アクション指定
+		void SetAction ( tstring action_name );
+		void SetAction ( UINT action_id );
 
 		//Demo用
 		void StartGreeting ();

@@ -72,12 +72,9 @@ namespace GAME
 
 		//スクリプトの毎フレーム処理
 		void Conduct ();
-
 		void Collision ();		//重なり判定
 		void Decision ();		//攻撃判定
-
 		void Grp ();			//グラフィック共通
-
 
 		//状態変更
 		void StartGreeting ();		//開始デモ

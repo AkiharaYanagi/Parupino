@@ -103,9 +103,9 @@ namespace GAME
 	}
 
 
-	void DispChara::InitDisp ( PLAYER_ID playerID )
+	void DispChara::LoadPlayer ( PLAYER_ID playerID )
 	{ 
-		m_frontEnd.InitDisp ( playerID );
+		m_frontEnd.LoadDisp ( playerID );
 #if 0
 		float dispGameBaseX = G_BASE_POS ().x;
 

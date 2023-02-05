@@ -79,14 +79,14 @@ namespace GAME
 		m_pScript = m_pAction->GetpScript ( m_frame );
 
 		//バトルパラメータ
-		m_btlPrm.InitPlayerID ( m_playerID );
+		m_btlPrm.LoadPlayerID ( m_playerID );
 		m_btlPrm.Init ();
 
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
 		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
-		m_dispChara.InitDisp ( m_playerID );
+		m_dispChara.LoadPlayer ( m_playerID );
 
 		TASK_VEC::Init ();
 	}
@@ -232,7 +232,7 @@ namespace GAME
 
 	void ExeChara_Demo::AlwaysPostMove ()
 	{
-		m_btlPrm.Move ();	//タイマー稼働
+		m_btlPrm.TimerMove ();	//タイマー稼働
 	}
 
 

@@ -89,7 +89,8 @@ namespace GAME
 		P_GrpDemo		m_grpGetReady;
 		P_GrpAcv		m_grpClock;
 		P_Timer			m_timer;
-
+		static const UINT		COUNT;
+		static const UINT		COUNT_D;
 	public:
 		FTG_DM_GetReady ();
 		FTG_DM_GetReady ( const FTG_DM_GetReady & rhs ) = delete;
@@ -127,7 +128,13 @@ namespace GAME
 	//------------------------------------------------
 	class FTG_DM_Down : public FtgDemoState
 	{
+		P_GrpDemo		m_grpDown;
 	public:
+		FTG_DM_Down ();
+		FTG_DM_Down ( const FTG_DM_Down & rhs ) = delete;
+		~FTG_DM_Down () {}
+
+		void Init ();
 		void Do ();
 	};
 	using P_FTG_DM_Down = shared_ptr < FTG_DM_Down >;
@@ -178,6 +185,7 @@ namespace GAME
 
 		void Change_Greeting_To_GetReady ();
 		void Change_GetReady_To_Attack ();
+		void Change_Main_To_Down ();
 
 	private:
 		P_MutualChara GetpMutualChara () const { return mp_Param->GetpMutualChara (); }

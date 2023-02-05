@@ -39,7 +39,7 @@ namespace GAME
 		~DispFrontEnd ();
 
 		//ゲージ類の表示部のみ初期化
-		void InitDisp ( PLAYER_ID playerID );
+		void LoadDisp ( PLAYER_ID playerID );
 
 		//ゲージ類更新
 		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );

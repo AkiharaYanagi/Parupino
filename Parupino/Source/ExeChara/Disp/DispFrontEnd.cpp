@@ -37,7 +37,7 @@ namespace GAME
 	{
 	}
 
-	void DispFrontEnd::InitDisp ( PLAYER_ID playerID )
+	void DispFrontEnd::LoadDisp ( PLAYER_ID playerID )
 	{
 		float dispGameBaseX = G_BASE_POS ().x;
 
