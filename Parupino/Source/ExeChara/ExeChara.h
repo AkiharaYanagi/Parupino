@@ -25,6 +25,7 @@
 #include "Effect/OperateEffect.h"
 #include "CharaRect.h"
 #include "BtlParam.h"
+#include "ExeChara_Actor.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -80,6 +81,10 @@ namespace GAME
 		//ゲーム進行状態
 		CHARA_STATE		m_charaState;
 
+		//ゲーム進行状態ステート
+		ExeChara_Actor	m_actor;
+
+
 	public:
 		ExeChara () = delete;
 		ExeChara ( PLAYER_ID m_playerID );
@@ -132,6 +137,9 @@ namespace GAME
 
 		//入力をする状態かどうか
 		bool CanInput () const;
+
+		//入力処理
+		void Input ();
 
 		//メイン状態かどうか
 		bool IsMain () const;
@@ -283,7 +291,12 @@ namespace GAME
 		//PreScriptMove
 		void AlwaysMove ();		// アクションとスクリプトによらない一定の処理
 
+	public:
+
 		void TransitAction ();	// アクション移項
+
+	private:
+
 		void TransitAction ( UINT actionID );		//アクションの移項
 		void TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
 		void TransitAction_Condition_E ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行

@@ -33,14 +33,17 @@ namespace GAME
 	//---------------------------------------------------------------------
 
 	private:
-		FIGHTING_STATE		m_enmFightingState;	//進行状態
+
+//		FIGHTING_STATE		m_enmFightingState;	//進行状態
+
 		VEC2	m_posMutualBase;		//キャラ位置による画面補正量
 
 	public:
-
+#if 0
 		//ファイティングシーン状態
 		void SetFightingState ( FIGHTING_STATE fs ) { m_enmFightingState = fs; }
 		FIGHTING_STATE GetFightingState () const { return m_enmFightingState; }
+#endif // 0
 
 		//画面端での表示基準位置
 		void CulcPosMutualBase ( VEC2 pos1p, VEC2 pos2p ) const;

@@ -11,7 +11,6 @@
 #include "Game.h"
 #include "FtgConst.h"	
 #include "MutualChara.h"
-#include "MutualChara_Demo.h"
 
 //-------------------------------------------------------------------------------------------------
 // éŒ¾
@@ -25,16 +24,12 @@ namespace GAME
 	class FtgDemoParam
 	{
 		P_MutualChara			m_mutualChara;
-//		P_MutualChara_Demo		m_mutualChara_Demo;
 		WP_FtgDemoActor			m_ftgDemoActor;
 
 	public:
 		
 		void SetpMutualChara ( P_MutualChara p ) { m_mutualChara = p; }
 		P_MutualChara GetpMutualChara () const { return m_mutualChara; }
-
-//		void SetpMutualChara_Demo ( P_MutualChara_Demo p ) { m_mutualChara_Demo = p; }
-//		P_MutualChara_Demo GetpMutualChara_Demo () const { return m_mutualChara_Demo; }
 
 		void SetwpFtgDemoActor ( WP_FtgDemoActor p ) { m_ftgDemoActor = p; }
 		WP_FtgDemoActor GetwpFtgDemoActor () const { return m_ftgDemoActor; }
@@ -53,11 +48,9 @@ namespace GAME
 		~FtgDemoState () {}
 
 		virtual void Do () {}
-
 		void SetpPrm ( P_PRM_FTG_DEMO p ) { m_prmFtgDemo = p; }
 
 		P_GrpDemo MakeGrpValue ( LPCTSTR txName );
-
 		P_MutualChara GetpMutualChara () const { return m_prmFtgDemo->GetpMutualChara (); }
 		WP_FtgDemoActor GetwpFtgDemoActor () const { return m_prmFtgDemo->GetwpFtgDemoActor (); }
 

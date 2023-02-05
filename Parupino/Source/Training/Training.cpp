@@ -20,9 +20,6 @@ namespace GAME
 		//格闘部分共通パラメータシングルトン生成
 		G_Ftg::Create ();
 
-		//Sceneの最初一回のみ、GrpLstの中身を生成してゲームタスクに設定
-//		AddpTask ( GRPLST_MAKE () );
-
 		//背景
 		m_bg = make_shared < GrpAcv > ();
 		m_bg->AddTexture ( _T ( "ftgmain_bg.png" ) );
@@ -72,10 +69,12 @@ namespace GAME
 		m_pause->SetValid ( false );
 
 		//デモを飛ばしてゲーム開始
+#if 0
 		G_FTG_STATE_SET ( FS_GAME_MAIN );
 		m_mutualChara->Wait ( false );
 		Scene::Init ();
 		m_mutualChara->SetMain ();
+#endif // 0
 
 		m_pause->SetValid ( false );
 	}
@@ -109,12 +108,14 @@ namespace GAME
 			return make_shared < Title > ();
 		}
 
-		//終了時
+		//戦闘終了時
+#if 0
 		if ( FS_END == G_FTG_STATE () )
 		{
 			SOUND->Stop ( BGM_Main );
 			return make_shared < Title > ();
 		}
+#endif // 0
 
 		//通常時
 		return shared_from_this ();

@@ -109,6 +109,9 @@ namespace GAME
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
 
+		//状態パラメータに登録
+		m_actor.SetwpExeChara ( shared_from_this () );
+
 		TASK_VEC::Load ();
 	}
 
@@ -124,6 +127,9 @@ namespace GAME
 
 		//バトルパラメータ
 		m_btlPrm.Init ();
+
+		//状態
+		m_actor.Init ();
 
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
@@ -179,6 +185,7 @@ namespace GAME
 	//■#########################################################
 	void ExeChara::PreScriptMove ()
 	{
+#if 0
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 
 		//一時停止のときは何もしない
@@ -207,6 +214,9 @@ namespace GAME
 
 		//接触枠設定
 		AdjustCRect ();
+#endif // 0
+
+		m_actor.PreScriptMove ();
 	}
 
 
@@ -548,15 +558,7 @@ namespace GAME
 
 		//---------------------------------------------------
 		//入力
-		// 入力を可能な状態
-		if ( CanInput () )
-		{
-			//入力の保存
-			m_pCharaInput->Update ( GetDirRight () );
-		}
-		//入力更新
-		m_dispInput.UpdateInput ( m_pCharaInput );
-
+		Input ();
 	}
 
 
@@ -1015,6 +1017,19 @@ namespace GAME
 	bool ExeChara::CanInput () const
 	{
 		return IsMain ();
+	}
+
+	//入力処理
+	void ExeChara::Input ()
+	{
+		// 入力を可能な状態
+		if ( CanInput () )
+		{
+			//入力の保存
+			m_pCharaInput->Update ( GetDirRight () );
+		}
+		//入力更新
+		m_dispInput.UpdateInput ( m_pCharaInput );
 	}
 
 	bool ExeChara::IsMain () const

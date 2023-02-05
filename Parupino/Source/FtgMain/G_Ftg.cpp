@@ -22,8 +22,7 @@ namespace GAME
 	UP_G_Ftg	G_Ftg::m_inst;
 
 	G_Ftg::G_Ftg ()
-	:	  m_enmFightingState ( FS_GETREADY )
-		, m_posMutualBase ( VEC2 ( 0, 0 ) )
+	:	  m_posMutualBase ( VEC2 ( 0, 0 ) )
 	{
 	}
 

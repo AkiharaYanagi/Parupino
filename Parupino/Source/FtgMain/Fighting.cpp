@@ -54,11 +54,6 @@ namespace GAME
 		m_mutualChara = make_shared < MutualChara > ();
 		AddpTask ( m_mutualChara );
 
-		//デモ用キャラ相互処理
-//		m_mutualChara_Demo = make_shared < MutualChara_Demo > ();
-//		AddpTask ( m_mutualChara_Demo );
-
-
 		//=====================================================
 		//デモ
 		m_demoActor = make_shared < FtgDemoActor > ();
@@ -84,7 +79,6 @@ namespace GAME
 	void Fighting::ParamInit ()
 	{
 		m_mutualChara->ParamInit ( GetpParam () );
-//		m_mutualChara_Demo->ParamInit ( GetpParam () );
 	}
 
 	void Fighting::Init ()
@@ -118,7 +112,6 @@ namespace GAME
 		//--------------------------
 		//両者処理
 		m_mutualChara->Conduct ();
-//		m_mutualChara_Demo->Conduct ();
 
 		//--------------------------
 		//共通グラフィック処理
@@ -139,12 +132,14 @@ namespace GAME
 			return make_shared < Title > ();
 		}
 
-		//終了時
+		//戦闘終了時
+#if 0
 		if ( FS_END == G_FTG_STATE () )
 		{
 			SOUND->Stop ( BGM_Main );
 			return make_shared < Title > ();
 		}
+#endif // 0
 
 		//通常時
 		return shared_from_this ();
