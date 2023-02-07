@@ -8,9 +8,9 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "ExeChara.h"
-
 #include "..\CharaData\IO\LoadCharaBin.h"
-
+#include "Input/PlayerInput.h"
+#include "Input/CPUInput.h"
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -22,7 +22,6 @@ namespace GAME
 		: m_pChara ( nullptr )
 		, m_playerID ( m_playerID ), m_name ( CHARA_TEST ), m_playerMode ( MODE_PLAYER )
 		, m_actionID ( 0 ), m_frame ( 0 )
-		, m_bDispRect ( true )
 		, m_charaState ( CHST_START )
 	{
 		//キャラデータ生成
@@ -34,7 +33,6 @@ namespace GAME
 
 		//表示位置
 		m_dispChara.LoadPlayer ( m_playerID );
-		m_dispInput.LoadDisp ( m_playerID );
 	}
 
 	//デストラクタ
@@ -61,6 +59,7 @@ namespace GAME
 			m_playerMode = stg.GetPlayerMode1p ();
 		}
 
+		//プレイヤモード(入力種類)
 		switch ( m_playerMode )
 		{
 		case MODE_PLAYER: m_pCharaInput = make_shared < PlayerInput > (); break;
@@ -101,10 +100,7 @@ namespace GAME
 
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
-		m_dispChara.Load ();
-
-		//キャラ入力初期化
-		m_dispInput.Load ();
+		m_dispChara.SetpCharaRect ( m_charaRect );
 
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
@@ -173,7 +169,7 @@ namespace GAME
 	//	↓ 処理順番
 	//	void ExeChara::PreScriptMove ();	//	スクリプト前処理
 	//	void MutualChara::Collision ();		//	相互判定 (接触枠)
-	//	void ExeChara::ScriptRectMove ();	//	ぶつかり後、判定枠を設定
+	//	void ExeChara::RectMove ();			//	ぶつかり後、判定枠を設定
 	//	void MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
 	//	void ExeChara::PostScriptMove ();	//	スクリプト後処理
 
@@ -225,8 +221,9 @@ namespace GAME
 	//■		両者の接触判定後に攻撃・相殺・当り判定枠を設定
 	//■		
 	//■###########################################################################
-	void ExeChara::ScriptRectMove ()
+	void ExeChara::RectMove ()
 	{
+#if 0
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 
 		//一時停止のときは何もしない
@@ -252,6 +249,9 @@ namespace GAME
 
 		//当り枠設定
 		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+#endif // 0
+
+		m_actor.RectMove ();
 	}
 
 
@@ -264,6 +264,7 @@ namespace GAME
 	//■###########################################################################
 	void ExeChara::PostScriptMove ()
 	{
+#if 0
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 		
 		//1[F]に一度行う処理
@@ -277,6 +278,9 @@ namespace GAME
 
 		// グラフィック
 		UpdateGraphic ();
+#endif // 0
+
+		m_actor.PostScriptMove ();
 	}
 
 	//==========================================================
@@ -309,6 +313,10 @@ namespace GAME
 		SetAction ( _T ( "Stand" ) );		//アクション・スクリプト初期化
 		m_btlPrm.Init ();		//バトルパラメータ
 	}
+
+
+	//---------------------------------------------
+	//イベント
 
 	void ExeChara::OnDashBranch ()
 	{
@@ -559,6 +567,12 @@ namespace GAME
 		//---------------------------------------------------
 		//入力
 		Input ();
+	}
+
+	// 位置計算
+	void ExeChara::CalcPos ()
+	{
+		m_btlPrm.CalcPos ( m_pScript );
 	}
 
 
@@ -820,6 +834,7 @@ namespace GAME
 	}
 
 	//枠表示切替
+#if 0
 	void ExeChara::TurnDispRect ()
 	{
 		if ( m_bDispRect )
@@ -833,6 +848,18 @@ namespace GAME
 			m_dispChara.OffRect ();
 			m_oprtEf.OffDispRect ();
 		}
+	}
+#endif // 0
+	void ExeChara::OnDispRect ()
+	{
+		m_dispChara.OnRect ();
+		m_dispChara.SetpCharaRect ( m_charaRect );
+		m_oprtEf.OnDispRect ();
+	}
+	void ExeChara::OffDispRect ()
+	{
+		m_dispChara.OffRect ();
+		m_oprtEf.OffDispRect ();
 	}
 
 	//ライフ判定
@@ -863,21 +890,7 @@ namespace GAME
 		EffectMove ();
 
 		//枠表示切替
-		TurnDispRect ();
-
-		//硬直時間表示
-#if 0
-		static bool b2 = true;
-		if ( ::GetAsyncKeyState ( '2' ) & 0x0001 ) { b2 ^= 1; }
-		if ( b2 )
-		{
-			//ヒットストップ時間
-			m_dispChara.UpdateHitStop ( m_ptChara, m_dirRight, m_hitstop, m_hitstopTimer );
-
-			//のけぞり時間
-			m_dispChara.UpdateLurch ( m_ptChara, m_dirRight, m_lurch, m_lurchTimer );
-		}
-#endif // 0
+//		TurnDispRect ();
 
 
 		//@todo 共通グラフィックの記述位置を調整
@@ -898,7 +911,7 @@ namespace GAME
 
 	}
 
-	//着地
+	//落下・着地
 	void ExeChara::Landing ()
 	{
 		VEC2 pos = m_btlPrm.GetPos ();
@@ -976,11 +989,53 @@ namespace GAME
 	//-------------------------------------------------------------------------------------------------
 	//	枠設定
 	//-------------------------------------------------------------------------------------------------
-	//現在位置から接触枠を反映
-	void ExeChara::AdjustCRect ()
+	//接触枠設定
+	void ExeChara::SetCollisionRect ()
 	{
 		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 	}
+
+
+	//相殺・攻撃・当り・枠設定
+	void ExeChara::SetRect ()
+	{
+		SetOffsetRect ();
+		SetAttackRect ();
+		SetHitRect ();
+	}
+
+	//相殺枠設定
+	void ExeChara::SetOffsetRect ()
+	{
+		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+	}
+
+	//攻撃枠設定
+	void ExeChara::SetAttackRect ()
+	{
+		// ヒット時に後の攻撃枠を一時停止(多段防止)
+		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
+		if ( m_btlPrm.GetHitEst () || m_btlPrm.GetClang () )
+		{
+			m_charaRect->ResetARect ();
+		}
+		else
+		{
+			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+		}
+
+		//攻撃力設定
+//		m_power = m_pScript->GetPower ();
+	}
+
+	//当り枠設定
+	void ExeChara::SetHitRect ()
+	{
+		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+	}
+
+	//-------------------------------------------------------------------------------------------------
+
 
 	void ExeChara::SetEndWait ()
 	{
@@ -1028,8 +1083,8 @@ namespace GAME
 			//入力の保存
 			m_pCharaInput->Update ( GetDirRight () );
 		}
-		//入力更新
-		m_dispInput.UpdateInput ( m_pCharaInput );
+		//入力表示更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
 	}
 
 	bool ExeChara::IsMain () const

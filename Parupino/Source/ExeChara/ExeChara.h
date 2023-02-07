@@ -18,10 +18,7 @@
 #include "../CharaData/Chara.h"
 #include "../CharaData/IO/LoadChara.h"
 #include "Disp/DispChara.h"
-#include "Disp/DispInput.h"
 #include "Input/CharaInput.h"
-#include "Input/PlayerInput.h"
-#include "Input/CPUInput.h"
 #include "Effect/OperateEffect.h"
 #include "CharaRect.h"
 #include "BtlParam.h"
@@ -51,7 +48,6 @@ namespace GAME
 		//------------------------------------------------
 		//表示
 		DispChara		m_dispChara;	//キャラ全般表示
-		DispInput		m_dispInput;	//入力表示
 
 		//------------------------------------------------
 		//入力
@@ -67,7 +63,7 @@ namespace GAME
 		//------------------------------------------------
 		//枠
 		P_CharaRect		m_charaRect;	//枠
-		bool			m_bDispRect;	//枠表示
+//		bool			m_bDispRect;	//枠表示
 
 		//------------------------------------------------
 		//パラメータ
@@ -103,7 +99,7 @@ namespace GAME
 		//******************************
 		void PreScriptMove ();			//	スクリプト前処理
 		//MutualChara::Collision ();	//	相互判定 (接触枠)
-		void ScriptRectMove ();			//	ぶつかり後、判定枠を設定
+		void RectMove ();			//	ぶつかり後、判定枠を設定
 		//MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
 		void PostScriptMove ();			//	スクリプト後処理
 		//------------------------------------------------------------
@@ -162,8 +158,15 @@ namespace GAME
 
 		//---------------------------------------------
 		//枠
-		void AdjustCRect ();		//現在位置から接触枠を反映
 		P_CharaRect GetpCharaRect () { return m_charaRect; }		//枠取得
+
+		void SetCollisionRect ();		//接触枠設定
+		void SetRect ();
+	private:
+		void SetOffsetRect ();	//相殺枠設定
+		void SetAttackRect ();	//攻撃枠設定
+		void SetHitRect ();		//当り枠設定
+	public:
 
 		//---------------------------------------------
 		//パラメータ取得
@@ -273,8 +276,10 @@ namespace GAME
 		//システム
 
 		//枠表示切替
-		void OnDispRect () { m_bDispRect = true; }
-		void OffDispRect () { m_bDispRect = false; }
+//		void OnDispRect () { m_bDispRect = true; }
+//		void OffDispRect () { m_bDispRect = false; }
+		void OnDispRect ();
+		void OffDispRect ();
 
 		//CPU操作切替
 		void ControlCPU ();
@@ -294,6 +299,7 @@ namespace GAME
 	public:
 
 		void TransitAction ();	// アクション移項
+		void CalcPos ();	// 位置計算
 
 	private:
 
@@ -303,16 +309,17 @@ namespace GAME
 		UINT Check_TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件チェック)
 
 		//ぶつかり後、位置の修正
-		void Landing ();	//着地
+		void Landing ();	//落下・着地
 
+	public:
 		//PostScriptMove
 		void AlwaysPostMove ();		// アクションとスクリプトによらない一定の処理
 		void CheckLife ();			//ライフ判定
 		void UpdateGraphic ();		//グラフィック更新
 		void EffectGenerate ();		//エフェクト生成
 		void EffectMove ();
-		void TurnDispRect ();		//枠表示切替
-
+//		void TurnDispRect ();		//枠表示切替
+	private:
 		//------------------------------------------------
 		//アクション体勢
 		bool Is_APStand () { return m_pAction->GetPosture () == AP_STAND; }

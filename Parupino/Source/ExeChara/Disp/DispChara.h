@@ -16,28 +16,20 @@
 #include "DispRect.h"
 #include "../CharaRect.h"
 #include "DispFrontEnd.h"
+#include "DispInput.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class DispChara : public TASK_VEC
+	class DispChara
 	{
 		DispMainImage	m_mainImage;	//メインイメージ
 		DispRect		m_dispRect;		//枠
 		P_GrpAcv		m_grpShadow;	//影
 		DispFrontEnd	m_frontEnd;		//フロントエンド
-
-#if	0
-		//エフェクト
-		GrpEf		m_grpHitEf;			//ヒットエフェクト
-		GrpEf		m_grpAvoidEf;		//アヴォイドエフェクト
-		GrpEf		m_grpPoisedEf;		//構えエフェクト
-
-		P_GrpApTx		m_efGraphic;		//エフェクトグラフィック表示
-		OperateEffect*		m_pOprtEf;
-#endif	//0
+		DispInput		m_dispInput;	//入力表示
 
 	public:
 		DispChara ();
@@ -47,18 +39,15 @@ namespace GAME
 		//キャラを設定する
 		void SetpChara ( const P_Chara pChara );
 
-		//メインイメージの初期化
-	//void InitMainImage ( UINT indexTexture );
-
 		//メインイメージの更新
 		void UpdateMainImage ( P_Script pScript, VEC2 ptChara, bool dirRight );
 
 		//表示枠設定
 		void SetpCharaRect ( P_CharaRect pCharaRect );
 
-		//枠表示
+		//枠表示ON
 		void OnRect () { m_dispRect.OnRect (); }
-		//枠非表示
+		//枠表示OFF
 		void OffRect () { m_dispRect.OffRect (); }
 
 		//ゲージ類の表示部のみ初期化
@@ -67,24 +56,8 @@ namespace GAME
 		//ゲージ類更新
 		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
 
-
-#if 0
-		//ヒットストップ時間表示の更新
-		void UpdateHitStop ( VEC2 ptChara, bool dirRight, UINT lurch, UINT lurchTimer );
-
-		//のけぞり時間表示の更新
-		void UpdateLurch ( VEC2 ptChara, bool dirRight, UINT lurch, UINT lurchTimer );
-
-		//ヒット
-		void OnHit ( VEC2 ptChara, bool dirRight );
-
-		//アヴォイド
-		void OnAvoid ( VEC2 ptChara, bool dirRight );
-
-		//ポイズド
-		void OnPoised ( VEC2 ptChara, bool dirRight );
-#endif // 0
-
+		//入力更新
+		void UpdateInput ( P_CharaInput p ) { m_dispInput.UpdateInput ( p ); }
 	};
 
 }	//namespace GAME

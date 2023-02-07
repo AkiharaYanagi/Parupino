@@ -32,6 +32,16 @@ namespace GAME
 		PrmRect		m_gaugeHitStop;			//ヒットストップ時間表示
 		PrmRect		m_gaugeLurch;			//のけぞり時間表示
 #endif	//0
+#if	0
+		//エフェクト
+		GrpEf		m_grpHitEf;			//ヒットエフェクト
+		GrpEf		m_grpAvoidEf;		//アヴォイドエフェクト
+		GrpEf		m_grpPoisedEf;		//構えエフェクト
+
+		P_GrpApTx		m_efGraphic;		//エフェクトグラフィック表示
+		OperateEffect*		m_pOprtEf;
+#endif	//0
+
 
 	public:
 		DispFrontEnd ();
@@ -39,10 +49,28 @@ namespace GAME
 		~DispFrontEnd ();
 
 		//ゲージ類の表示部のみ初期化
-		void LoadDisp ( PLAYER_ID playerID );
+		void LoadPlayer ( PLAYER_ID playerID );
 
 		//ゲージ類更新
 		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
+
+#if 0
+		//ヒットストップ時間表示の更新
+		void UpdateHitStop ( VEC2 ptChara, bool dirRight, UINT lurch, UINT lurchTimer );
+
+		//のけぞり時間表示の更新
+		void UpdateLurch ( VEC2 ptChara, bool dirRight, UINT lurch, UINT lurchTimer );
+
+		//ヒット
+		void OnHit ( VEC2 ptChara, bool dirRight );
+
+		//アヴォイド
+		void OnAvoid ( VEC2 ptChara, bool dirRight );
+
+		//ポイズド
+		void OnPoised ( VEC2 ptChara, bool dirRight );
+#endif // 0
+
 	};
 
 

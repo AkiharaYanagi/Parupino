@@ -80,8 +80,8 @@ namespace GAME
 		Collision ();
 
 		//Ÿ‚Ô‚Â‚©‚èŒãAUŒ‚Eƒqƒbƒg”»’è˜g‚ðÝ’è
-		m_exeChara1->ScriptRectMove ();
-		m_exeChara2->ScriptRectMove ();
+		m_exeChara1->RectMove ();
+		m_exeChara2->RectMove ();
 
 		//Ÿ‘ŠŒÝ”»’è(UŒ‚Eƒqƒbƒg˜g)
 		Decision ();
@@ -119,11 +119,11 @@ namespace GAME
 			int i = 0;
 			while ( OverlapAryRect ( pvRect1p, pvRect2p ) )
 			{
-				m_exeChara1->BackMoveX ();	//”÷’²®
+				m_exeChara1->BackMoveX ();	//d‚È‚è”÷’²®
 				m_exeChara2->BackMoveX ();
 
-				m_exeChara1->AdjustCRect ();
-				m_exeChara2->AdjustCRect ();
+				m_exeChara1->SetCollisionRect ();	//“–‚è˜gÄÝ’è
+				m_exeChara2->SetCollisionRect ();
 
 				pvRect1p = pCharaRect1p->GetpvCRect ();
 				pvRect2p = pCharaRect2p->GetpvCRect ();
@@ -303,19 +303,33 @@ namespace GAME
 	//˜g•\Ž¦Ø‘Ö ExeChara‚ÅŒÄ‚Ô‚Æ1P2P‚Å‚Q‰ñŒÄ‚Î‚ê‚Ä‚µ‚Ü‚¤
 	void MutualChara::SwitchRect ()
 	{
-		//static bool b1 = false;
-		static bool b1 = true;
-		if ( ::GetAsyncKeyState ( '1' ) & 0x0001 ) { b1 ^= true; }
-		if ( b1 )
+		static bool bDispRect = false;		//ó‘Ô
+		static bool pre_bDispRect = false;	//‘O‰ñ‰Ÿ‚µ‚Ä‚¢‚é‚©
+		static bool is_bDispRect = false;	//¡‰ñ‰Ÿ‚µ‚Ä‚¢‚é‚©
+		
+		is_bDispRect = ( ::GetAsyncKeyState ( '1' ) & 0x0001 );
+
+		//@info ƒL[ƒ{[ƒh“ü—Í‚Í‰Ÿ‚µ‚Á‚Ï‚È‚µ‚Åˆê’èŽžŠÔŒã˜A‘Åó‘Ô‚É‚È‚é
+		//TRACE_F ( _T ( "b = %d, pre = %d, is = %d\n" ), bDispRect ? 1 : 0, pre_bDispRect ? 1 : 0, is_bDispRect ? 1 : 0  );
+		
+		//¡‰ñ‰Ÿ‚µ‚½uŠÔ‚È‚ç‚ÎAØ‘Ö
+		if ( ! pre_bDispRect && is_bDispRect )	// false -> true
 		{
-			m_exeChara1->OnDispRect ();
-			m_exeChara2->OnDispRect ();
+			if ( ! bDispRect )
+			{
+				m_exeChara1->OnDispRect ();
+				m_exeChara2->OnDispRect ();
+				bDispRect = true;
+			}
+			else
+			{
+				m_exeChara1->OffDispRect ();
+				m_exeChara2->OffDispRect ();
+				bDispRect = false;
+			}
 		}
-		else
-		{
-			m_exeChara1->OffDispRect ();
-			m_exeChara2->OffDispRect ();
-		}
+
+		pre_bDispRect = is_bDispRect;
 	}
 
 	//------------------------------------------------------
