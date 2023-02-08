@@ -312,7 +312,7 @@ namespace GAME
 		//@info キーボード入力は押しっぱなしで一定時間後連打状態になる
 		//TRACE_F ( _T ( "b = %d, pre = %d, is = %d\n" ), bDispRect ? 1 : 0, pre_bDispRect ? 1 : 0, is_bDispRect ? 1 : 0  );
 		
-		//今回押した瞬間ならば、切替
+		//今回押した瞬間ならば、1回のみ切替
 		if ( ! pre_bDispRect && is_bDispRect )	// false -> true
 		{
 			if ( ! bDispRect )

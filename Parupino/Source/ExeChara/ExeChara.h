@@ -34,8 +34,10 @@ namespace GAME
 	using P_ExeChara = shared_ptr < ExeChara >;
 	using WP_ExeChara = weak_ptr < ExeChara >;
 
+	//@info	復旧時Reset()のためゲームタスクを継承
+
 	//クラス
-	class ExeChara : public TASK_VEC, public enable_shared_from_this < ExeChara >
+	class ExeChara : public GameTask, public enable_shared_from_this < ExeChara >
 	{
 		//------------------------------------------------
 		//基本データ
@@ -63,7 +65,6 @@ namespace GAME
 		//------------------------------------------------
 		//枠
 		P_CharaRect		m_charaRect;	//枠
-//		bool			m_bDispRect;	//枠表示
 
 		//------------------------------------------------
 		//パラメータ
@@ -89,6 +90,7 @@ namespace GAME
 
 		void ParamInit ( P_Param pParam );
 		void Load ();
+		void _Load ();
 		void Init ();
 		void Reset ();
 		void _Reset ();	//復旧時
@@ -120,7 +122,6 @@ namespace GAME
 
 		//---------------------------------------------
 		//ゲーム進行状態
-
 		CHARA_STATE GetCharaState () const { return m_charaState; }
 		void SetCharaState ( CHARA_STATE chst ) { m_charaState = chst; }
 
@@ -160,8 +161,8 @@ namespace GAME
 		//枠
 		P_CharaRect GetpCharaRect () { return m_charaRect; }		//枠取得
 
-		void SetCollisionRect ();		//接触枠設定
-		void SetRect ();
+		void SetCollisionRect ();	//[PreMove] 位置から接触枠設定
+		void SetRect ();			//[PostMove] 相殺・攻撃・当り 枠設定
 	private:
 		void SetOffsetRect ();	//相殺枠設定
 		void SetAttackRect ();	//攻撃枠設定
@@ -198,6 +199,16 @@ namespace GAME
 		void SetStopTimer ( UINT i ) {
 			m_btlPrm.GetTmr_Stop ()->SetTargetTime ( i );
 			m_btlPrm.GetTmr_Stop ()->Start ();
+		}
+
+		//ヒットストップ
+		bool IsHitStop ()
+		{ 
+			if ( ! m_btlPrm.GetTmr_HitStop ()->IsLast () )
+			{
+				return m_btlPrm.GetTmr_HitStop ()->IsActive ();
+			}
+			return false;
 		}
 
 		//打合
@@ -306,6 +317,10 @@ namespace GAME
 		void EffectGenerate ();		//エフェクト生成
 		void EffectMove ();
 //		void TurnDispRect ();		//枠表示切替
+
+		void MoveTimer () { m_btlPrm.TimerMove (); }
+
+
 	private:
 		//------------------------------------------------
 		//アクション体勢
