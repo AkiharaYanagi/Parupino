@@ -249,21 +249,7 @@ namespace GAME
 		bool IsWinEnd () { return CHST_WIN_END == m_charaState; }
 
 		//強制終了状態
-		void ForcedEnd ()
-		{
-			if ( m_btlPrm.GetLife () <= 0 )
-			{
-				m_charaState = CHST_DOWN_END;
-//				m_actionID = m_pChara->GetBsAction ( BA_DOWN );
-				TransitAction ( m_actionID );
-			}
-			else
-			{
-				m_charaState = CHST_WIN_END;
-//				m_actionID = m_pChara->GetBsAction ( BA_WIN );
-				TransitAction ( m_actionID );
-			}
-		}
+		void ForcedEnd ();
 
 		//外部からの状態確認
 		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }
@@ -271,13 +257,10 @@ namespace GAME
 		//ダッシュ分岐
 		void OnDashBranch ();
 
-
 		//-------------------------------------------------
 		//システム
 
 		//枠表示切替
-//		void OnDispRect () { m_bDispRect = true; }
-//		void OffDispRect () { m_bDispRect = false; }
 		void OnDispRect ();
 		void OffDispRect ();
 
@@ -290,16 +273,20 @@ namespace GAME
 	//================================================
 	private:
 		//------------------------------------------------
-		//Init
+		//Load
 		void MakeEfOprt ();		//エフェクト処理の生成
 
+#if 0
 		//PreScriptMove
 		void AlwaysMove ();		// アクションとスクリプトによらない一定の処理
+#endif // 0
 
 	public:
-
 		void TransitAction ();	// アクション移項
 		void CalcPos ();	// 位置計算
+		//ぶつかり後、位置の修正
+		void Landing ();	//落下・着地
+
 
 	private:
 
@@ -308,12 +295,12 @@ namespace GAME
 		void TransitAction_Condition_E ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
 		UINT Check_TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件チェック)
 
-		//ぶつかり後、位置の修正
-		void Landing ();	//落下・着地
-
 	public:
+#if 0
 		//PostScriptMove
 		void AlwaysPostMove ();		// アクションとスクリプトによらない一定の処理
+#endif // 0
+
 		void CheckLife ();			//ライフ判定
 		void UpdateGraphic ();		//グラフィック更新
 		void EffectGenerate ();		//エフェクト生成
@@ -322,9 +309,9 @@ namespace GAME
 	private:
 		//------------------------------------------------
 		//アクション体勢
-		bool Is_APStand () { return m_pAction->GetPosture () == AP_STAND; }
-		bool IsJump () { return m_pAction->GetPosture () == AP_JUMP; }
-		bool IsCrouch () { return m_pAction->GetPosture () == AP_CROUCH; }
+		bool Is_AP_Stand () { return m_pAction->GetPosture () == AP_STAND; }
+		bool Is_AP_Jump () { return m_pAction->GetPosture () == AP_JUMP; }
+		bool Is_AP_Crouch () { return m_pAction->GetPosture () == AP_CROUCH; }
 
 		//------------------------------------------------
 		//アクションカテゴリ

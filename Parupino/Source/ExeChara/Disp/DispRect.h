@@ -23,6 +23,9 @@ namespace GAME
 
 	class DispRect
 	{
+		//参照実効枠
+		P_CharaRect		mp_CharaRect;
+
 		//表示枠
 		PVP_PrmRect		m_pvpGrpCRect;
 		PVP_PrmRect		m_pvpGrpARect;
@@ -40,11 +43,17 @@ namespace GAME
 		//表示枠の初期化
 		void InitRect ();
 
-		//表示
+		//更新
+		void Update ();
+
+		//------------------
+		//表示状態に変更
 		void OnRect ();
 
-		//非表示
+		//非表示状態に変更
 		void OffRect ();
+
+		//-------------------
 
 		//表示枠設定
 		void SetGrpRect ( PVP_PrmRect pvpGrpRect, PV_RECT pvRect );

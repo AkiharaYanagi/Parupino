@@ -61,6 +61,9 @@ namespace GAME
 		VEC2 vecImgShadow = VEC2 ( bx, 0 ) + posChara + VEC2 ( -128 + fDir * 12, 0 );
 		vecImgShadow.y = -32.f + 1.f * PLAYER_BASE_Y;
 		m_grpShadow->SetPos ( vecImgShadow );
+
+		//“ü—Í
+		m_dispRect.Update ();
 	}
 
 

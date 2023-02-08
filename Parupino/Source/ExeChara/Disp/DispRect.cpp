@@ -26,7 +26,6 @@ namespace GAME
 		{
 			P_PrmRect pCRect = make_shared < PrmRect > ();
 			pCRect->SetAllColor ( RECT_COLOR_C );
-//			pCRect->SetRect ( 100, 100, 200, 150 );
 			pCRect->SetZ ( Z_SYS );
 			pCRect->Load ();
 			m_pvpGrpCRect->push_back ( pCRect );
@@ -89,10 +88,16 @@ namespace GAME
 	//ÀŒø˜gİ’è
 	void DispRect::SetCharaRect ( P_CharaRect pCharaRect )
 	{
-		SetCRect ( pCharaRect->GetpvCRect () );
-		SetARect ( pCharaRect->GetpvARect () );
-		SetHRect ( pCharaRect->GetpvHRect () ); 
-		SetORect ( pCharaRect->GetpvORect () );
+		mp_CharaRect = pCharaRect;
+	}
+
+	//XV
+	void DispRect::Update ()
+	{
+		SetCRect ( mp_CharaRect->GetpvCRect () );
+		SetARect ( mp_CharaRect->GetpvARect () );
+		SetHRect ( mp_CharaRect->GetpvHRect () );
+		SetORect ( mp_CharaRect->GetpvORect () );
 	}
 
 	//•\¦˜g‚Ì‰Šú‰»

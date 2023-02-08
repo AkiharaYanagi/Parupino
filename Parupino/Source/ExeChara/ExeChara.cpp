@@ -31,7 +31,7 @@ namespace GAME
 		//バトルパラメータ
 		m_btlPrm.LoadPlayerID ( m_playerID );
 
-		//表示位置
+		//表示(1P/2P側による位置)
 		m_dispChara.LoadPlayer ( m_playerID );
 	}
 
@@ -59,12 +59,12 @@ namespace GAME
 			m_playerMode = stg.GetPlayerMode1p ();
 		}
 
-		//プレイヤモード(入力種類)
+		//プレイヤモード(入力種類)初期化
 		switch ( m_playerMode )
 		{
 		case MODE_PLAYER: m_pCharaInput = make_shared < PlayerInput > (); break;
 		case MODE_CPU: m_pCharaInput = make_shared < CPUInput > ( shared_from_this (), m_pOther ); break;
-		case MODE_NETWORK: m_pCharaInput = make_shared < PlayerInput > (); break;
+		case MODE_NETWORK: m_pCharaInput = make_shared < PlayerInput > (); break;	//(仮)
 		default: break;
 		}
 		m_pCharaInput->SetPlayer ( m_playerID );
@@ -74,6 +74,9 @@ namespace GAME
 	//読込
 	void ExeChara::Load ()
 	{
+		//--------------------------------------------
+		//m_pCharaのデータ読込
+
 		//名前からスクリプトファイルを指定してキャラのロード
 		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
@@ -98,6 +101,7 @@ namespace GAME
 		LoadCharaBin loadCharaBin ( _T ( "charaBin.dat" ), *m_pChara );
 #endif // 0
 
+		//--------------------------------------------
 		//キャラ表示初期化
 		m_dispChara.SetpChara ( m_pChara );
 		m_dispChara.SetpCharaRect ( m_charaRect );
@@ -105,9 +109,10 @@ namespace GAME
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
 
-		//状態パラメータに登録
+		//アクタ・ステートに用いる状態パラメータに登録
 		m_actor.SetwpExeChara ( shared_from_this () );
 
+		//--------------------------------------------
 		TASK_VEC::Load ();
 	}
 
@@ -223,34 +228,6 @@ namespace GAME
 	//■###########################################################################
 	void ExeChara::RectMove ()
 	{
-#if 0
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
-
-		//一時停止のときは何もしない
-		if ( m_btlPrm.GetStop () ) { return; }
-
-		//相殺枠設定
-		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
-
-		//攻撃枠設定
-		// ヒット時に後の攻撃枠を一時停止(多段防止)
-		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
-		if ( m_btlPrm.GetHitEst () || m_btlPrm.GetClang () )
-		{
-			m_charaRect->ResetARect ();
-		}
-		else
-		{
-			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
-		}
-
-		//攻撃力設定
-//		m_power = m_pScript->GetPower ();
-
-		//当り枠設定
-		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
-#endif // 0
-
 		m_actor.RectMove ();
 	}
 
@@ -508,12 +485,30 @@ namespace GAME
 		m_charaState = CHST_WIN_WAIT;
 	}
 
+	//強制終了状態
+	void ExeChara::ForcedEnd ()
+	{
+		if ( m_btlPrm.GetLife () <= 0 )
+		{
+			m_charaState = CHST_DOWN_END;
+//			m_actionID = m_pChara->GetBsAction ( BA_DOWN );
+			TransitAction ( m_actionID );
+		}
+		else
+		{
+			m_charaState = CHST_WIN_END;
+//			m_actionID = m_pChara->GetBsAction ( BA_WIN );
+			TransitAction ( m_actionID );
+		}
+	}
+
 
 	//================================================
 	//	内部関数
 	//================================================
 
 	// アクションとスクリプトによらない一定の処理
+#if 0
 	void ExeChara::AlwaysMove ()
 	{
 		//ダメージ分のライフ表示減少
@@ -568,11 +563,14 @@ namespace GAME
 		//入力
 		Input ();
 	}
+#endif // 0
 
 	// 位置計算
 	void ExeChara::CalcPos ()
 	{
 		m_btlPrm.CalcPos ( m_pScript );
+
+		Landing ();	//着地
 	}
 
 
@@ -853,7 +851,6 @@ namespace GAME
 	void ExeChara::OnDispRect ()
 	{
 		m_dispChara.OnRect ();
-		m_dispChara.SetpCharaRect ( m_charaRect );
 		m_oprtEf.OnDispRect ();
 	}
 	void ExeChara::OffDispRect ()
@@ -1103,10 +1100,12 @@ namespace GAME
 		return false;
 	}
 
+#if 0
 	void ExeChara::AlwaysPostMove ()
 	{
 		m_btlPrm.TimerMove ();	//タイマー稼働
 	}
+#endif // 0
 
 
 	//CPU操作切替
