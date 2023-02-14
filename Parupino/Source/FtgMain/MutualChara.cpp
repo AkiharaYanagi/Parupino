@@ -210,6 +210,7 @@ namespace GAME
 		return ( finish1p || finish2p );
 	}
 
+#if 0
 	bool MutualChara::CheckDown ()
 	{
 		//ダウン判定
@@ -276,6 +277,14 @@ namespace GAME
 		return bRet;
 	}
 
+	void MutualChara::ForcedEnd ()
+	{
+		m_exeChara1->ForcedEnd ();
+		m_exeChara2->ForcedEnd ();
+	}
+#endif // 0
+
+
 	CHARA_NAME MutualChara::GetWinnerName () const
 	{
 		switch ( m_winner )
@@ -288,12 +297,6 @@ namespace GAME
 		return CHARA_NAME ();
 	}
 
-
-	void MutualChara::ForcedEnd ()
-	{
-		m_exeChara1->ForcedEnd ();
-		m_exeChara2->ForcedEnd ();
-	}
 
 	//------------------------------------------------------
 	//	内部関数
@@ -356,18 +359,29 @@ namespace GAME
 	//------------------------------------------------------
 	//	ExeChara両者操作
 	//------------------------------------------------------
+	//開始デモ
 	void MutualChara::StartGreeting ()
 	{
 		m_exeChara1->StartGreeting ();
 		m_exeChara2->StartGreeting ();
 	}
 
+	//開始準備
+	void MutualChara::StartGetReady ()
+	{
+		m_exeChara1->StartGetReady ();
+		m_exeChara2->StartGetReady ();
+	}
+
+	//戦闘開始
 	void MutualChara::StartFighting ()
 	{
 		m_exeChara1->StartFighting ();
 		m_exeChara2->StartFighting ();
 	}
 
+
+#if 0
 	void MutualChara::SetReady ()
 	{
 		//準備
@@ -410,6 +424,7 @@ namespace GAME
 		m_exeChara1->SetCharaState ( chst );
 		m_exeChara2->SetCharaState ( chst );
 	}
+#endif // 0
 
 }	//namespace GAME
 

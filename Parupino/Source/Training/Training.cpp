@@ -130,12 +130,12 @@ namespace GAME
 			if ( m_pause->GetValid () )	//On->Off
 			{
 				m_pause->SetValid ( false );
-				m_mutualChara->Stop ( false );
+//				m_mutualChara->Stop ( false );
 			}
 			else	//Off->On
 			{
 				m_pause->SetValid ( true );
-				m_mutualChara->Stop ( true );
+//				m_mutualChara->Stop ( true );
 			}
 		}
 	}

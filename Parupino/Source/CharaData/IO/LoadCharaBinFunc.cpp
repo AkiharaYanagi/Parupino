@@ -250,11 +250,6 @@ namespace GAME
 		unique_ptr < EffectGenerate [] > aryEfGnrt = make_unique < EffectGenerate [] > ( nIdEfGnrt );
 		for ( UINT i = 0; i < nIdEfGnrt; ++ i )
 		{
-
-
-			TRACE_F ( _T ( "%d\n" ), i );
-
-
 			//エフェクトID
 			aryEfGnrt [ i ].SetIndex ( (UINT)buf [ pos ++ ] );
 			//位置

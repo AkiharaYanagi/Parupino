@@ -76,7 +76,7 @@ namespace GAME
 
 		//------------------------------------------------
 		//ゲーム進行状態
-		CHARA_STATE		m_charaState;
+//		CHARA_STATE		m_charaState;
 
 		//ゲーム進行状態ステート
 		ExeChara_Actor	m_actor;
@@ -121,6 +121,8 @@ namespace GAME
 		void LookOther ();	//相手の方向を向く
 
 		//---------------------------------------------
+
+#if 0
 		//ゲーム進行状態
 		CHARA_STATE GetCharaState () const { return m_charaState; }
 		void SetCharaState ( CHARA_STATE chst ) { m_charaState = chst; }
@@ -131,15 +133,20 @@ namespace GAME
 			Init ();
 			m_charaState = CHST_MAIN; 
 		}
+#endif // 0
 
+#if 0
 		//入力をする状態かどうか
 		bool CanInput () const;
+#endif // 0
 
 		//入力処理
 		void Input ();
 
+#if 0
 		//メイン状態かどうか
 		bool IsMain () const;
+#endif // 0
 
 		//ライフ０チェック
 		bool IsZeroLife () const { return ( 0 >= m_btlPrm.GetLife () ); }
@@ -191,6 +198,7 @@ namespace GAME
 
 		//Demo用
 		void StartGreeting ();
+		void StartGetReady ();
 		void StartFighting ();
 
 		//一時停止
@@ -241,6 +249,7 @@ namespace GAME
 
 		//-------------------------------------------------
 
+#if 0
 		//終了待機
 		void SetEndWait ();
 
@@ -261,6 +270,7 @@ namespace GAME
 
 		//強制終了状態
 		void ForcedEnd ();
+#endif // 0
 
 		//外部からの状態確認
 		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }

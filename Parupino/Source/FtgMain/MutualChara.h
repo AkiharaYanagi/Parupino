@@ -78,14 +78,15 @@ namespace GAME
 
 		//状態変更
 		void StartGreeting ();		//開始デモ
-		void StartFighting ();		//戦闘開始の初期化
+		void StartGetReady ();		//開始準備
+		void StartFighting ();		//戦闘開始
 
+#if 0
 		void SetReady ();
 		void SetMain ();
 		void Wait ( bool b );
 		void Stop ( bool b );
 		void EndAct ();
-		bool CheckZeroLife ();	//格闘終了判定
 		bool CheckDown ();		//ダウン判定
 		void SetEndWait ();
 		bool CheckDownEnd ();	//ダウン状態終了判定
@@ -93,6 +94,8 @@ namespace GAME
 		bool CheckWinEnd ();	//勝利終了状態判定
 		bool CheckWinner ();	//勝利側判定
 		void ForcedEnd ();	//強制終了
+#endif // 0
+		bool CheckZeroLife ();	//格闘終了判定
 
 		UINT GetBlackOut () const { return m_blackOut; };	//暗転
 		void SetBlackOut ( UINT i ) { m_blackOut = i; };

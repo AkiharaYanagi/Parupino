@@ -22,7 +22,7 @@ namespace GAME
 		: m_pChara ( nullptr )
 		, m_playerID ( m_playerID ), m_name ( CHARA_TEST ), m_playerMode ( MODE_PLAYER )
 		, m_actionID ( 0 ), m_frame ( 0 )
-		, m_charaState ( CHST_START )
+//		, m_charaState ( CHST_START )
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
@@ -141,6 +141,8 @@ namespace GAME
 		//@info Move()中のTransit()の後に遷移し、
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
 		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
+		//入力表示更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
 	}
 
 	//再設定
@@ -182,87 +184,29 @@ namespace GAME
 	//	void ExeChara::PostScriptMove ();	//	スクリプト後処理
 
 	//■#########################################################
-	//■
 	//■		毎フレーム スクリプト前処理
-	//■			位置や枠の設定
-	//■
 	//■#########################################################
 	void ExeChara::PreScriptMove ()
 	{
-#if 0
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
-
-		//一時停止のときは何もしない
-		if ( m_btlPrm.GetTmr_Stop()->IsActive () )
-		{ return; }
-
-		// アクションとスクリプトによらない一定の処理
-		//	入力など
-		AlwaysMove ();
-
-		// ヒットストップ時は入力の保存と表示関連の処理をして終了
-		//Activeとの兼ね合いでタイマーのラストは有効　0～N-1まで
-		if ( ! m_btlPrm.GetTmr_HitStop()->IsLast () )
-		{
-			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
-		}
-
-		// アクション移項
-		TransitAction ();
-
-		// 位置計算
-		m_btlPrm.CalcPos ( m_pScript );
-
-		// 着地
-		Landing ();
-
-		//接触枠設定
-		AdjustCRect ();
-#endif // 0
-
 		m_actor.PreScriptMove ();
 
 		//エフェクト生成と動作
 		EffectMove ();
 	}
 
-
-	//■###########################################################################
-	//■		
+	//■#########################################################
 	//■		両者の接触判定後に攻撃・相殺・当り判定枠を設定
-	//■		
-	//■###########################################################################
+	//■#########################################################
 	void ExeChara::RectMove ()
 	{
 		m_actor.RectMove ();
 	}
 
-
-	//■###########################################################################
-	//■
+	//■#########################################################
 	//■		毎フレーム スクリプト後処理
-	//■			自分・相手のスクリプト前処理→相互の判定、の後にそれぞれの処理をする
-	//■			判定の結果表示(主にグラフィック関連)
-	//■
-	//■###########################################################################
+	//■#########################################################
 	void ExeChara::PostScriptMove ()
 	{
-#if 0
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
-		
-		//1[F]に一度行う処理
-		AlwaysPostMove ();
-
-		//一時停止のときは何もしない
-		if ( m_btlPrm.GetStop () ) { return; }
-
-		//ライフ判定
-		CheckLife ();
-
-		// グラフィック
-		UpdateGraphic ();
-#endif // 0
-
 		m_actor.PostScriptMove ();
 	}
 
@@ -288,13 +232,19 @@ namespace GAME
 	void ExeChara::StartGreeting ()
 	{
 		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
-		m_btlPrm.Init ();		//バトルパラメータ
+		m_actor.StartGreeting ();		//状態
+	}
+
+	void ExeChara::StartGetReady ()
+	{
+//		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
+		m_actor.StartGetReady ();		//状態
 	}
 
 	void ExeChara::StartFighting ()
 	{
 		SetAction ( _T ( "Stand" ) );		//アクション・スクリプト初期化
-		m_btlPrm.Init ();		//バトルパラメータ
+		m_actor.StartFighting ();		//状態
 	}
 
 
@@ -485,6 +435,8 @@ namespace GAME
 //		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
 	}
 
+
+#if 0
 	//終了演出
 	void ExeChara::OnEndAct ()
 	{
@@ -507,6 +459,7 @@ namespace GAME
 			TransitAction ( m_actionID );
 		}
 	}
+#endif // 0
 
 
 	//================================================
@@ -783,6 +736,7 @@ namespace GAME
 	//ライフ判定
 	void ExeChara::CheckLife ()
 	{
+#if 0
 		//メイン状態のとき
 		if ( IsMain () )
 		{
@@ -796,6 +750,7 @@ namespace GAME
 				m_charaState = CHST_DOWN;
 			}
 		}
+#endif // 0
 	}
 
 	//グラフィック更新
@@ -803,6 +758,9 @@ namespace GAME
 	{
 		//メインイメージ
 		m_dispChara.UpdateMainImage ( m_pScript, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
+
+		//入力表示更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
 
 		//@todo 共通グラフィックの記述位置を調整
 		//停止時のスキップによる
@@ -959,7 +917,7 @@ namespace GAME
 
 	//-------------------------------------------------------------------------------------------------
 
-
+#if 0
 	void ExeChara::SetEndWait ()
 	{
 		//ダウン優先
@@ -967,6 +925,7 @@ namespace GAME
 
 		m_charaState = CHST_END_WAIT;
 	}
+#endif // 0
 
 
 	//のけぞりタイマー
@@ -991,15 +950,18 @@ namespace GAME
 	}
 #endif // 0
 
+#if 0
 	//入力をする状態かどうか
 	bool ExeChara::CanInput () const
 	{
 		return IsMain ();
 	}
+#endif // 0
 
 	//入力処理
 	void ExeChara::Input ()
 	{
+#if 0
 		// 入力を可能な状態
 		if ( CanInput () )
 		{
@@ -1008,8 +970,13 @@ namespace GAME
 		}
 		//入力表示更新
 		m_dispChara.UpdateInput ( m_pCharaInput );
+#endif // 0
+
+		//入力の更新
+		m_pCharaInput->Update ( GetDirRight () );
 	}
 
+#if 0
 	bool ExeChara::IsMain () const
 	{
 		switch ( m_charaState )
@@ -1025,6 +992,7 @@ namespace GAME
 		}
 		return false;
 	}
+#endif // 0
 
 	//CPU操作切替
 	void ExeChara::ControlCPU ()
