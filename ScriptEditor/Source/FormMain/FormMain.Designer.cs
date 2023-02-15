@@ -39,6 +39,7 @@
 			this.基準保存TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.テキストから読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.バイナリから読込BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -58,7 +59,6 @@
 			this.ctrl_Route1 = new ScriptEditor.Ctrl_Route();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.バイナリから読込BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
@@ -134,6 +134,13 @@
 			this.テキストから読込ToolStripMenuItem.Text = "テキストから読込(&T)";
 			this.テキストから読込ToolStripMenuItem.Click += new System.EventHandler(this.テキストから読込ToolStripMenuItem_Click);
 			// 
+			// バイナリから読込BToolStripMenuItem
+			// 
+			this.バイナリから読込BToolStripMenuItem.Name = "バイナリから読込BToolStripMenuItem";
+			this.バイナリから読込BToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+			this.バイナリから読込BToolStripMenuItem.Text = "バイナリから読込(&B)";
+			this.バイナリから読込BToolStripMenuItem.Click += new System.EventHandler(this.バイナリから読込BToolStripMenuItem_Click);
+			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -190,7 +197,7 @@
 			this.ctrl_SqcList_Act.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.ctrl_SqcList_Act.Location = new System.Drawing.Point(0, 0);
 			this.ctrl_SqcList_Act.Name = "ctrl_SqcList_Act";
-			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1732, 1477);
+			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1786, 1531);
 			this.ctrl_SqcList_Act.TabIndex = 0;
 			// 
 			// tabScriptA
@@ -315,13 +322,6 @@
 			// openFileDialog1
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
-			// バイナリから読込BToolStripMenuItem
-			// 
-			this.バイナリから読込BToolStripMenuItem.Name = "バイナリから読込BToolStripMenuItem";
-			this.バイナリから読込BToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
-			this.バイナリから読込BToolStripMenuItem.Text = "バイナリから読込(&B)";
-			this.バイナリから読込BToolStripMenuItem.Click += new System.EventHandler(this.バイナリから読込BToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 

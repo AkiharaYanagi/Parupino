@@ -96,6 +96,7 @@ namespace ScriptEditor
 			{
 				LoadCharaBin loadCharaBin = new LoadCharaBin ();
 				loadCharaBin.Do ( openFileDialog1.FileName, chara );
+
 				LoadCharaData ();
 			}
 		}
