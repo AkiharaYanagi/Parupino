@@ -56,7 +56,7 @@ namespace GAME
 	}
 
 	//-------------
-	const UINT FTG_DM_GetReady::COUNT = 990;
+	const UINT FTG_DM_GetReady::COUNT = 900;
 	const UINT FTG_DM_GetReady::COUNT_D = 60 - COUNT % 60;
 
 	FTG_DM_GetReady::FTG_DM_GetReady ()
