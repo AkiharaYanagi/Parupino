@@ -280,17 +280,23 @@ namespace ScriptEditor
 		//----------------------------------------------------------------------------------
 		//	スクリプト配列
 		//----------------------------------------------------------------------------------
-		//挿入
-		private void Btn_ScpInc_Click ( object sender, System.EventArgs e )
-		{
-			EditCompend.InsertScript ();
-			DispCompend.Disp ();
-		}
-
 		//追加
 		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
 		{
-			EditCompend.AddScript ();
+			Script scp = new Script();
+			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
+			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
+			EditCompend.AddScript ( scp );
+			DispCompend.Disp ();
+		}
+
+		//挿入
+		private void Btn_ScpInc_Click ( object sender, System.EventArgs e )
+		{
+			Script scp = new Script();
+			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
+			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
+			EditCompend.InsertScript ( scp );
 			DispCompend.Disp ();
 		}
 
@@ -302,17 +308,23 @@ namespace ScriptEditor
 			DispCompend.Disp ();
 		}
 
-		//複数挿入
+		//複数追加
 		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
 		{
-			EditCompend.MultiAdd ();
+			Script scp = new Script();
+			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
+			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
+			EditCompend.MultiAdd ( scp );
 			DispCompend.Disp ();
 		}
 
-		//複数追加
+		//複数挿入
 		private void Btn_MlcIns_Click ( object sender, System.EventArgs e )
 		{
-			EditCompend.MultiInsert ();
+			Script scp = new Script();
+			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
+			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
+			EditCompend.MultiInsert ( scp );
 			DispCompend.Disp ();
 		}
 

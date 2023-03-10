@@ -55,8 +55,9 @@ namespace ScriptEditor
 
 		public void Draw ()
 		{
-//			int W = Pb.Width;
-//			int H = Pb.Height;
+#if false
+			//			int W = Pb.Width;
+			//			int H = Pb.Height;
 			int W = Bmp.Width;
 			int H = Bmp.Height;
 			
@@ -97,6 +98,7 @@ namespace ScriptEditor
 			Pb.Image = Bmp;
 //			Pb.Invoke ( Setter0, bmp );
 //			SetterBmp?.Invoke ( bmp );
+#endif
 		}
 	}
 }
