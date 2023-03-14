@@ -24,6 +24,10 @@ namespace GAME
 		P_PrmRect	m_gaugeFrameLife;		//ライフゲージ枠表示
 		P_PrmRect	m_gaugeDecreaseLife;	//ライフゲージ減少分表示
 
+		P_PrmRect	m_gaugeBalance;			//バランスゲージ表示
+		P_PrmRect	m_gaugeFrameBalance;	//バランスゲージ枠表示
+		P_PrmRect	m_gaugeDecreaseBalance;	//バランスゲージ減少分表示
+
 #if	0
 		GrpAcv		m_grpPlayer1P;	//プレイヤー表示"1P"
 		GrpAcv		m_grpPlayer2P;	//プレイヤー表示"2P"
