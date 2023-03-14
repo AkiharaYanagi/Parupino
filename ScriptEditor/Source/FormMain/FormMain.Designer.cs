@@ -39,6 +39,7 @@
 			this.基準保存TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.テキストから読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.バイナリから読込BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -79,7 +80,8 @@
             this.別名保存ToolStripMenuItem,
             this.基準保存TToolStripMenuItem,
             this.読込ToolStripMenuItem,
-            this.テキストから読込ToolStripMenuItem});
+            this.テキストから読込ToolStripMenuItem,
+            this.バイナリから読込BToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(972, 24);
@@ -128,9 +130,16 @@
 			// テキストから読込ToolStripMenuItem
 			// 
 			this.テキストから読込ToolStripMenuItem.Name = "テキストから読込ToolStripMenuItem";
-			this.テキストから読込ToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-			this.テキストから読込ToolStripMenuItem.Text = "テキストから読込";
+			this.テキストから読込ToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+			this.テキストから読込ToolStripMenuItem.Text = "テキストから読込(&T)";
 			this.テキストから読込ToolStripMenuItem.Click += new System.EventHandler(this.テキストから読込ToolStripMenuItem_Click);
+			// 
+			// バイナリから読込BToolStripMenuItem
+			// 
+			this.バイナリから読込BToolStripMenuItem.Name = "バイナリから読込BToolStripMenuItem";
+			this.バイナリから読込BToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+			this.バイナリから読込BToolStripMenuItem.Text = "バイナリから読込(&B)";
+			this.バイナリから読込BToolStripMenuItem.Click += new System.EventHandler(this.バイナリから読込BToolStripMenuItem_Click);
 			// 
 			// statusStrip1
 			// 
@@ -188,7 +197,7 @@
 			this.ctrl_SqcList_Act.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.ctrl_SqcList_Act.Location = new System.Drawing.Point(0, 0);
 			this.ctrl_SqcList_Act.Name = "ctrl_SqcList_Act";
-			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1624, 1369);
+			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(1786, 1531);
 			this.ctrl_SqcList_Act.TabIndex = 0;
 			// 
 			// tabScriptA
@@ -376,6 +385,7 @@
 		private Ctrl_SqcList ctrl_SqcList_Act;
 		private System.Windows.Forms.TabPage tabEffect;
 		private Ctrl_SqcList ctrl_SqcList_Ef;
+		private System.Windows.Forms.ToolStripMenuItem バイナリから読込BToolStripMenuItem;
 	}
 }
 

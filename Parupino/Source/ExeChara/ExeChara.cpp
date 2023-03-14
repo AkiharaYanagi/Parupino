@@ -8,9 +8,9 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "ExeChara.h"
-
 #include "..\CharaData\IO\LoadCharaBin.h"
-
+#include "Input/PlayerInput.h"
+#include "Input/CPUInput.h"
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -22,8 +22,7 @@ namespace GAME
 		: m_pChara ( nullptr )
 		, m_playerID ( m_playerID ), m_name ( CHARA_TEST ), m_playerMode ( MODE_PLAYER )
 		, m_actionID ( 0 ), m_frame ( 0 )
-		, m_bDispRect ( true )
-		, m_charaState ( CHST_START )
+//		, m_charaState ( CHST_START )
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
@@ -32,9 +31,8 @@ namespace GAME
 		//バトルパラメータ
 		m_btlPrm.LoadPlayerID ( m_playerID );
 
-		//表示位置
+		//表示(1P/2P側による位置)
 		m_dispChara.LoadPlayer ( m_playerID );
-		m_dispInput.LoadDisp ( m_playerID );
 	}
 
 	//デストラクタ
@@ -61,11 +59,12 @@ namespace GAME
 			m_playerMode = stg.GetPlayerMode1p ();
 		}
 
+		//プレイヤモード(入力種類)初期化
 		switch ( m_playerMode )
 		{
 		case MODE_PLAYER: m_pCharaInput = make_shared < PlayerInput > (); break;
 		case MODE_CPU: m_pCharaInput = make_shared < CPUInput > ( shared_from_this (), m_pOther ); break;
-		case MODE_NETWORK: m_pCharaInput = make_shared < PlayerInput > (); break;
+		case MODE_NETWORK: m_pCharaInput = make_shared < PlayerInput > (); break;	//(仮)
 		default: break;
 		}
 		m_pCharaInput->SetPlayer ( m_playerID );
@@ -75,8 +74,29 @@ namespace GAME
 	//読込
 	void ExeChara::Load ()
 	{
-		//名前からスクリプトファイルを指定してキャラのロード
-		//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
+		//--------------------------------------------
+		//m_pCharaのデータ読込
+		_Load ();
+
+		//--------------------------------------------
+		//キャラ表示初期化
+		m_dispChara.SetpChara ( m_pChara );
+		m_dispChara.SetpCharaRect ( m_charaRect );
+
+		//エフェクト生成ベクタの生成
+		MakeEfOprt ();
+
+		//アクタ・ステートに用いる状態パラメータに登録
+		m_actor.SetwpExeChara ( shared_from_this () );
+	}
+
+	void ExeChara::_Load ()
+	{
+		//--------------------------------------------
+		//m_pCharaのデータ読込
+
+//名前からスクリプトファイルを指定してキャラのロード
+//※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
 //		tstring name ( _T ( "chara.dat" ) );
 		tstring name ( _T ( "charaBin.dat" ) );
@@ -91,7 +111,7 @@ namespace GAME
 
 #if 0
 		tstring nameDoc ( _T ( "charaDoc.dat" ) );
-//		LoadChara loadChara ( name, *m_pChara );
+		//		LoadChara loadChara ( name, *m_pChara );
 		LoadChara loadChara ( nameDoc, *m_pChara );
 #else
 		//バイナリデータ読込
@@ -99,17 +119,6 @@ namespace GAME
 		LoadCharaBin loadCharaBin ( _T ( "charaBin.dat" ), *m_pChara );
 #endif // 0
 
-		//キャラ表示初期化
-		m_dispChara.SetpChara ( m_pChara );
-		m_dispChara.Load ();
-
-		//キャラ入力初期化
-		m_dispInput.Load ();
-
-		//エフェクト生成ベクタの生成
-		MakeEfOprt ();
-
-		TASK_VEC::Load ();
 	}
 
 	//------------------------
@@ -125,12 +134,15 @@ namespace GAME
 		//バトルパラメータ
 		m_btlPrm.Init ();
 
+		//状態
+		m_actor.Init ();
+
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
 		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
-
-		TASK_VEC::Init ();
+		//入力表示更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
 	}
 
 	//再設定
@@ -167,106 +179,35 @@ namespace GAME
 	//	↓ 処理順番
 	//	void ExeChara::PreScriptMove ();	//	スクリプト前処理
 	//	void MutualChara::Collision ();		//	相互判定 (接触枠)
-	//	void ExeChara::ScriptRectMove ();	//	ぶつかり後、判定枠を設定
+	//	void ExeChara::RectMove ();			//	ぶつかり後、判定枠を設定
 	//	void MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
 	//	void ExeChara::PostScriptMove ();	//	スクリプト後処理
 
 	//■#########################################################
-	//■
 	//■		毎フレーム スクリプト前処理
-	//■			位置や枠の設定
-	//■
 	//■#########################################################
 	void ExeChara::PreScriptMove ()
 	{
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
+		m_actor.PreScriptMove ();
 
-		//一時停止のときは何もしない
-		if ( m_btlPrm.GetTmr_Stop()->IsActive () )
-		{ return; }
-
-		// アクションとスクリプトによらない一定の処理
-		//	入力など
-		AlwaysMove ();
-
-		// ヒットストップ時は入力の保存と表示関連の処理をして終了
-		//Activeとの兼ね合いでタイマーのラストは有効　0～N-1まで
-		if ( ! m_btlPrm.GetTmr_HitStop()->IsLast () )
-		{
-			if ( m_btlPrm.GetTmr_HitStop ()->IsActive () ) { return; }
-		}
-
-		// アクション移項
-		TransitAction ();
-
-		// 位置計算
-		m_btlPrm.CalcPos ( m_pScript );
-
-		// 着地
-		Landing ();
-
-		//接触枠設定
-		AdjustCRect ();
+		//エフェクト生成と動作
+		EffectMove ();
 	}
 
-
-	//■###########################################################################
-	//■		
+	//■#########################################################
 	//■		両者の接触判定後に攻撃・相殺・当り判定枠を設定
-	//■		
-	//■###########################################################################
-	void ExeChara::ScriptRectMove ()
+	//■#########################################################
+	void ExeChara::RectMove ()
 	{
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
-
-		//一時停止のときは何もしない
-		if ( m_btlPrm.GetStop () ) { return; }
-
-		//相殺枠設定
-		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
-
-		//攻撃枠設定
-		// ヒット時に後の攻撃枠を一時停止(多段防止)
-		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
-		if ( m_btlPrm.GetHitEst () || m_btlPrm.GetClang () )
-		{
-			m_charaRect->ResetARect ();
-		}
-		else
-		{
-			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
-		}
-
-		//攻撃力設定
-//		m_power = m_pScript->GetPower ();
-
-		//当り枠設定
-		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+		m_actor.RectMove ();
 	}
 
-
-	//■###########################################################################
-	//■
+	//■#########################################################
 	//■		毎フレーム スクリプト後処理
-	//■			自分・相手のスクリプト前処理→相互の判定、の後にそれぞれの処理をする
-	//■			判定の結果表示(主にグラフィック関連)
-	//■
-	//■###########################################################################
+	//■#########################################################
 	void ExeChara::PostScriptMove ()
 	{
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
-		
-		//1[F]に一度行う処理
-		AlwaysPostMove ();
-
-		//一時停止のときは何もしない
-		if ( m_btlPrm.GetStop () ) { return; }
-
-		//ライフ判定
-		CheckLife ();
-
-		// グラフィック
-		UpdateGraphic ();
+		m_actor.PostScriptMove ();
 	}
 
 	//==========================================================
@@ -291,14 +232,24 @@ namespace GAME
 	void ExeChara::StartGreeting ()
 	{
 		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
-		m_btlPrm.Init ();		//バトルパラメータ
+		m_actor.StartGreeting ();		//状態
+	}
+
+	void ExeChara::StartGetReady ()
+	{
+//		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
+		m_actor.StartGetReady ();		//状態
 	}
 
 	void ExeChara::StartFighting ()
 	{
 		SetAction ( _T ( "Stand" ) );		//アクション・スクリプト初期化
-		m_btlPrm.Init ();		//バトルパラメータ
+		m_actor.StartFighting ();		//状態
 	}
+
+
+	//---------------------------------------------
+	//イベント
 
 	void ExeChara::OnDashBranch ()
 	{
@@ -484,81 +435,44 @@ namespace GAME
 //		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
 	}
 
+
+#if 0
 	//終了演出
 	void ExeChara::OnEndAct ()
 	{
 		m_charaState = CHST_WIN_WAIT;
 	}
 
+	//強制終了状態
+	void ExeChara::ForcedEnd ()
+	{
+		if ( m_btlPrm.GetLife () <= 0 )
+		{
+			m_charaState = CHST_DOWN_END;
+//			m_actionID = m_pChara->GetBsAction ( BA_DOWN );
+			TransitAction ( m_actionID );
+		}
+		else
+		{
+			m_charaState = CHST_WIN_END;
+//			m_actionID = m_pChara->GetBsAction ( BA_WIN );
+			TransitAction ( m_actionID );
+		}
+	}
+#endif // 0
+
 
 	//================================================
 	//	内部関数
 	//================================================
 
-	// アクションとスクリプトによらない一定の処理
-	void ExeChara::AlwaysMove ()
+	// 位置計算
+	void ExeChara::CalcPos ()
 	{
-		//ダメージ分のライフ表示減少
-		int dmg = m_btlPrm.GetDamage ();
-		if ( 0 < dmg ) { m_btlPrm.SetDamage ( dmg - 1 ); }
+		m_btlPrm.CalcPos ( m_pScript );
 
-		//---------------------------------------------------
-		//デモカウント
-		//ダウン状態のとき
-		if ( CHST_DOWN == m_charaState )
-		{
-			if ( ! m_btlPrm.GetTmr_Down()->IsActive () )
-			{
-				m_charaState = CHST_DOWN_END;
-			}
-		}
-
-		//勝利待機状態のとき
-		if ( CHST_WIN_WAIT == m_charaState )
-		{
-#if 0
-			//地上ニュートラルなら
-			if ( IsBasicAction ( BA_STAND ) )
-			{
-				//勝利状態に移行
-				m_actionID = m_pChara->GetBsAction ( BA_WIN );
-				TransitAction ( m_actionID );
-				m_tmrEnd->Start ();
-				m_charaState = CHST_WIN;
-			}
-#endif // 0
-		}
-
-		//勝利状態のとき
-		if ( CHST_WIN == m_charaState )
-		{
-			//if ( ! m_tmrEnd->IsActive () )
-			if ( ! m_btlPrm.GetTmr_End () ->IsActive () )
-			{
-				m_charaState = CHST_WIN_END;
-			}
-		}
-		//---------------------------------------------------
-		//SE
-		if ( m_btlPrm.GetFirstEf () )
-		{
-			SOUND->Play ( SE_Hit );
-			m_btlPrm.SetFirstEf ( F );
-		}
-
-		//---------------------------------------------------
-		//入力
-		// 入力を可能な状態
-		if ( CanInput () )
-		{
-			//入力の保存
-			m_pCharaInput->Update ( GetDirRight () );
-		}
-		//入力更新
-		m_dispInput.UpdateInput ( m_pCharaInput );
-
+		Landing ();	//着地
 	}
-
 
 	//アクションの移項(直接指定)
 	void ExeChara::TransitAction ( UINT actionID )
@@ -722,7 +636,7 @@ namespace GAME
 		return NO_COMPLETE;
 	}
 
-
+	//====================================================================================
 	//エフェクト処理の生成
 	void ExeChara::MakeEfOprt ()
 	{
@@ -816,26 +730,13 @@ namespace GAME
 		//エフェクト同期
 		m_oprtEf.PostScriptMove ( m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 	}
+	//====================================================================================
 
-	//枠表示切替
-	void ExeChara::TurnDispRect ()
-	{
-		if ( m_bDispRect )
-		{
-			m_dispChara.OnRect ();
-			m_dispChara.SetpCharaRect ( m_charaRect );
-			m_oprtEf.OnDispRect ();
-		}
-		else
-		{
-			m_dispChara.OffRect ();
-			m_oprtEf.OffDispRect ();
-		}
-	}
 
 	//ライフ判定
 	void ExeChara::CheckLife ()
 	{
+#if 0
 		//メイン状態のとき
 		if ( IsMain () )
 		{
@@ -849,6 +750,7 @@ namespace GAME
 				m_charaState = CHST_DOWN;
 			}
 		}
+#endif // 0
 	}
 
 	//グラフィック更新
@@ -857,26 +759,8 @@ namespace GAME
 		//メインイメージ
 		m_dispChara.UpdateMainImage ( m_pScript, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 
-		//エフェクト生成と動作
-		EffectMove ();
-
-		//枠表示切替
-		TurnDispRect ();
-
-		//硬直時間表示
-#if 0
-		static bool b2 = true;
-		if ( ::GetAsyncKeyState ( '2' ) & 0x0001 ) { b2 ^= 1; }
-		if ( b2 )
-		{
-			//ヒットストップ時間
-			m_dispChara.UpdateHitStop ( m_ptChara, m_dirRight, m_hitstop, m_hitstopTimer );
-
-			//のけぞり時間
-			m_dispChara.UpdateLurch ( m_ptChara, m_dirRight, m_lurch, m_lurchTimer );
-		}
-#endif // 0
-
+		//入力表示更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
 
 		//@todo 共通グラフィックの記述位置を調整
 		//停止時のスキップによる
@@ -896,7 +780,7 @@ namespace GAME
 
 	}
 
-	//着地
+	//落下・着地
 	void ExeChara::Landing ()
 	{
 		VEC2 pos = m_btlPrm.GetPos ();
@@ -953,7 +837,7 @@ namespace GAME
 	void ExeChara::LookOther ()
 	{
 		//空中は持続
-		if ( IsJump () )
+		if ( Is_AP_Jump () )
 		{
 			return;
 		}
@@ -974,12 +858,66 @@ namespace GAME
 	//-------------------------------------------------------------------------------------------------
 	//	枠設定
 	//-------------------------------------------------------------------------------------------------
-	//現在位置から接触枠を反映
-	void ExeChara::AdjustCRect ()
+	//接触枠設定
+	void ExeChara::SetCollisionRect ()
 	{
 		m_charaRect->SetCRect ( m_pScript->GetpvCRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 	}
 
+
+	//相殺・攻撃・当り・枠設定
+	void ExeChara::SetRect ()
+	{
+		SetOffsetRect ();
+		SetAttackRect ();
+		SetHitRect ();
+	}
+
+	//相殺枠設定
+	void ExeChara::SetOffsetRect ()
+	{
+		m_charaRect->SetORect ( m_pScript->GetpvORect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+	}
+
+	//攻撃枠設定
+	void ExeChara::SetAttackRect ()
+	{
+		// ヒット時に後の攻撃枠を一時停止(多段防止)
+		//攻撃成立時・打合時に同一アクション中のみ枠を消失させる
+		if ( m_btlPrm.GetHitEst () || m_btlPrm.GetClang () )
+		{
+			m_charaRect->ResetARect ();
+		}
+		else
+		{
+			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+		}
+
+		//攻撃力設定
+//		m_power = m_pScript->GetPower ();
+	}
+
+	//当り枠設定
+	void ExeChara::SetHitRect ()
+	{
+		m_charaRect->SetHRect ( m_pScript->GetpvHRect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
+	}
+
+	//枠表示切替
+	void ExeChara::OnDispRect ()
+	{
+		m_dispChara.OnRect ();
+		m_oprtEf.OnDispRect ();
+	}
+	void ExeChara::OffDispRect ()
+	{
+		m_dispChara.OffRect ();
+		m_oprtEf.OffDispRect ();
+	}
+
+	//-------------------------------------------------------------------------------------------------
+
+#if 0
 	void ExeChara::SetEndWait ()
 	{
 		//ダウン優先
@@ -987,6 +925,7 @@ namespace GAME
 
 		m_charaState = CHST_END_WAIT;
 	}
+#endif // 0
 
 
 	//のけぞりタイマー
@@ -1011,12 +950,33 @@ namespace GAME
 	}
 #endif // 0
 
+#if 0
 	//入力をする状態かどうか
 	bool ExeChara::CanInput () const
 	{
 		return IsMain ();
 	}
+#endif // 0
 
+	//入力処理
+	void ExeChara::Input ()
+	{
+#if 0
+		// 入力を可能な状態
+		if ( CanInput () )
+		{
+			//入力の保存
+			m_pCharaInput->Update ( GetDirRight () );
+		}
+		//入力表示更新
+		m_dispChara.UpdateInput ( m_pCharaInput );
+#endif // 0
+
+		//入力の更新
+		m_pCharaInput->Update ( GetDirRight () );
+	}
+
+#if 0
 	bool ExeChara::IsMain () const
 	{
 		switch ( m_charaState )
@@ -1032,12 +992,7 @@ namespace GAME
 		}
 		return false;
 	}
-
-	void ExeChara::AlwaysPostMove ()
-	{
-		m_btlPrm.TimerMove ();	//タイマー稼働
-	}
-
+#endif // 0
 
 	//CPU操作切替
 	void ExeChara::ControlCPU ()

@@ -42,8 +42,6 @@ namespace GAME
 
 	void FTG_DM_Greeting::Init ()
 	{
-//		m_mutualChara->SetReady ();
-//		m_mutualChara->Wait ( true );
 		m_timer->SetTargetTime ( 90 );
 		m_timer->Start ();
 	}
@@ -88,6 +86,8 @@ namespace GAME
 
 	void FTG_DM_GetReady::Init ()
 	{
+		GetpMutualChara ()->StartGetReady ();
+
 		m_grpGetReady->SetValid ( T );
 		m_grpGetReady->Init ();
 		m_grpGetReady->SetEnd ( COUNT );
@@ -110,7 +110,7 @@ namespace GAME
 
 		if ( ! m_grpGetReady->GetValid () )
 		{
-			GetpMutualChara ()->SetMain ();
+			GetpMutualChara ()->StartFighting ();
 
 			GetwpFtgDemoActor ().lock()->Change_GetReady_To_Attack ();
 		}
@@ -140,12 +140,14 @@ namespace GAME
 	void FTG_DM_Main::Do ()
 	{
 		// Ši“¬I—¹”»’è
+#if 0
 		if ( GetpMutualChara()->CheckDown () )
 		{
 			GetpMutualChara ()->Stop ( true );
 			GetpMutualChara ()->SetEndWait ();
 			GetwpFtgDemoActor ().lock ()->Change_Main_To_Down ();
 		}
+#endif // 0
 	}
 
 	//-------------
@@ -167,7 +169,7 @@ namespace GAME
 		if ( ! m_grpDown->GetValid () )
 		{
 			GetpMutualChara ()->StartFighting ();
-			GetpMutualChara ()->SetMain ();
+//			GetpMutualChara ()->SetMain ();
 			GetwpFtgDemoActor ().lock ()->Change_GetReady_To_Attack ();
 		}
 	}

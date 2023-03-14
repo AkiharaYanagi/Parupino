@@ -19,7 +19,7 @@ namespace GAME
 	//------------------------------------------
 	// 定数宣言
 	//------------------------------------------
-
+#if 0
 	//デモ進行状態
 	enum FIGHTING_STATE
 	{
@@ -33,6 +33,7 @@ namespace GAME
 		FS_WINNER,
 		FS_END,
 	};
+#endif // 0
 
 	//キャラ状態
 	enum CHARA_STATE

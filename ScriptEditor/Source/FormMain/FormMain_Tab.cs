@@ -85,21 +85,53 @@ namespace ScriptEditor
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
 			
+			//他タブのデータで更新
 			cpd_Behavior.UpdateData ();
 			cpd_Behavior.SelectTop ();
 			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
 
+#if false
+
+			//test
+			//イメージデータで名前の修正
+			var bd_act = chara.behavior.BD_Sequence;
+			var bd_img = chara.behavior.BD_Image;
+			foreach ( Action act in bd_act.GetEnumerable () )
+			{
+				foreach ( Script scp in act.ListScript )
+				{
+					int imdid = GetIndex ( scp.ImgName, "Img_" );
+					scp.ImgName = bd_img[imdid].Name;
+				}
+			}
+
+#endif
+
+
+
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション
+			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
 			SetEnvironmentSubForms ( eb, db );
 
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 
 			//テスト
-			FormRect2.Inst.Show ();
+//			FormRect2.Inst.Show ();
 		}
 
+
+
+		//----------------------
+		//str_indexからheadを除き、Int.Parse()して返す
+		private int GetIndex ( string str_index, string head )
+		{
+			int n = head.Length;
+			int nextActionID = int.Parse ( str_index.Substring ( n, str_index.Length - n ) );
+			return nextActionID;
+		}
+
+		
 		//[スクリプト(A)]タブ離去時
 		public void tabScript_A_Deselected ()
 		{
@@ -166,12 +198,7 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------
 		public void tabRoute_Selected ()
 		{
-
-
-
-			//@todo RouteのBranchリストを読込時に更新する
-
-
+			ctrl_Route1.UpdateData ();
 		}
 		public void tabRoute_Deselected ()
 		{

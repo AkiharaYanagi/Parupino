@@ -18,13 +18,11 @@
 #include "../CharaData/Chara.h"
 #include "../CharaData/IO/LoadChara.h"
 #include "Disp/DispChara.h"
-#include "Disp/DispInput.h"
 #include "Input/CharaInput.h"
-#include "Input/PlayerInput.h"
-#include "Input/CPUInput.h"
 #include "Effect/OperateEffect.h"
 #include "CharaRect.h"
 #include "BtlParam.h"
+#include "ExeChara_Actor.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -36,8 +34,10 @@ namespace GAME
 	using P_ExeChara = shared_ptr < ExeChara >;
 	using WP_ExeChara = weak_ptr < ExeChara >;
 
+	//@info	復旧時Reset()のためゲームタスクを継承(子を持たないためベクタではない)
+
 	//クラス
-	class ExeChara : public TASK_VEC, public enable_shared_from_this < ExeChara >
+	class ExeChara : public GameTask, public enable_shared_from_this < ExeChara >
 	{
 		//------------------------------------------------
 		//基本データ
@@ -50,7 +50,6 @@ namespace GAME
 		//------------------------------------------------
 		//表示
 		DispChara		m_dispChara;	//キャラ全般表示
-		DispInput		m_dispInput;	//入力表示
 
 		//------------------------------------------------
 		//入力
@@ -66,7 +65,6 @@ namespace GAME
 		//------------------------------------------------
 		//枠
 		P_CharaRect		m_charaRect;	//枠
-		bool			m_bDispRect;	//枠表示
 
 		//------------------------------------------------
 		//パラメータ
@@ -78,7 +76,11 @@ namespace GAME
 
 		//------------------------------------------------
 		//ゲーム進行状態
-		CHARA_STATE		m_charaState;
+//		CHARA_STATE		m_charaState;
+
+		//ゲーム進行状態ステート
+		ExeChara_Actor	m_actor;
+
 
 	public:
 		ExeChara () = delete;
@@ -88,6 +90,7 @@ namespace GAME
 
 		void ParamInit ( P_Param pParam );
 		void Load ();
+		void _Load ();
 		void Init ();
 		void Reset ();
 		void _Reset ();	//復旧時
@@ -98,7 +101,7 @@ namespace GAME
 		//******************************
 		void PreScriptMove ();			//	スクリプト前処理
 		//MutualChara::Collision ();	//	相互判定 (接触枠)
-		void ScriptRectMove ();			//	ぶつかり後、判定枠を設定
+		void RectMove ();			//	ぶつかり後、判定枠を設定
 		//MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
 		void PostScriptMove ();			//	スクリプト後処理
 		//------------------------------------------------------------
@@ -118,8 +121,9 @@ namespace GAME
 		void LookOther ();	//相手の方向を向く
 
 		//---------------------------------------------
-		//ゲーム進行状態
 
+#if 0
+		//ゲーム進行状態
 		CHARA_STATE GetCharaState () const { return m_charaState; }
 		void SetCharaState ( CHARA_STATE chst ) { m_charaState = chst; }
 
@@ -129,12 +133,20 @@ namespace GAME
 			Init ();
 			m_charaState = CHST_MAIN; 
 		}
+#endif // 0
 
+#if 0
 		//入力をする状態かどうか
 		bool CanInput () const;
+#endif // 0
 
+		//入力処理
+		void Input ();
+
+#if 0
 		//メイン状態かどうか
 		bool IsMain () const;
+#endif // 0
 
 		//ライフ０チェック
 		bool IsZeroLife () const { return ( 0 >= m_btlPrm.GetLife () ); }
@@ -154,8 +166,15 @@ namespace GAME
 
 		//---------------------------------------------
 		//枠
-		void AdjustCRect ();		//現在位置から接触枠を反映
 		P_CharaRect GetpCharaRect () { return m_charaRect; }		//枠取得
+
+		void SetCollisionRect ();	//[PreMove] 位置から接触枠設定
+		void SetRect ();			//[PostMove] 相殺・攻撃・当り 枠設定
+	private:
+		void SetOffsetRect ();	//相殺枠設定
+		void SetAttackRect ();	//攻撃枠設定
+		void SetHitRect ();		//当り枠設定
+	public:
 
 		//---------------------------------------------
 		//パラメータ取得
@@ -179,6 +198,7 @@ namespace GAME
 
 		//Demo用
 		void StartGreeting ();
+		void StartGetReady ();
 		void StartFighting ();
 
 		//一時停止
@@ -187,6 +207,16 @@ namespace GAME
 		void SetStopTimer ( UINT i ) {
 			m_btlPrm.GetTmr_Stop ()->SetTargetTime ( i );
 			m_btlPrm.GetTmr_Stop ()->Start ();
+		}
+
+		//ヒットストップ
+		bool IsHitStop ()
+		{ 
+			if ( ! m_btlPrm.GetTmr_HitStop ()->IsLast () )
+			{
+				return m_btlPrm.GetTmr_HitStop ()->IsActive ();
+			}
+			return false;
 		}
 
 		//打合
@@ -219,6 +249,7 @@ namespace GAME
 
 		//-------------------------------------------------
 
+#if 0
 		//終了待機
 		void SetEndWait ();
 
@@ -238,21 +269,8 @@ namespace GAME
 		bool IsWinEnd () { return CHST_WIN_END == m_charaState; }
 
 		//強制終了状態
-		void ForcedEnd ()
-		{
-			if ( m_btlPrm.GetLife () <= 0 )
-			{
-				m_charaState = CHST_DOWN_END;
-//				m_actionID = m_pChara->GetBsAction ( BA_DOWN );
-				TransitAction ( m_actionID );
-			}
-			else
-			{
-				m_charaState = CHST_WIN_END;
-//				m_actionID = m_pChara->GetBsAction ( BA_WIN );
-				TransitAction ( m_actionID );
-			}
-		}
+		void ForcedEnd ();
+#endif // 0
 
 		//外部からの状態確認
 		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }
@@ -260,13 +278,12 @@ namespace GAME
 		//ダッシュ分岐
 		void OnDashBranch ();
 
-
 		//-------------------------------------------------
 		//システム
 
 		//枠表示切替
-		void OnDispRect () { m_bDispRect = true; }
-		void OffDispRect () { m_bDispRect = false; }
+		void OnDispRect ();
+		void OffDispRect ();
 
 		//CPU操作切替
 		void ControlCPU ();
@@ -277,34 +294,49 @@ namespace GAME
 	//================================================
 	private:
 		//------------------------------------------------
-		//Init
+		//Load
 		void MakeEfOprt ();		//エフェクト処理の生成
 
+#if 0
 		//PreScriptMove
 		void AlwaysMove ();		// アクションとスクリプトによらない一定の処理
+#endif // 0
 
+	public:
 		void TransitAction ();	// アクション移項
+		void CalcPos ();	// 位置計算
+		//ぶつかり後、位置の修正
+		void Landing ();	//落下・着地
+
+
+	private:
+
 		void TransitAction ( UINT actionID );		//アクションの移項
 		void TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
 		void TransitAction_Condition_E ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
 		UINT Check_TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件チェック)
 
-		//ぶつかり後、位置の修正
-		void Landing ();	//着地
-
+	public:
+#if 0
 		//PostScriptMove
 		void AlwaysPostMove ();		// アクションとスクリプトによらない一定の処理
+#endif // 0
+
 		void CheckLife ();			//ライフ判定
 		void UpdateGraphic ();		//グラフィック更新
 		void EffectGenerate ();		//エフェクト生成
 		void EffectMove ();
-		void TurnDispRect ();		//枠表示切替
+//		void TurnDispRect ();		//枠表示切替
 
+		void MoveTimer () { m_btlPrm.TimerMove (); }
+
+
+	private:
 		//------------------------------------------------
 		//アクション体勢
-		bool Is_APStand () { return m_pAction->GetPosture () == AP_STAND; }
-		bool IsJump () { return m_pAction->GetPosture () == AP_JUMP; }
-		bool IsCrouch () { return m_pAction->GetPosture () == AP_CROUCH; }
+		bool Is_AP_Stand () { return m_pAction->GetPosture () == AP_STAND; }
+		bool Is_AP_Jump () { return m_pAction->GetPosture () == AP_JUMP; }
+		bool Is_AP_Crouch () { return m_pAction->GetPosture () == AP_CROUCH; }
 
 		//------------------------------------------------
 		//アクションカテゴリ

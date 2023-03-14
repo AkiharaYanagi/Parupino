@@ -80,8 +80,8 @@ namespace GAME
 		Collision ();
 
 		//◆ぶつかり後、攻撃・ヒット判定枠を設定
-		m_exeChara1->ScriptRectMove ();
-		m_exeChara2->ScriptRectMove ();
+		m_exeChara1->RectMove ();
+		m_exeChara2->RectMove ();
 
 		//◆相互判定(攻撃・ヒット枠)
 		Decision ();
@@ -119,11 +119,11 @@ namespace GAME
 			int i = 0;
 			while ( OverlapAryRect ( pvRect1p, pvRect2p ) )
 			{
-				m_exeChara1->BackMoveX ();	//微調整
+				m_exeChara1->BackMoveX ();	//重なり微調整
 				m_exeChara2->BackMoveX ();
 
-				m_exeChara1->AdjustCRect ();
-				m_exeChara2->AdjustCRect ();
+				m_exeChara1->SetCollisionRect ();	//当り枠再設定
+				m_exeChara2->SetCollisionRect ();
 
 				pvRect1p = pCharaRect1p->GetpvCRect ();
 				pvRect2p = pCharaRect2p->GetpvCRect ();
@@ -210,6 +210,7 @@ namespace GAME
 		return ( finish1p || finish2p );
 	}
 
+#if 0
 	bool MutualChara::CheckDown ()
 	{
 		//ダウン判定
@@ -276,6 +277,14 @@ namespace GAME
 		return bRet;
 	}
 
+	void MutualChara::ForcedEnd ()
+	{
+		m_exeChara1->ForcedEnd ();
+		m_exeChara2->ForcedEnd ();
+	}
+#endif // 0
+
+
 	CHARA_NAME MutualChara::GetWinnerName () const
 	{
 		switch ( m_winner )
@@ -289,12 +298,6 @@ namespace GAME
 	}
 
 
-	void MutualChara::ForcedEnd ()
-	{
-		m_exeChara1->ForcedEnd ();
-		m_exeChara2->ForcedEnd ();
-	}
-
 	//------------------------------------------------------
 	//	内部関数
 	//------------------------------------------------------
@@ -303,19 +306,33 @@ namespace GAME
 	//枠表示切替 ExeCharaで呼ぶと1P2Pで２回呼ばれてしまう
 	void MutualChara::SwitchRect ()
 	{
-		//static bool b1 = false;
-		static bool b1 = true;
-		if ( ::GetAsyncKeyState ( '1' ) & 0x0001 ) { b1 ^= true; }
-		if ( b1 )
+		static bool bDispRect = false;		//状態
+		static bool pre_bDispRect = false;	//前回押しているか
+		static bool is_bDispRect = false;	//今回押しているか
+		
+		is_bDispRect = ( ::GetAsyncKeyState ( '1' ) & 0x0001 );
+
+		//@info キーボード入力は押しっぱなしで一定時間後連打状態になる
+		//TRACE_F ( _T ( "b = %d, pre = %d, is = %d\n" ), bDispRect ? 1 : 0, pre_bDispRect ? 1 : 0, is_bDispRect ? 1 : 0  );
+		
+		//今回押した瞬間ならば、1回のみ切替
+		if ( ! pre_bDispRect && is_bDispRect )	// false -> true
 		{
-			m_exeChara1->OnDispRect ();
-			m_exeChara2->OnDispRect ();
+			if ( ! bDispRect )
+			{
+				m_exeChara1->OnDispRect ();
+				m_exeChara2->OnDispRect ();
+				bDispRect = true;
+			}
+			else
+			{
+				m_exeChara1->OffDispRect ();
+				m_exeChara2->OffDispRect ();
+				bDispRect = false;
+			}
 		}
-		else
-		{
-			m_exeChara1->OffDispRect ();
-			m_exeChara2->OffDispRect ();
-		}
+
+		pre_bDispRect = is_bDispRect;
 	}
 
 	//------------------------------------------------------
@@ -342,18 +359,29 @@ namespace GAME
 	//------------------------------------------------------
 	//	ExeChara両者操作
 	//------------------------------------------------------
+	//開始デモ
 	void MutualChara::StartGreeting ()
 	{
 		m_exeChara1->StartGreeting ();
 		m_exeChara2->StartGreeting ();
 	}
 
+	//開始準備
+	void MutualChara::StartGetReady ()
+	{
+		m_exeChara1->StartGetReady ();
+		m_exeChara2->StartGetReady ();
+	}
+
+	//戦闘開始
 	void MutualChara::StartFighting ()
 	{
 		m_exeChara1->StartFighting ();
 		m_exeChara2->StartFighting ();
 	}
 
+
+#if 0
 	void MutualChara::SetReady ()
 	{
 		//準備
@@ -396,6 +424,7 @@ namespace GAME
 		m_exeChara1->SetCharaState ( chst );
 		m_exeChara2->SetCharaState ( chst );
 	}
+#endif // 0
 
 }	//namespace GAME
 

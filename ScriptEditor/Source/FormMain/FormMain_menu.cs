@@ -86,6 +86,21 @@ namespace ScriptEditor
 			}
 		}
 
+		private void バイナリから読込BToolStripMenuItem_Click ( object sender, System.EventArgs e )
+		{
+			//ダイアログ中の初期ファイル名
+			openFileDialog1.FileName = stgs.LastFilepath;
+
+			//ダイアログ開始
+			if ( openFileDialog1.ShowDialog () == DialogResult.OK )
+			{
+				LoadCharaBin loadCharaBin = new LoadCharaBin ();
+				loadCharaBin.Do ( openFileDialog1.FileName, chara );
+
+				LoadCharaData ();
+			}
+		}
+
 		//タイトルバーテキスト更新
 		private void ReloadTitleBarText ()
 		{

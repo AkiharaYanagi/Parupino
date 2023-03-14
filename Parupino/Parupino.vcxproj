@@ -188,7 +188,8 @@
     <ClInclude Include="Source\ExeChara\Effect\ExeEffect.h" />
     <ClInclude Include="Source\ExeChara\Effect\OperateEffect.h" />
     <ClInclude Include="Source\ExeChara\ExeChara.h" />
-    <ClInclude Include="Source\ExeChara\ExeChara_Demo.h" />
+    <ClInclude Include="Source\ExeChara\ExeChara_Actor.h" />
+    <ClInclude Include="Source\ExeChara\ExeChara_State.h" />
     <ClInclude Include="Source\ExeChara\Input\CharaInput.h" />
     <ClInclude Include="Source\ExeChara\Input\CPUInput.h" />
     <ClInclude Include="Source\ExeChara\Input\PlayerInput.h" />
@@ -201,7 +202,6 @@
     <ClInclude Include="Source\FtgMain\FtgDemo.h" />
     <ClInclude Include="Source\FtgMain\G_Ftg.h" />
     <ClInclude Include="Source\FtgMain\MutualChara.h" />
-    <ClInclude Include="Source\FtgMain\MutualChara_Demo.h" />
     <ClInclude Include="Source\GameMain\GameConst.h" />
     <ClInclude Include="Source\GameMain\GameMain.h" />
     <ClInclude Include="Source\GameMain\GameSettingFile.h" />
@@ -248,7 +248,8 @@
     <ClCompile Include="Source\ExeChara\Effect\ExeEffect.cpp" />
     <ClCompile Include="Source\ExeChara\Effect\OperateEffect.cpp" />
     <ClCompile Include="Source\ExeChara\ExeChara.cpp" />
-    <ClCompile Include="Source\ExeChara\ExeChara_Demo.cpp" />
+    <ClCompile Include="Source\ExeChara\ExeChara_Actor.cpp" />
+    <ClCompile Include="Source\ExeChara\ExeChara_State.cpp" />
     <ClCompile Include="Source\ExeChara\Input\CharaInput.cpp" />
     <ClCompile Include="Source\ExeChara\Input\CPUInput.cpp" />
     <ClCompile Include="Source\ExeChara\Input\PlayerInput.cpp" />
@@ -260,7 +261,6 @@
     <ClCompile Include="Source\FtgMain\FtgDemo.cpp" />
     <ClCompile Include="Source\FtgMain\G_Ftg.cpp" />
     <ClCompile Include="Source\FtgMain\MutualChara.cpp" />
-    <ClCompile Include="Source\FtgMain\MutualChara_Demo.cpp" />
     <ClCompile Include="Source\GameMain\GameSettingFile.cpp" />
     <ClCompile Include="Source\GameMain\Param.cpp" />
     <ClCompile Include="Source\GameMain\Scene.cpp" />

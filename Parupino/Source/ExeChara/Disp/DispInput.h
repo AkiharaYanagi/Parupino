@@ -19,24 +19,16 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	using VP_PRMRECT = vector < P_PrmRect >;
-	using PVP_PRMRECT = shared_ptr < VP_PRMRECT >;
-	using VPVP_PRMRECT = vector < PVP_PRMRECT >;
 
-
-	class DispInput : public TASK_VEC
+	class DispInput
 	{
 		//キー入力表示個数
 		static const UINT NUM_DISP_INPUT;
 
 		P_PrmRect		m_bg;		//背景
 
-
-//		VPVP_PRMRECT	m_vpvpRect;	//キー種類 * [F]表示
-
-		P_GrpAcv		m_grp;
+		P_GrpAcv		m_grp;		//入力表示
 		VP_Object		m_vpOb;
-
 
 		UINT			m_timer;
 		float			m_vel;
@@ -47,7 +39,7 @@ namespace GAME
 		DispInput ( const DispInput & rhs ) = delete;
 		~DispInput ();
 
-		void LoadDisp ( PLAYER_ID playerID );
+		void LoadPlayer ( PLAYER_ID playerID );
 
 		//入力更新
 		void UpdateInput ( P_CharaInput pCharaInput );

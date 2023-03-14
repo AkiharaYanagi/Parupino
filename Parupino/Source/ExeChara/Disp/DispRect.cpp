@@ -26,7 +26,6 @@ namespace GAME
 		{
 			P_PrmRect pCRect = make_shared < PrmRect > ();
 			pCRect->SetAllColor ( RECT_COLOR_C );
-//			pCRect->SetRect ( 100, 100, 200, 150 );
 			pCRect->SetZ ( Z_SYS );
 			pCRect->Load ();
 			m_pvpGrpCRect->push_back ( pCRect );
@@ -59,8 +58,11 @@ namespace GAME
 		InitRect ();
 
 		//----------------------------------------------------
-		//@info		動的に追加するときは明示的にLoad()が必要
+		//@info		GRPLSTに動的に追加するときは既にLoad()されているので、
+		//			明示的にLoad()が必要
 		//----------------------------------------------------
+
+		OnRect ();
 	}
 
 	DispRect::~DispRect ()
@@ -86,10 +88,16 @@ namespace GAME
 	//実効枠設定
 	void DispRect::SetCharaRect ( P_CharaRect pCharaRect )
 	{
-		SetCRect ( pCharaRect->GetpvCRect () );
-		SetARect ( pCharaRect->GetpvARect () );
-		SetHRect ( pCharaRect->GetpvHRect () ); 
-		SetORect ( pCharaRect->GetpvORect () );
+		mp_CharaRect = pCharaRect;
+	}
+
+	//更新
+	void DispRect::Update ()
+	{
+		SetCRect ( mp_CharaRect->GetpvCRect () );
+		SetARect ( mp_CharaRect->GetpvARect () );
+		SetHRect ( mp_CharaRect->GetpvHRect () );
+		SetORect ( mp_CharaRect->GetpvORect () );
 	}
 
 	//表示枠の初期化

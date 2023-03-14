@@ -216,10 +216,10 @@
     <ClInclude Include="Source\FtgMain\FtgDemo.h">
       <Filter>FtgMain</Filter>
     </ClInclude>
-    <ClInclude Include="Source\FtgMain\MutualChara_Demo.h">
-      <Filter>FtgMain</Filter>
+    <ClInclude Include="Source\ExeChara\ExeChara_Actor.h">
+      <Filter>ExeChara</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ExeChara\ExeChara_Demo.h">
+    <ClInclude Include="Source\ExeChara\ExeChara_State.h">
       <Filter>ExeChara</Filter>
     </ClInclude>
   </ItemGroup>
@@ -374,10 +374,10 @@
     <ClCompile Include="Source\FtgMain\FtgDemo.cpp">
       <Filter>FtgMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\FtgMain\MutualChara_Demo.cpp">
-      <Filter>FtgMain</Filter>
+    <ClCompile Include="Source\ExeChara\ExeChara_State.cpp">
+      <Filter>ExeChara</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ExeChara\ExeChara_Demo.cpp">
+    <ClCompile Include="Source\ExeChara\ExeChara_Actor.cpp">
       <Filter>ExeChara</Filter>
     </ClCompile>
   </ItemGroup>
