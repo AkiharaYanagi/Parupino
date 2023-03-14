@@ -34,7 +34,7 @@ namespace GAME
 	using P_ExeChara = shared_ptr < ExeChara >;
 	using WP_ExeChara = weak_ptr < ExeChara >;
 
-	//@info	復旧時Reset()のためゲームタスクを継承
+	//@info	復旧時Reset()のためゲームタスクを継承(子を持たないためベクタではない)
 
 	//クラス
 	class ExeChara : public GameTask, public enable_shared_from_this < ExeChara >
