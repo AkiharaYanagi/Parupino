@@ -181,6 +181,54 @@ namespace GAME
 		return NO_COMPLETE;
 	}
 
+	
+	//成立リストを生成する
+	void CharaInput::MakeTransitIDList ( Chara & ch, P_Script pScp, bool dirRight )
+	{
+		//成立した１つのIDではなく、成立したIDを優先順位で保存したリストを返す
+		m_vCompID.clear ();
+
+		//キャラの持つルート,ブランチ,コマンドの参照
+		const VP_Route vpRoute = ch.GetvpRoute ();
+		const VP_Branch vpBranch = ch.GetvpBranch ();
+		const VP_Command vpCommand = ch.GetvpCommand ();
+
+		//スクリプトの持つルートリスト
+		for ( UINT indexRoute : pScp->GetcvRouteID () )
+		{
+			const V_UINT vBranchID = vpRoute [ indexRoute ]->GetcvIDBranch ();
+
+			//対象のブランチリスト
+			for ( UINT indexBranch : vBranchID )
+			{
+				//コマンド分岐以外は飛ばす
+				if ( BRC_CMD != vpBranch [ indexBranch ]->GetCondition () ) { continue; }
+
+				//コマンド取得
+				UINT indexCommand = vpBranch [ indexBranch ]->GetIndexCommand ();
+				P_Command pCmd = vpCommand [ indexCommand ];
+
+				//対象コマンドが成立していたら
+				if ( pCmd->Compare ( m_vGameKey, dirRight ) )
+				{
+					//遷移先アクションIDを登録する
+					UINT id = vpBranch [ indexBranch ]->GetIndexSequence ();
+					m_vCompID.push_back ( id );
+				}
+			}
+		}
+	}
+
+	//優先リストの先頭を取得する
+	UINT CharaInput::GetCompID ()
+	{
+		if ( m_vCompID.size() > 0 )
+		{
+			return m_vCompID [ 0 ];
+		}
+		return NO_COMPLETE;
+	}
+
 	void CharaInput::SetGameKey ( V_GAME_KEY & vKey )
 	{
 		UINT size = m_vGameKey.size ();

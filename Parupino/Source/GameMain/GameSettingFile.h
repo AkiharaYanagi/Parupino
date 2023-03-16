@@ -37,10 +37,24 @@ namespace GAME
 
 		//値の取得
 		START_MODE GetStartMode () const { return m_startMode; }
+		
 		PLAYER_MODE GetPlayerMode1p () const { return m_playerMode1p; }
 		PLAYER_MODE GetPlayerMode2p () const { return m_playerMode2p; }
+		PLAYER_MODE GetPlayerMode ( PLAYER_ID pid ) const
+		{
+			if ( pid == PLAYER_ID_1 ) { return m_playerMode1p; }
+			if ( pid == PLAYER_ID_2 ) { return m_playerMode2p; }
+			return MODE_PLAYER;
+		}
+
 		CHARA_NAME GetName1p () const { return m_name1p; }
 		CHARA_NAME GetName2p () const { return m_name2p; }
+		CHARA_NAME GetName ( PLAYER_ID pid ) const
+		{
+			if ( pid == PLAYER_ID_1 ) { return m_name1p; }
+			if ( pid == PLAYER_ID_2 ) { return m_name2p; }
+			return CHARA_NAME_NUM;
+		}
 
 		//切替
 		void SetDemo ( bool b ) { m_startMode = b ? START_DEMO : START_TITLE; }

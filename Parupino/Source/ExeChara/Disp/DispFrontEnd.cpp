@@ -17,15 +17,12 @@ namespace GAME
 
 	DispFrontEnd::DispFrontEnd ()
 	{
-<<<<<<< HEAD
-		//ƒ‰ƒCƒtƒQ[ƒW
-=======
 		//---------------------
 		//	ƒQ[ƒW—Ş
 		//---------------------
 
+		//ƒ‰ƒCƒtƒQ[ƒW
 		//ƒ‰ƒCƒt˜g
->>>>>>> origin/ExeCharaã‚’StateåŒ–ã™ã‚‹
 		m_gaugeFrameLife = make_shared < PrmRect > ();
 		m_gaugeFrameLife->SetAllColor ( _CLR ( 0xff404040 ) );
 		GRPLST_INSERT ( m_gaugeFrameLife );
@@ -42,7 +39,6 @@ namespace GAME
 		m_gaugeLife->SetColorN ( 2, _CLR ( 0xfff0f040 ) );
 		GRPLST_INSERT ( m_gaugeLife );
 
-<<<<<<< HEAD
 		//ƒoƒ‰ƒ“ƒXƒQ[ƒW
 		m_gaugeFrameBalance = make_shared < PrmRect > ();
 		m_gaugeFrameBalance->SetAllColor ( _CLR ( 0xff404040 ) );
@@ -57,7 +53,6 @@ namespace GAME
 		m_gaugeBalance->SetColorN ( 0, _CLR ( 0xff40d0f0 ) );
 		m_gaugeBalance->SetColorN ( 2, _CLR ( 0xff40f0f0 ) );
 		GRPLST_INSERT ( m_gaugeBalance );
-=======
 #if 0
 		//ƒvƒŒƒCƒ„[•\¦
 		m_grpPlayer1P.AddTexture ( _T ( "Player_1P.png" ) );
@@ -97,7 +92,6 @@ namespace GAME
 		m_grpPoisedEf.AddTexture ( _T ( "poised9.png" ) );
 		AddTask ( & m_grpPoisedEf );
 #endif	//0
->>>>>>> origin/ExeCharaã‚’StateåŒ–ã™ã‚‹
 	}
 
 	DispFrontEnd::~DispFrontEnd ()

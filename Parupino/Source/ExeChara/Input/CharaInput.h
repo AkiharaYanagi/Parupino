@@ -24,6 +24,9 @@ namespace GAME
 		PLAYER_ID			m_playerID;		//プレイヤーID
 		bool				m_cpu;			//CPUフラグ
 
+		//コマンドが完成したIDを優先順に保存したリスト
+		vector < UINT >		m_vCompID;		
+
 	public:
 		CharaInput ();
 		CharaInput ( const CharaInput& rhs ) = delete;		//コピー禁止
@@ -43,8 +46,17 @@ namespace GAME
 		//戻値：enum { NO_COMPLETE (0xFFFFFFFF) } 不成立
 		virtual UINT GetTransitID ( Chara & ch, P_Script pScp, bool dirRight );
 
+		//成立リストを生成する
+		virtual void MakeTransitIDList ( Chara & ch, P_Script pScp, bool dirRight );
+
 		//キーの保存
 		void SetGameKey ( V_GAME_KEY & vKey );
+
+		//優先リストの先頭を取得する
+		UINT GetCompID ();
+
+		//優先リストの参照を得る
+		const vector < UINT > & GetvCompID () const { return m_vCompID; }
 
 	};
 

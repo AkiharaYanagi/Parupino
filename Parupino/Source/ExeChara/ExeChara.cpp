@@ -22,17 +22,13 @@ namespace GAME
 		: m_pChara ( nullptr )
 		, m_playerID ( m_playerID ), m_name ( CHARA_TEST ), m_playerMode ( MODE_PLAYER )
 		, m_actionID ( 0 ), m_frame ( 0 )
-//		, m_charaState ( CHST_START )
 	{
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
-		m_charaRect = make_shared < CharaRect > ();		//実効枠
+		m_charaRect = make_shared < CharaRect > ();	//実効枠
 
-		//バトルパラメータ
-		m_btlPrm.LoadPlayerID ( m_playerID );
-
-		//表示(1P/2P側による位置)
-		m_dispChara.LoadPlayer ( m_playerID );
+		m_btlPrm.LoadPlayerID ( m_playerID );	//バトルパラメータ
+		m_dispChara.LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
 	}
 
 	//デストラクタ
@@ -47,7 +43,8 @@ namespace GAME
 		//ゲーム設定
 		GameSettingFile stg = pParam->GetGameSetting ();
 
-		//選択キャラ //入力モード
+		//選択キャラ名前・モードを取得
+#if 0
 		if ( m_playerID == PLAYER_ID_1 )
 		{
 			m_name = stg.GetName1p ();
@@ -58,8 +55,11 @@ namespace GAME
 			m_name = stg.GetName2p ();
 			m_playerMode = stg.GetPlayerMode1p ();
 		}
+#endif // 0
+		m_name = stg.GetName ( m_playerID );
+		m_playerMode = stg.GetPlayerMode ( m_playerID );
 
-		//プレイヤモード(入力種類)初期化
+		//プレイヤモード(入力種類)による初期化
 		switch ( m_playerMode )
 		{
 		case MODE_PLAYER: m_pCharaInput = make_shared < PlayerInput > (); break;
@@ -139,7 +139,7 @@ namespace GAME
 
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
-		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで初期化が必要(Init()は呼ばれる)
+		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで手動の初期化が必要(Init()は呼ばれる)
 		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 		//入力表示更新
 		m_dispChara.UpdateInput ( m_pCharaInput );
@@ -183,34 +183,14 @@ namespace GAME
 	//	void MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
 	//	void ExeChara::PostScriptMove ();	//	スクリプト後処理
 
-	//■#########################################################
-	//■		毎フレーム スクリプト前処理
-	//■#########################################################
-	void ExeChara::PreScriptMove ()
-	{
-		m_actor.PreScriptMove ();
+	//■	毎フレーム スクリプト前処理
+	void ExeChara::PreScriptMove () { m_actor.PreScriptMove (); }
 
-		//エフェクト生成と動作
-		EffectMove ();
-	}
+	//■	両者の接触判定後に攻撃・相殺・当り判定枠を設定
+	void ExeChara::RectMove () { m_actor.RectMove (); }
 
-	//■#########################################################
-	//■		両者の接触判定後に攻撃・相殺・当り判定枠を設定
-	//■#########################################################
-	void ExeChara::RectMove ()
-	{
-		m_actor.RectMove ();
-	}
-
-	//■#########################################################
-	//■		毎フレーム スクリプト後処理
-	//■#########################################################
-	void ExeChara::PostScriptMove ()
-	{
-		m_actor.PostScriptMove ();
-	}
-
-	//==========================================================
+	//■	毎フレーム スクリプト後処理
+	void ExeChara::PostScriptMove () { m_actor.PostScriptMove (); }
 
 
 	//================================================
@@ -477,10 +457,6 @@ namespace GAME
 	//アクションの移項(直接指定)
 	void ExeChara::TransitAction ( UINT actionID )
 	{
-		//遷移先チェック
-		P_Action pact = m_pChara->GetpAction( actionID );
-		P_Script pscr = pact->GetpScript ( 0 );
-
 		m_actionID = actionID;		//遷移
 		m_frame = 0;		//スクリプト初期化
 
@@ -499,42 +475,48 @@ namespace GAME
 		if ( LurchTimer () ) { return; }
 #endif // 0
 
+
+
+		//-----------------------------------------------------
 		// コマンドによる分岐
-		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
+
+//		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
+
+		//コマンドが完成したIDを優先順に保存したリスト
+		m_pCharaInput->MakeTransitIDList ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
+		const vector < UINT > & vCompID = m_pCharaInput->GetvCompID ();
+
+		UINT transitID = NO_COMPLETE;
+		for ( UINT id : vCompID )
+		{
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( transitID );
+
+			//対象IDがバランス消費で移項可能なら移動処理へ
+			//不可能なら次をチェック
+		}
+
 
 		//コマンドが完成していたら
 		if ( NO_COMPLETE != transitID )
 		{
+			//アクションとして最後の処理
+			EndAction ();
+
 			//遷移先チェック
 			P_Action pact = m_pChara->GetpAction ( transitID );
 			P_Script pscr = pact->GetpScript ( 0 );
 
-			//ダッシュから遷移時に慣性をつける
-			if ( m_pChara->GetActionID ( _T ( "FrontDashStart" ) ) == m_actionID )
-			{
-				m_btlPrm.SetDashInertial ( VEC2 ( 10.f, 0 ) );
-			}
-			if ( m_pChara->GetActionID ( _T ( "FrontDash" ) ) == m_actionID )
-			{
-				m_btlPrm.SetDashInertial ( VEC2 ( 10.f, 0 ) );
-			}
-			if ( m_pChara->GetActionID ( _T ( "BackDash" ) ) == m_actionID )
-			{
-				m_btlPrm.SetDashInertial ( VEC2 ( -8.f, 0 ) );
-			}
-
 			//アクション遷移
 			m_actionID = transitID;	
 
-
-			//各種状態の終了
-			m_btlPrm.EndAction ();
-			m_frame = 0;
-
+#if 0
 			//m_frameは0から開始、Move()とDraw()で同一スクリプトを維持する
 			//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
 			m_pAction = m_pChara->GetpAction ( m_actionID );
 			m_pScript = m_pAction->GetpScript ( m_frame );
+#endif // 0
+			_TransitAction ( m_actionID );
 		}
 		//---------------------------------------------------
 
@@ -549,25 +531,22 @@ namespace GAME
 			
 			if ( m_pAction->IsOverScript ( m_frame ) )
 			{
+				//アクション終了処理
+				EndAction ();
+
 				//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
 				m_actionID = m_pAction->GetNextID ();
-				//各種状態の終了
-				m_btlPrm.EndAction ();
-				m_frame = 0;
-				//今回のフレーム中はm_pActionとm_pScriptを用い、
-				//これ以降はm_actionIDとm_frameを用いない
 
-				//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
-				//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
-				m_pAction = m_pChara->GetpAction ( m_actionID );
-				m_pScript = m_pAction->GetpScript ( m_frame );
 			}
 			else
 			{
+#if 0
 				//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
 				//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
 				m_pAction = m_pChara->GetpAction ( m_actionID );
 				m_pScript = m_pAction->GetpScript ( m_frame );
+#endif // 0
+				_TransitAction ( m_actionID );
 
 				//通常処理：スクリプトを１つ進める
 				++ m_frame;
@@ -577,6 +556,18 @@ namespace GAME
 
 		assert ( nullptr != m_pAction && nullptr != m_pScript );
 	}
+
+	void ExeChara::_TransitAction ( UINT id )
+	{
+		//今回のフレーム中はm_pActionとm_pScriptを用い、
+		//これ以降はm_actionIDとm_frameを用いない
+		//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
+		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_pScript = m_pAction->GetpScript ( m_frame );
+	}
+
+
+
 
 	//アクション移行(自身)
 	void  ExeChara::TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced )
@@ -762,9 +753,6 @@ namespace GAME
 		//入力表示更新
 		m_dispChara.UpdateInput ( m_pCharaInput );
 
-		//@todo 共通グラフィックの記述位置を調整
-		//停止時のスキップによる
-
 		//共通グラフィック
 		if ( ! m_btlPrm.GetTmr_Stop()->IsActive () )
 		{
@@ -777,7 +765,6 @@ namespace GAME
 
 		//ゲージ更新
 		m_dispChara.UpdateGauge ( m_playerID, m_btlPrm.GetLife (), m_btlPrm.GetDamage (), m_btlPrm.GetBalance () );
-
 	}
 
 	//落下・着地
@@ -917,16 +904,28 @@ namespace GAME
 
 	//-------------------------------------------------------------------------------------------------
 
-#if 0
-	void ExeChara::SetEndWait ()
+	//アクション移項時、前アクションの最後の処理
+	void ExeChara::EndAction ()
 	{
-		//ダウン優先
-		if ( IsDown () ) { return; }
+		//ダッシュから次アクションに移項するとき、慣性を残す
+		if ( m_pChara->GetActionID ( _T ( "FrontDashStart" ) ) == m_actionID )
+		{
+			m_btlPrm.SetDashInertial ( VEC2 ( 10.f, 0 ) );
+		}
+		if ( m_pChara->GetActionID ( _T ( "FrontDash" ) ) == m_actionID )
+		{
+			m_btlPrm.SetDashInertial ( VEC2 ( 10.f, 0 ) );
+		}
+		if ( m_pChara->GetActionID ( _T ( "BackDash" ) ) == m_actionID )
+		{
+			m_btlPrm.SetDashInertial ( VEC2 ( -8.f, 0 ) );
+		}
 
-		m_charaState = CHST_END_WAIT;
+		//各種状態の終了
+		m_btlPrm.EndAction ();
+		m_frame = 0;
+
 	}
-#endif // 0
-
 
 	//のけぞりタイマー
 #if 0
@@ -950,49 +949,13 @@ namespace GAME
 	}
 #endif // 0
 
-#if 0
-	//入力をする状態かどうか
-	bool ExeChara::CanInput () const
-	{
-		return IsMain ();
-	}
-#endif // 0
 
 	//入力処理
 	void ExeChara::Input ()
 	{
-#if 0
-		// 入力を可能な状態
-		if ( CanInput () )
-		{
-			//入力の保存
-			m_pCharaInput->Update ( GetDirRight () );
-		}
-		//入力表示更新
-		m_dispChara.UpdateInput ( m_pCharaInput );
-#endif // 0
-
 		//入力の更新
 		m_pCharaInput->Update ( GetDirRight () );
 	}
-
-#if 0
-	bool ExeChara::IsMain () const
-	{
-		switch ( m_charaState )
-		{
-		case CHST_MAIN: return true;  break;
-
-		case CHST_START:
-		case CHST_DOWN:
-		case CHST_WIN:
-		case CHST_END_WAIT:
-		case CHST_WIN_END:
-			return false; break;
-		}
-		return false;
-	}
-#endif // 0
 
 	//CPU操作切替
 	void ExeChara::ControlCPU ()

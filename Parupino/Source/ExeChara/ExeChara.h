@@ -121,42 +121,11 @@ namespace GAME
 		void LookOther ();	//相手の方向を向く
 
 		//---------------------------------------------
-
-#if 0
-		//ゲーム進行状態
-		CHARA_STATE GetCharaState () const { return m_charaState; }
-		void SetCharaState ( CHARA_STATE chst ) { m_charaState = chst; }
-
-		//開始
-		void SetMain ()
-		{
-			Init ();
-			m_charaState = CHST_MAIN; 
-		}
-#endif // 0
-
-#if 0
-		//入力をする状態かどうか
-		bool CanInput () const;
-#endif // 0
-
 		//入力処理
 		void Input ();
 
-#if 0
-		//メイン状態かどうか
-		bool IsMain () const;
-#endif // 0
-
 		//ライフ０チェック
 		bool IsZeroLife () const { return ( 0 >= m_btlPrm.GetLife () ); }
-
-#if 0
-		bool GetStart () const { return m_start; }		//開始状態取得
-		void SetStart ( bool b ) { m_start = b; }
-		bool GetEnd () const { return m_end; }			//終了状態取得
-		void SetEndWait ( bool b ) { m_endWait = b; }
-#endif // 0
 
 		//------------------------------------------------
 		//エフェクト
@@ -304,6 +273,10 @@ namespace GAME
 
 	public:
 		void TransitAction ();	// アクション移項
+		void _TransitAction ( UINT id );	//ID指定アクション移項
+
+		void EndAction ();	//アクション移項時、前アクションの最後の処理
+
 		void CalcPos ();	// 位置計算
 		//ぶつかり後、位置の修正
 		void Landing ();	//落下・着地
