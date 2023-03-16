@@ -24,7 +24,7 @@ namespace GAME
 		//ライフゲージ
 		//ライフ枠
 		m_gaugeFrameLife = make_shared < PrmRect > ();
-		m_gaugeFrameLife->SetAllColor ( _CLR ( 0xff404040 ) );
+		m_gaugeFrameLife->SetAllColor ( _CLR ( 0xff606060 ) );
 		GRPLST_INSERT ( m_gaugeFrameLife );
 
 		//ライフ減少分
@@ -41,7 +41,7 @@ namespace GAME
 
 		//バランスゲージ
 		m_gaugeFrameBalance = make_shared < PrmRect > ();
-		m_gaugeFrameBalance->SetAllColor ( _CLR ( 0xff404040 ) );
+		m_gaugeFrameBalance->SetAllColor ( _CLR ( 0xff808080 ) );
 		GRPLST_INSERT ( m_gaugeFrameBalance );
 
 		m_gaugeDecreaseBalance = make_shared < PrmRect > ();
@@ -101,6 +101,14 @@ namespace GAME
 	void DispFrontEnd::LoadPlayer ( PLAYER_ID playerID )
 	{
 		float dispGameBaseX = G_BASE_POS ().x;
+		float x_l = LIFE_GAUGE_X;
+		float y_l = LIFE_GAUGE_Y;
+		float w_l = LIFE_GAUGE_W;
+		float h_l = LIFE_GAUGE_H;
+		float x_b = BALANCE_GAUGE_X;
+		float y_b = BALANCE_GAUGE_Y;
+		float w_b = BALANCE_GAUGE_W;
+		float h_b = BALANCE_GAUGE_H;
 
 		//初期位置
 		if ( PLAYER_ID_1 == playerID )
@@ -117,12 +125,12 @@ namespace GAME
 				m_grpPlayer1P.GetpMatrix ()->SetPos ( VEC2 ( GRP_PLAYER1_X, GRP_PLAYER1_Y ) );
 			}
 #endif // 0
-			m_gaugeFrameLife->SetRect ( LIFE_GAUGE_X - 2, LIFE_GAUGE_Y - 2, GAUGE_WIDTH + 4, GAUGE_HEIGHT + 4 );
-			m_gaugeLife->SetRect ( LIFE_GAUGE_X, LIFE_GAUGE_Y, GAUGE_WIDTH, GAUGE_HEIGHT );
+			m_gaugeFrameLife->SetRect ( x_l - 2, y_l - 2, w_l + 4, h_l + 4 );
+			m_gaugeLife->SetRect ( x_l, y_l, w_l, h_l );
 			m_gaugeDecreaseLife->SetRect ( 0, 0, 0, 0 );
 			
-			m_gaugeFrameBalance->SetRect ( BALANCE_GAUGE_X - 2, BALANCE_GAUGE_Y - 2, GAUGE_WIDTH + 4, GAUGE_HEIGHT + 4 );
-			m_gaugeBalance->SetRect ( BALANCE_GAUGE_X, BALANCE_GAUGE_Y, GAUGE_WIDTH, GAUGE_HEIGHT );
+			m_gaugeFrameBalance->SetRect ( x_b - 2, y_b - 2, w_b + 4, h_b + 4 );
+			m_gaugeBalance->SetRect ( x_b, y_b, w_b, h_b );
 			m_gaugeDecreaseBalance->SetRect ( 0, 0, 0, 0 );
 			}
 		else if ( PLAYER_ID_2 == playerID )
@@ -139,12 +147,14 @@ namespace GAME
 				m_grpPlayer2P.GetpMatrix ()->SetPos ( VEC2 ( GRP_PLAYER2_X, GRP_PLAYER2_Y ) );
 			}
 #endif // 0
-			m_gaugeFrameLife->SetRect ( GAME_WINDOW_WIDTH - GAUGE_WIDTH - BALANCE_GAUGE_X - 2, BALANCE_GAUGE_Y - 2, GAUGE_WIDTH + 4, GAUGE_HEIGHT + 4 );
-			m_gaugeLife->SetRect ( GAME_WINDOW_WIDTH - GAUGE_WIDTH - LIFE_GAUGE_X, LIFE_GAUGE_Y, GAUGE_WIDTH, GAUGE_HEIGHT );
+			float p2_bx_l = GAME_WINDOW_WIDTH - x_l - w_l;
+			m_gaugeFrameLife->SetRect ( p2_bx_l - 2, y_l - 2, w_l + 4, h_l + 4 );
+			m_gaugeLife->SetRect ( p2_bx_l, y_l, w_l, h_l );
 			m_gaugeDecreaseLife->SetRect ( 0, 0, 0, 0 );
 
-			m_gaugeFrameBalance->SetRect ( GAME_WINDOW_WIDTH - GAUGE_WIDTH - BALANCE_GAUGE_X - 2, BALANCE_GAUGE_Y - 2, GAUGE_WIDTH + 4, GAUGE_HEIGHT + 4 );
-			m_gaugeBalance->SetRect ( GAME_WINDOW_WIDTH - GAUGE_WIDTH - BALANCE_GAUGE_X, BALANCE_GAUGE_Y, GAUGE_WIDTH, GAUGE_HEIGHT );
+			float p2_bx_b = GAME_WINDOW_WIDTH - x_b - w_b;
+			m_gaugeFrameBalance->SetRect ( p2_bx_b - 2, y_b - 2, w_b + 4, h_b + 4 );
+			m_gaugeBalance->SetRect ( p2_bx_b, y_b, w_b, h_b );
 			m_gaugeDecreaseBalance->SetRect ( 0, 0, 0, 0 );
 		}
 #if 0
@@ -162,31 +172,37 @@ namespace GAME
 	//ゲージ更新
 	void DispFrontEnd::UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance )
 	{
-		const static float cfl = 1.f * GAUGE_WIDTH / LIFE_MAX;		//1ライフあたりの表示長さ
+		const static float cfl = 1.f * LIFE_GAUGE_W / LIFE_MAX;		//1ライフあたりの表示長さ
 		float wl = cfl * life;
 		float wd = cfl * damage;
 
-		const float lx = LIFE_GAUGE_X + GAUGE_WIDTH;
-
-		const float lx2p = GAME_WINDOW_WIDTH - LIFE_GAUGE_X - GAUGE_WIDTH;
+		const float lw = LIFE_GAUGE_W;
+		const float lh = LIFE_GAUGE_H;
+		const float lx = LIFE_GAUGE_X + lw;
+		const float ly = LIFE_GAUGE_Y;
+		const float lx2p = GAME_WINDOW_WIDTH - LIFE_GAUGE_X - lw;
+		const float bw = BALANCE_GAUGE_W;
+		const float bh = BALANCE_GAUGE_H;
+		const float bx = BALANCE_GAUGE_X + bw;
+		const float by = BALANCE_GAUGE_Y;
 
 		if ( wl < 0 ) { wl = 0; }
 
 		if ( PLAYER_ID_1 == playerID )
 		{
-			m_gaugeDecreaseLife->SetRect ( lx - wl - wd, LIFE_GAUGE_Y, wd, GAUGE_HEIGHT );
-			m_gaugeLife->SetRect ( lx - wl, LIFE_GAUGE_Y, wl, GAUGE_HEIGHT );
+			m_gaugeDecreaseLife->SetRect ( lx - wl - wd, ly, wd, lw );
+			m_gaugeLife->SetRect ( lx - wl, ly, wl, lh );
 
-			m_gaugeDecreaseBalance->SetRect ( lx - wl - wd, BALANCE_GAUGE_Y, wd, GAUGE_HEIGHT );
-			m_gaugeBalance->SetRect ( lx - wl, BALANCE_GAUGE_Y, wl, GAUGE_HEIGHT );
+			m_gaugeDecreaseBalance->SetRect ( lx - wl - wd, by, wd, lh );
+			m_gaugeBalance->SetRect ( lx - wl, by, wl, bh );
 		}
 		else if ( PLAYER_ID_2 == playerID )
 		{
-			m_gaugeDecreaseLife->SetRect ( lx2p + wl, LIFE_GAUGE_Y, wd, GAUGE_HEIGHT );
-			m_gaugeLife->SetRect ( lx2p, LIFE_GAUGE_Y, wl, GAUGE_HEIGHT );
+			m_gaugeDecreaseLife->SetRect ( lx2p + wl, ly, wd, lw );
+			m_gaugeLife->SetRect ( lx2p, ly, wl, lh );
 
-			m_gaugeDecreaseBalance->SetRect ( lx2p + wl, BALANCE_GAUGE_Y, wd, GAUGE_HEIGHT );
-			m_gaugeBalance->SetRect ( lx2p, BALANCE_GAUGE_Y, wl, GAUGE_HEIGHT );
+			m_gaugeDecreaseBalance->SetRect ( lx2p + wl, by, wd, bh );
+			m_gaugeBalance->SetRect ( lx2p, by, wl, bh );
 		}
 
 		//硬直時間表示
