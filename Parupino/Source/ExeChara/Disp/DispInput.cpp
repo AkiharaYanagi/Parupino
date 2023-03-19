@@ -17,6 +17,7 @@ namespace GAME
 	//キー入力表示個数
 	//@todo CharaInputの入力保存数と同一なので統合する
 	const UINT DispInput::NUM_DISP_INPUT = 20;
+	const UINT DispInput::BASE_Y = 150;
 
 	//コンストラクタ
 	DispInput::DispInput ()
@@ -25,9 +26,9 @@ namespace GAME
 		//---------------------------------------------------------------
 		//背景
 		m_bg = make_shared < PrmRect > ();
-		m_bg->SetRect ( m_base, 200, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base, BASE_Y, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
 		m_bg->SetZ ( Z_SYS );
-		m_bg->SetAllColor ( 0x8080c080 );
+		m_bg->SetAllColor ( 0x8080a080 );
 		GRPLST_INSERT ( m_bg );
 
 		//---------------------------------------------------------------
@@ -78,7 +79,7 @@ namespace GAME
 		{
 			m_base = 1280 - 10 - 10 * INPUT_NUM;
 		}
-		m_bg->SetRect ( m_base, 200, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base, BASE_Y, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
 
 		m_timer = 0;
 	}
@@ -113,7 +114,7 @@ namespace GAME
 			int frame = i / INPUT_NUM;
 			int input = i % INPUT_NUM;
 			pOb->SetValid ( GetBoolInput ( pCharaInput, frame, input ) );
-			pOb->SetPos ( m_base + 10 * input, 200.f + 10 * frame + m_vel * m_timer );
+			pOb->SetPos ( m_base + 10 * input, BASE_Y + 10 * frame + m_vel * m_timer );
 			++ i;
 		}
 

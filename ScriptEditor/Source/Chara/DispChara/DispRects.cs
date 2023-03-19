@@ -22,12 +22,15 @@ namespace ScriptEditor
 
 		private void _DispRects ( Graphics g, L_Rct lRect, Point ptBase, Color clr )
 		{
+			using ( Brush br = new SolidBrush ( clr ) )
+			{
 			foreach ( Rectangle r in lRect )
 			{
 				int x = ptBase.X + r.X;
 				int y = ptBase.Y + r.Y;
 				Rectangle drawRect = new Rectangle ( x, y, r.Width, r.Height );
-				g.FillRectangle ( new SolidBrush ( clr ), drawRect );
+				g.FillRectangle ( br, drawRect );
+			}
 			}
 		}
 

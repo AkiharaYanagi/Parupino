@@ -70,6 +70,7 @@ namespace GAME
 		//システム変更
 		SwitchRect ();	//枠表示切替
 		SwithcCPU ();	//CPU操作切替
+		ResetMatch ();	//試合初期化
 		//---------------------------------------------------
 
 		//◆スクリプト前処理(入力、移動など)
@@ -303,7 +304,8 @@ namespace GAME
 	//------------------------------------------------------
 
 	//------------------------------------------------------
-	//枠表示切替 ExeCharaで呼ぶと1P2Pで２回呼ばれてしまう
+	//枠表示切替 
+	//@info ExeCharaで呼ぶと1P2Pで２回呼ばれてしまう
 	void MutualChara::SwitchRect ()
 	{
 		static bool bDispRect = false;		//状態
@@ -336,15 +338,15 @@ namespace GAME
 	}
 
 	//------------------------------------------------------
-	//CPU操作切替
+	//2PをCPU操作切替
 	void MutualChara::SwithcCPU ()
 	{
 		static bool cpu1 = F;
 		static bool cpu2 = F;
 
-		if ( ::GetAsyncKeyState ( '7' ) & 0x0001 ) 
+		if ( ::GetAsyncKeyState ( '7' ) & 0x0001 )
 		{
-			cpu2 ^= T; 
+			cpu2 ^= T;
 			if ( cpu2 )
 			{
 				m_exeChara2->ControlCPU ();
@@ -353,6 +355,17 @@ namespace GAME
 			{
 				m_exeChara2->ControlPlayer ();
 			}
+		}
+	}
+
+	//------------------------------------------------------
+	//試合初期化
+	void MutualChara::ResetMatch ()
+	{
+		if ( ::GetAsyncKeyState ( '0' ) & 0x0001 )
+		{
+			m_exeChara1->Init ();
+			m_exeChara2->Init ();
 		}
 	}
 

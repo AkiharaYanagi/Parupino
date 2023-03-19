@@ -283,16 +283,17 @@ namespace GAME
 		scp.m_prmBattle.Acc = m_utl.LoadVec2 ( buf, pos );
 		scp.m_prmBattle.Power = m_utl.LoadInt ( buf, pos );
 
-		if ( 0 != scp.m_prmBattle.Power )
-		{
-			int i = 0;
-		}
-
 		scp.m_prmBattle.Warp = m_utl.LoadInt ( buf, pos );
 		scp.m_prmBattle.Recoil_I = m_utl.LoadInt ( buf, pos );
 		scp.m_prmBattle.Recoil_E = m_utl.LoadInt ( buf, pos );
 		scp.m_prmBattle.Balance_I = m_utl.LoadInt ( buf, pos );
 		scp.m_prmBattle.Balance_E = m_utl.LoadInt ( buf, pos );
+
+		//test
+		if ( 0 != scp.m_prmBattle.Balance_I )
+		{
+			int i = 0;
+		}
 	}
 
 

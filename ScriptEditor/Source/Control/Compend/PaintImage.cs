@@ -23,7 +23,7 @@ namespace ScriptEditor
 
 		//-----------------------------------------------------
 		//内部使用
-		private PictureBox PB_Image = null;
+		private PictureBox PB_Image = new PictureBox();
 		private readonly DispRects dispRects = new DispRects ();
 
 		//-----------------------------------------------------
@@ -107,7 +107,7 @@ namespace ScriptEditor
 			//----------------------------------------
 			//イメージの反映
 			PB_Image.Image = bmp;
-			PB_Image.Invalidate ();
+			PB_Image.Refresh ();
 		}
 
 		//ダミー生成

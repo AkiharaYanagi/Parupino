@@ -16,6 +16,7 @@ namespace GAME
 {
 
 	DispFrontEnd::DispFrontEnd ()
+		: m_fDamage ( LIFE_MAX )
 	{
 		//---------------------
 		//	ゲージ類
@@ -100,6 +101,8 @@ namespace GAME
 
 	void DispFrontEnd::LoadPlayer ( PLAYER_ID playerID )
 	{
+		m_playerID = playerID;
+
 		float dispGameBaseX = G_BASE_POS ().x;
 		float x_l = LIFE_GAUGE_X;
 		float y_l = LIFE_GAUGE_Y;
@@ -111,7 +114,7 @@ namespace GAME
 		float h_b = BALANCE_GAUGE_H;
 
 		//初期位置
-		if ( PLAYER_ID_1 == playerID )
+		if ( PLAYER_ID_1 == m_playerID )
 		{
 #if 0
 			if ( cpu )
@@ -133,7 +136,7 @@ namespace GAME
 			m_gaugeBalance->SetRect ( x_b, y_b, w_b, h_b );
 			m_gaugeDecreaseBalance->SetRect ( 0, 0, 0, 0 );
 			}
-		else if ( PLAYER_ID_2 == playerID )
+		else if ( PLAYER_ID_2 == m_playerID )
 		{
 #if 0
 			if ( cpu )
@@ -169,40 +172,118 @@ namespace GAME
 #endif // 0
 	}
 
+	void DispFrontEnd::Init ()
+	{
+		m_fDamage = LIFE_MAX;
+		m_gaugeDecreaseLife->SetRect ( 0, 0, 0, 0 );
+	}
+
+#if 0
 	//ゲージ更新
 	void DispFrontEnd::UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance )
 	{
 		const static float cfl = 1.f * LIFE_GAUGE_W / LIFE_MAX;		//1ライフあたりの表示長さ
-		float wl = cfl * life;
-		float wd = cfl * damage;
+		float l = cfl * life;
+		float d = cfl * damage;
+		float b = cfl * balance;
 
 		const float lw = LIFE_GAUGE_W;
 		const float lh = LIFE_GAUGE_H;
-		const float lx = LIFE_GAUGE_X + lw;
+		const float lx = LIFE_GAUGE_X;
 		const float ly = LIFE_GAUGE_Y;
-		const float lx2p = GAME_WINDOW_WIDTH - LIFE_GAUGE_X - lw;
+		const float lx2p = GAME_WINDOW_WIDTH - lx - lw;
+
 		const float bw = BALANCE_GAUGE_W;
 		const float bh = BALANCE_GAUGE_H;
-		const float bx = BALANCE_GAUGE_X + bw;
+		const float bx = BALANCE_GAUGE_X;
 		const float by = BALANCE_GAUGE_Y;
+		const float bx2p = GAME_WINDOW_WIDTH - bx - bw;
 
-		if ( wl < 0 ) { wl = 0; }
+		if ( l < 0 ) { l = 0; }
 
 		if ( PLAYER_ID_1 == playerID )
 		{
-			m_gaugeDecreaseLife->SetRect ( lx - wl - wd, ly, wd, lw );
-			m_gaugeLife->SetRect ( lx - wl, ly, wl, lh );
+			m_gaugeDecreaseLife->SetRect ( lx + lw - l - d, ly, d, lh );
+			m_gaugeLife->SetRect ( lx + lw - l, ly, l, lh );
 
-			m_gaugeDecreaseBalance->SetRect ( lx - wl - wd, by, wd, lh );
-			m_gaugeBalance->SetRect ( lx - wl, by, wl, bh );
+			//			m_gaugeDecreaseBalance->SetRect ( bx - wb - wd, by, wd, bh );
+			m_gaugeBalance->SetRect ( bx + bw - b, by, b, bh );
 		}
 		else if ( PLAYER_ID_2 == playerID )
 		{
-			m_gaugeDecreaseLife->SetRect ( lx2p + wl, ly, wd, lw );
-			m_gaugeLife->SetRect ( lx2p, ly, wl, lh );
+			m_gaugeDecreaseLife->SetRect ( lx2p + l, ly, d, lh );
+			m_gaugeLife->SetRect ( lx2p, ly, l, lh );
 
-			m_gaugeDecreaseBalance->SetRect ( lx2p + wl, by, wd, bh );
-			m_gaugeBalance->SetRect ( lx2p, by, wl, bh );
+			//			m_gaugeDecreaseBalance->SetRect ( lx2p + wb, by, wd, bh );
+			m_gaugeBalance->SetRect ( bx2p, by, b, bh );
+		}
+
+		//硬直時間表示
+#if 0
+		static bool b2 = true;
+		if ( ::GetAsyncKeyState ( '2' ) & 0x0001 ) { b2 ^= 1; }
+		if ( b2 )
+		{
+			//ヒットストップ時間
+			m_dispChara.UpdateHitStop ( m_ptChara, m_dirRight, m_hitstop, m_hitstopTimer );
+
+			//のけぞり時間
+			m_dispChara.UpdateLurch ( m_ptChara, m_dirRight, m_lurch, m_lurchTimer );
+		}
+#endif // 0
+
+	}
+#endif // 0
+
+	void DispFrontEnd::UpdateGauge ( BtlParam btlPrm )
+	{
+		const static float cfl = 1.f * LIFE_GAUGE_W / LIFE_MAX;		//1ライフあたりの表示長さ
+
+		//ライフ
+		float l = cfl * btlPrm.GetLife ();
+		if ( l < 0 ) { l = 0; }
+
+		float d = cfl * m_fDamage;
+		if ( m_fDamage < 0 ) { m_fDamage = 0; }
+
+		//ライフよりダメージ分が多い場合
+		if ( d > l )
+		{
+			//徐々に減少
+			m_fDamage -= 10;
+		}
+
+		const float lw = LIFE_GAUGE_W;
+		const float lh = LIFE_GAUGE_H;
+		const float lx = LIFE_GAUGE_X;
+		const float ly = LIFE_GAUGE_Y;
+		const float lx2p = GAME_WINDOW_WIDTH - lx - lw;
+
+		//バランス
+		const static float cfb = 1.f * BALANCE_GAUGE_W / BALANCE_MAX;		//1バランスあたりの表示長さ
+		float b = cfl * btlPrm.GetBalance ();
+		const float bw = BALANCE_GAUGE_W;
+		const float bh = BALANCE_GAUGE_H;
+		const float bx = BALANCE_GAUGE_X;
+		const float by = BALANCE_GAUGE_Y;
+		const float bx2p = GAME_WINDOW_WIDTH - bx - bw;
+
+
+		if ( PLAYER_ID_1 == m_playerID )
+		{
+			m_gaugeDecreaseLife->SetRect ( lx + lw - d, ly, d - l, lh );
+			m_gaugeLife->SetRect ( lx + lw - l, ly, l, lh );
+
+			//			m_gaugeDecreaseBalance->SetRect ( bx - wb - wd, by, wd, bh );
+			m_gaugeBalance->SetRect ( bx + bw - b, by, b, bh );
+		}
+		else if ( PLAYER_ID_2 == m_playerID )
+		{
+			m_gaugeDecreaseLife->SetRect ( lx2p + l, ly, d - l, lh );
+			m_gaugeLife->SetRect ( lx2p, ly, l, lh );
+
+			//			m_gaugeDecreaseBalance->SetRect ( lx2p + wb, by, wd, bh );
+			m_gaugeBalance->SetRect ( bx2p, by, b, bh );
 		}
 
 		//硬直時間表示

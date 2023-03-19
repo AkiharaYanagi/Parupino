@@ -36,7 +36,7 @@ namespace GAME
 
 	//@info	復旧時Reset()のためゲームタスクを継承(子を持たないためベクタではない)
 
-	//クラス
+	//キャラ実行 クラス
 	class ExeChara : public GameTask, public enable_shared_from_this < ExeChara >
 	{
 		//------------------------------------------------
@@ -75,9 +75,6 @@ namespace GAME
 		OperateEffect	m_oprtEf;
 
 		//------------------------------------------------
-		//ゲーム進行状態
-//		CHARA_STATE		m_charaState;
-
 		//ゲーム進行状態ステート
 		ExeChara_Actor	m_actor;
 
@@ -111,6 +108,15 @@ namespace GAME
 
 		//------------------------------------------------------------
 		//パラメータ
+
+
+
+		//@todo スクリプトの持つ　ScriptParam_Battle と ExeCharaの持つ実効値 BtlPrm の整理
+
+
+
+		BtlParam GetBtlPrm () const { return m_btlPrm; }
+
 		VEC2 GetPos () const { return m_btlPrm.GetPos (); }		//位置を取得
 		bool GetDirRight () const { return m_btlPrm.GetDirRight (); }	//向きを取得
 		void SetDirRight ( bool b ) { m_btlPrm.SetDirRight ( b ); }		//立ち状態で向きを設定
@@ -150,11 +156,14 @@ namespace GAME
 
 		//各値取得
 		CHARA_NAME GetCharaName () const { return m_name; }
+
+#if 0
 		int GetPower () const
 		{
 //			return m_btlPrm.GetPower (); 
 			return m_pScript->m_prmBattle.Power;
 		}		//攻撃値取得
+#endif // 0
 		int GetLife () const { return m_btlPrm.GetLife (); }		//ライフ取得
 		ACTION_POSTURE GetPosture () const { return m_pAction->GetPosture (); }
 
@@ -195,11 +204,14 @@ namespace GAME
 		//引数：打合停止時間
 		void OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision );
 
+		//相手・攻撃 → 自分・くらい
 		//くらい発生
 		bool IsDamaged () const { return m_btlPrm.GetDamaged (); }
 		void SetDamaged ( bool b ) { m_btlPrm.SetDamaged ( b ); }
 		void OnDamaged ( int damage );
+		void OnDamaged ();
 
+		//自分・攻撃 -> 相手・くらい
 		//ヒット発生
 		bool IsHit () const { return m_btlPrm.GetHitEst (); }
 		void SetHit ( bool b ) { m_btlPrm.SetHitEst ( b ); }
@@ -266,21 +278,12 @@ namespace GAME
 		//Load
 		void MakeEfOprt ();		//エフェクト処理の生成
 
-#if 0
-		//PreScriptMove
-		void AlwaysMove ();		// アクションとスクリプトによらない一定の処理
-#endif // 0
-
 	public:
 		void TransitAction ();	// アクション移項
-		void _TransitAction ( UINT id );	//ID指定アクション移項
-
+		void TransitScript ();	//スクリプトを遷移させる
 		void EndAction ();	//アクション移項時、前アクションの最後の処理
-
-		void CalcPos ();	// 位置計算
-		//ぶつかり後、位置の修正
+		void CalcPos ();	// 位置計算		//ぶつかり後、位置の修正
 		void Landing ();	//落下・着地
-
 
 	private:
 
@@ -290,19 +293,12 @@ namespace GAME
 		UINT Check_TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件チェック)
 
 	public:
-#if 0
-		//PostScriptMove
-		void AlwaysPostMove ();		// アクションとスクリプトによらない一定の処理
-#endif // 0
 
 		void CheckLife ();			//ライフ判定
 		void UpdateGraphic ();		//グラフィック更新
 		void EffectGenerate ();		//エフェクト生成
 		void EffectMove ();
-//		void TurnDispRect ();		//枠表示切替
-
 		void MoveTimer () { m_btlPrm.TimerMove (); }
-
 
 	private:
 		//------------------------------------------------

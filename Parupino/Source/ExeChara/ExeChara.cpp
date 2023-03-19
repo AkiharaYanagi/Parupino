@@ -209,212 +209,9 @@ namespace GAME
 		m_pScript = m_pAction->GetpScript ( m_frame );
 	}
 
-	void ExeChara::StartGreeting ()
-	{
-		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
-		m_actor.StartGreeting ();		//状態
-	}
-
-	void ExeChara::StartGetReady ()
-	{
-//		SetAction ( _T ( "Start_Demo" ) );		//アクション・スクリプト初期化
-		m_actor.StartGetReady ();		//状態
-	}
-
-	void ExeChara::StartFighting ()
-	{
-		SetAction ( _T ( "Stand" ) );		//アクション・スクリプト初期化
-		m_actor.StartFighting ();		//状態
-	}
-
-
-	//---------------------------------------------
-	//イベント
-
-	void ExeChara::OnDashBranch ()
-	{
-		TransitAction_Condition_I ( BRC_DASH, F );	//ダッシュ相殺・自分
-	}
-
-	//打合発生
-	void ExeChara::OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision )
-	{
-#if 0
-//		if ( CD_LOSE == clangDecision )
-		{
-			//状態の変更
-			m_actionID = m_pChara->GetBsAction ( BA_CLANG );
-			m_frame = 0;
-		}
-#endif // 0
-		m_btlPrm.SetClang ( true );		//打合状態
-//		m_lurch = nLurch;		//のけぞり時間の設定
-		m_btlPrm.GetTmr_HitStop()->Start ();		//ヒットストップの設定
-	}
-
-
-	//相手・攻撃 → 自分・くらい
-	//くらい状態・ダメージ処理
-	void ExeChara::OnDamaged ( int damage )
-	{
-		bool hit = true;
-		bool guard = false;
-
-		//回避判定
-#if 0
-		//攻撃中でなく、下要素が入力されているとき
-		//ダッシュ中、よろけ中なども除外する (歩きは可能)
-		if ( !IsAttacking () && !(GetActionName () == Chara::DOTTY) )
-		{
-			if ( IsInput2E () )
-			{
-				//避けに移項
-				TransitAction ( m_pChara->GetBsAction ( Chara::AVOID ) );
-
-				//ヒットストップの設定
-				m_hitstop = 15;
-
-				//エフェクトの発生
-//				float dispGameBaseX = GetDispGameBaseX ();	//画面端による表示基準位置
-				m_dispChara.OnAvoid ( m_ptChara, m_dirRight );
-
-				//SE
-				SoundArchiver::instance ()->Play ( 2 );
-
-				//自分のバランス減少・追加分
-				int balanceDamage0 = 200 - damage;		//ダメージの逆数(L>M>H)
-				if ( m_balance < balanceDamage0 ) { balanceDamage0 = m_balance; }	//現在値以上は表示制限
-				m_balance -= balanceDamage0;
-
-				//相手のバランス減少
-				int balanceDamage = damage;		//ダメージ分バランス減少(L<M<H)
-				int balance = m_pOther->GetBalance ();
-				if ( balance < balanceDamage ) { balanceDamage = balance; }	//現在値以上は表示制限
-				m_pOther->AddbBalance ( -1 * balanceDamage );
-
-				return;
-			}
-		}
-#endif // 0
-
-		//ガード発生
-#if 0
-		//攻撃中でないとき
-		//ダッシュ中、よろけ中なども除外する (歩きは可能)
-		if ( !IsAttacking () && !IsDamaged () )
-		{
-			//上中下段　分岐処理
-			ACTION_POSTURE ap = m_pOther.lock ()->GetPosture ();
-
-			//後方向が入力されているとき
-			if ( m_pCharaInput->IsInput4 () )
-			{
-				//相手の状態で分岐
-				switch ( ap )
-				{
-				case AP_STAND:	hit = false; guard = true; break;
-				case AP_CROUCH: hit = true; guard = false; break;
-				case AP_JUMP:	hit = false; guard = true; break;
-				}
-			}
-
-			//後下方向が入力されているとき
-			if ( m_pCharaInput->IsInput1 () )
-			{
-				//相手の状態で分岐
-				switch ( ap )
-				{
-				case AP_STAND:	hit = false; guard = true; break;
-				case AP_CROUCH: hit = false; guard = true; break;
-				case AP_JUMP:	hit = true; guard = false; break;
-				}
-			}
-
-		}
-
-		//--------------------------------------------------------
-
-		//ガード成立
-		if ( guard )
-		{
-			tstring act;
-			switch ( m_pAction->GetPosture () )
-			{
-			case AP_STAND:	act.assign ( _T ( "S_Guard" ) ); break;
-			case AP_CROUCH: act.assign ( _T ( "C_Guard" ) ); break;
-			case AP_JUMP:	act.assign ( _T ( "J_Guard" ) ); break;
-			}
-			TransitAction ( m_pChara->GetActionID ( act ) );
-
-			m_FirstEf = true;				//初回のみエフェクト発生
-			m_tmrHitstop->Start ();				//ヒットストップの設定
-
-			//SE
-			SOUND->Play ( SE_Guard );
-		}
-#endif // 0
-
-		//くらい時 ( ガードをしていない ) && ( 強制変更されていない )
-		if ( hit && ! m_btlPrm.GetForcedChange () )
-		{
-			int lf = m_btlPrm.GetLife ();
-			//ダメージをライフによって補正(根性値)
-			if ( lf < LIFE_MAX * 0.5f )
-			{
-				damage = (int)(damage * (0.001f * (0.5f * LIFE_MAX + lf )));
-			}
-
-			//ダメージ処理
-			if ( lf < damage ) { m_btlPrm.SetDamage ( lf ); }	//ライフ以上は表示制限
-			else { m_btlPrm.SetDamage ( damage ); }		//表示用
-
-			m_btlPrm.SetLife ( lf - damage );
-
-			//状態の変更
-#if 0
-			tstring act;
-			switch ( m_pAction->GetPosture () )
-			{
-			case AP_STAND:	act.assign ( _T ( "Damaged_L" ) ); break;
-			case AP_CROUCH: act.assign ( _T ( "C_DamagedL" ) ); break;
-			case AP_JUMP:	act.assign ( _T ( "J_DamagedL" ) ); break;
-			}
-			TransitAction ( m_pChara->GetActionID ( act ) );
-#endif // 0
-
-			//その他　効果
-			m_btlPrm.GetTmr_HitStop ()->Start ();			//ヒットストップの設定
-			m_btlPrm.SetFirstEf ( true );			//初回のみエフェクト発生
-			m_btlPrm.SetFirstSE ( true );			//初回のみSE発生
-
-		}
-	}
-
-	//ヒット発生(攻撃成立側)
-	//自分・攻撃 -> 相手・くらい
-	void ExeChara::OnHit ()
-	{
-		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
-
-		//-----------------------------------------------------
-		//条件分岐 (相手→自分でないとスクリプトが変わってしまう)
-		TransitAction_Condition_E ( BRC_THR_E, T );	//投げ・相手
-		TransitAction_Condition_I ( BRC_THR_I, F );	//投げ・自分
-		TransitAction_Condition_E ( BRC_HIT_E, T );	//ヒット・相手
-		TransitAction_Condition_I ( BRC_HIT_I, F );	//ヒット・自分
-
-		//-----------------------------------------------------
-
-		m_btlPrm.GetTmr_HitStop()->Start ();		//ヒットストップの設定
-	}
-
-	//エフェクトヒット発生(攻撃成立側)
-	void ExeChara::OnEfHit ()
-	{
-		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
-//		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
-	}
-
+	void ExeChara::StartGreeting () { m_actor.StartGreeting (); }
+	void ExeChara::StartGetReady () { m_actor.StartGetReady (); }
+	void ExeChara::StartFighting () { m_actor.StartFighting (); }
 
 #if 0
 	//終了演出
@@ -446,25 +243,6 @@ namespace GAME
 	//	内部関数
 	//================================================
 
-	// 位置計算
-	void ExeChara::CalcPos ()
-	{
-		m_btlPrm.CalcPos ( m_pScript );
-
-		Landing ();	//着地
-	}
-
-	//アクションの移項(直接指定)
-	void ExeChara::TransitAction ( UINT actionID )
-	{
-		m_actionID = actionID;		//遷移
-		m_frame = 0;		//スクリプト初期化
-
-		//一時アクションとスクリプトを再設定
-		m_pAction = m_pChara->GetpAction ( m_actionID );
-		m_pScript = m_pAction->GetpScript ( m_frame );
-	}
-
 	// アクション移項(条件:コマンド, アクション終了)
 	void ExeChara::TransitAction ()
 	{
@@ -474,7 +252,6 @@ namespace GAME
 #if 0
 		if ( LurchTimer () ) { return; }
 #endif // 0
-
 
 
 		//-----------------------------------------------------
@@ -490,74 +267,89 @@ namespace GAME
 		for ( UINT id : vCompID )
 		{
 			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( transitID );
+			P_Action pact = m_pChara->GetpAction ( id );
 
 			//対象IDがバランス消費で移項可能なら移動処理へ
+
+
 			//不可能なら次をチェック
+			transitID = id;
+			break;
 		}
 
 
 		//コマンドが完成していたら
 		if ( NO_COMPLETE != transitID )
 		{
-			//アクションとして最後の処理
+			//現在アクションとして最後の処理
 			EndAction ();
 
 			//遷移先チェック
 			P_Action pact = m_pChara->GetpAction ( transitID );
 			P_Script pscr = pact->GetpScript ( 0 );
 
+
+			//バランス処理
+			int bl_a = pact->GetBalance ();		//アクション消費バランス
+			int bl_p = m_btlPrm.GetBalance ();	//パラメータ現在バランス
+
+			int d = bl_p - bl_a;
+			if ( d < 0 ) { d = 0; }
+			m_btlPrm.SetBalance ( d );
+
+
 			//アクション遷移
 			m_actionID = transitID;	
+			TransitScript ();
 
-#if 0
-			//m_frameは0から開始、Move()とDraw()で同一スクリプトを維持する
-			//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
-			m_pAction = m_pChara->GetpAction ( m_actionID );
-			m_pScript = m_pAction->GetpScript ( m_frame );
-#endif // 0
-			_TransitAction ( m_actionID );
+			//終了
+			return;
 		}
-		//---------------------------------------------------
 
-		//コマンドで非遷移 かつ
-		else
+
+		//-----------------------------------------------------
+		//現在スクリプトが現在アクションにおける最終フレーム ならば
+		if ( m_pAction->IsOverScript ( m_frame ) )
 		{
-			//現在アクションが最終フレーム ならば
-			if ( m_pAction->IsEndScript ( m_frame ) )
-			{
-				int i = 0;
-			}
-			
-			if ( m_pAction->IsOverScript ( m_frame ) )
-			{
-				//アクション終了処理
-				EndAction ();
+			//アクション終了処理
+			EndAction ();
 
-				//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
-				m_actionID = m_pAction->GetNextID ();
+			//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
+			m_actionID = m_pAction->GetNextID ();
+			TransitScript ();
 
-			}
-			else
-			{
-#if 0
-				//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
-				//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
-				m_pAction = m_pChara->GetpAction ( m_actionID );
-				m_pScript = m_pAction->GetpScript ( m_frame );
-#endif // 0
-				_TransitAction ( m_actionID );
-
-				//通常処理：スクリプトを１つ進める
-				++ m_frame;
-			}
+			//終了
+			return;
 		}
-		//---------------------------------------------------
 
-		assert ( nullptr != m_pAction && nullptr != m_pScript );
+		//-----------------------------------------------------
+		// スクリプト通常処理
+#if 0
+		//m_frameは0から開始、Move()とDraw()で同一スクリプトを処理する
+		//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
+		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_pScript = m_pAction->GetpScript ( m_frame );
+#endif // 0
+		TransitScript ();
+
+		//通常処理：スクリプトを１つ進める
+		++ m_frame;
 	}
 
-	void ExeChara::_TransitAction ( UINT id )
+
+	//アクションの移項(直接指定)
+	void ExeChara::TransitAction ( UINT actionID )
+	{
+		m_actionID = actionID;		//遷移
+		m_frame = 0;		//スクリプト初期化
+
+		//一時アクションとスクリプトを再設定
+		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_pScript = m_pAction->GetpScript ( m_frame );
+	}
+
+	//スクリプトを遷移させる
+	void ExeChara::TransitScript ()
 	{
 		//今回のフレーム中はm_pActionとm_pScriptを用い、
 		//これ以降はm_actionIDとm_frameを用いない
@@ -625,6 +417,26 @@ namespace GAME
 			}
 		}
 		return NO_COMPLETE;
+	}
+
+
+	//====================================================================================
+	// 位置計算
+	void ExeChara::CalcPos ()
+	{
+		//バランス処理
+		int b = m_btlPrm.GetBalance ();
+		int sb = m_pScript->m_prmBattle.Balance_I;
+		b -= sb;
+		if ( b < 0 ) { b = 0; }
+		if ( b > BALANCE_MAX ) { b = BALANCE_MAX; }
+
+		m_btlPrm.SetBalance ( b );
+
+		//位置計算
+		m_btlPrm.CalcPos ( m_pScript );
+
+		Landing ();	//着地
 	}
 
 	//====================================================================================
@@ -764,7 +576,7 @@ namespace GAME
 		}
 
 		//ゲージ更新
-		m_dispChara.UpdateGauge ( m_playerID, m_btlPrm.GetLife (), m_btlPrm.GetDamage (), m_btlPrm.GetBalance () );
+		m_dispChara.UpdateGauge ( m_btlPrm );
 	}
 
 	//落下・着地
@@ -879,9 +691,6 @@ namespace GAME
 		{
 			m_charaRect->SetARect ( m_pScript->GetpvARect (), m_btlPrm.GetDirRight (), m_btlPrm.GetPos () );
 		}
-
-		//攻撃力設定
-//		m_power = m_pScript->GetPower ();
 	}
 
 	//当り枠設定
@@ -969,6 +778,232 @@ namespace GAME
 		m_pCharaInput = make_shared < PlayerInput > ();
 		m_pCharaInput->SetPlayer ( m_playerID );
 	}
+
+	//---------------------------------------------
+	//イベント
+
+	void ExeChara::OnDashBranch ()
+	{
+		TransitAction_Condition_I ( BRC_DASH, F );	//ダッシュ相殺・自分
+	}
+
+	//打合発生
+	void ExeChara::OnClang ( UINT nLurch, CLANG_DECISION_WL clangDecision )
+	{
+#if 0
+		//		if ( CD_LOSE == clangDecision )
+		{
+			//状態の変更
+			m_actionID = m_pChara->GetBsAction ( BA_CLANG );
+			m_frame = 0;
+		}
+#endif // 0
+		m_btlPrm.SetClang ( true );		//打合状態
+//		m_lurch = nLurch;		//のけぞり時間の設定
+		m_btlPrm.GetTmr_HitStop ()->Start ();		//ヒットストップの設定
+	}
+
+#if 0
+	//相手・攻撃 → 自分・くらい
+	//くらい状態・ダメージ処理
+	void ExeChara::OnDamaged ( int damage )
+	{
+		bool hit = true;
+		bool guard = false;
+
+		//回避判定
+#if 0
+		//攻撃中でなく、下要素が入力されているとき
+		//ダッシュ中、よろけ中なども除外する (歩きは可能)
+		if ( !IsAttacking () && !( GetActionName () == Chara::DOTTY ) )
+		{
+			if ( IsInput2E () )
+			{
+				//避けに移項
+				TransitAction ( m_pChara->GetBsAction ( Chara::AVOID ) );
+
+				//ヒットストップの設定
+				m_hitstop = 15;
+
+				//エフェクトの発生
+//				float dispGameBaseX = GetDispGameBaseX ();	//画面端による表示基準位置
+				m_dispChara.OnAvoid ( m_ptChara, m_dirRight );
+
+				//SE
+				SoundArchiver::instance ()->Play ( 2 );
+
+				//自分のバランス減少・追加分
+				int balanceDamage0 = 200 - damage;		//ダメージの逆数(L>M>H)
+				if ( m_balance < balanceDamage0 ) { balanceDamage0 = m_balance; }	//現在値以上は表示制限
+				m_balance -= balanceDamage0;
+
+				//相手のバランス減少
+				int balanceDamage = damage;		//ダメージ分バランス減少(L<M<H)
+				int balance = m_pOther->GetBalance ();
+				if ( balance < balanceDamage ) { balanceDamage = balance; }	//現在値以上は表示制限
+				m_pOther->AddbBalance ( -1 * balanceDamage );
+
+				return;
+			}
+		}
+#endif // 0
+
+		//ガード発生
+#if 0
+		//攻撃中でないとき
+		//ダッシュ中、よろけ中なども除外する (歩きは可能)
+		if ( !IsAttacking () && !IsDamaged () )
+		{
+			//上中下段　分岐処理
+			ACTION_POSTURE ap = m_pOther.lock ()->GetPosture ();
+
+			//後方向が入力されているとき
+			if ( m_pCharaInput->IsInput4 () )
+			{
+				//相手の状態で分岐
+				switch ( ap )
+				{
+				case AP_STAND:	hit = false; guard = true; break;
+				case AP_CROUCH: hit = true; guard = false; break;
+				case AP_JUMP:	hit = false; guard = true; break;
+				}
+			}
+
+			//後下方向が入力されているとき
+			if ( m_pCharaInput->IsInput1 () )
+			{
+				//相手の状態で分岐
+				switch ( ap )
+				{
+				case AP_STAND:	hit = false; guard = true; break;
+				case AP_CROUCH: hit = false; guard = true; break;
+				case AP_JUMP:	hit = true; guard = false; break;
+				}
+			}
+
+		}
+
+		//--------------------------------------------------------
+
+		//ガード成立
+		if ( guard )
+		{
+			tstring act;
+			switch ( m_pAction->GetPosture () )
+			{
+			case AP_STAND:	act.assign ( _T ( "S_Guard" ) ); break;
+			case AP_CROUCH: act.assign ( _T ( "C_Guard" ) ); break;
+			case AP_JUMP:	act.assign ( _T ( "J_Guard" ) ); break;
+			}
+			TransitAction ( m_pChara->GetActionID ( act ) );
+
+			m_FirstEf = true;				//初回のみエフェクト発生
+			m_tmrHitstop->Start ();				//ヒットストップの設定
+
+			//SE
+			SOUND->Play ( SE_Guard );
+		}
+#endif // 0
+
+		//くらい時 ( ガードをしていない ) && ( 強制変更されていない )
+		if ( hit && ! m_btlPrm.GetForcedChange () )
+		{
+			int lf = m_btlPrm.GetLife ();
+			//ダメージをライフによって補正(根性値)
+			if ( lf < LIFE_MAX * 0.5f )
+			{
+				damage = (int)( damage * ( 0.001f * ( 0.5f * LIFE_MAX + lf ) ) );
+			}
+
+			//ダメージ処理
+			if ( lf < damage ) { m_btlPrm.SetDamage ( lf ); }	//ライフ以上は表示制限
+			else { m_btlPrm.SetDamage ( damage ); }		//表示用
+
+			m_btlPrm.SetLife ( lf - damage );
+
+			//状態の変更
+#if 0
+			tstring act;
+			switch ( m_pAction->GetPosture () )
+			{
+			case AP_STAND:	act.assign ( _T ( "Damaged_L" ) ); break;
+			case AP_CROUCH: act.assign ( _T ( "C_DamagedL" ) ); break;
+			case AP_JUMP:	act.assign ( _T ( "J_DamagedL" ) ); break;
+			}
+			TransitAction ( m_pChara->GetActionID ( act ) );
+#endif // 0
+
+			//その他　効果
+			m_btlPrm.GetTmr_HitStop ()->Start ();			//ヒットストップの設定
+			m_btlPrm.SetFirstEf ( true );			//初回のみエフェクト発生
+			m_btlPrm.SetFirstSE ( true );			//初回のみSE発生
+
+		}
+	}
+#endif // 0
+
+
+	void ExeChara::OnDamaged ()
+	{
+		//相手
+		P_Script pScp = m_pOther.lock ()->m_pScript;
+
+		//-------------------------------------------------
+		//ダメージ処理
+		int damage = pScp->m_prmBattle.Power;
+
+		//ダメージをライフによって補正(根性値)
+		int lf = m_btlPrm.GetLife ();
+		if ( lf < LIFE_MAX * 0.5f )
+		{
+			damage = (int)( damage * ( 0.001f * ( 0.5f * LIFE_MAX + lf ) ) );
+		}
+
+#if 0
+		if ( lf < damage ) { m_btlPrm.SetDamage ( lf ); }	//ライフ以上は表示制限
+		else { m_btlPrm.SetDamage ( damage ); }		//表示用
+#endif // 0
+		m_btlPrm.SetLife ( lf - damage );
+
+		//-------------------------------------------------
+		//バランス処理
+		int b_e = pScp->m_prmBattle.Balance_E;
+		int bl = m_btlPrm.GetBalance ();
+		m_btlPrm.SetBalance ( bl - b_e );
+
+		//-------------------------------------------------
+		//その他　効果
+		m_btlPrm.GetTmr_HitStop ()->Start ();			//ヒットストップの設定
+		m_btlPrm.SetFirstEf ( true );			//初回のみエフェクト発生
+		m_btlPrm.SetFirstSE ( true );			//初回のみSE発生
+	}
+
+
+	//自分・攻撃 -> 相手・くらい
+	//ヒット発生(攻撃成立側)
+	void ExeChara::OnHit ()
+	{
+		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
+
+		//-----------------------------------------------------
+		//条件分岐 (相手→自分でないとスクリプトが変わってしまう)
+		TransitAction_Condition_E ( BRC_THR_E, T );	//投げ・相手
+		TransitAction_Condition_I ( BRC_THR_I, F );	//投げ・自分
+		TransitAction_Condition_E ( BRC_HIT_E, T );	//ヒット・相手
+		TransitAction_Condition_I ( BRC_HIT_I, F );	//ヒット・自分
+
+		//-----------------------------------------------------
+
+		m_btlPrm.GetTmr_HitStop ()->Start ();		//ヒットストップの設定
+	}
+
+	//エフェクトヒット発生(攻撃成立側)
+	void ExeChara::OnEfHit ()
+	{
+		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
+//		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
+	}
+
 
 }	//namespace GAME
 

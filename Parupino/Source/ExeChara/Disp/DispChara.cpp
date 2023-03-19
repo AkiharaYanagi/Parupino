@@ -68,9 +68,16 @@ namespace GAME
 
 
 	//ゲージ類更新
+#if 0
 	void DispChara::UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance )
 	{
-		m_frontEnd.UpdateGauge ( playerID, life, damage, balance );
+//		m_frontEnd.UpdateGauge ( playerID, life, damage, balance );
+	}
+#endif // 0
+
+	void DispChara::UpdateGauge ( BtlParam btlPrm )
+	{
+		m_frontEnd.UpdateGauge ( btlPrm );
 	}
 
 

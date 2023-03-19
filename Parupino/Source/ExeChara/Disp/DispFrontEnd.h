@@ -11,6 +11,7 @@
 #include "Game.h"
 #include "../../FtgMain/G_Ftg.h"
 #include "../../CharaData/Chara.h"
+#include "../BtlParam.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -20,9 +21,12 @@ namespace GAME
 
 	class DispFrontEnd
 	{
+		PLAYER_ID	m_playerID;				//プレイヤ別表示側
+
 		P_PrmRect	m_gaugeLife;			//ライフゲージ表示
 		P_PrmRect	m_gaugeFrameLife;		//ライフゲージ枠表示
 		P_PrmRect	m_gaugeDecreaseLife;	//ライフゲージ減少分表示
+		float		m_fDamage;				//ライフゲージ減少分
 
 		P_PrmRect	m_gaugeBalance;			//バランスゲージ表示
 		P_PrmRect	m_gaugeFrameBalance;	//バランスゲージ枠表示
@@ -55,8 +59,11 @@ namespace GAME
 		//ゲージ類の表示部のみ初期化
 		void LoadPlayer ( PLAYER_ID playerID );
 
+		//初期化
+		void Init ();
+
 		//ゲージ類更新
-		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
+		void UpdateGauge ( BtlParam btlPrm );
 
 #if 0
 		//ヒットストップ時間表示の更新

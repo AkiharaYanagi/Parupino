@@ -24,6 +24,7 @@ namespace GAME
 	{
 		//ƒL[“ü—Í•\¦ŒÂ”
 		static const UINT NUM_DISP_INPUT;
+		static const UINT BASE_Y;
 
 		P_PrmRect		m_bg;		//”wŒi
 

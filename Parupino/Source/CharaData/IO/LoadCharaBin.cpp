@@ -106,7 +106,7 @@ namespace GAME
 		DWORD t0 = scriptRead_Time - startTime;
 		DWORD t2 = LoadScript_Time - scriptRead_Time;
 		DWORD t3 = LoadImage_Time - LoadScript_Time;
-		DBGOUT_WND_F ( 6, _T ( "scriptRead_Time = %d, LoadScript_Time = %d, LoadImage_Time = %d" ), t0, t2, t3 );
+//		DBGOUT_WND_F ( 6, _T ( "scriptRead_Time = %d, LoadScript_Time = %d, LoadImage_Time = %d" ), t0, t2, t3 );
 	}
 
 

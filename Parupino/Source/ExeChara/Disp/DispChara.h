@@ -54,7 +54,8 @@ namespace GAME
 		void LoadPlayer ( PLAYER_ID playerID );
 
 		//ゲージ類更新
-		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
+//		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
+		void UpdateGauge ( BtlParam btlPrm );
 
 		//入力更新
 		void UpdateInput ( P_CharaInput p ) { m_dispInput.UpdateInput ( p ); }
