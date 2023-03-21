@@ -6,9 +6,6 @@ namespace ScriptEditor
 	//	アクション設定フォーム
 	//-------------------------------------------------------------
 
-	//@todo 結びつきの強さからSequenceTreeを直接参照する
-	//		Compendを介しない
-
 	public sealed partial class FormAction : EditorForm
 	{
 		//---------------------------------------------------------------------
@@ -41,8 +38,10 @@ namespace ScriptEditor
 		public DispCompend DispCompend { get; set; } = null;
 
 		//編集中アクション
-		private Action action = null;
+		private Action action = new Action ( "New_Action" );
 		
+		//@info 結びつきの強さからSequenceTreeを直接参照する
+		//		Compendを介しない
 		//シークエンスツリー
 		public SequenceTree SequenceTree { get; set; } = null;
 
@@ -75,11 +74,13 @@ namespace ScriptEditor
 			CB_Posture.SelectedItem = act.Posture;
 			TBN_HitNum.Text = act.HitNum.ToString();
 			Tbn_HitPitch.Text = act.HitPitch.ToString();
+			Tbn_Balance.Text = act.Balance.ToString();
 
 			//各コントロールに設定用のデリゲートを渡す
 			CBSL_Next.Set = a=>act.NextActionName = a.Name;
 			TBN_HitNum.SetFunc = i=>act.HitNum = i;
 			Tbn_HitPitch.SetFunc = i=>act.HitPitch = i;
+			Tbn_Balance.SetFunc = i=>act.Balance = i;
 		}
 
 		//-----------------------------------------------------------
@@ -98,7 +99,7 @@ namespace ScriptEditor
 		private void CB_Category_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			//@info ◆外部から選択アクションが変更されたときもイベントが発生する
-
+			// ->SelectionChangeCommitted()を用いる
 		}
 
 		//ドロップダウンリストから変更されて閉じたとき

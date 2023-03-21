@@ -152,27 +152,13 @@ namespace GAME
 	public:
 
 		//---------------------------------------------
-		//パラメータ取得
-
 		//各値取得
 		CHARA_NAME GetCharaName () const { return m_name; }
-
-#if 0
-		int GetPower () const
-		{
-//			return m_btlPrm.GetPower (); 
-			return m_pScript->m_prmBattle.Power;
-		}		//攻撃値取得
-#endif // 0
 		int GetLife () const { return m_btlPrm.GetLife (); }		//ライフ取得
 		ACTION_POSTURE GetPosture () const { return m_pAction->GetPosture (); }
 
 		//---------------------------------------------
 		//外部からの状態変更
-
-		//アクション指定
-		void SetAction ( tstring action_name );
-		void SetAction ( UINT action_id );
 
 		//Demo用
 		void StartGreeting ();
@@ -274,11 +260,13 @@ namespace GAME
 	//	内部関数
 	//================================================
 	private:
-		//------------------------------------------------
-		//Load
 		void MakeEfOprt ();		//エフェクト処理の生成
 
 	public:
+		//アクション指定
+		void SetAction ( tstring action_name );
+		void SetAction ( UINT action_id );
+
 		void TransitAction ();	// アクション移項
 		void TransitScript ();	//スクリプトを遷移させる
 		void EndAction ();	//アクション移項時、前アクションの最後の処理
@@ -287,7 +275,7 @@ namespace GAME
 
 	private:
 
-		void TransitAction ( UINT actionID );		//アクションの移項
+//		void TransitAction ( UINT actionID );		//アクションの移項
 		void TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
 		void TransitAction_Condition_E ( BRANCH_CONDITION CONDITION, bool forced );	//条件をチェックして移行
 		UINT Check_TransitAction_Condition ( BRANCH_CONDITION CONDITION );	//アクション移行(条件チェック)

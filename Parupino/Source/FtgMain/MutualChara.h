@@ -103,7 +103,7 @@ namespace GAME
 		UINT GetScpStop () const { return m_scpStop; };	//í‚é~
 		void SetScpStop ( UINT i ) { m_scpStop = i; };
 
-		void SetCharaState ( CHARA_STATE chst );
+//		void SetCharaState ( CHARA_STATE chst );
 
 		//èüé“
 		WINNER GetWinner () const { return m_winner; }

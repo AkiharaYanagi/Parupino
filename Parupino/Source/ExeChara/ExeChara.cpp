@@ -196,19 +196,6 @@ namespace GAME
 	//================================================
 	//	外部からの状態変更
 	//================================================
-	void ExeChara::SetAction ( tstring action_name )
-	{
-		SetAction ( m_pChara->GetActionID ( action_name ) );
-	}
-
-	void ExeChara::SetAction ( UINT action_id )
-	{
-		m_actionID = action_id;
-		m_pAction = m_pChara->GetpAction ( m_actionID );
-		m_frame = 0;
-		m_pScript = m_pAction->GetpScript ( m_frame );
-	}
-
 	void ExeChara::StartGreeting () { m_actor.StartGreeting (); }
 	void ExeChara::StartGetReady () { m_actor.StartGetReady (); }
 	void ExeChara::StartFighting () { m_actor.StartFighting (); }
@@ -338,6 +325,7 @@ namespace GAME
 
 
 	//アクションの移項(直接指定)
+#if 0
 	void ExeChara::TransitAction ( UINT actionID )
 	{
 		m_actionID = actionID;		//遷移
@@ -345,6 +333,19 @@ namespace GAME
 
 		//一時アクションとスクリプトを再設定
 		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_pScript = m_pAction->GetpScript ( m_frame );
+	}
+#endif // 0
+	void ExeChara::SetAction ( tstring action_name )
+	{
+		SetAction ( m_pChara->GetActionID ( action_name ) );
+	}
+
+	void ExeChara::SetAction ( UINT action_id )
+	{
+		m_actionID = action_id;
+		m_pAction = m_pChara->GetpAction ( m_actionID );
+		m_frame = 0;
 		m_pScript = m_pAction->GetpScript ( m_frame );
 	}
 
@@ -361,6 +362,7 @@ namespace GAME
 
 
 
+
 	//アクション移行(自身)
 	void  ExeChara::TransitAction_Condition_I ( BRANCH_CONDITION CONDITION, bool forced )
 	{
@@ -373,7 +375,7 @@ namespace GAME
 			P_Script pScr = pAct->GetpScript ( 0 );
 
 			//自身を変更
-			TransitAction ( indexAction );	//遷移
+			SetAction ( indexAction );	//遷移
 			m_btlPrm.SetForcedChange ( forced );
 		}
 	}
@@ -390,7 +392,7 @@ namespace GAME
 			P_Script pScr = pAct->GetpScript ( 0 );
 
 			//相手を変更
-			m_pOther.lock ()->TransitAction ( indexAction );	//遷移
+			m_pOther.lock ()->SetAction ( indexAction );	//遷移
 			m_pOther.lock ()->m_btlPrm.SetForcedChange ( forced );
 		}
 	}
@@ -539,21 +541,13 @@ namespace GAME
 	//ライフ判定
 	void ExeChara::CheckLife ()
 	{
-#if 0
-		//メイン状態のとき
-		if ( IsMain () )
+		//自分がライフ０
+		if ( 0 >= m_btlPrm.GetLife () )
 		{
-			//自分がライフ０
-			if ( 0 >= m_btlPrm.GetLife () )
-			{
-				//ダウン状態に強制変更
-				//m_actionID = m_pChara->GetBsAction ( BA_DOWN );
-				TransitAction ( m_actionID );
-				m_btlPrm.GetTmr_Down ()->Start ();
-				m_charaState = CHST_DOWN;
-			}
+			//ダウン状態に強制変更
+			SetAction ( ACT_DOWN );
+			m_btlPrm.GetTmr_Down ()->Start ();
 		}
-#endif // 0
 	}
 
 	//グラフィック更新
@@ -759,6 +753,7 @@ namespace GAME
 #endif // 0
 
 
+	//-------------------------------------------------------------------------------------------------
 	//入力処理
 	void ExeChara::Input ()
 	{
@@ -803,9 +798,10 @@ namespace GAME
 		m_btlPrm.GetTmr_HitStop ()->Start ();		//ヒットストップの設定
 	}
 
-#if 0
+
 	//相手・攻撃 → 自分・くらい
 	//くらい状態・ダメージ処理
+#if 0
 	void ExeChara::OnDamaged ( int damage )
 	{
 		bool hit = true;
@@ -943,6 +939,8 @@ namespace GAME
 #endif // 0
 
 
+	//相手・攻撃 → 自分・くらい
+	//くらい状態・ダメージ処理
 	void ExeChara::OnDamaged ()
 	{
 		//相手

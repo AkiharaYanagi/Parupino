@@ -35,6 +35,7 @@ namespace GAME
 	};
 #endif // 0
 
+#if 0
 	//ƒLƒƒƒ‰ó‘Ô
 	enum CHARA_STATE
 	{
@@ -47,6 +48,7 @@ namespace GAME
 		CHST_WIN,
 		CHST_WIN_END,
 	};
+#endif // 0
 
 	//‰‰oŠÔ
 	enum DEMO_TIME
@@ -63,5 +65,8 @@ namespace GAME
 		WINNER_2P,
 		WINNER_DP,
 	};
+
+	//•¶š’è”
+	const LPCTSTR ACT_DOWN = _T ( "Down" );
 }
 

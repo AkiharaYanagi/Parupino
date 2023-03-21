@@ -140,14 +140,12 @@ namespace GAME
 	void FTG_DM_Main::Do ()
 	{
 		// Ši“¬I—¹”»’è
-#if 0
-		if ( GetpMutualChara()->CheckDown () )
+		if ( GetpMutualChara()->CheckZeroLife () )
 		{
-			GetpMutualChara ()->Stop ( true );
-			GetpMutualChara ()->SetEndWait ();
+			//GetpMutualChara ()->Stop ( true );
+			//GetpMutualChara ()->SetEndWait ();
 			GetwpFtgDemoActor ().lock ()->Change_Main_To_Down ();
 		}
-#endif // 0
 	}
 
 	//-------------

@@ -40,6 +40,8 @@
 			this.TBN_HitNum = new ScriptEditor.TB_Number();
 			this.Lbl_HitPitch = new System.Windows.Forms.Label();
 			this.Tbn_HitPitch = new ScriptEditor.TB_Number();
+			this.label1 = new System.Windows.Forms.Label();
+			this.Tbn_Balance = new ScriptEditor.TB_Number();
 			this.SuspendLayout();
 			// 
 			// Lbl_Name
@@ -153,11 +155,32 @@
 			this.Tbn_HitPitch.TabIndex = 11;
 			this.Tbn_HitPitch.Text = "0";
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(17, 232);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(41, 12);
+			this.label1.TabIndex = 12;
+			this.label1.Text = "バランス";
+			// 
+			// Tbn_Balance
+			// 
+			this.Tbn_Balance.GetFunc = null;
+			this.Tbn_Balance.Location = new System.Drawing.Point(69, 229);
+			this.Tbn_Balance.Name = "Tbn_Balance";
+			this.Tbn_Balance.SetFunc = null;
+			this.Tbn_Balance.Size = new System.Drawing.Size(100, 19);
+			this.Tbn_Balance.TabIndex = 11;
+			this.Tbn_Balance.Text = "0";
+			// 
 			// FormAction
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(338, 267);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.Tbn_Balance);
 			this.Controls.Add(this.Tbn_HitPitch);
 			this.Controls.Add(this.TBN_HitNum);
 			this.Controls.Add(this.CBSL_Next);
@@ -190,5 +213,7 @@
 		private TB_Number TBN_HitNum;
 		private System.Windows.Forms.Label Lbl_HitPitch;
 		private TB_Number Tbn_HitPitch;
+		private System.Windows.Forms.Label label1;
+		private TB_Number Tbn_Balance;
 	}
 }
