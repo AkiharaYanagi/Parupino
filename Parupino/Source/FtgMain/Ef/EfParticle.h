@@ -58,7 +58,7 @@ namespace GAME
 		void On ( VEC2 center );
 	};
 
-	using P_EEfParticle = shared_ptr < EfParticle >;
+	using P_EfParticle = shared_ptr < EfParticle >;
 
 }	//namespace GAME
 

@@ -114,6 +114,8 @@ namespace GAME
 		UINT i = 0;
 		for ( P_Object pOb : *pvpObject )
 		{
+			pOb->SetValid ( T );
+			pOb->SetFadeOut ( 60 );
 			m_vPrm[i].m_pos = VEC2 ( 0, 0 );
 			m_vPrm[i].m_vel = m_vPrm[i].m_startVel;
 			//インデックス
@@ -123,7 +125,7 @@ namespace GAME
 		SetpDispBase ( G_BASE_POS () );
 		SetPos ( center );
 //		SetWait ( 60 );
-		SetFadeOut ( 60 );
+//		SetFadeOut ( 60 );
 		SetValid ( true );
 		GrpEf::On ();
 	}

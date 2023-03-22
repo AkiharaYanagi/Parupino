@@ -13,9 +13,6 @@
 #include "FtgConst.h"	
 #include "../GameMain/Param.h"
 #include "../ExeChara/ExeChara.h"
-#include "Ef/EfClang.h"
-#include "Ef/EfSpark.h"
-#include "Ef/EfParticle.h"
 #include "Decision.h"
 
 //-------------------------------------------------------------------------------------------------
@@ -29,13 +26,6 @@ namespace GAME
 		P_ExeChara		m_exeChara1;
 		P_ExeChara		m_exeChara2;
 
-		//共通エフェクト
-		P_EfClang		m_efClang;
-		P_EfSpark		m_efSpark;
-
-		//粒子
-		P_EEfParticle	m_efParticle;
-	
 		//開始ウェイト
 		UINT	m_startTimer;
 		UINT	m_startTime;

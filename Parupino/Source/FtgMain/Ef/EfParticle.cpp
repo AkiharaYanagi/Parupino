@@ -19,7 +19,7 @@ namespace GAME
 
 	EfParticle::EfParticle ()
 	{
-		AddTexture ( _T ( "Ef_Spark.png" ) );
+		AddTexture ( _T ( "Ef_Particle.png" ) );
 
 		//グラフィックオブジェクトを初期化
 		ResetObjectNum ( SPARK_NUM );
@@ -54,7 +54,7 @@ namespace GAME
 			prm.m_startVel = VEC2 ( (rndx + 5.f) * c, (rndy + 5.f) * s );
 			prm.m_vel.x = 0;
 			prm.m_vel.y = 0;
-			prm.m_G = VEC2 ( 0, 0.3f );
+			prm.m_G = VEC2 ( 0, 0 );
 
 			pOb->SetRadian ( D3DX_PI_HALF + rad_i );
 			pOb->SetValid ( false );
@@ -87,22 +87,6 @@ namespace GAME
 			VEC2 prePosMatrix = GetCalcPos ( i );
 			SetPosMatrix ( i, m_vPrm[i].m_pos );
 
-			//バウンド
-			VEC2 pos = GetCalcPos ( i );
-			if ( PLAYER_BASE_Y < pos.y )
-			{
-				m_vPrm[i].m_vel.y *= -0.8f;
-				m_vPrm[i].m_vel.x *= 0.8f;
-				SetPosMatrix ( i, prePosMatrix );
-			}
-
-			//回転
-//			float rad = D3DX_2PI / SPARK_NUM;
-//			float rad = atan2f ( m_sparkPos[i].y - prePos.y, m_sparkPos[i].x - prePos.x );
-			float rad = atan2f ( m_vPrm[i].m_pos.y - prePos.y, m_vPrm[i].m_pos.x - prePos.x );
-//			(*pvpMatrix)[i]->SetRadian ( D3DX_PI_HALF + rad * i );
-			pOb->SetRadian ( D3DX_PI_HALF + rad );
-
 			//インデックス
 			++ i;
 		}
@@ -117,6 +101,7 @@ namespace GAME
 		UINT i = 0;
 		for ( P_Object pOb : *pvpObject )
 		{
+			pOb->SetValid ( T );
 			m_vPrm[i].m_pos = VEC2 ( 0, 0 );
 			m_vPrm[i].m_vel = m_vPrm[i].m_startVel;
 			//インデックス
@@ -125,8 +110,6 @@ namespace GAME
 
 		SetpDispBase ( G_BASE_POS () );
 		SetPos ( center );
-//		SetWait ( 60 );
-		SetFadeOut ( 60 );
 		SetValid ( true );
 		GrpEf::On ();
 	}

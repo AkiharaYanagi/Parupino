@@ -28,6 +28,7 @@ namespace GAME
 		AddpTask ( m_exeChara1 );
 		AddpTask ( m_exeChara2 );
 
+		//判定
 		m_decision.SetpChara (m_exeChara1, m_exeChara2);
 
 		//ヒットストップタイマー
@@ -35,16 +36,6 @@ namespace GAME
 		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
 		AddpTask ( m_tmrHitstop );
 		m_decision.SetpHitStop ( m_tmrHitstop );
-
-		//共通エフェクト
-		m_efClang = make_shared < EfClang > ();
-		GRPLST_INSERT ( m_efClang );
-		m_efSpark = make_shared < EfSpark > ();
-		GRPLST_INSERT ( m_efSpark );
-//		m_testEf = make_shared < TestEf > ();
-//		GRPLST_INSERT ( m_testEf );
-
-		m_decision.SetpCommonEf (m_efClang, m_efSpark);
 	}
 
 	MutualChara::~MutualChara ()
