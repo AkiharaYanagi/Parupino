@@ -24,6 +24,21 @@ namespace GAME
 		//グラフィックオブジェクトを初期化
 		ResetObjectNum ( SPARK_NUM );
 
+		//ランダマイザ
+		vector < UINT > v_rnd_ui;
+		v_rnd_ui.reserve ( SPARK_NUM );
+		for ( UINT i = 0; i < SPARK_NUM; ++ i )
+		{
+			v_rnd_ui.push_back ( i );
+		}
+		for ( UINT i = 0; i < SPARK_NUM; ++ i )
+		{
+			int j = rand () % (i + 1);
+			UINT temp = v_rnd_ui [ i ];
+			v_rnd_ui [ i ] = v_rnd_ui [ j ];
+			v_rnd_ui [ j ] = temp;
+		}
+
 		//パラメータを初期化
 		PVP_Object pvpObject = GetpvpObject ();
 		UINT i = 0;
@@ -54,7 +69,7 @@ namespace GAME
 			prm.m_startVel = VEC2 ( (rndx + 5.f) * c, (rndy + 5.f) * s );
 			prm.m_vel.x = 0;
 			prm.m_vel.y = 0;
-			prm.m_G = VEC2 ( 0, 0 );
+			prm.m_G = VEC2 ( 0, 0.01f );
 
 			pOb->SetRadian ( D3DX_PI_HALF + rad_i );
 			pOb->SetValid ( false );
@@ -99,12 +114,23 @@ namespace GAME
 		//初期位置と初速をリセット
 		PVP_Object pvpObject = GetpvpObject ();
 		UINT i = 0;
+		UINT count = 0;
+		const UINT COUNT_MAX = 30;
+
 		for ( P_Object pOb : *pvpObject )
 		{
-			pOb->SetValid ( T );
-			m_vPrm[i].m_pos = VEC2 ( 0, 0 );
-			m_vPrm[i].m_vel = m_vPrm[i].m_startVel;
-			//インデックス
+			if ( ! pOb->GetValid () )
+			{
+				pOb->SetValid ( T );
+				m_vPrm[i].m_pos = VEC2 ( 0, 0 );
+				m_vPrm[i].m_vel = m_vPrm[i].m_startVel;
+				//稼働インデックス
+				++ count;
+
+				if ( count >= COUNT_MAX ) { break; }
+			}
+
+			//全体インデックス
 			++i;
 		}
 

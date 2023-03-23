@@ -113,6 +113,7 @@ namespace GAME
 	class FTG_DM_Main : public FtgDemoState
 	{
 	public:
+		void Start ();
 		void Do ();
 	};
 	using P_FTG_DM_Main = shared_ptr < FTG_DM_Main >;
@@ -170,6 +171,7 @@ namespace GAME
 		FtgDemoActor ();
 
 		void StartGreeting ();
+		void StartFighting ();
 		void Load ();
 		void Do ();
 

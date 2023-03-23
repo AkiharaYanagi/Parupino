@@ -36,7 +36,7 @@ namespace GAME
 	{
 		enum NUM
 		{
-			SPARK_NUM = 30,
+			SPARK_NUM = 300,
 		};
 		vector < PrmEfParticle >		m_vPrm;
 

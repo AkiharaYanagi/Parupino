@@ -51,7 +51,7 @@ namespace GAME
 		m_timer->Move ();
 		if ( m_timer->IsLast () )
 		{
-			GetwpFtgDemoActor ().lock()->Change_Greeting_To_GetReady ();
+			GetwpFtgDemoActor ().lock ()->Change_Greeting_To_GetReady ();
 		}
 	}
 
@@ -65,9 +65,9 @@ namespace GAME
 
 
 		m_grpClock = make_shared < GrpAcv > ();
-		m_grpClock->SetPos ( VEC2 ( 640 - 256 , 300 ) );
+		m_grpClock->SetPos ( VEC2 ( 640 - 256, 300 ) );
 		m_grpClock->SetValid ( F );
-		m_grpClock->SetZ( Z_EFF );
+		m_grpClock->SetZ ( Z_EFF );
 		GRPLST_INSERT ( m_grpClock );
 
 		tostringstream toss;
@@ -76,9 +76,9 @@ namespace GAME
 
 		for ( UINT i = 1; i < 61; ++ i )
 		{
-			toss << filename_base << std::setw ( 2 ) << std::setfill ( _T('0') ) << i << ext;
+			toss << filename_base << std::setw ( 2 ) << std::setfill ( _T ( '0' ) ) << i << ext;
 			m_grpClock->AddTexture ( toss.str () );
-			toss.str( _T("") );
+			toss.str ( _T ( "" ) );
 		}
 
 		m_timer = make_shared < Timer > ();
@@ -110,9 +110,7 @@ namespace GAME
 
 		if ( ! m_grpGetReady->GetValid () )
 		{
-			GetpMutualChara ()->StartFighting ();
-
-			GetwpFtgDemoActor ().lock()->Change_GetReady_To_Attack ();
+			GetwpFtgDemoActor ().lock ()->Change_GetReady_To_Attack ();
 		}
 	}
 
@@ -136,6 +134,10 @@ namespace GAME
 	}
 
 	//-------------
+	void FTG_DM_Main::Start ()
+	{
+		GetpMutualChara ()->StartFighting ();
+	}
 
 	void FTG_DM_Main::Do ()
 	{
@@ -215,8 +217,15 @@ namespace GAME
 
 	void FtgDemoActor::StartGreeting ()
 	{
+		mp_FtgDemo = m_Greeting;
 		GetpMutualChara ()->StartGreeting ();
 		m_Greeting->Init ();
+	}
+
+	void FtgDemoActor::StartFighting ()
+	{
+		mp_FtgDemo = m_Main;
+		m_Main->Start ();
 	}
 
 	void FtgDemoActor::Do ()
@@ -234,7 +243,9 @@ namespace GAME
 	{
 		m_GetReady->Final ();
 		m_Attack->Init ();
+
 		mp_FtgDemo = m_Main;
+		m_Main->Start ();
 	}
 
 	void FtgDemoActor::Change_Main_To_Down ()
