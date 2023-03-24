@@ -53,8 +53,8 @@ namespace GAME
 	};
 
 	using  UP_G_Ftg = unique_ptr < G_Ftg >;
-#define G_FTG_STATE	G_Ftg::inst()->GetFightingState
-#define G_FTG_STATE_SET	G_Ftg::inst()->SetFightingState
+//#define G_FTG_STATE	G_Ftg::inst()->GetFightingState
+//#define G_FTG_STATE_SET	G_Ftg::inst()->SetFightingState
 #define G_BASE_POS	G_Ftg::inst()->GetPosMutualBase
 
 }	//namespace GAME

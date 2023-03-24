@@ -122,7 +122,7 @@ namespace GAME
 			++i;
 		}
 
-		SetpDispBase ( G_BASE_POS () );
+		SetDispBase ( G_BASE_POS () );
 		SetPos ( center );
 //		SetWait ( 60 );
 //		SetFadeOut ( 60 );

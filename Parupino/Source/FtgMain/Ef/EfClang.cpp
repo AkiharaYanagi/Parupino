@@ -25,7 +25,7 @@ namespace GAME
 
 	void EfClang::On ( VEC2 center )
 	{
-		SetpDispBase ( G_BASE_POS () );
+		SetDispBase ( G_BASE_POS () );
 		SetPos ( center );
 		SetFadeOut ( 15 );
 		SetValid ( true );

@@ -22,13 +22,21 @@ namespace GAME
 	//パラメータ
 	struct PrmEfParticle
 	{
+		VEC2	m_startPos;
 		VEC2	m_pos;
 		VEC2	m_startVel;
 		VEC2	m_vel;
 		VEC2	m_G;
-		float	m_angle;
+		float	m_angle;	//[rad]
+
+		bool	m_flag;
+
 	public:
-		PrmEfParticle () : m_angle ( 0 ) {}
+		PrmEfParticle ()
+			: m_startPos ( 0, 0 ), m_pos ( 0, 0 )
+			, m_startVel ( 0, 0 ), m_vel ( 0, 0 )
+			, m_G ( 0, 0 ), m_angle ( 0 ), m_flag ( F )
+		{}
 	};
 
 	//粒子エフェクトクラス
@@ -38,7 +46,7 @@ namespace GAME
 		{
 			SPARK_NUM = 300,
 		};
-		vector < PrmEfParticle >		m_vPrm;
+		vector < PrmEfParticle >	m_vPrm;
 
 	public:
 		EfParticle ();
@@ -56,6 +64,8 @@ namespace GAME
 		
 		void Move ();
 		void On ( VEC2 center );
+
+		void Draw ();
 	};
 
 	using P_EfParticle = shared_ptr < EfParticle >;

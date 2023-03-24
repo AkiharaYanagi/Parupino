@@ -1,4 +1,4 @@
-////=================================================================================================
+//=================================================================================================
 //
 //	EfParticle ソースファイル
 //
@@ -24,7 +24,8 @@ namespace GAME
 		//グラフィックオブジェクトを初期化
 		ResetObjectNum ( SPARK_NUM );
 
-		//ランダマイザ
+		//-----------------------------------------------------
+		//角度初期化用ランダマイザ
 		vector < UINT > v_rnd_ui;
 		v_rnd_ui.reserve ( SPARK_NUM );
 		for ( UINT i = 0; i < SPARK_NUM; ++ i )
@@ -38,11 +39,12 @@ namespace GAME
 			v_rnd_ui [ i ] = v_rnd_ui [ j ];
 			v_rnd_ui [ j ] = temp;
 		}
+		//-----------------------------------------------------
 
 		//パラメータを初期化
-		PVP_Object pvpObject = GetpvpObject ();
 		UINT i = 0;
-		for ( P_Object pOb : * pvpObject )
+		PVP_Object pvpOb = GetpvpObject ();
+		for ( P_Object pOb : * GetpvpObject () )
 		{
 			PrmEfParticle prm;
 			
@@ -52,8 +54,10 @@ namespace GAME
 
 			//角度
 			float rad = D3DX_2PI / SPARK_NUM;
-			float rad_i = rad * i;
+//			float rad_i = rad * i;
+			float rad_i = rad * v_rnd_ui [ i ];
 			prm.m_angle = rad_i;
+			pOb->SetRadian ( D3DX_PI_HALF + rad_i );
 
 			//cos((近似)π/2)を制御
 			float c = cosf ( rad_i );
@@ -71,13 +75,15 @@ namespace GAME
 			prm.m_vel.y = 0;
 			prm.m_G = VEC2 ( 0, 0.01f );
 
-			pOb->SetRadian ( D3DX_PI_HALF + rad_i );
 			pOb->SetValid ( false );
+//			pOb->SetValid ( T );
 
 			m_vPrm.push_back ( prm );
 
 			++ i;
 		}
+
+		SetValid ( true );
 	}
 
 	EfParticle::~EfParticle ()
@@ -93,50 +99,76 @@ namespace GAME
 			if ( ! pOb->GetValid () ) { continue; }
 
 			//位置計算
-			VEC2 prePos = m_vPrm[i].m_pos;
+//			VEC2 prePos = m_vPrm[i].m_pos;
+
 			m_vPrm[i].m_vel += -0.03f * m_vPrm[i].m_vel;	//減衰
 			m_vPrm[i].m_vel += m_vPrm[i].m_G;
 			m_vPrm[i].m_pos += m_vPrm[i].m_vel;
 
 			//基準位置 + 補正位置 + 外部補正位置 + 個別位置
-			VEC2 prePosMatrix = GetCalcPos ( i );
+//			VEC2 prePosMatrix = GetCalcPos ( i );
+
 			SetPosMatrix ( i, m_vPrm[i].m_pos );
 
+			if ( m_vPrm [ i ].m_pos.y >= GROUND_Y )
+			{
+				pOb->SetColor ( 0xff00ff00 );
+				//pOb->SetValid ( F );
+				m_vPrm [ i ].m_flag = F;
+			}
 			//インデックス
 			++ i;
 		}
+
+		for ( UINT i = 0; i < SPARK_NUM; ++ i )
+		{
+//			( *pvpObject ) [ i ]->SetValid ( m_vPrm [ i ].m_flag );
+		}
+		
+		//相互キャラクタ位置による画面補正位置
+		SetDispBase ( G_BASE_POS () );
 
 		GrpEf::Move ();
 	}
 
 	void EfParticle::On ( VEC2 center )
 	{
+		//TRACE_F ( _T("EfParticle::On\n") );
+
 		//初期位置と初速をリセット
-		PVP_Object pvpObject = GetpvpObject ();
 		UINT i = 0;
 		UINT count = 0;
 		const UINT COUNT_MAX = 30;
 
+		PVP_Object pvpObject = GetpvpObject ();
 		for ( P_Object pOb : *pvpObject )
 		{
-			if ( ! pOb->GetValid () )
+			//非稼働状態のものを再稼働
+//			if ( ! pOb->GetValid () )
+			if ( ! m_vPrm [ i ].m_flag )
 			{
 				pOb->SetValid ( T );
-				m_vPrm[i].m_pos = VEC2 ( 0, 0 );
+				m_vPrm [ i ].m_flag = T;
+				m_vPrm [ i ].m_pos = center;
+				m_vPrm [ i ].m_startPos = center;
 				m_vPrm[i].m_vel = m_vPrm[i].m_startVel;
-				//稼働インデックス
-				++ count;
 
-				if ( count >= COUNT_MAX ) { break; }
+				//稼働インデックス
+				if ( ++ count >= COUNT_MAX ) { break; }
 			}
 
 			//全体インデックス
 			++i;
 		}
 
-		SetpDispBase ( G_BASE_POS () );
-		SetPos ( center );
-		SetValid ( true );
 		GrpEf::On ();
 	}
+
+	void EfParticle::Draw ()
+	{
+		PVP_Object pvpObject = GetpvpObject ();
+		GrpEf::Draw ();
+	}
+
+
 }

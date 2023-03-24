@@ -73,7 +73,7 @@ namespace GAME
 			P_Action pAct = aryAct [ iAct ];
 
 
-			TRACE_F ( _T ( "%d\n" ), iAct );
+			//TRACE_F ( _T ( "%d\n" ), iAct );
 
 
 			//ƒAƒNƒVƒ‡ƒ“
