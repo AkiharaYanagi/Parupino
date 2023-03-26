@@ -222,6 +222,9 @@
     <ClInclude Include="Source\ExeChara\ExeChara_State.h">
       <Filter>ExeChara</Filter>
     </ClInclude>
+    <ClInclude Include="Source\FtgMain\Ef\EfPart.h">
+      <Filter>FtgMain\Ef</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -379,6 +382,9 @@
     </ClCompile>
     <ClCompile Include="Source\ExeChara\ExeChara_Actor.cpp">
       <Filter>ExeChara</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Ef\EfPart.cpp">
+      <Filter>FtgMain\Ef</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

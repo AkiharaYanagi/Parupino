@@ -195,6 +195,7 @@
     <ClInclude Include="Source\ExeChara\Input\PlayerInput.h" />
     <ClInclude Include="Source\FtgMain\Decision.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfClang.h" />
+    <ClInclude Include="Source\FtgMain\Ef\EfPart.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfParticle.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfSpark.h" />
     <ClInclude Include="Source\FtgMain\Fighting.h" />
@@ -255,6 +256,7 @@
     <ClCompile Include="Source\ExeChara\Input\PlayerInput.cpp" />
     <ClCompile Include="Source\FtgMain\Decision.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfClang.cpp" />
+    <ClCompile Include="Source\FtgMain\Ef\EfPart.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfParticle.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfSpark.cpp" />
     <ClCompile Include="Source\FtgMain\Fighting.cpp" />
