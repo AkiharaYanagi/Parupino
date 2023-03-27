@@ -23,6 +23,7 @@
 #include "CharaRect.h"
 #include "BtlParam.h"
 #include "ExeChara_Actor.h"
+#include "../FtgMain/Ef/EfPart.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -78,6 +79,10 @@ namespace GAME
 		//ゲーム進行状態ステート
 		ExeChara_Actor	m_actor;
 
+		//------------------------------------------------
+		//粒子エフェクト
+		P_EfPart	m_efPart;
+
 
 	public:
 		ExeChara () = delete;
@@ -105,6 +110,12 @@ namespace GAME
 
 		//相手を設定
 		void SetpOther ( WP_ExeChara p ) { m_pOther = p; /*m_cpuInput.SetpExeCharaOther ( p );*/ }
+
+
+		//------------------------------------------------
+		//粒子エフェクト
+		void SetpParticle ( P_EfPart p ) { m_efPart = p; }
+
 
 		//------------------------------------------------------------
 		//パラメータ

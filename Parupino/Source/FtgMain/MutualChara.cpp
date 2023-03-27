@@ -25,6 +25,9 @@ namespace GAME
 		m_exeChara1->SetpOther ( m_exeChara2 );
 		m_exeChara2->SetpOther ( m_exeChara1 );
 
+		m_exeChara1->SetpParticle ( m_decision.GetpEfPart () );
+		m_exeChara2->SetpParticle ( m_decision.GetpEfPart () );
+
 		AddpTask ( m_exeChara1 );
 		AddpTask ( m_exeChara2 );
 
