@@ -103,6 +103,7 @@ namespace GAME
 			//インデックス
 			++ i;
 		}
+		SetDispBase ( G_BASE_POS () );
 
 		GrpEf::Move ();
 	}
@@ -122,8 +123,7 @@ namespace GAME
 			++i;
 		}
 
-		SetDispBase ( G_BASE_POS () );
-		SetPos ( center );
+		SetRevised ( center );
 //		SetWait ( 60 );
 //		SetFadeOut ( 60 );
 		SetValid ( true );

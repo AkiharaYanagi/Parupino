@@ -25,6 +25,7 @@ namespace GAME
 		EfClang ( const EfClang & rhs ) = delete;
 		~EfClang ();
 
+		void Move ();
 		void On ( VEC2 center );
 	};
 

@@ -67,8 +67,8 @@ namespace GAME
 			float s = sinf ( rad_i );
 			if ( 3.14f < rad_i && rad_i < 3.15f ) { s = 0; }
 
-			float rndx = 1.f * (rand () % 20);
-			float rndy = 1.f * (rand () % 20);
+			int rndx = rand () % 20;
+			int rndy = rand () % 20;
 
 			prm.m_startVel = VEC2 ( (rndx + 5.f) * c, (rndy + 5.f) * s );
 			prm.m_vel.x = 0;
@@ -105,17 +105,18 @@ namespace GAME
 			m_vPrm[i].m_vel += m_vPrm[i].m_G;
 			m_vPrm[i].m_pos += m_vPrm[i].m_vel;
 
+			if ( m_vPrm [ i ].m_pos.y >= GROUND_Y )
+			{
+				pOb->SetColor ( 0xff00ff00 );
+				pOb->SetValid ( F );
+				m_vPrm [ i ].m_flag = F;
+			}
+
 			//基準位置 + 補正位置 + 外部補正位置 + 個別位置
 //			VEC2 prePosMatrix = GetCalcPos ( i );
 
 			SetPosMatrix ( i, m_vPrm[i].m_pos );
 
-			if ( m_vPrm [ i ].m_pos.y >= GROUND_Y )
-			{
-				pOb->SetColor ( 0xff00ff00 );
-				//pOb->SetValid ( F );
-				m_vPrm [ i ].m_flag = F;
-			}
 			//インデックス
 			++ i;
 		}

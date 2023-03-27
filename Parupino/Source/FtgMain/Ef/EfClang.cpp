@@ -23,12 +23,17 @@ namespace GAME
 	{
 	}
 
-	void EfClang::On ( VEC2 center )
+	void EfClang::Move ()
 	{
 		SetDispBase ( G_BASE_POS () );
-		SetPos ( center );
-		SetFadeOut ( 15 );
-		SetValid ( true );
+		GrpEf::Move ();
+	}
+
+	void EfClang::On ( VEC2 center )
+	{
+		SetRevised ( center );
+		SetFadeOut ( 30 );
+		SetValid ( T );
 		GrpEf::On ();
 	}
 }

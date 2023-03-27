@@ -40,13 +40,15 @@ namespace GAME
 	};
 
 	//粒子エフェクトクラス
-	class EfPart : public GrpEf
+	class EfPart : public GrpAcv
 	{
 		enum NUM
 		{
-			SPARK_NUM = 300,
+			SPARK_NUM = 30,
+			SPARK_MAX = 300,
 		};
-		vector < PrmEfPart >	m_vPrm;
+		vector < PrmEfPart >	m_vPrm;	//パラメータ
+		vector < UINT >			mv_Rnd;	//非稼働オブジェクト数上
 
 	public:
 		EfPart ();
@@ -56,6 +58,10 @@ namespace GAME
 		void Move ();
 		void On ( VEC2 center );
 		void Draw ();
+
+	private:
+		//引数のベクタに0からN-1までの乱数を格納する
+		void Rnd_0_N ( UINT N, vector < UINT > & vec );
 	};
 
 	using P_EfPart = shared_ptr < EfPart >;
