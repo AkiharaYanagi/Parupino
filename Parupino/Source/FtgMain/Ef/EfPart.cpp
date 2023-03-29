@@ -52,7 +52,7 @@ namespace GAME
 			prm.m_startVel = VEC2 ( (rndx + 1) * c,  (rndy + 1) * s );
 			prm.m_G = VEC2( 0, 0.005f );
 
-			m_vPrm.push_back ( prm );
+			mv_Prm.push_back ( prm );
 			++ i;
 		}
 	}
@@ -86,21 +86,21 @@ namespace GAME
 		{
 //			if ( ! pOb->GetValid () ) { continue; }
 
-			m_vPrm [ i ].m_vel += m_vPrm [ i ].m_G;
-			m_vPrm [ i ].m_vel += -0.03f * m_vPrm [ i ].m_vel;	//減衰
-			m_vPrm [ i ].m_pos += m_vPrm [ i ].m_vel;
+			mv_Prm [ i ].m_vel += mv_Prm [ i ].m_G;
+			mv_Prm [ i ].m_vel += -0.03f * mv_Prm [ i ].m_vel;	//減衰
+			mv_Prm [ i ].m_pos += mv_Prm [ i ].m_vel;
 
-			if ( m_vPrm [ i ].m_pos.y >= GROUND_Y )
+			if ( mv_Prm [ i ].m_pos.y >= GROUND_Y )
 			{
 				pOb->SetValid ( F );
 			}
 
-			pOb->SetPos ( m_vPrm [ i ].m_pos + G_BASE_POS () );
+			pOb->SetPos ( mv_Prm [ i ].m_pos + G_BASE_POS () );
 
 			++ i;
 		}
 
-		//test
+		//test 個数表示
 		UINT T_count = 0;
 		for ( P_Object pOb : * GetpvpObject () )
 		{
@@ -109,8 +109,19 @@ namespace GAME
 		DBGOUT_WND_F ( 6, _T ( "T_count = %d" ), T_count );
 
 
-		//相互キャラクタ位置による画面補正位置
-		//SetDispBase ( G_BASE_POS () );
+		//重なり判定後
+		UINT i_flag = 0;
+		PVP_Object pvpOb = GetpvpObject ();
+		for ( PrmEfPart prm : mv_Prm )
+		{
+			if ( prm.m_flag )
+			{
+				( *pvpOb ) [ i_flag ]->SetValid ( F );
+			}
+
+			++ i;
+		}
+
 
 		GrpAcv::Move ();
 	}
@@ -142,8 +153,8 @@ namespace GAME
 			UINT index = vecRnd [ i ];
 			(*pvpOb) [ index ]->SetValid ( T );
 
-			m_vPrm [ index ].m_pos = center + m_vPrm [ index ].m_startPos;
-			m_vPrm [ index ].m_vel = m_vPrm [ index ].m_startVel;
+			mv_Prm [ index ].m_pos = center + mv_Prm [ index ].m_startPos;
+			mv_Prm [ index ].m_vel = mv_Prm [ index ].m_startVel;
 		}
 	}
 

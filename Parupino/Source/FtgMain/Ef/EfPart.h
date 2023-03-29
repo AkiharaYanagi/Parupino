@@ -29,7 +29,7 @@ namespace GAME
 		VEC2	m_G;
 		float	m_angle;	//[rad]
 
-		bool	m_flag;
+		bool	m_flag;		//取得フラグ
 
 	public:
 		PrmEfPart ()
@@ -44,10 +44,10 @@ namespace GAME
 	{
 		enum NUM
 		{
-			SPARK_NUM = 30,
-			SPARK_MAX = 300,
+			SPARK_NUM = 30,		//1回発生個数
+			SPARK_MAX = 300,	//最大個数
 		};
-		vector < PrmEfPart >	m_vPrm;	//パラメータ
+		vector < PrmEfPart >	mv_Prm;	//パラメータ
 		vector < UINT >			mv_Rnd;	//非稼働オブジェクト数上
 
 	public:
@@ -58,6 +58,9 @@ namespace GAME
 		void Move ();
 		void On ( VEC2 center );
 		void Draw ();
+
+
+		vector < PrmEfPart > & Getrv_Prm () { return mv_Prm; }
 
 	private:
 		//引数のベクタに0からN-1までの乱数を格納する

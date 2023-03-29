@@ -12,6 +12,7 @@
 #include "../../FtgMain/G_Ftg.h"
 #include "../../CharaData/Chara.h"
 #include "../BtlParam.h"
+#include "DispGauge.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -23,6 +24,7 @@ namespace GAME
 	{
 		PLAYER_ID	m_playerID;				//プレイヤ別表示側
 
+#if 0
 		P_PrmRect	m_gaugeLife;			//ライフゲージ表示
 		P_PrmRect	m_gaugeFrameLife;		//ライフゲージ枠表示
 		P_PrmRect	m_gaugeDecreaseLife;	//ライフゲージ減少分表示
@@ -31,6 +33,13 @@ namespace GAME
 		P_PrmRect	m_gaugeBalance;			//バランスゲージ表示
 		P_PrmRect	m_gaugeFrameBalance;	//バランスゲージ枠表示
 		P_PrmRect	m_gaugeDecreaseBalance;	//バランスゲージ減少分表示
+#endif // 0
+
+		DispGauge	m_gaugeLife;		//ライフゲージ
+		DispGauge	m_gaugeBalance;		//バランスゲージ
+		DispGauge	m_gaugeMana;		//マナゲージ
+
+
 
 #if	0
 		GrpAcv		m_grpPlayer1P;	//プレイヤー表示"1P"
@@ -56,6 +65,7 @@ namespace GAME
 		DispFrontEnd ( const DispFrontEnd & rhs ) = delete;
 		~DispFrontEnd ();
 
+		
 		//ゲージ類の表示部のみ初期化
 		void LoadPlayer ( PLAYER_ID playerID );
 

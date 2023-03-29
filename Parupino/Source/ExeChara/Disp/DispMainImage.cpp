@@ -21,7 +21,7 @@ namespace GAME
 		m_mainGraphic = make_shared < GrpApTx > ();
 
 		//test
-		GRPLST_INSERT ( m_mainGraphic );
+//		GRPLST_INSERT ( m_mainGraphic );
 
 
 	}

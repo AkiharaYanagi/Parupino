@@ -200,30 +200,6 @@ namespace GAME
 	void ExeChara::StartGetReady () { m_actor.StartGetReady (); }
 	void ExeChara::StartFighting () { m_actor.StartFighting (); }
 
-#if 0
-	//終了演出
-	void ExeChara::OnEndAct ()
-	{
-		m_charaState = CHST_WIN_WAIT;
-	}
-
-	//強制終了状態
-	void ExeChara::ForcedEnd ()
-	{
-		if ( m_btlPrm.GetLife () <= 0 )
-		{
-			m_charaState = CHST_DOWN_END;
-//			m_actionID = m_pChara->GetBsAction ( BA_DOWN );
-			TransitAction ( m_actionID );
-		}
-		else
-		{
-			m_charaState = CHST_WIN_END;
-//			m_actionID = m_pChara->GetBsAction ( BA_WIN );
-			TransitAction ( m_actionID );
-		}
-	}
-#endif // 0
 
 
 	//================================================
@@ -647,6 +623,35 @@ namespace GAME
 		m_btlPrm.SetDirRight ( iPos.x < ePos.x );
 	}
 
+	//EfPart重なり
+	void ExeChara::OverEfPart ()
+	{
+		//1p2p同時重なりは両方が取得
+
+		//当り枠を取得
+		PV_RECT pvHRect = GetpCharaRect()->GetpvHRect ();
+
+		//EF側の点集合を取得
+		vector < PrmEfPart > & vPrm = m_efPart->Getrv_Prm ();
+		
+		//重なり判定
+		for ( RECT rect : ( *pvHRect ) )
+		{
+			UINT i = 0;
+			for ( PrmEfPart prm : vPrm )
+			{
+				//重なっていたとき
+				if ( OverlapPoint ( prm.m_pos, rect ) )
+				{
+					vPrm [ i ].m_flag = T;
+
+					m_btlPrm.SetMana ( 10 );
+				}
+			}
+			++ i;
+		}
+	}
+
 
 	//-------------------------------------------------------------------------------------------------
 	//	枠設定
@@ -1002,6 +1007,30 @@ namespace GAME
 //		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
 	}
 
+#if 0
+	//終了演出
+	void ExeChara::OnEndAct ()
+	{
+		m_charaState = CHST_WIN_WAIT;
+	}
+
+	//強制終了状態
+	void ExeChara::ForcedEnd ()
+	{
+		if ( m_btlPrm.GetLife () <= 0 )
+		{
+			m_charaState = CHST_DOWN_END;
+			//			m_actionID = m_pChara->GetBsAction ( BA_DOWN );
+			TransitAction ( m_actionID );
+		}
+		else
+		{
+			m_charaState = CHST_WIN_END;
+			//			m_actionID = m_pChara->GetBsAction ( BA_WIN );
+			TransitAction ( m_actionID );
+		}
+	}
+#endif // 0
 
 }	//namespace GAME
 

@@ -152,7 +152,7 @@ namespace GAME
 
 		//---------------------------------------------
 		//˜g
-		P_CharaRect GetpCharaRect () { return m_charaRect; }		//˜gæ“¾
+		P_CharaRect GetpCharaRect () const { return m_charaRect; }		//˜gæ“¾
 
 		void SetCollisionRect ();	//[PreMove] ˆÊ’u‚©‚çÚG˜gİ’è
 		void SetRect ();			//[PostMove] ‘ŠEEUŒ‚E“–‚è ˜gİ’è
@@ -298,6 +298,8 @@ namespace GAME
 		void EffectGenerate ();		//ƒGƒtƒFƒNƒg¶¬
 		void EffectMove ();
 		void MoveTimer () { m_btlPrm.TimerMove (); }
+
+		void OverEfPart ();	//EfPartd‚È‚è
 
 	private:
 		//------------------------------------------------

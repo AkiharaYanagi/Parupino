@@ -16,12 +16,10 @@ namespace GAME
 {
 
 	DispFrontEnd::DispFrontEnd ()
-		: m_fDamage ( LIFE_MAX )
+//		: m_fDamage ( LIFE_MAX )
 	{
-		//---------------------
-		//	ゲージ類
-		//---------------------
-
+		//ゲージ類
+#if 0
 		//ライフゲージ
 		//ライフ枠
 		m_gaugeFrameLife = make_shared < PrmRect > ();
@@ -54,6 +52,36 @@ namespace GAME
 		m_gaugeBalance->SetColorN ( 0, _CLR ( 0xff40d0f0 ) );
 		m_gaugeBalance->SetColorN ( 2, _CLR ( 0xff40f0f0 ) );
 		GRPLST_INSERT ( m_gaugeBalance );
+#endif // 0
+
+		m_gaugeLife.SetPosition ( LIFE_GAUGE_X, LIFE_GAUGE_Y, LIFE_GAUGE_W, LIFE_GAUGE_H );
+		const _CLR c0L = LIFE_GAUGE_VALUE_CLR0;
+		const _CLR c1L = LIFE_GAUGE_VALUE_CLR1;
+		const _CLR c2L = LIFE_GAUGE_VALUE_CLR2;
+		const _CLR c3L = LIFE_GAUGE_VALUE_CLR3;
+		m_gaugeLife.SetColor_Value ( c0L, c1L, c2L, c3L );
+		m_gaugeLife.SetColor_Frame ( LIFE_GAUGE_FRAME_CLR );
+		m_gaugeLife.SetColor_Decrease ( LIFE_GAUGE_DECREASE_CLR );
+
+		m_gaugeBalance.SetPosition ( BALANCE_GAUGE_X, BALANCE_GAUGE_Y, BALANCE_GAUGE_W, BALANCE_GAUGE_H );
+		const _CLR c0B = BALANCE_GAUGE_VALUE_CLR0;
+		const _CLR c1B = BALANCE_GAUGE_VALUE_CLR1;
+		const _CLR c2B = BALANCE_GAUGE_VALUE_CLR2;
+		const _CLR c3B = BALANCE_GAUGE_VALUE_CLR3;
+		m_gaugeLife.SetColor_Value ( c0B, c1B, c2B, c3B );
+		m_gaugeLife.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
+		m_gaugeLife.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+
+		m_gaugeMana.SetPosition ( MANA_GAUGE_X, MANA_GAUGE_Y, MANA_GAUGE_W, MANA_GAUGE_H );
+		const _CLR c0M = MANA_GAUGE_VALUE_CLR0;
+		const _CLR c1M = MANA_GAUGE_VALUE_CLR1;
+		const _CLR c2M = MANA_GAUGE_VALUE_CLR2;
+		const _CLR c3M = MANA_GAUGE_VALUE_CLR3;
+		m_gaugeLife.SetColor_Value ( c0M, c1M, c2M, c3M );
+		m_gaugeLife.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
+		m_gaugeLife.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+
+
 #if 0
 		//プレイヤー表示
 		m_grpPlayer1P.AddTexture ( _T ( "Player_1P.png" ) );
@@ -102,6 +130,8 @@ namespace GAME
 	void DispFrontEnd::LoadPlayer ( PLAYER_ID playerID )
 	{
 		m_playerID = playerID;
+
+#if 0
 
 		float dispGameBaseX = G_BASE_POS ().x;
 		float x_l = LIFE_GAUGE_X;
@@ -160,6 +190,9 @@ namespace GAME
 			m_gaugeBalance->SetRect ( p2_bx_b, y_b, w_b, h_b );
 			m_gaugeDecreaseBalance->SetRect ( 0, 0, 0, 0 );
 		}
+
+#endif // 0
+
 #if 0
 		//ヒットストップ時間表示
 		m_gaugeHitStop.SetRect ( 0, 0, 0, 0 );
@@ -174,8 +207,10 @@ namespace GAME
 
 	void DispFrontEnd::Init ()
 	{
+#if 0
 		m_fDamage = LIFE_MAX;
 		m_gaugeDecreaseLife->SetRect ( 0, 0, 0, 0 );
+#endif // 0
 	}
 
 #if 0
@@ -237,6 +272,7 @@ namespace GAME
 
 	void DispFrontEnd::UpdateGauge ( BtlParam btlPrm )
 	{
+#if 0
 		const static float cfl = 1.f * LIFE_GAUGE_W / LIFE_MAX;		//1ライフあたりの表示長さ
 
 		//ライフ
@@ -285,6 +321,7 @@ namespace GAME
 			//			m_gaugeDecreaseBalance->SetRect ( lx2p + wb, by, wd, bh );
 			m_gaugeBalance->SetRect ( bx2p, by, b, bh );
 		}
+#endif // 0
 
 		//硬直時間表示
 #if 0
