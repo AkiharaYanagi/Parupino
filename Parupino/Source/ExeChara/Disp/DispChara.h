@@ -14,7 +14,6 @@
 #include "../../CharaData/Chara.h"
 #include "DispMainImage.h"
 #include "DispRect.h"
-#include "../CharaRect.h"
 #include "DispFrontEnd.h"
 #include "DispInput.h"
 
@@ -54,7 +53,6 @@ namespace GAME
 		void LoadPlayer ( PLAYER_ID playerID );
 
 		//ゲージ類更新
-//		void UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance );
 		void UpdateGauge ( BtlParam btlPrm );
 
 		//入力更新

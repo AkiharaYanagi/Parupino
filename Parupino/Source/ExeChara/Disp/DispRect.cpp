@@ -58,7 +58,7 @@ namespace GAME
 		InitRect ();
 
 		//----------------------------------------------------
-		//@info		GRPLSTに動的に追加するときは既にLoad()されているので、
+		//@info		GRPLSTに動的に追加するときは既に全体がLoad()されているので、
 		//			明示的にLoad()が必要
 		//----------------------------------------------------
 
@@ -140,7 +140,8 @@ namespace GAME
 			float y = (float)r.top;
 			float w = (float)( r.right - r.left );
 			float h = (float)( r.bottom - r.top );
-			p->SetRect ( x, y, w, h );
+//			p->SetRect ( x, y, w, h );
+			p->SetRect ( 100, 110, 200, 300 );
 			++ i;
 		}
 	}

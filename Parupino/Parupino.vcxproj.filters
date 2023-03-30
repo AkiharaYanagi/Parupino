@@ -159,12 +159,6 @@
     <ClInclude Include="Source\GameMain\GameConst.h">
       <Filter>GameMain</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ExeChara\CharaRect.h">
-      <Filter>ExeChara\Rect</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ExeChara\Disp\DispRect.h">
-      <Filter>ExeChara\Rect</Filter>
-    </ClInclude>
     <ClInclude Include="Source\FtgMain\Ef\EfClang.h">
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
@@ -226,6 +220,12 @@
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
     <ClInclude Include="Source\ExeChara\Disp\DispGauge.h">
+      <Filter>ExeChara\Disp</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ExeChara\Rect\CharaRect.h">
+      <Filter>ExeChara\Rect</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ExeChara\Disp\DispRect.h">
       <Filter>ExeChara\Disp</Filter>
     </ClInclude>
   </ItemGroup>
@@ -323,12 +323,6 @@
     <ClCompile Include="Source\GameMain\WinMain.cpp">
       <Filter>GameMain</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ExeChara\CharaRect.cpp">
-      <Filter>ExeChara\Rect</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ExeChara\Disp\DispRect.cpp">
-      <Filter>ExeChara\Rect</Filter>
-    </ClCompile>
     <ClCompile Include="Source\FtgMain\Ef\EfClang.cpp">
       <Filter>FtgMain\Ef</Filter>
     </ClCompile>
@@ -390,6 +384,12 @@
       <Filter>FtgMain\Ef</Filter>
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispGauge.cpp">
+      <Filter>ExeChara\Disp</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ExeChara\Rect\CharaRect.cpp">
+      <Filter>ExeChara\Rect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ExeChara\Disp\DispRect.cpp">
       <Filter>ExeChara\Disp</Filter>
     </ClCompile>
   </ItemGroup>

@@ -12,7 +12,7 @@
 #include "Game.h"
 #include "../../CharaData/Chara.h"
 #include "DispEffect.h"
-#include "../CharaRect.h"
+#include "../Rect/CharaRect.h"
 
 //-------------------------------------------------------------------------------------------------
 // éŒ¾

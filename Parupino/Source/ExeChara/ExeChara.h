@@ -20,7 +20,7 @@
 #include "Disp/DispChara.h"
 #include "Input/CharaInput.h"
 #include "Effect/OperateEffect.h"
-#include "CharaRect.h"
+#include "Rect/CharaRect.h"
 #include "BtlParam.h"
 #include "ExeChara_Actor.h"
 #include "../FtgMain/Ef/EfPart.h"

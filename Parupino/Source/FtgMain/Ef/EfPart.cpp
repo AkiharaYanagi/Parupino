@@ -17,7 +17,7 @@ namespace GAME
 	EfPart::EfPart ()
 	{
 		AddTexture ( _T ( "Ef_Particle.png" ) );
-		SetZ ( Z_EFF );
+		SetZ ( Z_EFB );
 		SetValid ( T );
 
 		mv_Rnd.resize ( SPARK_MAX );
@@ -106,7 +106,7 @@ namespace GAME
 		{
 			T_count += pOb->GetValid () ? 1 : 0;
 		}
-		DBGOUT_WND_F ( 6, _T ( "T_count = %d" ), T_count );
+//		DBGOUT_WND_F ( 6, _T ( "T_count = %d" ), T_count );
 
 
 		//d‚È‚è”»’èŒã

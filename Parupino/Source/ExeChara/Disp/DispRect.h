@@ -11,7 +11,7 @@
 #include "Game.h"
 #include "../../FtgMain/G_Ftg.h"
 #include "../../GameMain/GameConst.h"
-#include "../CharaRect.h"
+#include "../Rect/CharaRect.h"
 
 //-------------------------------------------------------------------------------------------------
 // êÈåæ

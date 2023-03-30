@@ -68,18 +68,18 @@ namespace GAME
 		const _CLR c1B = BALANCE_GAUGE_VALUE_CLR1;
 		const _CLR c2B = BALANCE_GAUGE_VALUE_CLR2;
 		const _CLR c3B = BALANCE_GAUGE_VALUE_CLR3;
-		m_gaugeLife.SetColor_Value ( c0B, c1B, c2B, c3B );
-		m_gaugeLife.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
-		m_gaugeLife.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+		m_gaugeBalance.SetColor_Value ( c0B, c1B, c2B, c3B );
+		m_gaugeBalance.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
+		m_gaugeBalance.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
 
 		m_gaugeMana.SetPosition ( MANA_GAUGE_X, MANA_GAUGE_Y, MANA_GAUGE_W, MANA_GAUGE_H );
 		const _CLR c0M = MANA_GAUGE_VALUE_CLR0;
 		const _CLR c1M = MANA_GAUGE_VALUE_CLR1;
 		const _CLR c2M = MANA_GAUGE_VALUE_CLR2;
 		const _CLR c3M = MANA_GAUGE_VALUE_CLR3;
-		m_gaugeLife.SetColor_Value ( c0M, c1M, c2M, c3M );
-		m_gaugeLife.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
-		m_gaugeLife.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+		m_gaugeMana.SetColor_Value ( c0M, c1M, c2M, c3M );
+		m_gaugeMana.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
+		m_gaugeMana.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
 
 
 #if 0
@@ -130,7 +130,10 @@ namespace GAME
 	void DispFrontEnd::LoadPlayer ( PLAYER_ID playerID )
 	{
 		m_playerID = playerID;
-
+		
+		m_gaugeLife.LoadPlayer ( playerID );
+		m_gaugeBalance.LoadPlayer ( playerID );
+		m_gaugeMana.LoadPlayer ( playerID );
 #if 0
 
 		float dispGameBaseX = G_BASE_POS ().x;

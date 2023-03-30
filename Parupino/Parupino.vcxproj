@@ -178,7 +178,6 @@
     <ClInclude Include="Source\CharaSele\CharaSele.h" />
     <ClInclude Include="Source\CharaSele\CharaSeleConst.h" />
     <ClInclude Include="Source\ExeChara\BtlParam.h" />
-    <ClInclude Include="Source\ExeChara\CharaRect.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispChara.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispFrontEnd.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispGauge.h" />
@@ -194,6 +193,7 @@
     <ClInclude Include="Source\ExeChara\Input\CharaInput.h" />
     <ClInclude Include="Source\ExeChara\Input\CPUInput.h" />
     <ClInclude Include="Source\ExeChara\Input\PlayerInput.h" />
+    <ClInclude Include="Source\ExeChara\Rect\CharaRect.h" />
     <ClInclude Include="Source\FtgMain\Decision.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfClang.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfPart.h" />
@@ -240,7 +240,6 @@
     <ClCompile Include="Source\CharaData\Sequence.cpp" />
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
     <ClCompile Include="Source\ExeChara\BtlParam.cpp" />
-    <ClCompile Include="Source\ExeChara\CharaRect.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispChara.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispFrontEnd.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispGauge.cpp" />
@@ -256,6 +255,7 @@
     <ClCompile Include="Source\ExeChara\Input\CharaInput.cpp" />
     <ClCompile Include="Source\ExeChara\Input\CPUInput.cpp" />
     <ClCompile Include="Source\ExeChara\Input\PlayerInput.cpp" />
+    <ClCompile Include="Source\ExeChara\Rect\CharaRect.cpp" />
     <ClCompile Include="Source\FtgMain\Decision.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfClang.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfPart.cpp" />

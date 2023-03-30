@@ -16,14 +16,11 @@ namespace GAME
 {
 	DispChara::DispChara ()
 	{
-		//@info Grphic類はGRPLSTに渡すので、その上位クラスはポインタでなく実体を保持
-
 		//影
 		m_grpShadow = make_shared < GrpAcv > ();
 		m_grpShadow->AddTexture ( _T("shadow.png") );
 		m_grpShadow->SetZ ( Z_SHADOW );
 		GRPLST_INSERT ( m_grpShadow );
-
 	}
 
 	DispChara::~DispChara ()
@@ -68,13 +65,6 @@ namespace GAME
 
 
 	//ゲージ類更新
-#if 0
-	void DispChara::UpdateGauge ( PLAYER_ID playerID, int life, int damage, int balance )
-	{
-//		m_frontEnd.UpdateGauge ( playerID, life, damage, balance );
-	}
-#endif // 0
-
 	void DispChara::UpdateGauge ( BtlParam btlPrm )
 	{
 		m_frontEnd.UpdateGauge ( btlPrm );
