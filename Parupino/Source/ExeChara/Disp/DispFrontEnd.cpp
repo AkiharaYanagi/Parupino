@@ -326,6 +326,15 @@ namespace GAME
 		}
 #endif // 0
 
+
+
+		m_gaugeLife.Update ( btlPrm.GetLife () );
+		m_gaugeBalance.Update ( btlPrm.GetBalance () );
+		m_gaugeMana.Update ( btlPrm.GetMana () );
+
+
+
+
 		//çdíºéûä‘ï\é¶
 #if 0
 		static bool b2 = true;

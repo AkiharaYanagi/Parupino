@@ -140,8 +140,7 @@ namespace GAME
 			float y = (float)r.top;
 			float w = (float)( r.right - r.left );
 			float h = (float)( r.bottom - r.top );
-//			p->SetRect ( x, y, w, h );
-			p->SetRect ( 100, 110, 200, 300 );
+			p->SetRect ( x, y, w, h );
 			++ i;
 		}
 	}

@@ -96,6 +96,11 @@ namespace GAME
 
 	void DispGauge::Update ( UINT value )
 	{
+		float x = m_base_x;
+		float y = m_base_y;
+		float w = m_base_w;
+		float h = m_base_h;
+
 		if ( value < m_d )
 		{
 			m_d -= 10;
@@ -103,9 +108,12 @@ namespace GAME
 
 		if ( PLAYER_ID_1 == m_playerID )
 		{
+			m_Value->SetRect ( x, y, w, h );
 		}
 		else if ( PLAYER_ID_2 == m_playerID )
 		{
+			float p2_bx_l = GAME_WINDOW_WIDTH - x - w;
+			m_Value->SetRect ( p2_bx_l, y, w, h );
 		}
 	}
 
