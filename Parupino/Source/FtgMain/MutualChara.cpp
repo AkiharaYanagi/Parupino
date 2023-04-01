@@ -332,11 +332,24 @@ namespace GAME
 	}
 
 	//------------------------------------------------------
-	//2P‚ðCPU‘€ìØ‘Ö
+	//CPU‘€ìØ‘Ö
 	void MutualChara::SwithcCPU ()
 	{
 		static bool cpu1 = F;
 		static bool cpu2 = F;
+
+		if ( ::GetAsyncKeyState ( '6' ) & 0x0001 )
+		{
+			cpu1 ^= T;
+			if ( cpu1 )
+			{
+				m_exeChara1->ControlCPU ();
+			}
+			else
+			{
+				m_exeChara1->ControlPlayer ();
+			}
+		}
 
 		if ( ::GetAsyncKeyState ( '7' ) & 0x0001 )
 		{

@@ -96,24 +96,31 @@ namespace GAME
 
 	void DispGauge::Update ( UINT value )
 	{
+		const static float cfl = 1.f * LIFE_GAUGE_W / LIFE_MAX;		//1ライフあたりの表示長さ
+
+		float ln = cfl * value;	//表示長さ
+		float ln_d = cfl * m_d;	//ダメージ表示長さ
+
 		float x = m_base_x;
 		float y = m_base_y;
 		float w = m_base_w;
 		float h = m_base_h;
 
-		if ( value < m_d )
+		if ( ln < ln_d )
 		{
 			m_d -= 10;
 		}
 
 		if ( PLAYER_ID_1 == m_playerID )
 		{
-			m_Value->SetRect ( x, y, w, h );
+			m_Decrease->SetRect ( x + w - ln_d, y, ln_d, h );
+			m_Value->SetRect ( x + w - ln, y, ln, h );
 		}
 		else if ( PLAYER_ID_2 == m_playerID )
 		{
 			float p2_bx_l = GAME_WINDOW_WIDTH - x - w;
-			m_Value->SetRect ( p2_bx_l, y, w, h );
+			m_Decrease->SetRect ( p2_bx_l, y, ln_d, h );
+			m_Value->SetRect ( p2_bx_l, y, ln, h );
 		}
 	}
 

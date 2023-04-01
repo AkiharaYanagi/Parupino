@@ -54,6 +54,9 @@ namespace GAME
 		//初期化
 		void Init ();
 
+		//減少分表示
+		void OffDecrease () { m_Decrease->SetValid ( F ); }
+
 		//値の更新
 		void Update ( UINT value );
 	};

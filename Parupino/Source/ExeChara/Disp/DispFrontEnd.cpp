@@ -71,6 +71,7 @@ namespace GAME
 		m_gaugeBalance.SetColor_Value ( c0B, c1B, c2B, c3B );
 		m_gaugeBalance.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
 		m_gaugeBalance.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+		m_gaugeBalance.OffDecrease ();
 
 		m_gaugeMana.SetPosition ( MANA_GAUGE_X, MANA_GAUGE_Y, MANA_GAUGE_W, MANA_GAUGE_H );
 		const _CLR c0M = MANA_GAUGE_VALUE_CLR0;
@@ -80,6 +81,7 @@ namespace GAME
 		m_gaugeMana.SetColor_Value ( c0M, c1M, c2M, c3M );
 		m_gaugeMana.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
 		m_gaugeMana.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+		m_gaugeMana.OffDecrease ();
 
 
 #if 0
