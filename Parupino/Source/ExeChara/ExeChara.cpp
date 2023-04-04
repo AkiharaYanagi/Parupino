@@ -635,21 +635,28 @@ namespace GAME
 		vector < PrmEfPart > & vPrm = m_efPart->Getrv_Prm ();
 		
 		//重なり判定
-		for ( RECT rect : ( *pvHRect ) )
+		UINT count = 0;
+		UINT i = 0;
+		for ( PrmEfPart prm : vPrm )
 		{
-			UINT i = 0;
-			for ( PrmEfPart prm : vPrm )
+			if ( prm.m_pOb->GetValid () )
 			{
-				//重なっていたとき
-				if ( OverlapPoint ( prm.m_pos, rect ) )
+				for ( RECT rect : ( *pvHRect ) )
 				{
-					vPrm [ i ].m_flag = T;
-
-					m_btlPrm.SetMana ( 10 );
+					//重なっていたとき
+					if ( OverlapPoint ( prm.m_pos, rect ) )
+					{
+						vPrm [ i ].m_gotten = T;
+						++count;
+						break;	//RECTのループを抜け、EfPartの点を続行
+					}
 				}
 			}
+
 			++ i;
 		}
+
+		UpMana ( 1 * count );
 	}
 
 

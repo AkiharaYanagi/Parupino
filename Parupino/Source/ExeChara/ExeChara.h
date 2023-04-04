@@ -115,7 +115,7 @@ namespace GAME
 		//------------------------------------------------
 		//粒子エフェクト
 		void SetpParticle ( P_EfPart p ) { m_efPart = p; }
-
+		void UpMana ( UINT n ) { m_btlPrm.SetMana ( m_btlPrm.GetMana () + 100 * n ); }
 
 		//------------------------------------------------------------
 		//パラメータ
