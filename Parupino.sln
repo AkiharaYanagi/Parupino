@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.1401
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Parupino", "Parupino\Parupino.vcxproj", "{22DC3A4C-68DE-4882-93CF-90A341A1B1C4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1300661-3730-482A-95BD-7EE2168C1D40} = {F1300661-3730-482A-95BD-7EE2168C1D40}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameSettings", "GameSettings\GameSettings.csproj", "{C99B1490-67DD-49BF-8EDD-DF8CC601E671}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CharaData", "CharaData\CharaData.vcxproj", "{F1300661-3730-482A-95BD-7EE2168C1D40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +44,16 @@ Global
 		{C99B1490-67DD-49BF-8EDD-DF8CC601E671}.Release|x64.Build.0 = Release|Any CPU
 		{C99B1490-67DD-49BF-8EDD-DF8CC601E671}.Release|x86.ActiveCfg = Release|x86
 		{C99B1490-67DD-49BF-8EDD-DF8CC601E671}.Release|x86.Build.0 = Release|x86
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Debug|x64.ActiveCfg = Debug|x64
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Debug|x64.Build.0 = Debug|x64
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Debug|x86.ActiveCfg = Debug|Win32
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Debug|x86.Build.0 = Debug|Win32
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Release|Any CPU.ActiveCfg = Release|Win32
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Release|x64.ActiveCfg = Release|x64
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Release|x64.Build.0 = Release|x64
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Release|x86.ActiveCfg = Release|Win32
+		{F1300661-3730-482A-95BD-7EE2168C1D40}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

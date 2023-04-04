@@ -11,12 +11,11 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
+#include "CharaData.h"
 #include "../GameMain/GameConst.h"
 #include "../GameMain/Param.h"
 #include "../FtgMain/G_Ftg.h"
 #include "../FtgMain/FtgConst.h"
-#include "../CharaData/Chara.h"
-#include "../CharaData/IO/LoadChara.h"
 #include "Disp/DispChara.h"
 #include "Input/CharaInput.h"
 #include "Effect/OperateEffect.h"

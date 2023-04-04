@@ -155,27 +155,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\CharaData\Action.h" />
-    <ClInclude Include="Source\CharaData\Behavior.h" />
-    <ClInclude Include="Source\CharaData\Branch.h" />
-    <ClInclude Include="Source\CharaData\Chara.h" />
-    <ClInclude Include="Source\CharaData\Chara_Const.h" />
-    <ClInclude Include="Source\CharaData\Command.h" />
-    <ClInclude Include="Source\CharaData\Compend.h" />
-    <ClInclude Include="Source\CharaData\Effect.h" />
-    <ClInclude Include="Source\CharaData\EffectGenerate.h" />
-    <ClInclude Include="Source\CharaData\IO\IOCharaDefine.h" />
-    <ClInclude Include="Source\CharaData\IO\LoadChara.h" />
-    <ClInclude Include="Source\CharaData\IO\LoadCharaBin.h" />
-    <ClInclude Include="Source\CharaData\IO\LoadCharaBinFunc.h" />
-    <ClInclude Include="Source\CharaData\IO\LoadCharaBinUtl.h" />
-    <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h" />
-    <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h" />
-    <ClInclude Include="Source\CharaData\Route.h" />
-    <ClInclude Include="Source\CharaData\Script.h" />
-    <ClInclude Include="Source\CharaData\ScriptParam_Battle.h" />
-    <ClInclude Include="Source\CharaData\ScriptParam_Staging.h" />
-    <ClInclude Include="Source\CharaData\Sequence.h" />
     <ClInclude Include="Source\CharaSele\CharaSele.h" />
     <ClInclude Include="Source\CharaSele\CharaSeleConst.h" />
     <ClInclude Include="Source\ExeChara\BtlParam.h" />
@@ -220,25 +199,6 @@
     <ClInclude Include="Source\Training\Training.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\CharaData\Action.cpp" />
-    <ClCompile Include="Source\CharaData\Behavior.cpp" />
-    <ClCompile Include="Source\CharaData\Branch.cpp" />
-    <ClCompile Include="Source\CharaData\Chara.cpp" />
-    <ClCompile Include="Source\CharaData\Command.cpp" />
-    <ClCompile Include="Source\CharaData\Compend.cpp" />
-    <ClCompile Include="Source\CharaData\Effect.cpp" />
-    <ClCompile Include="Source\CharaData\EffectGenerate.cpp" />
-    <ClCompile Include="Source\CharaData\IO\LoadChara.cpp" />
-    <ClCompile Include="Source\CharaData\IO\LoadCharaBin.cpp" />
-    <ClCompile Include="Source\CharaData\IO\LoadCharaBinFunc.cpp" />
-    <ClCompile Include="Source\CharaData\IO\LoadCharaBinUtl.cpp" />
-    <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp" />
-    <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp" />
-    <ClCompile Include="Source\CharaData\Route.cpp" />
-    <ClCompile Include="Source\CharaData\Script.cpp" />
-    <ClCompile Include="Source\CharaData\ScriptParam_Battle.cpp" />
-    <ClCompile Include="Source\CharaData\ScriptParam_Staging.cpp" />
-    <ClCompile Include="Source\CharaData\Sequence.cpp" />
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
     <ClCompile Include="Source\ExeChara\BtlParam.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispChara.cpp" />

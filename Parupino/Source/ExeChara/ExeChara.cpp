@@ -8,7 +8,6 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "ExeChara.h"
-#include "..\CharaData\IO\LoadCharaBin.h"
 #include "Input/PlayerInput.h"
 #include "Input/CPUInput.h"
 

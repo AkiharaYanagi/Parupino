@@ -9,7 +9,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
-#include "../../CharaData/Chara.h"
+#include "Chara.h"
 #include "../../FtgMain/G_Ftg.h"
 #include "../Disp/DispRect.h"
 

@@ -22,9 +22,6 @@
     <Filter Include="ExeChara\Input">
       <UniqueIdentifier>{25cbf4d3-66be-4015-bc92-708f640a155d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CharaData">
-      <UniqueIdentifier>{a99df77d-0ad7-47dc-a8a0-590cb232af59}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CharaSele">
       <UniqueIdentifier>{bf651318-b4a3-4e99-8fdc-d224b413ef79}</UniqueIdentifier>
     </Filter>
@@ -33,9 +30,6 @@
     </Filter>
     <Filter Include="ExeChara\Rect">
       <UniqueIdentifier>{f0ce1179-119e-447d-ac75-8d869a43e991}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CharaIO">
-      <UniqueIdentifier>{0a60d0b2-bced-43ac-91c1-5b0ebbb44cb9}</UniqueIdentifier>
     </Filter>
     <Filter Include="GameMain\Title">
       <UniqueIdentifier>{097359c8-d7c9-4a8e-a189-bf6d78c02165}</UniqueIdentifier>
@@ -90,42 +84,6 @@
     <ClInclude Include="Source\ExeChara\Effect\OperateEffect.h">
       <Filter>ExeChara\Effect</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CharaData\Branch.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Chara.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Command.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Effect.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\EffectGenerate.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Script.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Sequence.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Action.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Behavior.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\LoadChara.h">
-      <Filter>CharaIO</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\LoadCharaUtl.h">
-      <Filter>CharaIO</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\IOCharaDefine.h">
-      <Filter>CharaIO</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CharaSele\CharaSele.h">
       <Filter>CharaSele</Filter>
     </ClInclude>
@@ -168,15 +126,6 @@
     <ClInclude Include="Source\FtgMain\Ef\EfSpark.h">
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CharaData\Compend.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Route.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\LoadCharaFunc.h">
-      <Filter>CharaIO</Filter>
-    </ClInclude>
     <ClInclude Include="Source\ExeChara\Disp\DispInput.h">
       <Filter>ExeChara\Disp</Filter>
     </ClInclude>
@@ -191,21 +140,6 @@
     </ClInclude>
     <ClInclude Include="Source\ExeChara\Disp\DispFrontEnd.h">
       <Filter>ExeChara\Disp</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\LoadCharaBin.h">
-      <Filter>CharaIO</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\LoadCharaBinFunc.h">
-      <Filter>CharaIO</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\ScriptParam_Battle.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\ScriptParam_Staging.h">
-      <Filter>CharaData</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\IO\LoadCharaBinUtl.h">
-      <Filter>CharaIO</Filter>
     </ClInclude>
     <ClInclude Include="Source\FtgMain\FtgDemo.h">
       <Filter>FtgMain</Filter>
@@ -227,9 +161,6 @@
     </ClInclude>
     <ClInclude Include="Source\ExeChara\Disp\DispRect.h">
       <Filter>ExeChara\Disp</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CharaData\Chara_Const.h">
-      <Filter>CharaData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -275,39 +206,6 @@
     <ClCompile Include="Source\ExeChara\Effect\OperateEffect.cpp">
       <Filter>ExeChara\Effect</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CharaData\Branch.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Chara.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Command.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Effect.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\EffectGenerate.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Script.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Sequence.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Action.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Behavior.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\IO\LoadChara.cpp">
-      <Filter>CharaIO</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\IO\LoadCharaUtl.cpp">
-      <Filter>CharaIO</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CharaSele\CharaSele.cpp">
       <Filter>CharaSele</Filter>
     </ClCompile>
@@ -335,15 +233,6 @@
     <ClCompile Include="Source\FtgMain\Ef\EfSpark.cpp">
       <Filter>FtgMain\Ef</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CharaData\Route.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\Compend.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\IO\LoadCharaFunc.cpp">
-      <Filter>CharaIO</Filter>
-    </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispInput.cpp">
       <Filter>ExeChara\Disp</Filter>
     </ClCompile>
@@ -358,21 +247,6 @@
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispFrontEnd.cpp">
       <Filter>ExeChara\Disp</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\IO\LoadCharaBin.cpp">
-      <Filter>CharaIO</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\IO\LoadCharaBinFunc.cpp">
-      <Filter>CharaIO</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\ScriptParam_Staging.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\ScriptParam_Battle.cpp">
-      <Filter>CharaData</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CharaData\IO\LoadCharaBinUtl.cpp">
-      <Filter>CharaIO</Filter>
     </ClCompile>
     <ClCompile Include="Source\FtgMain\FtgDemo.cpp">
       <Filter>FtgMain</Filter>
