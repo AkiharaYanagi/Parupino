@@ -12,6 +12,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
 #include "../GameMain/GameConst.h"
+#include "Chara_Const.h"
 #include "Action.h"
 #include "Effect.h"
 #include "Behavior.h"

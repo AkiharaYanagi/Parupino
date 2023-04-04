@@ -228,6 +228,9 @@
     <ClInclude Include="Source\ExeChara\Disp\DispRect.h">
       <Filter>ExeChara\Disp</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CharaData\Chara_Const.h">
+      <Filter>CharaData</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">

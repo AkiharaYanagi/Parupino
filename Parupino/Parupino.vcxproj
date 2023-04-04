@@ -159,6 +159,7 @@
     <ClInclude Include="Source\CharaData\Behavior.h" />
     <ClInclude Include="Source\CharaData\Branch.h" />
     <ClInclude Include="Source\CharaData\Chara.h" />
+    <ClInclude Include="Source\CharaData\Chara_Const.h" />
     <ClInclude Include="Source\CharaData\Command.h" />
     <ClInclude Include="Source\CharaData\Compend.h" />
     <ClInclude Include="Source\CharaData\Effect.h" />
