@@ -655,7 +655,7 @@ namespace GAME
 			++ i;
 		}
 
-		UpMana ( 1 * count );
+		m_btlPrm.AddMana ( 100 * count );
 	}
 
 

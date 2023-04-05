@@ -42,10 +42,11 @@ namespace GAME
 		//------------------------------------------------
 		//基本データ
 		P_Chara			m_pChara;		//キャラデータ
-		PLAYER_ID		m_playerID;		//プレイヤーID
-		CHARA_NAME		m_name;			//キャラ名
 		WP_ExeChara		m_pOther;		//相手キャラ(循環参照なのでweak_ptr)
+
+		PLAYER_ID		m_playerID;		//プレイヤーID
 		PLAYER_MODE		m_playerMode;	//プレイヤーモード(人,CPU,ネットワーク)
+		CHARA_NAME		m_name;			//キャラ名
 
 		//------------------------------------------------
 		//表示
@@ -64,7 +65,7 @@ namespace GAME
 
 		//------------------------------------------------
 		//枠
-		P_CharaRect		m_charaRect;	//枠
+		P_CharaRect		m_charaRect;	//枠セット
 
 		//------------------------------------------------
 		//パラメータ
@@ -79,7 +80,7 @@ namespace GAME
 		ExeChara_Actor	m_actor;
 
 		//------------------------------------------------
-		//粒子エフェクト
+		//粒子エフェクト(参照)
 		P_EfPart	m_efPart;
 
 
@@ -111,15 +112,10 @@ namespace GAME
 		void SetpOther ( WP_ExeChara p ) { m_pOther = p; /*m_cpuInput.SetpExeCharaOther ( p );*/ }
 
 
-		//------------------------------------------------
-		//粒子エフェクト
-		void SetpParticle ( P_EfPart p ) { m_efPart = p; }
-		void UpMana ( UINT n ) { m_btlPrm.SetMana ( m_btlPrm.GetMana () + 100 * n ); }
-
-		//------------------------------------------------------------
 		//パラメータ
 
 
+		//------------------------------------------------------------
 
 		//@todo スクリプトの持つ　ScriptParam_Battle と ExeCharaの持つ実効値 BtlPrm の整理
 
@@ -135,6 +131,10 @@ namespace GAME
 		void BackPtX () { m_btlPrm.BackPtX (); }
 		void BackMoveX ();
 		void LookOther ();	//相手の方向を向く
+
+		//------------------------------------------------
+		//粒子エフェクト
+		void SetpParticle ( P_EfPart p ) { m_efPart = p; }
 
 		//---------------------------------------------
 		//入力処理

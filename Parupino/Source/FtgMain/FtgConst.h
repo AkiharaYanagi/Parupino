@@ -167,6 +167,7 @@ namespace GAME
 
 		//ÉQÅ[ÉWóﬁ
 		LIFE_MAX = 10000,
+		LIFE_START = 10000,
 
 		BALANCE_MAX = 10000,
 		BALANCE_START = 8000,
