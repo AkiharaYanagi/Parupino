@@ -247,24 +247,29 @@ namespace GAME
 
 		// [] エフェクト生成
 		byte nIdEfGnrt = buf [ pos ++ ];
-		unique_ptr < EffectGenerate [] > aryEfGnrt = make_unique < EffectGenerate [] > ( nIdEfGnrt );
 		for ( UINT i = 0; i < nIdEfGnrt; ++ i )
 		{
+			//設定用
+			P_EfGnrt pEfGnrt = make_shared < EffectGenerate > ();
+
 			//エフェクトID
-			aryEfGnrt [ i ].SetIndex ( (UINT)buf [ pos ++ ] );
+			pEfGnrt->SetIndex ( (UINT)buf [ pos ++ ] );
 			//位置
 			int pos_x = m_utl.LoadInt ( buf, pos );
 			int pos_y = m_utl.LoadInt ( buf, pos );
-			aryEfGnrt [ i ].SetPos ( VEC2 ( (float)pos_x, (float)pos_y ) );
+			pEfGnrt->SetPos ( VEC2 ( (float)pos_x, (float)pos_y ) );
 			//Z値
 			int z_per100F = (int)buf [ pos ++ ];
-			aryEfGnrt [ i ].SetZ ( z_per100F / 100.f );
+			pEfGnrt->SetZ ( z_per100F / 100.f );
 			//生成
-			aryEfGnrt [ i ].SetGnrt ( (bool)buf [ pos ++ ] );
+			pEfGnrt->SetGnrt ( (bool)buf [ pos ++ ] );
 			//ループ
-			aryEfGnrt [ i ].SetLoop ( (bool)buf [ pos ++ ] );
+			pEfGnrt->SetLoop ( (bool)buf [ pos ++ ] );
 			//位置同期
-			aryEfGnrt [ i ].SetSync ( (bool)buf [ pos ++ ] );
+			pEfGnrt->SetSync ( (bool)buf [ pos ++ ] );
+
+			//スクリプトに設定
+			scp.GetpvpEfGnrt ()->push_back ( pEfGnrt );
 		}
 
 		//バトルパラメータ

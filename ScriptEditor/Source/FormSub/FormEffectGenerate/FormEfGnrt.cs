@@ -123,7 +123,8 @@ namespace ScriptEditor
 		{
 			Effect ef = (Effect)cB_SequenceList1.SelectedItem;
 			EffectGenerate efGnrt = new EffectGenerate ();
-			efGnrt.Name = ef.Name;
+			efGnrt.Name = ef.Name;		//本エフェクト生成の名前
+			efGnrt.EfName = ef.Name;	//生成する対象エフェクトの名前
 //			efGnrt.Id = cB_SequenceList1.SelectedIndex;
 			efGnrt.Gnrt = Cb_Gnrt.Checked;
 			efGnrt.Loop = Cb_Loop.Checked;
