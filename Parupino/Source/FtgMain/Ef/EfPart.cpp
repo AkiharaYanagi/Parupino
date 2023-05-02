@@ -17,7 +17,7 @@ namespace GAME
 	EfPart::EfPart ()
 	{
 		AddTexture ( _T ( "Ef_Particle.png" ) );
-		SetZ ( Z_EFB );
+		SetZ ( Z_EFF );
 		SetValid ( T );
 
 		mv_Rnd.resize ( SPARK_MAX );
@@ -43,14 +43,14 @@ namespace GAME
 			pOb->SetValid ( F );
 
 			PrmEfPart prm;
-//			prm.m_startPos = VEC2 ( 100.f, -400.f );
+			prm.m_pOb = pOb;
 			prm.m_angle = D3DX_2PI / SPARK_MAX * v_rnd_ui [ i ];
 			float c = cosf ( prm.m_angle );
 			float s = sinf ( prm.m_angle );
 			int rndx = rand () % 20;
 			int rndy = rand () % 20;
 			prm.m_startVel = VEC2 ( (rndx + 1) * c,  (rndy + 1) * s );
-			prm.m_G = VEC2( 0, 0.005f );
+			prm.m_G = VEC2( 0, 0.05f );
 
 			mv_Prm.push_back ( prm );
 			++ i;
@@ -90,6 +90,7 @@ namespace GAME
 			mv_Prm [ i ].m_vel += -0.03f * mv_Prm [ i ].m_vel;	//減衰
 			mv_Prm [ i ].m_pos += mv_Prm [ i ].m_vel;
 
+			//着地判定
 			if ( mv_Prm [ i ].m_pos.y >= GROUND_Y )
 			{
 				pOb->SetValid ( F );
@@ -110,16 +111,14 @@ namespace GAME
 
 
 		//重なり判定後
-		UINT i_flag = 0;
 		PVP_Object pvpOb = GetpvpObject ();
 		for ( PrmEfPart prm : mv_Prm )
 		{
-			if ( prm.m_flag )
+			if ( prm.m_gotten )
 			{
-				( *pvpOb ) [ i_flag ]->SetValid ( F );
+				prm.m_pOb->SetValid ( F );
+				prm.m_gotten = F;
 			}
-
-			++ i;
 		}
 
 
@@ -176,9 +175,31 @@ namespace GAME
 		}
 	}
 
-	void EfPart::Draw ()
+
+	//重なり判定
+	UINT EfPart::Collision ( PV_RECT pv_rect )
 	{
-		GrpAcv::Draw ();
+		UINT ret = 0;
+		//対象のコリジョンレクトを取得
+
+		for ( PrmEfPart prm : mv_Prm )
+		{
+			for ( RECT rect : *pv_rect )
+			{
+				if ( OverlapPoint ( prm.m_pos, rect ) )
+				{
+					prm.m_gotten = T;
+					++ ret;
+				}
+			}
+		}
+		
+		//1p2p両方に重なっている場合、両者に判定あり
+		
+		//かさなっているオブジェクトを非稼働にする
+
+		//ExeCharaには重なり個数を返す
+		return ret;
 	}
 
 

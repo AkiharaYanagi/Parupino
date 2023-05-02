@@ -10,7 +10,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
 #include "../../GameMain/GameConst.h"
-#include "../../CharaData/Chara.h"
+#include "Chara.h"
 #include "../../FtgMain/G_Ftg.h"
 #include "../Input/CharaInput.h"
 

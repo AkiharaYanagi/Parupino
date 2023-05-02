@@ -9,9 +9,9 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
+#include "Chara.h"
 #include "../../GameMain/GameConst.h"
 #include "../../FtgMain/G_Ftg.h"
-#include "../../CharaData/Chara.h"
 #include "DispMainImage.h"
 #include "DispRect.h"
 #include "DispFrontEnd.h"

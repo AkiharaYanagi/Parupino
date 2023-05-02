@@ -10,7 +10,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
-#include "../../CharaData/Chara.h"
+#include "Chara.h"
 #include "DispEffect.h"
 #include "../Rect/CharaRect.h"
 

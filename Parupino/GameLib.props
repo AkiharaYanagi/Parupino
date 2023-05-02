@@ -8,10 +8,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Projects\GameLib011\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Projects\GameLib011\include;D:\Projects\Parupino\CharaData\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Projects\GameLib011\library</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Projects\GameLib011\library;D:\Projects\Parupino\CharaData\library</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

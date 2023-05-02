@@ -28,6 +28,8 @@
 #define _CRTDBG_MAP_ALLOC
 #include <crtdbg.h>
 
+#include <time.h>
+
 //STL
 #include <vector>
 #include <list>

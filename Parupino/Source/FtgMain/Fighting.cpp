@@ -24,7 +24,8 @@ namespace GAME
 		//背景
 		m_bg = make_shared < GrpAcv > ();
 //		m_bg->AddTexture (_T ("ftgmain_bg.png"));
-		m_bg->AddTexture (_T ("ftgmain_bg0.png"));
+//		m_bg->AddTexture ( _T ( "ftgmain_bg0.png" ) );
+		m_bg->AddTexture ( _T ( "ftgmain_bg1.png" ) );
 		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
 		GRPLST_INSERT ( m_bg );
@@ -90,7 +91,7 @@ namespace GAME
 		Scene::Init ();
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 1
+#define DEMO_ON 0
 #if DEMO_ON
 		m_demoActor->StartGreeting ();
 #else

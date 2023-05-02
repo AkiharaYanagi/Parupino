@@ -22,6 +22,7 @@ namespace GAME
 	//パラメータ
 	struct PrmEfPart
 	{
+		P_Object m_pOb;
 		VEC2	m_startPos;
 		VEC2	m_pos;
 		VEC2	m_startVel;
@@ -29,13 +30,14 @@ namespace GAME
 		VEC2	m_G;
 		float	m_angle;	//[rad]
 
-		bool	m_flag;		//取得フラグ
+		bool	m_gotten;		//重なり取得フラグ
 
 	public:
 		PrmEfPart ()
-			: m_startPos ( 0, 0 ), m_pos ( 0, 0 )
+			: m_pOb ( nullptr )
+			, m_startPos ( 0, 0 ), m_pos ( 0, 0 )
 			, m_startVel ( 0, 0 ), m_vel ( 0, 0 )
-			, m_G ( 0, 0 ), m_angle ( 0 ), m_flag ( F )
+			, m_G ( 0, 0 ), m_angle ( 0 ), m_gotten ( F )
 		{}
 	};
 
@@ -57,10 +59,15 @@ namespace GAME
 		
 		void Move ();
 		void On ( VEC2 center );
-		void Draw ();
 
 
 		vector < PrmEfPart > & Getrv_Prm () { return mv_Prm; }
+
+
+		//重なり判定
+		//戻値：重なり個数
+		UINT Collision ( PV_RECT pv_rect );
+
 
 	private:
 		//引数のベクタに0からN-1までの乱数を格納する
