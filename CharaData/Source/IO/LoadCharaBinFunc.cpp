@@ -73,7 +73,8 @@ namespace GAME
 			P_Action pAct = aryAct [ iAct ];
 
 
-			//TRACE_F ( _T ( "%d\n" ), iAct );
+//			TRACE_F ( _T ( "LoadCharaBin: %s\n" ), pAct->GetName ().c_str () );
+			TRACE_F ( _T ( "LoadCharaBin: %d\n" ), iAct );
 
 
 			//アクション
@@ -260,7 +261,7 @@ namespace GAME
 			pEfGnrt->SetPos ( VEC2 ( (float)pos_x, (float)pos_y ) );
 			//Z値
 			int z_per100F = (int)buf [ pos ++ ];
-			pEfGnrt->SetZ ( z_per100F / 100.f );
+			pEfGnrt->SetZ ( z_per100F * 0.01f );
 			//生成
 			pEfGnrt->SetGnrt ( (bool)buf [ pos ++ ] );
 			//ループ
