@@ -32,12 +32,15 @@ namespace GAME
 
 		bool	m_gotten;		//重なり取得フラグ
 
+		UINT	m_count;		//開始カウント
+
 	public:
 		PrmEfPart ()
 			: m_pOb ( nullptr )
 			, m_startPos ( 0, 0 ), m_pos ( 0, 0 )
 			, m_startVel ( 0, 0 ), m_vel ( 0, 0 )
 			, m_G ( 0, 0 ), m_angle ( 0 ), m_gotten ( F )
+			, m_count ( 0 )
 		{}
 	};
 
@@ -48,6 +51,7 @@ namespace GAME
 		{
 			SPARK_NUM = 30,		//1回発生個数
 			SPARK_MAX = 300,	//最大個数
+			SPARK_INIT = 30,	//取得可能フレーム
 		};
 		vector < PrmEfPart >	mv_Prm;	//パラメータ
 		vector < UINT >			mv_Rnd;	//非稼働オブジェクト数上

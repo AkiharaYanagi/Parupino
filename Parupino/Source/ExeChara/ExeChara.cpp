@@ -638,6 +638,8 @@ namespace GAME
 		UINT i = 0;
 		for ( PrmEfPart prm : vPrm )
 		{
+			if ( 0 != prm.m_count ) { continue; }
+
 			if ( prm.m_pOb->GetValid () )
 			{
 				for ( RECT rect : ( *pvHRect ) )

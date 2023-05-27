@@ -98,6 +98,9 @@ namespace GAME
 
 			pOb->SetPos ( mv_Prm [ i ].m_pos + G_BASE_POS () );
 
+			//カウント
+			if ( 0 != mv_Prm [ i ].m_count ) { -- mv_Prm [ i ].m_count; }
+
 			++ i;
 		}
 
@@ -144,7 +147,7 @@ namespace GAME
 		vector < UINT > vecRnd;
 		Rnd_0_N ( n, vecRnd );
 		
-		//稼働
+		//稼働開始
 		UINT na = ( n < SPARK_NUM ) ? n : SPARK_NUM;
 		PVP_Object pvpOb = GetpvpObject ();
 		for ( i = 0; i < na; ++ i )
@@ -154,6 +157,8 @@ namespace GAME
 
 			mv_Prm [ index ].m_pos = center + mv_Prm [ index ].m_startPos;
 			mv_Prm [ index ].m_vel = mv_Prm [ index ].m_startVel;
+
+			mv_Prm [ index ].m_count = SPARK_INIT;
 		}
 	}
 
@@ -175,8 +180,8 @@ namespace GAME
 		}
 	}
 
-
 	//重なり判定
+	//->ExeChara側で行う
 	UINT EfPart::Collision ( PV_RECT pv_rect )
 	{
 		UINT ret = 0;
@@ -184,6 +189,8 @@ namespace GAME
 
 		for ( PrmEfPart prm : mv_Prm )
 		{
+			if ( 0 != prm.m_count ) { continue; }
+
 			for ( RECT rect : *pv_rect )
 			{
 				if ( OverlapPoint ( prm.m_pos, rect ) )
@@ -201,6 +208,8 @@ namespace GAME
 		//ExeCharaには重なり個数を返す
 		return ret;
 	}
+#if 0
+#endif // 0
 
 
 }
