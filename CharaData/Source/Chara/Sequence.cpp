@@ -16,6 +16,7 @@ namespace GAME
 {
 
 	Sequence::Sequence ()
+		: m_name ( _T("new_sequence") )
 	{
 		m_pvpScript = make_shared < VP_Script > ();
 	}
