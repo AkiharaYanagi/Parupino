@@ -208,8 +208,5 @@ namespace GAME
 		//ExeChara‚É‚Íd‚È‚èŒÂ”‚ğ•Ô‚·
 		return ret;
 	}
-#if 0
-#endif // 0
-
-
+	
 }

@@ -23,7 +23,7 @@ namespace GAME
 		//名前のサイズ
 		byte length = buf [ pos ++ ];	//Encoding.UTF8
 
-		//		unique_ptr < char [] > arypChar = make_unique < char [] > ( length + 1 );
+//		unique_ptr < char [] > arypChar = make_unique < char [] > ( length + 1 );
 //		memcpy_s ( arypChar.get(), length ,buf, length );
 		
 //		unique_ptr < TCHAR [] >  tbuf = make_unique < TCHAR [] > ( length + 1 );

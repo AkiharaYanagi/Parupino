@@ -72,13 +72,14 @@ namespace GAME
 		{
 			P_Action pAct = aryAct [ iAct ];
 
-
-//			TRACE_F ( _T ( "LoadCharaBin: %s\n" ), pAct->GetName ().c_str () );
-			TRACE_F ( _T ( "LoadCharaBin: %d\n" ), iAct );
-
-
 			//ƒAƒNƒVƒ‡ƒ“
 			aryAct [ iAct ]->SetName ( m_utl.LoadText ( buf, pos ) );
+
+
+			TRACE_F ( _T ( "LoadCharaBin: %s\n" ), pAct->GetName ().c_str () );
+//			TRACE_F ( _T ( "LoadCharaBin: %d\n" ), iAct );
+
+
 			aryAct [ iAct ]->SetNextID ( (UINT)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetCategory ( (ACTION_CATEGORY)buf [ pos ++ ] );
 			aryAct [ iAct ]->SetPosture ( (ACTION_POSTURE)buf [ pos ++ ] );
