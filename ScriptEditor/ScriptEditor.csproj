@@ -192,6 +192,12 @@
     <Compile Include="Source\FormSub\FormAction\FormAction.Designer.cs">
       <DependentUpon>FormAction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.Designer.cs">
+      <DependentUpon>Ctrl_EfGnrt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\FormSub\FormRect\FormRect2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormAction\FormAction.resx">
       <DependentUpon>FormAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.resx">
+      <DependentUpon>Ctrl_EfGnrt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormRect\FormRect2.resx">
       <DependentUpon>FormRect2.cs</DependentUpon>
