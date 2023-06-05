@@ -20,8 +20,15 @@ namespace ScriptEditor
 			
 		//---------------------------------------------------------------------
 		
+
+
+		//@todo Ctrlでまとめる
+
+
+
 		//対象
-		public Script Scp = null;
+		private Script Scp = null;
+		private EffectGenerate Efgn = null;
 
 		//コントロールの設定
 		public void SetCtrl ()
@@ -39,19 +46,21 @@ namespace ScriptEditor
 		{
 			Scp = script;
 			listBox1.DataSource = script.BD_EfGnrt.GetBindingList ();
+
+
+			if ( 0 < script.BD_EfGnrt.Count () )
+			{
+				Efgn = script.BD_EfGnrt [ listBox1.SelectedIndex ];
+
+				Tbn_Z.SetFunc = (i)=>{Efgn.Z_PER100F=i;};
+			}
+
 			UpdateData ();
 		}
 
 		//更新
 		public void UpdateData ()
 		{
-#if false
-			int i = 0;
-			foreach ( EffectGenerate efGnrt in Scp.BD_EfGnrt.GetBindingList () )
-			{
-				Scp.BD_EfGnrt.GetBindingList ().ResetItem ( i ++ );
-			}
-#endif
 			Scp.BD_EfGnrt.ResetItems ();
 			
 			if ( 0 < listBox1.Items.Count )

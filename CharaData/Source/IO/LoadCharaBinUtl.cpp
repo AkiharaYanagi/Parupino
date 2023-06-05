@@ -118,11 +118,11 @@ namespace GAME
 
 	void LoadCharaBinUtl::LoadAryUint ( P_CH buf, UINT & pos, V_UINT & refAryUint )
 	{
-		UINT size = buf [ pos ++ ];
+		UINT size = LoadUInt ( buf, pos );
 		refAryUint.resize ( size );
 		for ( UINT i = 0; i < size; ++ i )
 		{
-			refAryUint [ i ] = (UINT) buf [ pos ++ ];
+			refAryUint [ i ] = LoadUInt ( buf, pos );
 		}
 	}
 

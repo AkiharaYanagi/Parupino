@@ -19,7 +19,7 @@ namespace GAME
 	{
 		//メイングラフィック
 		m_grp = make_shared < GrpApTx > ();
-		m_grp->SetZ ( z / 100 );	//初期位置
+		m_grp->SetZ ( z );	//初期位置
 		GRPLST_INSERT ( m_grp );
 
 		//枠表示(DispRect)はポインタでなく実体を保持

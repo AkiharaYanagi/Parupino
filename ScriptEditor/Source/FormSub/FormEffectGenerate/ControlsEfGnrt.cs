@@ -11,28 +11,19 @@ namespace ScriptEditor
 		//選択用ガーニッシュコンボボックス (エフェクトの集合)
 		public CB_SequenceList cb_garnish;
 
-		//EfGnrt追加
-		Button btn_EfGnrtAdd { get; set; }
-
-		//EfGnrt削除
-		Button btn_EfGnrtRem { get; set; }
+		Button btn_EfGnrtAdd { get; set; }		//EfGnrt追加
+		Button btn_EfGnrtRem { get; set; }		//EfGnrt削除
 
 		//生成位置(X,Y)
 		public TB_Number tbn_EfX { get; set; }
 		public TB_Number tbn_EfY { get; set; }
-//		public TB_Float  tbf_EfZ { get; set; }
 		public TB_Number tbf_EfZ { get; set; }
 
-		//生成
-		public CheckBox ckb_Gnrt { get; set; }
+		public CheckBox ckb_Gnrt { get; set; }		//生成
+		public CheckBox ckb_Loop { get; set; }		//ループ
+		public CheckBox ckb_Sync { get; set; }      //同期
 
-		//ループ
-		public CheckBox ckb_Loop { get; set; }
-
-		//同期
-		public CheckBox ckb_Sync { get; set; }
-
-
+#if false
 		//初期化
 		public void Load
 		(
@@ -52,17 +43,18 @@ namespace ScriptEditor
 			btn_EfGnrtRem = btn_egr;
 
 			tbn_EfX = tbn_efx;
-//			tbn_EfX.Load ( ec, dc );
-
 			tbn_EfY = tbn_efy;
-//			tbn_EfY.Load ( ec, dc );
-
 			tbf_EfZ = tbf_efz;
-//			tbf_EfZ.Load ( ec, dc );
 
 			ckb_Gnrt = ckb_g;
 			ckb_Loop = ckb_l;
 			ckb_Sync = ckb_s;
+		}
+#endif
+		//関連付け
+		public void Assosiate ( Script scp )
+		{
+//			tbf_EfZ.SetFunc ( scp.BD_EfGnrt);
 		}
 
 		//オン
