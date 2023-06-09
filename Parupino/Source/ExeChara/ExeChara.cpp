@@ -700,8 +700,9 @@ namespace GAME
 			DBGOUT_WND_F ( 4, _T ( "bHit = %d" ), bHit ? 1 : 0 );
 			P_Timer ptHitStop = m_btlPrm.GetTmr_HitStop ();
 			DBGOUT_WND_F ( 5, _T ( "hitStop = %d" ), ptHitStop->GetTime() );
+			UINT hitpitch = m_pAction->GetHitPitch ();
 			P_Timer ptHitPitch = m_btlPrm.GetTmr_HitPitch ();
-			DBGOUT_WND_F ( 6, _T ( "hitPitch = %d" ), ptHitPitch->GetTime () );
+			DBGOUT_WND_F ( 6, _T ( "hitPitch = %d / %d" ), ptHitPitch->GetTime (), hitpitch );
 			UINT hitmax = m_pAction->GetHitNum ();
 			UINT hitnum = m_btlPrm.GetHitNum ();
 			DBGOUT_WND_F ( 7, _T ( "hitnum = %d / %d" ), hitnum, hitmax );
@@ -1021,18 +1022,21 @@ namespace GAME
 		//ダメージ処理
 		int damage = pScp->m_prmBattle.Power;
 
+#if 0
 		//ダメージをライフによって補正(根性値)
 		int lf = m_btlPrm.GetLife ();
 		if ( lf < LIFE_MAX * 0.5f )
 		{
 			damage = (int)( damage * ( 0.001f * ( 0.5f * LIFE_MAX + lf ) ) );
 		}
+#endif // 0
 
 #if 0
 		if ( lf < damage ) { m_btlPrm.SetDamage ( lf ); }	//ライフ以上は表示制限
 		else { m_btlPrm.SetDamage ( damage ); }		//表示用
-#endif // 0
 		m_btlPrm.SetLife ( lf - damage );
+#endif // 0
+		m_btlPrm.AddLife ( - damage );
 
 		//-------------------------------------------------
 		//バランス処理
