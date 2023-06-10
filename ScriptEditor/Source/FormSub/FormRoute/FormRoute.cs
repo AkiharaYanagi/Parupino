@@ -43,6 +43,7 @@ namespace ScriptEditor
 			//追加時
 			EL_Route.Listbox_Add = ()=>
 			{
+#if false
 				//対象の先頭を指定
 				if ( 0 < BD_Route.Count() )
 				{
@@ -51,6 +52,7 @@ namespace ScriptEditor
 					EL_Route.BD_T.Get(0).Name = rut.Name;
 					EL_Route.ResetItems ();
 				}
+#endif
 
 			};
 			//選択変更時

@@ -41,6 +41,7 @@ OD01,CMD,OD_01,OD1_L,0
 与ダメ_L,HIT_E,N,Damaged_L_N,0
 与ダメ_M,HIT_E,N,Damaged_M_N,0
 与ダメ_H,HIT_E,N,Damaged_H_N,0
+与ダメ浮き,CMD,N,Down_Floating,0
 ふっとばし,HIT_E,N,Damaged_H_U,0
 被ダメ_体勢L8,DMG,N,Damaged_L_U,0
 被ダメ_体勢L2,DMG,N,Damaged_L_D,0
@@ -48,3 +49,11 @@ OD01,CMD,OD_01,OD1_L,0
 被ダメ_体勢L4,DMG,N,Damaged_L_N,0
 ダメージ移行_L8,CMD,8,Damaged_L_U,0
 ダメージ移行_L2,CMD,2,Damaged_L_D,0
+ダメージ移行_H8,CMD,8,Damaged_H_U,0
+ダメージ移行_M8,CMD,8,Damaged_M_U,0
+ダメージ移行_M2,CMD,2,Damaged_M_D,0
+ダメージ移行_H2,CMD,2,Damaged_H_D,0
+Start_6,CMD,6,Start_F,0
+Start_4,CMD,4,Start_B,0
+Start_6off,CMD,6off,Start_N,0
+Start_4off,CMD,4off,Start_N,0

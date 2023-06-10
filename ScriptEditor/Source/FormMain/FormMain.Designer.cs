@@ -40,11 +40,11 @@
 			this.読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.テキストから読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.バイナリから読込BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.新規NToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabAction = new System.Windows.Forms.TabPage();
-			this.ctrl_SqcList_Act = new ScriptEditor.Ctrl_SqcList();
 			this.tabScriptA = new System.Windows.Forms.TabPage();
 			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
 			this.tabEffect = new System.Windows.Forms.TabPage();
@@ -62,7 +62,6 @@
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
-			this.tabAction.SuspendLayout();
 			this.tabScriptA.SuspendLayout();
 			this.tabEffect.SuspendLayout();
 			this.tabScriptE.SuspendLayout();
@@ -81,7 +80,8 @@
             this.基準保存TToolStripMenuItem,
             this.読込ToolStripMenuItem,
             this.テキストから読込ToolStripMenuItem,
-            this.バイナリから読込BToolStripMenuItem});
+            this.バイナリから読込BToolStripMenuItem,
+            this.新規NToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(972, 24);
@@ -141,6 +141,13 @@
 			this.バイナリから読込BToolStripMenuItem.Text = "バイナリから読込(&B)";
 			this.バイナリから読込BToolStripMenuItem.Click += new System.EventHandler(this.バイナリから読込BToolStripMenuItem_Click);
 			// 
+			// 新規NToolStripMenuItem
+			// 
+			this.新規NToolStripMenuItem.Name = "新規NToolStripMenuItem";
+			this.新規NToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+			this.新規NToolStripMenuItem.Text = "新規(&N)";
+			this.新規NToolStripMenuItem.Click += new System.EventHandler(this.新規NToolStripMenuItem_Click);
+			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -180,25 +187,12 @@
 			// 
 			// tabAction
 			// 
-			this.tabAction.Controls.Add(this.ctrl_SqcList_Act);
 			this.tabAction.Location = new System.Drawing.Point(4, 22);
 			this.tabAction.Name = "tabAction";
 			this.tabAction.Size = new System.Drawing.Size(964, 709);
 			this.tabAction.TabIndex = 6;
 			this.tabAction.Text = "アクション ->";
 			this.tabAction.UseVisualStyleBackColor = true;
-			// 
-			// ctrl_SqcList_Act
-			// 
-			this.ctrl_SqcList_Act.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.ctrl_SqcList_Act.AutoSize = true;
-			this.ctrl_SqcList_Act.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.ctrl_SqcList_Act.Location = new System.Drawing.Point(0, 0);
-			this.ctrl_SqcList_Act.Name = "ctrl_SqcList_Act";
-			this.ctrl_SqcList_Act.Size = new System.Drawing.Size(2380, 2125);
-			this.ctrl_SqcList_Act.TabIndex = 0;
 			// 
 			// tabScriptA
 			// 
@@ -343,8 +337,6 @@
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
-			this.tabAction.ResumeLayout(false);
-			this.tabAction.PerformLayout();
 			this.tabScriptA.ResumeLayout(false);
 			this.tabEffect.ResumeLayout(false);
 			this.tabEffect.PerformLayout();
@@ -382,10 +374,10 @@
 		private System.Windows.Forms.TabPage tabRoute;
 		private Ctrl_Route ctrl_Route1;
 		private System.Windows.Forms.TabPage tabAction;
-		private Ctrl_SqcList ctrl_SqcList_Act;
 		private System.Windows.Forms.TabPage tabEffect;
 		private Ctrl_SqcList ctrl_SqcList_Ef;
 		private System.Windows.Forms.ToolStripMenuItem バイナリから読込BToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 新規NToolStripMenuItem;
 	}
 }
 

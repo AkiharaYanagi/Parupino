@@ -45,10 +45,13 @@ namespace ScriptEditor
 		//--------------------------------------------------------------------------
 
 		//タブ_アクションの初期化
+		Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();
 		private void TabAction_Load ()
 		{
-			Ctrl_SqcList.CTRL_SQC ac = Ctrl_SqcList.CTRL_SQC.ACTION;
-			ctrl_SqcList_Act.SetEnviroment ( ac, ()=>new Action(), stgs );
+			tabControl1.TabPages[0].Controls.Add ( ctrl_SqcList_Act );
+
+			Ctrl_SqcList.CTRL_SQC act = Ctrl_SqcList.CTRL_SQC.ACTION;
+			ctrl_SqcList_Act.SetEnviroment ( act, ()=>new Action(), stgs );
 			ctrl_SqcList_Act.SetCharaData ( chara.behavior );
 			ctrl_SqcList_Act.LoadCtrl ();
 		}
