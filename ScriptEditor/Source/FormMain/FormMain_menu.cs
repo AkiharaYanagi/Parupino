@@ -104,12 +104,6 @@ namespace ScriptEditor
 		private void 新規NToolStripMenuItem_Click ( object sender, System.EventArgs e )
 		{
 		}
-
-		//タイトルバーテキスト更新
-		private void ReloadTitleBarText ()
-		{
-			this.Text = Directory.GetCurrentDirectory() + "\\" + stgs.LastFilepath + " - " + formText;
-		}
 	}
 
 }

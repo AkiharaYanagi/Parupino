@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.IO;
 
 namespace ScriptEditor
 {
@@ -21,6 +22,12 @@ namespace ScriptEditor
 		private void FormMain_Paint ( object sender, PaintEventArgs e )
 		{
 //			DispChara.Inst.Disp ();
+		}
+
+		//タイトルバーテキスト更新
+		private void ReloadTitleBarText ()
+		{
+			this.Text = Directory.GetCurrentDirectory() + "\\" + stgs.LastFilepath + " - " + formText;
 		}
 	}
 }
