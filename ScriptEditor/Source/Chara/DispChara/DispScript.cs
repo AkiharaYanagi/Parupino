@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
-using System.Drawing;
 using System.ComponentModel;
+
 
 namespace ScriptEditor
 {

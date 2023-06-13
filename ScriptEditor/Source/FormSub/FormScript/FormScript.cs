@@ -29,13 +29,14 @@ namespace ScriptEditor
 
 		//編集と表示
 		public EditScript EditScript { get; set; } = null;
-		public DispScript DispScript { get; set; } = null;
+//		public DispScript DispScript { get; set; } = null;
 		
 		//設定
-		public void SetEnvironment ( EditCompend ec, DispScript ds )
+//		public void SetEnvironment ( EditCompend ec, DispScript ds )
+		public void SetEnvironment ( EditCompend ec )
 		{
 			EditScript = ec.EditScript;
-			DispScript = ds;
+//			DispScript = ds;
 
 			ctrl_Script1.SetEnvironment ( ec, DispChara.Inst.Disp );
 //			ds.SetCtrlScript ( ctrl_Script1 );

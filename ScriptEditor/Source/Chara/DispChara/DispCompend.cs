@@ -13,7 +13,7 @@
 		public DispSequence DispSequence { get; set; } = null;	//継承先で実体を持つ
 
 		//スクリプトの表示 (表示されるスクリプトは常に１つなのでここで実体を持つ) 
-		public DispScript DispScript { get; set; } = new DispScript ();
+//		public DispScript DispScript { get; set; } = new DispScript ();
 
 		//コントロール：コンペンドの参照
 		public Ctrl_Compend CtrlCmpd { get; set; } = null;
@@ -25,7 +25,7 @@
 		public virtual void SetCtrl ( EditCompend ec, Ctrl_Compend cc )
 		{
 			EditCompend = ec;
-			DispScript.Set ( cc );
+//			DispScript.Set ( cc );
 			CtrlCmpd = cc;
 			SqcBoard = cc.sqcBoard1;
 		}
@@ -34,14 +34,14 @@
 		public void SetCharaData ( Chara ch )
 		{
 			DispSequence.SetCharaData ( ch );
-			DispScript.SetCharaData ( ch );
+//			DispScript.SetCharaData ( ch );
 		}
 
 		//更新
 		public virtual void UpdateData ()
 		{
 			CtrlCmpd.UpdateData ();
-			DispScript.UpdateData ( EditCompend.SelectedScript );
+//			DispScript.UpdateData ( EditCompend.SelectedScript );
 
 			Disp ();
 		}
@@ -53,7 +53,7 @@
 			SqcBoard.Invalidate ();
 			
 			DispSequence.Disp ( EditCompend.SelectedSequence );		//シークエンス
-			DispScript.Disp ( EditCompend.SelectedScript );	//スクリプト
+//			DispScript.Disp ( EditCompend.SelectedScript );	//スクリプト
 		}
 
 		//アクションカテゴリの変更
