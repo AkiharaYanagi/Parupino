@@ -16,7 +16,7 @@ namespace ScriptEditor
 		public Ctrl_Image CtrlImg = null;
 		
 		//選択したツール
-		public ToolImg SelectedTool { get; set; } = null;
+//		public ToolImg SelectedTool { get; set; } = null;
 
 
 		//コンストラクタ
