@@ -25,7 +25,8 @@ namespace GAME
 
 		//------
 		//‰‰o(ŒÂ•Ê)
-		int		Radian;				//‰ñ“]
+		int		Rotate;				//‰ñ“][rad]
+		VEC2	Rotate_center;		//‰ñ“]’†S(x,y)
 		UINT	AfterImage_N;		//c‘œ[ŒÂ]
 		UINT	AfterImage_time;	//c‘œ[F] ‘±
 		UINT	AfterImage_pitch;	//c‘œ[F] pitch
@@ -55,8 +56,8 @@ namespace GAME
 
 		//---------------------------------------------------------
 		//‰ñ“]
-		int GetRadian () const { return Radian; }
-		void SetStop ( int rad ) { Radian = rad; }
+		int GetRadian () const { return Rotate; }
+		void SetStop ( int rad ) { Rotate = rad; }
 
 		//c‘œ[F] pitch
 		int GetAfterImage_pitch () const { return AfterImage_pitch; }
