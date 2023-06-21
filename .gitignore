@@ -4,6 +4,8 @@
 !testChara.dat
 *.dat
 *.xml
+*.lib
+*.dll
 
 old/
 *.psd
