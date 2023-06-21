@@ -315,7 +315,8 @@ namespace GAME
 		scp.m_prmStaging.Vibration		 = m_utl.LoadByte ( buf, pos );
 		scp.m_prmStaging.Stop			 = m_utl.LoadByte ( buf, pos );
 
-		scp.m_prmStaging.Radian			 = m_utl.LoadInt ( buf, pos );
+		scp.m_prmStaging.Rotate			 = m_utl.LoadInt ( buf, pos );
+		scp.m_prmStaging.Rotate_center	 = m_utl.LoadVec2 ( buf, pos );
 		scp.m_prmStaging.AfterImage_N	 = m_utl.LoadByte ( buf, pos );
 		scp.m_prmStaging.AfterImage_time = m_utl.LoadByte ( buf, pos ); ;
 		scp.m_prmStaging.AfterImage_pitch = m_utl.LoadByte ( buf, pos ); ;
