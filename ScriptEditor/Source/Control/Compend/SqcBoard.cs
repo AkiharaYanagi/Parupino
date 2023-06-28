@@ -107,7 +107,7 @@ namespace ScriptEditor
 			const int SURPLUS = 5;
 
 			//選択
-			int selectedScript = EditCompend.SelectedScriptIndex;
+			int selectedScript = EditCompend.SelectedScript.Frame;
 			int selectedSpanStart = EditCompend.SelectedSpanStart;
 			int selectedSpanEnd = EditCompend.SelectedSpanEnd;
 
@@ -363,7 +363,7 @@ namespace ScriptEditor
 			//グループ解除対象を取得
 			foreach ( Script s in Sqc.ListScript )
 			{
-				if ( EditCompend.SelectedScriptIndex == count )
+				if ( EditCompend.SelectedScript.Frame == count )
 				{
 					group = s.Group;
 					break;
@@ -402,7 +402,7 @@ namespace ScriptEditor
 		//再選択
 		private void ReSelect ()
 		{
-			int i = EditCompend.SelectedScriptIndex;
+			int i = EditCompend.SelectedScript.Frame;
 			if ( i >= Sqc.ListScript.Count ) { i = Sqc.ListScript.Count - 1; }
 
 			EditCompend.SelectFrame ( i );
@@ -457,8 +457,8 @@ namespace ScriptEditor
 			if ( Sqc.ListScript is null ) { return; }
 			if ( Sqc.ListScript.Count < 2 ) { return; }
 
-			int i = EditCompend.SelectedScriptIndex;
-			if ( EditCompend.SelectedScriptIndex < 2 ) { return; }
+			int i = EditCompend.SelectedScript.Frame;
+			if ( EditCompend.SelectedScript.Frame < 2 ) { return; }
 
 			EditCompend.SelectFrame ( i - 1 );
 			EditCompend.SelectedSpanStart = i - 1;
