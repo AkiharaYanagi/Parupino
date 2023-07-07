@@ -110,7 +110,6 @@
     <Compile Include="Source\Chara\DispChara\DispChara.cs" />
     <Compile Include="Source\Chara\DispChara\DispCompend.cs" />
     <Compile Include="Source\Chara\DispChara\DispEffect.cs" />
-    <Compile Include="Source\Chara\DispChara\DispRects.cs" />
     <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
     <Compile Include="Source\Control\CB_ActionList.cs">
       <SubType>Component</SubType>
