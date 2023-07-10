@@ -277,7 +277,7 @@
 			this.sequenceTree1.EditCompend = null;
 			this.sequenceTree1.Location = new System.Drawing.Point(0, 0);
 			this.sequenceTree1.Name = "sequenceTree1";
-			this.sequenceTree1.Size = new System.Drawing.Size(132, 554);
+			this.sequenceTree1.Size = new System.Drawing.Size(132, 546);
 			this.sequenceTree1.TabIndex = 9;
 			// 
 			// Ctrl_Compend

@@ -136,7 +136,7 @@ namespace ScriptEditor
 				DrawScp ( g, count, 3, GetScpCntClr ( s.ListHRect, ScpCntColor [ 2 ] ) );	//防御枠
 				DrawScp ( g, count, 4, GetScpCntClr ( s.ListARect, ScpCntColor [ 3 ] ) );	//攻撃枠
 				DrawScp ( g, count, 5, GetScpCntClr ( s.ListORect, ScpCntColor [ 4 ] ) );	//相殺枠
-				DrawScp ( g, count, 6, GetScpEfGnClr ( s.BD_EfGnrt, ScpCntColor [ 5 ] ) );	//相殺枠
+				DrawScp ( g, count, 6, GetScpEfGnClr ( s.BD_EfGnrt, ScpCntColor [ 5 ] ) );	//Ef生成
 
 				++ count;
 			}
