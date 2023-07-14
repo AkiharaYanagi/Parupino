@@ -17,7 +17,7 @@ namespace ScriptEditor
 		public Sequence Sqc = null;
 
 		//グループ数
-		private int nGroup = 0;
+//		private int nGroup = 0;
 
 		//-----------------------------------------------------------------------------
 		//内部使用定数
@@ -280,23 +280,18 @@ namespace ScriptEditor
 		//----------------------------------------------------------------------------------
 		//	スクリプト配列
 		//----------------------------------------------------------------------------------
-		//追加
-		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
-		{
-			Script scp = new Script();
-			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
-			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
-			EditCompend.AddScript ( scp );
-			DispCompend.Disp ();
-		}
-
 		//挿入
 		private void Btn_ScpInc_Click ( object sender, System.EventArgs e )
 		{
-			Script scp = new Script();
-			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
-			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
-			EditCompend.InsertScript ( scp );
+			Script scp = Make_Script_with_Rect ();
+			DispCompend.Disp ();
+		}
+
+		//追加
+		private void Btn_ScpAdd_Click ( object sender, System.EventArgs e )
+		{
+			Script scp = Make_Script_with_Rect ();
+			EditCompend.AddScript ( scp );
 			DispCompend.Disp ();
 		}
 
@@ -308,23 +303,19 @@ namespace ScriptEditor
 			DispCompend.Disp ();
 		}
 
-		//複数追加
-		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
-		{
-			Script scp = new Script();
-			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
-			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
-			EditCompend.MultiAdd ( scp );
-			DispCompend.Disp ();
-		}
-
 		//複数挿入
 		private void Btn_MlcIns_Click ( object sender, System.EventArgs e )
 		{
-			Script scp = new Script();
-			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
-			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
+			Script scp = Make_Script_with_Rect ();
 			EditCompend.MultiInsert ( scp );
+			DispCompend.Disp ();
+		}
+
+		//複数追加
+		private void Btn_MulAdd_Click ( object sender, System.EventArgs e )
+		{
+			Script scp = Make_Script_with_Rect ();
+			EditCompend.MultiAdd ( scp );
 			DispCompend.Disp ();
 		}
 
@@ -380,7 +371,7 @@ namespace ScriptEditor
 					s.Group = 0;
 				}
 			}
-			-- nGroup;
+//			-- nGroup;
 
 			pictureBox1.Invalidate ();
 		}
@@ -481,5 +472,16 @@ namespace ScriptEditor
 			FormEfGnrt.Inst.Assosiate ( scp );
 		}
 
+
+
+		//内部関数
+		//仮枠つきスクリプト
+		Script Make_Script_with_Rect ()
+		{
+			Script scp = new Script ();
+			scp.ListCRect.Add ( new Rectangle ( -50, -350, 120, 350 ) );
+			scp.ListHRect.Add ( new Rectangle ( -60, -360, 130, 370 ) );
+			return scp;
+		}
 	}
 }
