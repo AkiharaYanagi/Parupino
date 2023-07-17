@@ -43,7 +43,11 @@ namespace ScriptEditor
 		//@info 結びつきの強さからSequenceTreeを直接参照する
 		//		Compendを介しない
 		//シークエンスツリー
-		public SequenceTree SequenceTree { get; set; } = null;
+//		public SequenceTree SequenceTree { get; set; } = null;
+
+		//ツリー更新
+		public System.Action RemakeTree = () => { };
+
 
 		//初期設定
 		public void SetCtrl ( EditAction ea, DispAction da, DispCompend dc )
@@ -55,7 +59,7 @@ namespace ScriptEditor
 			da.SetCtrl ( TB_Name, CBSL_Next, CB_Category, CB_Posture, TBN_HitNum );
 			CBSL_Next.SetDisp ( dc );
 
-			SequenceTree = dc.CtrlCmpd.GetSequenceTree ();
+//			SequenceTree = dc.CtrlCmpd.GetSequenceTree ();
 		}
 
 		//キャラデータ
@@ -110,7 +114,8 @@ namespace ScriptEditor
 			//シークエンスツリーの再構築が必要
 			action.Category = (ActionCategory)CB_Category.SelectedItem;
 			//ツリー再構築
-			SequenceTree.Remake ();
+			//SequenceTree.Remake ();
+			RemakeTree ();
 			DispCompend.UpdateData ();
 		}
 

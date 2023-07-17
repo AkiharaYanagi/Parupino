@@ -86,28 +86,13 @@ namespace ScriptEditor
 			DispBehavior db = DispChara.Inst.DispBehavior;
 			
 			//他タブのデータで更新
-			cpd_Behavior.UpdateData ();
-			cpd_Behavior.SelectTop ();
+			//cpd_Behavior.UpdateData ();
+			//cpd_Behavior.SelectTop ();
+			ctrl_cmpd_bhv.UpdateData ();
+			ctrl_cmpd_bhv.SelectTop ();
+
 			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
 			eb.SelectScript ( 0, 0 );
-
-#if false
-
-			//test
-			//イメージデータで名前の修正
-			var bd_act = chara.behavior.BD_Sequence;
-			var bd_img = chara.behavior.BD_Image;
-			foreach ( Action act in bd_act.GetEnumerable () )
-			{
-				foreach ( Script scp in act.ListScript )
-				{
-					int imdid = GetIndex ( scp.ImgName, "Img_" );
-					scp.ImgName = bd_img[imdid].Name;
-				}
-			}
-
-#endif
-
 
 
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
@@ -115,9 +100,6 @@ namespace ScriptEditor
 			SetEnvironmentSubForms ( eb, db );
 
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
-
-			//テスト
-//			FormRect2.Inst.Show ();
 		}
 
 

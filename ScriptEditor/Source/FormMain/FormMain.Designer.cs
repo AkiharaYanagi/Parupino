@@ -46,7 +46,6 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabAction = new System.Windows.Forms.TabPage();
 			this.tabScriptA = new System.Windows.Forms.TabPage();
-			this.cpd_Behavior = new ScriptEditor.Ctrl_Compend();
 			this.tabEffect = new System.Windows.Forms.TabPage();
 			this.ctrl_SqcList_Ef = new ScriptEditor.Ctrl_SqcList();
 			this.tabScriptE = new System.Windows.Forms.TabPage();
@@ -62,7 +61,6 @@
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
-			this.tabScriptA.SuspendLayout();
 			this.tabEffect.SuspendLayout();
 			this.tabScriptE.SuspendLayout();
 			this.tabCommand.SuspendLayout();
@@ -197,7 +195,6 @@
 			// tabScriptA
 			// 
 			this.tabScriptA.AutoScroll = true;
-			this.tabScriptA.Controls.Add(this.cpd_Behavior);
 			this.tabScriptA.Location = new System.Drawing.Point(4, 22);
 			this.tabScriptA.Name = "tabScriptA";
 			this.tabScriptA.Padding = new System.Windows.Forms.Padding(3);
@@ -205,19 +202,6 @@
 			this.tabScriptA.TabIndex = 0;
 			this.tabScriptA.Text = "スクリプト(A)";
 			this.tabScriptA.UseVisualStyleBackColor = true;
-			// 
-			// cpd_Behavior
-			// 
-			this.cpd_Behavior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.cpd_Behavior.AutoScroll = true;
-			this.cpd_Behavior.BoolAction = false;
-			this.cpd_Behavior.EditCompend = null;
-			this.cpd_Behavior.Location = new System.Drawing.Point(0, 0);
-			this.cpd_Behavior.Name = "cpd_Behavior";
-			this.cpd_Behavior.Size = new System.Drawing.Size(977, 742);
-			this.cpd_Behavior.TabIndex = 0;
 			// 
 			// tabEffect
 			// 
@@ -337,7 +321,6 @@
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
-			this.tabScriptA.ResumeLayout(false);
 			this.tabEffect.ResumeLayout(false);
 			this.tabEffect.PerformLayout();
 			this.tabScriptE.ResumeLayout(false);
@@ -365,7 +348,6 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-		private Ctrl_Compend cpd_Behavior;
 		private Ctrl_Compend cpd_Garnish;
 		private System.Windows.Forms.ToolStripMenuItem テキストから読込ToolStripMenuItem;
 		private System.Windows.Forms.TabPage tabBranch;
