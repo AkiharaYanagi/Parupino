@@ -45,7 +45,10 @@ namespace ScriptEditor
 		//--------------------------------------------------------------------------
 
 		//タブ_アクションの初期化
+		
+		//コントロール実体	
 		Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();
+
 		private void TabAction_Load ()
 		{
 			tabControl1.TabPages[0].Controls.Add ( ctrl_SqcList_Act );
@@ -57,16 +60,21 @@ namespace ScriptEditor
 		}
 
 		//タブ_スクリプト(A)の初期化
+
+		//コントロール実体	
+		_Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();
+
 		private void TabScript_A_Load ()
 		{
 			//ビヘイビア(:コンペンド)の指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
 
-			db.SetCtrl ( eb, cpd_Behavior );    //表示
+//			db.SetCtrl ( eb, ctrl_cmpd_bhv );    //表示
 
-			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
-			cpd_Behavior.SetBehavior ();
+//			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
+//			cpd_Behavior.SetBehavior ();
+			ctrl_cmpd_bhv.SetEnviron ( eb );
 
 			//サブフォームにおける環境設定
 			SetEnvironmentSubForms ( eb, db );

@@ -53,7 +53,8 @@ namespace ScriptEditor
 			ctrl_SqcList_Ef.SetCharaData ( ch.garnish );			//シークエンス
 
 			//----------------------------------------------
-			cpd_Behavior.SetCharaData ( ch );			//コンペンド
+			//cpd_Behavior.SetCharaData ( ch );			//コンペンド
+			ctrl_cmpd_bhv.SetCharaData ( ch );
 			cpd_Garnish.SetCharaData ( ch );
 
 			//----------------------------------------------
