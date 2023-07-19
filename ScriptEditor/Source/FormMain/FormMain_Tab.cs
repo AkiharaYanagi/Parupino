@@ -96,8 +96,8 @@ namespace ScriptEditor
 
 
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
-			SetEnvironmentSubForms ( eb, db );
+//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
+			SetEnvironment_SubForms ( eb );
 
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
@@ -149,7 +149,7 @@ namespace ScriptEditor
 
 			//サブフォームにガーニッシュを設定
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
-			FormImage.Inst.SetEnviron ( eg, dg );
+			FormImage.Inst.SetEnviron ( eg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}
 

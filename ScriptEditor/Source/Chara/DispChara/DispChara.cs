@@ -5,10 +5,13 @@
 	//	->	更新や関連付けなどの機能のみを
 	//		ActionやFuncのデリゲートで呼び出す。
 
-
-	// CtrlCompend   // EditChara(シングルトン)
+	// CtrlCompend   
+	//	↓			
+	// Ctrl_All(シングルトン)
+	//	↓	
+	//	↓			 // EditChara(シングルトン)
 	//	↓				↓
-	//	↓	→ AllDisp()	, Assosiate() など
+	//	↓→ → AllDisp(), Assosiate() など
 	//	↓				↓
 	//	[------ Chara ------]
 
@@ -30,20 +33,21 @@
 
 	public sealed class DispChara
 	{
+		//---------------------------------------------------------------------
 		//シングルトン実体
 		public static DispChara Inst { get; } = new DispChara ();
 
-		//コンペンドの表示 
-		public DispBehavior DispBehavior { get; set; } = null;	//アクションの集合
-		public DispGarnish DispGarnish { get; set; } = null;	//エフェクトの集合
-
-		//---------------------------------------------------------------------
 		//プライベートコンストラクタ
 		private DispChara ()
 		{
 			DispBehavior = new DispBehavior ();
 			DispGarnish = new DispGarnish ();
 		}
+		//---------------------------------------------------------------------
+
+		//コンペンドの表示 
+		public DispBehavior DispBehavior { get; set; } = null;	//アクションの集合
+		public DispGarnish DispGarnish { get; set; } = null;	//エフェクトの集合
 
 		//読込時、コントールにキャラのデータを設定する
 		public void SetCharaData ( Chara ch )

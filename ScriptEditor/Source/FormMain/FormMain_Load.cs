@@ -6,30 +6,12 @@ namespace ScriptEditor
 {
 	public partial class FormMain : Form
 	{
-		//コントロール統合処理
-		private Ctrl_All ctrl_all = new Ctrl_All ();
-
-		//シークエンスリスト・アクション
-		Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();
-
-		//コントロール・ビヘイビア
-		_Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();
-
-		//シークエンスリスト・エフェクト
-		Ctrl_SqcList ctrl_SqcList_Efc = new Ctrl_SqcList ();
-
-		//コントロール・ガーニッシュ
-		_Ctrl_Compend ctrl_cmpd_gns = new _Ctrl_Compend ();
-
-
 		//==================================================================================
 		//	環境初期化
 		//==================================================================================
 		private void LoadEnvironment ()
 		{
-			//コントロール初期化
-			ctrl_all.SetCtrl ( ctrl_SqcList_Act, ctrl_cmpd_bhv, ctrl_SqcList_Ef, ctrl_cmpd_gns );
-
+			LoadCtrl ();			//コントロール初期化
 			LoadSetting ();		//設定ファイル初期化
 			LoadSubForm ();		//サブフォーム初期化
 			LoadTab ();			//タブ初期化
@@ -79,7 +61,7 @@ namespace ScriptEditor
 		{
 			//ビヘイビア(:コンペンド)の指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
-			DispBehavior db = DispChara.Inst.DispBehavior;
+			//DispBehavior db = DispChara.Inst.DispBehavior;
 
 //			db.SetCtrl ( eb, ctrl_cmpd_bhv );    //表示
 
@@ -88,10 +70,11 @@ namespace ScriptEditor
 			ctrl_cmpd_bhv.SetEnviron ( eb );
 
 			//サブフォームにおける環境設定
-			SetEnvironmentSubForms ( eb, db );
+//			SetEnvironmentSubForms ( eb, db );
+			SetEnvironment_SubForms ( eb );
 
 			//アクションのみ
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
+//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
 		}
 
 		//タブ_エフェクトの初期化
@@ -117,8 +100,8 @@ namespace ScriptEditor
 	
 			//サブフォームの初期化
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
-			FormImage.Inst.SetEnviron ( eg, dg );
-			FormRect2.Inst.SetEnvironment ( eg, dg );
+			FormImage.Inst.SetEnviron ( eg );
+			FormRect2.Inst.SetEnvironment ( eg );
 		}
 
 		//タブ_コマンドの初期化

@@ -1,15 +1,17 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace ScriptEditor
 {
+	using BD_IMDT = BindingDictionary < ImageData >;
+
 	//-------------------------------------------------------------
 	//	イメージ選択フォーム
 	//-------------------------------------------------------------
-	public sealed partial class FormImage : EditorForm
+	public sealed partial class FormImage : SubForm_Compend
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -28,27 +30,27 @@ namespace ScriptEditor
 		}
 		//---------------------------------------------------------------------
 
-		//[in] イメージリスト参照
-		private BindingDictionary < ImageData > BD_ImageData { get; set; }
+		// イメージリスト参照
+		private BD_IMDT BD_ImageData { get; set; } = new BD_IMDT ();
 
-		//[out] グループ編集用
-		public ScriptParam < int > ScriptSetter { get; set; } = null;
+		// グループ編集用
+//		public ScriptParam < int > ScriptSetter { get; set; } = null;
 
 		//編集参照
-		public EditCompend EditCompend { get; set; } = null;
-		public DispCompend DispCompend { get; set; } = null;
+//		public EditCompend EditCompend { get; set; } = null;
+//		public DispCompend DispCompend { get; set; } = null;
 
 		//---------------------------------------------------------------------
 		//選択中イメージのインデックス
-		public int GetImageIndex () { return Lb_Image.SelectedIndex; }
+//		public int GetImageIndex () { return Lb_Image.SelectedIndex; }
 		//選択中イメージの名前
 		public string GetImageName () { return ( (ImageData)Lb_Image.SelectedItem ).Name; }
 
 		//環境を設定
-		public void SetEnviron ( EditCompend ec, DispCompend dc )
+		public void SetEnviron ( EditCompend ec )
 		{
-			EditCompend = ec;
-			DispCompend = dc;
+//			EditCompend = ec;
+//			DispCompend = dc;
 		}
 
 		//対象を設定
@@ -80,13 +82,15 @@ namespace ScriptEditor
 		{
 			//選択中スクリプトにイメージの設定
 			Script scp = EditCompend.SelectedScript;
-//			scp.ImgIndex = GetImageIndex ();
 			scp.ImgName = GetImageName ();
 			
 			//グループにも変更を反映
 //			EditCompend.EditScript.GroupSetterImageIndex ( scp.ImgIndex );
 
-			DispCompend.Disp ();
+			//全体描画
+			//DispCompend.Disp ();
+			Ctrl_All.Inst.AllDisp ();
+
 			this.Hide ();
 		}
 
@@ -99,7 +103,8 @@ namespace ScriptEditor
 			if ( openFileDialog1.ShowDialog () == DialogResult.OK )
 			{
 				LoadFiles ( openFileDialog1.FileNames );
-				DispCompend.Disp ();
+				//DispCompend.Disp ();
+				Ctrl_All.Inst.AllDisp ();
 			}
 		}
 
@@ -109,10 +114,9 @@ namespace ScriptEditor
 			if ( Lb_Image.Items.Count == 0 ) { return; }
 
 			//未選択時は何もしない
-			if ( Lb_Image.SelectedItem == null ) { return; }
+//			if ( Lb_Image.SelectedItem == null ) { return; }
 
 			//全イメージを削除
-			//L_ImageData.Clear ();
 			BD_ImageData.Clear ();
 
 			//表示をクリア
@@ -125,7 +129,6 @@ namespace ScriptEditor
 			int x = FormMain.Location.X + FormMain.Width;
 			int y = FormMain.Location.Y;
 			this.Location = new Point ( x, y );
-
 		}
 
 		private void フォルダ読込ToolStripMenuItem_Click ( object sender, EventArgs e )

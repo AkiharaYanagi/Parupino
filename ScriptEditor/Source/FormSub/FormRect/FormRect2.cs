@@ -23,9 +23,9 @@ namespace ScriptEditor
 		public Ctrl_AllRect Ctrl_AllRect { get; set; } = new Ctrl_AllRect ();
 
 		//環境設定
-		public void SetEnvironment ( EditCompend ec, DispCompend dc )
+		public void SetEnvironment ( EditCompend ec )
 		{
-			Ctrl_AllRect.SetEnvironment ( ec, ()=>dc.Disp() );
+			Ctrl_AllRect.SetEnvironment ( ec, ()=>Ctrl_All.Inst.AllDisp() );
 		}
 
 		//関連付け

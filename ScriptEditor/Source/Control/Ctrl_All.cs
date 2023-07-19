@@ -3,9 +3,21 @@
 
 namespace ScriptEditor
 {
+
 	//各コントロールの統合処理
-	public class Ctrl_All
+	public sealed class Ctrl_All
 	{
+		//---------------------------------------------------------------------
+		//シングルトン実体
+		public static Ctrl_All Inst { get; } = new Ctrl_All ();
+
+		//プライベートコンストラクタ
+		private Ctrl_All ()
+		{
+		}
+		//---------------------------------------------------------------------
+
+		//コントロール参照
 		private _Ctrl_Compend Ctrl_Cmpd_Bhv { get; set; } = new _Ctrl_Compend ();
 		private Ctrl_SqcList Ctrl_SqcList_Act { get; set; } = new Ctrl_SqcList ();
 		private _Ctrl_Compend Ctrl_Cmpd_Gns { get; set; } = new _Ctrl_Compend ();

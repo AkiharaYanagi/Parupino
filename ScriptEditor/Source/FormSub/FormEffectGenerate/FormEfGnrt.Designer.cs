@@ -160,7 +160,6 @@
 			// 
 			// cB_SequenceList1
 			// 
-			this.cB_SequenceList1.DispCompend = null;
 			this.cB_SequenceList1.FormattingEnabled = true;
 			this.cB_SequenceList1.Location = new System.Drawing.Point(12, 190);
 			this.cB_SequenceList1.Name = "cB_SequenceList1";

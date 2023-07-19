@@ -6,7 +6,7 @@ namespace ScriptEditor
 	//	アクション設定フォーム
 	//-------------------------------------------------------------
 
-	public sealed partial class FormAction : EditorForm
+	public sealed partial class FormAction : SubForm_Compend
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -33,9 +33,9 @@ namespace ScriptEditor
 		//---------------------------------------------------------------------
 
 		//編集と表示
-		public EditAction EditAction { get; set; } = null;
-		public DispAction DispAction { get; set; } = null;
-		public DispCompend DispCompend { get; set; } = null;
+//		public EditAction EditAction { get; set; } = null;
+//		public DispAction DispAction { get; set; } = null;
+//		public DispCompend DispCompend { get; set; } = null;
 
 		//編集中アクション
 		private Action action = new Action ( "New_Action" );
@@ -49,18 +49,20 @@ namespace ScriptEditor
 		public System.Action RemakeTree = () => { };
 
 
+#if false
 		//初期設定
 		public void SetCtrl ( EditAction ea, DispAction da, DispCompend dc )
 		{
-			EditAction = ea;
-			DispAction = da;
-			DispCompend = dc;
+//			EditAction = ea;
+//			DispAction = da;
+//			DispCompend = dc;
 
-			da.SetCtrl ( TB_Name, CBSL_Next, CB_Category, CB_Posture, TBN_HitNum );
-			CBSL_Next.SetDisp ( dc );
+//			da.SetCtrl ( TB_Name, CBSL_Next, CB_Category, CB_Posture, TBN_HitNum );
+//			CBSL_Next.SetDisp ( dc );
 
 //			SequenceTree = dc.CtrlCmpd.GetSequenceTree ();
 		}
+#endif
 
 		//キャラデータ
 		public void SetCharaData ( Chara ch )
@@ -116,7 +118,9 @@ namespace ScriptEditor
 			//ツリー再構築
 			//SequenceTree.Remake ();
 			RemakeTree ();
-			DispCompend.UpdateData ();
+			
+			//DispCompend.UpdateData ();
+			Ctrl_All.Inst.AllDisp ();
 		}
 
 		//-----------------------------------------------------------
