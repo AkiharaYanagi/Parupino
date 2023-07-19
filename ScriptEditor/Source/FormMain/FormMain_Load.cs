@@ -6,11 +6,30 @@ namespace ScriptEditor
 {
 	public partial class FormMain : Form
 	{
+		//コントロール統合処理
+		private Ctrl_All ctrl_all = new Ctrl_All ();
+
+		//シークエンスリスト・アクション
+		Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();
+
+		//コントロール・ビヘイビア
+		_Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();
+
+		//シークエンスリスト・エフェクト
+		Ctrl_SqcList ctrl_SqcList_Efc = new Ctrl_SqcList ();
+
+		//コントロール・ガーニッシュ
+		_Ctrl_Compend ctrl_cmpd_gns = new _Ctrl_Compend ();
+
+
 		//==================================================================================
 		//	環境初期化
 		//==================================================================================
 		private void LoadEnvironment ()
 		{
+			//コントロール初期化
+			ctrl_all.SetCtrl ( ctrl_SqcList_Act, ctrl_cmpd_bhv, ctrl_SqcList_Ef, ctrl_cmpd_gns );
+
 			LoadSetting ();		//設定ファイル初期化
 			LoadSubForm ();		//サブフォーム初期化
 			LoadTab ();			//タブ初期化
@@ -45,10 +64,6 @@ namespace ScriptEditor
 		//--------------------------------------------------------------------------
 
 		//タブ_アクションの初期化
-		
-		//コントロール実体	
-		Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();
-
 		private void TabAction_Load ()
 		{
 			tabControl1.TabPages[0].Controls.Add ( ctrl_SqcList_Act );
@@ -59,11 +74,7 @@ namespace ScriptEditor
 			ctrl_SqcList_Act.LoadCtrl ();
 		}
 
-		//タブ_スクリプト(A)の初期化
-
-		//コントロール実体	
-		_Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();
-
+		//タブ_スクリプト(Act)の初期化
 		private void TabScript_A_Load ()
 		{
 			//ビヘイビア(:コンペンド)の指定
@@ -92,17 +103,17 @@ namespace ScriptEditor
 			ctrl_SqcList_Ef.LoadCtrl ();
 		}
 
-		//タブ_スクリプト(E)の初期化
+		//タブ_スクリプト(Ef)の初期化
 		private void TabScript_E_Load ()
 		{
 			//ガーニッシュ(:コンペンド)の指定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
 
-			dg.SetCtrl ( eg, cpd_Garnish );	//表示
+//			dg.SetCtrl ( eg, cpd_Garnish );	//表示
 
-			cpd_Garnish.SetEnviron ( eg, dg );	//ガーニッシュ(:コンペンド)初期化
-			cpd_Garnish.SetGarnish ();
+//			cpd_Garnish.SetEnviron ( eg, dg );	//ガーニッシュ(:コンペンド)初期化
+//			cpd_Garnish.SetGarnish ();
 	
 			//サブフォームの初期化
 			Form_ScriptList.Inst.SetEnvironment ( eg, chara );

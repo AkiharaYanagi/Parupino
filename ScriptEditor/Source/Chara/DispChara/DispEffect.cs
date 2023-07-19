@@ -14,7 +14,7 @@
 		}
 
 		//ロード
-		public void Load ( Ctrl_Compend ctrlCmpd )
+		public void Load ( _Ctrl_Compend ctrlCmpd )
 		{
 			//参照の設定
 //			base.TbSeqName = ctrlCmpd.tB_ActionName;

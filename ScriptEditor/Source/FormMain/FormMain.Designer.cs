@@ -49,7 +49,6 @@
 			this.tabEffect = new System.Windows.Forms.TabPage();
 			this.ctrl_SqcList_Ef = new ScriptEditor.Ctrl_SqcList();
 			this.tabScriptE = new System.Windows.Forms.TabPage();
-			this.cpd_Garnish = new ScriptEditor.Ctrl_Compend();
 			this.tabCommand = new System.Windows.Forms.TabPage();
 			this.ctrl_CmdList1 = new ScriptEditor.Ctrl_CmdList();
 			this.tabBranch = new System.Windows.Forms.TabPage();
@@ -225,7 +224,6 @@
 			// 
 			// tabScriptE
 			// 
-			this.tabScriptE.Controls.Add(this.cpd_Garnish);
 			this.tabScriptE.Location = new System.Drawing.Point(4, 22);
 			this.tabScriptE.Name = "tabScriptE";
 			this.tabScriptE.Padding = new System.Windows.Forms.Padding(3);
@@ -233,15 +231,6 @@
 			this.tabScriptE.TabIndex = 1;
 			this.tabScriptE.Text = "スクリプト(E)";
 			this.tabScriptE.UseVisualStyleBackColor = true;
-			// 
-			// cpd_Garnish
-			// 
-			this.cpd_Garnish.BoolAction = false;
-			this.cpd_Garnish.EditCompend = null;
-			this.cpd_Garnish.Location = new System.Drawing.Point(0, 0);
-			this.cpd_Garnish.Name = "cpd_Garnish";
-			this.cpd_Garnish.Size = new System.Drawing.Size(977, 711);
-			this.cpd_Garnish.TabIndex = 0;
 			// 
 			// tabCommand
 			// 
@@ -348,7 +337,6 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-		private Ctrl_Compend cpd_Garnish;
 		private System.Windows.Forms.ToolStripMenuItem テキストから読込ToolStripMenuItem;
 		private System.Windows.Forms.TabPage tabBranch;
 		private Ctrl_CmdList ctrl_CmdList1;

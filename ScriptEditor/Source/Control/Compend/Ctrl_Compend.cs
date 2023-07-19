@@ -3,6 +3,9 @@ using System.ComponentModel;
 
 namespace ScriptEditor
 {
+
+#if false
+
 	using BD_Sqc = BindingDictionary < Sequence >;
 	using BL_Sqc = BindingList < Sequence >;
 
@@ -218,8 +221,10 @@ namespace ScriptEditor
 			FormPreview.Inst.Start ();
 		}
 
-
-
-
 	}
+
+
+
+
+#endif
 }

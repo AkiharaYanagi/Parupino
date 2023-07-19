@@ -142,8 +142,8 @@ namespace ScriptEditor
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
 
-			cpd_Garnish.UpdateData ();
-			cpd_Garnish.SelectTop ();
+			//cpd_Garnish.UpdateData ();
+			//cpd_Garnish.SelectTop ();
 			Assosiate ( eg.SelectedSequence, eg.SelectedScript );
 			eg.SelectScript ( 0, 0 );
 

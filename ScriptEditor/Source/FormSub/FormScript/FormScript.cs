@@ -30,6 +30,10 @@ namespace ScriptEditor
 		//編集と表示
 		public EditScript EditScript { get; set; } = null;
 //		public DispScript DispScript { get; set; } = null;
+
+		public System.Action _Assosiate { get; set; } = () => {};
+		public System.Action _UpdateData { get; set; } = () => {};
+		public System.Action AllDisp { get; set; } = () => {};
 		
 		//設定
 //		public void SetEnvironment ( EditCompend ec, DispScript ds )
@@ -44,12 +48,14 @@ namespace ScriptEditor
 	
 		public void Assosiate ( Script scp, Sequence sqc )
 		{
-			ctrl_Script1.Assosiate ( scp );
+			//ctrl_Script1.Assosiate ( scp );
+			_Assosiate ();
 		}
 
 		public void UpdateData ()
 		{
-			ctrl_Script1.UpdateData ();
+			//ctrl_Script1.UpdateData ();
+			_UpdateData ();
 		}
 	}
 }

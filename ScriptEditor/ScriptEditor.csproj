@@ -117,13 +117,7 @@
     <Compile Include="Source\Control\CB_SequenceList.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Source\Control\Compend\Ctrl_Compend.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Compend\Ctrl_Compend.Designer.cs">
-      <DependentUpon>Ctrl_Compend.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Control\Compend\PaintImage.cs" />
+    <Compile Include="Source\Control\Ctrl_All.cs" />
     <Compile Include="Source\FormMain\FormMain_IO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,25 +125,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormSub\FormEffectGenerate\ControlsEfGnrt.cs" />
-    <Compile Include="Source\Control\Compend\Ctrl_Image.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Compend\Ctrl_Image.Designer.cs">
-      <DependentUpon>Ctrl_Image.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Control\Compend\RB_Tool.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Compend\SequenceTree.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Compend\SqcBoard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Compend\SqcBoard.designer.cs">
-      <DependentUpon>SqcBoard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Control\Compend\ToolImg.cs" />
     <Compile Include="Source\FormMain\FormMain_Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,18 +215,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Compend\Ctrl_Compend.resx">
-      <DependentUpon>Ctrl_Compend.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Compend\Ctrl_Image.resx">
-      <DependentUpon>Ctrl_Image.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Compend\SequenceTree.resx">
-      <DependentUpon>SequenceTree.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Compend\SqcBoard.resx">
-      <DependentUpon>SqcBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

@@ -16,18 +16,18 @@
 //		public DispScript DispScript { get; set; } = new DispScript ();
 
 		//コントロール：コンペンドの参照
-		public Ctrl_Compend CtrlCmpd { get; set; } = null;
+		public _Ctrl_Compend CtrlCmpd { get; set; } = null;
 
 		//シークエンスボードの参照
-		public SqcBoard SqcBoard { get; set; } = null;
+//		public SqcBoard SqcBoard { get; set; } = null;
 
 		//コントロールの設定
-		public virtual void SetCtrl ( EditCompend ec, Ctrl_Compend cc )
+		public virtual void SetCtrl ( EditCompend ec, _Ctrl_Compend cc )
 		{
 			EditCompend = ec;
 //			DispScript.Set ( cc );
 			CtrlCmpd = cc;
-			SqcBoard = cc.sqcBoard1;
+//			SqcBoard = cc.sqcBoard1;
 		}
 
 		//データの設定
@@ -50,7 +50,7 @@
 		public void Disp ()
 		{
 			CtrlCmpd.Invalidate ();
-			SqcBoard.Invalidate ();
+//			SqcBoard.Invalidate ();
 			
 			DispSequence.Disp ( EditCompend.SelectedSequence );		//シークエンス
 //			DispScript.Disp ( EditCompend.SelectedScript );	//スクリプト
@@ -76,7 +76,7 @@
 			base.DispSequence = DispAction;
 		}
 
-		public override void SetCtrl ( EditCompend ec, Ctrl_Compend cc )
+		public override void SetCtrl ( EditCompend ec, _Ctrl_Compend cc )
 		{
 			DispAction.SetCtrl ( cc );
 			base.SetCtrl ( ec, cc );
@@ -100,7 +100,7 @@
 			base.DispSequence = DispEffect;
 		}
 
-		public override void SetCtrl ( EditCompend ec, Ctrl_Compend cc )
+		public override void SetCtrl ( EditCompend ec, _Ctrl_Compend cc )
 		{
 			DispEffect.Load ( cc );
 			base.SetCtrl ( ec, cc );

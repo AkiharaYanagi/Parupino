@@ -29,7 +29,7 @@ namespace ScriptEditor
 
 
 		//コントロールコンペンドからの設定
-		public void SetCtrl ( Ctrl_Compend cc )
+		public void SetCtrl ( _Ctrl_Compend cc )
 		{
 		}
 
