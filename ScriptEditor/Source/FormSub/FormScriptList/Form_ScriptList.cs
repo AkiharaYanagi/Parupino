@@ -13,7 +13,7 @@ namespace ScriptEditor
 	//-------------------------------------------------------------
 	//	スクリプトリスト操作フォーム
 	//-------------------------------------------------------------
-	public sealed class Form_ScriptList : EditorForm
+	public sealed class Form_ScriptList : SubForm_Compend
 	{
 		private Button Btn_Copy;
 		private Button Btn_Save;
@@ -127,12 +127,9 @@ namespace ScriptEditor
 
 		//---------------------------------------------------------------------
 
-		public EditCompend EditCompend { get; set; } = null;
-		public Chara Chara { get; set; } = null;	//ファイル書出のためにCharaToDocを用いる
-		public void SetEnvironment ( EditCompend ec, Chara ch )
+		public void SetEnvironment ( EditCompend ec )
 		{
 			EditCompend = ec;
-			Chara = ch;
 		}
 
 		//書出
@@ -148,8 +145,9 @@ namespace ScriptEditor
 				{
 					using ( StreamWriter sw = new StreamWriter ( sfd.FileName, false, Encoding.UTF8 ) )
 					{
+						Chara ch = EditChara.Inst.Chara;
 						CharaToDoc ctod = new CharaToDoc ();
-						ctod.WriteListScript ( Chara, sw, EditCompend.Compend, EditCompend.SelectedSequence.ListScript ) ;
+						ctod.WriteListScript ( ch, sw, EditCompend.Compend, EditCompend.SelectedSequence.ListScript ) ;
 					}
 				}
 			}

@@ -11,7 +11,7 @@ namespace ScriptEditor
 	{
 		//編集参照
 		public EditCompend EditCompend { get; set; } = new EditCompend ();
-		public void SetEditCompend ( EditCompend ec )
+		public virtual void SetEditCompend ( EditCompend ec )
 		{
 			EditCompend = ec;
 		}

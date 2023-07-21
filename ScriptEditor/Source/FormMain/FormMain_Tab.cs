@@ -148,7 +148,7 @@ namespace ScriptEditor
 			eg.SelectScript ( 0, 0 );
 
 			//サブフォームにガーニッシュを設定
-			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
+			Form_ScriptList.Inst.SetEnvironment ( eg );
 			FormImage.Inst.SetEnviron ( eg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}

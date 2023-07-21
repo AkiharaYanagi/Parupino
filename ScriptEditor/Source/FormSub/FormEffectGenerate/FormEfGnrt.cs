@@ -2,7 +2,7 @@
 
 namespace ScriptEditor
 {
-	public sealed partial class FormEfGnrt : EditorForm
+	public sealed partial class FormEfGnrt : SubForm_Compend
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体

@@ -17,6 +17,7 @@ namespace ScriptEditor
 		//==================================================================================
 		private void LoadSubForm ()
 		{
+			//サブフォーム一覧に登録
 			L_EditorForm.Add ( FormAction.Inst );
 			L_EditorForm.Add ( Form_ScriptList.Inst );
 			L_EditorForm.Add ( FormScript.Inst );
@@ -26,6 +27,7 @@ namespace ScriptEditor
 			L_EditorForm.Add ( FormEfGnrt.Inst );
 			L_EditorForm.Add ( FormPreview.Inst );
 
+			//親を記録
 			foreach ( EditorForm ef in L_EditorForm )
 			{
 				ef.FormMain = this;
@@ -35,18 +37,21 @@ namespace ScriptEditor
 		//==================================================================================
 		//	環境設定
 		//==================================================================================
-//		private void SetEnvironmentSubForms ( EditCompend ec, DispCompend dc )
-//		{
 		private void SetEnvironment_SubForms ( EditCompend ec )
 		{
+#if false
 			//コンペンド(ビヘイビア、ガーニッシュ)の指定
 			Form_ScriptList.Inst.SetEnvironment ( ec, chara );
-//			FormScript.Inst.SetEnvironment ( ec, dc.DispScript );
 			FormScript.Inst.SetEnvironment ( ec );
 			FormImage.Inst.SetEnviron ( ec );			//フォーム：イメージ
 			FormRect2.Inst.SetEnvironment ( ec );			//フォーム：レクト
 			FormRoute.Inst.SetEnvironment ( ec );
 			FormPreview.Inst.SetEnviron ( ec );	//フォーム：プレビュー
+#endif
+			foreach ( SubForm_Compend subform in L_EditorForm )
+			{
+				subform.SetEditCompend ( ec );
+			}
 		}
 
 		//==================================================================================

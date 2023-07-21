@@ -12,7 +12,7 @@ namespace ScriptEditor
 		//==================================================================================
 		private void LoadEnvironment ()
 		{
-			LoadCtrl ();			//コントロール初期化
+			LoadCtrl ();		//コントロール初期化
 			LoadSetting ();		//設定ファイル初期化
 			LoadSubForm ();		//サブフォーム初期化
 			LoadTab ();			//タブ初期化
@@ -117,9 +117,10 @@ namespace ScriptEditor
 
 	
 			//サブフォームの初期化
-			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
-			FormImage.Inst.SetEnviron ( eg );
-			FormRect2.Inst.SetEnvironment ( eg );
+			SetEnvironment_SubForms ( eg );
+//			Form_ScriptList.Inst.SetEnvironment ( eg );
+//			FormImage.Inst.SetEnviron ( eg );
+//			FormRect2.Inst.SetEnvironment ( eg );
 		}
 
 		//タブ_コマンドの初期化
