@@ -57,6 +57,7 @@ namespace ScriptEditor
 			//cpd_Behavior.SetCharaData ( ch );			//コンペンド
 			ctrl_cmpd_bhv.SetCharaData ( ch );
 //			cpd_Garnish.SetCharaData ( ch );
+			ctrl_cmpd_gns.SetCharaData ( ch );
 
 			//----------------------------------------------
 			ctrl_CmdList1.SetCharaData ( ch );			//コマンド

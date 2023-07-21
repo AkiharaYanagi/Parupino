@@ -86,8 +86,6 @@ namespace ScriptEditor
 			DispBehavior db = DispChara.Inst.DispBehavior;
 			
 			//他タブのデータで更新
-			//cpd_Behavior.UpdateData ();
-			//cpd_Behavior.SelectTop ();
 			ctrl_cmpd_bhv.UpdateData ();
 			ctrl_cmpd_bhv.SelectTop ();
 
