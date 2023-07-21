@@ -61,7 +61,6 @@
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabEffect.SuspendLayout();
-			this.tabScriptE.SuspendLayout();
 			this.tabCommand.SuspendLayout();
 			this.tabBranch.SuspendLayout();
 			this.tabRoute.SuspendLayout();
@@ -312,7 +311,6 @@
 			this.tabControl1.ResumeLayout(false);
 			this.tabEffect.ResumeLayout(false);
 			this.tabEffect.PerformLayout();
-			this.tabScriptE.ResumeLayout(false);
 			this.tabCommand.ResumeLayout(false);
 			this.tabBranch.ResumeLayout(false);
 			this.tabRoute.ResumeLayout(false);

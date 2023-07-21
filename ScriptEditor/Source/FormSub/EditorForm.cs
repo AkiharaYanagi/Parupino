@@ -49,7 +49,7 @@ namespace ScriptEditor
 			this.Visible = ! this.Visible;
 		}
 
-		//最前面にする(既に最前面のとき隠す)
+		//表示する(既に表示済みのときは最前面にする)
 		public void Active ()
 		{
 			if ( this.Visible == false)

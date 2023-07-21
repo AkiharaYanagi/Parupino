@@ -26,16 +26,6 @@ namespace ScriptEditor
 			L_EditorForm.Add ( FormEfGnrt.Inst );
 			L_EditorForm.Add ( FormPreview.Inst );
 
-#if false
-			FormAction.Inst.FormMain = this;
-			Form_ScriptList.Inst.FormMain = this;
-			FormScript.Inst.FormMain = this;
-			FormImage.Inst.FormMain = this;
-			FormRoute.Inst.FormMain = this;
-			FormRect2.Inst.FormMain = this;
-			FormEfGnrt.Inst.FormMain = this;
-			FormPreview.Inst.FormMain = this;
-#endif
 			foreach ( EditorForm ef in L_EditorForm )
 			{
 				ef.FormMain = this;

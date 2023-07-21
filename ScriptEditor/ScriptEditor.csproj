@@ -118,6 +118,15 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source\Control\Ctrl_All.cs" />
+    <Compile Include="Source\Control\Ctrl_FormBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Ctrl_FormBtn_v.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Source\Control\Ctrl_FormBtn_v.Designer.cs">
+      <DependentUpon>Ctrl_FormBtn_v.cs</DependentUpon>
+    </Compile>
     <Compile Include="Source\FormMain\FormMain_Ctrl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +230,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Ctrl_FormBtn.resx">
+      <DependentUpon>Ctrl_FormBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Source\Control\Ctrl_FormBtn_v.resx">
+      <DependentUpon>Ctrl_FormBtn_v.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
