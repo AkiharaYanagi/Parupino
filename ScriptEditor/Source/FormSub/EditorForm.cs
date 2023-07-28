@@ -22,6 +22,7 @@ namespace ScriptEditor
 
 	public class EditorForm : Form
 	{
+		//コンストラクタ
 		public EditorForm ()
 		{
 			this.StartPosition = FormStartPosition.Manual;	//位置を手動にする
@@ -48,7 +49,7 @@ namespace ScriptEditor
 			this.Visible = ! this.Visible;
 		}
 
-		//最前面にする(既に最前面のとき隠す)
+		//表示する(既に表示済みのときは最前面にする)
 		public void Active ()
 		{
 			if ( this.Visible == false)
@@ -70,18 +71,23 @@ namespace ScriptEditor
 			this.Hide ();
 		}
 
+
+		//---------------------------------------------------------------------
 		//親フォーム参照
 		public FormMain FormMain { get; set; } = null;
 		public Point InitPt { get; set; } = new Point ( 0, 0 );
 
-		//表示
+		//イベント・表示変更時
 		public void EditForm_VisibleChanged ( object sender, EventArgs e )
 		{
+			if ( FormMain is null ) { return; }
+
 			//フォーム位置を親フォームの右端にする
 			int x = InitPt.X + FormMain.Location.X + FormMain.Width;
 			int y = InitPt.Y + FormMain.Location.Y;
 			this.Location = new Point ( x, y );
 		}
+		//---------------------------------------------------------------------
 
 	}
 }

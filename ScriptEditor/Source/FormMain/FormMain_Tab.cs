@@ -86,8 +86,6 @@ namespace ScriptEditor
 			DispBehavior db = DispChara.Inst.DispBehavior;
 			
 			//他タブのデータで更新
-			//cpd_Behavior.UpdateData ();
-			//cpd_Behavior.SelectTop ();
 			ctrl_cmpd_bhv.UpdateData ();
 			ctrl_cmpd_bhv.SelectTop ();
 
@@ -96,8 +94,8 @@ namespace ScriptEditor
 
 
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
-			SetEnvironmentSubForms ( eb, db );
+//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
+			SetEnvironment_SubForms ( eb );
 
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 		}
@@ -148,8 +146,8 @@ namespace ScriptEditor
 			eg.SelectScript ( 0, 0 );
 
 			//サブフォームにガーニッシュを設定
-			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
-			FormImage.Inst.SetEnviron ( eg, dg );
+			Form_ScriptList.Inst.SetEnvironment ( eg );
+			FormImage.Inst.SetEnviron ( eg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 		}
 

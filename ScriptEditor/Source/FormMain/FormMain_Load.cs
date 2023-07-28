@@ -1,35 +1,18 @@
 ﻿using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 
 namespace ScriptEditor
 {
 	public partial class FormMain : Form
 	{
-		//コントロール統合処理
-		private Ctrl_All ctrl_all = new Ctrl_All ();
-
-		//シークエンスリスト・アクション
-		Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();
-
-		//コントロール・ビヘイビア
-		_Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();
-
-		//シークエンスリスト・エフェクト
-		Ctrl_SqcList ctrl_SqcList_Efc = new Ctrl_SqcList ();
-
-		//コントロール・ガーニッシュ
-		_Ctrl_Compend ctrl_cmpd_gns = new _Ctrl_Compend ();
-
-
 		//==================================================================================
 		//	環境初期化
 		//==================================================================================
 		private void LoadEnvironment ()
 		{
-			//コントロール初期化
-			ctrl_all.SetCtrl ( ctrl_SqcList_Act, ctrl_cmpd_bhv, ctrl_SqcList_Ef, ctrl_cmpd_gns );
-
+			LoadCtrl ();		//コントロール初期化
 			LoadSetting ();		//設定ファイル初期化
 			LoadSubForm ();		//サブフォーム初期化
 			LoadTab ();			//タブ初期化
@@ -66,6 +49,7 @@ namespace ScriptEditor
 		//タブ_アクションの初期化
 		private void TabAction_Load ()
 		{
+			//タブコントロールに手動追加
 			tabControl1.TabPages[0].Controls.Add ( ctrl_SqcList_Act );
 
 			Ctrl_SqcList.CTRL_SQC act = Ctrl_SqcList.CTRL_SQC.ACTION;
@@ -79,19 +63,26 @@ namespace ScriptEditor
 		{
 			//ビヘイビア(:コンペンド)の指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
-			DispBehavior db = DispChara.Inst.DispBehavior;
 
-//			db.SetCtrl ( eb, ctrl_cmpd_bhv );    //表示
+			//タブコントロールに手動追加
+			TabPage tp = tabControl1.TabPages[1];
+			tp.SuspendLayout ();
 
-//			cpd_Behavior.SetEnviron ( eb, db );	//ビヘイビア(:コンペンド)初期化
-//			cpd_Behavior.SetBehavior ();
+			tp.Controls.Add ( ctrl_cmpd_bhv );
 			ctrl_cmpd_bhv.SetEnviron ( eb );
+			ctrl_cmpd_bhv.Location = new Point ( 0, 0 );
+			ctrl_cmpd_bhv.Size = new Size ( tp.Size.Width - ctrl_fmBtn_gns.Width, tp.Size.Height );
+
+			tp.Controls.Add ( ctrl_fmBtn_bhv );
+			ctrl_fmBtn_bhv.Location = new Point ( ctrl_cmpd_bhv.Width, 0 );
+
+			tp.ResumeLayout ( false );
 
 			//サブフォームにおける環境設定
-			SetEnvironmentSubForms ( eb, db );
+			SetEnvironment_SubForms ( eb );
 
 			//アクションのみ
-			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
+//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
 		}
 
 		//タブ_エフェクトの初期化
@@ -110,15 +101,26 @@ namespace ScriptEditor
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
 
-//			dg.SetCtrl ( eg, cpd_Garnish );	//表示
+			//タブコントロールに手動追加
+			TabPage tp = tabControl1.TabPages[3];
+			tp.SuspendLayout ();
 
-//			cpd_Garnish.SetEnviron ( eg, dg );	//ガーニッシュ(:コンペンド)初期化
-//			cpd_Garnish.SetGarnish ();
+			tp.Controls.Add ( ctrl_cmpd_gns );
+			ctrl_cmpd_gns.SetEnviron ( eg );
+			ctrl_cmpd_gns.Location = new Point ( 0, 0 ); 
+			ctrl_cmpd_gns.Size = new Size ( tp.Size.Width - ctrl_fmBtn_gns.Width, tp.Size.Height );
+			
+			tp.Controls.Add ( ctrl_fmBtn_gns );
+			ctrl_fmBtn_gns.Location = new Point ( ctrl_cmpd_gns.Width, 0 );
+
+			tp.ResumeLayout ();
+
 	
 			//サブフォームの初期化
-			Form_ScriptList.Inst.SetEnvironment ( eg, chara );
-			FormImage.Inst.SetEnviron ( eg, dg );
-			FormRect2.Inst.SetEnvironment ( eg, dg );
+			SetEnvironment_SubForms ( eg );
+//			Form_ScriptList.Inst.SetEnvironment ( eg );
+//			FormImage.Inst.SetEnviron ( eg );
+//			FormRect2.Inst.SetEnvironment ( eg );
 		}
 
 		//タブ_コマンドの初期化

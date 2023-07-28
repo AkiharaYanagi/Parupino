@@ -118,7 +118,6 @@
 			// 
 			// CBSL_Next
 			// 
-			this.CBSL_Next.DispCompend = null;
 			this.CBSL_Next.FormattingEnabled = true;
 			this.CBSL_Next.Location = new System.Drawing.Point(69, 44);
 			this.CBSL_Next.Name = "CBSL_Next";

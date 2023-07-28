@@ -70,7 +70,8 @@ namespace ScriptEditor
 			tabAction_Selected ();
 
 			//表示の更新
-			DispChara.Inst.Disp ();
+			//DispChara.Inst.Disp ();
+			Ctrl_All.Inst.AllDisp ();
 		}
 
 	}

@@ -7,7 +7,7 @@ namespace ScriptEditor
 	//---------------------------------------------------------------------
 	//	スクリプトの詳細を設定するフォーム
 	//---------------------------------------------------------------------
-	public sealed partial class FormScript : EditorForm
+	public sealed partial class FormScript : SubForm_Compend
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体

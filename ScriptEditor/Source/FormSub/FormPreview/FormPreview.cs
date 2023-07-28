@@ -8,7 +8,7 @@ namespace ScriptEditor
 	//		イメージ表示のみ
 	//		[F]に基づく描画
 	//--------------------------------------------
-	public partial class FormPreview :EditorForm
+	public partial class FormPreview : SubForm_Compend
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -27,8 +27,6 @@ namespace ScriptEditor
 			Btn_Advance.Enabled = false;
 		}
 		//---------------------------------------------------------------------
-
-		private EditCompend EditCompend = null;
 
 		private FrameControl fcon = new FrameControl ();
 		private GameMain GameMain = new GameMain ();

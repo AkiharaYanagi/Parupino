@@ -6,16 +6,13 @@ using System.Windows.Forms;
 
 namespace ScriptEditor
 {
-	public partial class FormRoute :EditorForm
+	public partial class FormRoute : SubForm_Compend
 	{
 		//コントロール(ルート)
 		EditListbox < TName > EL_Route = new EditListbox < TName > ();
 
 		//チェック用ルートリスト
 		private BindingDictionary < Route > BD_Route = new BindingDictionary<Route> ();
-
-		//編集用
-		public EditCompend EditCompend { get; set; } = new EditCompend ();
 
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -92,10 +89,12 @@ namespace ScriptEditor
 		}
 
 		//環境設定
+#if false
 		public void SetEnvironment ( EditCompend ec )
 		{
 			EditCompend = ec;
 		}
+#endif
 
 		//関連付け
 		public Script Script { get; set; } = new Script ();

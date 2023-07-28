@@ -2,7 +2,7 @@
 
 namespace ScriptEditor
 {
-	public partial class FormRect2 : EditorForm
+	public partial class FormRect2 : SubForm_Compend
 	{
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -23,9 +23,17 @@ namespace ScriptEditor
 		public Ctrl_AllRect Ctrl_AllRect { get; set; } = new Ctrl_AllRect ();
 
 		//環境設定
-		public void SetEnvironment ( EditCompend ec, DispCompend dc )
+#if false
+		public void SetEnvironment ( EditCompend ec )
 		{
-			Ctrl_AllRect.SetEnvironment ( ec, ()=>dc.Disp() );
+			Ctrl_AllRect.SetEnvironment ( ec, ()=>Ctrl_All.Inst.AllDisp() );
+		}
+#endif
+		public override void SetEditCompend ( EditCompend ec )
+		{
+			Ctrl_AllRect.SetEditCompend ( ec );
+			Ctrl_AllRect.SetFnDispAll ( ()=>Ctrl_All.Inst.AllDisp() );
+			base.SetEditCompend ( ec ); 
 		}
 
 		//関連付け

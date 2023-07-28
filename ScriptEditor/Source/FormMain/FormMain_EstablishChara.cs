@@ -46,7 +46,8 @@ namespace ScriptEditor
 		{
 			//----------------------------------------------
 			EditChara.Inst.SetCharaDara ( ch );			//編集
-			DispChara.Inst.SetCharaData ( ch );			//表示
+			//DispChara.Inst.SetCharaData ( ch );			//表示
+			Ctrl_All.Inst.SetCharaData ( ch );
 
 			//----------------------------------------------
 			ctrl_SqcList_Act.SetCharaData ( ch.behavior );			//シークエンス
@@ -56,6 +57,7 @@ namespace ScriptEditor
 			//cpd_Behavior.SetCharaData ( ch );			//コンペンド
 			ctrl_cmpd_bhv.SetCharaData ( ch );
 //			cpd_Garnish.SetCharaData ( ch );
+			ctrl_cmpd_gns.SetCharaData ( ch );
 
 			//----------------------------------------------
 			ctrl_CmdList1.SetCharaData ( ch );			//コマンド

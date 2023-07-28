@@ -18,7 +18,8 @@ namespace ScriptEditor
 		public BD_Sqc BD_Sqc = null;
 
 		//表示の更新用
-		public DispCompend DispCompend { get; set; } = null;
+//		public DispCompend DispCompend { get; set; } = null;
+		public System.Action AllDisp = ()=>{};
 
 		//設定用デリゲート
 		public SetFunc Set { get; set; } = null;
@@ -26,7 +27,12 @@ namespace ScriptEditor
 		//初期化
 		public void SetDisp ( DispCompend dc )
 		{
-			DispCompend = dc;
+//			DispCompend = dc;
+		}
+
+		public void SetDisp ( System.Action disp )
+		{
+			AllDisp = disp;
 		}
 
 		//キャラデータ読込時
@@ -60,7 +66,8 @@ namespace ScriptEditor
 			Set ( (Sequence)this.SelectedItem );
 
 			//表示更新
-			DispCompend.Disp ();
+			//DispCompend.Disp ();
+			Ctrl_All.Inst.AllDisp ();
 
 			base.OnSelectionChangeCommitted ( e );
 		}
