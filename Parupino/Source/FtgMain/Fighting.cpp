@@ -23,8 +23,6 @@ namespace GAME
 		//------------------------------------------------
 		//îwåi
 		m_bg = make_shared < GrpAcv > ();
-//		m_bg->AddTexture (_T ("ftgmain_bg.png"));
-//		m_bg->AddTexture ( _T ( "ftgmain_bg0.png" ) );
 		m_bg->AddTexture ( _T ( "ftgmain_bg1.png" ) );
 		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );

@@ -1,6 +1,6 @@
 //=================================================================================================
 //
-//	Fighting ヘッダファイル
+//	Demo ヘッダファイル
 //
 //=================================================================================================
 #pragma once
@@ -9,23 +9,19 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
-#include "FtgConst.h"	
-#include "MutualChara.h"
+#include "../FtgMain/FtgConst.h"	
+#include "../FtgMain/MutualChara.h"
 #include "../GameMain/Scene.h"
-#include "FtgDemo.h"
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class Fighting : public Scene
+	class Demo : public Scene
 	{
-		//背景
-		P_GrpAcv		m_bg;
-		P_GrpAcv		m_bg_blackout;
-
-		P_Timer			m_bgTimer;
+		P_GrpAcv		m_bg;			//背景
+		P_GrpAcv		m_training;		//トレーニング表示
 
 		//画面固定システム表示
 		//ゲージ枠
@@ -34,19 +30,13 @@ namespace GAME
 		//キャラ相互処理
 		P_MutualChara	m_mutualChara;
 
-		//=====================================================
-		//デモ
-		P_FtgDemoActor		m_demoActor;
-
-		//=====================================================
-
 		//ポーズ
 		P_GrpAcv		m_pause;
 
 	public:
-		Fighting ();
-		Fighting ( const Fighting & rhs ) = delete;
-		~Fighting ();
+		Demo ();
+		Demo ( const Demo & rhs ) = delete;
+		~Demo ();
 
 		void ParamInit ();
 		void Init ();
@@ -56,12 +46,7 @@ namespace GAME
 
 	private:
 		void Pause ();
-
-		//共通グラフィック処理
-		void Grp ();
 	};
-
-	using P_FTG = shared_ptr < Fighting >;
 
 
 }	//namespace GAME

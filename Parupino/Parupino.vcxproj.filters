@@ -165,6 +165,12 @@
     <ClInclude Include="Source\ExeChara\Disp\DispRect.h">
       <Filter>ExeChara\Disp</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Demo\Demo.h">
+      <Filter>Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\FtgMain.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -271,6 +277,12 @@
     </ClCompile>
     <ClCompile Include="Source\ExeChara\Disp\DispRect.cpp">
       <Filter>ExeChara\Disp</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Demo\Demo.cpp">
+      <Filter>Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\FtgMain.cpp">
+      <Filter>FtgMain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
