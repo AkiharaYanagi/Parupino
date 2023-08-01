@@ -75,9 +75,9 @@ namespace GAME
 	}
 
 
-	void Fighting::ParamInit ()
+	void Fighting::ParamInit ( P_Param pParam )
 	{
-		m_mutualChara->ParamInit ( GetpParam () );
+		m_mutualChara->ParamInit ( pParam );
 	}
 
 	void Fighting::Init ()
@@ -86,10 +86,10 @@ namespace GAME
 		SOUND->PlayLoop ( BGM_Main );
 		m_pause->SetValid ( false );
 
-		Scene::Init ();
+		TASK_LST::Init ();
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 0
+#define DEMO_ON 1
 #if DEMO_ON
 		m_demoActor->StartGreeting ();
 #else
@@ -117,19 +117,21 @@ namespace GAME
 		Grp ();
 
 		//--------------------------
-		Scene::Move ();
+		TASK_LST::Move ();
 	}
 
-
+#if 0
 	//状態遷移
 	P_GameScene Fighting::Transit ()
 	{
+#if 0
 		//ESCで戻る
 		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
 		{
 			SOUND->Stop ( BGM_Main );
 			return make_shared < Title > ();
 		}
+#endif // 0
 
 		//戦闘終了時
 #if 0
@@ -141,8 +143,9 @@ namespace GAME
 #endif // 0
 
 		//通常時
-		return shared_from_this ();
+//		return shared_from_this ();
 	}
+#endif // 0
 	
 
 	//=============================================================

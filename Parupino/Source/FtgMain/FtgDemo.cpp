@@ -170,7 +170,7 @@ namespace GAME
 		{
 			GetpMutualChara ()->StartFighting ();
 //			GetpMutualChara ()->SetMain ();
-			GetwpFtgDemoActor ().lock ()->Change_GetReady_To_Attack ();
+			GetwpFtgDemoActor ().lock ()->Change_Down_To_Greeting ();
 		}
 	}
 
@@ -252,6 +252,13 @@ namespace GAME
 	{
 		m_Down->Init ();
 		mp_FtgDemo = m_Down;
+	}
+
+	void FtgDemoActor::Change_Down_To_Greeting ()
+	{
+		GetpMutualChara ()->StartGreeting ();
+		m_Greeting->Init ();
+		mp_FtgDemo = m_Greeting;
 	}
 
 

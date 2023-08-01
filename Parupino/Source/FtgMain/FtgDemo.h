@@ -181,6 +181,7 @@ namespace GAME
 		void Change_Greeting_To_GetReady ();
 		void Change_GetReady_To_Attack ();
 		void Change_Main_To_Down ();
+		void Change_Down_To_Greeting ();
 
 	private:
 		P_MutualChara GetpMutualChara () const { return mp_Param->GetpMutualChara (); }

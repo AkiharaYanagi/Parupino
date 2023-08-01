@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Title.h"
-#include "../FtgMain/Fighting.h"
+#include "../FtgMain/FtgMain.h"
 #include "../Training/Training.h"
 #include "../CharaSele/CharaSele.h"
 
@@ -216,7 +216,8 @@ namespace GAME
 				//共通グラフィック配列をクリア
 //				GRPARY_CLEAR ();
 
-				return make_shared < Fighting > ();
+//				return make_shared < Fighting > ();
+				return make_shared < FtgMain > ();
 			}
 
 			return shared_from_this ();		//通常は自身を返す

@@ -92,10 +92,10 @@ namespace GAME
 	//âÊñ ï`âÊóp èâä˙à íu
 	enum PLAYER_BASE_PT
 	{
-		GAME_WIDTH = 2048,
+		GAME_WIDTH = 2048,		//ÉQÅ[ÉÄè„Ç≈àµÇ§ïù
 		GAME_HEIGHT = 1024,
 
-		BG_SIZE_X = 2048,
+		BG_SIZE_X = 2048,		//îwåi
 		BG_SIZE_Y = 1024,
 		BG_POS_X = 0 - ( 2048 - 1280 ) / 2,
 		BG_POS_Y = 0 - ( 1024 - 960 ) / 2,

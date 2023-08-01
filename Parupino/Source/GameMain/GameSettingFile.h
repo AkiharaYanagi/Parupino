@@ -46,6 +46,8 @@ namespace GAME
 			if ( pid == PLAYER_ID_2 ) { return m_playerMode2p; }
 			return MODE_PLAYER;
 		}
+		void SetPlayerMode1p ( PLAYER_MODE mode ) { m_playerMode1p = mode; }
+		void SetPlayerMode2p ( PLAYER_MODE mode ) { m_playerMode2p = mode; }
 
 		CHARA_NAME GetName1p () const { return m_name1p; }
 		CHARA_NAME GetName2p () const { return m_name2p; }

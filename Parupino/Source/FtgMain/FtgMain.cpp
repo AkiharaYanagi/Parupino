@@ -17,6 +17,7 @@ namespace GAME
 	FtgMain::FtgMain ()
 	{
 		m_fighting = make_shared < Fighting > ();
+		AddpTask ( m_fighting );
 	}
 
 	FtgMain::~FtgMain ()
@@ -25,19 +26,17 @@ namespace GAME
 
 	void FtgMain::ParamInit ()
 	{
-		m_fighting->ParamInit ();
+		m_fighting->ParamInit ( GetpParam () );
 	}
 
 	void FtgMain::Init ()
 	{
-		m_fighting->Init ();
 		Scene::Init ();
 	}
 
 
 	void FtgMain::Move ()
 	{
-		m_fighting->Move ();
 		Scene::Move ();
 	}
 
@@ -56,12 +55,5 @@ namespace GAME
 		return shared_from_this ();
 	}
 	
-	void FtgMain::SetpParam ( P_GameParam && pParam )
-	{
-		P_Param		p = pParam;
-		Scene::SetpParam ( p );
-		m_fighting->SetpParam ( GetpParam () );
-	}
-
 }	//namespace GAME
 

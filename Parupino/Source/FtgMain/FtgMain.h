@@ -32,7 +32,7 @@ namespace GAME
 		void Move ();
 
 		P_GameScene Transit ();
-		void SetpParam ( P_GameParam && pParam );
+		void SetpParam ( P_Param && pParam );
 	};
 
 

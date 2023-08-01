@@ -19,7 +19,8 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class Fighting : public Scene
+//	class Fighting : public Scene
+	class Fighting : public TASK_LST
 	{
 		//îwåi
 		P_GrpAcv		m_bg;
@@ -48,11 +49,11 @@ namespace GAME
 		Fighting ( const Fighting & rhs ) = delete;
 		~Fighting ();
 
-		void ParamInit ();
 		void Init ();
 		void Move ();
 
-		P_GameScene Transit ();
+		void ParamInit ( P_Param pParam );
+//		P_GameScene Transit ();
 
 	private:
 		void Pause ();
