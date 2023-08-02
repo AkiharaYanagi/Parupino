@@ -21,6 +21,7 @@ namespace GAME
 		m_BG->SetAllColor ( 0xa0000000 );
 		m_BG->SetSize ( 1000, 600 );
 		m_BG->SetPos ( ( GAME_WINDOW_WIDTH - 1000 ) * 0.5f , 200 );
+		m_BG->SetZ ( 0.2f );
 		AddpTask ( m_BG );
 
 		//ƒfƒ‚•\Ž¦
@@ -34,8 +35,8 @@ namespace GAME
 
 
 		//‘I‘ð
-		float x = 400;
-		float z = 0.2f;
+		float x = 500;
+		float z = 0.1f;
 
 		m_1p_vs_2p = make_shared < GrpAcv > ();
 		m_1p_vs_2p->AddTexture ( _T( "menu\\1P_VS_2P.png" ) );
@@ -60,6 +61,13 @@ namespace GAME
 		m_cpu_vs_cpu->SetPos ( VEC2 ( x, 600 ) );
 		m_cpu_vs_cpu->SetZ ( z );
 		AddpTask ( m_cpu_vs_cpu );
+
+		//–îˆó
+		m_arrow = make_shared < GrpAcv > ();
+		m_arrow->AddTexture ( _T ( "menu\\arrow.png" ) );
+		m_arrow->SetPos ( VEC2 ( x - 100, 300 ) );
+		m_arrow->SetZ ( z );
+		AddpTask ( m_arrow );
 	}
 
 	DemoMenu::~DemoMenu ()
@@ -73,6 +81,14 @@ namespace GAME
 
 	void DemoMenu::Move ()
 	{
+		float x = m_arrow->GetPos ().x;
+		float y = m_arrow->GetPos ().y;
+
+		if ( PUSH_KEY ( P1_DOWN ) )
+		{
+			m_arrow->SetPos ( x, y + 100 );
+		}
+
 		TASK_VEC::Move ();
 	}
 

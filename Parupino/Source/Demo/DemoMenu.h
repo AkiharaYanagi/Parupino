@@ -28,6 +28,8 @@ namespace GAME
 		P_GrpAcv		m_cpu_vs_2p;
 		P_GrpAcv		m_cpu_vs_cpu;
 
+		P_GrpAcv		m_arrow;
+
 	public:
 		DemoMenu ();
 		DemoMenu ( const DemoMenu & rhs ) = delete;

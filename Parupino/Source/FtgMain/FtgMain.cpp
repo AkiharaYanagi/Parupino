@@ -37,6 +37,10 @@ namespace GAME
 
 	void FtgMain::Move ()
 	{
+		if ( CFG_PUSH_KEY ( _P1_DOWN ) )
+		{
+			int i = 0;
+		}
 		Scene::Move ();
 	}
 
