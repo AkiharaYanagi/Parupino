@@ -9,6 +9,8 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
+#include "MenuItem.h"
+
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -27,6 +29,15 @@ namespace GAME
 		P_GrpAcv		m_1p_vs_cpu;
 		P_GrpAcv		m_cpu_vs_2p;
 		P_GrpAcv		m_cpu_vs_cpu;
+
+
+		P_MenuItem		m_selectedItem;
+		VP_MenuItem		mv_menu;
+		P_Menu_1v2		m_menu_1v2;
+		P_Menu_1vc		m_menu_1vc;
+		P_Menu_cv2		m_menu_cv2;
+		P_Menu_cvc		m_menu_cvc;
+
 
 		P_GrpAcv		m_arrow;
 
