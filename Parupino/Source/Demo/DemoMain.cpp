@@ -8,13 +8,14 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "DemoMain.h"
+#include "../FtgMain/FtgMain.h"
 
 //-------------------------------------------------------------------------------------------------
 // 定義
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	Demo::Demo ()
+	DemoMain::DemoMain ()
 	{
 		//メニュ
 		m_menu = make_shared < DemoMenu > ();
@@ -23,13 +24,14 @@ namespace GAME
 		//戦闘
 		m_fighting = make_shared < Fighting > ();
 		AddpTask ( m_fighting );
+
 	}
 
-	Demo::~Demo ()
+	DemoMain::~DemoMain ()
 	{
 	}
 
-	void Demo::ParamInit ()
+	void DemoMain::ParamInit ()
 	{
 		P_Param pParam = GetpParam ();
 		GameSettingFile stg = pParam->GetGameSetting ();
@@ -38,9 +40,13 @@ namespace GAME
 		pParam->SetSettingFile ( stg );
 
 		m_fighting->ParamInit ( pParam );
+
+		//コンストラクタ後
+//		m_scene = shared_from_this ();
+		m_scene = nullptr;
 	}
 
-	P_GameScene Demo::Transit ()
+	P_GameScene DemoMain::Transit ()
 	{
 #if 0
 		//ESCで戻る
@@ -51,12 +57,13 @@ namespace GAME
 		}
 #endif // 0
 
-		//通常時
+		//遷移先を返す（通常時は自身）
 		return shared_from_this ();
+//		return m_scene;
 	}
 
 
-	void Demo::Pause ()
+	void DemoMain::Pause ()
 	{
 		//F1でポーズ切替
 		if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
@@ -72,6 +79,24 @@ namespace GAME
 //				m_mutualChara->Stop ( true );
 			}
 		}
+	}
+
+	void DemoMain::To_1v2 ()
+	{
+		//@todo シーンのポインタをどう扱うか決める
+
+//		P_GameScene pScene = nullptr;
+		pScene = make_shared < FtgMain > ();
+		m_scene = pScene;
+
+//		m_scene = make_shared < Scene > ();
+
+//		m_scene = make_shared < FtgMain > ();
+
+//		m_scene = make_shared < FtgMain > ();
+
+//		auto p = make_shared < FtgMain > ();
+//		m_scene = dynamic_pointer_cast < Scene > ( p );
 	}
 
 

@@ -19,7 +19,7 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class Demo : public Scene
+	class DemoMain : public Scene
 	{
 		//メニュ
 		P_DemoMenu	m_menu;
@@ -30,18 +30,28 @@ namespace GAME
 		//ポーズ
 		P_GrpAcv	m_pause;
 
+		//遷移シーン
+		P_GameScene		m_scene;
+		P_GameScene pScene;
+
 	public:
-		Demo ();
-		Demo ( const Demo & rhs ) = delete;
-		~Demo ();
+		DemoMain ();
+		DemoMain ( const DemoMain & rhs ) = delete;
+		~DemoMain ();
 
 		void ParamInit ();
 
 		P_GameScene Transit ();
 
+		//シーン変更
+		void To_1v2 ();
+
 	private:
 		void Pause ();
 	};
+
+
+	using P_DemoMain = shared_ptr < DemoMain >;
 
 
 }	//namespace GAME

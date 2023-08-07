@@ -31,8 +31,8 @@ namespace GAME
 		P_GrpAcv		m_cpu_vs_cpu;
 
 
-		P_MenuItem		m_selectedItem;
 		VP_MenuItem		mv_menu;
+		VP_MenuItem::const_iterator		m_itMenu;
 		P_Menu_1v2		m_menu_1v2;
 		P_Menu_1vc		m_menu_1vc;
 		P_Menu_cv2		m_menu_cv2;

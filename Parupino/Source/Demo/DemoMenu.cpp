@@ -83,7 +83,7 @@ namespace GAME
 		}
 
 		//Å‰‚Ì‘I‘ð
-		m_selectedItem = m_menu_1v2;
+		m_itMenu = mv_menu.begin ();
 
 
 
@@ -106,16 +106,34 @@ namespace GAME
 
 	void DemoMenu::Move ()
 	{
-		if ( PUSH_KEY ( P1_DOWN ) )
+		//€–Ú‚ÌŒˆ’è
+		if ( CFG_PUSH_KEY ( _P1_BTN0 ) )
 		{
-			float x = m_arrow->GetPos ().x;
-			float y = m_arrow->GetPos ().y;
-
-			m_arrow->SetPos ( x, y + 100 );
+			( *m_itMenu )->Do ();
 		}
+
+		//€–Ú‚Ì‘I‘ð
+		if ( CFG_PUSH_KEY ( _P1_DOWN ) )
+		{
+			if ( m_itMenu == mv_menu.end () - 1 ) { m_itMenu = mv_menu.begin (); }
+			else { ++ m_itMenu; }
+		}
+		if ( CFG_PUSH_KEY ( _P1_UP ) )
+		{
+			if ( m_itMenu == mv_menu.begin () ) { m_itMenu = mv_menu.end () - 1; }
+			else { -- m_itMenu; }
+		}
+
+		//–îˆó‚ÌˆÊ’u
+		UINT index = m_itMenu - mv_menu.begin ();
+		float x = m_arrow->GetPos ().x;
+		m_arrow->SetPos ( x, 300.f + index * 100.f );
+
 
 		TASK_VEC::Move ();
 	}
+
+	
 
 
 }	//namespace GAME
