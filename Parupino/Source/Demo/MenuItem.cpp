@@ -48,6 +48,7 @@ namespace GAME
 
 	void Menu_1vc::Do ()
 	{
+		m_demoMain->To_1vC ();
 	}
 
 	Menu_cv2::Menu_cv2 ()
@@ -58,7 +59,7 @@ namespace GAME
 
 	void Menu_cv2::Do ()
 	{
-
+		m_demoMain->To_Cv2 ();
 	}
 
 	Menu_cvc::Menu_cvc ()
@@ -69,7 +70,7 @@ namespace GAME
 
 	void Menu_cvc::Do ()
 	{
-
+		m_demoMain->To_CvC ();
 	}
 
 

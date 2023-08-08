@@ -24,7 +24,6 @@ namespace GAME
 		//戦闘
 		m_fighting = make_shared < Fighting > ();
 		AddpTask ( m_fighting );
-
 	}
 
 	DemoMain::~DemoMain ()
@@ -33,6 +32,7 @@ namespace GAME
 
 	void DemoMain::ParamInit ()
 	{
+		//パラメータ手動指定
 		P_Param pParam = GetpParam ();
 		GameSettingFile stg = pParam->GetGameSetting ();
 		stg.SetPlayerMode1p ( MODE_CPU );
@@ -41,13 +41,15 @@ namespace GAME
 
 		m_fighting->ParamInit ( pParam );
 
-		//コンストラクタ後
-//		m_scene = shared_from_this ();
-		m_scene = nullptr;
+
+		//コンストラクタ後 shared_from_this ()
+		m_scene = shared_from_this ();
+		m_menu->ParamInit ( dynamic_pointer_cast < DemoMain > ( shared_from_this () ) );
 	}
 
 	P_GameScene DemoMain::Transit ()
 	{
+		//@info MenuItemにthisを渡しておく
 #if 0
 		//ESCで戻る
 		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
@@ -58,8 +60,8 @@ namespace GAME
 #endif // 0
 
 		//遷移先を返す（通常時は自身）
-		return shared_from_this ();
-//		return m_scene;
+//		return shared_from_this ();
+		return m_scene;
 	}
 
 
@@ -83,20 +85,23 @@ namespace GAME
 
 	void DemoMain::To_1v2 ()
 	{
-		//@todo シーンのポインタをどう扱うか決める
+		GRPLST_CLEAR ();
+		m_scene = make_shared < FtgMain > ();
+	}
 
-//		P_GameScene pScene = nullptr;
-		pScene = make_shared < FtgMain > ();
-		m_scene = pScene;
+	void DemoMain::To_1vC ()
+	{
+		m_scene = make_shared < FtgMain > ();
+	}
 
-//		m_scene = make_shared < Scene > ();
+	void DemoMain::To_Cv2 ()
+	{
+		m_scene = make_shared < FtgMain > ();
+	}
 
-//		m_scene = make_shared < FtgMain > ();
-
-//		m_scene = make_shared < FtgMain > ();
-
-//		auto p = make_shared < FtgMain > ();
-//		m_scene = dynamic_pointer_cast < Scene > ( p );
+	void DemoMain::To_CvC ()
+	{
+		m_scene = make_shared < FtgMain > ();
 	}
 
 

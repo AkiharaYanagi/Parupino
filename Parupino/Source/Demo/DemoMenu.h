@@ -48,6 +48,8 @@ namespace GAME
 
 		void Init ();
 		void Move ();
+
+		void ParamInit ( P_DemoMain pDemoMain );
 	};
 
 	using P_DemoMenu = shared_ptr < DemoMenu >;

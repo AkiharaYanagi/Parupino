@@ -99,6 +99,14 @@ namespace GAME
 	{
 	}
 
+	void DemoMenu::ParamInit ( P_DemoMain pDemoMain )
+	{
+		for ( P_MenuItem p : mv_menu )
+		{
+			p->SetpDemoMain ( pDemoMain );
+		}
+	}
+
 	void DemoMenu::Init ()
 	{
 		TASK_VEC::Init ();

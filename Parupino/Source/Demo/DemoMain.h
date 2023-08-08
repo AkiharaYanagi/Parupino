@@ -32,7 +32,6 @@ namespace GAME
 
 		//遷移シーン
 		P_GameScene		m_scene;
-		P_GameScene pScene;
 
 	public:
 		DemoMain ();
@@ -45,6 +44,9 @@ namespace GAME
 
 		//シーン変更
 		void To_1v2 ();
+		void To_1vC ();
+		void To_Cv2 ();
+		void To_CvC ();
 
 	private:
 		void Pause ();
