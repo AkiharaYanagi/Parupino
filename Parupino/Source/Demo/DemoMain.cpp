@@ -87,6 +87,8 @@ namespace GAME
 	{
 		GRPLST_CLEAR ();
 		m_scene = make_shared < FtgMain > ();
+		GRPLST_LOAD ();
+		GRPLST_INIT ();
 	}
 
 	void DemoMain::To_1vC ()
