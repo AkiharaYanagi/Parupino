@@ -36,8 +36,9 @@ namespace GAME
 		m_titleEf.Load ();		//Efの位置のためここで初期化
 
 		m_logo = make_shared < GrpAcv > ();
-		m_logo->AddTexture ( _T ( "title_logo.png" ) );
-		m_logo->SetPos ( VEC2 ( (1280 - 1024) * 0.5f, 80 ) );
+//		m_logo->AddTexture ( _T ( "title_logo.png" ) );
+		m_logo->AddTexture ( _T ( "title.png" ) );
+//		m_logo->SetPos ( VEC2 ( (1280 - 1024) * 0.5f, 80 ) );
 		m_logo->SetZ ( Z_BG );
 		GRPLST_INSERT ( m_logo );
 
@@ -139,7 +140,7 @@ namespace GAME
 	}
 
 	bool Title::CsrUp () {
-		if ( PUSH_KEY ( P1_UP ) || PUSH_KEY ( P2_UP ) )
+		if ( CFG_PUSH_KEY ( _P1_UP ) || CFG_PUSH_KEY ( _P2_UP ) )
 		{
 			SOUND->Play ( SE_cursor_move );
 			return true;
@@ -147,7 +148,7 @@ namespace GAME
 		return false;
 	}
 	bool Title::CsrDn () {
-		if ( PUSH_KEY ( P1_DOWN ) || PUSH_KEY ( P2_DOWN ) )
+		if ( CFG_PUSH_KEY ( _P1_DOWN ) || CFG_PUSH_KEY ( _P2_DOWN ) )
 		{
 			SOUND->Play ( SE_cursor_move );
 			return true;
@@ -226,25 +227,6 @@ namespace GAME
 		//---------------------------------------------------------------
 		//通常(非デモモード)時
 
-		//キー1でシーンを進める
-		if ( PUSH_KEY ( P1_BTN1 ) )
-		{
-			//共通パラメータに値を保存してシーンの移行
-			Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_1 ) );
-
-//			m_fade->SetDarkOut ( 15 );
-			m_fadeOutTimer = 17;
-		}
-
-		if ( PUSH_KEY ( P2_BTN1 ) )
-		{
-			//共通パラメータに値を保存してシーンの移行
-			Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_2 ) );
-
-//			m_fade->SetDarkOut ( 15 );
-			m_fadeOutTimer = 17;
-		}
-
 		if ( 0 != m_fadeOutTimer )
 		{
 			-- m_fadeOutTimer;
@@ -260,18 +242,50 @@ namespace GAME
 				if ( TTLM_TRAINING == m_menuPos )
 				{
 					pParam->GetGameSetting().SetTraining ( T );					
-					return make_shared < CharaSele > ();
+//					return make_shared < CharaSele > ();
 //					return make_shared < Training > ();
+
+					P_GameScene p = make_shared < Training > ();
+					GRPLST_LOAD ();
+					GRPLST_INIT ();
+					return p;
 				}
 				else
 				{
 					//メイン
 					pParam->GetGameSetting ().SetTraining ( false );
-					return make_shared < CharaSele > ();
-	//				return make_shared < Fighting > ();
+//					return make_shared < CharaSele > ();
+					//return make_shared < FtgMain > ();
+
+					P_GameScene p = make_shared < FtgMain > ();
+					GRPLST_LOAD ();
+					GRPLST_INIT ();
+					return p;
 				}
 			}
 		}
+		else
+		{
+			//キー1でシーンを進める
+			if ( CFG_PUSH_KEY ( _P1_BTN0 ) )
+			{
+				//共通パラメータに値を保存してシーンの移行
+				Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_1 ) );
+
+	//			m_fade->SetDarkOut ( 15 );
+				m_fadeOutTimer = 17;
+			}
+
+			if ( CFG_PUSH_KEY ( _P2_BTN0 ) )
+			{
+				//共通パラメータに値を保存してシーンの移行
+				Scene::GetpParam ()->SetMutchMode ( MENU_to_MODE ( m_menuPos, PLAYER_ID_2 ) );
+
+	//			m_fade->SetDarkOut ( 15 );
+				m_fadeOutTimer = 17;
+			}
+		}
+
 
 		return shared_from_this ();		//通常は自身を返す
 	}

@@ -107,7 +107,13 @@ namespace GAME
 		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
 		{
 			SOUND->Stop ( BGM_Main );
-			return make_shared < Title > ();
+//			return make_shared < Title > ();
+
+			GRPLST_CLEAR ();
+			P_GameScene p = make_shared < Title > ();
+			GRPLST_LOAD ();
+			GRPLST_INIT ();
+			return p;
 		}
 
 		//í“¬I—¹

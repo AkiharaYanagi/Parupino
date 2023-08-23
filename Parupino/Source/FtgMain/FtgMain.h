@@ -11,6 +11,7 @@
 #include "Game.h"
 #include "../GameMain/Scene.h"
 #include "Fighting.h"
+#include "PauseMenu.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -20,7 +21,10 @@ namespace GAME
 {
 	class FtgMain : public Scene
 	{
-		P_FTG		m_fighting;
+		P_FTG			m_fighting;
+
+		bool			m_menu;
+		P_PauseMenu		m_pauseMenu;
 
 	public:
 		FtgMain ();
