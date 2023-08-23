@@ -23,17 +23,20 @@ namespace GAME
 	class DispInput
 	{
 		//キー入力表示個数
-		static const UINT NUM_DISP_INPUT;
-		static const UINT BASE_Y;
+		static const UINT NUM_DISP_INPUT;	//表示フレーム個数
+		static const UINT BASE_Y;			//基準位置
+		static const UINT CHIP_W;			//1個の幅
+		static const UINT CHIP_H;			//1個の高
 
 		P_PrmRect		m_bg;		//背景
+		P_GrpAcv		m_index;	//見出
 
 		P_GrpAcv		m_grp;		//入力表示
 		VP_Object		m_vpOb;
 
 		UINT			m_timer;
 		float			m_vel;
-		float			m_base;
+		float			m_base_x;
 
 	public:
 		DispInput ();

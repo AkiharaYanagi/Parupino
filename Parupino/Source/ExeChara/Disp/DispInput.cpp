@@ -18,18 +18,29 @@ namespace GAME
 	//@todo CharaInputの入力保存数と同一なので統合する
 	const UINT DispInput::NUM_DISP_INPUT = 20;
 	const UINT DispInput::BASE_Y = 150;
+	const UINT DispInput::CHIP_W = 10;
+	const UINT DispInput::CHIP_H = 10;
+
 
 	//コンストラクタ
 	DispInput::DispInput ()
-		: m_timer ( 0 ), m_vel ( 1.f ), m_base ( 10 )
+		: m_timer ( 0 ), m_vel ( 1.f ), m_base_x ( 10 )
 	{
 		//---------------------------------------------------------------
 		//背景
 		m_bg = make_shared < PrmRect > ();
-		m_bg->SetRect ( m_base, BASE_Y, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base_x, BASE_Y, CHIP_W * INPUT_NUM, CHIP_H * NUM_DISP_INPUT );
 		m_bg->SetZ ( Z_SYS );
 		m_bg->SetAllColor ( 0x8080a080 );
 		GRPLST_INSERT ( m_bg );
+
+		//---------------------------------------------------------------
+		//見出
+		m_index = make_shared < GrpAcv > ();
+		m_index->AddTexture ( _T ( "KeyIndex.png" ) );
+		m_index->SetPos ( VEC2 ( m_base_x, BASE_Y - CHIP_H ) );
+		m_index->SetZ ( Z_SYS );
+		GRPLST_INSERT ( m_index );
 
 		//---------------------------------------------------------------
 		//キー入力
@@ -49,7 +60,7 @@ namespace GAME
 			for ( UINT i = 0; i < INPUT_NUM; ++ i )
 			{
 				P_Object pOb = make_shared < GameObject > ();
-				pOb->SetPos ( m_base + 10 * i, 10.f + 10 * frame );
+				pOb->SetPos ( m_base_x + 10 * i, 10.f + 10 * frame );
 				m_vpOb.push_back ( pOb );
 				m_grp->AddpObject ( pOb );
 
@@ -73,13 +84,14 @@ namespace GAME
 		//位置
 		if ( PLAYER_ID_1 == playerID )
 		{
-			m_base = 10;
+			m_base_x = 10;
 		}
 		else
 		{
-			m_base = 1280 - 10 - 10 * INPUT_NUM;
+			m_base_x = 1280 - 10 - CHIP_W * INPUT_NUM;
 		}
-		m_bg->SetRect ( m_base, BASE_Y, 10 * INPUT_NUM, 10 * NUM_DISP_INPUT );
+		m_bg->SetRect ( m_base_x, BASE_Y, CHIP_W * INPUT_NUM, CHIP_H * NUM_DISP_INPUT );
+		m_index->SetPos ( VEC2 ( m_base_x, BASE_Y - CHIP_H ) );
 
 		m_timer = 0;
 	}
@@ -114,7 +126,7 @@ namespace GAME
 			int frame = i / INPUT_NUM;
 			int input = i % INPUT_NUM;
 			pOb->SetValid ( GetBoolInput ( pCharaInput, frame, input ) );
-			pOb->SetPos ( m_base + 10 * input, BASE_Y + 10 * frame + m_vel * m_timer );
+			pOb->SetPos ( m_base_x + 10 * input, BASE_Y + 10 * frame + m_vel * m_timer );
 			++ i;
 		}
 
@@ -133,9 +145,9 @@ namespace GAME
 		switch ( i )
 		{
 		case 0: ret = vKey[n].GetLvr ( _GameKey::LVR_4 ); break;
-		case 1: ret = vKey[n].GetLvr ( _GameKey::LVR_8 ); break;
+		case 1: ret = vKey[n].GetLvr ( _GameKey::LVR_2 ); break;
 		case 2: ret = vKey[n].GetLvr ( _GameKey::LVR_6 ); break;
-		case 3: ret = vKey[n].GetLvr ( _GameKey::LVR_2 ); break;
+		case 3: ret = vKey[n].GetLvr ( _GameKey::LVR_8 ); break;
 		case 4: ret = vKey [ n ].GetBtn ( _GameKey::BTN_0 ); break;
 		case 5: ret = vKey [ n ].GetBtn ( _GameKey::BTN_1 ); break;
 		case 6: ret = vKey [ n ].GetBtn ( _GameKey::BTN_2 ); break;

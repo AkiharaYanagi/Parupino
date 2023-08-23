@@ -15,9 +15,15 @@
 namespace GAME
 {
 	FtgMain::FtgMain ()
+		: m_menu ( F )
 	{
+		//戦闘
 		m_fighting = make_shared < Fighting > ();
 		AddpTask ( m_fighting );
+
+		//ポーズメニュ
+		m_pauseMenu = make_shared < PauseMenu > ();
+		AddpTask ( m_pauseMenu );
 	}
 
 	FtgMain::~FtgMain ()
@@ -31,16 +37,24 @@ namespace GAME
 
 	void FtgMain::Init ()
 	{
+		m_menu = F;
 		Scene::Init ();
 	}
 
 
 	void FtgMain::Move ()
 	{
-		if ( CFG_PUSH_KEY ( _P1_DOWN ) )
+		if ( CFG_PUSH_KEY ( _P1_BTN5 ) )
 		{
-			int i = 0;
+			m_menu = T;
 		}
+
+
+		if ( m_menu )
+		{
+			return;
+		}
+
 		Scene::Move ();
 	}
 
