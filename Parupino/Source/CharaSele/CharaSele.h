@@ -83,7 +83,7 @@ namespace GAME
 		bool m_bDecide1p;	//1P側決定(1Pコントローラで2P側を操作)
 		bool m_bDecide2p;	//2P側決定
 
-		P_Fade			m_fade;
+		P_FadeRect		m_fade;
 		bool			m_endWait;
 
 		//モード保存
