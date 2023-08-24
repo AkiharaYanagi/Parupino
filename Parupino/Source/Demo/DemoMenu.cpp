@@ -76,7 +76,7 @@ namespace GAME
 		mv_menu.push_back ( m_menu_cvc );
 
 		int i = 0;
-		for ( P_MenuItem p : mv_menu )
+		for ( P_DemoMenuItem p : mv_menu )
 		{
 			p->SetPos ( VEC2 ( x, 300.f + 100.f * i ++ ) );
 			AddpTask ( p );
@@ -101,7 +101,7 @@ namespace GAME
 
 	void DemoMenu::ParamInit ( P_DemoMain pDemoMain )
 	{
-		for ( P_MenuItem p : mv_menu )
+		for ( P_DemoMenuItem p : mv_menu )
 		{
 			p->SetpDemoMain ( pDemoMain );
 		}

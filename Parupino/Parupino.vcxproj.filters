@@ -174,10 +174,16 @@
     <ClInclude Include="Source\Demo\DemoMenu.h">
       <Filter>Demo</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Demo\MenuItem.h">
+    <ClInclude Include="Source\FtgMain\PauseMenu.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\Menu.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Demo\DemoMenuItem.h">
       <Filter>Demo</Filter>
     </ClInclude>
-    <ClInclude Include="Source\FtgMain\PauseMenu.h">
+    <ClInclude Include="Source\FtgMain\MenuItem.h">
       <Filter>FtgMain</Filter>
     </ClInclude>
   </ItemGroup>
@@ -296,10 +302,16 @@
     <ClCompile Include="Source\Demo\DemoMenu.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Demo\MenuItem.cpp">
+    <ClCompile Include="Source\FtgMain\PauseMenu.cpp">
+      <Filter>FtgMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Menu.cpp">
+      <Filter>FtgMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Demo\DemoMenuItem.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
-    <ClCompile Include="Source\FtgMain\PauseMenu.cpp">
+    <ClCompile Include="Source\FtgMain\MenuItem.cpp">
       <Filter>FtgMain</Filter>
     </ClCompile>
   </ItemGroup>
