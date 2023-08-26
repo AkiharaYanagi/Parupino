@@ -16,10 +16,23 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	//-------------------------------------------
+	DemoMenuItem::DemoMenuItem ()
+	{
+
+	}
+
+	DemoMenuItem::~DemoMenuItem ()
+	{
+
+	}
+
+	//-------------------------------------------
+
+
 	Menu_1v2::Menu_1v2 ()
 	{
 		m_grp->AddTexture ( _T ( "menu\\1P_VS_2P.png" ) );
-//		m_grp->AddTexture ( _T ( "Demo_Attack.png" ) );
 		GRPLST_INSERT ( m_grp );
 	}
 
