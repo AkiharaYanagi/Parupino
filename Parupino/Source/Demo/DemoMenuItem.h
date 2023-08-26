@@ -1,6 +1,6 @@
 //=================================================================================================
 //
-//	MenuItem ヘッダファイル
+//	DemoMenuItem ヘッダファイル
 //
 //=================================================================================================
 #pragma once
@@ -9,7 +9,8 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
-//#include "DemoMain.h"
+#include "../FtgMain/MenuItem.h"
+//#include "DemoMain.h" // ->前方宣言に移行
 
 
 //-------------------------------------------------------------------------------------------------
@@ -22,16 +23,16 @@ namespace GAME
 	using P_DemoMain = shared_ptr < DemoMain >;
 
 
-	class MenuItem : public TASK_VEC
+	class DemoMenuItem : public MenuItem
 	{
 	protected:
 		P_DemoMain		m_demoMain;
 		P_GrpAcv		m_grp;
 
 	public:
-		MenuItem ();
-		MenuItem ( const MenuItem & rhs ) = delete;
-		~MenuItem ();
+		DemoMenuItem ();
+		DemoMenuItem ( const MenuItem & rhs ) = delete;
+		~DemoMenuItem ();
 
 		virtual void Do () {}
 
@@ -40,15 +41,15 @@ namespace GAME
 		void SetpDemoMain ( P_DemoMain p ) { m_demoMain = p; }
 	};
 
-	using P_MenuItem = shared_ptr < MenuItem >;
-	using VP_MenuItem = vector < P_MenuItem >;
+	using P_DemoMenuItem = shared_ptr < DemoMenuItem >;
+	using VP_DemoMenuItem = vector < P_DemoMenuItem >;
 
 
 	//-------------------------------------------
-	class Menu_1v2 : public MenuItem { public: Menu_1v2 ();	void Do (); };
-	class Menu_1vc : public MenuItem { public: Menu_1vc ();	void Do (); };
-	class Menu_cv2 : public MenuItem { public: Menu_cv2 ();	void Do (); };
-	class Menu_cvc : public MenuItem { public: Menu_cvc ();	void Do (); };
+	class Menu_1v2 : public DemoMenuItem { public: Menu_1v2 ();	void Do (); };
+	class Menu_1vc : public DemoMenuItem { public: Menu_1vc ();	void Do (); };
+	class Menu_cv2 : public DemoMenuItem { public: Menu_cv2 ();	void Do (); };
+	class Menu_cvc : public DemoMenuItem { public: Menu_cvc ();	void Do (); };
 
 	using P_Menu_1v2 = shared_ptr < Menu_1v2 >;
 	using P_Menu_1vc = shared_ptr < Menu_1vc >;

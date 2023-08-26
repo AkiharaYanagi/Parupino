@@ -159,7 +159,7 @@
     <ClInclude Include="Source\CharaSele\CharaSeleConst.h" />
     <ClInclude Include="Source\Demo\DemoMain.h" />
     <ClInclude Include="Source\Demo\DemoMenu.h" />
-    <ClInclude Include="Source\Demo\MenuItem.h" />
+    <ClInclude Include="Source\Demo\DemoMenuItem.h" />
     <ClInclude Include="Source\ExeChara\BtlParam.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispChara.h" />
     <ClInclude Include="Source\ExeChara\Disp\DispFrontEnd.h" />
@@ -187,6 +187,8 @@
     <ClInclude Include="Source\FtgMain\FtgDemo.h" />
     <ClInclude Include="Source\FtgMain\FtgMain.h" />
     <ClInclude Include="Source\FtgMain\G_Ftg.h" />
+    <ClInclude Include="Source\FtgMain\Menu.h" />
+    <ClInclude Include="Source\FtgMain\MenuItem.h" />
     <ClInclude Include="Source\FtgMain\MutualChara.h" />
     <ClInclude Include="Source\FtgMain\PauseMenu.h" />
     <ClInclude Include="Source\GameMain\GameConst.h" />
@@ -207,7 +209,7 @@
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
     <ClCompile Include="Source\Demo\DemoMain.cpp" />
     <ClCompile Include="Source\Demo\DemoMenu.cpp" />
-    <ClCompile Include="Source\Demo\MenuItem.cpp" />
+    <ClCompile Include="Source\Demo\DemoMenuItem.cpp" />
     <ClCompile Include="Source\ExeChara\BtlParam.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispChara.cpp" />
     <ClCompile Include="Source\ExeChara\Disp\DispFrontEnd.cpp" />
@@ -234,6 +236,8 @@
     <ClCompile Include="Source\FtgMain\FtgDemo.cpp" />
     <ClCompile Include="Source\FtgMain\FtgMain.cpp" />
     <ClCompile Include="Source\FtgMain\G_Ftg.cpp" />
+    <ClCompile Include="Source\FtgMain\Menu.cpp" />
+    <ClCompile Include="Source\FtgMain\MenuItem.cpp" />
     <ClCompile Include="Source\FtgMain\MutualChara.cpp" />
     <ClCompile Include="Source\FtgMain\PauseMenu.cpp" />
     <ClCompile Include="Source\GameMain\GameSettingFile.cpp" />

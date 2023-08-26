@@ -1,6 +1,6 @@
 //=================================================================================================
 //
-//	DemoMenu ヘッダファイル
+//	MenuItem ヘッダファイル
 //
 //=================================================================================================
 #pragma once
@@ -9,7 +9,6 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
-#include "DemoMenuItem.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -17,43 +16,21 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class DemoMenu : public TASK_VEC
+	class MenuItem : public TASK_VEC
 	{
-		//背景
-		P_PrmRect		m_BG;
-
-		//デモ表示
-		P_Str			m_strDemo;
-
-		P_GrpAcv		m_1p_vs_2p;
-		P_GrpAcv		m_1p_vs_cpu;
-		P_GrpAcv		m_cpu_vs_2p;
-		P_GrpAcv		m_cpu_vs_cpu;
-
-
-		VP_DemoMenuItem		mv_menu;
-		VP_DemoMenuItem::const_iterator		m_itMenu;
-		P_Menu_1v2		m_menu_1v2;
-		P_Menu_1vc		m_menu_1vc;
-		P_Menu_cv2		m_menu_cv2;
-		P_Menu_cvc		m_menu_cvc;
-
-
-		P_GrpAcv		m_arrow;
+	protected:
+		P_GrpAcv		m_grp;
 
 	public:
-		DemoMenu ();
-		DemoMenu ( const DemoMenu & rhs ) = delete;
-		~DemoMenu ();
+		MenuItem ();
+		MenuItem ( const MenuItem & rhs ) = delete;
+		~MenuItem ();
 
-		void Init ();
-		void Move ();
-
-		void ParamInit ( P_DemoMain pDemoMain );
+		virtual void Do () {}
 	};
 
-	using P_DemoMenu = shared_ptr < DemoMenu >;
-
+	using P_MenuItem = shared_ptr < MenuItem >;
+	using VP_MenuItem = vector < P_MenuItem >;
 
 }	//namespace GAME
 
