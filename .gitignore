@@ -2,6 +2,7 @@
 
 !ScriptEditor/bin/Debug/Predata/*
 !testChara.dat
+CharaData/library
 *.dat
 *.xml
 *.lib
