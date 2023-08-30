@@ -22,8 +22,8 @@ namespace GAME
 		AddpTask ( m_fighting );
 
 		//ポーズメニュ
-//		m_pauseMenu = make_shared < PauseMenu > ();
-//		AddpTask ( m_pauseMenu );
+		m_pauseMenu = make_shared < PauseMenu > ();
+		AddpTask ( m_pauseMenu );
 	}
 
 	FtgMain::~FtgMain ()
