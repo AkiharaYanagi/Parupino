@@ -23,7 +23,6 @@ namespace GAME
 	{
 		P_FTG			m_fighting;
 
-		bool			m_menu;
 		P_PauseMenu		m_pauseMenu;
 
 	public:

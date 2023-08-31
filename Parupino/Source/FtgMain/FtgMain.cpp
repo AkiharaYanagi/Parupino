@@ -15,7 +15,6 @@
 namespace GAME
 {
 	FtgMain::FtgMain ()
-		: m_menu ( F )
 	{
 		//戦闘
 		m_fighting = make_shared < Fighting > ();
@@ -37,24 +36,27 @@ namespace GAME
 
 	void FtgMain::Init ()
 	{
-		m_menu = F;
 		Scene::Init ();
 	}
 
 
 	void FtgMain::Move ()
 	{
-		if ( CFG_PUSH_KEY ( _P1_BTN5 ) )
+		//ポーズ中
+		if ( m_pauseMenu->GetActive () )
 		{
-			m_menu = T;
-		}
-
-
-		if ( m_menu )
-		{
+			m_pauseMenu->Move ();
 			return;
 		}
 
+		//ポーズ開始
+		if ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) )
+		{
+			m_pauseMenu->On ();
+			return;
+		}
+
+		//通常動作
 		Scene::Move ();
 	}
 
