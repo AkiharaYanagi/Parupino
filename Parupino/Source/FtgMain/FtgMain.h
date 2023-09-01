@@ -19,11 +19,14 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class FtgMain : public Scene
+	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
 		P_FTG			m_fighting;
 
 		P_PauseMenu		m_pauseMenu;
+
+		//‘JˆÚæƒV[ƒ“
+		P_GameScene		m_scene;
 
 	public:
 		FtgMain ();

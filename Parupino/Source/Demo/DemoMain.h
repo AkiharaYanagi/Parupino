@@ -19,7 +19,7 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class DemoMain : public Scene
+	class DemoMain : public Scene, public enable_shared_from_this < DemoMain >
 	{
 		//ƒƒjƒ…
 		P_DemoMenu	m_menu;

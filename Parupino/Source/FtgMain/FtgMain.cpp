@@ -23,6 +23,9 @@ namespace GAME
 		//ポーズメニュ
 		m_pauseMenu = make_shared < PauseMenu > ();
 		AddpTask ( m_pauseMenu );
+
+		//遷移先シーン
+		m_scene = shard_from_this ();
 	}
 
 	FtgMain::~FtgMain ()

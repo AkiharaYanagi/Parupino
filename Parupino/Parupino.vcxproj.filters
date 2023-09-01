@@ -186,6 +186,9 @@
     <ClInclude Include="Source\FtgMain\MenuItem.h">
       <Filter>FtgMain</Filter>
     </ClInclude>
+    <ClInclude Include="Source\FtgMain\PauseMenuItem.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -312,6 +315,9 @@
       <Filter>Demo</Filter>
     </ClCompile>
     <ClCompile Include="Source\FtgMain\MenuItem.cpp">
+      <Filter>FtgMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\PauseMenuItem.cpp">
       <Filter>FtgMain</Filter>
     </ClCompile>
   </ItemGroup>
