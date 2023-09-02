@@ -18,12 +18,14 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class Title : public Scene
+	class Title : public Scene, public enable_shared_from_this < Title >
 	{
+		P_GameScene		m_scene;
+
 	public:
-		void ParamInit () {}
-		
-		P_GameScene Transit () { return nullptr; }
+		void ParamInit ();
+
+		P_GameScene Transit () { return m_scene; }
 	};
 
 
