@@ -8,6 +8,8 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
+#include "../Title/Title.h"
+
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -24,22 +26,25 @@ namespace GAME
 		m_pauseMenu = make_shared < PauseMenu > ();
 		AddpTask ( m_pauseMenu );
 
+		//@info コンストラクタでshared_from_this()を用いない
 		//遷移先シーン
-		m_scene = shard_from_this ();
+//		m_scene = shared_from_this ();
 	}
 
 	FtgMain::~FtgMain ()
 	{
 	}
 
+	void FtgMain::Load ()
+	{
+//		m_scene = shared_from_this ();
+		m_gameScene = shared_from_this ();
+		Scene::Load ();
+	}
+
 	void FtgMain::ParamInit ()
 	{
 		m_fighting->ParamInit ( GetpParam () );
-	}
-
-	void FtgMain::Init ()
-	{
-		Scene::Init ();
 	}
 
 
@@ -71,12 +76,26 @@ namespace GAME
 		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
 		{
 			SOUND->Stop ( BGM_Main );
-//			return make_shared < Title > ();
+			return make_shared < Title > ();
 		}
 
 		//通常時
-		return shared_from_this ();
+//		return shared_from_this ();
+//		return m_scene;
+		return m_gameScene;
 	}
 	
+
+	void FtgMain::Transit_Title ()
+	{
+		GRPLST_CLEAR ();
+//		P_Scene&& p = make_shared < Title > ();
+		m_gameScene = make_shared < Title > ();
+//		m_scene = p;
+//		m_scene = make_shared < Title > ();
+		GRPLST_LOAD ();
+		GRPLST_INIT ();
+	}
+
 }	//namespace GAME
 

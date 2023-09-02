@@ -21,25 +21,31 @@ namespace GAME
 {
 	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
+		//バトル
 		P_FTG			m_fighting;
 
+		//ポーズメニュ
 		P_PauseMenu		m_pauseMenu;
 
 		//遷移先シーン
-		P_GameScene		m_scene;
+		P_Scene			m_scene;
+		P_GameScene		m_gameScene;
 
 	public:
 		FtgMain ();
 		FtgMain ( const FtgMain & rhs ) = delete;
 		~FtgMain ();
 
+		void Load ();
 		void ParamInit ();
-		void Init ();
 		void Move ();
 
 		P_GameScene Transit ();
-		void SetpParam ( P_Param && pParam );
+
+		void Transit_Title ();
 	};
+
+	using P_FtgMain = shared_ptr < FtgMain >;
 
 
 }	//namespace GAME

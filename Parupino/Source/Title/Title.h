@@ -18,8 +18,18 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-
 	class Title : public Scene
+	{
+	public:
+		void ParamInit () {}
+		
+		P_GameScene Transit () { return nullptr; }
+	};
+
+
+#if 0
+
+	class Title : public Scene, enable_shared_from_this < Title >
 	{
 		P_GrpAcv	m_bg;
 		P_GrpAcv	m_logo;
@@ -70,6 +80,8 @@ namespace GAME
 
 		P_GameScene Transit ();
 	};
+
+#endif // 0
 
 
 

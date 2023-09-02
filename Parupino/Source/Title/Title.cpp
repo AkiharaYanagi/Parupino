@@ -17,6 +17,9 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+#if 0
+
+
 	Title::Title ()
 	 :	  m_fadeOutTimer ( 0 ), m_timer ( 0 ), m_blink ( true )
 //		, m_muchMode ( MODE_PLAYER_PLAYER )
@@ -95,6 +98,8 @@ namespace GAME
 
 		//カーソル位置を初期化
 		m_cursor->SetPos ( VEC2 ( TTL_CURSOR_X, TTL_CURSOR_Y0 ) );
+
+		P_GameScene p = shared_from_this ();
 
 		GameScene::Init ();
 	}
@@ -315,6 +320,10 @@ namespace GAME
 		m_cursor->SetValid ( true );
 		m_menu->SetValid ( true );
 	}
+
+
+#endif // 0
+
 
 }	//namespace GAME
 

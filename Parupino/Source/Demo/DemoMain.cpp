@@ -44,7 +44,7 @@ namespace GAME
 
 		//コンストラクタ後 shared_from_this ()
 		m_scene = shared_from_this ();
-		m_menu->ParamInit ( dynamic_pointer_cast < DemoMain > ( shared_from_this () ) );
+		m_menu->ParamInit ( shared_from_this () );
 	}
 
 	P_GameScene DemoMain::Transit ()

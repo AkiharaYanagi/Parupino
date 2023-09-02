@@ -19,7 +19,7 @@ namespace GAME
 	//-------------------------------------------
 	DemoMenuItem::DemoMenuItem ()
 	{
-
+		m_grp = make_shared < GrpAcv > ();
 	}
 
 	DemoMenuItem::~DemoMenuItem ()
