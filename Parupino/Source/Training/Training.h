@@ -18,7 +18,7 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class Training : public Scene, enable_shared_from_this < Training >
+	class Training : public Scene, public enable_shared_from_this < Training >
 	{
 		P_GrpAcv		m_bg;			//背景
 		P_GrpAcv		m_training;		//トレーニング表示

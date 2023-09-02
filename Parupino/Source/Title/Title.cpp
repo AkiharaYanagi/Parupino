@@ -18,14 +18,6 @@
 namespace GAME
 {
 
-	void Title::ParamInit ()
-	{
-		m_scene = shared_from_this ();
-	}
-
-#if 0
-
-
 	Title::Title ()
 	 :	  m_fadeOutTimer ( 0 ), m_timer ( 0 ), m_blink ( true )
 //		, m_muchMode ( MODE_PLAYER_PLAYER )
@@ -326,9 +318,6 @@ namespace GAME
 		m_cursor->SetValid ( true );
 		m_menu->SetValid ( true );
 	}
-
-
-#endif // 0
 
 
 }	//namespace GAME

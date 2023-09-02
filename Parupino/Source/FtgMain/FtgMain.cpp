@@ -39,6 +39,9 @@ namespace GAME
 	{
 //		m_scene = shared_from_this ();
 		m_gameScene = shared_from_this ();
+
+		m_pauseMenu->SetpParent ( shared_from_this () );
+
 		Scene::Load ();
 	}
 

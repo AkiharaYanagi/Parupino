@@ -18,20 +18,9 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	//public Œp³ enable_shared_from_this@ƒ T >
+
 	class Title : public Scene, public enable_shared_from_this < Title >
-	{
-		P_GameScene		m_scene;
-
-	public:
-		void ParamInit ();
-
-		P_GameScene Transit () { return m_scene; }
-	};
-
-
-#if 0
-
-	class Title : public Scene, enable_shared_from_this < Title >
 	{
 		P_GrpAcv	m_bg;
 		P_GrpAcv	m_logo;
@@ -82,9 +71,6 @@ namespace GAME
 
 		P_GameScene Transit ();
 	};
-
-#endif // 0
-
 
 
 }	//namespace GAME
