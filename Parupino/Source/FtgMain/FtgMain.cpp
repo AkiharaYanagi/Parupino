@@ -100,5 +100,10 @@ namespace GAME
 		GRPLST_INIT ();
 	}
 
+	void FtgMain::Resume_Fighting ()
+	{
+		m_pauseMenu->Off ();
+	}
+
 }	//namespace GAME
 

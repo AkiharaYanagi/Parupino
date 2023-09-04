@@ -43,6 +43,7 @@ namespace GAME
 		P_GameScene Transit ();
 
 		void Transit_Title ();
+		void Resume_Fighting ();
 	};
 
 	using P_FtgMain = shared_ptr < FtgMain >;
