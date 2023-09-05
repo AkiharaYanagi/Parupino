@@ -2,7 +2,9 @@
 //	Behavior ヘッダファイル
 //=================================================================================================
 #pragma once
-#include "Game.h"
+//#include "Game.h"
+#include "GameTexture.h"
+
 #include "Sequence.h"
 #include "Compend.h"
 
