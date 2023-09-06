@@ -4,6 +4,8 @@
 //
 //=================================================================================================
 #pragma once
+#include <functional>
+
 #include "IOCharaDefine.h"
 #include "LoadCharaUtl.h"
 

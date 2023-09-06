@@ -64,6 +64,7 @@ namespace GAME
 		if ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) )
 		{
 			m_pauseMenu->On ();
+			GRPLST_PAUSE ( T );
 			return;
 		}
 

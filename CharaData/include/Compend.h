@@ -3,7 +3,7 @@
 //=================================================================================================
 #pragma once
 
-#include "Game.h"
+//#include "Game.h"
 #include "Chara_Const.h"
 #include "Sequence.h"
 
