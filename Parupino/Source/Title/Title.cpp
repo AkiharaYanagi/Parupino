@@ -32,7 +32,7 @@ namespace GAME
 		m_bg->AddTexture ( _T ( "title_bg.png" ) );
 //		m_bg->AddTexture ( _T ( "title_bg_cloud.png" ) );
 		m_bg->SetZ ( Z_BG );
-		GRPLST_INSERT ( m_bg );
+		GRPLST_INSERT_MAIN ( m_bg );
 
 		m_titleEf.Load ();		//EfÇÃà íuÇÃÇΩÇﬂÇ±Ç±Ç≈èâä˙âª
 
@@ -41,31 +41,31 @@ namespace GAME
 		m_logo->AddTexture ( _T ( "title.png" ) );
 //		m_logo->SetPos ( VEC2 ( (1280 - 1024) * 0.5f, 80 ) );
 		m_logo->SetZ ( Z_BG );
-		GRPLST_INSERT ( m_logo );
+		GRPLST_INSERT_MAIN ( m_logo );
 
 		m_menu = make_shared < GrpAcv > ();
 		m_menu->AddTexture ( _T ( "title_menu.png" ) );
 		m_menu->SetPos ( VEC2 ( (1280 - 512) * 0.5f, TITLE_menu_y ) );
 		m_menu->SetZ ( Z_BG );
-		GRPLST_INSERT ( m_menu );
+		GRPLST_INSERT_MAIN ( m_menu );
 
 		m_cursor = make_shared < GrpBlink > ();
 		m_cursor->AddTexture ( _T ( "title_cursor.png" ) );
 		m_cursor->SetPos ( VEC2 ( TTL_CURSOR_X, TTL_CURSOR_Y0 ) );
 		m_cursor->SetZ ( Z_BG );
-		GRPLST_INSERT ( m_cursor );
+		GRPLST_INSERT_MAIN ( m_cursor );
 
 		m_demo_mode = make_shared < GrpAcv > ();
 		m_demo_mode->AddTexture ( _T("title_demo_mode.png") );
 		m_demo_mode->SetPos ( VEC2 ( (1280 - 512) * 0.5f, 700 ) );
 		m_demo_mode->SetZ ( Z_BG );
 		m_demo_mode->SetValid ( false );
-		GRPLST_INSERT ( m_demo_mode );
+		GRPLST_INSERT_MAIN ( m_demo_mode );
 
 #if 0
 		m_fade = make_shared < Fade > ();
 		m_fade->SetDarkIn ( 15 );
-		GRPLST_INSERT ( m_fade );
+		GRPLST_INSERT_MAIN ( m_fade );
 #endif // 0
 
 		//óêêîÇÃéÌ

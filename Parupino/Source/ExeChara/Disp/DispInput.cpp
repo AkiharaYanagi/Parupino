@@ -32,7 +32,7 @@ namespace GAME
 		m_bg->SetRect ( m_base_x, BASE_Y, CHIP_W * INPUT_NUM, CHIP_H * NUM_DISP_INPUT );
 		m_bg->SetZ ( Z_SYS );
 		m_bg->SetAllColor ( 0x8080a080 );
-		GRPLST_INSERT ( m_bg );
+		GRPLST_INSERT_MAIN ( m_bg );
 
 		//---------------------------------------------------------------
 		//å©èo
@@ -40,13 +40,13 @@ namespace GAME
 		m_index->AddTexture ( _T ( "KeyIndex.png" ) );
 		m_index->SetPos ( VEC2 ( m_base_x, BASE_Y - CHIP_H ) );
 		m_index->SetZ ( Z_SYS );
-		GRPLST_INSERT ( m_index );
+		GRPLST_INSERT_MAIN ( m_index );
 
 		//---------------------------------------------------------------
 		//ÉLÅ[ì¸óÕ
 		m_grp = make_shared < GrpAcv > ();
 		m_grp->AddTexture ( _T ( "10_10_white.png" ) );
-		GRPLST_INSERT ( m_grp );
+		GRPLST_INSERT_MAIN ( m_grp );
 
 		m_grp->SetZ ( Z_SYS - 0.01f );
 		m_grp->ClearObject ();

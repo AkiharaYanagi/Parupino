@@ -25,7 +25,7 @@ namespace GAME
 		m_bg->AddTexture ( _T ( "ftgmain_bg1.png" ) );
 		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
-		GRPLST_INSERT ( m_bg );
+		GRPLST_INSERT_MAIN ( m_bg );
 
 		//キャラ相互処理
 		m_mutualChara = make_shared < MutualChara > ();
@@ -35,21 +35,21 @@ namespace GAME
 		m_gauge_frame = make_shared < GrpAcv > ();
 		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
 		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
-		GRPLST_INSERT ( m_gauge_frame );
+		GRPLST_INSERT_MAIN ( m_gauge_frame );
 
 		//トレーニング表示
 		m_training = make_shared < GrpAcv > ();
 		m_training->AddTexture ( _T ( "training.png" ) );
 		m_training->SetPos ( (1280 - 256) * 0.5f, 70.f );
 		m_training->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
-		GRPLST_INSERT ( m_training );
+		GRPLST_INSERT_MAIN ( m_training );
 
 		//ポーズ
 		m_pause = make_shared < GrpAcv > ();
 		m_pause->AddTexture ( _T ( "Pause.png" ) );
 		m_pause->SetPos ( (1280 - 512)*0.5, 480.f );
 		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
-		GRPLST_INSERT ( m_pause );
+		GRPLST_INSERT_MAIN ( m_pause );
 		m_pause->SetValid ( false );
 	}
 

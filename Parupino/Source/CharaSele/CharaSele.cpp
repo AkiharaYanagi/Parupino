@@ -56,7 +56,7 @@ namespace GAME
 		//BG
 		m_bg = make_shared < GrpAcv > ();
 		m_bg->AddTexture ( _T ( "BG_CharaSelect.png" ) );
-		GRPLST_INSERT ( m_bg );
+		GRPLST_INSERT_MAIN ( m_bg );
 
 		//ロゴ
 		m_logo_l = make_shared < GrpAcv > ();
@@ -69,7 +69,7 @@ namespace GAME
 			p->SetPos ( 1.f * LOGO_W * il, 1.f * LOGO_L_START_Y );
 			++il;
 		}
-		GRPLST_INSERT ( m_logo_l );
+		GRPLST_INSERT_MAIN ( m_logo_l );
 
 		m_logo_r = make_shared < GrpAcv > ();
 		m_logo_r->AddTexture ( _T ( "CharaSelectLogo.png" ) );
@@ -81,20 +81,20 @@ namespace GAME
 			p->SetPos ( 1.f * LOGO_W * ir, 1.f * LOGO_R_START_Y );
 			++ir;
 		}
-		GRPLST_INSERT ( m_logo_r );
+		GRPLST_INSERT_MAIN ( m_logo_r );
 
 		//キャラ立絵カットイン
 		m_chara_1p = make_shared < GrpAcv > ();
 		m_chara_1p->AddTexture ( _T ( "Chara_Sonia.png" ) );
 		m_chara_1p->AddTexture ( _T ( "Chara_Orfloat.png" ) );
 		m_chara_1p->SetPos ( CHARA_1P_POS_X0, CHARA_1P_POS_Y );
-		GRPLST_INSERT ( m_chara_1p );
+		GRPLST_INSERT_MAIN ( m_chara_1p );
 
 		m_chara_light_1p = make_shared < GrpAcv > ();
 		m_chara_light_1p->AddTexture ( _T ( "Chara_Sonia_light.png" ) );
 		m_chara_light_1p->AddTexture ( _T ( "Chara_Orfloat_light.png" ) );
 		m_chara_light_1p->SetPos ( CHARA_1P_POS_X0, CHARA_1P_POS_Y );
-		GRPLST_INSERT ( m_chara_light_1p );
+		GRPLST_INSERT_MAIN ( m_chara_light_1p );
 		m_chara_light_1p->SetValid ( false );
 
 
@@ -102,13 +102,13 @@ namespace GAME
 		m_chara_2p->AddTexture ( _T ( "Chara_Sonia.png" ) );
 		m_chara_2p->AddTexture ( _T ( "Chara_Orfloat.png" ) );
 		m_chara_2p->SetPos ( CHARA_2P_POS_X0, CHARA_2P_POS_Y );
-		GRPLST_INSERT ( m_chara_2p );
+		GRPLST_INSERT_MAIN ( m_chara_2p );
 
 		m_chara_light_2p = make_shared < GrpAcv > ();
 		m_chara_light_2p->AddTexture ( _T ( "Chara_Sonia_light.png" ) );
 		m_chara_light_2p->AddTexture ( _T ( "Chara_Orfloat_light.png" ) );
 		m_chara_light_2p->SetPos ( CHARA_2P_POS_X0, CHARA_2P_POS_Y );
-		GRPLST_INSERT ( m_chara_light_2p );
+		GRPLST_INSERT_MAIN ( m_chara_light_2p );
 		m_chara_light_2p->SetValid ( false );
 
 
@@ -120,34 +120,34 @@ namespace GAME
 		m_select_Sonia = make_shared < GrpAcv > ();
 		m_select_Sonia->AddTexture ( _T ( "CharaSelect_Sonia.png" ) );
 		m_select_Sonia->SetPos ( SELECT_1P_POS_X, SELECT_1P_POS_Y );
-		GRPLST_INSERT ( m_select_Sonia );
+		GRPLST_INSERT_MAIN ( m_select_Sonia );
 
 		m_select_Orfloat = make_shared < GrpAcv > ();
 		m_select_Orfloat->AddTexture ( _T ( "CharaSelect_Orfloat.png" ) );
 		m_select_Orfloat->SetPos ( SELECT_2P_POS_X, SELECT_2P_POS_Y );
-		GRPLST_INSERT ( m_select_Orfloat );
+		GRPLST_INSERT_MAIN ( m_select_Orfloat );
 
 		//カーソル
 		m_cursor1p = make_shared < GrpBlink > ();
 		m_cursor1p->AddTexture ( _T ( "CharaSelect_Cursor1p.png" ) );
 		m_cursor1p->SetPos ( SELECT_1P_POS_X, SELECT_1P_POS_Y );
 		m_cursor1p->SetTimer ( 15 );
-		GRPLST_INSERT ( m_cursor1p );
+		GRPLST_INSERT_MAIN ( m_cursor1p );
 
 		m_cursor2p = make_shared < GrpBlink > ();
 		m_cursor2p->AddTexture ( _T ( "CharaSelect_Cursor2p.png" ) );
 		m_cursor2p->SetPos ( SELECT_2P_POS_X, SELECT_2P_POS_Y );
-		GRPLST_INSERT ( m_cursor2p );
+		GRPLST_INSERT_MAIN ( m_cursor2p );
 
 		m_cursorCPU1p = make_shared < GrpBlink > ();
 		m_cursorCPU1p->AddTexture ( _T ( "CharaSelect_CursorCPU1p.png" ) );
 		m_cursorCPU1p->SetPos ( SELECT_1P_POS_X, SELECT_1P_POS_Y );
-		GRPLST_INSERT ( m_cursorCPU1p );
+		GRPLST_INSERT_MAIN ( m_cursorCPU1p );
 
 		m_cursorCPU2p = make_shared < GrpBlink > ();
 		m_cursorCPU2p->AddTexture ( _T ( "CharaSelect_CursorCPU2p.png" ) );
 		m_cursorCPU2p->SetPos ( SELECT_2P_POS_X, SELECT_2P_POS_Y );
-		GRPLST_INSERT ( m_cursorCPU2p );
+		GRPLST_INSERT_MAIN ( m_cursorCPU2p );
 
 		//選択キャラ
 #if 0
@@ -163,7 +163,7 @@ namespace GAME
 		m_bDecide2p = false;	//2P側決定
 
 		m_fade = make_shared < Fade > ();
-		GRPLST_INSERT ( m_fade );
+		GRPLST_INSERT_MAIN ( m_fade );
 
 		m_endWait = false;
 

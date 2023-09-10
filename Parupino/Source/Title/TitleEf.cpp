@@ -58,9 +58,9 @@ namespace GAME
 
 	void TitleEf::Load ()
 	{
-		GRPLST_INSERT ( m_ef );
-//		GRPLST_INSERT ( m_ef0 );
-		GRPLST_INSERT ( m_another );
+		GRPLST_INSERT_MAIN ( m_ef );
+//		GRPLST_INSERT_MAIN ( m_ef0 );
+		GRPLST_INSERT_MAIN ( m_another );
 	}
 
 	void TitleEf::Init ()

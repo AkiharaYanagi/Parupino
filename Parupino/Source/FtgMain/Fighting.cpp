@@ -26,20 +26,20 @@ namespace GAME
 		m_bg->AddTexture ( _T ( "ftgmain_bg1.png" ) );
 		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
-		GRPLST_INSERT ( m_bg );
+		GRPLST_INSERT_MAIN ( m_bg );
 
 		m_bg_blackout = make_shared < GrpAcv > ();
 		m_bg_blackout->AddTexture ( _T ( "ftgmain_bg_black.png" ) );
 		m_bg_blackout->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg_blackout->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
 		m_bg_blackout->SetValid ( false );
-		GRPLST_INSERT ( m_bg_blackout );
+		GRPLST_INSERT_MAIN ( m_bg_blackout );
 
 		//ゲージ枠
 		m_gauge_frame = make_shared < GrpAcv > ();
 		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
 		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
-		GRPLST_INSERT ( m_gauge_frame );
+		GRPLST_INSERT_MAIN ( m_gauge_frame );
 
 		//BGタイマ
 		m_bgTimer = make_shared < Timer > ();
@@ -66,7 +66,7 @@ namespace GAME
 		m_pause->AddTexture ( _T ( "Pause.png" ) );
 		m_pause->SetPos ( (1280-512)*0.5, 480.f );
 		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
-		GRPLST_INSERT ( m_pause );
+		GRPLST_INSERT_MAIN ( m_pause );
 		m_pause->SetValid ( false );
 	}
 

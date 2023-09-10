@@ -29,7 +29,7 @@ namespace GAME
 			pCRect->SetZ ( Z_SYS );
 			pCRect->Load ();
 			m_pvpGrpCRect->push_back ( pCRect );
-			GRPLST_INSERT ( pCRect );
+			GRPLST_INSERT_MAIN ( pCRect );
 
 			P_PrmRect pARect = make_shared < PrmRect > ();
 			pARect->SetAllColor ( RECT_COLOR_A );
@@ -37,7 +37,7 @@ namespace GAME
 			pARect->Load ();
 			pARect->Move ();
 			m_pvpGrpARect->push_back ( pARect );
-			GRPLST_INSERT ( pARect );
+			GRPLST_INSERT_MAIN ( pARect );
 
 			P_PrmRect pHRect = make_shared < PrmRect > ();
 			pHRect->SetAllColor ( RECT_COLOR_H );
@@ -45,7 +45,7 @@ namespace GAME
 			pHRect->Load ();
 			pHRect->Move ();
 			m_pvpGrpHRect->push_back ( pHRect );
-			GRPLST_INSERT ( pHRect );
+			GRPLST_INSERT_MAIN ( pHRect );
 
 			P_PrmRect pORect = make_shared < PrmRect > ();
 			pORect->SetAllColor ( RECT_COLOR_O );
@@ -53,7 +53,7 @@ namespace GAME
 			pORect->Load ();
 			pORect->Move ();
 			m_pvpGrpORect->push_back ( pORect );
-			GRPLST_INSERT ( pORect );
+			GRPLST_INSERT_MAIN ( pORect );
 		}
 		InitRect ();
 
@@ -70,10 +70,10 @@ namespace GAME
 		//終了時にグラフィックタスクを外す
 		for ( UINT i = 0; i < NUM_RECT; ++i )
 		{
-			GRPLST_ERASE ( (*m_pvpGrpCRect)[i] );
-			GRPLST_ERASE ( (*m_pvpGrpARect)[i] );
-			GRPLST_ERASE ( (*m_pvpGrpHRect)[i] );
-			GRPLST_ERASE ( (*m_pvpGrpORect)[i] );
+			GRPLST_REMOVE_MAIN ( (*m_pvpGrpCRect)[i] );
+			GRPLST_REMOVE_MAIN ( (*m_pvpGrpARect)[i] );
+			GRPLST_REMOVE_MAIN ( (*m_pvpGrpHRect)[i] );
+			GRPLST_REMOVE_MAIN ( (*m_pvpGrpORect)[i] );
 		}
 		//解放
 		for ( UINT i = 0; i < NUM_RECT; ++i )

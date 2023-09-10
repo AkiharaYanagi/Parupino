@@ -20,7 +20,7 @@ namespace GAME
 		//メイングラフィック
 		m_grp = make_shared < GrpApTx > ();
 		m_grp->SetZ ( z );	//初期位置
-		GRPLST_INSERT ( m_grp );
+		GRPLST_INSERT_MAIN ( m_grp );
 
 		//枠表示(DispRect)はポインタでなく実体を保持
 	}
@@ -28,7 +28,7 @@ namespace GAME
 	DispEffect::~DispEffect ()
 	{
 		//終了時にグラフィックタスクを外す
-		GRPLST_ERASE ( m_grp );
+		GRPLST_REMOVE_MAIN ( m_grp );
 	}
 
 

@@ -21,7 +21,7 @@ namespace GAME
 	{
 		P_GrpDemo pGrp = make_shared < GrpDemo > ();
 		pGrp->AddTexture ( txName );
-		GRPLST_INSERT ( pGrp );
+		GRPLST_INSERT_MAIN ( pGrp );
 
 		pGrp->SetPos ( VEC2 ( 128, 400 ) );
 		pGrp->SetScalingCenter ( VEC2 ( 512, 128 ) );
@@ -68,7 +68,7 @@ namespace GAME
 		m_grpClock->SetPos ( VEC2 ( 640 - 256, 300 ) );
 		m_grpClock->SetValid ( F );
 		m_grpClock->SetZ ( Z_EFF );
-		GRPLST_INSERT ( m_grpClock );
+		GRPLST_INSERT_MAIN ( m_grpClock );
 
 		tostringstream toss;
 		tstring filename_base = _T ( "clock\\clock_" );
@@ -364,7 +364,7 @@ namespace GAME
 		pGrp = make_shared < GrpDemo > ();
 		pGrp->AddTexture ( txName );
 		SetGrpDemo ( pGrp );
-		GRPLST_INSERT ( pGrp );
+		GRPLST_INSERT_MAIN ( pGrp );
 	}
 
 	void Fighting::SetGrpDemo ( P_GrpDemo pGrp )

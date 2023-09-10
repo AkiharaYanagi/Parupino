@@ -20,7 +20,7 @@ namespace GAME
 		m_grpShadow = make_shared < GrpAcv > ();
 		m_grpShadow->AddTexture ( _T("shadow.png") );
 		m_grpShadow->SetZ ( Z_SHADOW );
-		GRPLST_INSERT ( m_grpShadow );
+		GRPLST_INSERT_MAIN ( m_grpShadow );
 	}
 
 	DispChara::~DispChara ()
