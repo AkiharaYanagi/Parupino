@@ -22,9 +22,9 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class DispChara
+	class DispChara : public TASK_VEC
 	{
-		DispMainImage	m_mainImage;	//メインイメージ
+		P_DispMainImage	m_mainImage;	//メインイメージ
 		DispRect		m_dispRect;		//枠
 		P_GrpAcv		m_grpShadow;	//影
 		DispFrontEnd	m_frontEnd;		//フロントエンド
@@ -58,6 +58,10 @@ namespace GAME
 		//入力更新
 		void UpdateInput ( P_CharaInput p ) { m_dispInput.UpdateInput ( p ); }
 	};
+
+
+	using P_DispChara = shared_ptr < DispChara >;
+
 
 }	//namespace GAME
 

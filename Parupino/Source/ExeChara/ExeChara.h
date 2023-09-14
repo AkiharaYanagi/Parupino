@@ -34,10 +34,8 @@ namespace GAME
 	using P_ExeChara = shared_ptr < ExeChara >;
 	using WP_ExeChara = weak_ptr < ExeChara >;
 
-	//@info	復旧時Reset()のためゲームタスクを継承(子を持たないためベクタではない)
-
 	//キャラ実行 クラス
-	class ExeChara : public GameTask, public enable_shared_from_this < ExeChara >
+	class ExeChara : public TASK_VEC, public enable_shared_from_this < ExeChara >
 	{
 		//------------------------------------------------
 		//基本データ
@@ -50,7 +48,7 @@ namespace GAME
 
 		//------------------------------------------------
 		//表示
-		DispChara		m_dispChara;	//キャラ全般表示
+		P_DispChara		m_dispChara;	//キャラ全般表示
 
 		//------------------------------------------------
 		//入力

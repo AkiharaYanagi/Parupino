@@ -19,7 +19,7 @@ namespace GAME
 {
 	//キャラにおけるメインイメージの表示
 	//テクスチャをキャラデータから用いる
-	class DispMainImage
+	class DispMainImage : public TASK_VEC
 	{
 		P_GrpApTx	m_mainGraphic;		//メイングラフィック表示
 		PVP_TxBs	m_pvpMainTexture;	//メインイメージのテクスチャリスト
@@ -35,6 +35,8 @@ namespace GAME
 		//メインイメージの更新
 		void UpdateMainImage ( P_Script pScript, VEC2 ptChara, bool dirRight );
 	};
+
+	using P_DispMainImage = shared_ptr < DispMainImage >;
 
 
 }	//namespace GAME

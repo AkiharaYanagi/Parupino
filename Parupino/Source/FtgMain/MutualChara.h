@@ -36,22 +36,15 @@ namespace GAME
 		UINT	m_endTime;
 		P_Timer	m_tmrEndWait;
 
-		//暗転
-		UINT	m_blackOut;
-
-		//スクリプトからのストップ
-		UINT	m_scpStop;
-
-		//ヒットストップ
-		P_Timer	m_tmrHitstop;
+		UINT	m_blackOut;		//暗転
+		UINT	m_scpStop;		//スクリプトからのストップ
+		P_Timer	m_tmrHitstop;		//ヒットストップ
 
 		//勝者
 		WINNER	m_winner;
 
-
 		//判定クラス
 		Decision	m_decision;
-
 
 	public:
 		MutualChara ();

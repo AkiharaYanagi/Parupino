@@ -27,7 +27,9 @@ namespace GAME
 		m_charaRect = make_shared < CharaRect > ();	//実効枠
 		m_btlPrm.LoadPlayerID ( m_playerID );	//バトルパラメータ
 
-		m_dispChara.LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
+		m_dispChara = make_shared < DispChara > ();
+		m_dispChara->LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
+		AddpTask ( m_dispChara );
 	}
 
 	//デストラクタ
@@ -79,8 +81,8 @@ namespace GAME
 
 		//--------------------------------------------
 		//キャラ表示初期化
-		m_dispChara.SetpChara ( m_pChara );
-		m_dispChara.SetpCharaRect ( m_charaRect );
+		m_dispChara->SetpChara ( m_pChara );
+		m_dispChara->SetpCharaRect ( m_charaRect );
 
 		//エフェクト生成ベクタの生成
 		MakeEfOprt ();
@@ -139,9 +141,9 @@ namespace GAME
 		//表示
 		//@info Move()中のTransit()の後に遷移し、
 		//		再度Move()は呼ばれずDraw()が呼ばれるため、ここで手動の初期化が必要(Init()は呼ばれる)
-		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
+		m_dispChara->UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 		//入力表示更新
-		m_dispChara.UpdateInput ( m_pCharaInput );
+		m_dispChara->UpdateInput ( m_pCharaInput );
 	}
 
 	//再設定
@@ -158,7 +160,7 @@ namespace GAME
 		Rele ();
 		m_pChara = make_shared < Chara > ();
 		Load ();
-		m_dispChara.SetpChara ( m_pChara );
+		m_dispChara->SetpChara ( m_pChara );
 		m_oprtEf.SetpChara ( m_pChara );
 
 		//アクション・スクリプト再取得
@@ -166,7 +168,7 @@ namespace GAME
 		m_pScript = m_pAction->GetpScript ( m_frame );
 
 		//メイン イメージ
-		m_dispChara.UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
+		m_dispChara->UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 
 		//エフェクト イメージ
 		m_oprtEf.PostScriptMove ( GetPos (), GetDirRight () );
@@ -529,10 +531,10 @@ namespace GAME
 	void ExeChara::UpdateGraphic ()
 	{
 		//メインイメージ
-		m_dispChara.UpdateMainImage ( m_pScript, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
+		m_dispChara->UpdateMainImage ( m_pScript, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 
 		//入力表示更新
-		m_dispChara.UpdateInput ( m_pCharaInput );
+		m_dispChara->UpdateInput ( m_pCharaInput );
 
 		//共通グラフィック
 		if ( ! m_btlPrm.GetTmr_Stop()->IsActive () )
@@ -545,7 +547,7 @@ namespace GAME
 		}
 
 		//ゲージ更新
-		m_dispChara.UpdateGauge ( m_btlPrm );
+		m_dispChara->UpdateGauge ( m_btlPrm );
 	}
 
 	//落下・着地
@@ -767,12 +769,12 @@ namespace GAME
 	//枠表示切替
 	void ExeChara::OnDispRect ()
 	{
-		m_dispChara.OnRect ();
+		m_dispChara->OnRect ();
 		m_oprtEf.OnDispRect ();
 	}
 	void ExeChara::OffDispRect ()
 	{
-		m_dispChara.OffRect ();
+		m_dispChara->OffRect ();
 		m_oprtEf.OffDispRect ();
 	}
 

@@ -16,6 +16,9 @@ namespace GAME
 {
 	DispChara::DispChara ()
 	{
+		m_mainImage = make_shared < DispMainImage > ();
+		AddpTask ( m_mainImage );
+
 		//影
 		m_grpShadow = make_shared < GrpAcv > ();
 		m_grpShadow->AddTexture ( _T("shadow.png") );
@@ -37,7 +40,7 @@ namespace GAME
 	//キャラデータを設定
 	void DispChara::SetpChara ( const P_Chara pChara )
 	{
-		m_mainImage.SetpChara ( pChara );
+		m_mainImage->SetpChara ( pChara );
 	}
 
 	//枠データを設定
@@ -50,7 +53,7 @@ namespace GAME
 	void DispChara::UpdateMainImage ( P_Script pScript, VEC2 posChara, bool dirRight )
 	{
 		//メイン
-		m_mainImage.UpdateMainImage ( pScript, posChara, dirRight );
+		m_mainImage->UpdateMainImage ( pScript, posChara, dirRight );
 
 		//影
 		float fDir = dirRight ? ( 1.f ) : ( -1.f );		//向き
