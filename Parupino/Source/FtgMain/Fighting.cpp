@@ -8,7 +8,6 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Fighting.h"
-#include "../Title/Title.h"
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -26,6 +25,7 @@ namespace GAME
 		m_bg->AddTexture ( _T ( "ftgmain_bg1.png" ) );
 		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
+		AddpTask ( m_bg );
 		GRPLST_INSERT_MAIN ( m_bg );
 
 		m_bg_blackout = make_shared < GrpAcv > ();
@@ -33,12 +33,14 @@ namespace GAME
 		m_bg_blackout->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg_blackout->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
 		m_bg_blackout->SetValid ( false );
+		AddpTask ( m_bg_blackout );
 		GRPLST_INSERT_MAIN ( m_bg_blackout );
 
 		//ゲージ枠
 		m_gauge_frame = make_shared < GrpAcv > ();
 		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
 		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
+		AddpTask ( m_gauge_frame );
 		GRPLST_INSERT_MAIN ( m_gauge_frame );
 
 		//BGタイマ
@@ -55,9 +57,9 @@ namespace GAME
 
 		//=====================================================
 		//デモ
-		m_demoActor = make_shared < FtgDemoActor > ();
-		m_demoActor->Load ();
-		m_demoActor->SetpMutualChara ( m_mutualChara );
+//		m_demoActor = make_shared < FtgDemoActor > ();
+//		m_demoActor->Load ();
+//		m_demoActor->SetpMutualChara ( m_mutualChara );
 
 		//=====================================================
 
@@ -77,7 +79,7 @@ namespace GAME
 
 	void Fighting::ParamInit ( P_Param pParam )
 	{
-		m_mutualChara->ParamInit ( pParam );
+//		m_mutualChara->ParamInit ( pParam );
 	}
 
 	void Fighting::Init ()
@@ -89,11 +91,11 @@ namespace GAME
 		TASK_LST::Init ();
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 1
+#define DEMO_ON 0
 #if DEMO_ON
 		m_demoActor->StartGreeting ();
 #else
-		m_demoActor->StartFighting ();
+//		m_demoActor->StartFighting ();
 #endif // DEMO_ON
 	}
 
@@ -106,11 +108,11 @@ namespace GAME
 
 		//--------------------------
 		//デモ分岐
-		m_demoActor->Do ();
+//		m_demoActor->Do ();
 
 		//--------------------------
 		//両者処理
-		m_mutualChara->Conduct ();
+//		m_mutualChara->Conduct ();
 
 		//--------------------------
 		//共通グラフィック処理

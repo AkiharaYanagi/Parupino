@@ -19,7 +19,6 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-//	class Fighting : public Scene
 	class Fighting : public TASK_LST
 	{
 		//”wŒi
@@ -37,7 +36,7 @@ namespace GAME
 
 		//=====================================================
 		//ƒfƒ‚
-		P_FtgDemoActor		m_demoActor;
+//		P_FtgDemoActor		m_demoActor;
 
 		//=====================================================
 
@@ -53,7 +52,6 @@ namespace GAME
 		void Move ();
 
 		void ParamInit ( P_Param pParam );
-//		P_GameScene Transit ();
 
 	private:
 		void Pause ();

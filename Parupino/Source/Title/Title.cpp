@@ -24,35 +24,33 @@ namespace GAME
 		, m_menuPos ( TTLM_TRAINING )
 		, m_demoTimer ( 0 )
 	{
-		//Sceneの最初一回のみ、GrpLstをゲームタスクに設定
-//		AddpTask ( GRPLST_MAKE () );
-
 		//各グラフィックの初期化
 		m_bg = make_shared < GrpAcv > ();
 		m_bg->AddTexture ( _T ( "title_bg.png" ) );
-//		m_bg->AddTexture ( _T ( "title_bg_cloud.png" ) );
 		m_bg->SetZ ( Z_BG );
+		AddpTask ( m_bg );
 		GRPLST_INSERT_MAIN ( m_bg );
 
 		m_titleEf.Load ();		//Efの位置のためここで初期化
 
 		m_logo = make_shared < GrpAcv > ();
-//		m_logo->AddTexture ( _T ( "title_logo.png" ) );
 		m_logo->AddTexture ( _T ( "title.png" ) );
-//		m_logo->SetPos ( VEC2 ( (1280 - 1024) * 0.5f, 80 ) );
 		m_logo->SetZ ( Z_BG );
+		AddpTask ( m_logo );
 		GRPLST_INSERT_MAIN ( m_logo );
 
 		m_menu = make_shared < GrpAcv > ();
 		m_menu->AddTexture ( _T ( "title_menu.png" ) );
 		m_menu->SetPos ( VEC2 ( (1280 - 512) * 0.5f, TITLE_menu_y ) );
 		m_menu->SetZ ( Z_BG );
+		AddpTask ( m_menu );
 		GRPLST_INSERT_MAIN ( m_menu );
 
 		m_cursor = make_shared < GrpBlink > ();
 		m_cursor->AddTexture ( _T ( "title_cursor.png" ) );
 		m_cursor->SetPos ( VEC2 ( TTL_CURSOR_X, TTL_CURSOR_Y0 ) );
 		m_cursor->SetZ ( Z_BG );
+		AddpTask ( m_cursor );
 		GRPLST_INSERT_MAIN ( m_cursor );
 
 		m_demo_mode = make_shared < GrpAcv > ();
@@ -60,6 +58,7 @@ namespace GAME
 		m_demo_mode->SetPos ( VEC2 ( (1280 - 512) * 0.5f, 700 ) );
 		m_demo_mode->SetZ ( Z_BG );
 		m_demo_mode->SetValid ( false );
+		AddpTask ( m_demo_mode );
 		GRPLST_INSERT_MAIN ( m_demo_mode );
 
 #if 0

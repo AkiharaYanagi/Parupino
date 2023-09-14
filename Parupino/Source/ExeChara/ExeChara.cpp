@@ -25,8 +25,8 @@ namespace GAME
 		//キャラデータ生成
 		m_pChara = make_shared < Chara > ();	//キャラデータ実体
 		m_charaRect = make_shared < CharaRect > ();	//実効枠
-
 		m_btlPrm.LoadPlayerID ( m_playerID );	//バトルパラメータ
+
 		m_dispChara.LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
 	}
 

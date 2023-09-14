@@ -27,8 +27,6 @@ namespace GAME
 		AddpTask ( m_pauseMenu );
 
 		//@info コンストラクタでshared_from_this()を用いない
-		//遷移先シーン
-//		m_scene = shared_from_this ();
 	}
 
 	FtgMain::~FtgMain ()
@@ -64,7 +62,7 @@ namespace GAME
 		if ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) )
 		{
 			m_pauseMenu->On ();
-			GRPLST_PAUSE ( T );
+//			GRPLST_PAUSE ( T );
 			return;
 		}
 

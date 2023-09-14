@@ -226,29 +226,6 @@ namespace GAME
 
 		//-------------------------------------------------
 
-#if 0
-		//終了待機
-		void SetEndWait ();
-
-		//終了演出
-		void OnEndAct ();
-
-		//ダウン状態
-		bool IsDown () { return CHST_DOWN == m_charaState; }
-
-		//ダウン終了状態
-		bool IsDownEnd () { return CHST_DOWN_END == m_charaState; }
-
-		//勝利状態
-		bool IsWin () { return CHST_WIN == m_charaState; }
-
-		//勝利終了状態
-		bool IsWinEnd () { return CHST_WIN_END == m_charaState; }
-
-		//強制終了状態
-		void ForcedEnd ();
-#endif // 0
-
 		//外部からの状態確認
 		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }
 

@@ -19,11 +19,7 @@ namespace GAME
 	{
 		//メイングラフィック
 		m_mainGraphic = make_shared < GrpApTx > ();
-
-		//test
 		GRPLST_INSERT_MAIN ( m_mainGraphic );
-
-
 	}
 
 	DispMainImage::~DispMainImage ()
