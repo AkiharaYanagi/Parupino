@@ -201,6 +201,7 @@
     <ClInclude Include="Source\GameMain\SceneCommon.h" />
     <ClInclude Include="Source\GameMain\StdAfx.h" />
     <ClInclude Include="Source\GameMain\WinMain.h" />
+    <ClInclude Include="Source\Result\Result.h" />
     <ClInclude Include="Source\Title\Title.h" />
     <ClInclude Include="Source\Title\TitleConst.h" />
     <ClInclude Include="Source\Title\TitleEf.h" />
@@ -247,6 +248,7 @@
     <ClCompile Include="Source\GameMain\Scene.cpp" />
     <ClCompile Include="Source\GameMain\StdAfx.cpp" />
     <ClCompile Include="Source\GameMain\WinMain.cpp" />
+    <ClCompile Include="Source\Result\Result.cpp" />
     <ClCompile Include="Source\Title\Title.cpp" />
     <ClCompile Include="Source\Title\TitleEf.cpp" />
     <ClCompile Include="Source\Training\Training.cpp" />

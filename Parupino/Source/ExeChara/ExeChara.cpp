@@ -27,6 +27,7 @@ namespace GAME
 		m_charaRect = make_shared < CharaRect > ();	//実効枠
 		m_btlPrm.LoadPlayerID ( m_playerID );	//バトルパラメータ
 
+		//表示
 		m_dispChara = make_shared < DispChara > ();
 		m_dispChara->LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
 		AddpTask ( m_dispChara );
@@ -88,8 +89,13 @@ namespace GAME
 //※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
 //		tstring name ( _T ( "chara.dat" ) );
+<<<<<<< HEAD
 //		tstring name ( _T ( "charaBin.dat" ) );
 		tstring name (_T ("chara_standBin.dat"));
+=======
+		tstring name ( _T ( "charaBin.dat" ) );
+//		tstring name ( _T ( "light_charaBin.dat" ) );
+>>>>>>> 98b1d1c616ad7c380babb27471b33b4d14a967d4
 #if 0
 		switch ( m_name )
 		{

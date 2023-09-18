@@ -19,10 +19,17 @@ namespace GAME
 		m_mainImage = make_shared < DispMainImage > ();
 		AddpTask ( m_mainImage );
 
+		m_dispRect = make_shared < DispRect > ();
+		AddpTask ( m_dispRect );
+
+		m_frontEnd = make_shared < DispFrontEnd > ();
+		AddpTask ( m_frontEnd );
+
 		//影
 		m_grpShadow = make_shared < GrpAcv > ();
 		m_grpShadow->AddTexture ( _T("shadow.png") );
 		m_grpShadow->SetZ ( Z_SHADOW );
+		AddpTask ( m_grpShadow );
 		GRPLST_INSERT_MAIN ( m_grpShadow );
 	}
 
@@ -33,7 +40,7 @@ namespace GAME
 	//プレイヤIDを設定
 	void DispChara::LoadPlayer ( PLAYER_ID playerID )
 	{ 
-		m_frontEnd.LoadPlayer ( playerID );
+		m_frontEnd->LoadPlayer ( playerID );
 		m_dispInput.LoadPlayer ( playerID );
 	}
 
@@ -46,7 +53,7 @@ namespace GAME
 	//枠データを設定
 	void DispChara::SetpCharaRect ( P_CharaRect pCharaRect )
 	{
-		m_dispRect.SetCharaRect ( pCharaRect );
+		m_dispRect->SetCharaRect ( pCharaRect );
 	}
 
 	//毎フレームにおけるメインイメージの更新
@@ -62,15 +69,15 @@ namespace GAME
 		vecImgShadow.y = -32.f + 1.f * PLAYER_BASE_Y;
 		m_grpShadow->SetPos ( vecImgShadow );
 
-		//入力
-		m_dispRect.Update ();
+		//枠
+		m_dispRect->Update ();
 	}
 
 
 	//ゲージ類更新
 	void DispChara::UpdateGauge ( BtlParam btlPrm )
 	{
-		m_frontEnd.UpdateGauge ( btlPrm );
+		m_frontEnd->UpdateGauge ( btlPrm );
 	}
 
 

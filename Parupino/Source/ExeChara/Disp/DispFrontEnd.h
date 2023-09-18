@@ -20,26 +20,13 @@
 namespace GAME
 {
 
-	class DispFrontEnd
+	class DispFrontEnd : public TASK_VEC
 	{
-		PLAYER_ID	m_playerID;				//プレイヤ別表示側
+		PLAYER_ID	m_playerID;				//プレイヤ表示側
 
-#if 0
-		P_PrmRect	m_gaugeLife;			//ライフゲージ表示
-		P_PrmRect	m_gaugeFrameLife;		//ライフゲージ枠表示
-		P_PrmRect	m_gaugeDecreaseLife;	//ライフゲージ減少分表示
-		float		m_fDamage;				//ライフゲージ減少分
-
-		P_PrmRect	m_gaugeBalance;			//バランスゲージ表示
-		P_PrmRect	m_gaugeFrameBalance;	//バランスゲージ枠表示
-		P_PrmRect	m_gaugeDecreaseBalance;	//バランスゲージ減少分表示
-#endif // 0
-
-		DispGauge	m_gaugeLife;		//ライフゲージ
-		DispGauge	m_gaugeBalance;		//バランスゲージ
-		DispGauge	m_gaugeMana;		//マナゲージ
-
-
+		P_DispGauge	m_gaugeLife;		//ライフゲージ
+		P_DispGauge	m_gaugeBalance;		//バランスゲージ
+		P_DispGauge	m_gaugeMana;		//マナゲージ
 
 #if	0
 		GrpAcv		m_grpPlayer1P;	//プレイヤー表示"1P"
@@ -48,9 +35,8 @@ namespace GAME
 
 		PrmRect		m_gaugeHitStop;			//ヒットストップ時間表示
 		PrmRect		m_gaugeLurch;			//のけぞり時間表示
-#endif	//0
-#if	0
-		//エフェクト
+
+											//エフェクト
 		GrpEf		m_grpHitEf;			//ヒットエフェクト
 		GrpEf		m_grpAvoidEf;		//アヴォイドエフェクト
 		GrpEf		m_grpPoisedEf;		//構えエフェクト
@@ -68,9 +54,6 @@ namespace GAME
 		
 		//ゲージ類の表示部のみ初期化
 		void LoadPlayer ( PLAYER_ID playerID );
-
-		//初期化
-		void Init ();
 
 		//ゲージ類更新
 		void UpdateGauge ( BtlParam btlPrm );
@@ -93,6 +76,8 @@ namespace GAME
 #endif // 0
 
 	};
+
+	using P_DispFrontEnd = shared_ptr < DispFrontEnd >;
 
 
 }	//namespace GAME

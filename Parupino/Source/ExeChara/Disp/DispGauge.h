@@ -19,7 +19,7 @@
 namespace GAME
 {
 
-	class DispGauge
+	class DispGauge : public TASK_VEC
 	{
 		PLAYER_ID	m_playerID;		//プレイヤ表示側
 
@@ -60,6 +60,8 @@ namespace GAME
 		//値の更新
 		void Update ( UINT value );
 	};
+
+	using P_DispGauge = shared_ptr < DispGauge >;
 
 
 }	//namespace GAME

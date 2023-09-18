@@ -29,6 +29,7 @@ namespace GAME
 			pCRect->SetZ ( Z_SYS );
 			pCRect->Load ();
 			m_pvpGrpCRect->push_back ( pCRect );
+			AddpTask ( pCRect );
 			GRPLST_INSERT_MAIN ( pCRect );
 
 			P_PrmRect pARect = make_shared < PrmRect > ();
@@ -37,6 +38,7 @@ namespace GAME
 			pARect->Load ();
 			pARect->Move ();
 			m_pvpGrpARect->push_back ( pARect );
+			AddpTask ( pARect );
 			GRPLST_INSERT_MAIN ( pARect );
 
 			P_PrmRect pHRect = make_shared < PrmRect > ();
@@ -45,6 +47,7 @@ namespace GAME
 			pHRect->Load ();
 			pHRect->Move ();
 			m_pvpGrpHRect->push_back ( pHRect );
+			AddpTask ( pHRect );
 			GRPLST_INSERT_MAIN ( pHRect );
 
 			P_PrmRect pORect = make_shared < PrmRect > ();
@@ -53,6 +56,7 @@ namespace GAME
 			pORect->Load ();
 			pORect->Move ();
 			m_pvpGrpORect->push_back ( pORect );
+			AddpTask ( pORect );
 			GRPLST_INSERT_MAIN ( pORect );
 		}
 		InitRect ();
