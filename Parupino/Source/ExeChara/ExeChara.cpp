@@ -45,18 +45,6 @@ namespace GAME
 		GameSettingFile stg = pParam->GetGameSetting ();
 
 		//選択キャラ名前・モードを取得
-#if 0
-		if ( m_playerID == PLAYER_ID_1 )
-		{
-			m_name = stg.GetName1p ();
-			m_playerMode = stg.GetPlayerMode1p ();
-		}
-		if ( m_playerID == PLAYER_ID_2 )
-		{
-			m_name = stg.GetName2p ();
-			m_playerMode = stg.GetPlayerMode1p ();
-		}
-#endif // 0
 		m_name = stg.GetName ( m_playerID );
 		m_playerMode = stg.GetPlayerMode ( m_playerID );
 
@@ -100,7 +88,8 @@ namespace GAME
 //※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
 //		tstring name ( _T ( "chara.dat" ) );
-		tstring name ( _T ( "charaBin.dat" ) );
+//		tstring name ( _T ( "charaBin.dat" ) );
+		tstring name (_T ("chara_standBin.dat"));
 #if 0
 		switch ( m_name )
 		{
@@ -110,16 +99,8 @@ namespace GAME
 		}
 #endif // 0
 
-#if 0
-		tstring nameDoc ( _T ( "charaDoc.dat" ) );
-		//		LoadChara loadChara ( name, *m_pChara );
-		LoadChara loadChara ( nameDoc, *m_pChara );
-#else
 		//バイナリデータ読込
-//		LoadCharaBin loadCharaBin ( _T ( "chara.dat" ), *m_pChara );
-		LoadCharaBin loadCharaBin ( _T ( "charaBin.dat" ), *m_pChara );
-#endif // 0
-
+		LoadCharaBin loadCharaBin ( name.c_str(), *m_pChara );
 	}
 
 	//------------------------

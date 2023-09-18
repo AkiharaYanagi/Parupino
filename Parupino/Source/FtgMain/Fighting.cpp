@@ -79,7 +79,7 @@ namespace GAME
 
 	void Fighting::ParamInit ( P_Param pParam )
 	{
-//		m_mutualChara->ParamInit ( pParam );
+		m_mutualChara->ParamInit ( pParam );
 	}
 
 	void Fighting::Init ()
@@ -112,7 +112,7 @@ namespace GAME
 
 		//--------------------------
 		//両者処理
-//		m_mutualChara->Conduct ();
+		m_mutualChara->Conduct ();
 
 		//--------------------------
 		//共通グラフィック処理
