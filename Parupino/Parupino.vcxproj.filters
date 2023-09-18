@@ -37,6 +37,9 @@
     <Filter Include="Title">
       <UniqueIdentifier>{097359c8-d7c9-4a8e-a189-bf6d78c02165}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Result">
+      <UniqueIdentifier>{1b699ff1-58e8-465f-b3d7-0ab8c01912bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Title\Title.h">
@@ -189,6 +192,9 @@
     <ClInclude Include="Source\FtgMain\PauseMenuItem.h">
       <Filter>FtgMain</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Result\Result.h">
+      <Filter>Result</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -319,6 +325,9 @@
     </ClCompile>
     <ClCompile Include="Source\FtgMain\PauseMenuItem.cpp">
       <Filter>FtgMain</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Result\Result.cpp">
+      <Filter>Result</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

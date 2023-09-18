@@ -25,9 +25,9 @@ namespace GAME
 	class DispChara : public TASK_VEC
 	{
 		P_DispMainImage	m_mainImage;	//メインイメージ
-		DispRect		m_dispRect;		//枠
+		P_DispRect		m_dispRect;		//枠
 		P_GrpAcv		m_grpShadow;	//影
-		DispFrontEnd	m_frontEnd;		//フロントエンド
+		P_DispFrontEnd	m_frontEnd;		//フロントエンド
 		DispInput		m_dispInput;	//入力表示
 
 	public:
@@ -45,9 +45,9 @@ namespace GAME
 		void SetpCharaRect ( P_CharaRect pCharaRect );
 
 		//枠表示ON
-		void OnRect () { m_dispRect.OnRect (); }
+		void OnRect () { m_dispRect->OnRect (); }
 		//枠表示OFF
-		void OffRect () { m_dispRect.OffRect (); }
+		void OffRect () { m_dispRect->OffRect (); }
 
 		//ゲージ類の表示部のみ初期化
 		void LoadPlayer ( PLAYER_ID playerID );

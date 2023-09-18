@@ -20,36 +20,42 @@ namespace GAME
 		//ゲージ類
 
 		//ライフゲージ
-		m_gaugeLife.SetPosition ( LIFE_GAUGE_X, LIFE_GAUGE_Y, LIFE_GAUGE_W, LIFE_GAUGE_H );
+		m_gaugeLife = make_shared < DispGauge > ();
+		m_gaugeLife->SetPosition ( LIFE_GAUGE_X, LIFE_GAUGE_Y, LIFE_GAUGE_W, LIFE_GAUGE_H );
 		const _CLR c0L = LIFE_GAUGE_VALUE_CLR0;
 		const _CLR c1L = LIFE_GAUGE_VALUE_CLR1;
 		const _CLR c2L = LIFE_GAUGE_VALUE_CLR2;
 		const _CLR c3L = LIFE_GAUGE_VALUE_CLR3;
-		m_gaugeLife.SetColor_Value ( c0L, c1L, c2L, c3L );
-		m_gaugeLife.SetColor_Frame ( LIFE_GAUGE_FRAME_CLR );
-		m_gaugeLife.SetColor_Decrease ( LIFE_GAUGE_DECREASE_CLR );
+		m_gaugeLife->SetColor_Value ( c0L, c1L, c2L, c3L );
+		m_gaugeLife->SetColor_Frame ( LIFE_GAUGE_FRAME_CLR );
+		m_gaugeLife->SetColor_Decrease ( LIFE_GAUGE_DECREASE_CLR );
+		AddpTask ( m_gaugeLife );
 
 		//バランスゲージ
-		m_gaugeBalance.SetPosition ( BALANCE_GAUGE_X, BALANCE_GAUGE_Y, BALANCE_GAUGE_W, BALANCE_GAUGE_H );
+		m_gaugeBalance = make_shared < DispGauge > ();
+		m_gaugeBalance->SetPosition ( BALANCE_GAUGE_X, BALANCE_GAUGE_Y, BALANCE_GAUGE_W, BALANCE_GAUGE_H );
 		const _CLR c0B = BALANCE_GAUGE_VALUE_CLR0;
 		const _CLR c1B = BALANCE_GAUGE_VALUE_CLR1;
 		const _CLR c2B = BALANCE_GAUGE_VALUE_CLR2;
 		const _CLR c3B = BALANCE_GAUGE_VALUE_CLR3;
-		m_gaugeBalance.SetColor_Value ( c0B, c1B, c2B, c3B );
-		m_gaugeBalance.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
-		m_gaugeBalance.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
-		m_gaugeBalance.OffDecrease ();
+		m_gaugeBalance->SetColor_Value ( c0B, c1B, c2B, c3B );
+		m_gaugeBalance->SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
+		m_gaugeBalance->SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+		m_gaugeBalance->OffDecrease ();
+		AddpTask ( m_gaugeBalance );
 
 		//マナゲージ
-		m_gaugeMana.SetPosition ( MANA_GAUGE_X, MANA_GAUGE_Y, MANA_GAUGE_W, MANA_GAUGE_H );
+		m_gaugeMana = make_shared < DispGauge > ();
+		m_gaugeMana->SetPosition ( MANA_GAUGE_X, MANA_GAUGE_Y, MANA_GAUGE_W, MANA_GAUGE_H );
 		const _CLR c0M = MANA_GAUGE_VALUE_CLR0;
 		const _CLR c1M = MANA_GAUGE_VALUE_CLR1;
 		const _CLR c2M = MANA_GAUGE_VALUE_CLR2;
 		const _CLR c3M = MANA_GAUGE_VALUE_CLR3;
-		m_gaugeMana.SetColor_Value ( c0M, c1M, c2M, c3M );
-		m_gaugeMana.SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
-		m_gaugeMana.SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
-		m_gaugeMana.OffDecrease ();
+		m_gaugeMana->SetColor_Value ( c0M, c1M, c2M, c3M );
+		m_gaugeMana->SetColor_Frame ( BALANCE_GAUGE_FRAME_CLR );
+		m_gaugeMana->SetColor_Decrease ( BALANCE_GAUGE_DECREASE_CLR );
+		m_gaugeMana->OffDecrease ();
+		AddpTask ( m_gaugeMana );
 
 
 #if 0
@@ -101,9 +107,9 @@ namespace GAME
 	{
 		m_playerID = playerID;
 		
-		m_gaugeLife.LoadPlayer ( playerID );
-		m_gaugeBalance.LoadPlayer ( playerID );
-		m_gaugeMana.LoadPlayer ( playerID );
+		m_gaugeLife->LoadPlayer ( playerID );
+		m_gaugeBalance->LoadPlayer ( playerID );
+		m_gaugeMana->LoadPlayer ( playerID );
 
 #if 0
 		//ヒットストップ時間表示
@@ -117,18 +123,11 @@ namespace GAME
 #endif // 0
 	}
 
-	void DispFrontEnd::Init ()
-	{
-		m_gaugeLife.Init ();
-		m_gaugeBalance.Init ();
-		m_gaugeMana.Init ();
-	}
-
 	void DispFrontEnd::UpdateGauge ( BtlParam btlPrm )
 	{
-		m_gaugeLife.Update ( btlPrm.GetLife () );
-		m_gaugeBalance.Update ( btlPrm.GetBalance () );
-		m_gaugeMana.Update ( btlPrm.GetMana () );
+		m_gaugeLife->Update ( btlPrm.GetLife () );
+		m_gaugeBalance->Update ( btlPrm.GetBalance () );
+		m_gaugeMana->Update ( btlPrm.GetMana () );
 
 
 		//硬直時間表示

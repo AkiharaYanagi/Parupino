@@ -23,16 +23,19 @@ namespace GAME
 		//òg
 		m_Frame = make_shared < PrmRect > ();
 		m_Frame->SetZ ( Z_SYS );
+		AddpTask ( m_Frame );
 		GRPLST_INSERT_MAIN ( m_Frame );
 
 		//å∏è≠ï™
 		m_Decrease = make_shared < PrmRect > ();
 		m_Decrease->SetZ ( Z_SYS );
+		AddpTask ( m_Decrease );
 		GRPLST_INSERT_MAIN ( m_Decrease );
 
 		//åªç›íl
 		m_Value = make_shared < PrmRect > ();
 		m_Value->SetZ ( Z_SYS );
+		AddpTask ( m_Value );
 		GRPLST_INSERT_MAIN ( m_Value );
 	}
 

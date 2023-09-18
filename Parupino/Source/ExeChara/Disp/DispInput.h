@@ -20,7 +20,7 @@
 namespace GAME
 {
 
-	class DispInput
+	class DispInput : public TASK_VEC
 	{
 		//キー入力表示個数
 		static const UINT NUM_DISP_INPUT;	//表示フレーム個数
@@ -52,6 +52,9 @@ namespace GAME
 	private:
 		bool GetBoolInput ( P_CharaInput pCharaInput, int n, int i );
 	};
+
+	using P_DispInput = shared_ptr < DispInput >;
+
 
 }	//namespace GAME
 

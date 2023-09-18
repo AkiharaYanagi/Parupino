@@ -21,7 +21,7 @@ namespace GAME
 	using VP_PrmRect = vector < P_PrmRect >;
 	using PVP_PrmRect = shared_ptr < VP_PrmRect >;
 
-	class DispRect
+	class DispRect : public TASK_VEC
 	{
 		//éQè∆é¿å¯òg
 		P_CharaRect		mp_CharaRect;
@@ -62,6 +62,8 @@ namespace GAME
 		void SetHRect ( PV_RECT pvRect ) { SetGrpRect ( m_pvpGrpHRect, pvRect ); }
 		void SetORect ( PV_RECT pvRect ) { SetGrpRect ( m_pvpGrpORect, pvRect ); }
 	};
+
+	using P_DispRect = shared_ptr < DispRect >;
 
 
 }	//namespace GAME

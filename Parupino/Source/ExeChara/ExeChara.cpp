@@ -27,6 +27,7 @@ namespace GAME
 		m_charaRect = make_shared < CharaRect > ();	//実効枠
 		m_btlPrm.LoadPlayerID ( m_playerID );	//バトルパラメータ
 
+		//表示
 		m_dispChara = make_shared < DispChara > ();
 		m_dispChara->LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
 		AddpTask ( m_dispChara );
@@ -101,6 +102,7 @@ namespace GAME
 //		tstring name (_T ("testChara.dat"));
 //		tstring name ( _T ( "chara.dat" ) );
 		tstring name ( _T ( "charaBin.dat" ) );
+//		tstring name ( _T ( "light_charaBin.dat" ) );
 #if 0
 		switch ( m_name )
 		{
