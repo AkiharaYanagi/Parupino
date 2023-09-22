@@ -249,7 +249,7 @@ namespace GAME
 
 					P_GameScene p = make_shared < Training > ();
 					GRPLST_LOAD ();
-					GRPLST_INIT ();
+//					GRPLST_INIT ();
 					return p;
 				}
 				else
@@ -261,7 +261,7 @@ namespace GAME
 
 					P_GameScene p = make_shared < FtgMain > ();
 					GRPLST_LOAD ();
-					GRPLST_INIT ();
+//					GRPLST_INIT ();
 					return p;
 				}
 			}

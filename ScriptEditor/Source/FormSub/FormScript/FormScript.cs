@@ -48,14 +48,14 @@ namespace ScriptEditor
 	
 		public void Assosiate ( Script scp, Sequence sqc )
 		{
-			//ctrl_Script1.Assosiate ( scp );
-			_Assosiate ();
+			ctrl_Script1.Assosiate ( scp );
+//			_Assosiate ();
 		}
 
 		public void UpdateData ()
 		{
-			//ctrl_Script1.UpdateData ();
-			_UpdateData ();
+			ctrl_Script1.UpdateData ();
+//			_UpdateData ();
 		}
 	}
 }

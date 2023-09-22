@@ -112,7 +112,7 @@ namespace GAME
 			GRPLST_CLEAR ();
 			P_GameScene p = make_shared < Title > ();
 			GRPLST_LOAD ();
-			GRPLST_INIT ();
+//			GRPLST_INIT ();
 			return p;
 		}
 

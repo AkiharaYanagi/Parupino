@@ -96,7 +96,7 @@ namespace GAME
 //		m_scene = p;
 //		m_scene = make_shared < Title > ();
 		GRPLST_LOAD ();
-		GRPLST_INIT ();
+//		GRPLST_INIT ();
 	}
 
 	void FtgMain::Resume_Fighting ()

@@ -4,6 +4,10 @@
 namespace ScriptEditor
 {
 
+
+	//@todo コントロールの管理範囲をチェック
+
+
 	//各コントロールの統合処理
 	public sealed class Ctrl_All
 	{
