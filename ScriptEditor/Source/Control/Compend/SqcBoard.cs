@@ -438,7 +438,8 @@ namespace ScriptEditor
 
 			//更新
 			Assosiate ();
-			DispCompend.Disp ();
+//			DispCompend.Disp ();
+			All_Ctrl.Inst.UpdateData ();
 		}
 
 		//１つ後ろを選択

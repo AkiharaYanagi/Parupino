@@ -89,7 +89,8 @@ namespace ScriptEditor
 
 			//全体描画
 			//DispCompend.Disp ();
-			Ctrl_All.Inst.AllDisp ();
+			//Ctrl_All.Inst.AllDisp ();
+			All_Ctrl.Inst.Disp ();
 
 			this.Hide ();
 		}
@@ -104,7 +105,8 @@ namespace ScriptEditor
 			{
 				LoadFiles ( openFileDialog1.FileNames );
 				//DispCompend.Disp ();
-				Ctrl_All.Inst.AllDisp ();
+				//Ctrl_All.Inst.AllDisp ();
+				All_Ctrl.Inst.Disp ();
 			}
 		}
 

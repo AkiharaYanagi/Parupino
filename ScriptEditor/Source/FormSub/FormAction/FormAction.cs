@@ -69,7 +69,7 @@ namespace ScriptEditor
 		private void TB_Name_TextChanged ( object sender, EventArgs e )
 		{
 			action.Name = TB_Name.Text;
-			Ctrl_All.Inst.AllDisp ();
+			//Ctrl_All.Inst.AllDisp ();
 		}
 
 
@@ -93,7 +93,7 @@ namespace ScriptEditor
 			//ツリー再構築
 			RemakeTree ();
 			
-			Ctrl_All.Inst.AllDisp ();
+			//Ctrl_All.Inst.AllDisp ();
 		}
 
 		//-----------------------------------------------------------

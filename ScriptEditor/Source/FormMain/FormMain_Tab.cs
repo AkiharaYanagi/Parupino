@@ -24,16 +24,16 @@ namespace ScriptEditor
 		//タブ変更時
 		private void tabControl1_SelectedIndexChanged ( object sender, EventArgs e )
 		{
-			//タブ	(enumはintキャストが必要)
+			//タブ	(enumをswitchの条件に用いるには(int)キャストが必要)
 			switch ( tabControl1.SelectedIndex )
 			{
-				case ( int ) TAB_NAME.TAB_ACTION: tabAction_Selected (); break;
-				case ( int ) TAB_NAME.TAB_SCRIPT_A: tabScript_A_Selected (); break;
-				case ( int ) TAB_NAME.TAB_EFFECT: tabEffect_Selected (); break;
-				case ( int ) TAB_NAME.TAB_SCRIPT_E: tabScript_E_Selected (); break;
-				case ( int ) TAB_NAME.TAB_COMMAND: tabCommand_Selected (); break;
-				case ( int ) TAB_NAME.TAB_BRANCH: tabBranch_Selected (); break;
-				case ( int ) TAB_NAME.TAB_ROUTE: tabRoute_Selected (); break;
+				case (int)TAB_NAME.TAB_ACTION: tabAction_Selected (); break;
+				case (int)TAB_NAME.TAB_SCRIPT_A: tabScript_A_Selected (); break;
+				case (int)TAB_NAME.TAB_EFFECT: tabEffect_Selected (); break;
+				case (int)TAB_NAME.TAB_SCRIPT_E: tabScript_E_Selected (); break;
+				case (int)TAB_NAME.TAB_COMMAND: tabCommand_Selected (); break;
+				case (int)TAB_NAME.TAB_BRANCH: tabBranch_Selected (); break;
+				case (int)TAB_NAME.TAB_ROUTE: tabRoute_Selected (); break;
 				default: Debug.Assert ( false, "タブの選択失敗" ); break;
 			}
 		}
@@ -66,21 +66,26 @@ namespace ScriptEditor
 		//[アクション]タブ選択時
 		public void tabAction_Selected ()
 		{
+#if false
 			ctrl_SqcList_Act.UpdateData ();
 			ctrl_SqcList_Act.UpdateImage ();
 			ctrl_SqcList_Act.Refresh ();
+#endif
 		}
 
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
+#if false
 			ctrl_SqcList_Act.ApplyData ();
+#endif
 		}
 
 		//-----------------------------------------------------------------------
 		//[スクリプト(A)]タブ選択時
 		public void tabScript_A_Selected ()
 		{
+#if false
 			//共通フォームにビヘイビアを設定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
@@ -98,6 +103,7 @@ namespace ScriptEditor
 			SetEnvironment_SubForms ( eb );
 
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
+#endif
 		}
 
 
@@ -122,20 +128,25 @@ namespace ScriptEditor
 		//[エフェクト]タブ選択時
 		public void tabEffect_Selected ()
 		{
+#if false
 			ctrl_SqcList_Ef.UpdateData ();
 			ctrl_SqcList_Ef.UpdateImage ();
+#endif
 		}
 
 		//[エフェクト]タブ離去時
 		public void tabEffect_Deselected ()
 		{
+#if false
 			ctrl_SqcList_Ef.ApplyData ();
+#endif
 		}
 
 		//-----------------------------------------------------------------------
 		//[スクリプト(E)]
 		public void tabScript_E_Selected ()
 		{
+#if false
 			//共通フォームにガーニッシュを設定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			DispGarnish dg = DispChara.Inst.DispGarnish;
@@ -149,6 +160,7 @@ namespace ScriptEditor
 			Form_ScriptList.Inst.SetEnvironment ( eg );
 			FormImage.Inst.SetEnviron ( eg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
+#endif
 		}
 
 		//[スクリプト(E)]
@@ -169,7 +181,7 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------
 		public void tabBranch_Selected ()
 		{
-			ctrl_Branch1.Init ();
+			//ctrl_Branch1.Init ();
 		}
 		public void tabBranch_Deselected ()
 		{
@@ -178,7 +190,7 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------
 		public void tabRoute_Selected ()
 		{
-			ctrl_Route1.UpdateData ();
+			//ctrl_Route1.UpdateData ();
 		}
 		public void tabRoute_Deselected ()
 		{

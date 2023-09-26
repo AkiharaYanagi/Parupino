@@ -8,7 +8,7 @@ namespace ScriptEditor
 		//更新
 		public void UpdateData ()
 		{
-			Ctrl_All.Inst.UpdateData ();
+//			Ctrl_All.Inst.UpdateData ();
 			Disp ();
 		}
 
@@ -19,7 +19,8 @@ namespace ScriptEditor
 		private void Disp ()
 		{
 			//DispChara.Inst.Disp ();
-			Ctrl_All.Inst.AllDisp ();
+			//Ctrl_All.Inst.AllDisp ();
+			All_Ctrl.Inst.Disp ();
 		}
 		//イベント
 		private void FormMain_Paint ( object sender, PaintEventArgs e )

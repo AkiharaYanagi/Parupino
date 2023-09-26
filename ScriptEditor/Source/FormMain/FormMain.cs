@@ -33,6 +33,7 @@ namespace ScriptEditor
 			//環境初期化
 			LoadEnvironment ();
 
+#if false
 			//開始設定
 			Init ();
 
@@ -41,6 +42,7 @@ namespace ScriptEditor
 
 			//表示
 			Disp ();
+#endif
 		}
 
 		//==================================================================================
@@ -58,7 +60,7 @@ namespace ScriptEditor
 		//==================================================================================
 		private void FormMain_Shown ( object sender, System.EventArgs e )
 		{
-			ctrl_SqcList_Act.Refresh ();
+			//ctrl_SqcList_Act.Refresh ();
 		}
 	}
 }

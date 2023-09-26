@@ -32,7 +32,8 @@ namespace ScriptEditor
 		public override void SetEditCompend ( EditCompend ec )
 		{
 			Ctrl_AllRect.SetEditCompend ( ec );
-			Ctrl_AllRect.SetFnDispAll ( ()=>Ctrl_All.Inst.AllDisp() );
+//			Ctrl_AllRect.SetFnDispAll ( ()=>Ctrl_All.Inst.AllDisp() );
+			Ctrl_AllRect.SetFnDispAll ( ()=>All_Ctrl.Inst.Disp () );
 			base.SetEditCompend ( ec ); 
 		}
 

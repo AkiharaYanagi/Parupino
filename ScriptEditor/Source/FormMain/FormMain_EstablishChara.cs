@@ -32,11 +32,13 @@ namespace ScriptEditor
 		//プレデータテキストファイルから既存データの読込
 		public void LoadPreData ()
 		{
+#if false
 			ctrl_SqcList_Act.LoadData ();
 			ctrl_SqcList_Ef.LoadData ();
 			ctrl_CmdList1.LoadData ();
 			ctrl_Branch1.LoadData ();
 			ctrl_Route1.LoadData ();
+#endif
 		}
 
 		//==================================================================================
@@ -47,8 +49,10 @@ namespace ScriptEditor
 			//----------------------------------------------
 			EditChara.Inst.SetCharaDara ( ch );			//編集
 			//DispChara.Inst.SetCharaData ( ch );			//表示
-			Ctrl_All.Inst.SetCharaData ( ch );
+			//Ctrl_All.Inst.SetCharaData ( ch );
+			All_Ctrl.Inst.SetCharaData ( ch );
 
+#if false
 			//----------------------------------------------
 			ctrl_SqcList_Act.SetCharaData ( ch.behavior );			//シークエンス
 			ctrl_SqcList_Ef.SetCharaData ( ch.garnish );			//シークエンス
@@ -58,11 +62,14 @@ namespace ScriptEditor
 			ctrl_cmpd_bhv.SetCharaData ( ch );
 //			cpd_Garnish.SetCharaData ( ch );
 			ctrl_cmpd_gns.SetCharaData ( ch );
+#endif
 
 			//----------------------------------------------
+#if false
 			ctrl_CmdList1.SetCharaData ( ch );			//コマンド
 			ctrl_Branch1.SetCharaData ( ch );			//ブランチ
 			ctrl_Route1.SetCharaData ( ch );			//ルート
+#endif
 
 			//----------------------------------------------
 			FormEfGnrt.Inst.SetCharaData ( ch );			// [エフェクトジェネレートフォーム]

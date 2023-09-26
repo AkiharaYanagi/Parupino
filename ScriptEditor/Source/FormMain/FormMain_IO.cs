@@ -71,7 +71,8 @@ namespace ScriptEditor
 
 			//表示の更新
 			//DispChara.Inst.Disp ();
-			Ctrl_All.Inst.AllDisp ();
+			//Ctrl_All.Inst.AllDisp ();
+			All_Ctrl.Inst.Disp ();
 		}
 
 	}
