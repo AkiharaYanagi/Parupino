@@ -33,7 +33,6 @@ namespace ScriptEditor
 			//環境初期化
 			LoadEnvironment ();
 
-#if false
 			//開始設定
 			Init ();
 
@@ -42,6 +41,7 @@ namespace ScriptEditor
 
 			//表示
 			Disp ();
+#if false
 #endif
 		}
 

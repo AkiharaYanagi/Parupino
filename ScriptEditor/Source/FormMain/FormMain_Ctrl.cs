@@ -7,16 +7,18 @@ namespace ScriptEditor
 	{
 		//-------------------------------------------------------
 		//各コントロール 実体
-#if false
 		private Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();	//シークエンスリスト・アクション
 		private _Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();		//コントロール・ビヘイビア
 		private Ctrl_FormBtn_v ctrl_fmBtn_bhv = new Ctrl_FormBtn_v ();	//フォームボタン
 		
+#if false
 		private Ctrl_SqcList ctrl_SqcList_Efc = new Ctrl_SqcList ();	//シークエンスリスト・エフェクト
 		private _Ctrl_Compend ctrl_cmpd_gns = new _Ctrl_Compend ();		//コントロール・ガーニッシュ
 		private Ctrl_FormBtn_v ctrl_fmBtn_gns = new Ctrl_FormBtn_v ();	//フォームボタン
 #endif
 		private Ctrl_CmdList ctrl_Cmd = new Ctrl_CmdList ();
+		private Ctrl_Branch ctrl_Brc = new Ctrl_Branch ();
+		private Ctrl_Route ctrl_Rut = new Ctrl_Route ();
 
 		//-------------------------------------------------------
 
@@ -24,24 +26,25 @@ namespace ScriptEditor
 		//コントロール登録
 		public void LoadCtrl ()
 		{
-#if false
-			Ctrl_All.Inst.SetCtrl
-			(
-				ctrl_SqcList_Act, 
-				ctrl_cmpd_bhv, 
-				ctrl_SqcList_Ef, 
-				ctrl_cmpd_gns
-			);
-#endif
-
-#if false
 			//コントロールの全体監理に渡す
 			All_Ctrl.Inst.SqcList_Act = ctrl_SqcList_Act;
+#if false
 			All_Ctrl.Inst.Compend_Bhv = ctrl_cmpd_bhv;
 			All_Ctrl.Inst.SqcList_Efc = ctrl_SqcList_Efc;
 			All_Ctrl.Inst.Compend_Gns = ctrl_cmpd_gns;
 #endif
 			All_Ctrl.Inst.Cmd = ctrl_Cmd;
+			All_Ctrl.Inst.Brc = ctrl_Brc;
+			All_Ctrl.Inst.Rut = ctrl_Rut;
+
+			//環境設定
+			Ctrl_SqcList.CTRL_SQC act = Ctrl_SqcList.CTRL_SQC.ACTION;
+			ctrl_SqcList_Act.SetEnviroment ( act, ()=>new Action(), stgs );
+
+
+			ctrl_Cmd.SetEnvironment ( stgs );
+			ctrl_Brc.SetEnvironment ( stgs );
+			ctrl_Rut.SetEnvironment ( stgs );
 		}
 	}
 }

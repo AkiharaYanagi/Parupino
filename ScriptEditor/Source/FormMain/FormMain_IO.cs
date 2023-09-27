@@ -30,9 +30,6 @@ namespace ScriptEditor
 			LoadChara loadChara = new LoadChara ();
 			loadChara.Do ( filepath, chara );
 			LoadCharaData ();
-
-			//タイトルバー更新
-			SetFormText ( stgs.LastFilepath );
 		}
 
 		//キャラロード時に更新
@@ -45,12 +42,10 @@ namespace ScriptEditor
 			{
 				STS_TXT.Tssl.BackColor = Color.Red;
 				STS_TXT.Trace( "Name Refference Error." );
-//				return;
+				//return;
+				//エラー表示をして続行
 			}
 			STS_TXT.Tssl.BackColor = SystemColors.Control;
-
-			//各コントロールにデータを設定
-			SetCharaData ( chara );
 
 			//設定ファイルにファイル位置を記録
 			stgs.LastDirectory = Path.GetDirectoryName ( openFileDialog1.FileName );
@@ -65,6 +60,13 @@ namespace ScriptEditor
 			{ 
 				Directory.SetCurrentDirectory ( stgs.LastDirectory );
 			}
+
+			//タイトルバー更新
+			SetFormText ( stgs.LastFilepath );
+
+			//------------------------------------------
+			//各コントロールにデータを設定
+			SetCharaData ( chara );
 
 			//タブアクションを選択
 			tabAction_Selected ();
