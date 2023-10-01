@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 
 namespace ScriptEditor
@@ -56,30 +57,21 @@ namespace ScriptEditor
 		//タブ_スクリプト(Act)の初期化
 		private void TabScript_A_Load ()
 		{
-#if false
-			//ビヘイビア(:コンペンド)の指定
-			EditBehavior eb = EditChara.Inst.EditBehavior;
-
 			//タブページに手動追加
-			TabPage tp = tabControl1.TabPages[1];
+			TabPage tp = tabControl1.TabPages [ (int)TAB_NAME.TAB_SCRIPT_A ];
+			tp.Controls.Add ( ctrl_cmpd_bhv );
+
+			//コントロール位置指定
 			tp.SuspendLayout ();
 
-			tp.Controls.Add ( ctrl_cmpd_bhv );
-			ctrl_cmpd_bhv.SetEnviron ( eb );
+			ctrl_cmpd_bhv.Size = new Size ( tp.Size.Width - ctrl_fmBtn_bhv.Width, tp.Size.Height );
 			ctrl_cmpd_bhv.Location = new Point ( 0, 0 );
-			ctrl_cmpd_bhv.Size = new Size ( tp.Size.Width - ctrl_fmBtn_gns.Width, tp.Size.Height );
 
+			//ボタンの追加
 			tp.Controls.Add ( ctrl_fmBtn_bhv );
 			ctrl_fmBtn_bhv.Location = new Point ( ctrl_cmpd_bhv.Width, 0 );
 
 			tp.ResumeLayout ( false );
-
-			//サブフォームにおける環境設定
-			SetEnvironment_SubForms ( eb );
-
-			//アクションのみ
-//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
-#endif
 		}
 
 		//タブ_エフェクトの初期化
@@ -92,6 +84,9 @@ namespace ScriptEditor
 			ctrl_SqcList_Ef.SetCharaData ( chara.garnish );
 			//ctrl_SqcList_Ef.LoadCtrl ();
 #endif
+			//タブページに手動追加
+			TabPage tp = tabControl1.TabPages [ (int)TAB_NAME.TAB_EFFECT ];
+			tp.Controls.Add ( ctrl_SqcList_Efc );
 		}
 
 		//タブ_スクリプト(Ef)の初期化
@@ -123,6 +118,21 @@ namespace ScriptEditor
 //			FormImage.Inst.SetEnviron ( eg );
 //			FormRect2.Inst.SetEnvironment ( eg );
 #endif
+			//タブページに手動追加
+			TabPage tp = tabControl1.TabPages [ (int)TAB_NAME.TAB_SCRIPT_E ];
+			tp.Controls.Add ( ctrl_cmpd_gns );
+
+			//コントロール位置指定
+			tp.SuspendLayout ();
+
+			ctrl_cmpd_gns.Size = new Size ( tp.Size.Width - ctrl_fmBtn_gns.Width, tp.Size.Height );
+			ctrl_cmpd_gns.Location = new Point ( 0, 0 );
+
+			//ボタンの追加
+			tp.Controls.Add ( ctrl_fmBtn_gns );
+			ctrl_fmBtn_bhv.Location = new Point ( ctrl_cmpd_gns.Width, 0 );
+
+			tp.ResumeLayout ( false );
 		}
 
 		//タブ_コマンドの初期化
