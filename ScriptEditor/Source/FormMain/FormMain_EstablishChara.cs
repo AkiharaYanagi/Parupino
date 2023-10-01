@@ -20,25 +20,22 @@ namespace ScriptEditor
 
 			//キャラ：テストデータ
 			TestCharaData ();
-
-			//個別データから作成
-			LoadPreData ();
 #endif
 
+			//個別データから作成
+			SetCharaData ( chara );
+			LoadPreData ();
+
+#if false
 			//自動で既存のキャラデータを読込
 			_LoadChara ( stgs.LastFilepath );
+#endif
 		}
 
 		//プレデータテキストファイルから既存データの読込
 		public void LoadPreData ()
 		{
-#if false
-			ctrl_SqcList_Act.LoadData ();
-			ctrl_SqcList_Ef.LoadData ();
-			ctrl_CmdList1.LoadData ();
-			ctrl_Branch1.LoadData ();
-			ctrl_Route1.LoadData ();
-#endif
+			All_Ctrl.Inst.LoadPreData ();
 		}
 
 		//==================================================================================
@@ -72,8 +69,8 @@ namespace ScriptEditor
 #endif
 
 			//----------------------------------------------
-			FormEfGnrt.Inst.SetCharaData ( ch );			// [エフェクトジェネレートフォーム]
-			FormRoute.Inst.SetCharaData ( ch );			//フォーム ルート
+			FormEfGnrt.Inst.SetCharaData ( ch );	// [エフェクトジェネレートフォーム]
+			FormRoute.Inst.SetCharaData ( ch );		//フォーム ルート
 
 			//----------------------------------------------
 			UpdateData ();			// [メインフォーム] キャラ内容表示
