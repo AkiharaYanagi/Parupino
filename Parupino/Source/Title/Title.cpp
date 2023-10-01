@@ -34,7 +34,8 @@ namespace GAME
 		m_titleEf.Load ();		//Ef‚ÌˆÊ’u‚Ì‚½‚ß‚±‚±‚Å‰Šú‰»
 
 		m_logo = make_shared < GrpAcv > ();
-		m_logo->AddTexture ( _T ( "title.png" ) );
+//		m_logo->AddTexture ( _T ( "title.png" ) );
+		m_logo->AddTexture ( _T ( "logo_1.png" ) );
 		m_logo->SetZ ( Z_BG );
 		AddpTask ( m_logo );
 		GRPLST_INSERT_MAIN ( m_logo );
