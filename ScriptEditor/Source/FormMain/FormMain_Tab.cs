@@ -76,9 +76,7 @@ namespace ScriptEditor
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
-#if false
 			ctrl_SqcList_Act.ApplyData ();
-#endif
 		}
 
 		//-----------------------------------------------------------------------
@@ -137,9 +135,7 @@ namespace ScriptEditor
 		//[エフェクト]タブ離去時
 		public void tabEffect_Deselected ()
 		{
-#if false
-			ctrl_SqcList_Ef.ApplyData ();
-#endif
+			ctrl_SqcList_Efc.ApplyData ();
 		}
 
 		//-----------------------------------------------------------------------

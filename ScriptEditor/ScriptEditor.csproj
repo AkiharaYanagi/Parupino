@@ -111,7 +111,6 @@
     <Compile Include="Source\Chara\DispChara\DispCompend.cs" />
     <Compile Include="Source\Chara\DispChara\DispEffect.cs" />
     <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
-    <Compile Include="Source\Control\Ctrl_All.cs" />
     <Compile Include="Source\Control\Ctrl_FormBtn.cs">
       <SubType>UserControl</SubType>
     </Compile>

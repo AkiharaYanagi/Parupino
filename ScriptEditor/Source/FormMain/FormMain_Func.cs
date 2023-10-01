@@ -9,7 +9,7 @@ namespace ScriptEditor
 		public void UpdateData ()
 		{
 //			Ctrl_All.Inst.UpdateData ();
-			Disp ();
+			All_Ctrl.Inst.UpdateData ();
 		}
 
 		//==================================================================================
@@ -26,6 +26,7 @@ namespace ScriptEditor
 		private void FormMain_Paint ( object sender, PaintEventArgs e )
 		{
 //			DispChara.Inst.Disp ();
+			All_Ctrl.Inst.Disp ();
 		}
 
 		//タイトルバーテキスト更新
