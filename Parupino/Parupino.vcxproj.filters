@@ -195,6 +195,9 @@
     <ClInclude Include="Source\Result\Result.h">
       <Filter>Result</Filter>
     </ClInclude>
+    <ClInclude Include="Source\FtgMain\Ef\EfHit.h">
+      <Filter>FtgMain\Ef</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -328,6 +331,9 @@
     </ClCompile>
     <ClCompile Include="Source\Result\Result.cpp">
       <Filter>Result</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Ef\EfHit.cpp">
+      <Filter>FtgMain\Ef</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

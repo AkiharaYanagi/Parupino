@@ -44,7 +44,7 @@ namespace GAME
 		WINNER	m_winner;
 
 		//判定クラス
-		Decision	m_decision;
+		P_Decision	m_decision;
 
 	public:
 		MutualChara ();
@@ -56,7 +56,7 @@ namespace GAME
 		//スクリプトの毎フレーム処理
 		void Conduct ();
 		void Collision ();		//重なり判定
-		void Decision ();		//攻撃判定
+		void _Decision ();		//攻撃判定
 		void Grp ();			//グラフィック共通
 
 		//状態変更

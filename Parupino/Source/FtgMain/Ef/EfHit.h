@@ -1,6 +1,6 @@
 //=================================================================================================
 //
-//	EfClang ヘッダファイル
+//	EfHit ヘッダファイル
 //
 //=================================================================================================
 #pragma once
@@ -18,20 +18,18 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class EfClang : public GrpEf
+	//ヒットエフェクトクラス
+	class EfHit : public GrpEf
 	{
 	public:
-		EfClang ();
-		EfClang ( const EfClang & rhs ) = delete;
-		~EfClang ();
-
-		void Move ();
+		EfHit ();
+		EfHit ( const EfHit & rhs ) = delete;
+		~EfHit ();
 
 		void On ( VEC2 center );
 	};
 
-	using P_EfClang = shared_ptr < EfClang >;
-
+	using P_EfHit = shared_ptr < EfHit >;
 
 }	//namespace GAME
 

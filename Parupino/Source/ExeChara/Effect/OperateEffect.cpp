@@ -45,6 +45,7 @@ namespace GAME
 	{
 		P_ExEf pExeEffect = make_shared < ExeEffect > ( pEffect, m_pChara, pEfGnrt, ptChara, dirRight );
 		m_plpExeEffect->push_back ( pExeEffect );
+		AddpTask ( pExeEffect );	//タスクリスト
 	}
 
 	//オブジェクトからExeEfを取得
@@ -82,6 +83,7 @@ namespace GAME
 			//消去時、後置インクリメントはコピーを渡しイテレータを壊さない
 			if ( (*it)->IsEnd () ) 
 			{ 
+				EraseTask ( *it );	//タスクリスト
 				(*it).reset (); 
 				m_plpExeEffect->erase ( it ++ ); 
 			}

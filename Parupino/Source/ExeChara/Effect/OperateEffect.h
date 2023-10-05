@@ -17,7 +17,7 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class OperateEffect
+	class OperateEffect : public TASK_VEC
 	{
 		P_Chara			m_pChara;			//キャラ
 		PLP_ExEf		m_plpExeEffect;		//エフェクトの実行リスト(GameMain中に動的に生成・解放する)
@@ -66,6 +66,8 @@ namespace GAME
 		void OnDispRect ();
 		void OffDispRect ();
 	};
+
+	using P_OprEf = shared_ptr < OperateEffect >;
 
 
 }	//namespace GAME

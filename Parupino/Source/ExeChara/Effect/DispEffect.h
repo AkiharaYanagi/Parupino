@@ -18,11 +18,11 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class DispEffect
+	class DispEffect : public TASK_VEC
 	{
 		P_GrpApTx		m_grp;			//グラフィック表示
 		PVP_TxBs		m_pvpEfTx;		//エフェクトイメージのテクスチャリスト
-		DispRect		m_dispRect;		//エフェクト枠表示
+		P_DispRect		m_dispRect;		//エフェクト枠表示
 
 	public:
 		DispEffect ( PVP_TxBs pvpEfTx, float z );
@@ -39,10 +39,12 @@ namespace GAME
 		void SetpCharaRect ( P_CharaRect pCharaRect );
 
 		//枠表示
-		void OnRect () { m_dispRect.OnRect (); }
+		void OnRect () { m_dispRect->OnRect (); }
 		//枠非表示
-		void OffRect () { m_dispRect.OffRect (); }
+		void OffRect () { m_dispRect->OffRect (); }
 	};
+
+	using P_DispEffect = shared_ptr < DispEffect >;
 
 
 }	//namespace GAME

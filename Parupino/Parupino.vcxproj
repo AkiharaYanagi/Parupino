@@ -179,6 +179,7 @@
     <ClInclude Include="Source\ExeChara\Rect\CharaRect.h" />
     <ClInclude Include="Source\FtgMain\Decision.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfClang.h" />
+    <ClInclude Include="Source\FtgMain\Ef\EfHit.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfPart.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfParticle.h" />
     <ClInclude Include="Source\FtgMain\Ef\EfSpark.h" />
@@ -231,6 +232,7 @@
     <ClCompile Include="Source\ExeChara\Rect\CharaRect.cpp" />
     <ClCompile Include="Source\FtgMain\Decision.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfClang.cpp" />
+    <ClCompile Include="Source\FtgMain\Ef\EfHit.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfPart.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfParticle.cpp" />
     <ClCompile Include="Source\FtgMain\Ef\EfSpark.cpp" />

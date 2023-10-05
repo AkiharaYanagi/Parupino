@@ -31,6 +31,17 @@ namespace GAME
 		m_grpShadow->SetZ ( Z_SHADOW );
 		AddpTask ( m_grpShadow );
 		GRPLST_INSERT_MAIN ( m_grpShadow );
+
+#if 0
+		m_test = make_shared < PrmRect > ();
+		m_test->SetZ ( Z_SYS );
+		AddpTask ( m_test );
+		GRPLST_INSERT_MAIN ( m_test );
+#endif // 0
+		m_testAcv = make_shared < GrpAcv > ();
+		m_testAcv->SetZ ( Z_SYS );
+		AddpTask ( m_testAcv );
+		GRPLST_INSERT_MAIN ( m_testAcv );
 	}
 
 	DispChara::~DispChara ()

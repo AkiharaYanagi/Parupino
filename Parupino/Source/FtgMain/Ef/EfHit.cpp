@@ -1,38 +1,35 @@
 //=================================================================================================
 //
-//	EfClang ヘッダファイル
+//	EfHit ソースファイル
 //
 //=================================================================================================
-#pragma once
 
 //-------------------------------------------------------------------------------------------------
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
-#include "Game.h"
-#include "../../GameMain/GameConst.h"
-#include "../../FtgMain/FtgConst.h"
-#include "../G_Ftg.h"
+#include "EfHit.h"
 
 //-------------------------------------------------------------------------------------------------
-// 宣言
+// 定義
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class EfClang : public GrpEf
+	EfHit::EfHit ()
 	{
-	public:
-		EfClang ();
-		EfClang ( const EfClang & rhs ) = delete;
-		~EfClang ();
+		AddTexture ( _T ( "Ef_Hit.png" ) );
+	}
 
-		void Move ();
+	EfHit::~EfHit ()
+	{
+	}
 
-		void On ( VEC2 center );
-	};
-
-	using P_EfClang = shared_ptr < EfClang >;
-
-
-}	//namespace GAME
-
-
+	void EfHit::On ( VEC2 center )
+	{
+		SetDispBase ( G_BASE_POS () );
+		SetRevised ( center );
+//		SetWait ( 60 );
+		SetFadeOut ( 60 );
+		SetValid ( true );
+		GrpEf::On ();
+	}
+}

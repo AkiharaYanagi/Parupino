@@ -71,7 +71,7 @@ namespace GAME
 
 		//------------------------------------------------
 		//エフェクト監理
-		OperateEffect	m_oprtEf;
+		P_OprEf			m_oprtEf;
 
 		//------------------------------------------------
 		//ゲーム進行状態ステート
@@ -80,7 +80,6 @@ namespace GAME
 		//------------------------------------------------
 		//粒子エフェクト(参照)
 		P_EfPart	m_efPart;
-
 
 	public:
 		ExeChara () = delete;
@@ -145,7 +144,7 @@ namespace GAME
 		//エフェクト
 
 		//エフェクトリスト取得
-		PLP_ExEf GetplpExEf () { return m_oprtEf.GetplpExEf (); }
+		PLP_ExEf GetplpExEf () { return m_oprtEf->GetplpExEf (); }
 
 		//---------------------------------------------
 		//枠

@@ -19,8 +19,7 @@ namespace GAME
 	//------------------------------------------
 
 	ExeEffect::ExeEffect ( P_Effect pEffect, P_Chara pChara, P_EfGnrt pEfGnrt, VEC2 ptChara, bool dirRight )
-	 :	  m_dispEffect ( pChara->GetpvpEfTexture (), pEfGnrt->GetZ() )
-		, m_active ( true ), m_end ( false ), m_frame ( 0 )
+	 :	  m_active ( true ), m_end ( false ), m_frame ( 0 )
 		, m_ptEffect ( VEC2 ( 0, 0 ) ), m_dirRight ( dirRight )
 		, m_vel ( VEC2 ( 0, 0 ) ), m_acc ( VEC2 ( 0, 0 ) )
 		, m_pEffect ( pEffect ), m_pScript ( nullptr ) 
@@ -40,6 +39,9 @@ namespace GAME
 		//枠
 		m_charaRect = make_shared < CharaRect > ();
 
+		//表示
+		m_dispEffect = make_shared < DispEffect > ( pChara->GetpvpEfTexture (), pEfGnrt->GetZ () );
+		AddpTask ( m_dispEffect );
 	}
 
 	ExeEffect::~ExeEffect ()
@@ -159,17 +161,17 @@ namespace GAME
 		m_charaRect->SetARect ( m_pScript->GetpvARect (), dirRight, m_ptEffect );
 
 		//表示更新
-		m_dispEffect.Update ( m_pScript, m_ptEffect, dirRight );
+		m_dispEffect->Update ( m_pScript, m_ptEffect, dirRight );
 
 		//枠表示
 		if ( m_bDispRect )
 		{
-			m_dispEffect.OnRect ();
-			m_dispEffect.SetpCharaRect ( m_charaRect );
+			m_dispEffect->OnRect ();
+			m_dispEffect->SetpCharaRect ( m_charaRect );
 		}
 		else
 		{
-			m_dispEffect.OffRect ();
+			m_dispEffect->OffRect ();
 		}
 
 	}

@@ -19,7 +19,7 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class ExeEffect
+	class ExeEffect : public TASK_VEC
 	{
 		//------------------------------------------------
 		P_Effect		m_pEffect;		//実効エフェクトポインタ
@@ -29,7 +29,7 @@ namespace GAME
 		VP_Route		m_vpRoute;		//ルート
 
 		//------------------------------------------------
-		DispEffect		m_dispEffect;	//表示項目管理
+		P_DispEffect	m_dispEffect;	//表示項目管理
 		bool			m_bDispRect;	//枠表示
 
 		//------------------------------------------------
@@ -85,7 +85,7 @@ namespace GAME
 		void Stop ()
 		{
 			m_active = false;
-			m_dispEffect.SetValid ( false );
+			m_dispEffect->SetValid ( false );
 		}
 
 		void PreScriptMove ();

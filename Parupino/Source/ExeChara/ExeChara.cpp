@@ -31,6 +31,10 @@ namespace GAME
 		m_dispChara = make_shared < DispChara > ();
 		m_dispChara->LoadPlayer ( m_playerID );	//表示(1P/2P側による位置)
 		AddpTask ( m_dispChara );
+
+		//エフェクト監理
+		m_oprtEf = make_shared < OperateEffect > ();
+		AddpTask ( m_oprtEf );
 	}
 
 	//デストラクタ
@@ -78,6 +82,8 @@ namespace GAME
 
 		//アクタ・ステートに用いる状態パラメータに登録
 		m_actor.SetwpExeChara ( shared_from_this () );
+
+		TASK_VEC::Load ();
 	}
 
 	void ExeChara::_Load ()
@@ -89,8 +95,8 @@ namespace GAME
 //※	D3DXのテクスチャを用いるためフォーカス変更時などに再設定(Reset())が必要
 //		tstring name (_T ("testChara.dat"));
 //		tstring name ( _T ( "chara.dat" ) );
-//		tstring name ( _T ( "charaBin.dat" ) );
-		tstring name (_T ("chara_standBin.dat"));
+		tstring name ( _T ( "charaBin.dat" ) );
+//		tstring name (_T ("chara_standBin.dat"));
 #if 0
 		switch ( m_name )
 		{
@@ -126,12 +132,17 @@ namespace GAME
 		m_dispChara->UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 		//入力表示更新
 		m_dispChara->UpdateInput ( m_pCharaInput );
+
+
+		TASK_VEC::Init ();
 	}
 
 	//再設定
 	void ExeChara::Reset ()
 	{
 		_Reset ();	//復旧時
+
+		TASK_VEC::Reset ();
 	}
 
 	//------------------------
@@ -143,7 +154,7 @@ namespace GAME
 		m_pChara = make_shared < Chara > ();
 		Load ();
 		m_dispChara->SetpChara ( m_pChara );
-		m_oprtEf.SetpChara ( m_pChara );
+		m_oprtEf->SetpChara ( m_pChara );
 
 		//アクション・スクリプト再取得
 		m_pAction = m_pChara->GetpAction ( m_actionID );
@@ -153,7 +164,7 @@ namespace GAME
 		m_dispChara->UpdateMainImage ( m_pScript, GetPos (), GetDirRight () );
 
 		//エフェクト イメージ
-		m_oprtEf.PostScriptMove ( GetPos (), GetDirRight () );
+		m_oprtEf->PostScriptMove ( GetPos (), GetDirRight () );
 	}
 
 	//==========================================================
@@ -405,7 +416,7 @@ namespace GAME
 	void ExeChara::MakeEfOprt ()
 	{
 		//エフェクト処理にキャラポインタを設定
-		m_oprtEf.SetpChara ( m_pChara );
+		m_oprtEf->SetpChara ( m_pChara );
 
 		//すべてのアクションとスクリプトを巡回
 		PVP_Action pvpAction = m_pChara->GetpvpAction ();
@@ -452,7 +463,7 @@ namespace GAME
 				//エフェクトの取得
 				P_Effect pEf = m_pChara->GetpEffect ( index );
 				//リストに追加
-				m_oprtEf.AddListEffect ( pEf, pEfGnrt, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
+				m_oprtEf->AddListEffect ( pEf, pEfGnrt, m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 			}
 			else //再利用なら
 			{
@@ -489,10 +500,10 @@ namespace GAME
 		}
 
 		//エフェクト動作
-		m_oprtEf.PreScriptMove ();
+		m_oprtEf->PreScriptMove ();
 
 		//エフェクト同期
-		m_oprtEf.PostScriptMove ( m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
+		m_oprtEf->PostScriptMove ( m_btlPrm.GetPos (), m_btlPrm.GetDirRight () );
 	}
 	//====================================================================================
 
@@ -752,12 +763,12 @@ namespace GAME
 	void ExeChara::OnDispRect ()
 	{
 		m_dispChara->OnRect ();
-		m_oprtEf.OnDispRect ();
+		m_oprtEf->OnDispRect ();
 	}
 	void ExeChara::OffDispRect ()
 	{
 		m_dispChara->OffRect ();
-		m_oprtEf.OffDispRect ();
+		m_oprtEf->OffDispRect ();
 	}
 
 	//-------------------------------------------------------------------------------------------------

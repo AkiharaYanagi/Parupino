@@ -37,6 +37,9 @@ namespace GAME
 		m_Value->SetZ ( Z_SYS );
 		AddpTask ( m_Value );
 		GRPLST_INSERT_MAIN ( m_Value );
+
+		//‰Šú‰»
+		Init ();
 	}
 
 	DispGauge::~DispGauge ()
@@ -83,14 +86,12 @@ namespace GAME
 		{
 			m_Frame->SetRect ( x - 2, y - 2, w + 4, h + 4 );
 			m_Value->SetRect ( x, y, w, h );
-			m_Decrease->SetRect ( 0, 0, 0, 0 );
 		}
 		else if ( PLAYER_ID_2 == m_playerID )
 		{
 			float p2_bx_l = GAME_WINDOW_WIDTH - x - w;
 			m_Frame->SetRect ( p2_bx_l - 2, y - 2, w + 4, h + 4 );
 			m_Value->SetRect ( p2_bx_l, y, w, h );
-			m_Decrease->SetRect ( 0, 0, 0, 0 );
 		}
 	}
 

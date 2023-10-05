@@ -29,6 +29,11 @@ namespace GAME
 		P_GrpAcv		m_grpShadow;	//影
 		P_DispFrontEnd	m_frontEnd;		//フロントエンド
 		DispInput		m_dispInput;	//入力表示
+		
+
+//		P_PrmRect	m_test;
+		P_GrpAcv		m_testAcv;
+
 
 	public:
 		DispChara ();

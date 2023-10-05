@@ -20,14 +20,19 @@ namespace GAME
 		//メイングラフィック
 		m_grp = make_shared < GrpApTx > ();
 		m_grp->SetZ ( z );	//初期位置
+		AddpTask ( m_grp );
 		GRPLST_INSERT_MAIN ( m_grp );
 
-		//枠表示(DispRect)はポインタでなく実体を保持
+		//枠表示
+		m_dispRect = make_shared < DispRect > ();
+		AddpTask ( m_dispRect );
 	}
 
 	DispEffect::~DispEffect ()
 	{
 		//終了時にグラフィックタスクを外す
+		EraseTask ( m_dispRect );
+		EraseTask ( m_grp );
 		GRPLST_REMOVE_MAIN ( m_grp );
 	}
 
@@ -55,7 +60,7 @@ namespace GAME
 
 	void DispEffect::SetpCharaRect ( P_CharaRect pCharaRect )
 	{
-		m_dispRect.SetCharaRect ( pCharaRect );
+		m_dispRect->SetCharaRect ( pCharaRect );
 	}
 
 

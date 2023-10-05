@@ -18,6 +18,8 @@ namespace GAME
 		: m_startTimer ( 0 ), m_startTime ( 0 ), m_endTimer ( 0 ), m_endTime ( 0 )
 		, m_tmrHitstop ( 0 ), m_blackOut ( 0 )
 	{
+		m_decision = make_shared < Decision > ();
+
 		//キャラ
 		m_exeChara1 = make_shared < ExeChara > ( PLAYER_ID_1 );
 		m_exeChara2 = make_shared < ExeChara > ( PLAYER_ID_2 );
@@ -25,20 +27,21 @@ namespace GAME
 		m_exeChara1->SetpOther ( m_exeChara2 );
 		m_exeChara2->SetpOther ( m_exeChara1 );
 
-		m_exeChara1->SetpParticle ( m_decision.GetpEfPart () );
-		m_exeChara2->SetpParticle ( m_decision.GetpEfPart () );
+		m_exeChara1->SetpParticle ( m_decision->GetpEfPart () );
+		m_exeChara2->SetpParticle ( m_decision->GetpEfPart () );
 
 		AddpTask ( m_exeChara1 );
 		AddpTask ( m_exeChara2 );
 
 		//判定
-		m_decision.SetpChara (m_exeChara1, m_exeChara2);
+		m_decision->SetpChara (m_exeChara1, m_exeChara2);
+		AddpTask ( m_decision );
 
 		//ヒットストップタイマー
 		m_tmrHitstop = make_shared < Timer > ();
 		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
 		AddpTask ( m_tmrHitstop );
-		m_decision.SetpHitStop ( m_tmrHitstop );
+		m_decision->SetpHitStop ( m_tmrHitstop );
 	}
 
 	MutualChara::~MutualChara ()
@@ -79,7 +82,7 @@ namespace GAME
 		m_exeChara2->RectMove ();
 
 		//◆相互判定(攻撃・ヒット枠)
-		Decision ();
+		_Decision ();
 
 		//◆スクリプト後処理(グラフィック位置など)
 		m_exeChara1->PostScriptMove ();
@@ -152,9 +155,9 @@ namespace GAME
 	//◆================================
 	//◆		相互判定 (攻撃・ヒット枠)
 	//◆================================
-	void MutualChara::Decision ()
+	void MutualChara::_Decision ()
 	{
-		m_decision.Do ();
+		m_decision->Do ();
 	}
 
 	//◆================================
