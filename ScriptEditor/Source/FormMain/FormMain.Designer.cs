@@ -50,6 +50,7 @@
 			this.tabRoute = new System.Windows.Forms.TabPage();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.プレデータToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
@@ -66,7 +67,8 @@
             this.読込ToolStripMenuItem,
             this.テキストから読込ToolStripMenuItem,
             this.バイナリから読込BToolStripMenuItem,
-            this.新規NToolStripMenuItem});
+            this.新規NToolStripMenuItem,
+            this.プレデータToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(972, 24);
@@ -240,6 +242,13 @@
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
+			// プレデータToolStripMenuItem
+			// 
+			this.プレデータToolStripMenuItem.Name = "プレデータToolStripMenuItem";
+			this.プレデータToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+			this.プレデータToolStripMenuItem.Text = "プレデータ";
+			this.プレデータToolStripMenuItem.Click += new System.EventHandler(this.プレデータToolStripMenuItem_Click);
+			// 
 			// FormMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -288,6 +297,7 @@
 		private System.Windows.Forms.TabPage tabEffect;
 		private System.Windows.Forms.ToolStripMenuItem バイナリから読込BToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 新規NToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem プレデータToolStripMenuItem;
 	}
 }
 

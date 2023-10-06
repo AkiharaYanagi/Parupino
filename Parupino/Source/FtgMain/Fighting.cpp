@@ -156,7 +156,7 @@ namespace GAME
 	void Fighting::Pause ()
 	{
 		//F1‚Åƒ|[ƒYØ‘Ö
-		if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
+		if ( WND_UTL::AscKey ( VK_F1 ) )
 		{
 			if ( m_pause->GetValid () )	//On->Off
 			{

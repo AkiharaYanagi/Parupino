@@ -77,6 +77,7 @@ namespace ScriptEditor
 		public void tabAction_Deselected ()
 		{
 			ctrl_SqcList_Act.ApplyData ();
+			All_Ctrl.Inst.UpdateData ();
 		}
 
 		//-----------------------------------------------------------------------
