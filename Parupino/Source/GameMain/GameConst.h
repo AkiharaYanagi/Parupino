@@ -43,6 +43,7 @@ namespace GAME
 	//SOUND
 	enum SOUND_No
 	{
+		SE00_kane,
 		BGM_Select,
 		BGM_Main,
 		SE_Clang,

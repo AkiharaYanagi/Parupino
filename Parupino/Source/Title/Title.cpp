@@ -145,6 +145,7 @@ namespace GAME
 	bool Title::CsrUp () {
 		if ( CFG_PUSH_KEY ( _P1_UP ) || CFG_PUSH_KEY ( _P2_UP ) )
 		{
+			SOUND->Play ( SE00_kane );
 			SOUND->Play ( SE_cursor_move );
 			return true;
 		}
