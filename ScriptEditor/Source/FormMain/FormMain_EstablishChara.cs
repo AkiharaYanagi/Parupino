@@ -21,15 +21,16 @@ namespace ScriptEditor
 			//キャラ：テストデータ
 			TestCharaData ();
 #endif
+#if false
 
 			//個別データから作成
 			SetCharaData ( chara );
 			LoadPreData ();
+#endif
 
-#if false
 			//自動で既存のキャラデータを読込
 			_LoadChara ( stgs.LastFilepath );
-#endif
+			LoadPreData ();
 		}
 
 		//プレデータテキストファイルから既存データの読込

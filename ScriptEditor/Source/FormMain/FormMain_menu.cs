@@ -104,6 +104,24 @@ namespace ScriptEditor
 		private void 新規NToolStripMenuItem_Click ( object sender, System.EventArgs e )
 		{
 		}
+
+		private void プレデータToolStripMenuItem_Click ( object sender, System.EventArgs e )
+		{
+			OpenFolder_CodePack opF = new OpenFolder_CodePack ();
+			opF.SetDefaultFilename ( stgs.LastDirectory );
+			if( opF.OpenFolder () )
+			{
+				string path = opF.GetPath ();
+				stgs.Dir_ImageListAct = path + "\\Image";
+				stgs.Dir_ImageListEf = path + "\\EfImage";
+				stgs.File_ActionList = path + "\\PreData\\ActionList.txt";
+				stgs.File_EffectList = path + "\\PreData\\EffectList.txt";
+				stgs.File_CommandList = path + "\\PreData\\CommandList.txt";
+				stgs.File_BranchList = path + "\\PreData\\BranchList.txt";
+				stgs.File_RouteList = path + "\\PreData\\RouteList.txt";
+				XML_IO.Save ( stgs );
+			}
+		}
 	}
 
 }

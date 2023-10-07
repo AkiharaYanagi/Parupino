@@ -12,6 +12,7 @@
 #include "../GameMain/Scene.h"
 #include "Fighting.h"
 #include "PauseMenu.h"
+#include "YesNo_Menu.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -21,11 +22,13 @@ namespace GAME
 {
 	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
-		//バトル
+		//戦闘
 		P_FTG			m_fighting;
 
 		//ポーズメニュ
 		P_PauseMenu		m_pauseMenu;
+
+		P_YesNo_Menu	m_yesnoMenu;
 
 		//遷移先シーン
 		P_Scene			m_scene;

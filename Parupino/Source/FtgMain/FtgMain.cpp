@@ -24,7 +24,12 @@ namespace GAME
 
 		//ポーズメニュ
 		m_pauseMenu = make_shared < PauseMenu > ();
+		m_pauseMenu->SetpFTG ( m_fighting );
 		AddpTask ( m_pauseMenu );
+		
+		m_yesnoMenu = make_shared < YesNo_Menu > ();
+		AddpTask ( m_yesnoMenu );
+
 
 		//@info コンストラクタでshared_from_this()を用いない
 	}

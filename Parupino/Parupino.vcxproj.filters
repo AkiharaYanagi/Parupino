@@ -198,6 +198,9 @@
     <ClInclude Include="Source\FtgMain\Ef\EfHit.h">
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
+    <ClInclude Include="Source\FtgMain\YesNo_Menu.h">
+      <Filter>FtgMain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -334,6 +337,9 @@
     </ClCompile>
     <ClCompile Include="Source\FtgMain\Ef\EfHit.cpp">
       <Filter>FtgMain\Ef</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\YesNo_Menu.cpp">
+      <Filter>FtgMain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
