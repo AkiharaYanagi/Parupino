@@ -24,11 +24,9 @@ namespace GAME
 
 		//ポーズメニュ
 		m_pauseMenu = make_shared < PauseMenu > ();
-		m_pauseMenu->SetpFTG ( m_fighting );
 		AddpTask ( m_pauseMenu );
-		
-		m_yesnoMenu = make_shared < YesNo_Menu > ();
-		AddpTask ( m_yesnoMenu );
+//		m_ynMenu = make_shared < YesNo_Menu > ();
+//		AddpTask ( m_ynMenu );
 
 
 		//@info コンストラクタでshared_from_this()を用いない
@@ -44,6 +42,7 @@ namespace GAME
 		m_gameScene = shared_from_this ();
 
 		m_pauseMenu->SetpParent ( shared_from_this () );
+//		m_ynMenu->SetpParent ( shared_from_this () );
 
 		Scene::Load ();
 	}
@@ -56,20 +55,36 @@ namespace GAME
 
 	void FtgMain::Move ()
 	{
-		//ポーズ中
+
+		//メニュポーズ中
 		if ( m_pauseMenu->GetActive () )
 		{
 			m_pauseMenu->Move ();
 			return;
 		}
 
-		//ポーズ開始
+		//メニュポーズ開始
 		if ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) )
 		{
 			m_pauseMenu->On ();
-//			GRPLST_PAUSE ( T );
 			return;
 		}
+
+#if 0
+		//メニュポーズ中
+		if ( m_ynMenu->GetActive () )
+		{
+			m_ynMenu->Move ();
+			return;
+		}
+
+		//ポーズ開始
+		if ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) )
+		{
+			m_ynMenu->On ();
+			return;
+		}
+#endif // 0
 
 		//通常動作
 		Scene::Move ();
@@ -93,6 +108,7 @@ namespace GAME
 	}
 	
 
+	//[シーン遷移] タイトルに戻る
 	void FtgMain::Transit_Title ()
 	{
 		GRPLST_CLEAR ();
@@ -104,9 +120,10 @@ namespace GAME
 //		GRPLST_INIT ();
 	}
 
+	//メニュを消して戻る
 	void FtgMain::Resume_Fighting ()
 	{
-		m_pauseMenu->Off ();
+//		m_pauseMenu->Off ();
 	}
 
 }	//namespace GAME

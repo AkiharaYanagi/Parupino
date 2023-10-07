@@ -12,7 +12,7 @@
 #include "../GameMain/Scene.h"
 #include "Fighting.h"
 #include "PauseMenu.h"
-#include "YesNo_Menu.h"
+//#include "YesNo_Menu.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -27,8 +27,7 @@ namespace GAME
 
 		//ポーズメニュ
 		P_PauseMenu		m_pauseMenu;
-
-		P_YesNo_Menu	m_yesnoMenu;
+//		P_YesNo_Menu	m_ynMenu;
 
 		//遷移先シーン
 		P_Scene			m_scene;
