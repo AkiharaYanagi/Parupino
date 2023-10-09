@@ -58,7 +58,7 @@ namespace ScriptEditor
 			Tbn_Balance.Text = act.Balance.ToString();
 
 			//各コントロールに設定用のデリゲートを渡す
-			CBSL_Next.Set = a=>act.NextActionName = a.Name;
+			CBSL_Next.SetFunc = a=>act.NextActionName = a.Name;
 			TBN_HitNum.SetFunc = i=>act.HitNum = i;
 			Tbn_HitPitch.SetFunc = i=>act.HitPitch = i;
 			Tbn_Balance.SetFunc = i=>act.Balance = i;

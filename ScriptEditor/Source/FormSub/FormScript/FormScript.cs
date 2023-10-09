@@ -18,14 +18,22 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private FormScript ()
 		{
-			ctrl_Script1 = new _Ctrl_Script ();
-			this.Controls.Add ( ctrl_Script1 );
+//			ctrl_Script1 = new _Ctrl_Script ();
+//			this.Controls.Add ( ctrl_Script1 );
 
 			base.InitPt = new Point ( 0, 230 );
 			InitializeComponent ();
 			LoadObject ();
 		}
+
+		public void SetCtrl ( _Ctrl_Script ctrl )
+		{
+			ctrl_Script1 = ctrl;
+			this.Controls.Add ( ctrl_Script1 );
+		}
+
 		//---------------------------------------------------------------------
+#if false
 
 		//編集と表示
 		public EditScript EditScript { get; set; } = null;
@@ -45,10 +53,10 @@ namespace ScriptEditor
 			ctrl_Script1.SetEnvironment ( ec, DispChara.Inst.Disp );
 //			ds.SetCtrlScript ( ctrl_Script1 );
 		}
-	
+
 		public void Assosiate ( Script scp, Sequence sqc )
 		{
-			ctrl_Script1.Assosiate ( scp );
+//			ctrl_Script1.Assosiate ( scp );
 //			_Assosiate ();
 		}
 
@@ -57,5 +65,6 @@ namespace ScriptEditor
 			ctrl_Script1.UpdateData ();
 //			_UpdateData ();
 		}
+#endif
 	}
 }

@@ -121,7 +121,7 @@
 			this.CBSL_Next.FormattingEnabled = true;
 			this.CBSL_Next.Location = new System.Drawing.Point(69, 44);
 			this.CBSL_Next.Name = "CBSL_Next";
-			this.CBSL_Next.Set = null;
+			this.CBSL_Next.SetFunc = s=>{};
 			this.CBSL_Next.Size = new System.Drawing.Size(218, 20);
 			this.CBSL_Next.TabIndex = 10;
 			// 

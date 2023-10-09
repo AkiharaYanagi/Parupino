@@ -163,7 +163,7 @@
 			this.cB_SequenceList1.FormattingEnabled = true;
 			this.cB_SequenceList1.Location = new System.Drawing.Point(12, 190);
 			this.cB_SequenceList1.Name = "cB_SequenceList1";
-			this.cB_SequenceList1.Set = null;
+			this.cB_SequenceList1.SetFunc = s=>{};
 			this.cB_SequenceList1.Size = new System.Drawing.Size(121, 20);
 			this.cB_SequenceList1.TabIndex = 1;
 			// 

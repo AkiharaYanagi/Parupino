@@ -39,15 +39,7 @@ namespace ScriptEditor
 		//==================================================================================
 		private void SetEnvironment_SubForms ( EditCompend ec )
 		{
-#if false
 			//コンペンド(ビヘイビア、ガーニッシュ)の指定
-			Form_ScriptList.Inst.SetEnvironment ( ec, chara );
-			FormScript.Inst.SetEnvironment ( ec );
-			FormImage.Inst.SetEnviron ( ec );			//フォーム：イメージ
-			FormRect2.Inst.SetEnvironment ( ec );			//フォーム：レクト
-			FormRoute.Inst.SetEnvironment ( ec );
-			FormPreview.Inst.SetEnviron ( ec );	//フォーム：プレビュー
-#endif
 			foreach ( SubForm_Compend subform in L_EditorForm )
 			{
 				subform.SetEditCompend ( ec );
@@ -57,6 +49,9 @@ namespace ScriptEditor
 		//==================================================================================
 		//各フォームにおける関連付け (読込時、変更時)
 		//==================================================================================
+		// -> All_ctrlに統合
+#if false
+
 		public void Assosiate ( Sequence sqc, Script scp )
 		{
 			FormRect2.Inst.Assosiate ( scp );
@@ -65,6 +60,7 @@ namespace ScriptEditor
 			FormRoute.Inst.Assosiate ( scp );
 			Disp ();
 		}
+#endif
 
 		//==================================================================================
 		//	サブフォームの明示的表示

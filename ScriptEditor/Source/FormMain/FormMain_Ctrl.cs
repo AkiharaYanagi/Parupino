@@ -20,6 +20,10 @@ namespace ScriptEditor
 		private Ctrl_Route ctrl_Rut = new Ctrl_Route ();
 
 		//-------------------------------------------------------
+		//サブフォーム用コントロール 実体
+		private _Ctrl_Script ctrl_Scp = new _Ctrl_Script ();
+
+		//-------------------------------------------------------
 
 
 		//コントロール登録
@@ -34,6 +38,7 @@ namespace ScriptEditor
 			All_Ctrl.Inst.Brc = ctrl_Brc;
 			All_Ctrl.Inst.Rut = ctrl_Rut;
 
+			All_Ctrl.Inst.Scp = ctrl_Scp;
 
 			//-------------------------------------------------
 			//環境設定
@@ -62,6 +67,8 @@ namespace ScriptEditor
 
 			//サブフォームにおける環境設定
 			SetEnvironment_SubForms ( eb );
+			ctrl_Scp.SetEnvironment ( eb, () => { } );
+			FormScript.Inst.SetCtrl ( ctrl_Scp );
 
 			//-------------------------------------------------
 			ctrl_Cmd.SetEnvironment ( stgs );
