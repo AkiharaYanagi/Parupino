@@ -30,9 +30,9 @@ namespace GAME
 		P_DispFrontEnd	m_frontEnd;		//フロントエンド
 		P_DispInput		m_dispInput;	//入力表示
 		
-
-//		P_PrmRect	m_test;
-		P_GrpAcv		m_testAcv;
+		P_GrpAcv		m_grpPlayer1P;	//プレイヤー表示"1P"
+		P_GrpAcv		m_grpPlayer2P;	//プレイヤー表示"2P"
+		P_GrpAcv		m_grpPlayerCOM;	//プレイヤー表示"CPU"
 
 
 	public:
