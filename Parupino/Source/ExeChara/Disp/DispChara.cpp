@@ -25,6 +25,9 @@ namespace GAME
 		m_frontEnd = make_shared < DispFrontEnd > ();
 		AddpTask ( m_frontEnd );
 
+		m_dispInput = make_shared < DispInput > ();
+		AddpTask ( m_dispInput );
+
 		//影
 		m_grpShadow = make_shared < GrpAcv > ();
 		m_grpShadow->AddTexture ( _T("shadow.png") );
@@ -52,7 +55,7 @@ namespace GAME
 	void DispChara::LoadPlayer ( PLAYER_ID playerID )
 	{ 
 		m_frontEnd->LoadPlayer ( playerID );
-		m_dispInput.LoadPlayer ( playerID );
+		m_dispInput->LoadPlayer ( playerID );
 	}
 
 	//キャラデータを設定

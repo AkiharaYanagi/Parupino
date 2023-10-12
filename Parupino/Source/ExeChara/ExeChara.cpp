@@ -123,6 +123,9 @@ namespace GAME
 		//バトルパラメータ
 		m_btlPrm.Init ();
 
+		//枠
+		m_charaRect->ResetAllRect ();
+
 		//状態
 		m_actor.Init ();
 
@@ -769,6 +772,12 @@ namespace GAME
 	{
 		m_dispChara->OffRect ();
 		m_oprtEf->OffDispRect ();
+	}
+	
+	//枠をすべてリセット
+	void ExeChara::ResetRect ()
+	{
+		m_charaRect->ResetAllRect ();
 	}
 
 	//-------------------------------------------------------------------------------------------------

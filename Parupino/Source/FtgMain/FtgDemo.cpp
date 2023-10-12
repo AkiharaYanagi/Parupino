@@ -21,6 +21,7 @@ namespace GAME
 	{
 		P_GrpDemo pGrp = make_shared < GrpDemo > ();
 		pGrp->AddTexture ( txName );
+		AddpTask ( pGrp );
 		GRPLST_INSERT_MAIN ( pGrp );
 
 		pGrp->SetPos ( VEC2 ( 128, 400 ) );
@@ -38,11 +39,11 @@ namespace GAME
 	FTG_DM_Greeting::FTG_DM_Greeting ()
 	{
 		m_timer = make_shared < Timer > ();
+		m_timer->SetTargetTime ( 90 );
 	}
 
-	void FTG_DM_Greeting::Init ()
+	void FTG_DM_Greeting::Start ()
 	{
-		m_timer->SetTargetTime ( 90 );
 		m_timer->Start ();
 	}
 
@@ -62,12 +63,13 @@ namespace GAME
 	FTG_DM_GetReady::FTG_DM_GetReady ()
 	{
 		m_grpGetReady = MakeGrpValue ( _T ( "Demo_GetReady.png" ) );
-
+		m_grpGetReady->SetEnd ( COUNT );
 
 		m_grpClock = make_shared < GrpAcv > ();
 		m_grpClock->SetPos ( VEC2 ( 640 - 256, 300 ) );
 		m_grpClock->SetValid ( F );
 		m_grpClock->SetZ ( Z_EFF );
+		AddpTask ( m_grpClock );
 		GRPLST_INSERT_MAIN ( m_grpClock );
 
 		tostringstream toss;
@@ -84,14 +86,11 @@ namespace GAME
 		m_timer = make_shared < Timer > ();
 	}
 
-	void FTG_DM_GetReady::Init ()
+	void FTG_DM_GetReady::Start ()
 	{
 		GetpMutualChara ()->StartGetReady ();
 
-		m_grpGetReady->SetValid ( T );
-		m_grpGetReady->Init ();
-		m_grpGetReady->SetEnd ( COUNT );
-
+		m_grpGetReady->Start ();
 		m_grpClock->SetValid ( T );
 		m_timer->Start ();
 	}
@@ -119,13 +118,12 @@ namespace GAME
 	FTG_DM_Attack::FTG_DM_Attack ()
 	{
 		m_grpAttack = MakeGrpValue ( _T ( "Demo_Attack.png" ) );
+		m_grpAttack->SetEnd ( 90 );
 	}
 
-	void FTG_DM_Attack::Init ()
+	void FTG_DM_Attack::Start ()
 	{
-		m_grpAttack->SetValid ( T );
-		m_grpAttack->Init ();
-		m_grpAttack->SetEnd ( 90 );
+		m_grpAttack->Start ();
 	}
 
 	void FTG_DM_Attack::Do ()
@@ -155,13 +153,12 @@ namespace GAME
 	FTG_DM_Down::FTG_DM_Down ()
 	{
 		m_grpDown = MakeGrpValue ( _T ( "Demo_Down.png" ) );
+		m_grpDown->SetEnd ( 90 );
 	}
 
-	void FTG_DM_Down::Init ()
+	void FTG_DM_Down::Start ()
 	{
-		m_grpDown->SetValid ( T );
-		m_grpDown->SetEnd ( 90 );
-		m_grpDown->Init ();
+		m_grpDown->Start ();
 	}
 
 	void FTG_DM_Down::Do ()
@@ -199,6 +196,11 @@ namespace GAME
 		mvp_FtgDemo.push_back ( m_Down );
 		mvp_FtgDemo.push_back ( m_Winner );
 
+		for ( P_FtgDemo p : mvp_FtgDemo )
+		{
+			AddpTask ( p );
+		}
+
 		//初期ステート
 		mp_FtgDemo = m_Greeting;
 
@@ -213,13 +215,14 @@ namespace GAME
 	void FtgDemoActor::Load ()
 	{
 		mp_Param->SetwpFtgDemoActor ( shared_from_this () );
+		TASK_VEC::Load ();
 	}
 
 	void FtgDemoActor::StartGreeting ()
 	{
 		mp_FtgDemo = m_Greeting;
 		GetpMutualChara ()->StartGreeting ();
-		m_Greeting->Init ();
+		m_Greeting->Start ();
 	}
 
 	void FtgDemoActor::StartFighting ()
@@ -235,14 +238,14 @@ namespace GAME
 
 	void FtgDemoActor::Change_Greeting_To_GetReady ()
 	{
-		m_GetReady->Init ();
+		m_GetReady->Start ();
 		mp_FtgDemo = m_GetReady;
 	}
 
 	void FtgDemoActor::Change_GetReady_To_Attack ()
 	{
 		m_GetReady->Final ();
-		m_Attack->Init ();
+		m_Attack->Start ();
 
 		mp_FtgDemo = m_Main;
 		m_Main->Start ();
@@ -250,14 +253,14 @@ namespace GAME
 
 	void FtgDemoActor::Change_Main_To_Down ()
 	{
-		m_Down->Init ();
+		m_Down->Start ();
 		mp_FtgDemo = m_Down;
 	}
 
 	void FtgDemoActor::Change_Down_To_Greeting ()
 	{
 		GetpMutualChara ()->StartGreeting ();
-		m_Greeting->Init ();
+		m_Greeting->Start ();
 		mp_FtgDemo = m_Greeting;
 	}
 

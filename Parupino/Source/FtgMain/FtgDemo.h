@@ -20,6 +20,7 @@ namespace GAME
 	//=====================================================
 	class FtgDemoActor; using WP_FtgDemoActor = weak_ptr < FtgDemoActor >;
 
+	//=====================================================
 	//param
 	class FtgDemoParam
 	{
@@ -38,7 +39,7 @@ namespace GAME
 
 	//=====================================================
 	//State
-	class FtgDemoState
+	class FtgDemoState : public TASK_VEC
 	{
 	protected:
 		P_PRM_FTG_DEMO		m_prmFtgDemo;
@@ -66,11 +67,12 @@ namespace GAME
 	{
 		//タイマ
 		P_Timer		m_timer;
+
 	public:
 		FTG_DM_Greeting ();
 		FTG_DM_Greeting ( const FTG_DM_Greeting & rhs ) = delete;
 		~FTG_DM_Greeting () {}
-		void Init ();
+		void Start ();
 		void Do ();
 	};
 	using P_FTG_DM_Greeting = shared_ptr < FTG_DM_Greeting >;
@@ -88,7 +90,8 @@ namespace GAME
 		FTG_DM_GetReady ();
 		FTG_DM_GetReady ( const FTG_DM_GetReady & rhs ) = delete;
 		~FTG_DM_GetReady () {}
-		void Init ();
+		
+		void Start ();
 		void Do ();
 		void Final ();
 	};
@@ -103,7 +106,8 @@ namespace GAME
 		FTG_DM_Attack ();
 		FTG_DM_Attack ( const FTG_DM_Attack & rhs ) = delete;
 		~FTG_DM_Attack () {}
-		void Init ();
+
+		void Start ();
 		void Do ();
 	};
 	using P_FTG_DM_Attack = shared_ptr < FTG_DM_Attack >;
@@ -128,7 +132,7 @@ namespace GAME
 		FTG_DM_Down ( const FTG_DM_Down & rhs ) = delete;
 		~FTG_DM_Down () {}
 
-		void Init ();
+		void Start ();
 		void Do ();
 	};
 	using P_FTG_DM_Down = shared_ptr < FTG_DM_Down >;
@@ -148,7 +152,7 @@ namespace GAME
 	using VP_FtgDemo = vector < P_FtgDemo >;
 
 	//Actor
-	class FtgDemoActor : public enable_shared_from_this < FtgDemoActor >
+	class FtgDemoActor : public TASK_VEC, public enable_shared_from_this < FtgDemoActor >
 	{
 		//ステート
 		P_FTG_DM_Greeting	m_Greeting;

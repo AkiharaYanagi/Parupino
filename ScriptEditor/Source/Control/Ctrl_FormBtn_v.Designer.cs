@@ -118,6 +118,7 @@
 			// 
 			// BtnFmAction
 			// 
+			this.BtnFmAction.Enabled = false;
 			this.BtnFmAction.Location = new System.Drawing.Point(30, 3);
 			this.BtnFmAction.Name = "BtnFmAction";
 			this.BtnFmAction.Size = new System.Drawing.Size(99, 31);
@@ -128,6 +129,7 @@
 			// 
 			// Btn_HideAction
 			// 
+			this.Btn_HideAction.Enabled = false;
 			this.Btn_HideAction.Location = new System.Drawing.Point(3, 4);
 			this.Btn_HideAction.Name = "Btn_HideAction";
 			this.Btn_HideAction.Size = new System.Drawing.Size(21, 31);

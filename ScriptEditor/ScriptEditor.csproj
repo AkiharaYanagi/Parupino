@@ -106,14 +106,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Source\Chara\DispChara\DispAction.cs" />
-    <Compile Include="Source\Chara\DispChara\DispChara.cs" />
-    <Compile Include="Source\Chara\DispChara\DispCompend.cs" />
-    <Compile Include="Source\Chara\DispChara\DispEffect.cs" />
-    <Compile Include="Source\Chara\DispChara\DispSequence.cs" />
-    <Compile Include="Source\Control\Ctrl_FormBtn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Source\Control\Ctrl_FormBtn_v.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,9 +216,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Ctrl_FormBtn.resx">
-      <DependentUpon>Ctrl_FormBtn.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Source\Control\Ctrl_FormBtn_v.resx">
       <DependentUpon>Ctrl_FormBtn_v.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,69 +264,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ResourceCommand\command_H.png" />
-    <None Include="Resources\ResourceCommand\command_L.png" />
-    <None Include="Resources\ResourceCommand\wild.png" />
-    <None Include="Resources\tool_ORect.ico" />
+    <None Include="Resources\main.ico" />
     <Content Include="Document\Charaデータ構造.txt" />
-    <None Include="Resources\tool_ARect.png" />
-    <None Include="Resources\tool_CRect.png" />
-    <None Include="Resources\tool_efhand.png" />
-    <None Include="Resources\tool_hand.png" />
-    <None Include="Resources\tool_HRect.png" />
-    <None Include="Resources\tool_ORect.png" />
-    <Content Include="Resources\ResourceCommand\arrow.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_Is.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_Nis.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_OFF.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_On.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_Push.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_Rele.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdAr_Wild.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdIs_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdIs_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdIs_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdNis_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdNis_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdNis_Ma.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdNis_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOff_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOff_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOff_Ma.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOff_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOn_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOn_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOn_Ma.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdOn_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdPush_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdPush_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdPush_Ma.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdPush_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdRele_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdRele_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdRele_Ma.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdRele_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdWd_H.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdWd_L.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdWd_Ma.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdWd_Mb.png" />
-    <None Include="Resources\ResourceCommand\CMD_Key\CmdIs_Ma.png" />
-    <Content Include="Resources\ResourceCommand\CMD_Key\WILD.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_Is.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_Nis.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_Off.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_On.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_PUSH.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_Rele.png" />
-    <Content Include="Resources\ResourceCommand\Cmd_Key_Wild.png" />
-    <None Include="Resources\ResourceCommand\command_Ma.png" />
-    <None Include="Resources\ResourceCommand\command_Mb.png" />
-    <Content Include="Resources\ResourceCommand\cursor.png" />
-    <Content Include="Resources\ResourceCommand\KeyTurnL.png" />
-    <Content Include="Resources\ResourceCommand\KeyTurnR.png" />
-    <None Include="Resources\ResourceCommand\LvrCur.png" />
-    <Content Include="Resources\ResourceCommand\Off.png" />
-    <Content Include="Resources\ResourceCommand\_.png" />
     <Content Include="ScriptEditor.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -26,6 +26,7 @@ namespace GAME
 		EfHit ( const EfHit & rhs ) = delete;
 		~EfHit ();
 
+		void Move ();
 		void On ( VEC2 center );
 	};
 

@@ -172,10 +172,13 @@ namespace ScriptEditor
 						Sequence sqc = new Sequence ();
 						dtoc.ReadScriptList ( sqc, doc.Root.Elements );
 
+						//選択
 						string name = EditCompend.SelectedSequence.Name;
 						EditCompend.SelectedSequence.CopyScpList ( sqc );
 						EditCompend.SelectSequence ( name );
-						DispChara.Inst.Disp ();
+						
+						//表示の更新
+						//DispChara.Inst.Disp ();
 					}
 				}
 			}
@@ -208,8 +211,11 @@ namespace ScriptEditor
 				ls.Add ( new Script ( scp ) );
 			}
 
+			//選択
 			EditCompend.SelectSequence ( EditCompend.SelectedSequence.Name );
-			DispChara.Inst.Disp ();
+			
+			//表示更新
+			//DispChara.Inst.Disp ();
 		}
 	}
 }

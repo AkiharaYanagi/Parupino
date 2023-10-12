@@ -110,13 +110,37 @@ namespace GAME
 		//重なっているとき
 		if ( OverlapAryRect ( pvRect1p, pvRect2p ) )
 		{
+			bool dir1 = m_exeChara1->GetDirRight ();
+			bool dir2 = m_exeChara2->GetDirRight ();
+			VEC2 pos1_0 = m_exeChara1->GetPos ();
+			VEC2 pos2_0 = m_exeChara2->GetPos ();
+
 			m_exeChara1->BackPtX ();	//互いにx方向のみ位置を戻す
 			m_exeChara2->BackPtX ();
 
+			VEC2 pos1_1 = m_exeChara1->GetPos ();
+			VEC2 pos2_1 = m_exeChara2->GetPos ();
+
 			//さらに重なっているとき
+			if ( OverlapAryRect ( pvRect1p, pvRect2p ) )
+			{
+				//位置をさらに戻して(動作した後の位置)から補正する
+				if ( LeaveDir ( dir1, pos1_0.x, pos1_1.x ) )
+				{
+					m_exeChara1->SetPos ( pos1_0 );
+				}
+				if ( LeaveDir ( dir2, pos2_0.x, pos2_1.x ) )
+				{
+					m_exeChara2->SetPos ( pos2_0 );
+				}
+			}
+
+
 			int i = 0;
 			while ( OverlapAryRect ( pvRect1p, pvRect2p ) )
 			{
+#if 0
+#endif // 0
 				m_exeChara1->BackMoveX ();	//重なり微調整
 				m_exeChara2->BackMoveX ();
 
@@ -126,7 +150,7 @@ namespace GAME
 				pvRect1p = pCharaRect1p->GetpvCRect ();
 				pvRect2p = pCharaRect2p->GetpvCRect ();
 
-				if ( ++i > 10 ) { break; }
+				if ( ++ i > 10 ) { break; }
 			}
 		}
 
@@ -150,6 +174,21 @@ namespace GAME
 			m_exeChara1->BackPtX ();	//互いに位置を戻す
 			m_exeChara2->BackPtX ();
 		}
+	}
+
+	bool MutualChara::LeaveDir ( bool dirRight, float pos0, float pos1 )
+	{
+		//離れる方向のとき
+		bool leave = F;
+		if ( dirRight )	//右向き左移動
+		{
+			if ( pos1 < pos0 ) leave = T;
+		}
+		else//左向き右移動
+		{
+			if ( pos0 < pos1 ) leave = T;
+		}
+		return leave;
 	}
 
 	//◆================================
@@ -309,7 +348,9 @@ namespace GAME
 		static bool pre_bDispRect = false;	//前回押しているか
 		static bool is_bDispRect = false;	//今回押しているか
 		
-		is_bDispRect = ( ::GetAsyncKeyState ( '1' ) & 0x0001 );
+		
+//		is_bDispRect = ( ::GetAsyncKeyState ( '1' ) & 0x0001 );
+		is_bDispRect = ( WND_UTL::AscKey ( '1' ) );
 
 		//@info キーボード入力は押しっぱなしで一定時間後連打状態になる
 		//TRACE_F ( _T ( "b = %d, pre = %d, is = %d\n" ), bDispRect ? 1 : 0, pre_bDispRect ? 1 : 0, is_bDispRect ? 1 : 0  );
@@ -339,9 +380,8 @@ namespace GAME
 	void MutualChara::SwithcCPU ()
 	{
 		static bool cpu1 = F;
-		static bool cpu2 = F;
-
-		if ( ::GetAsyncKeyState ( '6' ) & 0x0001 )
+		//if ( ::GetAsyncKeyState ( '6' ) & 0x0001 )
+		if ( WND_UTL::AscKey ( '6' ) )
 		{
 			cpu1 ^= T;
 			if ( cpu1 )
@@ -354,6 +394,7 @@ namespace GAME
 			}
 		}
 
+		static bool cpu2 = F;
 		if ( ::GetAsyncKeyState ( '7' ) & 0x0001 )
 		{
 			cpu2 ^= T;

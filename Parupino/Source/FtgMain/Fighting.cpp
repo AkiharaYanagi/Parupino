@@ -57,9 +57,10 @@ namespace GAME
 
 		//=====================================================
 		//デモ
-//		m_demoActor = make_shared < FtgDemoActor > ();
+		m_demoActor = make_shared < FtgDemoActor > ();
 //		m_demoActor->Load ();
-//		m_demoActor->SetpMutualChara ( m_mutualChara );
+		m_demoActor->SetpMutualChara ( m_mutualChara );
+		AddpTask ( m_demoActor );
 
 		//=====================================================
 
@@ -68,6 +69,7 @@ namespace GAME
 		m_pause->AddTexture ( _T ( "Pause.png" ) );
 		m_pause->SetPos ( (1280-512)*0.5, 480.f );
 		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
+		AddpTask ( m_pause );
 		GRPLST_INSERT_MAIN ( m_pause );
 		m_pause->SetValid ( false );
 	}
@@ -91,7 +93,7 @@ namespace GAME
 		TASK_LST::Init ();
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 0
+#define DEMO_ON 1
 #if DEMO_ON
 		m_demoActor->StartGreeting ();
 #else
@@ -108,7 +110,7 @@ namespace GAME
 
 		//--------------------------
 		//デモ分岐
-//		m_demoActor->Do ();
+		m_demoActor->Do ();
 
 		//--------------------------
 		//両者処理

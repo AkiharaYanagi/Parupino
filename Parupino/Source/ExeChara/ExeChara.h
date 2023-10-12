@@ -120,6 +120,7 @@ namespace GAME
 
 		BtlParam GetBtlPrm () const { return m_btlPrm; }
 
+		void SetPos ( VEC2 v ) { m_btlPrm.SetPos ( v ); }
 		VEC2 GetPos () const { return m_btlPrm.GetPos (); }		//ˆÊ’u‚ğæ“¾
 		bool GetDirRight () const { return m_btlPrm.GetDirRight (); }	//Œü‚«‚ğæ“¾
 		void SetDirRight ( bool b ) { m_btlPrm.SetDirRight ( b ); }		//—§‚¿ó‘Ô‚ÅŒü‚«‚ğİ’è
@@ -152,6 +153,7 @@ namespace GAME
 
 		void SetCollisionRect ();	//[PreMove] ˆÊ’u‚©‚çÚG˜gİ’è
 		void SetRect ();			//[PostMove] ‘ŠEEUŒ‚E“–‚è ˜gİ’è
+		void ResetRect ();			//ƒŠƒZƒbƒg
 	private:
 		void SetOffsetRect ();	//‘ŠE˜gİ’è
 		void SetAttackRect ();	//UŒ‚˜gİ’è

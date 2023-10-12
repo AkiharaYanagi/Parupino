@@ -105,6 +105,9 @@ namespace GAME
 
 		//‡‰Šú‰»
 		void ResetMatch ();
+
+		//—£‚ê‚é•ûŒü‚©‚Ç‚¤‚©
+		bool LeaveDir ( bool dirRight, float pos0, float pos1 );
 	};
 
 	using P_MutualChara = shared_ptr < MutualChara >;

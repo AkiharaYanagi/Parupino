@@ -96,6 +96,7 @@ namespace GAME
 				pOb->SetValid ( F );
 			}
 
+			//画面位置補正
 			pOb->SetPos ( mv_Prm [ i ].m_pos + G_BASE_POS () );
 
 			//カウント

@@ -17,6 +17,10 @@ namespace GAME
 	EfHit::EfHit ()
 	{
 		AddTexture ( _T ( "Ef_Hit.png" ) );
+		SetStartScaling ( VEC2 ( 1.f, 1.f ) );
+		SetTargetScaling ( VEC2 ( 2.f, 2.f ) );
+		SetRotationCenter ( VEC2 ( 256.f, 256.f ) );
+		SetVel ( VEC2 ( 0.1f, 1.f ) );
 	}
 
 	EfHit::~EfHit ()
@@ -27,9 +31,23 @@ namespace GAME
 	{
 		SetDispBase ( G_BASE_POS () );
 		SetRevised ( center );
-//		SetWait ( 60 );
-		SetFadeOut ( 60 );
+		SetTimer ( 60 );
+		SetFadeOut ( 30 );
 		SetValid ( true );
+
+		float rad = D3DX_2PI / 360;
+		int random = rand () % 360;
+		SetRadian ( rad * random );
+
 		GrpEf::On ();
+	}
+
+	void EfHit::Move ()
+	{
+
+		//âÊñ à íuï‚ê≥
+		SetPos ( GetPos () + G_BASE_POS () );
+
+		GrpEf::Move ();
 	}
 }

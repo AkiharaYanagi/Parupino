@@ -40,6 +40,9 @@
     <Filter Include="Result">
       <UniqueIdentifier>{1b699ff1-58e8-465f-b3d7-0ab8c01912bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FtgMain\Menu">
+      <UniqueIdentifier>{bda33950-c328-4deb-ad6f-bfe87a0278b1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Title\Title.h">
@@ -177,20 +180,8 @@
     <ClInclude Include="Source\Demo\DemoMenu.h">
       <Filter>Demo</Filter>
     </ClInclude>
-    <ClInclude Include="Source\FtgMain\PauseMenu.h">
-      <Filter>FtgMain</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\FtgMain\Menu.h">
-      <Filter>FtgMain</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Demo\DemoMenuItem.h">
       <Filter>Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\FtgMain\MenuItem.h">
-      <Filter>FtgMain</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\FtgMain\PauseMenuItem.h">
-      <Filter>FtgMain</Filter>
     </ClInclude>
     <ClInclude Include="Source\Result\Result.h">
       <Filter>Result</Filter>
@@ -198,8 +189,14 @@
     <ClInclude Include="Source\FtgMain\Ef\EfHit.h">
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
-    <ClInclude Include="Source\FtgMain\YesNo_Menu.h">
-      <Filter>FtgMain</Filter>
+    <ClInclude Include="Source\FtgMain\Menu\PauseMenu.h">
+      <Filter>FtgMain\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\Menu\PauseMenuItem.h">
+      <Filter>FtgMain\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FtgMain\Menu\YesNo_Menu.h">
+      <Filter>FtgMain\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -317,20 +314,8 @@
     <ClCompile Include="Source\Demo\DemoMenu.cpp">
       <Filter>Demo</Filter>
     </ClCompile>
-    <ClCompile Include="Source\FtgMain\PauseMenu.cpp">
-      <Filter>FtgMain</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FtgMain\Menu.cpp">
-      <Filter>FtgMain</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Demo\DemoMenuItem.cpp">
       <Filter>Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FtgMain\MenuItem.cpp">
-      <Filter>FtgMain</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FtgMain\PauseMenuItem.cpp">
-      <Filter>FtgMain</Filter>
     </ClCompile>
     <ClCompile Include="Source\Result\Result.cpp">
       <Filter>Result</Filter>
@@ -338,8 +323,14 @@
     <ClCompile Include="Source\FtgMain\Ef\EfHit.cpp">
       <Filter>FtgMain\Ef</Filter>
     </ClCompile>
-    <ClCompile Include="Source\FtgMain\YesNo_Menu.cpp">
-      <Filter>FtgMain</Filter>
+    <ClCompile Include="Source\FtgMain\Menu\PauseMenu.cpp">
+      <Filter>FtgMain\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Menu\PauseMenuItem.cpp">
+      <Filter>FtgMain\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FtgMain\Menu\YesNo_Menu.cpp">
+      <Filter>FtgMain\Menu</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

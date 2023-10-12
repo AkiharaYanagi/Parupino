@@ -25,9 +25,6 @@ namespace GAME
 		//ポーズメニュ
 		m_pauseMenu = make_shared < PauseMenu > ();
 		AddpTask ( m_pauseMenu );
-//		m_ynMenu = make_shared < YesNo_Menu > ();
-//		AddpTask ( m_ynMenu );
-
 
 		//@info コンストラクタでshared_from_this()を用いない
 	}
@@ -42,7 +39,6 @@ namespace GAME
 		m_gameScene = shared_from_this ();
 
 		m_pauseMenu->SetpParent ( shared_from_this () );
-//		m_ynMenu->SetpParent ( shared_from_this () );
 
 		Scene::Load ();
 	}

@@ -28,7 +28,7 @@ namespace GAME
 		P_DispRect		m_dispRect;		//枠
 		P_GrpAcv		m_grpShadow;	//影
 		P_DispFrontEnd	m_frontEnd;		//フロントエンド
-		DispInput		m_dispInput;	//入力表示
+		P_DispInput		m_dispInput;	//入力表示
 		
 
 //		P_PrmRect	m_test;
@@ -61,7 +61,7 @@ namespace GAME
 		void UpdateGauge ( BtlParam btlPrm );
 
 		//入力更新
-		void UpdateInput ( P_CharaInput p ) { m_dispInput.UpdateInput ( p ); }
+		void UpdateInput ( P_CharaInput p ) { m_dispInput->UpdateInput ( p ); }
 	};
 
 
