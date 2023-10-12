@@ -29,10 +29,6 @@ namespace GAME
 		P_DispGauge	m_gaugeMana;		//マナゲージ
 
 #if	0
-		GrpAcv		m_grpPlayer1P;	//プレイヤー表示"1P"
-		GrpAcv		m_grpPlayer2P;	//プレイヤー表示"2P"
-		GrpAcv		m_grpPlayerCOM;	//プレイヤー表示"CPU"
-
 		PrmRect		m_gaugeHitStop;			//ヒットストップ時間表示
 		PrmRect		m_gaugeLurch;			//のけぞり時間表示
 
