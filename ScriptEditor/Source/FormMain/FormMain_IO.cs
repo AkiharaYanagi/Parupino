@@ -38,10 +38,10 @@ namespace ScriptEditor
 			//名前参照のチェック
 			TestChara testChara = new TestChara ();
 			try { testChara._TestNameAssign ( chara ); }
-			catch
+			catch ( Exception e )
 			{
 				STS_TXT.Tssl.BackColor = Color.Red;
-				STS_TXT.Trace( "Name Refference Error." );
+				STS_TXT.Trace( "Name Refference Error. " + e.Message );
 				//return;
 				//エラー表示をして続行
 			}

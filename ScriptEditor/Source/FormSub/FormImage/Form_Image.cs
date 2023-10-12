@@ -6,7 +6,7 @@ using System.IO;
 
 namespace ScriptEditor
 {
-	using BD_IMDT = BindingDictionary < ImageData >;
+	using BD_ImgDt = BindingDictionary < ImageData >;
 
 	//-------------------------------------------------------------
 	//	イメージ選択フォーム
@@ -31,7 +31,7 @@ namespace ScriptEditor
 		//---------------------------------------------------------------------
 
 		// イメージリスト参照
-		private BD_IMDT BD_ImageData { get; set; } = new BD_IMDT ();
+		private BD_ImgDt BD_ImageData { get; set; } = new BD_ImgDt ();
 
 		// グループ編集用
 //		public ScriptParam < int > ScriptSetter { get; set; } = null;
@@ -46,15 +46,17 @@ namespace ScriptEditor
 		//選択中イメージの名前
 		public string GetImageName () { return ( (ImageData)Lb_Image.SelectedItem ).Name; }
 
+#if false
 		//環境を設定
 		public void SetEnviron ( EditCompend ec )
 		{
 //			EditCompend = ec;
 //			DispCompend = dc;
 		}
+#endif
 
 		//対象を設定
-		public void SetData ( BindingDictionary < ImageData > bd_imgDt )
+		public void SetCharaData ( BD_ImgDt bd_imgDt )
 		{
 			BD_ImageData = bd_imgDt;
 
@@ -62,12 +64,13 @@ namespace ScriptEditor
 			Lb_Image.DataSource = BD_ImageData.GetBindingList ();
 		}
 
-		//リストボックス変更時
+		//リストボックスの選択位置変更時
 		private void listBox1_SelectedIndexChanged ( object sender, EventArgs e )
 		{
 			//選択されていないとき何もしない
 			if ( null == Lb_Image.SelectedItem ) { return; }
 
+			//画像の更新
 			pbArchiveImage.Image = ( ( ImageData ) Lb_Image.SelectedItem ).Img;
 		}
 
@@ -90,7 +93,8 @@ namespace ScriptEditor
 			//全体描画
 			//DispCompend.Disp ();
 			//Ctrl_All.Inst.AllDisp ();
-			All_Ctrl.Inst.Disp ();
+			//All_Ctrl.Inst.Disp ();
+			All_Ctrl.Inst.UpdateData ();
 
 			this.Hide ();
 		}

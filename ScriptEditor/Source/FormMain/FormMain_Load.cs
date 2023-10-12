@@ -16,6 +16,8 @@ namespace ScriptEditor
 			LoadCtrl ();		//コントロール初期化
 			LoadTab ();			//タブ初期化
 			LoadSubForm ();		//サブフォーム初期化
+			
+			SetEnvironment ();
 		}
 
 		//---------------------------------------------------------------------

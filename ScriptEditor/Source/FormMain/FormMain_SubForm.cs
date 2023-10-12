@@ -37,9 +37,10 @@ namespace ScriptEditor
 		//==================================================================================
 		//	環境設定
 		//==================================================================================
+		//コンペンドの指定
+		//	タブ切替(ビヘイビア、ガーニッシュ)時に毎回指定する
 		private void SetEnvironment_SubForms ( EditCompend ec )
 		{
-			//コンペンド(ビヘイビア、ガーニッシュ)の指定
 			foreach ( SubForm_Compend subform in L_EditorForm )
 			{
 				subform.SetEditCompend ( ec );

@@ -86,7 +86,6 @@ namespace ScriptEditor
 		{
 #if false
 			//共通フォームにビヘイビアを設定
-			EditBehavior eb = EditChara.Inst.EditBehavior;
 			DispBehavior db = DispChara.Inst.DispBehavior;
 			
 			//他タブのデータで更新
@@ -99,13 +98,16 @@ namespace ScriptEditor
 
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
 //			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
-			SetEnvironment_SubForms ( eb );
 
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 #endif
+			//コンペンド指定
+			EditBehavior eb = EditChara.Inst.EditBehavior;
+			SetEnvironment_SubForms ( eb );
+
+			//イメージ指定
+			FormImage.Inst.SetCharaData ( chara.behavior.BD_Image );
 		}
-
-
 
 		//----------------------
 		//str_indexからheadを除き、Int.Parse()して返す
@@ -158,6 +160,12 @@ namespace ScriptEditor
 			FormImage.Inst.SetEnviron ( eg );
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 #endif
+			//コンペンド指定
+			EditBehavior eb = EditChara.Inst.EditBehavior;
+			SetEnvironment_SubForms ( eb );
+
+			//イメージ指定
+			FormImage.Inst.SetCharaData ( chara.garnish.BD_Image );
 		}
 
 		//[スクリプト(E)]

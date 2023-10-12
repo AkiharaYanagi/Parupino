@@ -39,7 +39,10 @@ namespace ScriptEditor
 			All_Ctrl.Inst.Rut = ctrl_Rut;
 
 			All_Ctrl.Inst.Scp = ctrl_Scp;
+		}
 
+		public void SetEnvironment ()
+		{
 			//-------------------------------------------------
 			//環境設定
 

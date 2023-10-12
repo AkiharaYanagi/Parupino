@@ -35,6 +35,10 @@ namespace GAME
 		SetFadeOut ( 30 );
 		SetValid ( true );
 
+		//ƒJƒ‰[
+		SetFadeOut ( 30, 0x80ffffff );
+
+		//‰ñ“]Šp(ƒ‰ƒ“ƒ_ƒ€)
 		float rad = D3DX_2PI / 360;
 		int random = rand () % 360;
 		SetRadian ( rad * random );
