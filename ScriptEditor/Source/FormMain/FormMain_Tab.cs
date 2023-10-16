@@ -98,10 +98,9 @@ namespace ScriptEditor
 
 			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
 //			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
-
 			FormImage.Inst.SetData ( eb.Compend.BD_Image );
 #endif
-			//コンペンド指定
+			//サブフォームすべてにコンペンド指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			SetEnvironment_SubForms ( eb );
 
