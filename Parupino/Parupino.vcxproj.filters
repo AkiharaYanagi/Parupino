@@ -43,6 +43,12 @@
     <Filter Include="FtgMain\Menu">
       <UniqueIdentifier>{bda33950-c328-4deb-ad6f-bfe87a0278b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Title_Intro">
+      <UniqueIdentifier>{aa73525f-c6f4-4c74-87c0-f67979d94ae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Introduction">
+      <UniqueIdentifier>{5d941331-1155-49b4-89a6-1b9c44f3df48}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Title\Title.h">
@@ -198,6 +204,21 @@
     <ClInclude Include="Source\FtgMain\Menu\YesNo_Menu.h">
       <Filter>FtgMain\Menu</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Title_Intro\Title_Intro.h">
+      <Filter>Title_Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Introduction\Introduction.h">
+      <Filter>Introduction</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title_Intro\Title_MenuActor.h">
+      <Filter>Title_Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title_Intro\Title_Menu.h">
+      <Filter>Title_Intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h">
+      <Filter>Title_Intro</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Title\TitleEf.cpp">
@@ -331,6 +352,21 @@
     </ClCompile>
     <ClCompile Include="Source\FtgMain\Menu\YesNo_Menu.cpp">
       <Filter>FtgMain\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title_Intro\Title_Intro.cpp">
+      <Filter>Title_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Introduction\Introduction.cpp">
+      <Filter>Introduction</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title_Intro\Title_MenuActor.cpp">
+      <Filter>Title_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title_Intro\Title_Menu.cpp">
+      <Filter>Title_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp">
+      <Filter>Title_Intro</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

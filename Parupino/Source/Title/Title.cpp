@@ -108,7 +108,8 @@ namespace GAME
 		m_titleEf.Move ();
 
 		//F1でデモモードを切り替え
-		if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
+		//if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
+		if ( WND_UTL::AscKey ( VK_F1 ) )
 		{
 			if ( IsDemo () )
 			{
@@ -197,8 +198,10 @@ namespace GAME
 
 	P_GameScene Title::Transit ()
 	{
+		//---------------------------------------------------------------
 		//ESCでアプリケーションを終了(タイトルのみ・他シーンでは1つ戻る)
-		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 ) 
+//		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
+		if ( WND_UTL::AscKey ( VK_ESCAPE ) )
 		{ 
 			::PostQuitMessage( 0 );
 		}
