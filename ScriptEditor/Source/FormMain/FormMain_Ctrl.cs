@@ -22,6 +22,7 @@ namespace ScriptEditor
 		//-------------------------------------------------------
 		//サブフォーム用コントロール 実体
 		private _Ctrl_Script ctrl_Scp = new _Ctrl_Script ();
+		private Ctrl_AllRect ctrl_Rct = new Ctrl_AllRect ();
 
 		//-------------------------------------------------------
 
@@ -39,6 +40,7 @@ namespace ScriptEditor
 			All_Ctrl.Inst.Rut = ctrl_Rut;
 
 			All_Ctrl.Inst.Scp = ctrl_Scp;
+			All_Ctrl.Inst.Rct = ctrl_Rct;
 		}
 
 		public void SetEnvironment ()
@@ -67,16 +69,16 @@ namespace ScriptEditor
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			ctrl_cmpd_gns.SetEnviron ( eg );
 
-
-			//サブフォームにおける環境設定
-			SetEnvironment_SubForms ( eb );
-			ctrl_Scp.SetEnvironment ( eb, () => { } );
-			FormScript.Inst.SetCtrl ( ctrl_Scp );
-
 			//-------------------------------------------------
 			ctrl_Cmd.SetEnvironment ( stgs );
 			ctrl_Brc.SetEnvironment ( stgs );
 			ctrl_Rut.SetEnvironment ( stgs );
+
+			//-------------------------------------------------
+			//サブフォームにおける環境設定
+			FormScript.Inst.SetCtrl ( ctrl_Scp );
+			FormRect2.Inst.SetCtrl ( ctrl_Rct );
+
 		}
 	}
 }

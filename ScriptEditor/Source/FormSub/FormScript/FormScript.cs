@@ -13,8 +13,6 @@ namespace ScriptEditor
 		//シングルトン実体
 		public static FormScript Inst { get; set; } = new FormScript ();
 		
-		private _Ctrl_Script ctrl_Script1 = null;
-
 		//プライベートコンストラクタ
 		private FormScript ()
 		{
@@ -25,14 +23,25 @@ namespace ScriptEditor
 			InitializeComponent ();
 			LoadObject ();
 		}
+		//---------------------------------------------------------------------
 
+		//コントロール
+		private _Ctrl_Script ctrl_Script1 = new _Ctrl_Script ();	//仮オブジェクト
+
+		//FormMainで実体を確保し、設置する
 		public void SetCtrl ( _Ctrl_Script ctrl )
 		{
 			ctrl_Script1 = ctrl;
 			this.Controls.Add ( ctrl_Script1 );
 		}
 
-		//---------------------------------------------------------------------
+		//コンペンド編集の切り替え
+		public override void SetEditCompend ( EditCompend ec )
+		{
+			ctrl_Script1.SetEnvironment ( ec, () => { } );
+			base.SetEditCompend ( ec );
+		}
+
 #if false
 
 		//編集と表示

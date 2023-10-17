@@ -201,10 +201,15 @@
     <ClInclude Include="Source\GameMain\SceneCommon.h" />
     <ClInclude Include="Source\GameMain\StdAfx.h" />
     <ClInclude Include="Source\GameMain\WinMain.h" />
+    <ClInclude Include="Source\Introduction\Introduction.h" />
     <ClInclude Include="Source\Result\Result.h" />
     <ClInclude Include="Source\Title\Title.h" />
     <ClInclude Include="Source\Title\TitleConst.h" />
     <ClInclude Include="Source\Title\TitleEf.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Intro.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Menu.h" />
+    <ClInclude Include="Source\Title_Intro\Title_MenuActor.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h" />
     <ClInclude Include="Source\Training\Training.h" />
   </ItemGroup>
   <ItemGroup>
@@ -248,9 +253,14 @@
     <ClCompile Include="Source\GameMain\Scene.cpp" />
     <ClCompile Include="Source\GameMain\StdAfx.cpp" />
     <ClCompile Include="Source\GameMain\WinMain.cpp" />
+    <ClCompile Include="Source\Introduction\Introduction.cpp" />
     <ClCompile Include="Source\Result\Result.cpp" />
     <ClCompile Include="Source\Title\Title.cpp" />
     <ClCompile Include="Source\Title\TitleEf.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Intro.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Menu.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_MenuActor.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp" />
     <ClCompile Include="Source\Training\Training.cpp" />
   </ItemGroup>
   <ItemGroup>
