@@ -9,6 +9,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
 #include "../Title/Title.h"
+#include "../Title_Intro/Title_Intro.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -109,7 +110,10 @@ namespace GAME
 	{
 		GRPLST_CLEAR ();
 //		P_Scene&& p = make_shared < Title > ();
-		m_gameScene = make_shared < Title > ();
+
+//		m_gameScene = make_shared < Title > ();
+		m_gameScene = make_shared < Title_Intro > ();
+
 //		m_scene = p;
 //		m_scene = make_shared < Title > ();
 		GRPLST_LOAD ();
