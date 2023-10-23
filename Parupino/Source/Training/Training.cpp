@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Training.h"
-#include "../Title/Title.h"
+#include "../Title_Intro/Title_Intro.h"
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -110,7 +110,8 @@ namespace GAME
 //			return make_shared < Title > ();
 
 			GRPLST_CLEAR ();
-			P_GameScene p = make_shared < Title > ();
+//			P_GameScene p = make_shared < Title > ();
+			P_GameScene p = make_shared < Title_Intro > ();
 			GRPLST_LOAD ();
 //			GRPLST_INIT ();
 			return p;

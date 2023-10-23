@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "CharaSele.h"
-#include "../Title/Title.h"
+//#include "../Title/Title.h"
 #include "../FtgMain/Fighting.h"
 #include "../Training/Training.h"
 

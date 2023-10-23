@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
-#include "../Title/Title.h"
+//#include "../Title/Title.h"
 #include "../Title_Intro/Title_Intro.h"
 
 

@@ -34,9 +34,6 @@
     <Filter Include="Demo">
       <UniqueIdentifier>{f57e2b4d-8a15-401f-9dd1-cbd36133340f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Title">
-      <UniqueIdentifier>{097359c8-d7c9-4a8e-a189-bf6d78c02165}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Result">
       <UniqueIdentifier>{1b699ff1-58e8-465f-b3d7-0ab8c01912bd}</UniqueIdentifier>
     </Filter>
@@ -51,15 +48,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Title\Title.h">
-      <Filter>Title</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title\TitleConst.h">
-      <Filter>Title</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title\TitleEf.h">
-      <Filter>Title</Filter>
-    </ClInclude>
     <ClInclude Include="Source\FtgMain\Fighting.h">
       <Filter>FtgMain</Filter>
     </ClInclude>
@@ -221,12 +209,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Title\TitleEf.cpp">
-      <Filter>Title</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title\Title.cpp">
-      <Filter>Title</Filter>
-    </ClCompile>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
       <Filter>FtgMain</Filter>
     </ClCompile>
