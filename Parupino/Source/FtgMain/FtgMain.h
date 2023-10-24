@@ -21,15 +21,23 @@ namespace GAME
 {
 	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
+		//遷移先シーン
+//		P_Scene			m_scene;
+//		P_GameScene		m_gameScene;
+
+		//===========================================================
+		//遷移先シーンポインタ
+		//@info	thisを自身に保存すると循環参照となるのでweak_ptrを用いる
+		WP_GameScene		mwp_This;
+		P_GameScene			mp_Transit;		//遷移可能な次のシーン
+
+		//===========================================================
+
 		//戦闘
 		P_FTG			m_fighting;
 
 		//ポーズメニュ
 		P_PauseMenu		m_pauseMenu;
-
-		//遷移先シーン
-		P_Scene			m_scene;
-		P_GameScene		m_gameScene;
 
 	public:
 		FtgMain ();

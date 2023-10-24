@@ -8,7 +8,6 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
-//#include "../Title/Title.h"
 #include "../Title_Intro/Title_Intro.h"
 
 
@@ -19,19 +18,15 @@ namespace GAME
 {
 	FtgMain::FtgMain ()
 	{
-#if 0
-
 		//戦闘
 		m_fighting = make_shared < Fighting > ();
 		AddpTask ( m_fighting );
 
-#endif // 0
 		//ポーズメニュ
 		m_pauseMenu = make_shared < PauseMenu > ();
 		AddpTask ( m_pauseMenu );
 
 		//@info コンストラクタでshared_from_this()を用いない
-
 	}
 
 	FtgMain::~FtgMain ()
@@ -40,51 +35,48 @@ namespace GAME
 
 	void FtgMain::Load ()
 	{
+		//Transit用にthisを保存
+		mwp_This = shared_from_this ();
 
-//		m_scene = shared_from_this ();
-		m_gameScene = shared_from_this ();
-
-#if 0
+		//Menu用にthisを保存
 		m_pauseMenu->SetwpParent ( shared_from_this () );
-
-#endif // 0
 
 		Scene::Load ();
 	}
 
 	void FtgMain::ParamInit ()
 	{
-#if 0
-
 		m_fighting->ParamInit ( GetpParam () );
-
-#endif // 0
 	}
 
 
 	void FtgMain::Move ()
 	{
-#if 0
+		//メニュポーズ中
+		if ( m_pauseMenu->GetActive () )
+		{
+			//メニュポーズ解除
+			bool bEsc = ( WND_UTL::AscKey ( VK_ESCAPE ) );
+			bool bMenuBtn = ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) );
+			if ( bEsc || bMenuBtn )
+			{
+				m_pauseMenu->Off ();
+			}
+			else
+			{
+				m_pauseMenu->Move ();
+				return;
+			}
+		}
+
 		//メニュポーズ開始
-		if ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) )
+		bool bEsc = ( WND_UTL::AscKey ( VK_ESCAPE ) );
+		bool bMenuBtn = ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) );
+		if ( bEsc || bMenuBtn )
 		{
 			m_pauseMenu->On ();
 		}
 
-		//メニュポーズ中
-		if ( m_pauseMenu->GetActive () )
-		{
-			m_pauseMenu->Move ();
-		}
-
-
-		//通常動作
-//		Scene::Move ();
-
-		//描画に必要なMove()はGRPLSTで行う
-
-		m_fighting->Move ();	//個別で手動
-#endif // 0
 		Scene::Move ();
 	}
 
@@ -92,21 +84,14 @@ namespace GAME
 	//状態遷移
 	P_GameScene FtgMain::Transit ()
 	{
-#if 0
-
-		//ESCで戻る
-		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
+		//他のシーンが確保されたなら遷移する
+		if ( mp_Transit.use_count () != 0 )
 		{
-			SOUND->Stop ( BGM_Main );
-			return make_shared < Title > ();
+			return mp_Transit;
 		}
 
-#endif // 0
-
 		//通常時
-//		return shared_from_this ();
-//		return m_scene;
-		return m_gameScene;
+		return mwp_This.lock();
 	}
 	
 
@@ -114,21 +99,14 @@ namespace GAME
 	void FtgMain::Transit_Title ()
 	{
 		GRPLST_CLEAR ();
-//		P_Scene&& p = make_shared < Title > ();
-
-//		m_gameScene = make_shared < Title > ();
-		m_gameScene = make_shared < Title_Intro > ();
-
-//		m_scene = p;
-//		m_scene = make_shared < Title > ();
+		mp_Transit = make_shared < Title_Intro > ();
 		GRPLST_LOAD ();
-//		GRPLST_INIT ();
 	}
 
 	//メニュを消してゲームに戻る
 	void FtgMain::Resume_Fighting ()
 	{
-//		m_pauseMenu->Off ();
+		m_pauseMenu->Off ();
 	}
 
 }	//namespace GAME

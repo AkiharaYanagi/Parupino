@@ -21,16 +21,16 @@ namespace GAME
 	{
 		P_GrpDemo pGrp = make_shared < GrpDemo > ();
 		pGrp->AddTexture ( txName );
-		AddpTask ( pGrp );
-		GRPLST_INSERT_MAIN ( pGrp );
 
 		pGrp->SetPos ( VEC2 ( 128, 400 ) );
 		pGrp->SetScalingCenter ( VEC2 ( 512, 128 ) );
 		pGrp->SetStartScaling ( VEC2 ( 1.3f, 1.3f ) );
 		pGrp->SetSecondVel ( VEC2 ( -0.001f, -0.001f ) );
-		pGrp->SetZ ( Z_SYS );
+		pGrp->SetZ ( Z_SYS );	//SetZ‚ÍGRPLST_INSERT()‚ÌŒã‚Å‚Ís‚í‚È‚¢(ƒŠƒXƒg‚ª•ö‚ê‚é)
 		pGrp->SetValid ( F );
 
+		AddpTask ( pGrp );
+		GRPLST_INSERT_MAIN ( pGrp );
 		return pGrp;
 	}
 

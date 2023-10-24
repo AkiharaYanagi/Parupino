@@ -76,7 +76,7 @@ namespace GAME
 			aryAct [ iAct ]->SetName ( m_utl.LoadText ( buf, pos ) );
 
 
-			TRACE_F ( _T ( "LoadCharaBin: %s\n" ), pAct->GetName ().c_str () );
+//			TRACE_F ( _T ( "LoadCharaBin: %s\n" ), pAct->GetName ().c_str () );
 //			TRACE_F ( _T ( "LoadCharaBin: %d\n" ), iAct );
 
 

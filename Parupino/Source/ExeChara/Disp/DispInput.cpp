@@ -48,11 +48,10 @@ namespace GAME
 		//ƒL[“ü—Í
 		m_grp = make_shared < GrpAcv > ();
 		m_grp->AddTexture ( _T ( "10_10_white.png" ) );
-		AddpTask ( m_grp );
-		GRPLST_INSERT_MAIN ( m_grp );
-
 		m_grp->SetZ ( Z_SYS - 0.01f );
 		m_grp->ClearObject ();
+		AddpTask ( m_grp );
+		GRPLST_INSERT_MAIN ( m_grp );
 
 		//-----------------------------------------------------
 		//‹éŒ`ŠÇ— ( 8í—Ş * 60[FPS] )
