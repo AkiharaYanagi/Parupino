@@ -50,7 +50,7 @@ namespace ScriptEditor
 
 			//アクションリスト
 			Ctrl_SqcList.CTRL_SQC act = Ctrl_SqcList.CTRL_SQC.ACTION;
-			ctrl_SqcList_Act.SetEnviroment ( act, ()=>new Action(), stgs );
+			ctrl_SqcList_Act.SetEnviroment ( act, stgs );
 
 
 			//編集の指定 ビヘイビア(:コンペンド)
@@ -62,7 +62,7 @@ namespace ScriptEditor
 
 			//effectリスト
 			Ctrl_SqcList.CTRL_SQC efc = Ctrl_SqcList.CTRL_SQC.EFFECT;
-			ctrl_SqcList_Efc.SetEnviroment ( efc, ()=>new Effect(), stgs );
+			ctrl_SqcList_Efc.SetEnviroment ( efc, stgs );
 
 
 			//編集の指定 ガーニッシュ(:コンペンド)
