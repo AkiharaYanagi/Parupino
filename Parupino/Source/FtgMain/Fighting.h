@@ -53,6 +53,8 @@ namespace GAME
 
 		void ParamInit ( P_Param pParam );
 
+		bool IsEnd () const { return m_demoActor->IsEnd (); }
+
 	private:
 		void Pause ();
 

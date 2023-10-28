@@ -27,6 +27,10 @@ namespace GAME
 		//内部設定
 		MUTCH_MODE			m_mutchMode = MODE_PLAYER_PLAYER;
 
+		//リザルト用
+		PLAYER_ID		m_winner;	//勝者
+		int				m_n_act_1p;	//アクション回数
+		int				m_n_act_2p;	//アクション回数
 
 	public:
 		Param ();
@@ -40,10 +44,20 @@ namespace GAME
 		void SetMutchMode ( PLAYER_MODE mode1p, PLAYER_MODE mode2p );
 		MUTCH_MODE GetMutchMode () const { return m_mutchMode; }
 
-
 		PLAYER_MODE GetPlayerMode ( PLAYER_ID id ) const;
 
 		void SetRandomChara ();
+
+
+		//リザルト用
+		void SetWinner ( PLAYER_ID plr ) { m_winner = plr; }
+		PLAYER_ID GetWinner ( PLAYER_ID plr ) const { return m_winner; }
+
+		void SetN_Act1p ( int n ) { m_n_act_1p = n; }
+		int GetN_Act1p () const { return m_n_act_1p; }
+
+		void SetN_Act2p ( int n ) { m_n_act_2p = n; }
+		int GetN_Act2p () const { return m_n_act_2p; }
 	};
 
 	using P_Param = shared_ptr < Param >;

@@ -58,9 +58,11 @@ namespace GAME
 			return CHARA_NAME_NUM;
 		}
 
+#if 0
 		//切替
 		void SetDemo ( bool b ) { m_startMode = b ? START_DEMO : START_TITLE; }
 		void SetTraining ( bool b ) { m_startMode = b ? START_TRAINING : START_TITLE; }
+#endif // 0
 
 		//初期値
 		void	SetDefault ();

@@ -50,8 +50,18 @@ namespace GAME
 
 	void MutualChara::ParamInit ( P_Param pParam )
 	{
+		m_pParam = pParam;
+
 		m_exeChara1->ParamInit ( pParam );
 		m_exeChara2->ParamInit ( pParam );
+	}
+
+	void MutualChara::Init ()
+	{
+		m_pParam->SetN_Act1p ( 0 );
+		m_pParam->SetN_Act2p ( 0 );
+
+		TASK_VEC::Init ();
 	}
 
 
@@ -90,6 +100,10 @@ namespace GAME
 
 		//グラフィック共通
 		Grp ();
+
+		//記録
+		m_pParam->SetN_Act1p ( m_exeChara1->GetBtlParam ().GetNActTrs () );
+		m_pParam->SetN_Act2p ( m_exeChara2->GetBtlParam ().GetNActTrs () );
 	}
 	//■#########################################################
 

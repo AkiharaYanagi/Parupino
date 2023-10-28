@@ -155,12 +155,6 @@
     <Compile Include="Source\FormSub\EditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormSub\FormAction\FormAction.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\FormSub\FormAction\FormAction.Designer.cs">
-      <DependentUpon>FormAction.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -221,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\FormSub\FormAction\FormAction.resx">
-      <DependentUpon>FormAction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.resx">
       <DependentUpon>Ctrl_EfGnrt.cs</DependentUpon>

@@ -9,6 +9,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
 #include "../Title_Intro/Title_Intro.h"
+#include "../Result/Result.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -78,6 +79,12 @@ namespace GAME
 		}
 
 		Scene::Move ();
+
+		//終了チェック
+		if ( m_fighting->IsEnd () )
+		{
+			Transit_Result ();
+		}
 	}
 
 
@@ -107,6 +114,14 @@ namespace GAME
 	void FtgMain::Resume_Fighting ()
 	{
 		m_pauseMenu->Off ();
+	}
+
+	//[シーン遷移] リザルト移行
+	void FtgMain::Transit_Result ()
+	{
+		GRPLST_CLEAR ();
+		mp_Transit = make_shared < Result > ();
+		GRPLST_LOAD ();
 	}
 
 }	//namespace GAME

@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "FtgDemo.h"
-#include <iomanip>
+#include <iomanip>	//std::setw(), std::setfill() など
 
 
 //-------------------------------------------------------------------------------------------------
@@ -165,9 +165,13 @@ namespace GAME
 	{
 		if ( ! m_grpDown->GetValid () )
 		{
+#if 0
+			//新規開始
 			GetpMutualChara ()->StartFighting ();
 //			GetpMutualChara ()->SetMain ();
 			GetwpFtgDemoActor ().lock ()->Change_Down_To_Greeting ();
+#endif // 0
+			GetwpFtgDemoActor ().lock ()->End_Down_To_Result ();
 		}
 	}
 
@@ -180,6 +184,7 @@ namespace GAME
 
 	//=====================================================
 	FtgDemoActor::FtgDemoActor ()
+		: m_bEnd ( F )
 	{
 		//ステート
 		m_Greeting = make_shared < FTG_DM_Greeting > ();
@@ -262,6 +267,11 @@ namespace GAME
 		GetpMutualChara ()->StartGreeting ();
 		m_Greeting->Start ();
 		mp_FtgDemo = m_Greeting;
+	}
+
+	void FtgDemoActor::End_Down_To_Result ()
+	{
+		m_bEnd = T;
 	}
 
 

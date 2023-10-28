@@ -15,11 +15,11 @@ namespace ScriptEditor
 		//--------------------------------------------------------------------
 		private void BtnFmAction_Click ( object sender, EventArgs e )
 		{
-			FormAction.Inst.Active ();
+//			FormAction.Inst.Active ();
 		}
 		private void Btn_HideAction_Click ( object sender, EventArgs e )
 		{
-			FormAction.Inst.Hidden ();
+//			FormAction.Inst.Hidden ();
 		}
 		//--------------------------------------------------------------------
 		private void BtnScriptList_Click ( object sender, EventArgs e )

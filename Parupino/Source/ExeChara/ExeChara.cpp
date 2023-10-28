@@ -262,6 +262,9 @@ namespace GAME
 			m_actionID = transitID;	
 			TransitScript ();
 
+			//Œv‘ª
+			m_btlPrm.AddNActTrs ( 1 );
+
 			//I—¹
 			return;
 		}

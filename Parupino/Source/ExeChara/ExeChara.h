@@ -94,7 +94,7 @@ namespace GAME
 		void Reset ();
 		void _Reset ();	//復旧時
 
-		//------------------------------------------------------------
+		//===========================================================
 		//******************************
 		// 毎フレーム スクリプト処理一連
 		//******************************
@@ -103,20 +103,16 @@ namespace GAME
 		void RectMove ();			//	ぶつかり後、判定枠を設定
 		//MutualChara::Decision ();		//	相互判定 (攻撃枠、ヒット枠)
 		void PostScriptMove ();			//	スクリプト後処理
-		//------------------------------------------------------------
+		//===========================================================
 
+		//------------------------------------------------------------
 		//相手を設定
 		void SetpOther ( WP_ExeChara p ) { m_pOther = p; /*m_cpuInput.SetpExeCharaOther ( p );*/ }
 
-
-		//パラメータ
-
-
 		//------------------------------------------------------------
 
+		//パラメータ
 		//@todo スクリプトの持つ　ScriptParam_Battle と ExeCharaの持つ実効値 BtlPrm の整理
-
-
 
 		BtlParam GetBtlPrm () const { return m_btlPrm; }
 
@@ -162,6 +158,8 @@ namespace GAME
 
 		//---------------------------------------------
 		//各値取得
+		BtlParam GetBtlParam () const { return m_btlPrm; };
+
 		CHARA_NAME GetCharaName () const { return m_name; }
 		int GetLife () const { return m_btlPrm.GetLife (); }		//ライフ取得
 		ACTION_POSTURE GetPosture () const { return m_pAction->GetPosture (); }

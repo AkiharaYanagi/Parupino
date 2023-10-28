@@ -21,10 +21,6 @@ namespace GAME
 {
 	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
-		//遷移先シーン
-//		P_Scene			m_scene;
-//		P_GameScene		m_gameScene;
-
 		//===========================================================
 		//遷移先シーンポインタ
 		//@info	thisを自身に保存すると循環参照となるのでweak_ptrを用いる
@@ -52,6 +48,7 @@ namespace GAME
 
 		void Transit_Title ();
 		void Resume_Fighting ();
+		void Transit_Result ();
 	};
 
 	using P_FtgMain = shared_ptr < FtgMain >;

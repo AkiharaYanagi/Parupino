@@ -18,7 +18,7 @@ namespace ScriptEditor
 		private void LoadSubForm ()
 		{
 			//サブフォーム一覧に登録
-			L_EditorForm.Add ( FormAction.Inst );
+//			L_EditorForm.Add ( FormAction.Inst );
 			L_EditorForm.Add ( Form_ScriptList.Inst );
 			L_EditorForm.Add ( FormScript.Inst );
 			L_EditorForm.Add ( FormImage.Inst );
@@ -78,7 +78,7 @@ namespace ScriptEditor
 
 		public void HideSubForms ()
 		{
-			FormAction.Inst.Hide ();
+//			FormAction.Inst.Hide ();
 			Form_ScriptList.Inst.Hide ();
 			FormScript.Inst.Hide ();
 			FormEfGnrt.Inst.Hide ();
@@ -93,7 +93,7 @@ namespace ScriptEditor
 		public void CloseSubForms ()
 		{
 			//モーダルフォームで開いた子フォームの関連を切る
-			FormAction.Inst.Owner = null;
+//			FormAction.Inst.Owner = null;
 			FormScript.Inst.Owner = null;
 		}
 

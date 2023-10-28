@@ -171,6 +171,9 @@ namespace GAME
 		//共通パラメータ
 		P_PRM_FTG_DEMO		mp_Param;
 
+		//終了フラグ
+		bool				m_bEnd;
+
 	public:
 		FtgDemoActor ();
 
@@ -186,6 +189,9 @@ namespace GAME
 		void Change_GetReady_To_Attack ();
 		void Change_Main_To_Down ();
 		void Change_Down_To_Greeting ();
+		
+		void End_Down_To_Result ();
+		bool IsEnd () const { return m_bEnd; }
 
 	private:
 		P_MutualChara GetpMutualChara () const { return mp_Param->GetpMutualChara (); }

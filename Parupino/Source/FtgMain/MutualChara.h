@@ -46,12 +46,16 @@ namespace GAME
 		//判定クラス
 		P_Decision	m_decision;
 
+		//シーン共有パラメータ
+		P_Param		m_pParam;
+
 	public:
 		MutualChara ();
 		MutualChara ( const MutualChara & rhs ) = delete;
 		~MutualChara ();
 
 		void ParamInit ( P_Param pParam );
+		void Init ();
 
 		//スクリプトの毎フレーム処理
 		void Conduct ();
