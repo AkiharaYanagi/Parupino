@@ -19,13 +19,21 @@
 namespace GAME
 {
 	//ヒットエフェクトクラス
-	class EfHit : public GrpEf
+//	class EfHit : public GrpEf
+	class EfHit : public GrpAcv
 	{
+		int			m_count;
+		static const float		OMEGA;
+		VEC2	m_tx_rev;		//テクスチャの大きさによる表示補正位置
+		VEC2	m_center;		//ゲーム位置におけるグラフィック中心位置
+		VEC2	m_dispBase;		//ディスプレイ補正位置
+
 	public:
 		EfHit ();
 		EfHit ( const EfHit & rhs ) = delete;
 		~EfHit ();
 
+		void TxLoad ();
 		void Move ();
 		void On ( VEC2 center );
 	};
