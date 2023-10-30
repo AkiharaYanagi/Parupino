@@ -204,6 +204,7 @@
     <ClInclude Include="Source\Introduction\Introduction.h" />
     <ClInclude Include="Source\Result\Result.h" />
     <ClInclude Include="Source\Title_Intro\Title_Cursor.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Explain.h" />
     <ClInclude Include="Source\Title_Intro\Title_Intro.h" />
     <ClInclude Include="Source\Title_Intro\Title_Menu.h" />
     <ClInclude Include="Source\Title_Intro\Title_MenuActor.h" />
@@ -254,6 +255,7 @@
     <ClCompile Include="Source\Introduction\Introduction.cpp" />
     <ClCompile Include="Source\Result\Result.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Cursor.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Explain.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Intro.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Menu.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_MenuActor.cpp" />
