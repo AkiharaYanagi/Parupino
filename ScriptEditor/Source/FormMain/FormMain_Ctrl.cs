@@ -23,6 +23,7 @@ namespace ScriptEditor
 		//サブフォーム用コントロール 実体
 		private _Ctrl_Script ctrl_Scp = new _Ctrl_Script ();
 		private Ctrl_AllRect ctrl_Rct = new Ctrl_AllRect ();
+		private Ctrl_Scp_Route ctrl_scpRut = new Ctrl_Scp_Route ();
 
 		//-------------------------------------------------------
 
@@ -41,6 +42,7 @@ namespace ScriptEditor
 
 			All_Ctrl.Inst.Scp = ctrl_Scp;
 			All_Ctrl.Inst.Rct = ctrl_Rct;
+			All_Ctrl.Inst.ScpRut = ctrl_scpRut;
 		}
 
 		public void SetEnvironment ()
@@ -56,9 +58,8 @@ namespace ScriptEditor
 			//編集の指定 ビヘイビア(:コンペンド)
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			ctrl_cmpd_bhv.SetEnviron ( eb );
+			ctrl_scpRut.SetEnvironment ( eb );
 
-			//アクションのみ
-//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );
 
 			//effectリスト
 			Ctrl_SqcList.CTRL_SQC efc = Ctrl_SqcList.CTRL_SQC.EFFECT;
@@ -78,7 +79,7 @@ namespace ScriptEditor
 			//サブフォームにおける環境設定
 			FormScript.Inst.SetCtrl ( ctrl_Scp );
 			FormRect2.Inst.SetCtrl ( ctrl_Rct );
-
+			FormRoute.Inst.SetCtrl ( ctrl_scpRut );
 		}
 	}
 }

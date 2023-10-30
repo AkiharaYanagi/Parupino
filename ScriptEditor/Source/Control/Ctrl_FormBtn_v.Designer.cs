@@ -48,6 +48,7 @@
 			// 
 			// Btn_Preview
 			// 
+			this.Btn_Preview.Enabled = false;
 			this.Btn_Preview.Location = new System.Drawing.Point(30, 262);
 			this.Btn_Preview.Name = "Btn_Preview";
 			this.Btn_Preview.Size = new System.Drawing.Size(99, 31);
@@ -200,6 +201,7 @@
 			// 
 			// Btn_HidePreview
 			// 
+			this.Btn_HidePreview.Enabled = false;
 			this.Btn_HidePreview.Location = new System.Drawing.Point(3, 262);
 			this.Btn_HidePreview.Name = "Btn_HidePreview";
 			this.Btn_HidePreview.Size = new System.Drawing.Size(21, 31);

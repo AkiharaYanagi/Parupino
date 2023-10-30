@@ -78,11 +78,11 @@ namespace ScriptEditor
 		//--------------------------------------------------------------------
 		private void Btn_Preview_Click ( object sender, EventArgs e )
 		{
-			FormPreview.Inst.Active ();
+//			FormPreview.Inst.Active ();
 		}
 		private void Btn_HidePreview_Click ( object sender, EventArgs e )
 		{
-			FormPreview.Inst.Hidden ();
+//			FormPreview.Inst.Hidden ();
 		}
 		//--------------------------------------------------------------------
 	}

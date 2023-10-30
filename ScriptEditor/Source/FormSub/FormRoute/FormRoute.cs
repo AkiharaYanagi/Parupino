@@ -8,11 +8,14 @@ namespace ScriptEditor
 {
 	public partial class FormRoute : SubForm_Compend
 	{
+#if false
 		//コントロール(ルート)
 		EditListbox < TName > EL_Route = new EditListbox < TName > ();
 
 		//チェック用ルートリスト
 		private BindingDictionary < Route > BD_Route = new BindingDictionary<Route> ();
+#endif
+
 
 		//---------------------------------------------------------------------
 		//シングルトン実体
@@ -25,7 +28,8 @@ namespace ScriptEditor
 			base.InitPt = new Point ( 0, 0 );
 			base.LoadObject ();
 
-			Cb_Route.DisplayMember = "Name";
+
+#if false
 
 			//==============================================================
 			//エディットリストボックスの設定
@@ -71,14 +75,27 @@ namespace ScriptEditor
 			};
 			//==============================================================
 
+			Cb_Route.DisplayMember = "Name";
 			Lb_Copy.DisplayMember = "Name";
+#endif
 		}
 
 		//---------------------------------------------------------------------
+		//コントロール
+		private Ctrl_Scp_Route Ctrl_Scp_Route = new Ctrl_Scp_Route ();	//仮オブジェクト
+
+		//FormMainで実体を確保し、設置する
+		public void SetCtrl ( Ctrl_Scp_Route ctrl )
+		{
+			Ctrl_Scp_Route = ctrl;
+			this.Controls.Add ( Ctrl_Scp_Route );
+		}
+
 
 		//データ設定
 		public void SetCharaData ( Chara ch )
 		{
+#if false
 			//コンボボックスに登録
 			Cb_Route.DataSource = ch.BD_Route.GetBindingList ();
 			Cb_Route.DisplayMember = "Name";
@@ -86,6 +103,8 @@ namespace ScriptEditor
 
 			//チェック用保存
 			BD_Route = ch.BD_Route;
+#endif
+			Ctrl_Scp_Route.SetCharaData ( ch );
 		}
 
 		//環境設定
@@ -96,6 +115,14 @@ namespace ScriptEditor
 		}
 #endif
 
+		//コンペンド編集の切り替え
+		public override void SetEditCompend ( EditCompend ec )
+		{
+			Ctrl_Scp_Route.SetEnvironment ( ec );
+			base.SetEditCompend ( ec );
+		}
+
+#if false
 		//関連付け
 		public Script Script { get; set; } = new Script ();
 		public void Assosiate ( Script scp )
@@ -145,5 +172,6 @@ namespace ScriptEditor
 		{
 			EditCompend.DoAllScript ( scp=>SetBD_Route ( scp ) );
 		}
+#endif
 	}
 }

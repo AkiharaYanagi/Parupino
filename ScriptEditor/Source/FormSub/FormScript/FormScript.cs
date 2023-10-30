@@ -38,7 +38,7 @@ namespace ScriptEditor
 		//コンペンド編集の切り替え
 		public override void SetEditCompend ( EditCompend ec )
 		{
-			ctrl_Script1.SetEnvironment ( ec, () => { } );
+			ctrl_Script1.SetEnvironment ( ec );
 			base.SetEditCompend ( ec );
 		}
 

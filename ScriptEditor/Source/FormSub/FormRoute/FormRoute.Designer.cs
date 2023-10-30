@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent ()
 		{
+#if false
 			this.Cb_Route = new System.Windows.Forms.ComboBox();
 			this.Btn_PasteGroup = new System.Windows.Forms.Button();
 			this.Btn_PastAll = new System.Windows.Forms.Button();
@@ -36,7 +37,9 @@
 			this.Btn_Copy = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.groupBox1.SuspendLayout();
+#endif
 			this.SuspendLayout();
+#if false
 			// 
 			// Cb_Route
 			// 
@@ -107,18 +110,21 @@
 			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "複製";
+#endif
 			// 
 			// FormRoute
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(522, 528);
+#if false
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.Cb_Route);
+			this.groupBox1.ResumeLayout(false);
+#endif
 			this.Name = "FormRoute";
 			this.Text = "FormRoute";
-			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -126,6 +132,7 @@
 
 		#endregion
 
+#if false
 		private System.Windows.Forms.ComboBox Cb_Route;
 		private System.Windows.Forms.Button Btn_PasteGroup;
 		private System.Windows.Forms.Button Btn_PastAll;
@@ -133,5 +140,6 @@
 		private System.Windows.Forms.ListBox Lb_Copy;
 		private System.Windows.Forms.Button Btn_Copy;
 		private System.Windows.Forms.GroupBox groupBox1;
+#endif
 	}
 }

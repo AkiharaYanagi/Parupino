@@ -207,6 +207,9 @@
     <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h">
       <Filter>Title_Intro</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Title_Intro\Title_Cursor.h">
+      <Filter>Title_Intro</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
@@ -348,6 +351,9 @@
       <Filter>Title_Intro</Filter>
     </ClCompile>
     <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp">
+      <Filter>Title_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title_Intro\Title_Cursor.cpp">
       <Filter>Title_Intro</Filter>
     </ClCompile>
   </ItemGroup>
