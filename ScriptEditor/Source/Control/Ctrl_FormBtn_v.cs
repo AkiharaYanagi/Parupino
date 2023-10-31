@@ -60,11 +60,13 @@ namespace ScriptEditor
 		//--------------------------------------------------------------------
 		private void Btn_EfGnrt_Click ( object sender, EventArgs e )
 		{
-			FormEfGnrt.Inst.Active ();
+//			FormEfGnrt.Inst.Active ();
+			_FormEfGnrt.Inst.Active ();
 		}
 		private void Btn_HideEfGnrt_Click ( object sender, EventArgs e )
 		{
-			FormEfGnrt.Inst.Hidden ();
+//			FormEfGnrt.Inst.Hidden ();
+			_FormEfGnrt.Inst.Hidden ();
 		}
 		//--------------------------------------------------------------------
 		private void Btn_Route_Click ( object sender, EventArgs e )

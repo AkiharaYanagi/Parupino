@@ -50,7 +50,7 @@ namespace ScriptEditor
 			All_Ctrl.Inst.SetCharaData ( ch );
 
 			//----------------------------------------------
-			FormEfGnrt.Inst.SetCharaData ( ch );	// [エフェクトジェネレートフォーム]
+			_FormEfGnrt.Inst.SetCharaData ( ch );	// [エフェクトジェネレートフォーム]
 			FormRoute.Inst.SetCharaData ( ch );		//フォーム ルート
 
 			//----------------------------------------------

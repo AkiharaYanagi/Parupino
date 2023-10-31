@@ -19,12 +19,6 @@ namespace ScriptEditor
 		}
 			
 		//---------------------------------------------------------------------
-		
-
-
-		//@todo Ctrlでまとめる
-
-
 
 		//対象
 		private Script Scp = null;

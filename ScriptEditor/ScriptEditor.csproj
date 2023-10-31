@@ -121,7 +121,6 @@
     <Compile Include="Source\FormMain\FormMain_SubForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormSub\FormEffectGenerate\ControlsEfGnrt.cs" />
     <Compile Include="Source\FormMain\FormMain_Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,11 +154,8 @@
     <Compile Include="Source\FormSub\EditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.Designer.cs">
-      <DependentUpon>Ctrl_EfGnrt.cs</DependentUpon>
+    <Compile Include="Source\FormSub\FormEfGnrt\_FormEfGnrt.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormSub\FormRect\FormRect2.cs">
       <SubType>Form</SubType>
@@ -172,12 +168,6 @@
     </Compile>
     <Compile Include="Source\FormSub\FormRoute\FormRoute.Designer.cs">
       <DependentUpon>FormRoute.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.Designer.cs">
-      <DependentUpon>FormEfGnrt.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\FormSub\FormPreview\FormPreview.cs">
       <SubType>Form</SubType>
@@ -216,17 +206,14 @@
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source\FormSub\FormEffectGenerate\Ctrl_EfGnrt.resx">
-      <DependentUpon>Ctrl_EfGnrt.cs</DependentUpon>
+    <EmbeddedResource Include="Source\FormSub\FormEfGnrt\_FormEfGnrt.resx">
+      <DependentUpon>_FormEfGnrt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormRect\FormRect2.resx">
       <DependentUpon>FormRect2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormRoute\FormRoute.resx">
       <DependentUpon>FormRoute.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\FormSub\FormEffectGenerate\FormEfGnrt.resx">
-      <DependentUpon>FormEfGnrt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormSub\FormImage\Form_Image.resx">
       <DependentUpon>Form_Image.cs</DependentUpon>

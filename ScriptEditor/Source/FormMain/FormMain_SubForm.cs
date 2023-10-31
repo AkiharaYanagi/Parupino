@@ -24,7 +24,8 @@ namespace ScriptEditor
 			L_EditorForm.Add ( FormImage.Inst );
 			L_EditorForm.Add ( FormRoute.Inst );
 			L_EditorForm.Add ( FormRect2.Inst );
-			L_EditorForm.Add ( FormEfGnrt.Inst );
+//			L_EditorForm.Add ( FormEfGnrt.Inst );
+			L_EditorForm.Add ( _FormEfGnrt.Inst );
 			L_EditorForm.Add ( FormPreview.Inst );
 
 			//親を記録
@@ -81,9 +82,9 @@ namespace ScriptEditor
 //			FormAction.Inst.Hide ();
 			Form_ScriptList.Inst.Hide ();
 			FormScript.Inst.Hide ();
-			FormEfGnrt.Inst.Hide ();
 			FormRect2.Inst.Hide ();
 			FormRoute.Inst.Hide ();
+			_FormEfGnrt.Inst.Hide ();
 			FormPreview.Inst.Hide ();
 		}
 
@@ -94,7 +95,7 @@ namespace ScriptEditor
 		{
 			//モーダルフォームで開いた子フォームの関連を切る
 //			FormAction.Inst.Owner = null;
-			FormScript.Inst.Owner = null;
+//			FormScript.Inst.Owner = null;
 		}
 
 	}
