@@ -208,6 +208,7 @@
     <ClInclude Include="Source\Title_Intro\Title_Intro.h" />
     <ClInclude Include="Source\Title_Intro\Title_Menu.h" />
     <ClInclude Include="Source\Title_Intro\Title_MenuActor.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Menu_Start.h" />
     <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h" />
     <ClInclude Include="Source\Training\Training.h" />
   </ItemGroup>
@@ -259,6 +260,7 @@
     <ClCompile Include="Source\Title_Intro\Title_Intro.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Menu.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_MenuActor.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Menu_Start.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp" />
     <ClCompile Include="Source\Training\Training.cpp" />
   </ItemGroup>

@@ -213,6 +213,9 @@
     <ClInclude Include="Source\Title_Intro\Title_Explain.h">
       <Filter>Title_Intro</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Title_Intro\Title_Menu_Start.h">
+      <Filter>Title_Intro</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
@@ -360,6 +363,9 @@
       <Filter>Title_Intro</Filter>
     </ClCompile>
     <ClCompile Include="Source\Title_Intro\Title_Explain.cpp">
+      <Filter>Title_Intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title_Intro\Title_Menu_Start.cpp">
       <Filter>Title_Intro</Filter>
     </ClCompile>
   </ItemGroup>
