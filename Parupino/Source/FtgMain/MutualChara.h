@@ -26,19 +26,25 @@ namespace GAME
 		P_ExeChara		m_exeChara1;
 		P_ExeChara		m_exeChara2;
 
+#if 0
 		//開始ウェイト
 		UINT	m_startTimer;
 		UINT	m_startTime;
 		P_Timer	m_tmrStartWait;
 
+
 		//終了ウェイト
 		UINT	m_endTimer;
 		UINT	m_endTime;
 		P_Timer	m_tmrEndWait;
+#endif // 0
 
-		UINT	m_blackOut;		//暗転
 		UINT	m_scpStop;		//スクリプトからのストップ
 		P_Timer	m_tmrHitstop;		//ヒットストップ
+
+		//暗転ウェイト
+		P_Timer	m_tmrBlackOut;
+		UINT	m_blackOut;		//暗転
 
 		//勝者
 		WINNER	m_winner;

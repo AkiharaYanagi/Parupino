@@ -44,8 +44,8 @@ namespace GAME
 		GRPLST_INSERT_MAIN ( m_gauge_frame );
 
 		//BGタイマ
-		m_bgTimer = make_shared < Timer > ();
-		AddpTask ( m_bgTimer );
+		m_tmrBlackOut = make_shared < Timer > ();
+		AddpTask ( m_tmrBlackOut );
 
 		//------------------------------------------------
 
@@ -178,33 +178,36 @@ namespace GAME
 	//共通グラフィック処理
 	void Fighting::Grp ()
 	{
+		//-------------------------------------------------------
 		UINT blackOut = 0;
 
 		//暗転
-		if ( ! m_bgTimer->IsActive () )
+		if ( ! m_tmrBlackOut->IsActive () )
 		{
-//			blackOut = m_mutualChara->GetBlackOut ();
+			blackOut = m_mutualChara->GetBlackOut ();
 			//初回
 			if ( 0 < blackOut )
 			{
-				m_bgTimer->SetTargetTime ( blackOut );
-				m_bgTimer->Start ();
+				m_tmrBlackOut->SetTargetTime ( blackOut );
+				m_tmrBlackOut->Start ();
 
 				blackOut = 0;
-//				m_mutualChara->SetBlackOut ( 0 );
+				m_mutualChara->SetBlackOut ( 0 );
 
 				m_bg->SetValid ( false );
 				m_bg_blackout->SetValid ( true );
 			}
 		}
 
-		if ( m_bgTimer->IsLast () )
+		//終了
+		if ( m_tmrBlackOut->IsLast () )
 		{
-			m_bgTimer->Stop ();
-			m_bgTimer->Reset ();
+			m_tmrBlackOut->Stop ();
+			m_tmrBlackOut->Reset ();
 			m_bg->SetValid ( true );
 			m_bg_blackout->SetValid ( false );
 		}
+		//-------------------------------------------------------
 
 		//背景位置補正
 		m_bg->SetPos ( G_BASE_POS ().x, (float)BG_POS_Y );
