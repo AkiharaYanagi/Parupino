@@ -15,10 +15,7 @@
 namespace GAME
 {
 	MutualChara::MutualChara ()
-		: 
-		//m_startTimer ( 0 ), m_startTime ( 0 ), m_endTimer ( 0 ), m_endTime ( 0 )
-		//, m_tmrHitstop ( 0 ), m_blackOut ( 0 )
-		m_scpStop ( 0 ), m_blackOut ( 0 )
+		: m_scpStop ( 0 ), m_blackOut ( 0 )
 	{
 		m_decision = make_shared < Decision > ();
 
@@ -44,10 +41,6 @@ namespace GAME
 		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
 		AddpTask ( m_tmrHitstop );
 		m_decision->SetpHitStop ( m_tmrHitstop );
-
-		//暗転ウェイト
-		m_tmrBlackOut = make_shared < Timer > ();
-		AddpTask ( m_tmrBlackOut );
 	}
 
 	MutualChara::~MutualChara ()
@@ -226,19 +219,16 @@ namespace GAME
 	{
 		//---------------------------------------------------
 		//暗転
-		UINT blackout1P = m_exeChara1->GetBlackOut ();
-		UINT blackout2P = m_exeChara2->GetBlackOut ();
-		if ( 0 < blackout1P )
+		UINT bo1 = m_exeChara1->GetBlackOut ();
+		UINT bo2 = m_exeChara2->GetBlackOut ();
+
+		//どちらかが発生したとき
+		if ( 0 < bo1 || 0 < bo2 )
 		{
-			m_blackOut = blackout1P;
+			//大きい方で上書
+			m_blackOut = ( bo2 < bo1 ) ? bo1 : bo2;
 			m_exeChara1->SetBlackOut ( 0 );
-			m_tmrBlackOut->SetTargetTime ( m_blackOut );
-		}
-		if ( 0 < blackout2P )
-		{
-			m_blackOut = blackout2P;
 			m_exeChara2->SetBlackOut ( 0 );
-			m_tmrBlackOut->SetTargetTime ( m_blackOut );
 		}
 
 		//---------------------------------------------------

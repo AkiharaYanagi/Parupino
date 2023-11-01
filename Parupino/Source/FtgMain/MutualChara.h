@@ -26,34 +26,22 @@ namespace GAME
 		P_ExeChara		m_exeChara1;
 		P_ExeChara		m_exeChara2;
 
-#if 0
-		//開始ウェイト
-		UINT	m_startTimer;
-		UINT	m_startTime;
-		P_Timer	m_tmrStartWait;
-
-
-		//終了ウェイト
-		UINT	m_endTimer;
-		UINT	m_endTime;
-		P_Timer	m_tmrEndWait;
-#endif // 0
-
-		UINT	m_scpStop;		//スクリプトからのストップ
-		P_Timer	m_tmrHitstop;		//ヒットストップ
-
-		//暗転ウェイト
-		P_Timer	m_tmrBlackOut;
-		UINT	m_blackOut;		//暗転
-
-		//勝者
-		WINNER	m_winner;
+		//シーン共有パラメータ
+		P_Param		m_pParam;
 
 		//判定クラス
 		P_Decision	m_decision;
 
-		//シーン共有パラメータ
-		P_Param		m_pParam;
+		//-------------------------------------------------
+		//ファイティング：1p2p共通スクリプト処理
+		UINT	m_scpStop;		//スクリプトからのストップ
+		P_Timer	m_tmrHitstop;		//ヒットストップ
+
+		//暗転ウェイト
+		UINT	m_blackOut;		//暗転
+
+		//勝者
+		WINNER	m_winner;
 
 	public:
 		MutualChara ();
@@ -91,7 +79,12 @@ namespace GAME
 		bool CheckZeroLife ();	//格闘終了判定
 
 		UINT GetBlackOut () const { return m_blackOut; };	//暗転
-		void SetBlackOut ( UINT i ) { m_blackOut = i; };
+		void SetBlackOut ( UINT i )
+		{
+			m_blackOut = i;
+			m_exeChara1->SetBlackOut ( i );
+			m_exeChara2->SetBlackOut ( i );
+		};
 
 		UINT GetScpStop () const { return m_scpStop; };	//停止
 		void SetScpStop ( UINT i ) { m_scpStop = i; };

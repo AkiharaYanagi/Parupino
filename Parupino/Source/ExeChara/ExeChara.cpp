@@ -122,6 +122,7 @@ namespace GAME
 
 		//バトルパラメータ
 		m_btlPrm.Init ();
+		SetParamFromScript ();	//スクリプトからパラメータを反映する
 
 		//枠
 		m_charaRect->ResetAllRect ();
@@ -241,6 +242,12 @@ namespace GAME
 		//コマンドが完成していたら
 		if ( NO_COMPLETE != transitID )
 		{
+			tstring tstr = _T("OD1_L");
+			if ( transitID == m_pChara->GetActionID ( tstr ) )
+			{
+				int i = 0;
+			}
+
 			//現在アクションとして最後の処理
 			EndAction ();
 
@@ -264,6 +271,10 @@ namespace GAME
 
 			//計測
 			m_btlPrm.AddNActTrs ( 1 );
+
+			//次フレームのスクリプトを１つ進める
+			//今回フレームは取得済みのm_pScriptを用いる
+			++ m_frame;
 
 			//終了
 			return;
@@ -323,6 +334,9 @@ namespace GAME
 		m_pAction = m_pChara->GetpAction ( m_actionID );
 		m_frame = 0;
 		m_pScript = m_pAction->GetpScript ( m_frame );
+
+		//スクリプトからのパラメータ反映
+		SetParamFromScript ();
 	}
 
 	//スクリプトを遷移させる
@@ -333,6 +347,16 @@ namespace GAME
 		//このフレームでスクリプトを処理するため、移行先アクションとスクリプトを保存
 		m_pAction = m_pChara->GetpAction ( m_actionID );
 		m_pScript = m_pAction->GetpScript ( m_frame );
+
+		//スクリプトからのパラメータ反映
+		SetParamFromScript ();
+	}
+
+	//スクリプトからパラメータを反映する
+	void ExeChara::SetParamFromScript ()
+	{
+		//暗転
+		m_btlPrm.SetBlackOut ( m_pScript->m_prmStaging.BlackOut );
 	}
 
 
@@ -526,6 +550,7 @@ namespace GAME
 		}
 	}
 
+	//====================================================================================
 	//グラフィック更新
 	void ExeChara::UpdateGraphic ()
 	{
@@ -538,9 +563,6 @@ namespace GAME
 		//共通グラフィック
 		if ( ! m_btlPrm.GetTmr_Stop()->IsActive () )
 		{
-			//暗転
-			m_btlPrm.SetBlackOut ( m_pScript->m_prmStaging.BlackOut );
-
 			//スクリプトからの停止
 			m_btlPrm.SetScpStop ( m_pScript->m_prmStaging.Stop );
 		}
@@ -548,6 +570,7 @@ namespace GAME
 		//ゲージ更新
 		m_dispChara->UpdateGauge ( m_btlPrm );
 	}
+	//====================================================================================
 
 	//落下・着地
 	void ExeChara::Landing ()

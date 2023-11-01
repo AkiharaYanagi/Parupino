@@ -25,21 +25,21 @@ namespace GAME
 		P_GrpAcv		m_bg;
 		P_GrpAcv		m_bg_blackout;
 
-		//暗転
-		P_Timer			m_tmrBlackOut;
+		//キャラ相互処理
+		P_MutualChara	m_mutualChara;
 
 		//画面固定システム表示
 		//ゲージ枠
 		P_GrpAcv		m_gauge_frame;
-
-		//キャラ相互処理
-		P_MutualChara	m_mutualChara;
 
 		//=====================================================
 		//デモ
 		P_FtgDemoActor		m_demoActor;
 
 		//=====================================================
+
+		//暗転
+		P_Timer			m_tmrBlackOut;
 
 		//ポーズ
 		P_GrpAcv		m_pause;

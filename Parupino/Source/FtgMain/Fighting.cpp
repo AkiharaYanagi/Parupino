@@ -29,7 +29,7 @@ namespace GAME
 		GRPLST_INSERT_MAIN ( m_bg );
 
 		m_bg_blackout = make_shared < GrpAcv > ();
-		m_bg_blackout->AddTexture ( _T ( "ftgmain_bg_black.png" ) );
+		m_bg_blackout->AddTexture ( _T ( "ftgmain_bg_blackout.png" ) );
 		m_bg_blackout->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
 		m_bg_blackout->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
 		m_bg_blackout->SetValid ( false );
@@ -95,7 +95,7 @@ namespace GAME
 		TASK_LST::Init ();
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 1
+#define DEMO_ON 0
 #if DEMO_ON
 		m_demoActor->StartGreeting ();
 #else
@@ -111,12 +111,29 @@ namespace GAME
 		Pause ();
 
 		//--------------------------
+		if ( m_tmrBlackOut->IsActive () )	//稼働時
+		{
+			//終了
+			if ( m_tmrBlackOut->IsLast () )
+			{
+				m_tmrBlackOut->Clear ();
+
+				m_bg->SetValid ( T );
+				m_bg_blackout->SetValid ( F );
+			}
+		}
+		//--------------------------
 		//デモ分岐
 		m_demoActor->Do ();
 
 		//--------------------------
 		//両者処理
-		m_mutualChara->Conduct ();
+
+		//暗転時は処理しない
+		if ( ! m_tmrBlackOut->IsActive () )
+		{
+			m_mutualChara->Conduct ();
+		}
 
 		//--------------------------
 		//共通グラフィック処理
@@ -179,12 +196,10 @@ namespace GAME
 	void Fighting::Grp ()
 	{
 		//-------------------------------------------------------
-		UINT blackOut = 0;
-
 		//暗転
 		if ( ! m_tmrBlackOut->IsActive () )
 		{
-			blackOut = m_mutualChara->GetBlackOut ();
+			UINT blackOut = m_mutualChara->GetBlackOut ();
 			//初回
 			if ( 0 < blackOut )
 			{
@@ -194,18 +209,9 @@ namespace GAME
 				blackOut = 0;
 				m_mutualChara->SetBlackOut ( 0 );
 
-				m_bg->SetValid ( false );
-				m_bg_blackout->SetValid ( true );
+				m_bg->SetValid ( F );
+				m_bg_blackout->SetValid ( T );
 			}
-		}
-
-		//終了
-		if ( m_tmrBlackOut->IsLast () )
-		{
-			m_tmrBlackOut->Stop ();
-			m_tmrBlackOut->Reset ();
-			m_bg->SetValid ( true );
-			m_bg_blackout->SetValid ( false );
 		}
 		//-------------------------------------------------------
 

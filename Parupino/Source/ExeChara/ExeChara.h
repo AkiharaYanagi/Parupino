@@ -253,6 +253,9 @@ namespace GAME
 
 		void TransitAction ();	// アクション移項
 		void TransitScript ();	//スクリプトを遷移させる
+
+		void SetParamFromScript ();	//スクリプトからパラメータを反映する
+
 		void EndAction ();	//アクション移項時、前アクションの最後の処理
 		void CalcPos ();	// 位置計算		//ぶつかり後、位置の修正
 		void Landing ();	//落下・着地
