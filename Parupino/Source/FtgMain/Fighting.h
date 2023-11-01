@@ -25,7 +25,8 @@ namespace GAME
 		P_GrpAcv		m_bg;
 		P_GrpAcv		m_bg_blackout;
 
-		P_Timer			m_bgTimer;
+		//暗転
+		P_Timer			m_tmrBlackOut;
 
 		//画面固定システム表示
 		//ゲージ枠
