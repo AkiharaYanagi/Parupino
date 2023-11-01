@@ -86,8 +86,10 @@ namespace GAME
 
 	void Fighting::Init ()
 	{
+#if 0
 		SOUND->Stop ( BGM_Main );
 		SOUND->PlayLoop ( BGM_Main );
+#endif // 0
 		m_pause->SetValid ( false );
 
 		TASK_LST::Init ();

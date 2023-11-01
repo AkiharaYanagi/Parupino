@@ -14,7 +14,8 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	const float EfHit::OMEGA = D3DX_PI_HALF / 30;
+	//Šg‘åtan(ƒÖ)—p
+	const float EfHit::OMEGA = D3DX_PI_HALF / ( 30 );
 
 	EfHit::EfHit ()
 		: m_tx_rev ( VEC2 ( 0, 0 ) ), m_center ( VEC2 ( 0, 0 ) ), m_dispBase ( VEC2 ( 0, 0 ) )
@@ -85,6 +86,7 @@ namespace GAME
 		SetScaling ( scale, scale );
 
 		++ m_count;
+//		m_count += 2;
 		if ( OMEGA * m_count >= D3DX_PI_HALF ) { m_count = 0; }
 
 
