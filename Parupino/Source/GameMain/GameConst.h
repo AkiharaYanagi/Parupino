@@ -46,14 +46,11 @@ namespace GAME
 	//SOUND
 	enum SOUND_No
 	{
-		SE00_kane,
-		BGM_Select,
-		BGM_Main,
-		SE_Clang,
-		SE_Hit,
-		SE_cursor_move,
-		SE_Cancel,
-		SE_Guard,
+		BGM_Title,
+		SE_Sys_Select,
+		SE_Sys_Enter,
+		SE_Sys_Cancel,
+		SE_Btl_Clang,
 	};
 
 }

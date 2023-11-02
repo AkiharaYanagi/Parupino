@@ -64,8 +64,10 @@ namespace GAME
 
 	void Training::Init ()
 	{
+#if 0
 		SOUND->Stop ( BGM_Main );
 		SOUND->PlayLoop ( BGM_Main );
+#endif // 0
 		m_pause->SetValid ( false );
 
 		//デモを飛ばしてゲーム開始
@@ -106,7 +108,9 @@ namespace GAME
 		//ESCで戻る
 		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
 		{
+#if 0
 			SOUND->Stop ( BGM_Main );
+#endif // 0
 //			return make_shared < Title > ();
 
 			GRPLST_CLEAR ();
