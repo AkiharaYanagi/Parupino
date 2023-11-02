@@ -100,7 +100,7 @@ namespace GAME
 		//グラフィック共通
 		Grp ();
 
-		//記録
+		//シーン共通パラメータ記録
 		m_pParam->SetN_Act1p ( m_exeChara1->GetBtlParam ().GetNActTrs () );
 		m_pParam->SetN_Act2p ( m_exeChara2->GetBtlParam ().GetNActTrs () );
 	}
@@ -261,7 +261,28 @@ namespace GAME
 		//終了判定
 		bool finish1p = m_exeChara1->IsZeroLife ();
 		bool finish2p = m_exeChara2->IsZeroLife ();
-		return ( finish1p || finish2p );
+
+		if ( finish1p || finish2p )
+		{
+			PLAYER_ID plr = _PLAYER_NUM;
+			if ( finish1p && finish2p )
+			{
+				plr = _PLAYER_NUM;
+			}
+			else if ( ! finish1p && finish2p )
+			{
+				plr = PLAYER_ID_1;
+			}
+			else if ( finish1p && ! finish2p )
+			{
+				plr = PLAYER_ID_2;
+			}
+			//シーン共通パラメータ記録
+			m_pParam->SetWinner ( plr );
+			return T;
+		}
+
+		return F;
 	}
 
 #if 0

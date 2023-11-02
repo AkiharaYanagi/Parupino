@@ -95,7 +95,7 @@ namespace GAME
 		TASK_LST::Init ();
 
 		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 0
+#define DEMO_ON 1
 #if DEMO_ON
 		m_demoActor->StartGreeting ();
 #else

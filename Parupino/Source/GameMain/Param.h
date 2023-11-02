@@ -51,7 +51,7 @@ namespace GAME
 
 		//ƒŠƒUƒ‹ƒg—p
 		void SetWinner ( PLAYER_ID plr ) { m_winner = plr; }
-		PLAYER_ID GetWinner ( PLAYER_ID plr ) const { return m_winner; }
+		PLAYER_ID GetWinner () const { return m_winner; }
 
 		void SetN_Act1p ( int n ) { m_n_act_1p = n; }
 		int GetN_Act1p () const { return m_n_act_1p; }
