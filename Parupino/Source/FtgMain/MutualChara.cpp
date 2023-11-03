@@ -41,6 +41,17 @@ namespace GAME
 		m_tmrHitstop->SetTargetTime ( HITSTOP_TIME );
 		AddpTask ( m_tmrHitstop );
 		m_decision->SetpHitStop ( m_tmrHitstop );
+
+		//デバッグ用枠表示
+#define DISP_RECT	1
+#if DISP_RECT
+		m_exeChara1->OnDispRect ();
+		m_exeChara2->OnDispRect ();
+#else
+		m_exeChara1->OffDispRect ();
+		m_exeChara2->OffDispRect ();
+#endif // DISP_RECT
+
 	}
 
 	MutualChara::~MutualChara ()

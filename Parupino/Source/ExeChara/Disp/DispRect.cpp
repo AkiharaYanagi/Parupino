@@ -24,6 +24,7 @@ namespace GAME
 
 		for ( UINT i = 0; i < NUM_RECT; ++i )
 		{
+#if 0
 			P_PrmRect pCRect = make_shared < PrmRect > ();
 			pCRect->SetAllColor ( RECT_COLOR_C );
 			pCRect->SetZ ( Z_SYS );
@@ -58,6 +59,12 @@ namespace GAME
 			m_pvpGrpORect->push_back ( pORect );
 			AddpTask ( pORect );
 			GRPLST_INSERT_MAIN ( pORect );
+#endif // 0
+			m_pvpGrpCRect->push_back ( Make ( RECT_COLOR_C ) );
+			m_pvpGrpARect->push_back ( Make ( RECT_COLOR_A ) );
+			m_pvpGrpHRect->push_back ( Make ( RECT_COLOR_H ) );
+			m_pvpGrpORect->push_back ( Make ( RECT_COLOR_O ) );
+
 		}
 		InitRect ();
 
@@ -67,6 +74,19 @@ namespace GAME
 		//----------------------------------------------------
 
 		OnRect ();
+	}
+
+	P_PrmRect DispRect::Make ( DWORD clr )
+	{
+		P_PrmRect p = make_shared < PrmRect > ();
+		p->SetAllColor ( clr );
+		p->SetSize ( VEC2 ( 0, 0 ) );
+		p->SetZ ( Z_SYS );
+		p->Load ();
+		p->Move ();
+		AddpTask ( p );
+		GRPLST_INSERT_MAIN ( p );
+		return p;
 	}
 
 	DispRect::~DispRect ()

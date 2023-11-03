@@ -61,6 +61,10 @@ namespace GAME
 		void SetARect ( PV_RECT pvRect ) { SetGrpRect ( m_pvpGrpARect, pvRect ); }
 		void SetHRect ( PV_RECT pvRect ) { SetGrpRect ( m_pvpGrpHRect, pvRect ); }
 		void SetORect ( PV_RECT pvRect ) { SetGrpRect ( m_pvpGrpORect, pvRect ); }
+
+	private:
+		//èâä˙âªóp
+		P_PrmRect Make ( DWORD clr );
 	};
 
 	using P_DispRect = shared_ptr < DispRect >;

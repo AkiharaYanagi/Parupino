@@ -19,6 +19,9 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	class TestDraw : public PrmRect
+	{ public: void Draw () { PrmRect::Draw (); } };
+
 	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
 		//===========================================================
@@ -34,6 +37,13 @@ namespace GAME
 
 		//ポーズメニュ
 		P_PauseMenu		m_pauseMenu;
+
+		//ロード中
+//		P_PrmRect		m_rectLoad;
+		shared_ptr < TestDraw >		m_rectLoad;
+		UINT			m_wait;
+
+		P_GrpStr		m_NowLoading;
 
 	public:
 		FtgMain ();

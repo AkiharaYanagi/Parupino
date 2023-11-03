@@ -51,6 +51,7 @@ namespace GAME
 		SE_Sys_Enter,
 		SE_Sys_Cancel,
 		SE_Btl_Clang,
+		BGM_Intro,
 	};
 
 }

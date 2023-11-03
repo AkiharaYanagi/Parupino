@@ -719,6 +719,8 @@ namespace GAME
 		//ヒット状態を確認 (ヒット状態設定は OnHit(), OnClang() )
 		bool bHit = m_btlPrm.GetHitEst () || m_btlPrm.GetClang ();
 
+#if DEBUG_DISP
+		//デバッグ表示あり
 		if ( m_playerID == PLAYER_ID_1 )
 		{
 			DBGOUT_WND_F ( 4, _T ( "bHit = %d" ), bHit ? 1 : 0 );
@@ -731,6 +733,9 @@ namespace GAME
 			UINT hitnum = m_btlPrm.GetHitNum ();
 			DBGOUT_WND_F ( 7, _T ( "hitnum = %d / %d" ), hitnum, hitmax );
 		}
+#else
+		//デバッグ表示なし
+#endif // DEBUG_DISP
 
 		//--------------------------------------------------
 		//ヒットしていない時(通常時)、攻撃枠を設定して終了
