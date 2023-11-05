@@ -8,6 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
+#include "../GameMain/SoundConst.h"
 #include "../Title_Intro/Title_Intro.h"
 #include "../Result/Result.h"
 
@@ -71,6 +72,9 @@ namespace GAME
 
 		//Menu用にthisを保存
 		m_pauseMenu->SetwpParent ( shared_from_this () );
+
+		//SOUND
+		SOUND->PlayLoop ( BGM_Main );
 
 		Scene::Load ();
 	}
@@ -140,6 +144,9 @@ namespace GAME
 	//[シーン遷移] タイトルに戻る
 	void FtgMain::Transit_Title ()
 	{
+		//SOUND
+		SOUND->Stop ( BGM_Main );
+
 		GRPLST_CLEAR ();
 		mp_Transit = make_shared < Title_Intro > ();
 		GRPLST_LOAD ();
@@ -154,6 +161,9 @@ namespace GAME
 	//[シーン遷移] リザルト移行
 	void FtgMain::Transit_Result ()
 	{
+		//SOUND
+		SOUND->Stop ( BGM_Main );
+
 		GRPLST_CLEAR ();
 		mp_Transit = make_shared < Result > ();
 		GRPLST_LOAD ();

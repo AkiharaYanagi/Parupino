@@ -216,6 +216,13 @@
     <ClInclude Include="Source\Title_Intro\Title_Menu_Start.h">
       <Filter>Title_Intro</Filter>
     </ClInclude>
+    <ClInclude Include="Source\GameMain\SoundConst.h">
+      <Filter>GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Result\Rank.h">
+      <Filter>Result</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
@@ -368,8 +375,17 @@
     <ClCompile Include="Source\Title_Intro\Title_Menu_Start.cpp">
       <Filter>Title_Intro</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Result\Rank.cpp">
+      <Filter>Result</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Parupino.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Products\◆ Game_\Game_Parupino\Grp\prpn.ico" />
   </ItemGroup>
 </Project>

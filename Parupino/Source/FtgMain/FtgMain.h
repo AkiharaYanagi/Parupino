@@ -59,6 +59,11 @@ namespace GAME
 		void Transit_Title ();
 		void Resume_Fighting ();
 		void Transit_Result ();
+
+		//‰Šú‘€ì ƒvƒŒƒCƒ„/CPU Ý’è
+		void Set_1P_vs_2P () { m_fighting->Set_1P_vs_2P (); }
+		void Set_1P_vs_CPU () { m_fighting->Set_1P_vs_CPU (); }
+		void Set_CPU_vs_CPU () { m_fighting->Set_CPU_vs_CPU (); }
 	};
 
 	using P_FtgMain = shared_ptr < FtgMain >;

@@ -75,6 +75,7 @@ namespace GAME
 		bool CheckWinEnd ();	//勝利終了状態判定
 		bool CheckWinner ();	//勝利側判定
 		void ForcedEnd ();	//強制終了
+//		void SetCharaState ( CHARA_STATE chst );
 #endif // 0
 		bool CheckZeroLife ();	//格闘終了判定
 
@@ -88,8 +89,12 @@ namespace GAME
 
 		UINT GetScpStop () const { return m_scpStop; };	//停止
 		void SetScpStop ( UINT i ) { m_scpStop = i; };
+		
+		//初期操作 プレイヤ/CPU 設定
+		void Set_1P_vs_2P ();
+		void Set_1P_vs_CPU ();
+		void Set_CPU_vs_CPU ();
 
-//		void SetCharaState ( CHARA_STATE chst );
 
 		//勝者
 		WINNER GetWinner () const { return m_winner; }

@@ -16,7 +16,10 @@
 namespace GAME
 {
 	Param::Param ()
-		: m_winner ( _PLAYER_NUM ), m_n_act_1p ( 0 ), m_n_act_2p ( 0 )
+		: m_winner ( _PLAYER_NUM )
+		, m_n_life_1p ( 0 ), m_n_life_2p ( 0 ), m_n_act_1p ( 0 ), m_n_act_2p ( 0 )
+		, m_n_input_1p ( 0 ), m_n_input_2p ( 0 )
+		, m_n_offset ( 0 )
 	{
 		//ゲーム設定ファイル開始
 		m_setting.Load ();

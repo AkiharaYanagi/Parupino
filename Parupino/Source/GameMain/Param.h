@@ -28,9 +28,14 @@ namespace GAME
 		MUTCH_MODE			m_mutchMode = MODE_PLAYER_PLAYER;
 
 		//リザルト用
-		PLAYER_ID		m_winner;	//勝者
-		int				m_n_act_1p;	//アクション回数
-		int				m_n_act_2p;	//アクション回数
+		PLAYER_ID		m_winner;		//勝者
+		int				m_n_life_1p;	//残ライフ
+		int				m_n_life_2p;	//
+		int				m_n_input_1p;	//入力数
+		int				m_n_input_2p;	//
+		int				m_n_act_1p;		//アクション回数
+		int				m_n_act_2p;		//
+		int				m_n_offset;		//相殺数
 
 	public:
 		Param ();
@@ -53,9 +58,18 @@ namespace GAME
 		void SetWinner ( PLAYER_ID plr ) { m_winner = plr; }
 		PLAYER_ID GetWinner () const { return m_winner; }
 
+		void SetN_Life1p ( int n ) { m_n_life_1p = n; }
+		int GetN_Life1p () const { return m_n_life_1p; }
+		void SetN_Life2p ( int n ) { m_n_life_2p = n; }
+		int GetN_Life2p () const { return m_n_life_2p; }
+
+		void SetN_Input1p ( int n ) { m_n_input_1p = n; }
+		int GetN_Input1p () const { return m_n_input_1p; }
+		void SetN_Input2p ( int n ) { m_n_input_2p = n; }
+		int GetN_Input2p () const { return m_n_input_2p; }
+
 		void SetN_Act1p ( int n ) { m_n_act_1p = n; }
 		int GetN_Act1p () const { return m_n_act_1p; }
-
 		void SetN_Act2p ( int n ) { m_n_act_2p = n; }
 		int GetN_Act2p () const { return m_n_act_2p; }
 	};

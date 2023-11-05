@@ -112,6 +112,8 @@ namespace GAME
 		Grp ();
 
 		//シーン共通パラメータ記録
+		m_pParam->SetN_Life1p ( m_exeChara1->GetLife () );
+		m_pParam->SetN_Life2p ( m_exeChara2->GetLife () );
 		m_pParam->SetN_Act1p ( m_exeChara1->GetBtlParam ().GetNActTrs () );
 		m_pParam->SetN_Act2p ( m_exeChara2->GetBtlParam ().GetNActTrs () );
 	}
@@ -273,6 +275,7 @@ namespace GAME
 		bool finish1p = m_exeChara1->IsZeroLife ();
 		bool finish2p = m_exeChara2->IsZeroLife ();
 
+		//どちらか、または両方ライフ０なら終了
 		if ( finish1p || finish2p )
 		{
 			PLAYER_ID plr = _PLAYER_NUM;
@@ -429,7 +432,6 @@ namespace GAME
 	void MutualChara::SwithcCPU ()
 	{
 		static bool cpu1 = F;
-		//if ( ::GetAsyncKeyState ( '6' ) & 0x0001 )
 		if ( WND_UTL::AscKey ( '6' ) )
 		{
 			cpu1 ^= T;
@@ -444,7 +446,7 @@ namespace GAME
 		}
 
 		static bool cpu2 = F;
-		if ( ::GetAsyncKeyState ( '7' ) & 0x0001 )
+		if ( WND_UTL::AscKey ( '7' ) )
 		{
 			cpu2 ^= T;
 			if ( cpu2 )
@@ -457,6 +459,25 @@ namespace GAME
 			}
 		}
 	}
+
+	void MutualChara::Set_1P_vs_2P ()
+	{
+		m_exeChara1->ControlPlayer ();
+		m_exeChara2->ControlPlayer ();
+	}
+
+	void MutualChara::Set_1P_vs_CPU ()
+	{
+		m_exeChara1->ControlPlayer ();
+		m_exeChara2->ControlCPU ();
+	}
+
+	void MutualChara::Set_CPU_vs_CPU ()
+	{
+		m_exeChara1->ControlCPU ();
+		m_exeChara2->ControlCPU ();
+	}
+
 
 	//------------------------------------------------------
 	//試合初期化
