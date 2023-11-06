@@ -114,9 +114,6 @@
     <ClInclude Include="Source\GameMain\StdAfx.h">
       <Filter>GameMain</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GameMain\WinMain.h">
-      <Filter>GameMain</Filter>
-    </ClInclude>
     <ClInclude Include="Source\GameMain\GameConst.h">
       <Filter>GameMain</Filter>
     </ClInclude>

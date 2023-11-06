@@ -21,15 +21,15 @@ namespace GAME
 	//SOUND
 	enum SOUND_No
 	{
-		BGM_Title,
 		SE_Sys_Select,
 		SE_Sys_Enter,
 		SE_Sys_Cancel,
+		SE_EnterFighting,
 		SE_Btl_Clang,
+		BGM_Title,
 		BGM_Intro,
 		BGM_Main,
 		BGM_Result,
-		SE_EnterFighting,
 	};
 
 }

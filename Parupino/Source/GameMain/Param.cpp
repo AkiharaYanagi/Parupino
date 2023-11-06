@@ -35,6 +35,20 @@ namespace GAME
 	{
 	}
 
+	void Param::SetMutchMode ( MUTCH_MODE mode )
+	{
+		m_mutchMode = mode; 
+
+		switch ( mode )
+		{
+		case MODE_PLAYER_PLAYER:	m_setting.SetPlayerMode ( MODE_PLAYER, MODE_PLAYER );	break;
+		case MODE_PLAYER_CPU:		m_setting.SetPlayerMode ( MODE_PLAYER, MODE_CPU );	break;
+		case MODE_CPU_PLAYER:		m_setting.SetPlayerMode ( MODE_CPU, MODE_PLAYER );	break;
+		case MODE_CPU_CPU:			m_setting.SetPlayerMode ( MODE_CPU, MODE_CPU );	break;
+		case MODE_PLAYER_NETWORK:	m_setting.SetPlayerMode ( MODE_PLAYER, MODE_NETWORK );	break;
+		}
+	}
+
 	void Param::SetMutchMode ( PLAYER_MODE mode1p, PLAYER_MODE mode2p )
 	{
 		if ( MODE_PLAYER == mode1p )

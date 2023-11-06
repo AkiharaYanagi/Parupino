@@ -40,6 +40,7 @@ namespace GAME
 		START_RESULT,
 		START_TRAINING,
 		START_DEMO,
+		TEST_VOID,
 	};
 
 #if 0

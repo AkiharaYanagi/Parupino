@@ -41,7 +41,7 @@ namespace GAME
 		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
 		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
 		AddpTask ( m_gauge_frame );
-		GRPLST_INSERT_MAIN ( m_gauge_frame );
+//		GRPLST_INSERT_MAIN ( m_gauge_frame );
 
 		//BGÉ^ÉCÉ}
 		m_tmrBlackOut = make_shared < Timer > ();

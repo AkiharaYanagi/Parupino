@@ -202,7 +202,6 @@
     <ClInclude Include="Source\GameMain\Scene.h" />
     <ClInclude Include="Source\GameMain\SceneCommon.h" />
     <ClInclude Include="Source\GameMain\StdAfx.h" />
-    <ClInclude Include="Source\GameMain\WinMain.h" />
     <ClInclude Include="Source\Introduction\Introduction.h" />
     <ClInclude Include="Source\Result\Rank.h" />
     <ClInclude Include="Source\Result\Result.h" />

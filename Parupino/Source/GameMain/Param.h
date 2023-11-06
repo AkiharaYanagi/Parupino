@@ -45,7 +45,7 @@ namespace GAME
 		GameSettingFile GetGameSetting () const { return m_setting; }
 		void SetSettingFile ( GameSettingFile stg ) { m_setting = stg; }
 
-		void SetMutchMode ( MUTCH_MODE mode ) { m_mutchMode = mode; }
+		void SetMutchMode ( MUTCH_MODE mode );
 		void SetMutchMode ( PLAYER_MODE mode1p, PLAYER_MODE mode2p );
 		MUTCH_MODE GetMutchMode () const { return m_mutchMode; }
 

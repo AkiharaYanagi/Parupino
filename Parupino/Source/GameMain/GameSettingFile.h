@@ -35,9 +35,13 @@ namespace GAME
 		//読込
 		void Load ();
 
+		//-----------------------------------------
 		//値の取得
+
+		//ゲームモード
 		START_MODE GetStartMode () const { return m_startMode; }
-		
+	
+		//プレイヤの種類
 		PLAYER_MODE GetPlayerMode1p () const { return m_playerMode1p; }
 		PLAYER_MODE GetPlayerMode2p () const { return m_playerMode2p; }
 		PLAYER_MODE GetPlayerMode ( PLAYER_ID pid ) const
@@ -46,9 +50,15 @@ namespace GAME
 			if ( pid == PLAYER_ID_2 ) { return m_playerMode2p; }
 			return MODE_PLAYER;
 		}
+		void SetPlayerMode ( PLAYER_MODE mode1p, PLAYER_MODE mode2p )
+		{
+			m_playerMode1p = mode1p;
+			m_playerMode2p = mode2p;
+		}
 		void SetPlayerMode1p ( PLAYER_MODE mode ) { m_playerMode1p = mode; }
 		void SetPlayerMode2p ( PLAYER_MODE mode ) { m_playerMode2p = mode; }
 
+		//キャラ名
 		CHARA_NAME GetName1p () const { return m_name1p; }
 		CHARA_NAME GetName2p () const { return m_name2p; }
 		CHARA_NAME GetName ( PLAYER_ID pid ) const
@@ -57,6 +67,7 @@ namespace GAME
 			if ( pid == PLAYER_ID_2 ) { return m_name2p; }
 			return CHARA_NAME_NUM;
 		}
+		//-----------------------------------------
 
 #if 0
 		//切替
