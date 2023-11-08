@@ -10,6 +10,8 @@
 #include "ExeChara.h"
 #include "Input/PlayerInput.h"
 #include "Input/CPUInput.h"
+#include "../GameMain/SoundConst.h"
+
 
 //-------------------------------------------------------------------------------------------------
 // 定義
@@ -214,72 +216,13 @@ namespace GAME
 		if ( LurchTimer () ) { return; }
 #endif // 0
 
-
 		//-----------------------------------------------------
 		// コマンドによる分岐
-
-//		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
-
-		//コマンドが完成したIDを優先順に保存したリスト
-		m_pCharaInput->MakeTransitIDList ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
-		const vector < UINT > & vCompID = m_pCharaInput->GetvCompID ();
-
-		UINT transitID = NO_COMPLETE;
-		for ( UINT id : vCompID )
+		if ( TranditAction_Command () )
 		{
-			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( id );
-
-			//対象IDがバランス消費で移項可能なら移動処理へ
-
-
-			//不可能なら次をチェック
-			transitID = id;
-			break;
-		}
-
-
-		//コマンドが完成していたら
-		if ( NO_COMPLETE != transitID )
-		{
-			tstring tstr = _T("OD1_L");
-			if ( transitID == m_pChara->GetActionID ( tstr ) )
-			{
-				int i = 0;
-			}
-
-			//現在アクションとして最後の処理
-			EndAction ();
-
-			//遷移先チェック
-			P_Action pact = m_pChara->GetpAction ( transitID );
-			P_Script pscr = pact->GetpScript ( 0 );
-
-
-			//バランス処理
-			int bl_a = pact->GetBalance ();		//アクション消費バランス
-			int bl_p = m_btlPrm.GetBalance ();	//パラメータ現在バランス
-
-			int d = bl_p - bl_a;
-			if ( d < 0 ) { d = 0; }
-			m_btlPrm.SetBalance ( d );
-
-
-			//アクション遷移
-			m_actionID = transitID;	
-			TransitScript ();
-
-			//計測
-			m_btlPrm.AddNActTrs ( 1 );
-
-			//次フレームのスクリプトを１つ進める
-			//今回フレームは取得済みのm_pScriptを用いる
-			++ m_frame;
-
-			//終了
+			//分岐が成立していたら以降はチェックしない
 			return;
 		}
-
 
 		//-----------------------------------------------------
 		//現在スクリプトが現在アクションにおける最終フレーム ならば
@@ -308,6 +251,86 @@ namespace GAME
 
 		//通常処理：スクリプトを１つ進める
 		++ m_frame;
+	}
+
+
+	//アクション移項（コマンドに関する処理）
+	bool ExeChara::TranditAction_Command ()
+	{
+		//-----------------------------------------------------
+		// コマンドによる分岐
+
+//		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
+
+		//コマンドが完成したIDを優先順に保存したリスト
+		m_pCharaInput->MakeTransitIDList ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
+		const vector < UINT > & vCompID = m_pCharaInput->GetvCompID ();
+
+		UINT transitID = NO_COMPLETE;
+		for ( UINT id : vCompID )
+		{
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( id );
+
+			//対象IDがバランス消費で移項可能なら移動処理へ
+
+
+			//不可能なら次をチェック
+			transitID = id;
+			break;
+		}
+
+
+		//コマンドが完成していたら
+		if ( NO_COMPLETE != transitID )
+		{
+			//超必　特定処理
+			if ( transitID == m_pChara->GetActionID ( _T ( "OD1_L" ) ) )
+			{
+				//マナ消費
+				if ( m_btlPrm.GetMana () >= MANA_HALF )
+				{
+					m_btlPrm.AddMana ( - MANA_MAX / 2 );
+				}
+				else //足りないとき遷移しない
+				{
+					return F;
+				}
+			}
+
+			//現在アクションとして最後の処理
+			EndAction ();
+
+			//遷移先チェック
+			P_Action pact = m_pChara->GetpAction ( transitID );
+			P_Script pscr = pact->GetpScript ( 0 );
+
+
+			//バランス処理
+			int bl_a = pact->GetBalance ();		//アクション消費バランス
+			int bl_p = m_btlPrm.GetBalance ();	//パラメータ現在バランス
+
+			int d = bl_p - bl_a;
+			if ( d < 0 ) { d = 0; }
+			m_btlPrm.SetBalance ( d );
+
+
+			//アクション遷移
+			m_actionID = transitID;
+			TransitScript ();
+
+			//計測
+			m_btlPrm.AddNActTrs ( 1 );
+
+			//次フレームのスクリプトを１つ進める
+			//今回フレームは取得済みのm_pScriptを用いる
+			++ m_frame;
+
+			//終了
+			return T;
+		}
+
+		return F;
 	}
 
 
@@ -350,6 +373,31 @@ namespace GAME
 
 		//スクリプトからのパラメータ反映
 		SetParamFromScript ();
+
+		//特殊アクション指定
+
+		//ダッシュ開始
+		if ( IsNameAction ( _T ( "FrontDashStart" ) ) )
+		{
+			if ( m_frame == 0 )
+			{
+				//SE
+				SOUND->Play_SE ( SE_Btl_Dash );
+			}
+		}
+		//ジャンプ
+		if (	IsNameAction ( _T ( "FrontJump" ) )
+			||	IsNameAction ( _T ( "VerticalJump" ) )
+			||	IsNameAction ( _T ( "BackJump" ) )
+		)
+		{
+			if ( m_frame == 0 )
+			{
+				//SE
+				SOUND->Play_SE ( SE_Btl_Jump );
+			}
+		}
+
 	}
 
 	//スクリプトからパラメータを反映する
@@ -589,6 +637,9 @@ namespace GAME
 			m_btlPrm.SetPos ( VEC2 ( x, y ) );
 			m_btlPrm.SetVg ( 0 );
 			m_btlPrm.SetG ( 0 );
+
+			//SE
+			SOUND->Play_SE ( SE_Btl_Landing );
 
 			//実効アクションm_pActionは次フレーム時のMove()でm_actionIDを使って取得される
 			m_actionID = 0;	//standの指定
@@ -867,6 +918,16 @@ namespace GAME
 		m_pCharaInput->Update ( GetDirRight () );
 	}
 
+
+	//トレーニングモード初期化
+	void ExeChara::TrainingInit ()
+	{
+		Init ();
+		m_btlPrm.TrainingInit ();
+	}
+
+
+
 	//CPU操作切替
 	void ExeChara::ControlCPU ()
 	{
@@ -900,6 +961,13 @@ namespace GAME
 			m_frame = 0;
 		}
 #endif // 0
+
+		//相手のパラメータで増減
+		P_Script scp = m_pOther.lock()->GetpScript ();
+		int balance_e = scp->m_prmBattle.Balance_E;
+		m_btlPrm.AddBalance ( balance_e );
+
+		//自身の状態変更
 		m_btlPrm.SetClang ( true );		//打合状態
 //		m_lurch = nLurch;		//のけぞり時間の設定
 		m_btlPrm.GetTmr_HitStop ()->Start ();		//ヒットストップの設定

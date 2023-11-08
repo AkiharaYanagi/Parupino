@@ -484,6 +484,7 @@ namespace GAME
 
 
 	//------------------------------------------------------
+
 	//ŽŽ‡‰Šú‰»
 	void MutualChara::ResetMatch ()
 	{
@@ -492,6 +493,12 @@ namespace GAME
 			m_exeChara1->Init ();
 			m_exeChara2->Init ();
 		}
+	}
+
+	void MutualChara::TrainingInit ()
+	{
+		m_exeChara1->TrainingInit ();
+		m_exeChara2->TrainingInit ();
 	}
 
 	//------------------------------------------------------

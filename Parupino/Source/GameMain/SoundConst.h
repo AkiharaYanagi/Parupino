@@ -38,7 +38,10 @@ namespace GAME
 		SE_Sys_Cancel,
 		SE_Sys_EnterFighting,
 		SE_Btl_Clang,
-		SE_Btl_ping,
+		SE_Btl_Hit,
+		SE_Btl_Landing,
+		SE_Btl_Dash,
+		SE_Btl_Jump,
 	};
 
 }

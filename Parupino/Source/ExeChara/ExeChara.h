@@ -158,6 +158,7 @@ namespace GAME
 
 		//---------------------------------------------
 		//各値取得
+		P_Script GetpScript () { return m_pScript; }
 		BtlParam GetBtlParam () const { return m_btlPrm; };
 
 		CHARA_NAME GetCharaName () const { return m_name; }
@@ -224,6 +225,7 @@ namespace GAME
 		//-------------------------------------------------
 
 		//外部からの状態確認
+		//特殊アクション（名前指定）
 		bool IsNameAction ( tstring nameAction ) const { return m_pAction->IsName ( nameAction ); }
 
 		//ダッシュ分岐
@@ -231,6 +233,9 @@ namespace GAME
 
 		//-------------------------------------------------
 		//システム
+
+		//トレーニングモード初期化
+		void TrainingInit ();
 
 		//枠表示切替
 		void OnDispRect ();
@@ -252,6 +257,7 @@ namespace GAME
 		void SetAction ( UINT action_id );
 
 		void TransitAction ();	// アクション移項
+		bool TranditAction_Command ();	//アクション移項（コマンドに関する処理）
 		void TransitScript ();	//スクリプトを遷移させる
 
 		void SetParamFromScript ();	//スクリプトからパラメータを反映する
@@ -278,6 +284,7 @@ namespace GAME
 		void OverEfPart ();	//EfPart重なり
 
 	private:
+
 		//------------------------------------------------
 		//アクション体勢
 		bool Is_AP_Stand () { return m_pAction->GetPosture () == AP_STAND; }

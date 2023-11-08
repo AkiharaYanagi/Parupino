@@ -97,6 +97,9 @@ namespace GAME
 		m_fighting->SetDemoSkip ();
 
 		Scene::Init ();
+
+		//’ÊíInit‚ÌŒã‚És‚¤
+		m_fighting->TrainingRestart ();
 	}
 
 	void Training::Move ()

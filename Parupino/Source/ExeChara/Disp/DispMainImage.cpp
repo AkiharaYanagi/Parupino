@@ -45,7 +45,13 @@ namespace GAME
 		//表示に反映
 		m_mainGraphic->SetPos ( vecImg );
 		m_mainGraphic->SetScaling ( 1.f * fDir, 1.f );
-		P_TxBs pTexture = m_pvpMainTexture->at ( pScript->GetImageIndex () );
+
+		UINT index = pScript->GetImageIndex ();
+
+		//@todo イメージ未定義や画像削除後のIDなどインデックスが無い場合がある
+		if ( m_pvpMainTexture->size () < index ) { return; }
+
+		P_TxBs pTexture = m_pvpMainTexture->at ( index );
 		m_mainGraphic->SetpTexture ( pTexture );
 	}
 

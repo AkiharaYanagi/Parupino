@@ -62,21 +62,6 @@ namespace GAME
 		void StartGetReady ();		//開始準備
 		void StartFighting ();		//戦闘開始
 
-#if 0
-		void SetReady ();
-		void SetMain ();
-		void Wait ( bool b );
-		void Stop ( bool b );
-		void EndAct ();
-		bool CheckDown ();		//ダウン判定
-		void SetEndWait ();
-		bool CheckDownEnd ();	//ダウン状態終了判定
-		bool CheckWin ();		//勝利状態判定
-		bool CheckWinEnd ();	//勝利終了状態判定
-		bool CheckWinner ();	//勝利側判定
-		void ForcedEnd ();	//強制終了
-//		void SetCharaState ( CHARA_STATE chst );
-#endif // 0
 		bool CheckZeroLife ();	//格闘終了判定
 
 		UINT GetBlackOut () const { return m_blackOut; };	//暗転
@@ -89,6 +74,10 @@ namespace GAME
 
 		UINT GetScpStop () const { return m_scpStop; };	//停止
 		void SetScpStop ( UINT i ) { m_scpStop = i; };
+
+		//トレーニングモード初期化
+		void TrainingInit ();
+
 		
 		//初期操作 プレイヤ/CPU 設定
 		void Set_1P_vs_2P ();

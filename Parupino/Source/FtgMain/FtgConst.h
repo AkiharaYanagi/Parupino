@@ -174,6 +174,7 @@ namespace GAME
 
 		MANA_MAX = 10000,
 		MANA_START = 1000,
+		MANA_HALF = MANA_MAX / 2,
 
 		//í‚é~
 		HITSTOP_TIME = 15,

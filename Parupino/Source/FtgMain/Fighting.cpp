@@ -149,6 +149,7 @@ namespace GAME
 	void Fighting::TrainingRestart ()
 	{
 		m_demoActor->StartFighting ();
+		m_mutualChara->TrainingInit ();
 	}
 
 	
