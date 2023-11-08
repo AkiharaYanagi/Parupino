@@ -73,9 +73,6 @@ namespace GAME
 		//Menu用にthisを保存
 		m_pauseMenu->SetwpParent ( shared_from_this () );
 
-		//SOUND
-		SOUND->PlayLoop ( BGM_Main );
-
 		Scene::Load ();
 	}
 
@@ -144,8 +141,8 @@ namespace GAME
 	//[シーン遷移] タイトルに戻る
 	void FtgMain::Transit_Title ()
 	{
-		//SOUND
-		SOUND->Stop ( BGM_Main );
+		//BGM
+		SOUND->Stop_BGM ( BGM_Main );
 
 		GRPLST_CLEAR ();
 		mp_Transit = make_shared < Title_Intro > ();
@@ -161,8 +158,8 @@ namespace GAME
 	//[シーン遷移] リザルト移行
 	void FtgMain::Transit_Result ()
 	{
-		//SOUND
-		SOUND->Stop ( BGM_Main );
+		//BGM
+		SOUND->Stop_BGM ( BGM_Main );
 
 		GRPLST_CLEAR ();
 		mp_Transit = make_shared < Result > ();

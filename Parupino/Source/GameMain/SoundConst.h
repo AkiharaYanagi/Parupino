@@ -18,18 +18,26 @@ namespace GAME
 	//------------------------------------------
 	// 定数宣言
 	//------------------------------------------
-	//SOUND
-	enum SOUND_No
+	//SOUNDフォルダ、
+	//SEフォルダ内の読込ファイル順(ABC)にIDが振られる
+
+	//BGM
+	enum BGM_ID
 	{
-		SE_Sys_Select,
-		SE_Sys_Enter,
-		SE_Sys_Cancel,
-		SE_EnterFighting,
-		SE_Btl_Clang,
 		BGM_Title,
 		BGM_Intro,
 		BGM_Main,
 		BGM_Result,
+	};
+
+	//SE
+	enum SE_ID
+	{
+		SE_Sys_Select,
+		SE_Sys_Enter,
+		SE_Sys_Cancel,
+		SE_Sys_EnterFighting,
+		SE_Btl_Clang,
 	};
 
 }

@@ -9,6 +9,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "FtgDemo.h"
 #include <iomanip>	//std::setw(), std::setfill() ‚È‚Ç
+#include "../GameMain/SoundConst.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -245,6 +246,9 @@ namespace GAME
 	{
 		m_GetReady->Start ();
 		mp_FtgDemo = m_GetReady;
+
+		//BGM
+		SOUND->Play_Loop_BGM ( BGM_Main );
 	}
 
 	void FtgDemoActor::Change_GetReady_To_Attack ()
