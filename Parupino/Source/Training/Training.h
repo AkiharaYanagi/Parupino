@@ -32,6 +32,11 @@ namespace GAME
 
 		P_GrpAcv		m_training;		//トレーニング表示
 
+		//ロード中
+		P_PrmRect		m_rectLoad;
+		UINT			m_wait;
+		P_GrpStr		m_NowLoading;
+
 #if 0
 		//ポーズ
 		P_GrpAcv		m_pause;

@@ -27,12 +27,12 @@ namespace GAME
 		//戦闘
 		m_fighting = make_shared < Fighting > ();
 		AddpTask ( m_fighting );
-
+	
 		//トレーニング表示
 		m_training = make_shared < GrpAcv > ();
 		m_training->AddTexture ( _T ( "training.png" ) );
 		m_training->SetPos ( BX, BY );
-		m_training->SetZ ( Z_SYS );
+		m_training->SetZ ( Z_BG - 0.01f );
 		AddpTask ( m_training );
 		GRPLST_INSERT_MAIN ( m_training );
 
@@ -46,6 +46,29 @@ namespace GAME
 		m_pause->SetValid ( false );
 
 #endif // 0
+
+		//ロード中
+		m_rectLoad = make_shared < PrmRect > ();
+		m_rectLoad->SetSize ( VEC2 ( 1280, 960 ) );
+		m_rectLoad->SetPos ( VEC2 ( 0, 0 ) );
+		m_rectLoad->SetAllColor ( 0xff000000 );
+		m_rectLoad->SetZ ( Z_FADE );
+		m_rectLoad->Load ();
+		m_rectLoad->Move ();
+		//開始値、目標値を手動設定
+		m_rectLoad->SetFade ( 3, _CLR ( 0xff000000 ), _CLR ( 0x00000000UL ) );
+		AddpTask ( m_rectLoad );
+		GRPLST_INSERT_MAIN ( m_rectLoad );
+		m_wait = 0;
+
+		m_NowLoading = make_shared < GrpStr > ();
+		m_NowLoading->SetStr ( _T ( "Now Loading..." ) );
+		m_NowLoading->SetPos ( VEC2 ( 1000, 915 ) );
+		m_NowLoading->Load ();
+		m_NowLoading->Move ();
+		m_NowLoading->SetZ ( Z_FADE - 0.01f );
+		AddpTask ( m_NowLoading );
+		GRPLST_INSERT_MAIN ( m_NowLoading );
 	}
 
 	Training::~Training ()
@@ -59,6 +82,9 @@ namespace GAME
 
 	void Training::Load ()
 	{
+		SOUND->Stop_BGM ( BGM_Main );
+		SOUND->Play_Loop_BGM ( BGM_Main );
+
 		//Transit用にthisを保存
 		mwp_This = shared_from_this ();
 
@@ -67,48 +93,28 @@ namespace GAME
 
 	void Training::Init ()
 	{
-#if 0
-
-#if 0
-		SOUND->Stop ( BGM_Main );
-		SOUND->PlayLoop ( BGM_Main );
-#endif // 0
-		m_pause->SetValid ( false );
-
-		//デモを飛ばしてゲーム開始
-#if 0
-		G_FTG_STATE_SET ( FS_GAME_MAIN );
-		m_mutualChara->Wait ( false );
-		Scene::Init ();
-		m_mutualChara->SetMain ();
-#endif // 0
-
-		m_pause->SetValid ( false );
-
-#endif // 0
+		//デモをスキップ
+		m_fighting->SetDemoSkip ();
 
 		Scene::Init ();
 	}
 
 	void Training::Move ()
 	{
-#if 0
-
-		Pause ();
-
-		// 格闘終了判定
-		if ( m_mutualChara->CheckZeroLife () )
+		//NowLoading終了
+		if ( m_rectLoad->GetFadeTimer () == 0 )
 		{
-			//リセット
-			Init ();
+			m_NowLoading->SetValid ( F );
 		}
-		
-		//両者処理
-		m_mutualChara->Conduct ();
 
-		//背景位置補正
-		m_bg->SetPos ( G_BASE_POS ().x, (float)BG_POS_Y );
+		//トレーニングリセット
+		if ( CFG_PUSH_KEY ( _P1_BTN6 ) || CFG_PUSH_KEY ( _P2_BTN6 ) )
+		{
+			m_fighting->TrainingRestart ();
+		}
 
+#if 0
+		Pause ();
 #endif // 0
 
 		Scene::Move ();

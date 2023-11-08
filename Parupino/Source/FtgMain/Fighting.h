@@ -66,6 +66,9 @@ namespace GAME
 		void SetDemoOn () { m_demoSkip = F; }
 		void SetDemoSkip () { m_demoSkip = T; }
 
+		//トレーニング用リスタート
+		void TrainingRestart ();
+
 	private:
 		void Pause ();
 

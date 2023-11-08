@@ -83,6 +83,7 @@ namespace GAME
 
 	void FtgMain::Move ()
 	{
+		//NowLoadingI—¹
 		if ( m_rectLoad->GetFadeTimer () == 0 )
 		{
 			m_NowLoading->SetValid ( F );

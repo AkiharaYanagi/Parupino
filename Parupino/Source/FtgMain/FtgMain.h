@@ -38,7 +38,6 @@ namespace GAME
 		//ÉçÅ[ÉhíÜ
 		P_PrmRect		m_rectLoad;
 		UINT			m_wait;
-
 		P_GrpStr		m_NowLoading;
 
 	public:

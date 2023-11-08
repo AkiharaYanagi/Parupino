@@ -21,14 +21,14 @@ namespace GAME
 		m_bg = make_shared < GrpAcv > ();
 		m_bg->AddTexture ( _T ( "ftgmain_bg1.png" ) );
 		m_bg->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
-		m_bg->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
+		m_bg->SetZ ( Z_BG );
 		AddpTask ( m_bg );
 		GRPLST_INSERT_MAIN ( m_bg );
 
 		m_bg_blackout = make_shared < GrpAcv > ();
 		m_bg_blackout->AddTexture ( _T ( "ftgmain_bg_blackout.png" ) );
 		m_bg_blackout->SetPos ( (float)BG_POS_X, (float)BG_POS_Y );
-		m_bg_blackout->SetSpritePosition ( VEC3 ( 0, 0, Z_BG ) );
+		m_bg_blackout->SetZ ( Z_BG );
 		m_bg_blackout->SetValid ( false );
 		AddpTask ( m_bg_blackout );
 		GRPLST_INSERT_MAIN ( m_bg_blackout );
@@ -36,7 +36,7 @@ namespace GAME
 		//ゲージ枠
 		m_gauge_frame = make_shared < GrpAcv > ();
 		m_gauge_frame->AddTexture ( _T ( "gauge_frame.png" ) );
-		m_gauge_frame->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
+		m_gauge_frame->SetZ ( Z_SYS );
 		AddpTask ( m_gauge_frame );
 //		GRPLST_INSERT_MAIN ( m_gauge_frame );
 
@@ -95,13 +95,14 @@ namespace GAME
 
 		TASK_LST::Init ();
 
+		//デモスキップ
 		if ( m_demoSkip )
 		{
-			m_demoActor->StartGreeting ();
+			m_demoActor->StartFighting ();
 		}
 		else
 		{
-			m_demoActor->StartFighting ();
+			m_demoActor->StartGreeting ();
 		}
 	}
 
@@ -145,32 +146,11 @@ namespace GAME
 		TASK_LST::Move ();
 	}
 
-#if 0
-	//状態遷移
-	P_GameScene Fighting::Transit ()
+	void Fighting::TrainingRestart ()
 	{
-#if 0
-		//ESCで戻る
-		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
-		{
-			SOUND->Stop ( BGM_Main );
-			return make_shared < Title > ();
-		}
-#endif // 0
-
-		//戦闘終了時
-#if 0
-		if ( FS_END == G_FTG_STATE () )
-		{
-			SOUND->Stop ( BGM_Main );
-			return make_shared < Title > ();
-		}
-#endif // 0
-
-		//通常時
-//		return shared_from_this ();
+		m_demoActor->StartFighting ();
 	}
-#endif // 0
+
 	
 
 	//=============================================================

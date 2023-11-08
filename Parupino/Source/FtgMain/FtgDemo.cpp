@@ -27,7 +27,7 @@ namespace GAME
 		pGrp->SetScalingCenter ( VEC2 ( 512, 128 ) );
 		pGrp->SetStartScaling ( VEC2 ( 1.3f, 1.3f ) );
 		pGrp->SetSecondVel ( VEC2 ( -0.001f, -0.001f ) );
-		pGrp->SetZ ( Z_SYS );	//SetZはGRPLST_INSERT()の後では行わない(リストが崩れる)
+		pGrp->SetZ ( Z_SYS );	//@info SetZはGRPLST_INSERT()の後では行わない(リストが崩れる)
 		pGrp->SetValid ( F );
 
 		AddpTask ( pGrp );
@@ -169,9 +169,9 @@ namespace GAME
 #if 0
 			//新規開始
 			GetpMutualChara ()->StartFighting ();
-//			GetpMutualChara ()->SetMain ();
 			GetwpFtgDemoActor ().lock ()->Change_Down_To_Greeting ();
 #endif // 0
+			//タイトルに戻る
 			GetwpFtgDemoActor ().lock ()->End_Down_To_Result ();
 		}
 	}
