@@ -16,9 +16,6 @@ namespace GAME
 {
 	Fighting::Fighting ()
 	{
-		//格闘部分共通パラメータシングルトン生成
-		G_Ftg::Create ();
-
 		//------------------------------------------------
 		//背景
 		m_bg = make_shared < GrpAcv > ();
@@ -62,6 +59,14 @@ namespace GAME
 		m_demoActor->SetpMutualChara ( m_mutualChara );
 		AddpTask ( m_demoActor );
 
+		//Debug用　開始デモをスキップ切替
+#define DEMO_ON 1
+#if DEMO_ON
+		m_demoSkip = F;
+#else
+		m_demoSkip = T;
+#endif // DEMO_ON
+
 		//=====================================================
 
 		//ポーズ
@@ -86,21 +91,18 @@ namespace GAME
 
 	void Fighting::Init ()
 	{
-#if 0
-		SOUND->Stop ( BGM_Main );
-		SOUND->PlayLoop ( BGM_Main );
-#endif // 0
-		m_pause->SetValid ( false );
+		m_pause->SetValid ( F );
 
 		TASK_LST::Init ();
 
-		//Debug用　開始デモをスキップ切替
-#define DEMO_ON 1
-#if DEMO_ON
-		m_demoActor->StartGreeting ();
-#else
-//		m_demoActor->StartFighting ();
-#endif // DEMO_ON
+		if ( m_demoSkip )
+		{
+			m_demoActor->StartGreeting ();
+		}
+		else
+		{
+			m_demoActor->StartFighting ();
+		}
 	}
 
 

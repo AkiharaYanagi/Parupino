@@ -34,7 +34,8 @@ namespace GAME
 
 		//=====================================================
 		//デモ
-		P_FtgDemoActor		m_demoActor;
+		P_FtgDemoActor	m_demoActor;
+		bool			m_demoSkip;	//スキップ
 
 		//=====================================================
 
@@ -60,6 +61,10 @@ namespace GAME
 		void Set_1P_vs_2P () { m_mutualChara->Set_1P_vs_2P (); }
 		void Set_1P_vs_CPU () { m_mutualChara->Set_1P_vs_CPU (); }
 		void Set_CPU_vs_CPU () { m_mutualChara->Set_CPU_vs_CPU (); }
+
+		//初期デモスキップ設定
+		void SetDemoOn () { m_demoSkip = F; }
+		void SetDemoSkip () { m_demoSkip = T; }
 
 	private:
 		void Pause ();

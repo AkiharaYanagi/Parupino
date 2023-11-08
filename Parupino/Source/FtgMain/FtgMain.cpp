@@ -29,8 +29,7 @@ namespace GAME
 		AddpTask ( m_pauseMenu );
 
 		//ƒ[ƒh’†
-//		m_rectLoad = make_shared < PrmRect > ();
-		m_rectLoad = make_shared < TestDraw > ();
+		m_rectLoad = make_shared < PrmRect > ();
 		m_rectLoad->SetSize ( VEC2 ( 1280, 960 ) );
 		m_rectLoad->SetPos ( VEC2 ( 0, 0 ) );
 		m_rectLoad->SetAllColor ( 0xff000000 );
