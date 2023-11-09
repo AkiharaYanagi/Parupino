@@ -76,8 +76,10 @@ namespace ScriptEditor
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
-			ctrl_SqcList_Act.ApplyData ();
+			ctrl_SqcList_Act.ApplyData_Action ();
+			All_Ctrl.Inst.Compend_Bhv.UpdateSqcTree ();
 			All_Ctrl.Inst.UpdateData ();
+			FormImage.Inst.UpdateData ();
 		}
 
 		//-----------------------------------------------------------------------
@@ -106,6 +108,30 @@ namespace ScriptEditor
 
 			//イメージ指定
 			FormImage.Inst.SetCharaData ( chara.behavior.BD_Image );
+
+#if false
+			//1回のみ
+			//スクリプト内のImageNameからIDを外す
+			BindingDictionary < Sequence > BD_Sqc = chara.behavior.BD_Sequence;
+			foreach ( Sequence sqc in BD_Sqc.GetEnumerable () )
+			{
+				foreach ( Script scp in sqc.ListScript )
+				{
+					int len = scp.ImgName.Length;
+					scp.ImgName = scp.ImgName.Substring ( 4, len - 4 );
+				}
+			}
+			BindingDictionary < Sequence > BD_efc = chara.garnish.BD_Sequence;
+			foreach ( Sequence sqc in BD_efc.GetEnumerable () )
+			{
+				foreach ( Script scp in sqc.ListScript )
+				{
+					int len = scp.ImgName.Length;
+					scp.ImgName = scp.ImgName.Substring ( 4, len - 4 );
+				}
+			}
+
+#endif
 		}
 
 		//----------------------
@@ -137,7 +163,7 @@ namespace ScriptEditor
 		//[エフェクト]タブ離去時
 		public void tabEffect_Deselected ()
 		{
-			ctrl_SqcList_Efc.ApplyData ();
+			ctrl_SqcList_Efc.ApplyData_Effect ();
 		}
 
 		//-----------------------------------------------------------------------

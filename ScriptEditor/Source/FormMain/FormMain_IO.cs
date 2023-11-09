@@ -40,12 +40,10 @@ namespace ScriptEditor
 			try { testChara._TestNameAssign ( chara ); }
 			catch ( Exception e )
 			{
-				STS_TXT.Tssl.BackColor = Color.Red;
-				STS_TXT.Trace( "Name Refference Error. " + e.Message );
+				STS_TXT.Trace_Err ( "Name Refference Error. " + e.Message );
 				//return;
 				//エラー表示をして続行
 			}
-			STS_TXT.Tssl.BackColor = SystemColors.Control;
 
 			//設定ファイルにファイル位置を記録
 			stgs.LastDirectory = Path.GetDirectoryName ( openFileDialog1.FileName );

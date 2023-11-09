@@ -13,6 +13,7 @@ namespace ScriptEditor
 		{
 			//ステータスバーテキストを登録
 			STS_TXT.Tssl = 	toolStripStatusLabel1;
+			STS_TXT.SaveContorlColor ();
 			STS_TXT.Trace ( "Init." );
 
 			//タブの選択

@@ -64,6 +64,11 @@ namespace ScriptEditor
 			Lb_Image.DataSource = BD_ImageData.GetBindingList ();
 		}
 
+		public void UpdateData ()
+		{
+			BD_ImageData.ResetItems ();
+		}
+
 		//リストボックスの選択位置変更時
 		private void listBox1_SelectedIndexChanged ( object sender, EventArgs e )
 		{
