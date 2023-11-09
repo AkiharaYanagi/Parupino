@@ -164,6 +164,9 @@ namespace ScriptEditor
 		public void tabEffect_Deselected ()
 		{
 			ctrl_SqcList_Efc.ApplyData_Effect ();
+			All_Ctrl.Inst.Compend_Gns.UpdateSqcTree ();
+			All_Ctrl.Inst.UpdateData ();
+			FormImage.Inst.UpdateData ();
 		}
 
 		//-----------------------------------------------------------------------

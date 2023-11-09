@@ -216,6 +216,7 @@ namespace ScriptEditor
 			
 			//表示更新
 			//DispChara.Inst.Disp ();
+			All_Ctrl.Inst.UpdateData ();
 		}
 	}
 }

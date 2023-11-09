@@ -122,6 +122,18 @@ namespace ScriptEditor
 				XML_IO.Save ( stgs );
 			}
 		}
+
+		private void 名前チェックToolStripMenuItem_Click ( object sender, System.EventArgs e )
+		{
+			TestChara testChara = new TestChara ();
+			try { testChara._TestNameAssign ( chara ); }
+			catch ( Exception excp )
+			{
+				STS_TXT.Trace_Err ( "Name Refference Error. " + excp.Message );
+				//エラー表示をして続行
+			}
+
+		}
 	}
 
 }

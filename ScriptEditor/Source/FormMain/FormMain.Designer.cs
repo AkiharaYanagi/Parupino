@@ -38,6 +38,7 @@
 			this.テキストから読込ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.バイナリから読込BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.新規NToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.プレデータToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -50,7 +51,7 @@
 			this.tabRoute = new System.Windows.Forms.TabPage();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.プレデータToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.名前チェックToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
@@ -68,7 +69,8 @@
             this.テキストから読込ToolStripMenuItem,
             this.バイナリから読込BToolStripMenuItem,
             this.新規NToolStripMenuItem,
-            this.プレデータToolStripMenuItem});
+            this.プレデータToolStripMenuItem,
+            this.名前チェックToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(972, 24);
@@ -134,6 +136,13 @@
 			this.新規NToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
 			this.新規NToolStripMenuItem.Text = "新規(&N)";
 			this.新規NToolStripMenuItem.Click += new System.EventHandler(this.新規NToolStripMenuItem_Click);
+			// 
+			// プレデータToolStripMenuItem
+			// 
+			this.プレデータToolStripMenuItem.Name = "プレデータToolStripMenuItem";
+			this.プレデータToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+			this.プレデータToolStripMenuItem.Text = "プレデータ";
+			this.プレデータToolStripMenuItem.Click += new System.EventHandler(this.プレデータToolStripMenuItem_Click);
 			// 
 			// statusStrip1
 			// 
@@ -242,12 +251,12 @@
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
-			// プレデータToolStripMenuItem
+			// 名前チェックToolStripMenuItem
 			// 
-			this.プレデータToolStripMenuItem.Name = "プレデータToolStripMenuItem";
-			this.プレデータToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-			this.プレデータToolStripMenuItem.Text = "プレデータ";
-			this.プレデータToolStripMenuItem.Click += new System.EventHandler(this.プレデータToolStripMenuItem_Click);
+			this.名前チェックToolStripMenuItem.Name = "名前チェックToolStripMenuItem";
+			this.名前チェックToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+			this.名前チェックToolStripMenuItem.Text = "名前チェック";
+			this.名前チェックToolStripMenuItem.Click += new System.EventHandler(this.名前チェックToolStripMenuItem_Click);
 			// 
 			// FormMain
 			// 
@@ -298,6 +307,7 @@
 		private System.Windows.Forms.ToolStripMenuItem バイナリから読込BToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem 新規NToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem プレデータToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 名前チェックToolStripMenuItem;
 	}
 }
 
