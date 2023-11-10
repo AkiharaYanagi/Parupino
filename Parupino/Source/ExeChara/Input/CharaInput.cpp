@@ -196,15 +196,20 @@ namespace GAME
 		//スクリプトの持つルートリスト
 		for ( UINT indexRoute : pScp->GetcvRouteID () )
 		{
+			//ルートの取得
+			P_Route pRut = vpRoute [ indexRoute ];
 			const V_UINT vBranchID = vpRoute [ indexRoute ]->GetcvIDBranch ();
 
 			//対象のブランチリスト
 			for ( UINT indexBranch : vBranchID )
 			{
-				//コマンド分岐以外は飛ばす
-				if ( BRC_CMD != vpBranch [ indexBranch ]->GetCondition () ) { continue; }
+				//ブランチの取得
+				P_Branch pBrc = vpBranch [ indexBranch ];
 
-				//コマンド取得
+				//コマンド分岐以外は飛ばす
+				if ( BRC_CMD != pBrc->GetCondition () ) { continue; }
+
+				//コマンドの取得
 				UINT indexCommand = vpBranch [ indexBranch ]->GetIndexCommand ();
 				P_Command pCmd = vpCommand [ indexCommand ];
 

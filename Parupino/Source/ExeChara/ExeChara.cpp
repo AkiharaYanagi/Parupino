@@ -258,6 +258,14 @@ namespace GAME
 	bool ExeChara::TranditAction_Command ()
 	{
 		//-----------------------------------------------------
+		//テスト用
+		//特定のアクション
+		if ( IsNameAction ( _T ( "FrontDash" ) ) )
+		{
+			int i = 0;
+		}
+		
+		//-----------------------------------------------------
 		// コマンドによる分岐
 
 //		UINT transitID = m_pCharaInput->GetTransitID ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
@@ -285,7 +293,7 @@ namespace GAME
 		if ( NO_COMPLETE != transitID )
 		{
 			//超必　特定処理
-			if ( transitID == m_pChara->GetActionID ( _T ( "OD1_L" ) ) )
+			if ( transitID == m_pChara->GetActionID ( _T ( "OD0_L" ) ) )
 			{
 				//マナ消費
 				if ( m_btlPrm.GetMana () >= MANA_HALF )

@@ -157,7 +157,7 @@ namespace GAME
 			}
 			++index;
 		}
-		return 0;
+		return NO_ACTION;
 	}
 
 

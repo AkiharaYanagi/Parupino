@@ -69,6 +69,11 @@ namespace GAME
 		BRC_DASH,		//ダッシュ相殺
 	};
 
+	//他検索用
+	enum
+	{
+		NO_ACTION = 0xFFFF0001,		//検索用フラグ
+	};
 
 
 }	//namespace GAME
