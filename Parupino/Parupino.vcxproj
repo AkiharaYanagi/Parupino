@@ -203,6 +203,7 @@
     <ClInclude Include="Source\GameMain\SceneCommon.h" />
     <ClInclude Include="Source\GameMain\StdAfx.h" />
     <ClInclude Include="Source\Introduction\Introduction.h" />
+    <ClInclude Include="Source\Introduction\Intro_Img.h" />
     <ClInclude Include="Source\Result\Rank.h" />
     <ClInclude Include="Source\Result\Result.h" />
     <ClInclude Include="Source\Title_Intro\Title_Cursor.h" />
@@ -256,6 +257,7 @@
     <ClCompile Include="Source\GameMain\StdAfx.cpp" />
     <ClCompile Include="Source\GameMain\WinMain.cpp" />
     <ClCompile Include="Source\Introduction\Introduction.cpp" />
+    <ClCompile Include="Source\Introduction\Intro_Img.cpp" />
     <ClCompile Include="Source\Result\Rank.cpp" />
     <ClCompile Include="Source\Result\Result.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Cursor.cpp" />
