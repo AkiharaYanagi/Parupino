@@ -38,6 +38,12 @@ namespace GameSettings
 			CB_Chara2.SelectedIndex = 0;
 
 
+			//@todo 一時使用不可
+			CB_Chara1.Enabled = false;
+			CB_Chara2.Enabled = false;
+
+
+
 			//開始時に読込
 			stgData.Load ( filename );
 

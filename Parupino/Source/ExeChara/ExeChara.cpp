@@ -64,8 +64,6 @@ namespace GAME
 		default: break;
 		}
 		m_pCharaInput->SetPlayer ( m_playerID );
-
-		m_dispChara->ParamInit ( pParam );
 	}
 
 	//------------------------
@@ -946,16 +944,12 @@ namespace GAME
 	{
 		m_pCharaInput = make_shared < CPUInput > ( shared_from_this (), m_pOther );
 		m_pCharaInput->SetPlayer ( m_playerID );
-
-		m_dispChara->SetControl_CPU ();
 	}
 
 	void ExeChara::ControlPlayer ()
 	{
 		m_pCharaInput = make_shared < PlayerInput > ();
 		m_pCharaInput->SetPlayer ( m_playerID );
-
-		m_dispChara->SetControl_PLAYER ();
 	}
 
 	//---------------------------------------------
