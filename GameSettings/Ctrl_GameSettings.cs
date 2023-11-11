@@ -42,6 +42,10 @@ namespace GameSettings
 			CB_Chara1.Enabled = false;
 			CB_Chara2.Enabled = false;
 
+			RB_CPU1.Enabled = false;
+			RB_CPU2.Enabled = false;
+			RB_Player1.Enabled = false;
+			RB_Player2.Enabled = false;
 
 
 			//開始時に読込

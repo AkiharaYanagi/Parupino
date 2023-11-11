@@ -42,6 +42,18 @@ namespace GAME
 			//見つからないときデフォルトの値を設定して終了
 			if ( ! ifstrm ) { SetDefault (); }
 
+			byte tempMode = 0;
+			ifstrm.read ( (char*)& tempMode, sizeof ( byte ) );
+			m_startMode = (START_MODE)tempMode;
+
+
+			byte tempInput1p = 0;
+			byte tempInput2p = 0;
+			ifstrm.read ( (char*)& tempInput1p, sizeof ( byte ) );
+			ifstrm.read ( (char*)& tempInput2p, sizeof ( byte ) );
+			m_playerMode1p = (PLAYER_MODE)tempInput1p;
+			m_playerMode2p = (PLAYER_MODE)tempInput2p;
+
 			byte tempName1p = 0;
 			byte tempName2p = 0;
 			ifstrm.read ( (char*)& tempName1p, sizeof ( byte ) );

@@ -20,10 +20,33 @@ namespace GameSettings
 	//ゲーム内で用いる設定
 	public class GameSettingsData
 	{
+
+		//C++ GameMain 開始状態
+#if false
+		enum START_MODE
+		{
+			START_TITLE_INTRO,
+			START_INTRO,
+			START_CHARA_SELE,
+			START_BATTLE,
+			START_RESULT,
+			START_TRAINING,
+			START_DEMO,
+			TEST_VOID,
+		};
+#endif
+
 		//開始状態
 		public enum Stng_Start
 		{
-			General, Battle, Traning, Demo, 
+//			General, Battle, Traning, Demo, 
+			General,
+			Intro,
+			CharaSele,
+			Battle, 
+			Result,
+			Traning, 
+			Demo, 
 		};
 
 		public Stng_Start Start { get; set; } = Stng_Start.General;
@@ -62,9 +85,11 @@ namespace GameSettings
 			using ( FileStream fs = new FileStream ( filename, FileMode.Create, FileAccess.Write ) )
 			using ( BinaryWriter bw = new BinaryWriter ( fs ) )
 			{ 
-				bw.Write ( (int)Start );
-				bw.Write ( (int)Operate1p );
-				bw.Write ( (int)Operate2p );
+				bw.Write ( (byte)Start );
+				bw.Write ( (byte)Operate1p );
+				bw.Write ( (byte)Operate2p );
+				bw.Write ( (byte)Chara1p );
+				bw.Write ( (byte)Chara2p );
 			}
 		}
 
@@ -75,9 +100,11 @@ namespace GameSettings
 				using ( FileStream fs = new FileStream ( filename, FileMode.Open, FileAccess.Read ) )
 				using ( BinaryReader br = new BinaryReader ( fs ) )
 				{ 
-					Start = (Stng_Start) br.ReadInt32 ();
-					Operate1p = (Stng_Operate) br.ReadInt32 ();
-					Operate2p = (Stng_Operate) br.ReadInt32 ();
+					Start = (Stng_Start) br.ReadByte ();
+					Operate1p = (Stng_Operate) br.ReadByte ();
+					Operate2p = (Stng_Operate) br.ReadByte ();
+					Chara1p = (Stng_Chara) br.ReadByte ();
+					Chara2p = (Stng_Chara) br.ReadByte ();
 				}
 
 			}
