@@ -56,6 +56,14 @@ namespace GAME
 		m_grpPlayerCOM->SetZ ( Z_SYS - 0.001f );
 		AddpTask ( m_grpPlayerCOM );
 		GRPLST_INSERT_MAIN ( m_grpPlayerCOM );
+
+#if DEBUG_DISP
+		OnRect ();
+#else
+		OffRect ();
+#endif // DEBUG_DISP
+
+
 	}
 
 	DispChara::~DispChara ()
