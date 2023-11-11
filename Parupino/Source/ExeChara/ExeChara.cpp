@@ -218,6 +218,15 @@ namespace GAME
 		if ( LurchTimer () ) { return; }
 #endif // 0
 
+
+		//-----------------------------------------------------
+		//バランスアウト
+		if ( m_btlPrm.GetBalance () <= 0 )
+		{
+			SetAction ( _T ( "Dotty" ) );
+		}
+
+
 		//-----------------------------------------------------
 		// コマンドによる分岐
 		if ( TranditAction_Command () )
@@ -983,6 +992,12 @@ namespace GAME
 		P_Script scp = m_pOther.lock ()->GetpScript ();
 		int balance_e = scp->m_prmBattle.Balance_E;
 		m_btlPrm.AddBalance ( balance_e );
+
+		//バランスアウト
+		if ( m_btlPrm.GetBalance () <= 0 )
+		{
+			SetAction ( _T ( "Dotty" ) );
+		}
 
 		//自身の状態変更
 		m_btlPrm.SetClang ( true );		//打合状態

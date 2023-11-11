@@ -52,6 +52,13 @@ namespace GAME
 	void DispChara::ParamInit ( P_Param pParam )
 	{
 		m_frontEnd->ParamInit ( pParam );
+
+#if DEBUG_DISP
+		OnRect ();
+#else
+		OffRect ();
+#endif // DEBUG_DISP
+
 	}
 
 	//キャラデータを設定

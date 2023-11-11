@@ -222,10 +222,10 @@
     <ClInclude Include="Source\Result\Rank.h">
       <Filter>Result</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Source\Introduction\Intro_Img.h">
       <Filter>Introduction</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
@@ -387,16 +387,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Parupino.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\Products\◆ Game_\Game_Parupino\Grp\prpn.ico" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\追加予定メモ.txt">
       <Filter>_Document</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Parupino1.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="prpn.ico" />
   </ItemGroup>
 </Project>
