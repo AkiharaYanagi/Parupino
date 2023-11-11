@@ -276,6 +276,9 @@
   <ItemGroup>
     <Image Include="..\..\..\Products\◆ Game_\Game_Parupino\Grp\prpn.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Source\追加予定メモ.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

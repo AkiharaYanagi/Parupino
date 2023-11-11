@@ -24,42 +24,6 @@ namespace GAME
 
 		for ( UINT i = 0; i < NUM_RECT; ++i )
 		{
-#if 0
-			P_PrmRect pCRect = make_shared < PrmRect > ();
-			pCRect->SetAllColor ( RECT_COLOR_C );
-			pCRect->SetZ ( Z_SYS );
-			pCRect->Load ();
-			m_pvpGrpCRect->push_back ( pCRect );
-			AddpTask ( pCRect );
-			GRPLST_INSERT_MAIN ( pCRect );
-
-			P_PrmRect pARect = make_shared < PrmRect > ();
-			pARect->SetAllColor ( RECT_COLOR_A );
-			pARect->SetZ ( Z_SYS );
-			pARect->Load ();
-			pARect->Move ();
-			m_pvpGrpARect->push_back ( pARect );
-			AddpTask ( pARect );
-			GRPLST_INSERT_MAIN ( pARect );
-
-			P_PrmRect pHRect = make_shared < PrmRect > ();
-			pHRect->SetAllColor ( RECT_COLOR_H );
-			pHRect->SetZ ( Z_SYS );
-			pHRect->Load ();
-			pHRect->Move ();
-			m_pvpGrpHRect->push_back ( pHRect );
-			AddpTask ( pHRect );
-			GRPLST_INSERT_MAIN ( pHRect );
-
-			P_PrmRect pORect = make_shared < PrmRect > ();
-			pORect->SetAllColor ( RECT_COLOR_O );
-			pORect->SetZ ( Z_SYS );
-			pORect->Load ();
-			pORect->Move ();
-			m_pvpGrpORect->push_back ( pORect );
-			AddpTask ( pORect );
-			GRPLST_INSERT_MAIN ( pORect );
-#endif // 0
 			m_pvpGrpCRect->push_back ( Make ( RECT_COLOR_C ) );
 			m_pvpGrpARect->push_back ( Make ( RECT_COLOR_A ) );
 			m_pvpGrpHRect->push_back ( Make ( RECT_COLOR_H ) );
@@ -73,7 +37,13 @@ namespace GAME
 		//			–¾Ž¦“I‚ÉLoad()‚ª•K—v
 		//----------------------------------------------------
 
+#define DEBUG_DISP 0
+#if DEBUG_DISP
 		OnRect ();
+#else
+		OffRect ();
+#endif // DEBUG_DISP
+
 	}
 
 	P_PrmRect DispRect::Make ( DWORD clr )
