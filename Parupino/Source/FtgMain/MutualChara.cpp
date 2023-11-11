@@ -45,14 +45,13 @@ namespace GAME
 		m_decision->SetpHitStop ( m_tmrHitstop );
 
 		//デバッグ用枠表示
-#define DISP_RECT	1
-#if DISP_RECT
+#if DISP_DISP
 		m_exeChara1->OnDispRect ();
 		m_exeChara2->OnDispRect ();
 #else
 		m_exeChara1->OffDispRect ();
 		m_exeChara2->OffDispRect ();
-#endif // DISP_RECT
+#endif // DISP_DISP
 
 	}
 

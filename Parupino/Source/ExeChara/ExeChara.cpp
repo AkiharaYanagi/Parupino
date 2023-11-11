@@ -64,6 +64,8 @@ namespace GAME
 		default: break;
 		}
 		m_pCharaInput->SetPlayer ( m_playerID );
+
+		m_dispChara->ParamInit ( pParam );
 	}
 
 	//------------------------

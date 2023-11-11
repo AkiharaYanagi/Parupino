@@ -10,6 +10,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "Game.h"
 #include "Chara.h"
+#include "../../GameMain/Param.h"
 #include "../../FtgMain/G_Ftg.h"
 #include "../BtlParam.h"
 #include "DispGauge.h"
@@ -22,7 +23,7 @@ namespace GAME
 
 	class DispFrontEnd : public TASK_VEC
 	{
-		PLAYER_ID	m_playerID;				//プレイヤ表示側
+		PLAYER_ID	m_playerID;			//プレイヤ側
 
 		P_DispGauge	m_gaugeLife;		//ライフゲージ
 		P_DispGauge	m_gaugeBalance;		//バランスゲージ
@@ -40,16 +41,41 @@ namespace GAME
 		P_GrpApTx		m_efGraphic;		//エフェクトグラフィック表示
 		OperateEffect*		m_pOprtEf;
 #endif	//0
+		//-----------------------------------------------------
 
+		P_GrpAcv	m_grp_Cst_Player1P2P;	//プレイヤ側固定表示"1P""2P"
+		P_GrpAcv	m_grp_Cst_InputPlayerCOM;	//プレイヤ側表示"CPU""Player"
+
+		P_GrpAcv	m_grpPlayer1P;	//キャラ近傍プレイヤ表示"1P"
+		P_GrpAcv	m_grpPlayer2P;	//キャラ近傍プレイヤ表示"2P"
+		P_GrpAcv	m_grpPlayerCOM1P;	//キャラ近傍プレイヤ表示"CPU"1P側
+		P_GrpAcv	m_grpPlayerCOM2P;	//キャラ近傍プレイヤ表示"CPU"2P側
+
+		static VEC2 POS_PL_CP_1P;
+		static VEC2 POS_PL_CP_2P;
+
+		enum DISP_FE_CONST
+		{
+			SIDE_1P = 0,
+			SIDE_2P = 1,
+
+			INPUT_PLAYER = 0,
+			INPUT_CPU = 1,
+		};
 
 	public:
 		DispFrontEnd ();
 		DispFrontEnd ( const DispFrontEnd & rhs ) = delete;
 		~DispFrontEnd ();
 
+		void ParamInit ( P_Param pParam );
+
 		
 		//ゲージ類の表示部のみ初期化
 		void LoadPlayer ( PLAYER_ID playerID );
+
+		//メインイメージ更新
+		void UpdateMainImage ( VEC2 posChara );
 
 		//ゲージ類更新
 		void UpdateGauge ( BtlParam btlPrm );
@@ -70,6 +96,12 @@ namespace GAME
 		//ポイズド
 		void OnPoised ( VEC2 ptChara, bool dirRight );
 #endif // 0
+
+		void SetPlayer ();
+		void SetCPU ();
+
+	private:
+		P_GrpAcv MakepGrpPlyr ( LPCTSTR pstr );
 
 	};
 
