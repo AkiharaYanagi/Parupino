@@ -43,13 +43,11 @@ namespace GAME
 #endif	//0
 		//-----------------------------------------------------
 
-		P_GrpAcv	m_grp_Cst_Player1P2P;	//プレイヤ側固定表示"1P""2P"
-		P_GrpAcv	m_grp_Cst_InputPlayerCOM;	//プレイヤ側表示"CPU""Player"
+		P_GrpAcv	m_grp_Cst_Player1P2P;	//プレイヤ側 固定表示"1P""2P"
+		P_GrpAcv	m_grp_Cst_InputPlayerCOM;	//入力者 固定表示"CPU""Player"
 
-		P_GrpAcv	m_grpPlayer1P;	//キャラ近傍プレイヤ表示"1P"
-		P_GrpAcv	m_grpPlayer2P;	//キャラ近傍プレイヤ表示"2P"
-		P_GrpAcv	m_grpPlayerCOM1P;	//キャラ近傍プレイヤ表示"CPU"1P側
-		P_GrpAcv	m_grpPlayerCOM2P;	//キャラ近傍プレイヤ表示"CPU"2P側
+		P_GrpAcv	m_grpPlayer1P2P;	//キャラ近傍 プレイヤ表示"1P""2P"
+		P_GrpAcv	m_grpInputCOMPLayer;	//キャラ近傍 入力者表示"CPU""Player"
 
 		static VEC2 POS_PL_CP_1P;
 		static VEC2 POS_PL_CP_2P;

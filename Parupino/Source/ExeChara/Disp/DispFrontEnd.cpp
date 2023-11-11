@@ -70,10 +70,11 @@ namespace GAME
 		m_grp_Cst_InputPlayerCOM = MakepGrpPlyr ( _T ( "INPUT_PLAYER.png" ) );
 		m_grp_Cst_InputPlayerCOM->AddTexture ( _T ( "INPUT_CPU.png" ) );
 
-		m_grpPlayer1P = MakepGrpPlyr ( _T ( "Player_1P.png" ) );
-		m_grpPlayer2P = MakepGrpPlyr ( _T ( "Player_2P.png" ) );
-		m_grpPlayerCOM1P = MakepGrpPlyr ( _T ( "INPUT_CPU.png" ) );
-		m_grpPlayerCOM2P = MakepGrpPlyr ( _T ( "INPUT_CPU.png" ) );
+		m_grpPlayer1P2P = MakepGrpPlyr ( _T ( "Player_1P.png" ) );
+		m_grpPlayer1P2P->AddTexture ( _T ( "Player_2P.png" ) );
+
+		m_grpInputCOMPLayer = MakepGrpPlyr ( _T ( "INPUT_PLAYER.png" ) );
+		m_grpInputCOMPLayer->AddTexture ( _T ( "INPUT_CPU.png" ) );
 
 
 #if 0
@@ -113,8 +114,6 @@ namespace GAME
 		//反対を非表示
 		if ( PLAYER_ID_1 == playerID )
 		{
-			m_grpPlayer2P->SetValid ( F );
-
 			m_grp_Cst_Player1P2P->SetPos ( POS_PL_CP_1P );
 			m_grp_Cst_Player1P2P->SetIndexTexture ( SIDE_1P );
 
@@ -122,8 +121,6 @@ namespace GAME
 		}
 		else if ( PLAYER_ID_2 == playerID )
 		{
-			m_grpPlayer1P->SetValid ( F );
-
 			m_grp_Cst_Player1P2P->SetPos ( POS_PL_CP_2P );
 			m_grp_Cst_Player1P2P->SetIndexTexture ( SIDE_2P );
 
@@ -165,15 +162,13 @@ namespace GAME
 	void DispFrontEnd::SetPlayer ()
 	{
 		m_grp_Cst_InputPlayerCOM->SetIndexTexture ( INPUT_PLAYER );
-
-		m_grpPlayerCOM1P->SetValid ( F );
-		m_grpPlayerCOM2P->SetValid ( F );
+		m_grpInputCOMPLayer->SetIndexTexture ( INPUT_PLAYER );
 	}
 
 	void DispFrontEnd::SetCPU ()
 	{
 		m_grp_Cst_InputPlayerCOM->SetIndexTexture ( INPUT_CPU );
-
+		m_grpInputCOMPLayer->SetIndexTexture ( INPUT_CPU );
 	}
 
 
@@ -192,10 +187,9 @@ namespace GAME
 		float bx = G_Ftg::inst ()->GetPosMutualBase ().x;	//基準位置
 		VEC2 vecImgPlayer = VEC2 ( bx, 0 ) + posChara + VEC2 ( -32.f, 0 );
 		vecImgPlayer.y = 32.f + 1.f * PLAYER_BASE_Y;	//y方向のみ指定
-		m_grpPlayer1P->SetPos ( vecImgPlayer );
-		m_grpPlayer2P->SetPos ( vecImgPlayer );
-		m_grpPlayerCOM1P->SetPos ( vecImgPlayer + VEC2 ( 0, 33 ) );
-		m_grpPlayerCOM2P->SetPos ( vecImgPlayer + VEC2 ( 0, 33 ) );
+
+		m_grpPlayer1P2P->SetPos ( vecImgPlayer );
+		m_grpInputCOMPLayer->SetPos ( vecImgPlayer + VEC2 ( 0, 33 ) );
 
 		//硬直時間表示
 #if 0

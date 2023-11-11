@@ -56,6 +56,9 @@ namespace GAME
 		//枠表示OFF
 		void OffRect () { m_dispRect->OffRect (); }
 
+		//PLAYER / CPU
+		void SetControl_PLAYER () { m_frontEnd->SetPlayer (); }
+		void SetControl_CPU () { m_frontEnd->SetCPU (); }
 
 		//ゲージ類の表示部のみ初期化
 		void LoadPlayer ( PLAYER_ID playerID );
