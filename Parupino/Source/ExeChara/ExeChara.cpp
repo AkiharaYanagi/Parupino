@@ -64,6 +64,8 @@ namespace GAME
 		default: break;
 		}
 		m_pCharaInput->SetPlayer ( m_playerID );
+
+		m_dispChara->ParamInit ( pParam );
 	}
 
 	//------------------------
@@ -98,7 +100,7 @@ namespace GAME
 //		tstring name (_T ("testChara.dat"));
 //		tstring name ( _T ( "chara.dat" ) );
 		tstring name ( _T ( "charaBin.dat" ) );
-//		tstring name (_T ("chara_standBin.dat"));
+		//		tstring name (_T ("chara_standBin.dat"));
 #if 0
 		switch ( m_name )
 		{
@@ -109,7 +111,7 @@ namespace GAME
 #endif // 0
 
 		//バイナリデータ読込
-		LoadCharaBin loadCharaBin ( name.c_str(), *m_pChara );
+		LoadCharaBin loadCharaBin ( name.c_str (), *m_pChara );
 	}
 
 	//------------------------
@@ -264,7 +266,7 @@ namespace GAME
 		{
 			int i = 0;
 		}
-		
+
 		//-----------------------------------------------------
 		// コマンドによる分岐
 
@@ -394,10 +396,10 @@ namespace GAME
 			}
 		}
 		//ジャンプ
-		if (	IsNameAction ( _T ( "FrontJump" ) )
-			||	IsNameAction ( _T ( "VerticalJump" ) )
-			||	IsNameAction ( _T ( "BackJump" ) )
-		)
+		if ( IsNameAction ( _T ( "FrontJump" ) )
+			|| IsNameAction ( _T ( "VerticalJump" ) )
+			|| IsNameAction ( _T ( "BackJump" ) )
+			)
 		{
 			if ( m_frame == 0 )
 			{
@@ -506,13 +508,13 @@ namespace GAME
 
 		//すべてのアクションとスクリプトを巡回
 		PVP_Action pvpAction = m_pChara->GetpvpAction ();
-		for ( P_Action pAction : (* pvpAction) )
+		for ( P_Action pAction : ( * pvpAction ) )
 		{
 			PVP_Script pvpScript = pAction->GetpvpScript ();
-			for ( P_Script pScript : (* pvpScript ) )
+			for ( P_Script pScript : ( * pvpScript ) )
 			{
 				PVP_EfGnrt pvpEfGnrt = pScript->GetpvpEfGnrt ();
-				for ( P_EfGnrt pEfGnrt : (* pvpEfGnrt) )
+				for ( P_EfGnrt pEfGnrt : ( * pvpEfGnrt ) )
 				{
 					//非生成なら初回に登録しておき、IDで稼働状態にする
 					if ( ! pEfGnrt->GetGnrt () )
@@ -522,10 +524,10 @@ namespace GAME
 
 						//エフェクトの取得
 						P_Effect pEf = m_pChara->GetpEffect ( index );
-						
+
 						//エフェクト管理に渡してIDを得る
 //						UINT id = m_oprtEf.AddVectorEffect ( pEf, pEfGnrt->GetZ () );
-						
+
 						//IDを記録
 //						pEfGnrt->SetID ( id );
 					}
@@ -539,7 +541,7 @@ namespace GAME
 	{
 		//発生
 		PVP_EfGnrt  pvpEfGnrt = m_pScript->GetpvpEfGnrt ();
-		for ( P_EfGnrt pEfGnrt : (*pvpEfGnrt) )
+		for ( P_EfGnrt pEfGnrt : ( *pvpEfGnrt ) )
 		{
 			//生成用なら
 			if ( pEfGnrt->GetGnrt () )
@@ -617,7 +619,7 @@ namespace GAME
 		m_dispChara->UpdateInput ( m_pCharaInput );
 
 		//共通グラフィック
-		if ( ! m_btlPrm.GetTmr_Stop()->IsActive () )
+		if ( ! m_btlPrm.GetTmr_Stop ()->IsActive () )
 		{
 			//スクリプトからの停止
 			m_btlPrm.SetScpStop ( m_pScript->m_prmStaging.Stop );
@@ -714,11 +716,11 @@ namespace GAME
 		//1p2p同時重なりは両方が取得
 
 		//当り枠を取得
-		PV_RECT pvHRect = GetpCharaRect()->GetpvHRect ();
+		PV_RECT pvHRect = GetpCharaRect ()->GetpvHRect ();
 
 		//EF側の点集合を取得
 		vector < PrmEfPart > & vPrm = m_efPart->Getrv_Prm ();
-		
+
 		//重なり判定
 		UINT count = 0;
 		UINT i = 0;
@@ -787,7 +789,7 @@ namespace GAME
 		{
 			DBGOUT_WND_F ( 4, _T ( "bHit = %d" ), bHit ? 1 : 0 );
 			P_Timer ptHitStop = m_btlPrm.GetTmr_HitStop ();
-			DBGOUT_WND_F ( 5, _T ( "hitStop = %d" ), ptHitStop->GetTime() );
+			DBGOUT_WND_F ( 5, _T ( "hitStop = %d" ), ptHitStop->GetTime () );
 			UINT hitpitch = m_pAction->GetHitPitch ();
 			P_Timer ptHitPitch = m_btlPrm.GetTmr_HitPitch ();
 			DBGOUT_WND_F ( 6, _T ( "hitPitch = %d / %d" ), ptHitPitch->GetTime (), hitpitch );
@@ -823,7 +825,7 @@ namespace GAME
 		//アクション内ヒット数が上限に達したとき枠を空にする
 
 		UINT hitmax = m_pAction->GetHitNum ();
-		if ( hitmax <= m_btlPrm.GetHitNum() )
+		if ( hitmax <= m_btlPrm.GetHitNum () )
 		{
 			//攻撃枠を空にする
 			m_charaRect->ResetARect ();
@@ -866,7 +868,7 @@ namespace GAME
 		m_dispChara->OffRect ();
 		m_oprtEf->OffDispRect ();
 	}
-	
+
 	//枠をすべてリセット
 	void ExeChara::ResetRect ()
 	{
@@ -944,12 +946,16 @@ namespace GAME
 	{
 		m_pCharaInput = make_shared < CPUInput > ( shared_from_this (), m_pOther );
 		m_pCharaInput->SetPlayer ( m_playerID );
+
+		m_dispChara->SetControl_CPU ();
 	}
 
 	void ExeChara::ControlPlayer ()
 	{
 		m_pCharaInput = make_shared < PlayerInput > ();
 		m_pCharaInput->SetPlayer ( m_playerID );
+
+		m_dispChara->SetControl_PLAYER ();
 	}
 
 	//---------------------------------------------
@@ -974,7 +980,7 @@ namespace GAME
 #endif // 0
 
 		//相手のパラメータで増減
-		P_Script scp = m_pOther.lock()->GetpScript ();
+		P_Script scp = m_pOther.lock ()->GetpScript ();
 		int balance_e = scp->m_prmBattle.Balance_E;
 		m_btlPrm.AddBalance ( balance_e );
 
@@ -1190,7 +1196,7 @@ namespace GAME
 		m_btlPrm.SetHitEst ( true );		//攻撃成立フラグ
 //		m_tmrHitstop->Start ();		//エフェクトはヒットストップしない
 
-		m_btlPrm.GetTmr_HitPitch()->Start ();
+		m_btlPrm.GetTmr_HitPitch ()->Start ();
 	}
 
 #if 0

@@ -14,6 +14,9 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
+	VEC2 DispFrontEnd::POS_PL_CP_1P ( 5, LIFE_GAUGE_Y );
+	VEC2 DispFrontEnd::POS_PL_CP_2P ( 1280 - 64 - 5, LIFE_GAUGE_Y );
+
 
 	DispFrontEnd::DispFrontEnd ()
 	{
@@ -58,18 +61,23 @@ namespace GAME
 		AddpTask ( m_gaugeMana );
 
 
-#if 0
+		//-----------------------------------------------------
 		//プレイヤー表示
-		m_grpPlayer1P.AddTexture ( _T ( "Player_1P.png" ) );
-		m_grpPlayer1P.GetpMatrix ()->SetValid ( false );
-		m_pGrpAry->InsertTask ( & m_grpPlayer1P );
-		m_grpPlayer2P.AddTexture ( _T ( "Player_2P.png" ) );
-		m_grpPlayer2P.GetpMatrix ()->SetValid ( false );
-		m_pGrpAry->InsertTask ( & m_grpPlayer2P );
-		m_grpPlayerCOM.AddTexture ( _T ( "Player_COM.png" ) );
-		m_grpPlayerCOM.GetpMatrix ()->SetValid ( false );
-		m_pGrpAry->InsertTask ( & m_grpPlayerCOM );
+		//-----------------------------------------------------
+		m_grp_Cst_Player1P2P = MakepGrpPlyr ( _T ( "Player_1P.png" ) );
+		m_grp_Cst_Player1P2P->AddTexture ( _T ( "Player_2P.png" ) );
 
+		m_grp_Cst_InputPlayerCOM = MakepGrpPlyr ( _T ( "INPUT_PLAYER.png" ) );
+		m_grp_Cst_InputPlayerCOM->AddTexture ( _T ( "INPUT_CPU.png" ) );
+
+		m_grp_CH_Player1P2P = MakepGrpPlyr ( _T ( "Player_1P.png" ) );
+		m_grp_CH_Player1P2P->AddTexture ( _T ( "Player_2P.png" ) );
+
+		m_grp_CH_InputCOMPLayer = MakepGrpPlyr ( _T ( "INPUT_PLAYER.png" ) );
+		m_grp_CH_InputCOMPLayer->AddTexture ( _T ( "INPUT_CPU.png" ) );
+
+
+#if 0
 		//ヒットストップ時間表示
 		m_gaugeHitStop.SetAllColor ( _CLR ( 0xffa0a0ff ) );
 		m_pGrpAry->InsertTask ( & m_gaugeHitStop );
@@ -77,26 +85,18 @@ namespace GAME
 		//のけぞり時間表示
 		m_gaugeLurch.SetAllColor ( _CLR ( 0xffa0ffa0 ) );
 		m_pGrpAry->InsertTask ( & m_gaugeLurch );
-
-		//エフェクト
-		m_grpHitEf.AddTexture ( _T ( "efHit.png" ) );
-		m_pGrpAry->InsertTask ( & m_grpHitEf );
-
-		m_grpAvoidEf.AddTexture ( _T ( "efAvoid.png" ) );
-		m_pGrpAry->InsertTask ( & m_grpAvoidEf );
-
-		m_grpPoisedEf.AddTexture ( _T ( "poised0.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised1.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised2.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised3.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised4.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised5.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised6.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised7.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised8.png" ) );
-		m_grpPoisedEf.AddTexture ( _T ( "poised9.png" ) );
-		AddTask ( & m_grpPoisedEf );
 #endif	//0
+	}
+
+	P_GrpAcv DispFrontEnd::MakepGrpPlyr ( LPCTSTR pstr )
+	{
+		P_GrpAcv p = make_shared < GrpAcv > ();
+		p->SetValid ( T );
+		p->AddTexture ( pstr );
+		p->SetZ ( Z_SYS - 0.001f );
+		AddpTask ( p );
+		GRPLST_INSERT_MAIN ( p );
+		return p;
 	}
 
 	DispFrontEnd::~DispFrontEnd ()
@@ -106,10 +106,28 @@ namespace GAME
 	void DispFrontEnd::LoadPlayer ( PLAYER_ID playerID )
 	{
 		m_playerID = playerID;
-		
+
 		m_gaugeLife->LoadPlayer ( playerID );
 		m_gaugeBalance->LoadPlayer ( playerID );
 		m_gaugeMana->LoadPlayer ( playerID );
+
+		//プレイヤにより表示を指定
+		if ( PLAYER_ID_1 == playerID )
+		{
+			m_grp_Cst_Player1P2P->SetPos ( POS_PL_CP_1P );
+			m_grp_Cst_Player1P2P->SetIndexTexture ( SIDE_1P );
+
+			m_grp_Cst_InputPlayerCOM->SetPos ( POS_PL_CP_1P + VEC2 ( 0, 33 ) );
+			m_grp_CH_Player1P2P->SetIndexTexture ( SIDE_1P );
+		}
+		else if ( PLAYER_ID_2 == playerID )
+		{
+			m_grp_Cst_Player1P2P->SetPos ( POS_PL_CP_2P );
+			m_grp_Cst_Player1P2P->SetIndexTexture ( SIDE_2P );
+
+			m_grp_Cst_InputPlayerCOM->SetPos ( POS_PL_CP_2P + VEC2 ( 0, 33 ) );
+			m_grp_CH_Player1P2P->SetIndexTexture ( SIDE_2P );
+		}
 
 #if 0
 		//ヒットストップ時間表示
@@ -123,12 +141,57 @@ namespace GAME
 #endif // 0
 	}
 
+	//------------------------
+	//シーンパラメータ関連初期化
+	void DispFrontEnd::ParamInit ( P_Param pParam )
+	{
+		//ゲーム設定
+		GameSettingFile stg = pParam->GetGameSetting ();
+
+		//選択キャラ名前・モードを取得
+		PLAYER_MODE playerMode = stg.GetPlayerMode ( m_playerID );
+
+		//プレイヤモード(入力種類)による初期化
+		switch ( playerMode )
+		{
+		case MODE_PLAYER: SetPlayer (); break;
+		case MODE_CPU: SetCPU (); break;
+		case MODE_NETWORK: break;
+		default: break;
+		}
+	}
+
+	void DispFrontEnd::SetPlayer ()
+	{
+		m_grp_Cst_InputPlayerCOM->SetIndexTexture ( INPUT_PLAYER );
+		m_grp_CH_InputCOMPLayer->SetIndexTexture ( INPUT_PLAYER );
+	}
+
+	void DispFrontEnd::SetCPU ()
+	{
+		m_grp_Cst_InputPlayerCOM->SetIndexTexture ( INPUT_CPU );
+		m_grp_CH_InputCOMPLayer->SetIndexTexture ( INPUT_CPU );
+	}
+
+
+	//------------------------
 	void DispFrontEnd::UpdateGauge ( BtlParam btlPrm )
 	{
 		m_gaugeLife->Update ( btlPrm.GetLife () );
 		m_gaugeBalance->Update ( btlPrm.GetBalance () );
 		m_gaugeMana->Update ( btlPrm.GetMana () );
 
+	}
+
+	void DispFrontEnd::UpdateMainImage ( VEC2 posChara )
+	{
+		//プレイヤー表示
+		float bx = G_Ftg::inst ()->GetPosMutualBase ().x;	//基準位置
+		VEC2 vecImgPlayer = VEC2 ( bx, 0 ) + posChara + VEC2 ( -32.f, 0 );
+		vecImgPlayer.y = 32.f + 1.f * PLAYER_BASE_Y;	//y方向のみ指定
+
+		m_grp_CH_Player1P2P->SetPos ( vecImgPlayer );
+		m_grp_CH_InputCOMPLayer->SetPos ( vecImgPlayer + VEC2 ( 0, 33 ) );
 
 		//硬直時間表示
 #if 0
