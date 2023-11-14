@@ -119,9 +119,9 @@ namespace GAME
 	};
 
 
-	using P_Script = shared_ptr < Script >;
-	using VP_Script = vector < P_Script >;
-	using PVP_Script = shared_ptr < VP_Script >;
+	using P_Script = std::shared_ptr < Script >;
+	using VP_Script = std::vector < P_Script >;
+	using PVP_Script = std::shared_ptr < VP_Script >;
 
 
 }	//namespace GAME

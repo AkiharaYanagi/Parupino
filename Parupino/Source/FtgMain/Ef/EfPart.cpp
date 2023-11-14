@@ -32,7 +32,7 @@ namespace GAME
 
 		//-----------------------------------------------------
 		//角度初期化用ランダマイザ
-		vector < UINT > v_rnd_ui;
+		std::vector < UINT > v_rnd_ui;
 		Rnd_0_N ( SPARK_MAX, v_rnd_ui );
 
 		//-----------------------------------------------------
@@ -145,7 +145,7 @@ namespace GAME
 		}
 
 		//0からN-1の乱数
-		vector < UINT > vecRnd;
+		std::vector < UINT > vecRnd;
 		Rnd_0_N ( n, vecRnd );
 		
 		//稼働開始
@@ -163,7 +163,7 @@ namespace GAME
 		}
 	}
 
-	void EfPart::Rnd_0_N ( UINT N, vector < UINT > & vec )
+	void EfPart::Rnd_0_N ( UINT N, std::vector < UINT > & vec )
 	{
 		vec.clear ();
 		vec.resize ( N );

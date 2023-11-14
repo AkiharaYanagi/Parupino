@@ -76,7 +76,7 @@ namespace GAME
 		void Grp ();
 	};
 
-	using P_FTG = shared_ptr < Fighting >;
+	using P_FTG = std::shared_ptr < Fighting >;
 
 
 }	//namespace GAME

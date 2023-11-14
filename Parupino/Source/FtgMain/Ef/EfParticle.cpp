@@ -26,7 +26,7 @@ namespace GAME
 
 		//-----------------------------------------------------
 		//角度初期化用ランダマイザ
-		vector < UINT > v_rnd_ui;
+		std::vector < UINT > v_rnd_ui;
 		v_rnd_ui.reserve ( SPARK_NUM );
 		for ( UINT i = 0; i < SPARK_NUM; ++ i )
 		{

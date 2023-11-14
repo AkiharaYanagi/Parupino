@@ -19,7 +19,7 @@ namespace GAME
 	class Route
 	{
 		tstring		m_name;				//–¼‘O
-		vector < UINT >		m_vIdBranch;
+		std::vector < UINT >		m_vIdBranch;
 
 	public:
 		Route ();
@@ -49,9 +49,9 @@ namespace GAME
 		V_UINT & GetvIDBranch () { return m_vIdBranch; }
 	};
 
-	using P_Route = shared_ptr < Route >;
-	using VP_Route = vector < P_Route >;
-	using PVP_Route = shared_ptr < VP_Route >;
+	using P_Route = std::shared_ptr < Route >;
+	using VP_Route = std::vector < P_Route >;
+	using PVP_Route = std::shared_ptr < VP_Route >;
 
 
 }	//namespace GAME

@@ -44,7 +44,7 @@ namespace GAME
 		void OffRect () { m_dispRect->OffRect (); }
 	};
 
-	using P_DispEffect = shared_ptr < DispEffect >;
+	using P_DispEffect = std::shared_ptr < DispEffect >;
 
 
 }	//namespace GAME

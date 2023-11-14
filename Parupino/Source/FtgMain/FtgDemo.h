@@ -35,7 +35,7 @@ namespace GAME
 		void SetwpFtgDemoActor ( WP_FtgDemoActor p ) { m_ftgDemoActor = p; }
 		WP_FtgDemoActor GetwpFtgDemoActor () const { return m_ftgDemoActor; }
 	};
-	using P_PRM_FTG_DEMO = shared_ptr < FtgDemoParam >;
+	using P_PRM_FTG_DEMO = std::shared_ptr < FtgDemoParam >;
 
 	//=====================================================
 	//State
@@ -56,7 +56,7 @@ namespace GAME
 		WP_FtgDemoActor GetwpFtgDemoActor () const { return m_prmFtgDemo->GetwpFtgDemoActor (); }
 
 	};
-	using P_FtgDemo = shared_ptr < FtgDemoState >;
+	using P_FtgDemo = std::shared_ptr < FtgDemoState >;
 
 	//=====================================================
 
@@ -75,7 +75,7 @@ namespace GAME
 		void Start ();
 		void Do ();
 	};
-	using P_FTG_DM_Greeting = shared_ptr < FTG_DM_Greeting >;
+	using P_FTG_DM_Greeting = std::shared_ptr < FTG_DM_Greeting >;
 
 	//------------------------------------------------
 
@@ -95,7 +95,7 @@ namespace GAME
 		void Do ();
 		void Final ();
 	};
-	using P_FTG_DM_GetReady = shared_ptr < FTG_DM_GetReady >;
+	using P_FTG_DM_GetReady = std::shared_ptr < FTG_DM_GetReady >;
 
 
 	//------------------------------------------------
@@ -110,7 +110,7 @@ namespace GAME
 		void Start ();
 		void Do ();
 	};
-	using P_FTG_DM_Attack = shared_ptr < FTG_DM_Attack >;
+	using P_FTG_DM_Attack = std::shared_ptr < FTG_DM_Attack >;
 
 
 	//------------------------------------------------
@@ -120,7 +120,7 @@ namespace GAME
 		void Start ();
 		void Do ();
 	};
-	using P_FTG_DM_Main = shared_ptr < FTG_DM_Main >;
+	using P_FTG_DM_Main = std::shared_ptr < FTG_DM_Main >;
 
 
 	//------------------------------------------------
@@ -135,7 +135,7 @@ namespace GAME
 		void Start ();
 		void Do ();
 	};
-	using P_FTG_DM_Down = shared_ptr < FTG_DM_Down >;
+	using P_FTG_DM_Down = std::shared_ptr < FTG_DM_Down >;
 
 
 	//------------------------------------------------
@@ -144,12 +144,12 @@ namespace GAME
 	public:
 		void Do ();
 	};
-	using P_FTG_DM_Winner = shared_ptr < FTG_DM_Winner >;
+	using P_FTG_DM_Winner = std::shared_ptr < FTG_DM_Winner >;
 
 
 	//=====================================================
 
-	using VP_FtgDemo = vector < P_FtgDemo >;
+	using VP_FtgDemo = std::vector < P_FtgDemo >;
 
 	//Actor
 	class FtgDemoActor : public TASK_VEC, public enable_shared_from_this < FtgDemoActor >
@@ -197,7 +197,7 @@ namespace GAME
 		P_MutualChara GetpMutualChara () const { return mp_Param->GetpMutualChara (); }
 	};
 
-	using P_FtgDemoActor = shared_ptr < FtgDemoActor >;
+	using P_FtgDemoActor = std::shared_ptr < FtgDemoActor >;
 
 
 }	//namespace GAME

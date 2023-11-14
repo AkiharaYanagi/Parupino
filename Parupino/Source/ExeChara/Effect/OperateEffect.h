@@ -67,7 +67,7 @@ namespace GAME
 		void OffDispRect ();
 	};
 
-	using P_OprEf = shared_ptr < OperateEffect >;
+	using P_OprEf = std::shared_ptr < OperateEffect >;
 
 
 }	//namespace GAME

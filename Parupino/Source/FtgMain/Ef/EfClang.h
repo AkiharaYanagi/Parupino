@@ -30,7 +30,7 @@ namespace GAME
 		void On ( VEC2 center );
 	};
 
-	using P_EfClang = shared_ptr < EfClang >;
+	using P_EfClang = std::shared_ptr < EfClang >;
 
 
 }	//namespace GAME

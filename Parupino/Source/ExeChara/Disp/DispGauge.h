@@ -61,7 +61,7 @@ namespace GAME
 		void Update ( UINT value );
 	};
 
-	using P_DispGauge = shared_ptr < DispGauge >;
+	using P_DispGauge = std::shared_ptr < DispGauge >;
 
 
 }	//namespace GAME

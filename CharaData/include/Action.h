@@ -68,9 +68,9 @@ namespace GAME
 		void SetBalance ( int i ) { m_balance = i; }
 };
 
-	using P_Action = shared_ptr < Action >;
-	using VP_Action = vector < P_Action >;
-	using PVP_Action = shared_ptr < VP_Action >;
+	using P_Action = std::shared_ptr < Action >;
+	using VP_Action = std::vector < P_Action >;
+	using PVP_Action = std::shared_ptr < VP_Action >;
 
 
 }	//namespace GAME

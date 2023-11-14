@@ -64,7 +64,7 @@ namespace GAME
 			( *m_pvpAction ) [ i ] = arypAction [ i ];
 		}
 	}
-	void Chara::AddpAction ( shared_ptr < P_Action [] > arypAction, rsize_t size )
+	void Chara::AddpAction ( std::shared_ptr < P_Action [] > arypAction, rsize_t size )
 	{
 		if ( ! m_pvpAction ) { return; }
 
@@ -75,7 +75,7 @@ namespace GAME
 			( *m_pvpAction ) [ i ] = arypAction [ i ];
 		}
 	}
-	void Chara::AddpAction ( const vector < P_Action > & arypAction, rsize_t size )
+	void Chara::AddpAction ( const std::vector < P_Action > & arypAction, rsize_t size )
 	{
 		if ( ! m_pvpAction ) { return; }
 
@@ -100,7 +100,7 @@ namespace GAME
 			m_pvpEf->at ( i ) = arypEffect [ i ];
 		}
 	}
-	void Chara::AddpEffect ( const vector < P_Effect > & arypEffect, rsize_t size )
+	void Chara::AddpEffect ( const std::vector < P_Effect > & arypEffect, rsize_t size )
 	{
 		if ( ! m_pvpEf ) { return; }
 

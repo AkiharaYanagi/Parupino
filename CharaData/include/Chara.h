@@ -88,8 +88,8 @@ namespace GAME
 
 		//アクション配列にまとめて追加
 		void AddpAction ( unique_ptr < P_Action [] > arypAction, rsize_t size );
-		void AddpAction ( shared_ptr < P_Action [] > arypAction, rsize_t size );
-		void AddpAction ( const vector < P_Action > & arypAction, rsize_t size );
+		void AddpAction ( std::shared_ptr < P_Action [] > arypAction, rsize_t size );
+		void AddpAction ( const std::vector < P_Action > & arypAction, rsize_t size );
 
 		//---------------------------------------------------------------------
 		//名前からアクションIDを取得する(無いときは０を返す)
@@ -118,7 +118,7 @@ namespace GAME
 
 		//エフェクト配列にまとめて追加
 		void AddpEffect ( unique_ptr < P_Effect [] > arypEffect, rsize_t size );
-		void AddpEffect ( const vector < P_Effect > & arypEffect, rsize_t size );
+		void AddpEffect ( const std::vector < P_Effect > & arypEffect, rsize_t size );
 
 		//Efイメージ テクスチャポインタの取得
 		P_TxBs GetpEfTexture ( UINT index ) { return m_pvpTxEf->at ( index ); }
@@ -161,9 +161,9 @@ namespace GAME
 		const VP_Route & GetvpRoute () const { return m_vpRoute; }
 	};
 
-	using P_Chara = shared_ptr < Chara >;
-	using VP_Chara = vector < P_Chara >;
-	using PVP_Chara = shared_ptr < VP_Chara >;
+	using P_Chara = std::shared_ptr < Chara >;
+	using VP_Chara = std::vector < P_Chara >;
+	using PVP_Chara = std::shared_ptr < VP_Chara >;
 
 
 }	//namespace GAME

@@ -17,7 +17,7 @@ namespace GAME
 {
 	//‘O•ûéŒ¾
 	class ExeChara;
-	using P_ExeChara = shared_ptr < ExeChara >;
+	using P_ExeChara = std::shared_ptr < ExeChara >;
 	using WP_ExeChara = weak_ptr < ExeChara >;
 
 	class CPUInput : public CharaInput

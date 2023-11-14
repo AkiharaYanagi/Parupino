@@ -26,7 +26,7 @@ namespace GAME
 		bool				m_cpu;			//CPUフラグ
 
 		//コマンドが完成したIDを優先順に保存したリスト
-		vector < UINT >		m_vCompID;		
+		std::vector < UINT >		m_vCompID;		
 
 	public:
 		CharaInput ();
@@ -57,11 +57,11 @@ namespace GAME
 		UINT GetCompID ();
 
 		//優先リストの参照を得る
-		const vector < UINT > & GetvCompID () const { return m_vCompID; }
+		const std::vector < UINT > & GetvCompID () const { return m_vCompID; }
 
 	};
 
-	using P_CharaInput = shared_ptr < CharaInput >;
+	using P_CharaInput = std::shared_ptr < CharaInput >;
 
 
 }	//namespace GAME

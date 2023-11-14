@@ -18,8 +18,8 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	using VP_PrmRect = vector < P_PrmRect >;
-	using PVP_PrmRect = shared_ptr < VP_PrmRect >;
+	using VP_PrmRect = std::vector < P_PrmRect >;
+	using PVP_PrmRect = std::shared_ptr < VP_PrmRect >;
 
 	class DispRect : public TASK_VEC
 	{
@@ -67,7 +67,7 @@ namespace GAME
 		P_PrmRect Make ( DWORD clr );
 	};
 
-	using P_DispRect = shared_ptr < DispRect >;
+	using P_DispRect = std::shared_ptr < DispRect >;
 
 
 }	//namespace GAME

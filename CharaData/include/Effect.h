@@ -28,9 +28,9 @@ namespace GAME
 		~Effect ();
 	};
 
-	using P_Effect = shared_ptr < Effect >;
-	using VP_Effect = vector < P_Effect >;
-	using PVP_Effect = shared_ptr < VP_Effect >;
+	using P_Effect = std::shared_ptr < Effect >;
+	using VP_Effect = std::vector < P_Effect >;
+	using PVP_Effect = std::shared_ptr < VP_Effect >;
 
 
 }	//namespace GAME

@@ -283,7 +283,7 @@ namespace GAME
 
 		//コマンドが完成したIDを優先順に保存したリスト
 		m_pCharaInput->MakeTransitIDList ( *m_pChara, m_pScript, m_btlPrm.GetDirRight () );
-		const vector < UINT > & vCompID = m_pCharaInput->GetvCompID ();
+		const std::vector < UINT > & vCompID = m_pCharaInput->GetvCompID ();
 
 		UINT transitID = NO_COMPLETE;
 		for ( UINT id : vCompID )
@@ -535,7 +535,7 @@ namespace GAME
 						P_Effect pEf = m_pChara->GetpEffect ( index );
 
 						//エフェクト管理に渡してIDを得る
-//						UINT id = m_oprtEf.AddVectorEffect ( pEf, pEfGnrt->GetZ () );
+//						UINT id = m_oprtEf.Addstd::vectorEffect ( pEf, pEfGnrt->GetZ () );
 
 						//IDを記録
 //						pEfGnrt->SetID ( id );
@@ -728,7 +728,7 @@ namespace GAME
 		PV_RECT pvHRect = GetpCharaRect ()->GetpvHRect ();
 
 		//EF側の点集合を取得
-		vector < PrmEfPart > & vPrm = m_efPart->Getrv_Prm ();
+		std::vector < PrmEfPart > & vPrm = m_efPart->Getrv_Prm ();
 
 		//重なり判定
 		UINT count = 0;

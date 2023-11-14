@@ -74,7 +74,7 @@ namespace GAME
 		int GetN_Act2p () const { return m_n_act_2p; }
 	};
 
-	using P_Param = shared_ptr < Param >;
+	using P_Param = std::shared_ptr < Param >;
 
 
 }	//namespace GAME

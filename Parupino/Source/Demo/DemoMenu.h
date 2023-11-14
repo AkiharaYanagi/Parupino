@@ -50,7 +50,7 @@ namespace GAME
 		void ParamInit ( P_DemoMain pDemoMain );
 	};
 
-	using P_DemoMenu = shared_ptr < DemoMenu >;
+	using P_DemoMenu = std::shared_ptr < DemoMenu >;
 
 
 }	//namespace GAME

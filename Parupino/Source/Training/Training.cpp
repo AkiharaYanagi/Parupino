@@ -82,6 +82,10 @@ namespace GAME
 
 	void Training::Load ()
 	{
+		//CPU / PLAYER
+		m_fighting->Set_1P_vs_2P ();
+
+
 		SOUND->Stop_BGM ( BGM_Main );
 		SOUND->Play_Loop_BGM ( BGM_Main );
 

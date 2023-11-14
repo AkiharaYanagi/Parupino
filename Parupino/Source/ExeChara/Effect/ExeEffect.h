@@ -118,13 +118,13 @@ namespace GAME
 
 	//型別定義 エイリアス
 	using ExEf = ExeEffect;
-	using P_ExEf = shared_ptr < ExEf >;
+	using P_ExEf = std::shared_ptr < ExEf >;
 
-	using VP_ExEf = vector < P_ExEf >;
-	using PVP_ExEf = shared_ptr < VP_ExEf >;
+	using VP_ExEf = std::vector < P_ExEf >;
+	using PVP_ExEf = std::shared_ptr < VP_ExEf >;
 
 	using LP_ExEf = list < P_ExEf >;
-	using PLP_ExEf = shared_ptr < LP_ExEf >;
+	using PLP_ExEf = std::shared_ptr < LP_ExEf >;
 
 
 }	//namespace GAME

@@ -53,8 +53,8 @@ namespace GAME
 			SPARK_MAX = 300,	//最大個数
 			SPARK_INIT = 30,	//取得可能フレーム
 		};
-		vector < PrmEfPart >	mv_Prm;	//パラメータ
-		vector < UINT >			mv_Rnd;	//非稼働オブジェクト数上
+		std::vector < PrmEfPart >	mv_Prm;	//パラメータ
+		std::vector < UINT >			mv_Rnd;	//非稼働オブジェクト数上
 
 	public:
 		EfPart ();
@@ -65,7 +65,7 @@ namespace GAME
 		void On ( VEC2 center );
 
 
-		vector < PrmEfPart > & Getrv_Prm () { return mv_Prm; }
+		std::vector < PrmEfPart > & Getrv_Prm () { return mv_Prm; }
 
 
 		//重なり判定
@@ -75,10 +75,10 @@ namespace GAME
 
 	private:
 		//引数のベクタに0からN-1までの乱数を格納する
-		void Rnd_0_N ( UINT N, vector < UINT > & vec );
+		void Rnd_0_N ( UINT N, std::vector < UINT > & vec );
 	};
 
-	using P_EfPart = shared_ptr < EfPart >;
+	using P_EfPart = std::shared_ptr < EfPart >;
 
 }	//namespace GAME
 

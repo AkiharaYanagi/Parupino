@@ -107,7 +107,7 @@ namespace GAME
 		bool LeaveDir ( bool dirRight, float pos0, float pos1 );
 	};
 
-	using P_MutualChara = shared_ptr < MutualChara >;
+	using P_MutualChara = std::shared_ptr < MutualChara >;
 
 
 }	//namespace GAME

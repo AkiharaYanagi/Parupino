@@ -72,7 +72,7 @@ namespace GAME
 	};
 
 
-	using P_DispChara = shared_ptr < DispChara >;
+	using P_DispChara = std::shared_ptr < DispChara >;
 
 
 }	//namespace GAME

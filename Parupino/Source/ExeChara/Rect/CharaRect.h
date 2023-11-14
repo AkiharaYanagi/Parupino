@@ -59,7 +59,7 @@ namespace GAME
 		
 	};
 
-	using P_CharaRect = shared_ptr < CharaRect >;
+	using P_CharaRect = std::shared_ptr < CharaRect >;
 
 
 }	//namespace GAME

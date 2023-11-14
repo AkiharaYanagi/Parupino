@@ -74,9 +74,9 @@ namespace GAME
 	};
 
 	using WP_Sqc = weak_ptr < Sequence >;
-	using P_Sqc = shared_ptr < Sequence >;
-	using VP_Sqc = vector < P_Sqc >;
-	using PVP_Sqc = shared_ptr < VP_Sqc >;
+	using P_Sqc = std::shared_ptr < Sequence >;
+	using VP_Sqc = std::vector < P_Sqc >;
+	using PVP_Sqc = std::shared_ptr < VP_Sqc >;
 
 
 }	//namespace GAME

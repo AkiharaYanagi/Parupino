@@ -37,7 +37,7 @@ namespace GAME
 		{
 			SPARK_NUM = 30,
 		};
-		vector < PrmEfSpark >		m_vPrm;
+		std::vector < PrmEfSpark >		m_vPrm;
 
 	public:
 		EfSpark ();
@@ -48,7 +48,7 @@ namespace GAME
 		void On ( VEC2 center );
 	};
 
-	using P_EfSpark = shared_ptr < EfSpark >;
+	using P_EfSpark = std::shared_ptr < EfSpark >;
 
 }	//namespace GAME
 

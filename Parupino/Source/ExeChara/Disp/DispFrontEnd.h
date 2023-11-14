@@ -103,7 +103,7 @@ namespace GAME
 
 	};
 
-	using P_DispFrontEnd = shared_ptr < DispFrontEnd >;
+	using P_DispFrontEnd = std::shared_ptr < DispFrontEnd >;
 
 
 }	//namespace GAME

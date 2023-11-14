@@ -38,7 +38,7 @@ namespace GAME
 		void On ( VEC2 center );
 	};
 
-	using P_EfHit = shared_ptr < EfHit >;
+	using P_EfHit = std::shared_ptr < EfHit >;
 
 }	//namespace GAME
 

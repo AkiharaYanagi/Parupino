@@ -46,7 +46,7 @@ namespace GAME
 		{
 			SPARK_NUM = 300,
 		};
-		vector < PrmEfParticle >	m_vPrm;
+		std::vector < PrmEfParticle >	m_vPrm;
 
 	public:
 		EfParticle ();
@@ -68,7 +68,7 @@ namespace GAME
 		void Draw ();
 	};
 
-	using P_EfParticle = shared_ptr < EfParticle >;
+	using P_EfParticle = std::shared_ptr < EfParticle >;
 
 }	//namespace GAME
 

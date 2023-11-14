@@ -36,8 +36,8 @@ namespace GAME
 		UINT	m_nEfImage;		//Efイメージリストの個数
 
 		//イメージ名
-		vector < tstring > m_vMainImageName;
-		vector < tstring > m_vEfImageName;
+		std::vector < tstring > m_vMainImageName;
+		std::vector < tstring > m_vEfImageName;
 
 		//------------------------------------------------------------
 		//アクション

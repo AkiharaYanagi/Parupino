@@ -53,17 +53,17 @@ namespace GAME
 		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
 //		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = make_shared < Action > (); }
 
-		shared_ptr < P_Action [] > aryShared { new P_Action [ nAct ] , default_delete < P_Action [] > () };
+		std::shared_ptr < P_Action [] > aryShared { new P_Action [ nAct ] , default_delete < P_Action [] > () };
 		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = aryShared [ i ]; }
 #endif // 0
 #if 0
 		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
-		shared_ptr < Action [] > aryShared = make_shared < Action [] > ( nAct );
+		std::shared_ptr < Action [] > aryShared = make_shared < Action [] > ( nAct );
 		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ].reset ( & aryShared [ i ] ); }
 #endif // 0
 
 		unique_ptr < P_Action [] > aryAct = make_unique < P_Action [] > ( nAct );
-//		vector < P_Action > aryAct ( nAct );
+//		std::vector < P_Action > aryAct ( nAct );
 		for ( UINT i = 0; i < nAct; ++ i ) { aryAct [ i ] = make_shared < Action > (); }
 
 
@@ -111,7 +111,7 @@ namespace GAME
 		//エフェクト個数 と メモリの確保
 		UINT nEfc = m_utl.LoadUInt ( buf, pos );
 
-		vector < P_Effect > aryEfc( nEfc );
+		std::vector < P_Effect > aryEfc( nEfc );
 		for ( UINT i = 0; i < nEfc; ++ i ) { aryEfc [ i ] = make_shared < Effect > (); }
 
 		//実データ

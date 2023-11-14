@@ -27,7 +27,7 @@ namespace GAME
 		~Behavior ();
 	};
 
-	using P_Behavior = shared_ptr < Behavior >;
+	using P_Behavior = std::shared_ptr < Behavior >;
 
 
 }	//namespace GAME

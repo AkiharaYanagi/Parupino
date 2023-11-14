@@ -53,7 +53,7 @@ namespace GAME
 		bool GetBoolInput ( P_CharaInput pCharaInput, int n, int i );
 	};
 
-	using P_DispInput = shared_ptr < DispInput >;
+	using P_DispInput = std::shared_ptr < DispInput >;
 
 
 }	//namespace GAME

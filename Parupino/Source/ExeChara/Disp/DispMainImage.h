@@ -36,7 +36,7 @@ namespace GAME
 		void UpdateMainImage ( P_Script pScript, VEC2 ptChara, bool dirRight );
 	};
 
-	using P_DispMainImage = shared_ptr < DispMainImage >;
+	using P_DispMainImage = std::shared_ptr < DispMainImage >;
 
 
 }	//namespace GAME

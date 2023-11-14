@@ -61,9 +61,9 @@ namespace GAME
 	};
 	
 
-	using P_EfGnrt = shared_ptr < EffectGenerate >;
-	using VP_EfGnrt = vector < P_EfGnrt >;
-	using PVP_EfGnrt = shared_ptr < VP_EfGnrt >;
+	using P_EfGnrt = std::shared_ptr < EffectGenerate >;
+	using VP_EfGnrt = std::vector < P_EfGnrt >;
+	using PVP_EfGnrt = std::shared_ptr < VP_EfGnrt >;
 
 
 }	//namespace GAME

@@ -48,8 +48,8 @@ namespace GAME
 	};
 
 	using WP_Command = weak_ptr < Command >;
-	using P_Command = shared_ptr < Command >;
-	using VP_Command = vector < P_Command >;
+	using P_Command = std::shared_ptr < Command >;
+	using VP_Command = std::vector < P_Command >;
 
 }	//namespace GAME
 

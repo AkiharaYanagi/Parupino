@@ -61,7 +61,7 @@ namespace GAME
 		void Set_CPU_vs_CPU () { m_fighting->Set_CPU_vs_CPU (); }
 	};
 
-	using P_FtgMain = shared_ptr < FtgMain >;
+	using P_FtgMain = std::shared_ptr < FtgMain >;
 
 
 }	//namespace GAME

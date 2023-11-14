@@ -53,7 +53,7 @@ namespace GAME
 	};
 
 
-	using P_DemoMain = shared_ptr < DemoMain >;
+	using P_DemoMain = std::shared_ptr < DemoMain >;
 
 
 }	//namespace GAME
