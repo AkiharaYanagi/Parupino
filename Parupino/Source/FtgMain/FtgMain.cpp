@@ -66,8 +66,10 @@ namespace GAME
 
 	void FtgMain::Load ()
 	{
+#if 0
 		//Transit用にthisを保存
 		mwp_This = shared_from_this ();
+#endif // 0
 
 		//Menu用にthisを保存
 		m_pauseMenu->SetwpParent ( shared_from_this () );
@@ -123,7 +125,7 @@ namespace GAME
 		}
 	}
 
-
+#if 0
 	//状態遷移
 	P_GameScene FtgMain::Transit ()
 	{
@@ -143,8 +145,9 @@ namespace GAME
 		//通常時
 		return mwp_This.lock();
 	}
+#endif // 0
 	
-
+#if 0
 	//[シーン遷移] タイトルに戻る
 	void FtgMain::Transit_Title ()
 	{
@@ -161,6 +164,7 @@ namespace GAME
 	{
 		m_pauseMenu->Off ();
 	}
+#endif // 0
 
 	//[シーン遷移] リザルト移行
 	void FtgMain::Transit_Result ()

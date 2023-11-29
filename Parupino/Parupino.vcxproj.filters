@@ -31,9 +31,6 @@
     <Filter Include="ExeChara\Rect">
       <UniqueIdentifier>{f0ce1179-119e-447d-ac75-8d869a43e991}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Demo">
-      <UniqueIdentifier>{f57e2b4d-8a15-401f-9dd1-cbd36133340f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Result">
       <UniqueIdentifier>{1b699ff1-58e8-465f-b3d7-0ab8c01912bd}</UniqueIdentifier>
     </Filter>
@@ -167,15 +164,6 @@
     </ClInclude>
     <ClInclude Include="Source\FtgMain\FtgMain.h">
       <Filter>FtgMain</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Demo\DemoMain.h">
-      <Filter>Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Demo\DemoMenu.h">
-      <Filter>Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Demo\DemoMenuItem.h">
-      <Filter>Demo</Filter>
     </ClInclude>
     <ClInclude Include="Source\Result\Result.h">
       <Filter>Result</Filter>
@@ -329,15 +317,6 @@
     </ClCompile>
     <ClCompile Include="Source\FtgMain\FtgMain.cpp">
       <Filter>FtgMain</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Demo\DemoMain.cpp">
-      <Filter>Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Demo\DemoMenu.cpp">
-      <Filter>Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Demo\DemoMenuItem.cpp">
-      <Filter>Demo</Filter>
     </ClCompile>
     <ClCompile Include="Source\Result\Result.cpp">
       <Filter>Result</Filter>
