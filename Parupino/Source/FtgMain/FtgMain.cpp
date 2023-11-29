@@ -127,6 +127,13 @@ namespace GAME
 	//ó‘Ô‘JˆÚ
 	P_GameScene FtgMain::Transit ()
 	{
+
+
+		//@todo Œp³Œ³Scene‚Å‘JˆÚ‚ğŠÄ—‚·‚é
+
+
+
+ 
 		//‘¼‚ÌƒV[ƒ“‚ªŠm•Û‚³‚ê‚½‚È‚ç‘JˆÚ‚·‚é
 		if ( mp_Transit.use_count () != 0 )
 		{

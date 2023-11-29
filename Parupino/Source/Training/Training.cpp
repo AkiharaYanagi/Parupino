@@ -36,16 +36,10 @@ namespace GAME
 		AddpTask ( m_training );
 		GRPLST_INSERT_MAIN ( m_training );
 
-#if 0
-		//ポーズ
-		m_pause = make_shared < GrpAcv > ();
-		m_pause->AddTexture ( _T ( "Pause.png" ) );
-		m_pause->SetPos ( (1280 - 512)*0.5, 480.f );
-		m_pause->SetSpritePosition ( VEC3 ( 0, 0, Z_SYS ) );
-		GRPLST_INSERT_MAIN ( m_pause );
-		m_pause->SetValid ( false );
+		//ポーズメニュ
+		m_pauseMenu = make_shared < PauseMenu > ();
+		AddpTask ( m_pauseMenu );
 
-#endif // 0
 
 		//ロード中
 		m_rectLoad = make_shared < PrmRect > ();
@@ -85,12 +79,14 @@ namespace GAME
 		//CPU / PLAYER
 		m_fighting->Set_1P_vs_2P ();
 
-
 		SOUND->Stop_BGM ( BGM_Main );
 		SOUND->Play_Loop_BGM ( BGM_Main );
 
 		//Transit用にthisを保存
 		mwp_This = shared_from_this ();
+
+		//Menu用にthisを保存
+		m_pauseMenu->SetwpParent ( shared_from_this () );
 
 		Scene::Load ();
 	}

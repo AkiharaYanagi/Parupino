@@ -236,7 +236,7 @@
 			this.groupBox1.Controls.Add(this.RB_General);
 			this.groupBox1.Location = new System.Drawing.Point(3, 3);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(524, 57);
+			this.groupBox1.Size = new System.Drawing.Size(496, 57);
 			this.groupBox1.TabIndex = 4;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "開始";
@@ -299,7 +299,7 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "Ctrl_GameSettings";
-			this.Size = new System.Drawing.Size(531, 430);
+			this.Size = new System.Drawing.Size(511, 430);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();

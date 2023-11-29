@@ -49,11 +49,17 @@ namespace GAME
 		void ParamInit ();
 		void Move ();
 
+		//--------------------------
+		//状態遷移
 		P_GameScene Transit ();
 
+		//メニュ
 		void Transit_Title ();
 		void Resume_Fighting ();
+
+		//リザルトに移行
 		void Transit_Result ();
+		//--------------------------
 
 		//初期操作 プレイヤ/CPU 設定
 		void Set_1P_vs_2P () { m_fighting->Set_1P_vs_2P (); }

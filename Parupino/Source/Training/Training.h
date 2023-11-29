@@ -11,6 +11,8 @@
 #include "Game.h"
 #include "../GameMain/Scene.h"
 #include "../FtgMain/Fighting.h"
+#include "../FtgMain/Menu/PauseMenu.h"
+
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -37,11 +39,9 @@ namespace GAME
 		UINT			m_wait;
 		P_GrpStr		m_NowLoading;
 
-#if 0
-		//ポーズ
-		P_GrpAcv		m_pause;
+		//ポーズメニュ
+		P_PauseMenu		m_pauseMenu;
 
-#endif // 0
 		static const float	BX;
 		static const float	BY;
 

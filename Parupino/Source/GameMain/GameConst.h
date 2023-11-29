@@ -43,22 +43,5 @@ namespace GAME
 		TEST_VOID,
 	};
 
-#if 0
-
-	//SOUND
-	enum SOUND_No
-	{
-		BGM_Title,
-		SE_Sys_Select,
-		SE_Sys_Enter,
-		SE_Sys_Cancel,
-		SE_Btl_Clang,
-		BGM_Intro,
-		BGM_Main,
-		BGM_Result,
-	};
-
-#endif // 0
-
 }
 

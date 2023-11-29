@@ -30,5 +30,20 @@ namespace GameSettings
 //			tabControl1.SelectedIndex = 2;
 			
 		}
+
+		private void tabControl1_KeyDown ( object sender, KeyEventArgs e )
+		{
+			//キーコンフィグのため矢印キーでタブの移動をしない
+			//Hadled : コントロールの既定の処理を省略する場合は true。コントロールの既定の処理と共にイベントも渡す場合は false。
+			if ( ( e.KeyCode == Keys.Right ) || ( e.KeyCode == Keys.Left ) )
+			{ 
+				e.Handled = true;
+			}
+		}
+
+		private void tabControl1_PreviewKeyDown ( object sender, PreviewKeyDownEventArgs e )
+		{
+
+		}
 	}
 }
