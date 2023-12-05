@@ -22,11 +22,11 @@ namespace GAME
 	//‘O•ûéŒ¾
 	class Sequence;
 	using P_Sqc = std::shared_ptr < Sequence >;
-	using WP_Sqc = weak_ptr < Sequence >;		//zŠÂQÆ
+	using WP_Sqc = std::weak_ptr < Sequence >;		//zŠÂQÆ
 
 	using VP_Sqc = std::vector < P_Sqc >;
 	using PVP_Sqc = std::shared_ptr < VP_Sqc >;
-	using WP_Command = weak_ptr < Command >;		//zŠÂQÆ
+	using WP_Command = std::weak_ptr < Command >;		//zŠÂQÆ
 
 	class Branch
 	{

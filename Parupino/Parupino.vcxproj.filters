@@ -186,10 +186,10 @@
     <ClInclude Include="Source\Introduction\Introduction.h">
       <Filter>Introduction</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_MenuActor.h">
+    <ClInclude Include="Source\Title_Intro\Title_Menu_Actor.h">
       <Filter>Title_Intro</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Menu.h">
+    <ClInclude Include="Source\Title_Intro\Title_Menu_State.h">
       <Filter>Title_Intro</Filter>
     </ClInclude>
     <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h">
@@ -339,10 +339,10 @@
     <ClCompile Include="Source\Introduction\Introduction.cpp">
       <Filter>Introduction</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_MenuActor.cpp">
+    <ClCompile Include="Source\Title_Intro\Title_Menu_Actor.cpp">
       <Filter>Title_Intro</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Menu.cpp">
+    <ClCompile Include="Source\Title_Intro\Title_Menu_State.cpp">
       <Filter>Title_Intro</Filter>
     </ClCompile>
     <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp">

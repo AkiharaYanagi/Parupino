@@ -138,8 +138,8 @@
     <ClInclude Include="Source\Title_Intro\Title_Cursor.h" />
     <ClInclude Include="Source\Title_Intro\Title_Explain.h" />
     <ClInclude Include="Source\Title_Intro\Title_Intro.h" />
-    <ClInclude Include="Source\Title_Intro\Title_Menu.h" />
-    <ClInclude Include="Source\Title_Intro\Title_MenuActor.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Menu_State.h" />
+    <ClInclude Include="Source\Title_Intro\Title_Menu_Actor.h" />
     <ClInclude Include="Source\Title_Intro\Title_Menu_Start.h" />
     <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h" />
     <ClInclude Include="Source\Training\Training.h" />
@@ -189,8 +189,8 @@
     <ClCompile Include="Source\Title_Intro\Title_Cursor.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Explain.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Intro.cpp" />
-    <ClCompile Include="Source\Title_Intro\Title_Menu.cpp" />
-    <ClCompile Include="Source\Title_Intro\Title_MenuActor.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Menu_State.cpp" />
+    <ClCompile Include="Source\Title_Intro\Title_Menu_Actor.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Menu_Start.cpp" />
     <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp" />
     <ClCompile Include="Source\Training\Training.cpp" />

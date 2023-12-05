@@ -72,7 +72,8 @@ namespace GAME
 #endif // 0
 
 		//Menu用にthisを保存
-		m_pauseMenu->SetwpParent ( shared_from_this () );
+//		m_pauseMenu->SetwpParent ( shared_from_this () );
+		m_pauseMenu->SetwpParentScene ( Scene::shared_from_this () );
 
 		Scene::Load ();
 	}
@@ -166,6 +167,7 @@ namespace GAME
 	}
 #endif // 0
 
+#if 0
 	//[シーン遷移] リザルト移行
 	void FtgMain::Transit_Result ()
 	{
@@ -176,6 +178,7 @@ namespace GAME
 		mp_Transit = make_shared < Result > ();
 		GRPLST_LOAD ();
 	}
+#endif // 0
 
 }	//namespace GAME
 

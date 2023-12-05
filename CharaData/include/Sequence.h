@@ -73,7 +73,7 @@ namespace GAME
 		void SetNextName ( tstring tstr ) { m_nextName = tstr; }
 	};
 
-	using WP_Sqc = weak_ptr < Sequence >;
+	using WP_Sqc = std::weak_ptr < Sequence >;
 	using P_Sqc = std::shared_ptr < Sequence >;
 	using VP_Sqc = std::vector < P_Sqc >;
 	using PVP_Sqc = std::shared_ptr < VP_Sqc >;

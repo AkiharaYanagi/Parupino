@@ -82,11 +82,13 @@ namespace GAME
 		SOUND->Stop_BGM ( BGM_Main );
 		SOUND->Play_Loop_BGM ( BGM_Main );
 
+#if 0
 		//Transit—p‚Éthis‚ð•Û‘¶
 		mwp_This = shared_from_this ();
+#endif // 0
 
 		//Menu—p‚Éthis‚ð•Û‘¶
-		m_pauseMenu->SetwpParent ( shared_from_this () );
+		m_pauseMenu->SetwpParentScene ( Scene::shared_from_this () );
 
 		Scene::Load ();
 	}
@@ -126,7 +128,6 @@ namespace GAME
 	P_GameScene Training::Transit ()
 	{
 		//ESC‚Å–ß‚é
-//		if ( ::GetAsyncKeyState ( VK_ESCAPE ) & 0x0001 )
 		if ( WND_UTL::AscKey ( VK_ESCAPE ) )
 		{
 			SOUND->Stop_BGM ( BGM_Main );

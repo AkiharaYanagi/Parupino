@@ -32,7 +32,7 @@ namespace GAME
 	//前方宣言
 	class ExeChara;
 	using P_ExeChara = std::shared_ptr < ExeChara >;
-	using WP_ExeChara = weak_ptr < ExeChara >;
+	using WP_ExeChara = std::weak_ptr < ExeChara >;
 
 	//キャラ実行 クラス
 	class ExeChara : public TASK_VEC, public enable_shared_from_this < ExeChara >

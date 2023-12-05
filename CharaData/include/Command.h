@@ -47,7 +47,7 @@ namespace GAME
 		void SetLimitTime ( UINT limitTime ) { m_limitTime = limitTime; }
 	};
 
-	using WP_Command = weak_ptr < Command >;
+	using WP_Command = std::weak_ptr < Command >;
 	using P_Command = std::shared_ptr < Command >;
 	using VP_Command = std::vector < P_Command >;
 
