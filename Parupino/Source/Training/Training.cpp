@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Training.h"
-#include "../Title_Intro/Title_Intro.h"
+#include "../Title_Intro/Title.h"
 #include "../GameMain/SoundConst.h"
 
 
@@ -132,7 +132,7 @@ namespace GAME
 		{
 			SOUND->Stop_BGM ( BGM_Main );
 			GRPLST_CLEAR ();
-			P_GameScene p = make_shared < Title_Intro > ();
+			P_GameScene p = make_shared < Title > ();
 			GRPLST_LOAD ();
 			return p;
 		}

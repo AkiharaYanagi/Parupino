@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
 #include "../GameMain/SoundConst.h"
-#include "../Title_Intro/Title_Intro.h"
+#include "../Title_Intro/Title.h"
 #include "../Result/Result.h"
 
 

@@ -180,7 +180,7 @@
     <ClInclude Include="Source\FtgMain\Menu\YesNo_Menu.h">
       <Filter>FtgMain\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Intro.h">
+    <ClInclude Include="Source\Title_Intro\Title.h">
       <Filter>Title_Intro</Filter>
     </ClInclude>
     <ClInclude Include="Source\Introduction\Introduction.h">
@@ -333,7 +333,7 @@
     <ClCompile Include="Source\FtgMain\Menu\YesNo_Menu.cpp">
       <Filter>FtgMain\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Intro.cpp">
+    <ClCompile Include="Source\Title_Intro\Title.cpp">
       <Filter>Title_Intro</Filter>
     </ClCompile>
     <ClCompile Include="Source\Introduction\Introduction.cpp">
