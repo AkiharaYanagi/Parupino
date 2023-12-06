@@ -73,7 +73,7 @@ namespace GAME
 
 		//Menu—p‚Éthis‚ð•Û‘¶
 //		m_pauseMenu->SetwpParent ( shared_from_this () );
-		m_pauseMenu->SetwpParentScene ( Scene::shared_from_this () );
+		m_pauseMenu->SetwpParentScene ( shared_from_this () );
 
 		Scene::Load ();
 	}

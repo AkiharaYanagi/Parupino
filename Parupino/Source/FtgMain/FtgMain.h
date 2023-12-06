@@ -19,7 +19,7 @@
 //-------------------------------------------------------------------------------------------------
 namespace GAME
 {
-	class FtgMain : public Scene //, public enable_shared_from_this < FtgMain >
+	class FtgMain : public Scene, public enable_shared_from_this < FtgMain >
 	{
 #if 0
 		//===========================================================
