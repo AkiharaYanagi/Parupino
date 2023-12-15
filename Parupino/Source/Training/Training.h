@@ -21,13 +21,14 @@ namespace GAME
 {
 	class Training : public Scene, public enable_shared_from_this < Training >
 	{
+#if 0
 		//===========================================================
 		//遷移先シーンポインタ
 		//@info	thisを自身に保存すると循環参照となるのでweak_ptrを用いる
 		WP_GameScene		mwp_This;
 		P_GameScene			mp_Transit;		//遷移可能な次のシーン
-
 		//===========================================================
+#endif // 0
 
 		//戦闘
 		P_FTG			m_fighting;

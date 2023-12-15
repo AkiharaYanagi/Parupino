@@ -40,11 +40,11 @@
     <Filter Include="Introduction">
       <UniqueIdentifier>{5d941331-1155-49b4-89a6-1b9c44f3df48}</UniqueIdentifier>
     </Filter>
-    <Filter Include="_Document">
-      <UniqueIdentifier>{03b126d4-ef44-43c1-a80c-430b38ab8217}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Title">
       <UniqueIdentifier>{6e76a266-f41b-4e66-a21d-dd8004f00498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_Document">
+      <UniqueIdentifier>{03b126d4-ef44-43c1-a80c-430b38ab8217}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -370,7 +370,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\追加予定メモ.txt">
-      <Filter>_Document</Filter>
+      <Filter>00_Document</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

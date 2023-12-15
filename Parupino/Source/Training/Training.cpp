@@ -76,16 +76,16 @@ namespace GAME
 
 	void Training::Load ()
 	{
+#if 0
+		//Transit用にthisを保存
+		mwp_This = shared_from_this ();
+#endif // 0
+
 		//CPU / PLAYER
 		m_fighting->Set_1P_vs_2P ();
 
 		SOUND->Stop_BGM ( BGM_Main );
 		SOUND->Play_Loop_BGM ( BGM_Main );
-
-#if 0
-		//Transit用にthisを保存
-		mwp_This = shared_from_this ();
-#endif // 0
 
 		//Menu用にthisを保存
 		m_pauseMenu->SetwpParentScene ( shared_from_this () );
@@ -131,12 +131,17 @@ namespace GAME
 		if ( WND_UTL::AscKey ( VK_ESCAPE ) )
 		{
 			SOUND->Stop_BGM ( BGM_Main );
+#if 0
 			GRPLST_CLEAR ();
 			P_GameScene p = make_shared < Title > ();
 			GRPLST_LOAD ();
+
 			return p;
+#endif // 0
+			GetwpThis().lock ()->Transit_Title ();
 		}
 
+#if 0
 		//他のシーンが確保されたなら遷移する
 		if ( mp_Transit.use_count () != 0 )
 		{
@@ -145,6 +150,8 @@ namespace GAME
 
 		//通常時
 		return mwp_This.lock ();
+#endif // 0
+		return Scene::Transit ();
 	}
 
 #if 0
