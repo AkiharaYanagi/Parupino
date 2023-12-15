@@ -37,14 +37,14 @@
     <Filter Include="FtgMain\Menu">
       <UniqueIdentifier>{bda33950-c328-4deb-ad6f-bfe87a0278b1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Title_Intro">
-      <UniqueIdentifier>{aa73525f-c6f4-4c74-87c0-f67979d94ae3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Introduction">
       <UniqueIdentifier>{5d941331-1155-49b4-89a6-1b9c44f3df48}</UniqueIdentifier>
     </Filter>
     <Filter Include="_Document">
       <UniqueIdentifier>{03b126d4-ef44-43c1-a80c-430b38ab8217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{6e76a266-f41b-4e66-a21d-dd8004f00498}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -180,29 +180,8 @@
     <ClInclude Include="Source\FtgMain\Menu\YesNo_Menu.h">
       <Filter>FtgMain\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title.h">
-      <Filter>Title_Intro</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Introduction\Introduction.h">
       <Filter>Introduction</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Menu_Actor.h">
-      <Filter>Title_Intro</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Menu_State.h">
-      <Filter>Title_Intro</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Menu_VS.h">
-      <Filter>Title_Intro</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Cursor.h">
-      <Filter>Title_Intro</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Explain.h">
-      <Filter>Title_Intro</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Title_Intro\Title_Menu_Start.h">
-      <Filter>Title_Intro</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameMain\SoundConst.h">
       <Filter>GameMain</Filter>
@@ -214,6 +193,27 @@
       <Filter>Introduction</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h" />
+    <ClInclude Include="Source\Title\Title.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title\Title_Cursor.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title\Title_Explain.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title\Title_Menu_Actor.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title\Title_Menu_Start.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title\Title_Menu_State.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Title\Title_Menu_VS.h">
+      <Filter>Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
@@ -333,35 +333,35 @@
     <ClCompile Include="Source\FtgMain\Menu\YesNo_Menu.cpp">
       <Filter>FtgMain\Menu</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title.cpp">
-      <Filter>Title_Intro</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Introduction\Introduction.cpp">
       <Filter>Introduction</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Menu_Actor.cpp">
-      <Filter>Title_Intro</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Menu_State.cpp">
-      <Filter>Title_Intro</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Menu_VS.cpp">
-      <Filter>Title_Intro</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Cursor.cpp">
-      <Filter>Title_Intro</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Explain.cpp">
-      <Filter>Title_Intro</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Title_Intro\Title_Menu_Start.cpp">
-      <Filter>Title_Intro</Filter>
     </ClCompile>
     <ClCompile Include="Source\Result\Rank.cpp">
       <Filter>Result</Filter>
     </ClCompile>
     <ClCompile Include="Source\Introduction\Intro_Img.cpp">
       <Filter>Introduction</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title_Cursor.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title_Explain.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title_Menu_Actor.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title_Menu_Start.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title_Menu_State.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Title\Title_Menu_VS.cpp">
+      <Filter>Title</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

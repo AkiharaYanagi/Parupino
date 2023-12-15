@@ -8,7 +8,7 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "Training.h"
-#include "../Title_Intro/Title.h"
+#include "../Title/Title.h"
 #include "../GameMain/SoundConst.h"
 
 

@@ -9,7 +9,7 @@
 //-------------------------------------------------------------------------------------------------
 #include "FtgMain.h"
 #include "../GameMain/SoundConst.h"
-#include "../Title_Intro/Title.h"
+#include "../Title/Title.h"
 #include "../Result/Result.h"
 
 
@@ -70,6 +70,9 @@ namespace GAME
 		//Transit—p‚Éthis‚ð•Û‘¶
 		mwp_This = shared_from_this ();
 #endif // 0
+		//‘JˆÚæŽw’è‚Éthis‚ð•Û‘¶
+		Scene::SetwpThis ( shared_from_this () );
+
 
 		//Menu—p‚Éthis‚ð•Û‘¶
 //		m_pauseMenu->SetwpParent ( shared_from_this () );
@@ -130,12 +133,7 @@ namespace GAME
 	//ó‘Ô‘JˆÚ
 	P_GameScene FtgMain::Transit ()
 	{
-
-
 		//@todo Œp³Œ³Scene‚Å‘JˆÚ‚ðŠÄ—‚·‚é
-
-
-
  
 		//‘¼‚ÌƒV[ƒ“‚ªŠm•Û‚³‚ê‚½‚È‚ç‘JˆÚ‚·‚é
 		if ( mp_Transit.use_count () != 0 )
@@ -156,7 +154,7 @@ namespace GAME
 		SOUND->Stop_BGM ( BGM_Main );
 
 		GRPLST_CLEAR ();
-		mp_Transit = make_shared < Title_Intro > ();
+		mp_Transit = make_shared < Title > ();
 		GRPLST_LOAD ();
 	}
 
