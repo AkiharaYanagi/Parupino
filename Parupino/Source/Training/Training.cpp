@@ -80,6 +80,9 @@ namespace GAME
 		//Transit用にthisを保存
 		mwp_This = shared_from_this ();
 #endif // 0
+		//遷移先指定にthisを保存
+		Scene::SetwpThis ( shared_from_this () );
+
 
 		//CPU / PLAYER
 		m_fighting->Set_1P_vs_2P ();
@@ -110,6 +113,12 @@ namespace GAME
 		if ( m_rectLoad->GetFadeTimer () == 0 )
 		{
 			m_NowLoading->SetValid ( F );
+		}
+
+		//メニュポーズ中
+		if ( m_pauseMenu->MenuCheck () )
+		{
+			return;
 		}
 
 		//トレーニングリセット

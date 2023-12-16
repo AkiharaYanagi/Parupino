@@ -95,6 +95,8 @@ namespace GAME
 			m_NowLoading->SetValid ( F );
 		}
 
+
+#if 0
 		//メニュポーズ中
 		if ( m_pauseMenu->GetActive () )
 		{
@@ -119,13 +121,21 @@ namespace GAME
 		{
 			m_pauseMenu->On ();
 		}
+#endif // 0
+		//メニュポーズ中
+		if ( m_pauseMenu->MenuCheck () )
+		{
+			return;
+		}
 
+
+		//通常動作
 		Scene::Move ();
 
 		//終了チェック
 		if ( m_fighting->IsEnd () )
 		{
-			Transit_Result ();
+			Scene::Transit_Result ();
 		}
 	}
 
