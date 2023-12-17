@@ -66,16 +66,10 @@ namespace GAME
 
 	void FtgMain::Load ()
 	{
-#if 0
-		//Transit用にthisを保存
-		mwp_This = shared_from_this ();
-#endif // 0
 		//遷移先指定にthisを保存
 		Scene::SetwpThis ( shared_from_this () );
 
-
 		//Menu用にthisを保存
-//		m_pauseMenu->SetwpParent ( shared_from_this () );
 		m_pauseMenu->SetwpParentScene ( shared_from_this () );
 
 		Scene::Load ();
@@ -95,39 +89,11 @@ namespace GAME
 			m_NowLoading->SetValid ( F );
 		}
 
-
-#if 0
-		//メニュポーズ中
-		if ( m_pauseMenu->GetActive () )
-		{
-			//メニュポーズ解除
-			bool bEsc = ( WND_UTL::AscKey ( VK_ESCAPE ) );
-			bool bMenuBtn = ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) );
-			if ( bEsc || bMenuBtn )
-			{
-				m_pauseMenu->Off ();
-			}
-			else
-			{
-				m_pauseMenu->Move ();
-				return;
-			}
-		}
-
-		//メニュポーズ開始
-		bool bEsc = ( WND_UTL::AscKey ( VK_ESCAPE ) );
-		bool bMenuBtn = ( CFG_PUSH_KEY ( _P1_BTN5 ) || CFG_PUSH_KEY ( _P2_BTN5 ) );
-		if ( bEsc || bMenuBtn )
-		{
-			m_pauseMenu->On ();
-		}
-#endif // 0
 		//メニュポーズ中
 		if ( m_pauseMenu->MenuCheck () )
 		{
 			return;
 		}
-
 
 		//通常動作
 		Scene::Move ();
@@ -135,58 +101,18 @@ namespace GAME
 		//終了チェック
 		if ( m_fighting->IsEnd () )
 		{
+			//BGM
+			SOUND->Stop_BGM ( BGM_Main );
+
 			Scene::Transit_Result ();
 		}
 	}
 
-#if 0
 	//状態遷移
 	P_GameScene FtgMain::Transit ()
 	{
-		//@todo 継承元Sceneで遷移を監理する
- 
-		//他のシーンが確保されたなら遷移する
-		if ( mp_Transit.use_count () != 0 )
-		{
-			return mp_Transit;
-		}
-
-		//通常時
-		return mwp_This.lock();
+		return Scene::Transit ();
 	}
-#endif // 0
 	
-#if 0
-	//[シーン遷移] タイトルに戻る
-	void FtgMain::Transit_Title ()
-	{
-		//BGM
-		SOUND->Stop_BGM ( BGM_Main );
-
-		GRPLST_CLEAR ();
-		mp_Transit = make_shared < Title > ();
-		GRPLST_LOAD ();
-	}
-
-	//メニュを消してゲームに戻る
-	void FtgMain::Resume_Fighting ()
-	{
-		m_pauseMenu->Off ();
-	}
-#endif // 0
-
-#if 0
-	//[シーン遷移] リザルト移行
-	void FtgMain::Transit_Result ()
-	{
-		//BGM
-		SOUND->Stop_BGM ( BGM_Main );
-
-		GRPLST_CLEAR ();
-		mp_Transit = make_shared < Result > ();
-		GRPLST_LOAD ();
-	}
-#endif // 0
-
 }	//namespace GAME
 

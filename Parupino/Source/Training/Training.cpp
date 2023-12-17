@@ -20,6 +20,8 @@ namespace GAME
 	//定数
 	const float Training::BX = ( 1280 - 256 ) * 0.5f;
 	const float Training::BY = 170.f;
+	const float Training::BX_KI = ( 1280 - 512 ) * 0.5f;
+	const float Training::BY_KI = 800.f;
 
 
 	Training::Training ()
@@ -36,10 +38,16 @@ namespace GAME
 		AddpTask ( m_training );
 		GRPLST_INSERT_MAIN ( m_training );
 
+		m_keyIntro = make_shared < GrpAcv > ();
+		m_keyIntro->AddTexture ( _T ( "TRN_keyIntro.png" ) );
+		m_keyIntro->SetPos ( BX_KI, BY_KI );
+		m_keyIntro->SetZ ( Z_BG - 0.01f );
+		AddpTask ( m_keyIntro );
+		GRPLST_INSERT_MAIN ( m_keyIntro );
+
 		//ポーズメニュ
 		m_pauseMenu = make_shared < PauseMenu > ();
 		AddpTask ( m_pauseMenu );
-
 
 		//ロード中
 		m_rectLoad = make_shared < PrmRect > ();
@@ -76,22 +84,17 @@ namespace GAME
 
 	void Training::Load ()
 	{
-#if 0
-		//Transit用にthisを保存
-		mwp_This = shared_from_this ();
-#endif // 0
 		//遷移先指定にthisを保存
 		Scene::SetwpThis ( shared_from_this () );
 
+		//Menu用にthisを保存
+		m_pauseMenu->SetwpParentScene ( shared_from_this () );
 
 		//CPU / PLAYER
 		m_fighting->Set_1P_vs_2P ();
 
 		SOUND->Stop_BGM ( BGM_Main );
 		SOUND->Play_Loop_BGM ( BGM_Main );
-
-		//Menu用にthisを保存
-		m_pauseMenu->SetwpParentScene ( shared_from_this () );
 
 		Scene::Load ();
 	}
@@ -127,10 +130,6 @@ namespace GAME
 			m_fighting->TrainingRestart ();
 		}
 
-#if 0
-		Pause ();
-#endif // 0
-
 		Scene::Move ();
 	}
 
@@ -140,50 +139,12 @@ namespace GAME
 		if ( WND_UTL::AscKey ( VK_ESCAPE ) )
 		{
 			SOUND->Stop_BGM ( BGM_Main );
-#if 0
-			GRPLST_CLEAR ();
-			P_GameScene p = make_shared < Title > ();
-			GRPLST_LOAD ();
-
-			return p;
-#endif // 0
 			GetwpThis().lock ()->Transit_Title ();
 		}
 
-#if 0
-		//他のシーンが確保されたなら遷移する
-		if ( mp_Transit.use_count () != 0 )
-		{
-			return mp_Transit;
-		}
-
-		//通常時
-		return mwp_This.lock ();
-#endif // 0
 		return Scene::Transit ();
 	}
 
-#if 0
-
-	void Training::Pause ()
-	{
-		//F1でポーズ切替
-		if ( ::GetAsyncKeyState ( VK_F1 ) & 0x0001 )
-		{
-			if ( m_pause->GetValid () )	//On->Off
-			{
-				m_pause->SetValid ( false );
-//				m_mutualChara->Stop ( false );
-			}
-			else	//Off->On
-			{
-				m_pause->SetValid ( true );
-//				m_mutualChara->Stop ( true );
-			}
-		}
-	}
-
-#endif // 0
 
 
 }	//namespace GAME

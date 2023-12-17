@@ -45,10 +45,10 @@
 			this.RB_CPU1 = new System.Windows.Forms.RadioButton();
 			this.RB_Player1 = new System.Windows.Forms.RadioButton();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.RB_Demo = new System.Windows.Forms.RadioButton();
 			this.RB_Training = new System.Windows.Forms.RadioButton();
 			this.RB_Battle = new System.Windows.Forms.RadioButton();
 			this.RB_General = new System.Windows.Forms.RadioButton();
+			this.CHK_Demo = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -90,7 +90,7 @@
 			// pictureBox1
 			// 
 			this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-			this.pictureBox1.Location = new System.Drawing.Point(3, 75);
+			this.pictureBox1.Location = new System.Drawing.Point(3, 107);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(10, 169);
 			this.pictureBox1.TabIndex = 7;
@@ -103,7 +103,7 @@
 			this.groupBox3.Controls.Add(this.label4);
 			this.groupBox3.Controls.Add(this.RB_CPU2);
 			this.groupBox3.Controls.Add(this.RB_Player2);
-			this.groupBox3.Location = new System.Drawing.Point(22, 169);
+			this.groupBox3.Location = new System.Drawing.Point(22, 201);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(477, 77);
 			this.groupBox3.TabIndex = 5;
@@ -169,7 +169,7 @@
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.RB_CPU1);
 			this.groupBox2.Controls.Add(this.RB_Player1);
-			this.groupBox2.Location = new System.Drawing.Point(22, 75);
+			this.groupBox2.Location = new System.Drawing.Point(22, 107);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(477, 77);
 			this.groupBox2.TabIndex = 6;
@@ -230,7 +230,6 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.RB_Demo);
 			this.groupBox1.Controls.Add(this.RB_Training);
 			this.groupBox1.Controls.Add(this.RB_Battle);
 			this.groupBox1.Controls.Add(this.RB_General);
@@ -239,18 +238,7 @@
 			this.groupBox1.Size = new System.Drawing.Size(496, 57);
 			this.groupBox1.TabIndex = 4;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "開始";
-			// 
-			// RB_Demo
-			// 
-			this.RB_Demo.AutoSize = true;
-			this.RB_Demo.Location = new System.Drawing.Point(376, 18);
-			this.RB_Demo.Name = "RB_Demo";
-			this.RB_Demo.Size = new System.Drawing.Size(42, 16);
-			this.RB_Demo.TabIndex = 1;
-			this.RB_Demo.Text = "デモ";
-			this.RB_Demo.UseVisualStyleBackColor = true;
-			this.RB_Demo.CheckedChanged += new System.EventHandler(this.RB_Demo_CheckedChanged);
+			this.groupBox1.Text = "開始シーン";
 			// 
 			// RB_Training
 			// 
@@ -268,9 +256,9 @@
 			this.RB_Battle.AutoSize = true;
 			this.RB_Battle.Location = new System.Drawing.Point(146, 18);
 			this.RB_Battle.Name = "RB_Battle";
-			this.RB_Battle.Size = new System.Drawing.Size(93, 16);
+			this.RB_Battle.Size = new System.Drawing.Size(51, 16);
 			this.RB_Battle.TabIndex = 1;
-			this.RB_Battle.Text = "バトルから開始";
+			this.RB_Battle.Text = "バトル";
 			this.RB_Battle.UseVisualStyleBackColor = true;
 			this.RB_Battle.CheckedChanged += new System.EventHandler(this.RB_Battle_CheckedChanged);
 			// 
@@ -280,17 +268,29 @@
 			this.RB_General.Checked = true;
 			this.RB_General.Location = new System.Drawing.Point(31, 18);
 			this.RB_General.Name = "RB_General";
-			this.RB_General.Size = new System.Drawing.Size(71, 16);
+			this.RB_General.Size = new System.Drawing.Size(58, 16);
 			this.RB_General.TabIndex = 0;
 			this.RB_General.TabStop = true;
-			this.RB_General.Text = "通常開始";
+			this.RB_General.Text = "タイトル";
 			this.RB_General.UseVisualStyleBackColor = true;
 			this.RB_General.CheckedChanged += new System.EventHandler(this.RB_General_CheckedChanged);
+			// 
+			// CHK_Demo
+			// 
+			this.CHK_Demo.AutoSize = true;
+			this.CHK_Demo.Location = new System.Drawing.Point(11, 75);
+			this.CHK_Demo.Name = "CHK_Demo";
+			this.CHK_Demo.Size = new System.Drawing.Size(196, 16);
+			this.CHK_Demo.TabIndex = 11;
+			this.CHK_Demo.Text = "デモモード(自動CPU_VS_CPU繰返)";
+			this.CHK_Demo.UseVisualStyleBackColor = true;
+			this.CHK_Demo.CheckedChanged += new System.EventHandler(this.CHK_Demo_CheckedChanged);
 			// 
 			// Ctrl_GameSettings
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.CHK_Demo);
 			this.Controls.Add(this.Btn_Decide);
 			this.Controls.Add(this.Btn_Cancel);
 			this.Controls.Add(this.Btn_Folder);
@@ -308,6 +308,7 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -330,9 +331,9 @@
 		private System.Windows.Forms.RadioButton RB_CPU1;
 		private System.Windows.Forms.RadioButton RB_Player1;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.RadioButton RB_Demo;
 		private System.Windows.Forms.RadioButton RB_Training;
 		private System.Windows.Forms.RadioButton RB_Battle;
 		private System.Windows.Forms.RadioButton RB_General;
+		private System.Windows.Forms.CheckBox CHK_Demo;
 	}
 }

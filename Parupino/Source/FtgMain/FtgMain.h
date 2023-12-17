@@ -53,16 +53,8 @@ namespace GAME
 
 		//--------------------------
 		//状態遷移
-//		P_GameScene Transit ();
+		P_GameScene Transit ();
 
-#if 0
-		//メニュ
-		void Transit_Title ();
-		void Resume_Fighting ();
-
-		//リザルトに移行
-		void Transit_Result ();
-#endif // 0
 		//--------------------------
 
 		//初期操作 プレイヤ/CPU 設定

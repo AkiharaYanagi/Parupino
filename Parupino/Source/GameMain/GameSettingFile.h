@@ -19,13 +19,15 @@ namespace GAME
 	//ゲーム内設定
 	class GameSettingFile
 	{
-		START_MODE		m_startMode;	//開始指定
+		START_MODE		m_startMode;	//開始シーン指定
 
 		PLAYER_MODE		m_playerMode1p;	//１P操作
 		PLAYER_MODE		m_playerMode2p;	//２P操作
 
 		CHARA_NAME		m_name1p;		//選択キャラ
 		CHARA_NAME		m_name2p;
+
+		bool			m_demo;			//デモモード(自動CPU_VS_CPU繰返)
 
 	public:
 		GameSettingFile ();
@@ -67,13 +69,12 @@ namespace GAME
 			if ( pid == PLAYER_ID_2 ) { return m_name2p; }
 			return CHARA_NAME_NUM;
 		}
-		//-----------------------------------------
 
-#if 0
-		//切替
-		void SetDemo ( bool b ) { m_startMode = b ? START_DEMO : START_TITLE; }
-		void SetTraining ( bool b ) { m_startMode = b ? START_TRAINING : START_TITLE; }
-#endif // 0
+		//デモ
+		void SetDemo ( bool b ) { m_demo = b; }
+		bool GetDemo () const { return m_demo; }
+		 
+		//-----------------------------------------
 
 		//初期値
 		void	SetDefault ();

@@ -19,6 +19,7 @@ namespace GAME
 		: m_startMode ( START_BATTLE )
 		, m_playerMode1p ( MODE_PLAYER ), m_playerMode2p ( MODE_PLAYER )
 		, m_name1p ( CHARA_TEST ), m_name2p ( CHARA_TEST )
+		, m_demo ( F )
 	{
 	}
 
@@ -30,6 +31,7 @@ namespace GAME
 		m_playerMode2p	= rhs.m_playerMode2p;
 		m_name1p		= rhs.m_name1p;
 		m_name2p		= rhs.m_name2p;
+		m_demo			= rhs.m_demo;
 	}
 
 	void GameSettingFile::Load ()
@@ -40,12 +42,15 @@ namespace GAME
 			ifstream ifstrm( _T("GameSettings.dat"), ios::in | ios::binary );
 			
 			//見つからないときデフォルトの値を設定して終了
-			if ( ! ifstrm ) { SetDefault (); }
+			if ( ! ifstrm ) { SetDefault (); return; }
 
 			byte tempMode = 0;
 			ifstrm.read ( (char*)& tempMode, sizeof ( byte ) );
 			m_startMode = (START_MODE)tempMode;
 
+			byte demo = 0;
+			ifstrm.read ( (char*)& demo, sizeof ( bool ) );
+			m_demo = (bool)demo;
 
 			byte tempInput1p = 0;
 			byte tempInput2p = 0;
@@ -81,6 +86,7 @@ namespace GAME
 		m_playerMode2p = MODE_PLAYER;
 		m_name1p = CHARA_TEST;
 		m_name2p = CHARA_TEST;
+		m_demo = F;
 	}
 
 

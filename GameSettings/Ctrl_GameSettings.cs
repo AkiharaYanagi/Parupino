@@ -63,8 +63,10 @@ namespace GameSettings
 			case STG_STRT.General : SelectRB_Start ( RB_General ); break;
 			case STG_STRT.Battle : SelectRB_Start ( RB_Battle ); break;
 			case STG_STRT.Traning : SelectRB_Start ( RB_Training ); break;
-			case STG_STRT.Demo : SelectRB_Start ( RB_Demo ); break;
 			}
+
+			//デモ
+			CHK_Demo.Checked = stgData.Demo;
 
 			//操作
 			switch ( stgData.Operate1p )
@@ -94,7 +96,6 @@ namespace GameSettings
 			RB_General.Checked = false;
 			RB_Battle.Checked = false;
 			RB_Training.Checked = false;
-			RB_Demo.Checked = false;
 
 			//対象をON
 			rb.Checked = true;
@@ -171,11 +172,13 @@ namespace GameSettings
 			stgData.Start = STG_STRT.Traning;
 		}
 
-		private void RB_Demo_CheckedChanged ( object sender, EventArgs e )
-		{
-			stgData.Start = STG_STRT.Demo;
-		}
 
+		//----------------------------------------------------------------------
+		//チェックボックス選択
+		private void CHK_Demo_CheckedChanged ( object sender, EventArgs e )
+		{
+			stgData.Demo = CHK_Demo.Checked;
+		}
 
 		//----------------------------------------------------------------------
 		//ラジオボタン選択：操作
@@ -222,5 +225,6 @@ namespace GameSettings
 		{
 			stgData.Chara2p = (STG_CHAR)CB_Chara2.SelectedItem;
 		}
+
 	}
 }

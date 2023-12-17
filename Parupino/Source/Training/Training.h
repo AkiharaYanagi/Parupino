@@ -21,19 +21,12 @@ namespace GAME
 {
 	class Training : public Scene, public enable_shared_from_this < Training >
 	{
-#if 0
-		//===========================================================
-		//遷移先シーンポインタ
-		//@info	thisを自身に保存すると循環参照となるのでweak_ptrを用いる
-		WP_GameScene		mwp_This;
-		P_GameScene			mp_Transit;		//遷移可能な次のシーン
-		//===========================================================
-#endif // 0
-
 		//戦闘
 		P_FTG			m_fighting;
 
-		P_GrpAcv		m_training;		//トレーニング表示
+		//トレーニング表示
+		P_GrpAcv		m_training;
+		P_GrpAcv		m_keyIntro;
 
 		//ロード中
 		P_PrmRect		m_rectLoad;
@@ -45,6 +38,8 @@ namespace GAME
 
 		static const float	BX;
 		static const float	BY;
+		static const float	BX_KI;
+		static const float	BY_KI;
 
 	public:
 		Training ();
@@ -57,9 +52,6 @@ namespace GAME
 		void Move ();
 
 		P_GameScene Transit ();
-
-	private:
-//		void Pause ();
 	};
 
 
