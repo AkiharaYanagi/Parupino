@@ -11,7 +11,8 @@
 #include "Game.h"
 #include "../GameMain/Scene.h"
 #include "../FtgMain/Fighting.h"
-#include "../FtgMain/Menu/PauseMenu.h"
+//#include "../Menu/PauseMenu.h"
+#include "Training_Menu.h"
 
 
 //-------------------------------------------------------------------------------------------------
@@ -34,7 +35,8 @@ namespace GAME
 		P_GrpStr		m_NowLoading;
 
 		//ポーズメニュ
-		P_PauseMenu		m_pauseMenu;
+//		P_PauseMenu		m_pauseMenu;
+		P_Training_Menu		m_pauseMenu;
 
 		static const float	BX;
 		static const float	BY;

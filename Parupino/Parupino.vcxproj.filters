@@ -34,9 +34,6 @@
     <Filter Include="Result">
       <UniqueIdentifier>{1b699ff1-58e8-465f-b3d7-0ab8c01912bd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FtgMain\Menu">
-      <UniqueIdentifier>{bda33950-c328-4deb-ad6f-bfe87a0278b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Introduction">
       <UniqueIdentifier>{5d941331-1155-49b4-89a6-1b9c44f3df48}</UniqueIdentifier>
     </Filter>
@@ -45,6 +42,12 @@
     </Filter>
     <Filter Include="00_Document">
       <UniqueIdentifier>{03b126d4-ef44-43c1-a80c-430b38ab8217}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_Other">
+      <UniqueIdentifier>{daa68d11-d70c-49b3-98b2-03feae49d157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{693fb479-4852-4f31-b770-1995d3601db4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -171,15 +174,6 @@
     <ClInclude Include="Source\FtgMain\Ef\EfHit.h">
       <Filter>FtgMain\Ef</Filter>
     </ClInclude>
-    <ClInclude Include="Source\FtgMain\Menu\PauseMenu.h">
-      <Filter>FtgMain\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\FtgMain\Menu\PauseMenuItem.h">
-      <Filter>FtgMain\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\FtgMain\Menu\YesNo_Menu.h">
-      <Filter>FtgMain\Menu</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Introduction\Introduction.h">
       <Filter>Introduction</Filter>
     </ClInclude>
@@ -192,7 +186,6 @@
     <ClInclude Include="Source\Introduction\Intro_Img.h">
       <Filter>Introduction</Filter>
     </ClInclude>
-    <ClInclude Include="resource1.h" />
     <ClInclude Include="Source\Title\Title.h">
       <Filter>Title</Filter>
     </ClInclude>
@@ -213,6 +206,24 @@
     </ClInclude>
     <ClInclude Include="Source\Title\Title_Menu_VS.h">
       <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>99_Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Menu\PauseMenu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Menu\PauseMenuItem.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Menu\YesNo_Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Training\Training_Menu.h">
+      <Filter>Training</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Training\Training_MenuItem.h">
+      <Filter>Training</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -324,15 +335,6 @@
     <ClCompile Include="Source\FtgMain\Ef\EfHit.cpp">
       <Filter>FtgMain\Ef</Filter>
     </ClCompile>
-    <ClCompile Include="Source\FtgMain\Menu\PauseMenu.cpp">
-      <Filter>FtgMain\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FtgMain\Menu\PauseMenuItem.cpp">
-      <Filter>FtgMain\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\FtgMain\Menu\YesNo_Menu.cpp">
-      <Filter>FtgMain\Menu</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Introduction\Introduction.cpp">
       <Filter>Introduction</Filter>
     </ClCompile>
@@ -363,10 +365,29 @@
     <ClCompile Include="Source\Title\Title_Menu_VS.cpp">
       <Filter>Title</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Menu\PauseMenu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Menu\PauseMenuItem.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Menu\YesNo_Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Training\Training_Menu.cpp">
+      <Filter>Training</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Training\Training_MenuItem.cpp">
+      <Filter>Training</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <Filter>99_Other</Filter>
+    </None>
+    <None Include="cpp.hint">
+      <Filter>99_Other</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\追加予定メモ.txt">
@@ -374,9 +395,13 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Parupino1.rc" />
+    <Image Include="prpn.ico">
+      <Filter>99_Other</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="prpn.ico" />
+    <ResourceCompile Include="Parupino1.rc">
+      <Filter>99_Other</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

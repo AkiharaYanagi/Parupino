@@ -11,7 +11,7 @@
 #include "Game.h"
 #include "../GameMain/Scene.h"
 #include "Fighting.h"
-#include "Menu/PauseMenu.h"
+#include "../Menu/PauseMenu.h"
 
 
 //-------------------------------------------------------------------------------------------------

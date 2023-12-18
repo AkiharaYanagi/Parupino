@@ -118,9 +118,6 @@
     <ClInclude Include="Source\FtgMain\FtgDemo.h" />
     <ClInclude Include="Source\FtgMain\FtgMain.h" />
     <ClInclude Include="Source\FtgMain\G_Ftg.h" />
-    <ClInclude Include="Source\FtgMain\Menu\PauseMenu.h" />
-    <ClInclude Include="Source\FtgMain\Menu\PauseMenuItem.h" />
-    <ClInclude Include="Source\FtgMain\Menu\YesNo_Menu.h" />
     <ClInclude Include="Source\FtgMain\MutualChara.h" />
     <ClInclude Include="Source\GameMain\SoundConst.h" />
     <ClInclude Include="Source\GameMain\GameConst.h" />
@@ -133,6 +130,9 @@
     <ClInclude Include="Source\GameMain\StdAfx.h" />
     <ClInclude Include="Source\Introduction\Introduction.h" />
     <ClInclude Include="Source\Introduction\Intro_Img.h" />
+    <ClInclude Include="Source\Menu\PauseMenu.h" />
+    <ClInclude Include="Source\Menu\PauseMenuItem.h" />
+    <ClInclude Include="Source\Menu\YesNo_Menu.h" />
     <ClInclude Include="Source\Result\Rank.h" />
     <ClInclude Include="Source\Result\Result.h" />
     <ClInclude Include="Source\Title\Title.h" />
@@ -143,6 +143,8 @@
     <ClInclude Include="Source\Title\Title_Menu_State.h" />
     <ClInclude Include="Source\Title\Title_Menu_VS.h" />
     <ClInclude Include="Source\Training\Training.h" />
+    <ClInclude Include="Source\Training\Training_Menu.h" />
+    <ClInclude Include="Source\Training\Training_MenuItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
@@ -173,9 +175,6 @@
     <ClCompile Include="Source\FtgMain\FtgDemo.cpp" />
     <ClCompile Include="Source\FtgMain\FtgMain.cpp" />
     <ClCompile Include="Source\FtgMain\G_Ftg.cpp" />
-    <ClCompile Include="Source\FtgMain\Menu\PauseMenu.cpp" />
-    <ClCompile Include="Source\FtgMain\Menu\PauseMenuItem.cpp" />
-    <ClCompile Include="Source\FtgMain\Menu\YesNo_Menu.cpp" />
     <ClCompile Include="Source\FtgMain\MutualChara.cpp" />
     <ClCompile Include="Source\GameMain\GameSettingFile.cpp" />
     <ClCompile Include="Source\GameMain\Param.cpp" />
@@ -184,6 +183,9 @@
     <ClCompile Include="Source\GameMain\WinMain.cpp" />
     <ClCompile Include="Source\Introduction\Introduction.cpp" />
     <ClCompile Include="Source\Introduction\Intro_Img.cpp" />
+    <ClCompile Include="Source\Menu\PauseMenu.cpp" />
+    <ClCompile Include="Source\Menu\PauseMenuItem.cpp" />
+    <ClCompile Include="Source\Menu\YesNo_Menu.cpp" />
     <ClCompile Include="Source\Result\Rank.cpp" />
     <ClCompile Include="Source\Result\Result.cpp" />
     <ClCompile Include="Source\Title\Title.cpp" />
@@ -194,6 +196,8 @@
     <ClCompile Include="Source\Title\Title_Menu_State.cpp" />
     <ClCompile Include="Source\Title\Title_Menu_VS.cpp" />
     <ClCompile Include="Source\Training\Training.cpp" />
+    <ClCompile Include="Source\Training\Training_Menu.cpp" />
+    <ClCompile Include="Source\Training\Training_MenuItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

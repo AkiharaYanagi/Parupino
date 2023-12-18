@@ -46,7 +46,7 @@ namespace GAME
 		GRPLST_INSERT_MAIN ( m_keyIntro );
 
 		//ポーズメニュ
-		m_pauseMenu = make_shared < PauseMenu > ();
+		m_pauseMenu = make_shared < Training_Menu > ();
 		AddpTask ( m_pauseMenu );
 
 		//ロード中
