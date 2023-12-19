@@ -225,6 +225,9 @@
     <ClInclude Include="Source\Training\Training_MenuItem.h">
       <Filter>Training</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Menu\PauseMenu_Const.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">

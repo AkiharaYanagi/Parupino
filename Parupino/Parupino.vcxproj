@@ -132,6 +132,7 @@
     <ClInclude Include="Source\Introduction\Intro_Img.h" />
     <ClInclude Include="Source\Menu\PauseMenu.h" />
     <ClInclude Include="Source\Menu\PauseMenuItem.h" />
+    <ClInclude Include="Source\Menu\PauseMenu_Const.h" />
     <ClInclude Include="Source\Menu\YesNo_Menu.h" />
     <ClInclude Include="Source\Result\Rank.h" />
     <ClInclude Include="Source\Result\Result.h" />
