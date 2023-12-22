@@ -146,6 +146,7 @@
     <ClInclude Include="Source\Training\Training.h" />
     <ClInclude Include="Source\Training\Training_Menu.h" />
     <ClInclude Include="Source\Training\Training_MenuItem.h" />
+    <ClInclude Include="Source\Training\Training_Menu_KI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\CharaSele\CharaSele.cpp" />
@@ -199,6 +200,7 @@
     <ClCompile Include="Source\Training\Training.cpp" />
     <ClCompile Include="Source\Training\Training_Menu.cpp" />
     <ClCompile Include="Source\Training\Training_MenuItem.cpp" />
+    <ClCompile Include="Source\Training\Training_Menu_KI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

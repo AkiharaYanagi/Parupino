@@ -228,6 +228,9 @@
     <ClInclude Include="Source\Menu\PauseMenu_Const.h">
       <Filter>Menu</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Training\Training_Menu_KI.h">
+      <Filter>Training</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\FtgMain\Fighting.cpp">
@@ -381,6 +384,9 @@
       <Filter>Training</Filter>
     </ClCompile>
     <ClCompile Include="Source\Training\Training_MenuItem.cpp">
+      <Filter>Training</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Training\Training_Menu_KI.cpp">
       <Filter>Training</Filter>
     </ClCompile>
   </ItemGroup>

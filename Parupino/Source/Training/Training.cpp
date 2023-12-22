@@ -21,7 +21,7 @@ namespace GAME
 	const float Training::BX = ( 1280 - 256 ) * 0.5f;
 	const float Training::BY = 170.f;
 	const float Training::BX_KI = ( 1280 - 512 ) * 0.5f;
-	const float Training::BY_KI = 800.f;
+	const float Training::BY_KI = 900.f;
 
 
 	Training::Training ()
