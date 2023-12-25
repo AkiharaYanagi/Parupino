@@ -701,8 +701,15 @@ namespace GAME
 
 	void ExeChara::LookOther ()
 	{
-		//空中は持続
+#if 0
+		//ジャンプ中(アクション体勢/空中状態)は持続
 		if ( Is_AP_Jump () )
+		{
+			return;
+		}
+#endif // 0
+		//ニュートラルのみ振り返り
+		if ( ! IsStand () )
 		{
 			return;
 		}
