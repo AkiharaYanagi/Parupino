@@ -10,7 +10,7 @@ namespace ScriptEditor
 	public partial class FormMain : Form
 	{
 		//サブフォーム共通設定
-		private List < EditorForm > L_EditorForm = new List<EditorForm> ();
+		private List < EditorSubForm > L_EditorForm = new List < EditorSubForm > ();
 
 		//==================================================================================
 		//	初期化
@@ -29,7 +29,7 @@ namespace ScriptEditor
 			L_EditorForm.Add ( FormPreview.Inst );
 
 			//親を記録
-			foreach ( EditorForm ef in L_EditorForm )
+			foreach ( EditorSubForm ef in L_EditorForm )
 			{
 				ef.FormMain = this;
 			}

@@ -28,7 +28,7 @@ namespace ScriptEditor
 		}
 		private void Btn_HideScriptList_Click ( object sender, EventArgs e )
 		{
-			Form_ScriptList.Inst.Hidden ();
+			Form_ScriptList.Inst.Hide ();
 		}
 		//--------------------------------------------------------------------
 		private void BtnScriptValue_Click ( object sender, EventArgs e )
@@ -37,7 +37,7 @@ namespace ScriptEditor
 		}
 		private void Btn_HideScriptValue_Click ( object sender, EventArgs e )
 		{
-			FormScript.Inst.Hidden ();
+			FormScript.Inst.Hide ();
 		}
 		//--------------------------------------------------------------------
 		private void BtnImg_Click ( object sender, EventArgs e )
@@ -46,7 +46,7 @@ namespace ScriptEditor
 		}
 		private void Btn_HideImage_Click ( object sender, EventArgs e )
 		{
-			FormImage.Inst.Hidden ();
+			FormImage.Inst.Hide ();
 		}
 		//--------------------------------------------------------------------
 		private void Btn_RctList_Click ( object sender, EventArgs e )
@@ -55,7 +55,7 @@ namespace ScriptEditor
 		}
 		private void Btn_HideRectList_Click ( object sender, EventArgs e )
 		{
-			FormRect2.Inst.Hidden ();
+			FormRect2.Inst.Hide ();
 		}
 		//--------------------------------------------------------------------
 		private void Btn_EfGnrt_Click ( object sender, EventArgs e )
@@ -66,7 +66,7 @@ namespace ScriptEditor
 		private void Btn_HideEfGnrt_Click ( object sender, EventArgs e )
 		{
 //			FormEfGnrt.Inst.Hidden ();
-			_FormEfGnrt.Inst.Hidden ();
+			_FormEfGnrt.Inst.Hide ();
 		}
 		//--------------------------------------------------------------------
 		private void Btn_Route_Click ( object sender, EventArgs e )
@@ -75,7 +75,7 @@ namespace ScriptEditor
 		}
 		private void Btn_HideRoute_Click ( object sender, EventArgs e )
 		{
-			FormRoute.Inst.Hidden ();
+			FormRoute.Inst.Hide ();
 		}
 		//--------------------------------------------------------------------
 		private void Btn_Preview_Click ( object sender, EventArgs e )

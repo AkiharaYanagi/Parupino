@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ScriptEditor</RootNamespace>
     <AssemblyName>ScriptEditor</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -104,17 +105,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Source\Control\Ctrl_FormBtn_v.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Source\Control\Ctrl_FormBtn_v.Designer.cs">
-      <DependentUpon>Ctrl_FormBtn_v.cs</DependentUpon>
-    </Compile>
     <Compile Include="Source\FormMain\FormMain_Ctrl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +142,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormMain\FormMain_Utility.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Source\FormSub\EditorForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source\FormSub\FormEfGnrt\_FormEfGnrt.cs">
@@ -201,10 +188,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Source\Control\Ctrl_FormBtn_v.resx">
-      <DependentUpon>Ctrl_FormBtn_v.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source\FormMain\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

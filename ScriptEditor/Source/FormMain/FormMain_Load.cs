@@ -73,19 +73,26 @@ namespace ScriptEditor
 			tp.Controls.Add ( ctrl_fmBtn_bhv );
 			ctrl_fmBtn_bhv.Location = new Point ( ctrl_cmpd_bhv.Width, 0 );
 
+			//ctrl_fmBtn_bhv.FB_Action = Form_Action.Inst;
+			ctrl_fmBtn_bhv.FB_Action.Enabled = false;
+			
+			ctrl_fmBtn_bhv.FB_ScriptList.Form = Form_ScriptList.Inst;
+			ctrl_fmBtn_bhv.FB_ScriptValue.Form = FormScript.Inst;
+			ctrl_fmBtn_bhv.FB_Image.Form = FormImage.Inst;
+			ctrl_fmBtn_bhv.FB_RectList.Form = FormRect2.Inst;
+			ctrl_fmBtn_bhv.FB_EfGnrt.Form = _FormEfGnrt.Inst;
+			ctrl_fmBtn_bhv.FB_Route.Form = FormRoute.Inst;
+
+			//ctrl_fmBtn_bhv.FB_Preview = FormPreview.Inst;
+			ctrl_fmBtn_bhv.FB_Preview.Enabled = false;
+
 			tp.ResumeLayout ( false );
 		}
+
 
 		//タブ_エフェクトの初期化
 		private void TabEffect_Load ()
 		{
-#if false
-			//タブページに手動追加
-			Ctrl_SqcList.CTRL_SQC ef = Ctrl_SqcList.CTRL_SQC.EFFECT;
-			ctrl_SqcList_Ef.SetEnviroment ( ef, ()=>new Effect(), stgs );
-			ctrl_SqcList_Ef.SetCharaData ( chara.garnish );
-			//ctrl_SqcList_Ef.LoadCtrl ();
-#endif
 			//タブページに手動追加
 			TabPage tp = tabControl1.TabPages [ (int)TAB_NAME.TAB_EFFECT ];
 			tp.Controls.Add ( ctrl_SqcList_Efc );
@@ -94,32 +101,6 @@ namespace ScriptEditor
 		//タブ_スクリプト(Ef)の初期化
 		private void TabScript_E_Load ()
 		{
-#if false
-			//ガーニッシュ(:コンペンド)の指定
-			EditGarnish eg = EditChara.Inst.EditGarnish;
-			DispGarnish dg = DispChara.Inst.DispGarnish;
-
-			//タブページに手動追加
-			TabPage tp = tabControl1.TabPages[3];
-			tp.SuspendLayout ();
-
-			tp.Controls.Add ( ctrl_cmpd_gns );
-			ctrl_cmpd_gns.SetEnviron ( eg );
-			ctrl_cmpd_gns.Location = new Point ( 0, 0 ); 
-			ctrl_cmpd_gns.Size = new Size ( tp.Size.Width - ctrl_fmBtn_gns.Width, tp.Size.Height );
-			
-			tp.Controls.Add ( ctrl_fmBtn_gns );
-			ctrl_fmBtn_gns.Location = new Point ( ctrl_cmpd_gns.Width, 0 );
-
-			tp.ResumeLayout ();
-
-	
-			//サブフォームの初期化
-			SetEnvironment_SubForms ( eg );
-//			Form_ScriptList.Inst.SetEnvironment ( eg );
-//			FormImage.Inst.SetEnviron ( eg );
-//			FormRect2.Inst.SetEnvironment ( eg );
-#endif
 			//タブページに手動追加
 			TabPage tp = tabControl1.TabPages [ (int)TAB_NAME.TAB_SCRIPT_E ];
 			tp.Controls.Add ( ctrl_cmpd_gns );
@@ -136,6 +117,7 @@ namespace ScriptEditor
 
 			tp.ResumeLayout ( false );
 		}
+
 
 		//タブ_コマンドの初期化
 		private void TabCommand_Load ()

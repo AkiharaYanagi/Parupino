@@ -1,5 +1,7 @@
 ﻿using System.Windows.Forms;
 
+using ScriptEditorUtility;
+
 
 namespace ScriptEditor
 {
@@ -9,11 +11,11 @@ namespace ScriptEditor
 		//各コントロール 実体
 		private Ctrl_SqcList ctrl_SqcList_Act = new Ctrl_SqcList ();	//シークエンスリスト・アクション
 		private _Ctrl_Compend ctrl_cmpd_bhv = new _Ctrl_Compend ();		//コントロール・ビヘイビア
-		private Ctrl_FormBtn_v ctrl_fmBtn_bhv = new Ctrl_FormBtn_v ();	//フォームボタン
+		private Ctrl_SubFormBtn ctrl_fmBtn_bhv = new Ctrl_SubFormBtn ();	//フォームボタン
 		
 		private Ctrl_SqcList ctrl_SqcList_Efc = new Ctrl_SqcList ();	//シークエンスリスト・エフェクト
 		private _Ctrl_Compend ctrl_cmpd_gns = new _Ctrl_Compend ();		//コントロール・ガーニッシュ
-		private Ctrl_FormBtn_v ctrl_fmBtn_gns = new Ctrl_FormBtn_v ();	//フォームボタン
+		private Ctrl_SubFormBtn ctrl_fmBtn_gns = new Ctrl_SubFormBtn ();	//フォームボタン
 
 		private Ctrl_CmdList ctrl_Cmd = new Ctrl_CmdList ();
 		private Ctrl_Branch ctrl_Brc = new Ctrl_Branch ();
