@@ -13,6 +13,9 @@
 #include "_GameKey.h"
 #include "../../ExeChara/ExeChara.h"
 
+#include <array>
+
+
 //-------------------------------------------------------------------------------------------------
 // 定義
 //-------------------------------------------------------------------------------------------------
@@ -40,6 +43,8 @@ namespace GAME
 	, m_vGameKeyNum ( CPU_INPUT_GAMEKEY_NUM ), m_playerID ( PLAYER_ID_1 )
 	, m_bAct ( false ), m_act ( CPU_NEUTRAL ), m_actTime ( 0 ), m_timer ( 0 )
 	, m_testAct ( 0 )
+	, m_actNear { 0 }, m_actMiddle{ 0 }, m_actFar{ 0 }
+	, m_randomKeyNear { CPU_NEUTRAL }, m_randomKeyMiddle{ CPU_NEUTRAL }, m_randomKeyFar{ CPU_NEUTRAL }
 	{
 		//ゲームキーを規定数だけ確保
 		for ( UINT i = 0; i < CPU_INPUT_GAMEKEY_NUM; ++ i )
@@ -95,8 +100,7 @@ namespace GAME
 			if ( ! tifStrm ) { throw; }
 			if ( tifStrm.fail () ) { throw; }
 
-			int* iBuf = nullptr;
-			iBuf = new int[CPU_ACT_NUM * 3];
+			std::array < int, CPU_ACT_NUM * 3 > iBuf = { 0 };
 			UINT index = 0;
 
 			//ファイル末尾まで読込
@@ -147,12 +151,10 @@ namespace GAME
 
 			for ( int i = 0; i < CENT; ++ i )
 			{
-				SetCPU_Act ( i, m_actNear, &(m_randomKeyNear[i]) );
-				SetCPU_Act ( i, m_actMiddle, &(m_randomKeyMiddle[i]) );
-				SetCPU_Act ( i, m_actFar, &(m_randomKeyFar[i]) );
+				SetCPU_Act ( i, m_actNear, m_randomKeyNear [ i ] );
+				SetCPU_Act ( i, m_actMiddle, m_randomKeyMiddle [ i ] );
+				SetCPU_Act ( i, m_actFar, m_randomKeyFar [ i ] );
 			}
-
-			delete[] iBuf;
 		}
 		catch ( ... )
 		{
@@ -191,25 +193,21 @@ namespace GAME
 			float distance = fabsf ( pos.x - posOther.x );
 			if ( distance < 200 )
 			{
-//				DebugOutGameWindow::instance()->DebugOutf ( ( PLAYER_1 == m_playerID ) ? 0 : 1, _T("m_randomKeyNear") );
 				m_act = m_randomKeyNear[r];
 			}
 			else if ( distance < 300 )
 			{
-//				DebugOutGameWindow::instance()->DebugOutf ( ( PLAYER_1 == m_playerID ) ? 0 : 1, _T("m_randomKeyMiddle") );
 				m_act = m_randomKeyMiddle[r];
 			}
 			else 
 			{
-				{
-//				DebugOutGameWindow::instance()->DebugOutf ( ( PLAYER_1 == m_playerID ) ? 0 : 1, _T("m_randomKeyFar") );
-					m_act = m_randomKeyFar[r];
-				}
+				m_act = m_randomKeyFar[r];
 			}
 			
 			
 			switch ( m_act )
 			{
+			case CPU_NEUTRAL:				break;
 			case CPU_FRONT:
 				m_actTime = 20;
 				break;
@@ -223,12 +221,13 @@ namespace GAME
 				m_actTime = 20;
 				break;
 			case CPU_L:
+				m_actTime = 6;
 				break;
 			case CPU_M:
+				m_actTime = 6;
 				break;
 			case CPU_H:
-				break;
-			case CPU_NEUTRAL:
+				m_actTime = 6;
 				break;
 			case CPU_AVOID:
 				m_actTime = 20;
@@ -343,22 +342,18 @@ namespace GAME
 		return NO_COMPLETE;
 	}
 
-	void CPUInput::SetCPU_Act ( int index, int act[], CPU_ACT pCpu_act[] )
+	void CPUInput::SetCPU_Act ( int index, ARY_INT act, CPU_ACT& cpu_act )
 	{
-		*pCpu_act = CPU_NEUTRAL;
-		if		( index < act[1] ) { *pCpu_act = CPU_FRONT; }
-
-//		if		( index < act[0] ) { *pCpu_act = CPU_NEUTRAL; }
-//		else if	( index < act[1] ) { *pCpu_act = CPU_FRONT; }
-
-		else if ( index < act[2] ) { *pCpu_act = CPU_BACK;	}
-		else if ( index < act[3] ) { *pCpu_act = CPU_FRONT_DASH; }
-		else if ( index < act[4] ) { *pCpu_act = CPU_BACK_DASH;	}
-		else if ( index < act[5] ) { *pCpu_act = CPU_L; }
-		else if ( index < act[6] ) { *pCpu_act = CPU_M; }
-		else if ( index < act[7] ) { *pCpu_act = CPU_H; }
-		else if ( index < act[8] ) { *pCpu_act = CPU_AVOID; }
-		else if ( index < act[9] ) { *pCpu_act = CPU_POISED; }
+		cpu_act = CPU_NEUTRAL;
+		if		( index < act[1] ) { cpu_act = CPU_FRONT; }
+		else if ( index < act[2] ) { cpu_act = CPU_BACK;	}
+		else if ( index < act[3] ) { cpu_act = CPU_FRONT_DASH; }
+		else if ( index < act[4] ) { cpu_act = CPU_BACK_DASH;	}
+		else if ( index < act[5] ) { cpu_act = CPU_L; }
+		else if ( index < act[6] ) { cpu_act = CPU_M; }
+		else if ( index < act[7] ) { cpu_act = CPU_H; }
+		else if ( index < act[8] ) { cpu_act = CPU_AVOID; }
+		else if ( index < act[9] ) { cpu_act = CPU_POISED; }
 	}
 
 

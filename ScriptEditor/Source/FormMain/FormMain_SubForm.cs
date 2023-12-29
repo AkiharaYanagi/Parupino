@@ -33,6 +33,30 @@ namespace ScriptEditor
 			{
 				ef.FormMain = this;
 			}
+
+			//フォームボタンに登録
+			ctrl_fmBtn_bhv.FB_ScriptList.Form = Form_ScriptList.Inst;
+			ctrl_fmBtn_bhv.FB_ScriptValue.Form = FormScript.Inst;
+			ctrl_fmBtn_bhv.FB_Image.Form = FormImage.Inst;
+			ctrl_fmBtn_bhv.FB_RectList.Form = FormRect2.Inst;
+			ctrl_fmBtn_bhv.FB_EfGnrt.Form = _FormEfGnrt.Inst;
+			ctrl_fmBtn_bhv.FB_Route.Form = FormRoute.Inst;
+			//ctrl_fmBtn_bhv.FB_Action = Form_Action.Inst;
+			ctrl_fmBtn_bhv.FB_Action.Enabled = false;
+			//ctrl_fmBtn_bhv.FB_Preview = FormPreview.Inst;
+			ctrl_fmBtn_bhv.FB_Preview.Enabled = false;
+
+			ctrl_fmBtn_gns.FB_ScriptList.Form = Form_ScriptList.Inst;
+			ctrl_fmBtn_gns.FB_ScriptValue.Form = FormScript.Inst;
+			ctrl_fmBtn_gns.FB_Image.Form = FormImage.Inst;
+			ctrl_fmBtn_gns.FB_RectList.Form = FormRect2.Inst;
+			ctrl_fmBtn_gns.FB_EfGnrt.Form = _FormEfGnrt.Inst;
+			ctrl_fmBtn_gns.FB_Route.Form = FormRoute.Inst;
+			//ctrl_fmBtn_gns.FB_Action = Form_Action.Inst;
+			ctrl_fmBtn_gns.FB_Action.Enabled = false;
+			//ctrl_fmBtn_gns.FB_Preview = FormPreview.Inst;
+			ctrl_fmBtn_gns.FB_Preview.Enabled = false;
+
 		}
 
 		//==================================================================================

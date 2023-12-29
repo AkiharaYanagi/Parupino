@@ -73,19 +73,6 @@ namespace ScriptEditor
 			tp.Controls.Add ( ctrl_fmBtn_bhv );
 			ctrl_fmBtn_bhv.Location = new Point ( ctrl_cmpd_bhv.Width, 0 );
 
-			//ctrl_fmBtn_bhv.FB_Action = Form_Action.Inst;
-			ctrl_fmBtn_bhv.FB_Action.Enabled = false;
-			
-			ctrl_fmBtn_bhv.FB_ScriptList.Form = Form_ScriptList.Inst;
-			ctrl_fmBtn_bhv.FB_ScriptValue.Form = FormScript.Inst;
-			ctrl_fmBtn_bhv.FB_Image.Form = FormImage.Inst;
-			ctrl_fmBtn_bhv.FB_RectList.Form = FormRect2.Inst;
-			ctrl_fmBtn_bhv.FB_EfGnrt.Form = _FormEfGnrt.Inst;
-			ctrl_fmBtn_bhv.FB_Route.Form = FormRoute.Inst;
-
-			//ctrl_fmBtn_bhv.FB_Preview = FormPreview.Inst;
-			ctrl_fmBtn_bhv.FB_Preview.Enabled = false;
-
 			tp.ResumeLayout ( false );
 		}
 
@@ -113,7 +100,7 @@ namespace ScriptEditor
 
 			//ボタンの追加
 			tp.Controls.Add ( ctrl_fmBtn_gns );
-			ctrl_fmBtn_bhv.Location = new Point ( ctrl_cmpd_gns.Width, 0 );
+			ctrl_fmBtn_gns.Location = new Point ( ctrl_cmpd_gns.Width, 0 );
 
 			tp.ResumeLayout ( false );
 		}

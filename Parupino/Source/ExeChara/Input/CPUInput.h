@@ -9,6 +9,8 @@
 // ヘッダファイルのインクルード
 //-------------------------------------------------------------------------------------------------
 #include "CharaInput.h"
+#include <array>
+
 
 //-------------------------------------------------------------------------------------------------
 // 宣言
@@ -20,6 +22,26 @@ namespace GAME
 	using P_ExeChara = std::shared_ptr < ExeChara >;
 	using WP_ExeChara = weak_ptr < ExeChara >;
 
+	//CPU行動種類
+	enum CPU_ACT
+	{
+		CPU_NEUTRAL = 0,
+		CPU_FRONT = 1,
+		CPU_BACK = 2,
+		CPU_FRONT_DASH = 3,
+		CPU_BACK_DASH = 4,
+		CPU_L = 5,
+		CPU_M = 6,
+		CPU_H = 7,
+		CPU_AVOID = 8,
+		CPU_POISED = 9,
+		CPU_ACT_NUM = 10,
+	};
+	using ARY_CPU_ACT = std::array < CPU_ACT, CENT >;
+	using ARY_INT = std::array < int, CPU_ACT_NUM >;
+
+
+	//-------
 	class CPUInput : public CharaInput
 	{
 		const UINT		m_vGameKeyNum;		//キー入力の保存フレーム数
@@ -28,24 +50,9 @@ namespace GAME
 		WP_ExeChara		m_pExeChara;		//自身の参照
 		WP_ExeChara		m_pExeCharaOther;	//相手の参照
 
-		//CPU行動種類
-		enum CPU_ACT
-		{
-			CPU_NEUTRAL = 0,
-			CPU_FRONT = 1,
-			CPU_BACK = 2,
-			CPU_FRONT_DASH = 3,
-			CPU_BACK_DASH = 4,
-			CPU_L = 5,
-			CPU_M = 6,
-			CPU_H = 7,
-			CPU_AVOID = 8,
-			CPU_POISED = 9,
-			CPU_ACT_NUM = 10,
-		};
-		CPU_ACT		m_randomKeyNear	[ CENT ];		//近距離
-		CPU_ACT		m_randomKeyMiddle [ CENT ];		//中距離
-		CPU_ACT		m_randomKeyFar [ CENT ];		//遠距離
+		ARY_CPU_ACT		m_randomKeyNear;	//近距離
+		ARY_CPU_ACT		m_randomKeyMiddle;	//中距離
+		ARY_CPU_ACT		m_randomKeyFar;		//遠距離
 
 		bool		m_bAct;		//行動決定済
 		CPU_ACT		m_act;
@@ -55,10 +62,9 @@ namespace GAME
 		int m_testAct;
 
 		//外部読込
-		int			m_actNear[ CPU_ACT_NUM ];
-		int			m_actMiddle[ CPU_ACT_NUM ];
-		int			m_actFar[ CPU_ACT_NUM ];
-
+		ARY_INT		m_actNear;
+		ARY_INT		m_actMiddle;
+		ARY_INT		m_actFar;
 
 	public:
 		CPUInput ( WP_ExeChara p, WP_ExeChara pOther );
@@ -77,7 +83,7 @@ namespace GAME
 		//コマンド条件が達成されていたら遷移先のアクションIDを返す
 		UINT GetTransitID ( PVP_Branch pvpBranch, bool dirRight );
 
-		void SetCPU_Act ( int index, int act[], CPU_ACT cpu_act[] );
+		void SetCPU_Act ( int index, ARY_INT act, CPU_ACT& cpu_act );
 
 	};
 

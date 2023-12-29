@@ -189,10 +189,10 @@ namespace ScriptEditor
 			FormImage.Inst.SetData ( eg.Compend.BD_Image );
 #endif
 			//コンペンド指定
-			EditBehavior eb = EditChara.Inst.EditBehavior;
-			SetEnvironment_SubForms ( eb );
+			EditGarnish eg = EditChara.Inst.EditGarnish;
+			SetEnvironment_SubForms ( eg );
 
-			//イメージ指定
+		//イメージ指定
 			FormImage.Inst.SetCharaData ( chara.garnish.BD_Image );
 		}
 
