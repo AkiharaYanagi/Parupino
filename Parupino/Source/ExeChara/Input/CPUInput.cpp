@@ -64,9 +64,9 @@ namespace GAME
 			else if ( i < 6  ) { m_randomKeyNear[i] = CPU_FRONT_DASH; }
 			else if ( i < 8  ) { m_randomKeyNear[i] = CPU_BACK_DASH;	}
 			else if ( i < 40 ) { m_randomKeyNear[i] = CPU_L; }
-			else if ( i < 55 ) { m_randomKeyNear[i] = CPU_M; }
-			else if ( i < 70 ) { m_randomKeyNear[i] = CPU_H; }
-			else if ( i < 99 ) { m_randomKeyNear[i] = CPU_AVOID; }
+			else if ( i < 55 ) { m_randomKeyNear[i] = CPU_Ma; }
+			else if ( i < 70 ) { m_randomKeyNear[i] = CPU_Mb; }
+			else if ( i < 99 ) { m_randomKeyNear[i] = CPU_H; }
 
 			m_randomKeyMiddle[i] = CPU_NEUTRAL;
 			if		( i < 5  ) { m_randomKeyMiddle[i] = CPU_FRONT; }
@@ -74,9 +74,9 @@ namespace GAME
 			else if ( i < 15 ) { m_randomKeyMiddle[i] = CPU_FRONT_DASH; }
 			else if ( i < 20 ) { m_randomKeyMiddle[i] = CPU_BACK_DASH;	}
 			else if ( i < 25 ) { m_randomKeyMiddle[i] = CPU_L; }
-			else if ( i < 30 ) { m_randomKeyMiddle[i] = CPU_M; }
-			else if ( i < 35 ) { m_randomKeyMiddle[i] = CPU_H; }
-			else if ( i < 60 ) { m_randomKeyMiddle[i] = CPU_AVOID; }
+			else if ( i < 30 ) { m_randomKeyMiddle[i] = CPU_Ma; }
+			else if ( i < 35 ) { m_randomKeyMiddle[i] = CPU_Mb; }
+			else if ( i < 60 ) { m_randomKeyMiddle[i] = CPU_H; }
 
 			m_randomKeyFar[i] = CPU_NEUTRAL;
 			if		( i < 15 ) { m_randomKeyFar[i] = CPU_FRONT; }
@@ -84,9 +84,9 @@ namespace GAME
 			else if ( i < 25 ) { m_randomKeyFar[i] = CPU_FRONT_DASH; }
 			else if ( i < 27 ) { m_randomKeyFar[i] = CPU_BACK_DASH;	}
 			else if ( i < 30 ) { m_randomKeyFar[i] = CPU_L; }
-			else if ( i < 33 ) { m_randomKeyFar[i] = CPU_M; }
-			else if ( i < 38 ) { m_randomKeyFar[i] = CPU_H; }
-			else if ( i < 40 ) { m_randomKeyFar[i] = CPU_AVOID; }
+			else if ( i < 33 ) { m_randomKeyFar[i] = CPU_Ma; }
+			else if ( i < 38 ) { m_randomKeyFar[i] = CPU_Mb; }
+			else if ( i < 40 ) { m_randomKeyFar[i] = CPU_H; }
 		}
 		//
 		//	※ 乱数配分 ここまで
@@ -123,7 +123,7 @@ namespace GAME
 
 					tchNum [ i ] = tch;
 					++i;
-					if ( i == 2 ) { bComp = true; }
+					if ( i == 2 ) { bComp = T; }
 				}
 
 				//完成時数値に変換
@@ -173,7 +173,8 @@ namespace GAME
 	//更新
 	void CPUInput::Update ( bool dirRight )
 	{
-		//今回の入力をゲームキーに直して保存 (方向は右方向で、コマンド入力側で向きを反映している)
+		//今回の入力をゲームキーに直して保存
+		//  (ゲームキー保存は右方向共通で、コマンド入力側で向きを反映している)
 		_GameKey gameKey;
 
 		VEC2 pos = m_pExeChara.lock()->GetPos ();
@@ -183,13 +184,8 @@ namespace GAME
 		if ( ! m_bAct ) 
 		{
 			int r = ::rand() % 100;
-#if	0
-			m_testAct += 7;
-			if  ( m_testAct > 99 ) { m_testAct -= 99; }
-		
-			int r = m_testAct;
-#endif	//0
-			//距離
+
+			//距離別で行動を取得
 			float distance = fabsf ( pos.x - posOther.x );
 			if ( distance < 200 )
 			{
@@ -204,66 +200,45 @@ namespace GAME
 				m_act = m_randomKeyFar[r];
 			}
 			
-			
+			//行動決定
 			switch ( m_act )
 			{
-			case CPU_NEUTRAL:				break;
-			case CPU_FRONT:
-				m_actTime = 20;
-				break;
-			case CPU_BACK:
-				m_actTime = 20;
-				break;
-			case CPU_FRONT_DASH:
-				m_actTime = 20;
-				break;
-			case CPU_BACK_DASH:
-				m_actTime = 20;
-				break;
-			case CPU_L:
-				m_actTime = 6;
-				break;
-			case CPU_M:
-				m_actTime = 6;
-				break;
-			case CPU_H:
-				m_actTime = 6;
-				break;
-			case CPU_AVOID:
-				m_actTime = 20;
-				break;
-			case CPU_POISED:
-				m_actTime = 20;
-				break;
-			default:
-				break;
+			case CPU_NEUTRAL:					break;
+			case CPU_FRONT:		m_actTime = 20;	break;
+			case CPU_BACK:		m_actTime = 20;	break;
+			case CPU_FRONT_DASH:m_actTime = 20; break;
+			case CPU_BACK_DASH:	m_actTime = 20; break;
+			case CPU_L:			m_actTime = 6;	break;
+			case CPU_Ma:		m_actTime = 6;	break;
+			case CPU_Mb:		m_actTime = 6;	break;
+			case CPU_H:			m_actTime = 6;	break;
+			case CPU_POISED:	m_actTime = 20;	break;
+			default:							break;
 			};
-			m_bAct = true;
+			m_bAct = T;
 		}
+
 		//行動決定済
-		else
+		if ( m_bAct )
 		{
 			switch ( m_act )
 			{
-			case CPU_FRONT:
-				gameKey.SetLvr ( _GameKey::LVR_6, true );
-				break;
-			case CPU_BACK:
-				gameKey.SetLvr ( _GameKey::LVR_4, true );
-				break;
+			case CPU_FRONT: gameKey.SetLvr ( _GameKey::LVR_6, T );	break;
+			case CPU_BACK: gameKey.SetLvr ( _GameKey::LVR_4, T );	break;
 			case CPU_FRONT_DASH:
 				switch ( m_timer )
 				{
-				case 0: gameKey.SetLvr ( _GameKey::LVR_6, true ); 	break;
+				case 0: gameKey.SetLvr ( _GameKey::LVR_6, T ); 	break;
 				case 1:	gameKey.SetLvrOff (); break;
 				default: 
-					gameKey.SetLvr ( _GameKey::LVR_6, true );
+					gameKey.SetLvr ( _GameKey::LVR_6, T );
 					//ダッシュを維持しつつ攻撃をランダムで行う
 					switch ( ::rand() % 10 )
 					{
-					case 0: gameKey.SetBtn ( _GameKey::BTN_0, true ); 	break;
-					case 1: gameKey.SetBtn ( _GameKey::BTN_1, true ); 	break;
-					case 2: gameKey.SetBtn ( _GameKey::BTN_2, true ); 	break;
+					case 0: gameKey.SetBtn ( _GameKey::BTN_0, T ); 	break;
+					case 1: gameKey.SetBtn ( _GameKey::BTN_1, T ); 	break;
+					case 2: gameKey.SetBtn ( _GameKey::BTN_2, T ); 	break;
+					case 3: gameKey.SetBtn ( _GameKey::BTN_3, T ); 	break;
 					default: break;
 					}
 
@@ -273,33 +248,20 @@ namespace GAME
 			case CPU_BACK_DASH:
 				switch ( m_timer )
 				{
-				case 0: gameKey.SetLvr ( _GameKey::LVR_4, true ); break;
+				case 0: gameKey.SetLvr ( _GameKey::LVR_4, T ); break;
 				case 1:	gameKey.SetLvrOff (); break;
-				default: gameKey.SetLvr ( _GameKey::LVR_4, true ); break;
+				default: gameKey.SetLvr ( _GameKey::LVR_4, T ); break;
 				}
 				break;
-			case CPU_L:
-				gameKey.SetBtn ( _GameKey::BTN_0, true );
-				break;
-			case CPU_M:
-				gameKey.SetBtn ( _GameKey::BTN_1, true );
-				break;
-			case CPU_H:
-				gameKey.SetBtn ( _GameKey::BTN_2, true );
-				break;
-			case CPU_AVOID:
-//				gameKey.SetLvr ( _GameKey::DIR_2 );
-				gameKey.SetBtn ( _GameKey::BTN_3, true );
-				break;
-			case CPU_POISED:
-//				gameKey.SetLvr ( _GameKey::DIR_8 );
-				gameKey.SetBtn ( _GameKey::BTN_3, true );
-				break;
-			case CPU_NEUTRAL:
-				break;
-			default:
-				break;
+			case CPU_L:	gameKey.SetBtn ( _GameKey::BTN_0, T );	break;
+			case CPU_Ma:gameKey.SetBtn ( _GameKey::BTN_1, T );	break;
+			case CPU_Mb:gameKey.SetBtn ( _GameKey::BTN_2, T );	break;
+			case CPU_H: gameKey.SetBtn ( _GameKey::BTN_3, T );	break;
+			case CPU_POISED: gameKey.SetBtn ( _GameKey::BTN_3, T );		break;
+			case CPU_NEUTRAL:	break;
+			default:	break;
 			};
+
 			if ( m_timer == m_actTime )
 			{
 				m_timer = 0;
@@ -311,6 +273,9 @@ namespace GAME
 				++m_timer;
 			}
 		}
+
+		//前回のキーを今回にも保存する
+		gameKey.ReservePrevious ( m_vGameKey[ 0 ] );
 
 		//ゲーム入力を更新しながら現在フレーム分を保存
 		for ( int i = m_vGameKeyNum - 1; i >= 1; --i )
@@ -350,9 +315,9 @@ namespace GAME
 		else if ( index < act[3] ) { cpu_act = CPU_FRONT_DASH; }
 		else if ( index < act[4] ) { cpu_act = CPU_BACK_DASH;	}
 		else if ( index < act[5] ) { cpu_act = CPU_L; }
-		else if ( index < act[6] ) { cpu_act = CPU_M; }
-		else if ( index < act[7] ) { cpu_act = CPU_H; }
-		else if ( index < act[8] ) { cpu_act = CPU_AVOID; }
+		else if ( index < act[6] ) { cpu_act = CPU_Ma; }
+		else if ( index < act[7] ) { cpu_act = CPU_Mb; }
+		else if ( index < act[8] ) { cpu_act = CPU_H; }
 		else if ( index < act[9] ) { cpu_act = CPU_POISED; }
 	}
 

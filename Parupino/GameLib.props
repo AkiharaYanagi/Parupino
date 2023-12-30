@@ -11,7 +11,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)..\GameLib011\include;$(SolutionDir)CharaData\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Projects\GameLib011\library;D:\Projects\Parupino\CharaData\library</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\GameLib011\library;$(SolutionDir)..\Parupino\CharaData\library</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

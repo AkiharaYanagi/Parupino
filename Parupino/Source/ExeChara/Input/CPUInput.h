@@ -31,9 +31,9 @@ namespace GAME
 		CPU_FRONT_DASH = 3,
 		CPU_BACK_DASH = 4,
 		CPU_L = 5,
-		CPU_M = 6,
-		CPU_H = 7,
-		CPU_AVOID = 8,
+		CPU_Ma = 6,
+		CPU_Mb = 7,
+		CPU_H = 8,
 		CPU_POISED = 9,
 		CPU_ACT_NUM = 10,
 	};
@@ -84,7 +84,6 @@ namespace GAME
 		UINT GetTransitID ( PVP_Branch pvpBranch, bool dirRight );
 
 		void SetCPU_Act ( int index, ARY_INT act, CPU_ACT& cpu_act );
-
 	};
 
 
