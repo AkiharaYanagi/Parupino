@@ -35,12 +35,18 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Chara">
+      <HintPath>..\..\ScriptEditorUtility\Dll\Chara.dll</HintPath>
+    </Reference>
+    <Reference Include="Ctrl_Chara">
+      <HintPath>..\..\ScriptEditorUtility\Dll\Ctrl_Chara.dll</HintPath>
+    </Reference>
     <Reference Include="KeyConfig">
-      <HintPath>..\..\ScriptEditorUtility\KeyConfig\bin\x86\Debug\KeyConfig.dll</HintPath>
+      <HintPath>..\..\ScriptEditorUtility\Dll\KeyConfig.dll</HintPath>
     </Reference>
     <Reference Include="ScriptEditorUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ScriptEditorUtility\ScriptEditorUtility\bin\x86\Debug\ScriptEditorUtility.dll</HintPath>
+      <HintPath>..\..\ScriptEditorUtility\Dll\ScriptEditorUtility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

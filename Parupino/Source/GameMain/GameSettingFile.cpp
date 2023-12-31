@@ -39,35 +39,36 @@ namespace GAME
 		try
 		{
 			//入力ストリームを生成
-			ifstream ifstrm( _T("GameSettings.dat"), ios::in | ios::binary );
-			
+			ifstream ifstrm( _T( "GameSettings.dat" ), ios::in | ios::binary );
+
 			//見つからないときデフォルトの値を設定して終了
-			if ( ! ifstrm ) { SetDefault (); return; }
+			if (!ifstrm) { SetDefault(); return; }
 
 			byte tempMode = 0;
-			ifstrm.read ( (char*)& tempMode, sizeof ( byte ) );
+			ifstrm.read( (char*)&tempMode, sizeof( byte ) );
 			m_startMode = (START_MODE)tempMode;
 
 			byte demo = 0;
-			ifstrm.read ( (char*)& demo, sizeof ( bool ) );
+			ifstrm.read( (char*)&demo, sizeof( bool ) );
 			m_demo = (bool)demo;
 
 			byte tempInput1p = 0;
 			byte tempInput2p = 0;
-			ifstrm.read ( (char*)& tempInput1p, sizeof ( byte ) );
-			ifstrm.read ( (char*)& tempInput2p, sizeof ( byte ) );
+			ifstrm.read( (char*)&tempInput1p, sizeof( byte ) );
+			ifstrm.read( (char*)&tempInput2p, sizeof( byte ) );
 			m_playerMode1p = (PLAYER_MODE)tempInput1p;
 			m_playerMode2p = (PLAYER_MODE)tempInput2p;
 
 			byte tempName1p = 0;
 			byte tempName2p = 0;
-			ifstrm.read ( (char*)& tempName1p, sizeof ( byte ) );
-			ifstrm.read ( (char*)& tempName2p, sizeof ( byte ) );
+			ifstrm.read( (char*)&tempName1p, sizeof( byte ) );
+			ifstrm.read( (char*)&tempName2p, sizeof( byte ) );
 			m_name1p = (CHARA_NAME)tempName1p;
 			m_name2p = (CHARA_NAME)tempName2p;
 
 			//終了
-			ifstrm.close ();
+			ifstrm.close();
+
 		}
 		catch (...)
 		{
@@ -77,6 +78,29 @@ namespace GAME
 
 	GameSettingFile::~GameSettingFile ()
 	{
+	}
+
+	void GameSettingFile::Save()
+	{
+		try
+		{
+			//入力ストリームを生成
+			ofstream ofstrm ( _T("GameSettings.dat"), ios::out | ios::binary );
+			
+			ofstrm.write ( (char*)&m_startMode, sizeof(byte));
+			ofstrm.write ( (char*)&m_demo, sizeof ( bool ) );
+			ofstrm.write ( (char*)&m_playerMode1p, sizeof ( byte ) );
+			ofstrm.write ( (char*)&m_playerMode2p, sizeof ( byte ) );
+			ofstrm.write ( (char*)&m_name1p, sizeof ( byte ) );
+			ofstrm.write ( (char*)&m_name2p, sizeof ( byte ) );
+
+			//終了
+			ofstrm.close ();
+		}
+		catch (...)
+		{
+			//エラー時何もしない
+		}
 	}
 	
 	void GameSettingFile::SetDefault ()
