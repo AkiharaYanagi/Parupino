@@ -76,10 +76,15 @@ namespace ScriptEditor
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
+			//アクション
+			ctrl_SqcList_Act.TestAssosiate ();
+
+
 			ctrl_SqcList_Act.ApplyData_Action ();
 			All_Ctrl.Inst.Compend_Bhv.UpdateSqcTree ();
 			All_Ctrl.Inst.UpdateData ();
 			FormImage.Inst.UpdateData ();
+
 		}
 
 		//-----------------------------------------------------------------------
