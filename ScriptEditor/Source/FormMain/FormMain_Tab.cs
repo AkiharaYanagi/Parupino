@@ -219,7 +219,7 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------
 		public void tabBranch_Selected ()
 		{
-			//ctrl_Branch1.Init ();
+			ctrl_Brc.SetCharaData ( chara );
 		}
 		public void tabBranch_Deselected ()
 		{

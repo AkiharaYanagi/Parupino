@@ -45,6 +45,8 @@ namespace ScriptEditor
 			All_Ctrl.Inst.Scp = ctrl_Scp;
 			All_Ctrl.Inst.Rct = ctrl_Rct;
 			All_Ctrl.Inst.ScpRut = ctrl_scpRut;
+
+			ctrl_cmpd_bhv.Call ();
 		}
 
 		public void SetEnvironment ()
