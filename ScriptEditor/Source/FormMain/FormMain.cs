@@ -39,6 +39,7 @@ namespace ScriptEditor
 			//キャラ初期化環境の選択
 			EstablishChara ();
 
+
 			//表示
 			Disp ();
 #if false

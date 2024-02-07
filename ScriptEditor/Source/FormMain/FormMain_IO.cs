@@ -13,6 +13,9 @@ namespace ScriptEditor
 		//------------------------------------------
 		private void _SaveChara ( string filepath )
 		{
+			//タブがリスト編集のとき
+			//アクションリスト、エフェクトリストを反映
+
 			//上書保存
 			SaveChara saveChara = new SaveChara ();
 			saveChara.Do ( filepath, chara );

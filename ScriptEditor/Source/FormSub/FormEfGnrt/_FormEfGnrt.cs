@@ -18,11 +18,18 @@ namespace ScriptEditor
 		//プライベートコンストラクタ
 		private _FormEfGnrt ()
 		{
+			InitializeComponent ();
+
 			this.Size = new Size ( 700, 600 );
 			LoadObject ();
-			this.Controls.Add ( ctrl_efgnrt );
 		}
 		//---------------------------------------------------------------------
+
+		public void SetCtrl ( _Ctrl_EfGnrt ctrl )
+		{
+			ctrl_efgnrt = ctrl;
+			this.Controls.Add ( ctrl_efgnrt );
+		}
 
 		public void SetCharaData ( Chara ch )
 		{

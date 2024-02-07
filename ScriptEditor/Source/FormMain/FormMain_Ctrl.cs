@@ -25,7 +25,10 @@ namespace ScriptEditor
 		//サブフォーム用コントロール 実体
 		private _Ctrl_Script ctrl_Scp = new _Ctrl_Script ();
 		private Ctrl_AllRect ctrl_Rct = new Ctrl_AllRect ();
+		private Ctrl_Image ctrl_Image = new Ctrl_Image ();
 		private Ctrl_Scp_Route ctrl_scpRut = new Ctrl_Scp_Route ();
+		private _Ctrl_EfGnrt ctrl_efgnrt = new _Ctrl_EfGnrt();
+
 
 		//-------------------------------------------------------
 
@@ -45,6 +48,7 @@ namespace ScriptEditor
 			All_Ctrl.Inst.Scp = ctrl_Scp;
 			All_Ctrl.Inst.Rct = ctrl_Rct;
 			All_Ctrl.Inst.ScpRut = ctrl_scpRut;
+			All_Ctrl.Inst.EfGnrt = ctrl_efgnrt;
 
 			ctrl_cmpd_bhv.Call ();
 		}
@@ -82,8 +86,10 @@ namespace ScriptEditor
 			//-------------------------------------------------
 			//サブフォームにおける環境設定
 			FormScript.Inst.SetCtrl ( ctrl_Scp );
+			FormImage.Inst.SetCtrl ( ctrl_Image );
 			FormRect2.Inst.SetCtrl ( ctrl_Rct );
 			FormRoute.Inst.SetCtrl ( ctrl_scpRut );
+			_FormEfGnrt.Inst.SetCtrl ( ctrl_efgnrt );
 		}
 	}
 }

@@ -66,89 +66,27 @@ namespace ScriptEditor
 		//[アクション]タブ選択時
 		public void tabAction_Selected ()
 		{
-#if false
 			ctrl_SqcList_Act.UpdateData ();
-			ctrl_SqcList_Act.UpdateImage ();
-			ctrl_SqcList_Act.Refresh ();
-#endif
 		}
 
 		//[アクション]タブ離去時
 		public void tabAction_Deselected ()
 		{
 			//アクション
-			ctrl_SqcList_Act.TestAssosiate ();
-
-
 			ctrl_SqcList_Act.ApplyData_Action ();
 			All_Ctrl.Inst.Compend_Bhv.UpdateSqcTree ();
 			All_Ctrl.Inst.UpdateData ();
-			FormImage.Inst.UpdateData ();
-
 		}
 
 		//-----------------------------------------------------------------------
 		//[スクリプト(A)]タブ選択時
 		public void tabScript_A_Selected ()
 		{
-#if false
-			//共通フォームにビヘイビアを設定
-			DispBehavior db = DispChara.Inst.DispBehavior;
-			
-			//他タブのデータで更新
-			ctrl_cmpd_bhv.UpdateData ();
-			ctrl_cmpd_bhv.SelectTop ();
-
-			Assosiate ( eb.SelectedSequence, eb.SelectedScript );
-			eb.SelectScript ( 0, 0 );
-
-
-			//サブフォームにビヘイビアを設定 ( ビヘイビア / ガーニッシュ 切替 )
-//			FormAction.Inst.SetCtrl ( eb.EditAction, db.DispAction, db );	//フォーム：アクション(ガーニッシュでは行わない)
-			FormImage.Inst.SetData ( eb.Compend.BD_Image );
-#endif
 			//サブフォームすべてにコンペンド指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			SetEnvironment_SubForms ( eb );
-
-			//イメージ指定
-			FormImage.Inst.SetCharaData ( chara.behavior.BD_Image );
-
-#if false
-			//1回のみ
-			//スクリプト内のImageNameからIDを外す
-			BindingDictionary < Sequence > BD_Sqc = chara.behavior.BD_Sequence;
-			foreach ( Sequence sqc in BD_Sqc.GetEnumerable () )
-			{
-				foreach ( Script scp in sqc.ListScript )
-				{
-					int len = scp.ImgName.Length;
-					scp.ImgName = scp.ImgName.Substring ( 4, len - 4 );
-				}
-			}
-			BindingDictionary < Sequence > BD_efc = chara.garnish.BD_Sequence;
-			foreach ( Sequence sqc in BD_efc.GetEnumerable () )
-			{
-				foreach ( Script scp in sqc.ListScript )
-				{
-					int len = scp.ImgName.Length;
-					scp.ImgName = scp.ImgName.Substring ( 4, len - 4 );
-				}
-			}
-
-#endif
 		}
 
-		//----------------------
-		//str_indexからheadを除き、Int.Parse()して返す
-		private int GetIndex ( string str_index, string head )
-		{
-			int n = head.Length;
-			int nextActionID = int.Parse ( str_index.Substring ( n, str_index.Length - n ) );
-			return nextActionID;
-		}
-
-		
 		//[スクリプト(A)]タブ離去時
 		public void tabScript_A_Deselected ()
 		{
@@ -159,10 +97,7 @@ namespace ScriptEditor
 		//[エフェクト]タブ選択時
 		public void tabEffect_Selected ()
 		{
-#if false
-			ctrl_SqcList_Ef.UpdateData ();
-			ctrl_SqcList_Ef.UpdateImage ();
-#endif
+			ctrl_SqcList_Efc.UpdateData ();
 		}
 
 		//[エフェクト]タブ離去時
@@ -171,34 +106,15 @@ namespace ScriptEditor
 			ctrl_SqcList_Efc.ApplyData_Effect ();
 			All_Ctrl.Inst.Compend_Gns.UpdateSqcTree ();
 			All_Ctrl.Inst.UpdateData ();
-			FormImage.Inst.UpdateData ();
 		}
 
 		//-----------------------------------------------------------------------
 		//[スクリプト(E)]
 		public void tabScript_E_Selected ()
 		{
-#if false
-			//共通フォームにガーニッシュを設定
-			EditGarnish eg = EditChara.Inst.EditGarnish;
-			DispGarnish dg = DispChara.Inst.DispGarnish;
-
-			//cpd_Garnish.UpdateData ();
-			//cpd_Garnish.SelectTop ();
-			Assosiate ( eg.SelectedSequence, eg.SelectedScript );
-			eg.SelectScript ( 0, 0 );
-
-			//サブフォームにガーニッシュを設定
-			Form_ScriptList.Inst.SetEnvironment ( eg );
-			FormImage.Inst.SetEnviron ( eg );
-			FormImage.Inst.SetData ( eg.Compend.BD_Image );
-#endif
 			//コンペンド指定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			SetEnvironment_SubForms ( eg );
-
-		//イメージ指定
-			FormImage.Inst.SetCharaData ( chara.garnish.BD_Image );
 		}
 
 		//[スクリプト(E)]
@@ -228,7 +144,7 @@ namespace ScriptEditor
 		//-----------------------------------------------------------------------
 		public void tabRoute_Selected ()
 		{
-			//ctrl_Route1.UpdateData ();
+			ctrl_Rut.SetCharaData ( chara );
 		}
 		public void tabRoute_Deselected ()
 		{

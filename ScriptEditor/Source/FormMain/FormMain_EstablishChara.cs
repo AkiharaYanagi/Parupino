@@ -30,8 +30,13 @@ namespace ScriptEditor
 
 			//自動で既存のキャラデータを読込
 			_LoadChara ( stgs.LastFilepath );
+
+
+
 			//イメージのみ追加読込
-			All_Ctrl.Inst.LoadImage ();
+//			All_Ctrl.Inst.LoadImage ();
+
+
 		}
 
 		//プレデータテキストファイルから既存データの読込
