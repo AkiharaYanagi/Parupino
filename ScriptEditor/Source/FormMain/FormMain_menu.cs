@@ -131,8 +131,9 @@ namespace ScriptEditor
 			{
 				STS_TXT.Trace_Err ( "Name Refference Error. " + excp.Message );
 				//エラー表示をして続行
+				return;
 			}
-
+			STS_TXT.Trace ( "Name Check OK." );
 		}
 	}
 
