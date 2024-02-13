@@ -23,7 +23,7 @@ namespace ScriptEditor
 			L_EditorForm.Add ( FormImage.Inst );
 			L_EditorForm.Add ( FormRoute.Inst );
 			L_EditorForm.Add ( FormRect2.Inst );
-			L_EditorForm.Add ( _FormEfGnrt.Inst );
+			L_EditorForm.Add ( FormEfGnrt.Inst );
 			L_EditorForm.Add ( FormPreview.Inst );
 
 			//親を記録
@@ -37,7 +37,7 @@ namespace ScriptEditor
 			ctrl_fmBtn_bhv.FB_ScriptValue.Form = FormScript.Inst;
 			ctrl_fmBtn_bhv.FB_Image.Form = FormImage.Inst;
 			ctrl_fmBtn_bhv.FB_RectList.Form = FormRect2.Inst;
-			ctrl_fmBtn_bhv.FB_EfGnrt.Form = _FormEfGnrt.Inst;
+			ctrl_fmBtn_bhv.FB_EfGnrt.Form = FormEfGnrt.Inst;
 			ctrl_fmBtn_bhv.FB_Route.Form = FormRoute.Inst;
 			//ctrl_fmBtn_bhv.FB_Preview = FormPreview.Inst;
 			ctrl_fmBtn_bhv.FB_Preview.Enabled = false;
@@ -46,7 +46,7 @@ namespace ScriptEditor
 			ctrl_fmBtn_gns.FB_ScriptValue.Form = FormScript.Inst;
 			ctrl_fmBtn_gns.FB_Image.Form = FormImage.Inst;
 			ctrl_fmBtn_gns.FB_RectList.Form = FormRect2.Inst;
-			ctrl_fmBtn_gns.FB_EfGnrt.Form = _FormEfGnrt.Inst;
+			ctrl_fmBtn_gns.FB_EfGnrt.Form = FormEfGnrt.Inst;
 			ctrl_fmBtn_gns.FB_Route.Form = FormRoute.Inst;
 			//ctrl_fmBtn_gns.FB_Preview = FormPreview.Inst;
 			ctrl_fmBtn_gns.FB_Preview.Enabled = false;
@@ -102,7 +102,7 @@ namespace ScriptEditor
 			FormScript.Inst.Hide ();
 			FormRect2.Inst.Hide ();
 			FormRoute.Inst.Hide ();
-			_FormEfGnrt.Inst.Hide ();
+			FormEfGnrt.Inst.Hide ();
 			FormPreview.Inst.Hide ();
 		}
 

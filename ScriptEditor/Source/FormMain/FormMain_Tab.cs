@@ -85,6 +85,7 @@ namespace ScriptEditor
 			//サブフォームすべてにコンペンド指定
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			SetEnvironment_SubForms ( eb );
+			All_Ctrl.Inst.SetEditCompend ( eb );
 		}
 
 		//[スクリプト(A)]タブ離去時
@@ -115,6 +116,7 @@ namespace ScriptEditor
 			//コンペンド指定
 			EditGarnish eg = EditChara.Inst.EditGarnish;
 			SetEnvironment_SubForms ( eg );
+			All_Ctrl.Inst.SetEditCompend ( eg );
 		}
 
 		//[スクリプト(E)]

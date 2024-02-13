@@ -5,18 +5,17 @@ using System.Drawing;
 
 namespace ScriptEditor
 {
-
-	public sealed class _FormEfGnrt : SubForm_Compend
+	public sealed class FormEfGnrt : SubForm_Compend
 	{
 		//コントロール
-		private _Ctrl_EfGnrt ctrl_efgnrt = new _Ctrl_EfGnrt ();
+		private Ctrl_EfGnrt ctrl_efgnrt = new Ctrl_EfGnrt ();
 
 		//---------------------------------------------------------------------
 		//シングルトン実体
-		public static _FormEfGnrt Inst { get; set; } = new _FormEfGnrt ();
+		public static FormEfGnrt Inst { get; set; } = new FormEfGnrt ();
 		
 		//プライベートコンストラクタ
-		private _FormEfGnrt ()
+		private FormEfGnrt ()
 		{
 			InitializeComponent ();
 
@@ -25,7 +24,7 @@ namespace ScriptEditor
 		}
 		//---------------------------------------------------------------------
 
-		public void SetCtrl ( _Ctrl_EfGnrt ctrl )
+		public void SetCtrl ( Ctrl_EfGnrt ctrl )
 		{
 			ctrl_efgnrt = ctrl;
 			this.Controls.Add ( ctrl_efgnrt );
