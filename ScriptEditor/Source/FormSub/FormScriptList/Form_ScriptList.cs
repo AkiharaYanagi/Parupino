@@ -38,14 +38,14 @@ namespace ScriptEditor
 
 		private void InitializeComponent ()
 		{
-			this.SuspendLayout();
-			// 
-			// Form_ScriptList
-			// 
-			this.ClientSize = new System.Drawing.Size(318, 336);
-			this.Name = "Form_ScriptList";
-			this.Text = "ScriptList";
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // Form_ScriptList
+            // 
+            this.ClientSize = new System.Drawing.Size(438, 336);
+            this.Name = "Form_ScriptList";
+            this.Text = "ScriptList";
+            this.ResumeLayout(false);
 
 		}
 
