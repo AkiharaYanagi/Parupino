@@ -67,6 +67,7 @@ namespace ScriptEditor
 		public void tabAction_Selected ()
 		{
 			ctrl_SqcList_Act.UpdateData ();
+			ctrl_SqcList_Act.UpdatePbSize ();
 		}
 
 		//[アクション]タブ離去時
