@@ -19,11 +19,7 @@ namespace ScriptEditor
 
 		private void 上書保存ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
-			STS_TXT.Trace ( "上書保存 - 開始" );
-			this.Refresh ();
-
 			_SaveChara ( stgs.LastFilepath );
-			STS_TXT.Trace ( "上書保存 - ◆ 完了 ◆" );
 		}
 
 		private void 別名保存ToolStripMenuItem_Click ( object sender, EventArgs e )

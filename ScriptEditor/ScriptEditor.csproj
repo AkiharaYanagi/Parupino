@@ -68,9 +68,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ScriptEditorUtility\Ctrl_Chara\bin\x86\Debug\Ctrl_Chara.dll</HintPath>
     </Reference>
-    <Reference Include="KeyConfig">
-      <HintPath>..\..\ScriptEditorUtility\KeyConfig\bin\x86\Debug\KeyConfig.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\assembly\GAC\Microsoft.DirectX\1.0.2902.0__31bf3856ad364e35\Microsoft.DirectX.dll</HintPath>

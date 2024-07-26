@@ -13,6 +13,12 @@ namespace ScriptEditor
 		//------------------------------------------
 		private void _SaveChara ( string filepath )
 		{
+			//強制描画
+			SetFormText ( "上書保存 - 開始 " + filepath );
+			STS_TXT.Trace ( "上書保存 - 開始" );
+			this.Refresh ();
+
+
 			//タブがリスト編集のとき
 			//アクションリスト、エフェクトリストを反映
 
@@ -20,8 +26,10 @@ namespace ScriptEditor
 			SaveChara saveChara = new SaveChara ();
 			saveChara.Do ( filepath, chara );
 
+
 			//タイトルバー編集中ファイル名更新(非保存表示を消去)
-			SetFormText ( filepath );
+			SetFormText ( "◆ 完了 ◆ 上書保存 - " + filepath );
+			STS_TXT.Trace ( "上書保存 - ◆ 完了 ◆" );
 		}
 
 		//------------------------------------------
