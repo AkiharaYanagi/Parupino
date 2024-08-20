@@ -20,6 +20,9 @@ namespace ScriptEditor
 		private void 上書保存ToolStripMenuItem_Click ( object sender, EventArgs e )
 		{
 			_SaveChara ( stgs.LastFilepath );
+
+			//パスの保存
+			XML_IO.Save ( stgs );
 		}
 
 		private void 別名保存ToolStripMenuItem_Click ( object sender, EventArgs e )
