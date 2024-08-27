@@ -100,6 +100,7 @@ namespace ScriptEditor
 		public void tabEffect_Selected ()
 		{
 			ctrl_SqcList_Efc.UpdateData ();
+			ctrl_SqcList_Efc.UpdatePbSize ();
 		}
 
 		//[エフェクト]タブ離去時
