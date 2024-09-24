@@ -25,6 +25,7 @@ namespace ScriptEditor
 			L_EditorForm.Add ( FormRect2.Inst );
 			L_EditorForm.Add ( FormEfGnrt.Inst );
 			L_EditorForm.Add ( FormPreview.Inst );
+//			L_EditorForm.Add ( SubForm_CmpdInfo.Inst );
 
 			//親を記録
 			foreach ( EditorSubForm ef in L_EditorForm )
@@ -41,6 +42,7 @@ namespace ScriptEditor
 			ctrl_fmBtn_bhv.FB_Route.Form = FormRoute.Inst;
 			//ctrl_fmBtn_bhv.FB_Preview = FormPreview.Inst;
 			ctrl_fmBtn_bhv.FB_Preview.Enabled = false;
+//			ctrl_fmBtn_bhv.FB_EditInfo.Form = SubForm_CmpdInfo.Inst;
 
 			ctrl_fmBtn_gns.FB_ScriptList.Form = Form_ScriptList.Inst;
 			ctrl_fmBtn_gns.FB_ScriptValue.Form = FormScript.Inst;
@@ -50,6 +52,7 @@ namespace ScriptEditor
 			ctrl_fmBtn_gns.FB_Route.Form = FormRoute.Inst;
 			//ctrl_fmBtn_gns.FB_Preview = FormPreview.Inst;
 			ctrl_fmBtn_gns.FB_Preview.Enabled = false;
+//			ctrl_fmBtn_gns.FB_EditInfo.Form = SubForm_CmpdInfo.Inst;
 
 		}
 

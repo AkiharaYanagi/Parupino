@@ -139,9 +139,6 @@
     <Compile Include="Source\FormSub\FormScript\FormScript.Designer.cs">
       <DependentUpon>FormScript.cs</DependentUpon>
     </Compile>
-    <Compile Include="Source\FormSub\SubForm_Compend.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
