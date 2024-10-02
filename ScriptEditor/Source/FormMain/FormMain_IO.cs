@@ -41,6 +41,19 @@ namespace ScriptEditor
 			LoadChara loadChara = new LoadChara ();
 			loadChara.Do ( filepath, chara );
 			LoadCharaData ();
+
+
+			//1回限りの更新(スクリプト定義の仕様変更など)
+#if false
+			BindingDictionary < Branch > BD_Branch = chara.BD_Branch;
+			foreach (Branch brc in BD_Branch.GetEnumerable ())
+			{
+				BranchCondition[] AryBrcCdt = ( BranchCondition[] ) Enum.GetValues ( typeof ( BranchCondition ) );
+				int currentIndex = Array.IndexOf ( AryBrcCdt, brc.Condition );
+				int nextIndex = (currentIndex + 1) % AryBrcCdt.Length;	//末尾のとき剰余で0にループする
+				brc.Condition = AryBrcCdt [ nextIndex ];
+			}
+#endif
 		}
 
 		//キャラロード時に更新
