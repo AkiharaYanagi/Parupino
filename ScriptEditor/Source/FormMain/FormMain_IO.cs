@@ -37,29 +37,25 @@ namespace ScriptEditor
 		//------------------------------------------
 		private void _LoadChara ( string filepath )
 		{
+#if false
 			//ドキュメント読込
 			LoadChara loadChara = new LoadChara ();
 			loadChara.Do ( filepath, chara );
 			LoadCharaData ();
-#if false
+#endif
 			//バイナリ読込
 			LoadCharaBin loadCharaBin = new LoadCharaBin ();
 			loadCharaBin.Do ( filepath, chara );
 			LoadCharaData ();
-#endif
 
-
+			//===============================================================
 			//1回限りの更新(スクリプト定義の仕様変更など)
-#if false
-			BindingDictionary < Branch > BD_Branch = chara.BD_Branch;
-			foreach (Branch brc in BD_Branch.GetEnumerable ())
-			{
-				BranchCondition[] AryBrcCdt = ( BranchCondition[] ) Enum.GetValues ( typeof ( BranchCondition ) );
-				int currentIndex = Array.IndexOf ( AryBrcCdt, brc.Condition );
-				int nextIndex = (currentIndex + 1) % AryBrcCdt.Length;	//末尾のとき剰余で0にループする
-				brc.Condition = AryBrcCdt [ nextIndex ];
-			}
+#if true
+
+			//バイナリスクリプトにグループを追加
+
 #endif
+			//===============================================================
 		}
 
 		//キャラロード時に更新
