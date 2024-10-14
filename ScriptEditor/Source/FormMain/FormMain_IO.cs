@@ -37,10 +37,16 @@ namespace ScriptEditor
 		//------------------------------------------
 		private void _LoadChara ( string filepath )
 		{
-			//読込
+			//ドキュメント読込
 			LoadChara loadChara = new LoadChara ();
 			loadChara.Do ( filepath, chara );
 			LoadCharaData ();
+#if false
+			//バイナリ読込
+			LoadCharaBin loadCharaBin = new LoadCharaBin ();
+			loadCharaBin.Do ( filepath, chara );
+			LoadCharaData ();
+#endif
 
 
 			//1回限りの更新(スクリプト定義の仕様変更など)
