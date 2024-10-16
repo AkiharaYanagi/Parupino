@@ -23,8 +23,12 @@ namespace ScriptEditor
 			//アクションリスト、エフェクトリストを反映
 
 			//上書保存
+#if false
 			SaveChara saveChara = new SaveChara ();
 			saveChara.Do ( filepath, chara );
+#endif
+			SaveCharaBin saveCharaBin = new SaveCharaBin ();
+			saveCharaBin.Do ( filepath, chara );
 
 
 			//タイトルバー編集中ファイル名更新(非保存表示を消去)
@@ -50,10 +54,9 @@ namespace ScriptEditor
 
 			//===============================================================
 			//1回限りの更新(スクリプト定義の仕様変更など)
+			//　データのバックアップを取り、コピーで行うこと
+			// ◆◆◆ 旧ロードで読込、新セーブで書出、新ロードで読込
 #if true
-
-			//バイナリスクリプトにグループを追加
-
 #endif
 			//===============================================================
 		}

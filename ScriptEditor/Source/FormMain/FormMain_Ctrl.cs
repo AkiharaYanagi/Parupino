@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-
+using System.IO;
 using ScriptEditorUtility;
 
 
@@ -55,6 +55,15 @@ namespace ScriptEditor
 		{
 			//-------------------------------------------------
 			//環境設定
+
+			//SE,VC 外部ファイル
+			string dir = Path.GetDirectoryName ( stgs.LastFilepath );
+			ctrl_Scp.LoadData ( dir );
+
+
+
+			//@todo SqcBoardの選択が更新されない
+
 
 			//アクションリスト
 			Ctrl_SqcList.CTRL_SQC act = Ctrl_SqcList.CTRL_SQC.ACTION;

@@ -34,7 +34,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(570, 420);
+			this.ClientSize = new System.Drawing.Size(626, 472);
 			this.Name = "FormScript";
 			this.Text = "Script";
 			this.ResumeLayout(false);
