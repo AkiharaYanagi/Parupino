@@ -61,10 +61,6 @@ namespace ScriptEditor
 			ctrl_Scp.LoadData ( dir );
 
 
-
-			//@todo SqcBoardの選択が更新されない
-
-
 			//アクションリスト
 			Ctrl_SqcList.CTRL_SQC act = Ctrl_SqcList.CTRL_SQC.ACTION;
 			ctrl_SqcList_Act.SetEnviroment ( act, stgs );
