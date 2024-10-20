@@ -66,8 +66,12 @@ namespace ScriptEditor
 		//キャラロード時に更新
 		private void LoadCharaData ()
 		{
+			string path = Path.GetDirectoryName ( stgs.LastFilepath );
+
 			//名前参照のチェック
 			TestChara testChara = new TestChara ();
+			testChara.SOUND_DIR = path;
+
 			try { testChara._TestNameAssign ( chara ); }
 			catch ( Exception e )
 			{
@@ -76,8 +80,8 @@ namespace ScriptEditor
 				//エラー表示をして続行
 			}
 
-			//設定ファイルにファイル位置を記録
-			stgs.LastDirectory = Path.GetDirectoryName ( openFileDialog1.FileName );
+			//設定ファイルにファイルパスを記録
+			stgs.LastDirectory = path;
 			XML_IO.Save ( stgs );
 
 			//カレントディレクトリも変更する

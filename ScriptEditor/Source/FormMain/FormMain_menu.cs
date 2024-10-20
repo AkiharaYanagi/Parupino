@@ -128,6 +128,8 @@ namespace ScriptEditor
 		private void 名前チェックToolStripMenuItem_Click ( object sender, System.EventArgs e )
 		{
 			TestChara testChara = new TestChara ();
+			testChara.SOUND_DIR = Directory.GetCurrentDirectory ();
+
 			try { testChara._TestNameAssign ( chara ); }
 			catch ( Exception excp )
 			{
