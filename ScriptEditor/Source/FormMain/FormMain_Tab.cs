@@ -68,6 +68,10 @@ namespace ScriptEditor
 		{
 			ctrl_SqcList_Act.UpdateData ();
 			ctrl_SqcList_Act.UpdatePbSize ();
+
+			//エディットで選択シークエンスを引き継ぐ
+			EditBehavior eb = EditChara.Inst.EditBehavior;
+			ctrl_SqcList_Act.SelectFromName ( eb.SelectedSequence.Name );
 		}
 
 		//[アクション]タブ離去時
@@ -87,6 +91,11 @@ namespace ScriptEditor
 			EditBehavior eb = EditChara.Inst.EditBehavior;
 			SetEnvironment_SubForms ( eb );
 			All_Ctrl.Inst.SetEditCompend ( eb );
+
+			//選択状態
+			string sqcName =  ctrl_SqcList_Act.SelectedSqcName ();
+			ctrl_cmpd_bhv.SelectFromName ( sqcName );
+			eb.SelectSequence ( sqcName );
 		}
 
 		//[スクリプト(A)]タブ離去時
@@ -101,6 +110,10 @@ namespace ScriptEditor
 		{
 			ctrl_SqcList_Efc.UpdateData ();
 			ctrl_SqcList_Efc.UpdatePbSize ();
+
+			//エディットで選択シークエンスを引き継ぐ
+			EditGarnish eg = EditChara.Inst.EditGarnish;
+			ctrl_SqcList_Efc.SelectFromName ( eg.SelectedSequence.Name );
 		}
 
 		//[エフェクト]タブ離去時
